@@ -2,9 +2,9 @@
 title: Zugriff auf Enabler Android SDK Single Sign-On (SSO) in Android 10-Apps
 description: Zugriff auf Enabler Android SDK Single Sign-On (SSO) in Android 10-Apps
 exl-id: dedade15-c451-4757-b684-d3728e11dd87
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '377'
+source-wordcount: '374'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Siehe [Roku SSO-Übersicht](/help/authentication/roku-sso-overview.md).
 
 ## Verhalten
 
-Abhängig von der **Ziel-SDK-Ebene** oder die Verwendung **android:requestLegacyExternalStorage** manifest attribute the Single Sign-On (SSO) von Access Enabler Android-SDK Version 3.2.1 (neueste Version) und früheren Versionen werden sich derzeit wie folgt verhalten:
+Abhängig von der **[!UICONTROL target SDK level]** oder die Verwendung **android:requestLegacyExternalStorage** manifest attribute the Single Sign-On (SSO) von Access Enabler Android-SDK Version 3.2.1 (neueste Version) und früheren Versionen werden sich derzeit wie folgt verhalten:
 
 - Ihre App-Ziele **Android 9 (API-Ebene 28)** oder niedriger **-\>** Single Sign-On (SSO) **wird funktionieren**
 - Ihre App-Ziele **Android 10** **(API-Ebene 29)** und **set** der Wert von **requestLegacyExternalStorage auf true** in der Manifestdatei Ihrer App **-\>** Single Sign-On (SSO) **wird funktionieren**

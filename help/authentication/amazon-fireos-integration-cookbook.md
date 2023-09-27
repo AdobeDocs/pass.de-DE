@@ -2,9 +2,9 @@
 title: Amazon FireOS-Integrations-Cookbook
 description: Amazon FireOS-Integrations-Cookbook
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '1432'
+source-wordcount: '1416'
 ht-degree: 0%
 
 ---
@@ -20,27 +20,27 @@ ht-degree: 0%
 
 ## Einführung {#intro}
 
-In diesem Dokument werden die Berechtigungs-Workflows beschrieben, die die Anwendung eines Programmierers auf oberster Ebene über die APIs implementieren kann, die von der Amazon FireOS AccessEnabler-Bibliothek bereitgestellt werden.
+In diesem Dokument werden die Berechtigungs-Workflows beschrieben, die die Anwendung eines Programmierers auf oberster Ebene über die APIs implementieren kann, die von Amazon FireOS bereitgestellt werden `AccessEnabler` -Bibliothek.
 
 Die Berechtigungslösung für die Adobe Pass-Authentifizierung für Amazon FireOS ist letztendlich in zwei Domänen unterteilt:
 
-- Die UI-Domäne - dies ist die Anwendungsebene der obersten Ebene, die die Benutzeroberfläche implementiert und die von der AccessEnabler-Bibliothek bereitgestellten Dienste verwendet, um Zugriff auf eingeschränkte Inhalte zu ermöglichen.
-- In der AccessEnabler-Domäne werden die Berechtigungs-Workflows in folgender Form implementiert:
+- Die UI-Domäne - dies ist die Anwendungsebene der obersten Ebene, die die Benutzeroberfläche implementiert und die von der `AccessEnabler` -Bibliothek, um Zugriff auf eingeschränkte Inhalte bereitzustellen.
+- Die `AccessEnabler` -Domäne - hier werden die Berechtigungs-Workflows in folgender Form implementiert:
    - Netzwerkaufrufe an Adobe-Backend-Server
    - Geschäftslogikregeln für die Authentifizierungs- und Autorisierungs-Workflows
    - Verwaltung verschiedener Ressourcen und Verarbeitung des Workflow-Status (z. B. Token-Cache)
 
-Ziel der AccessEnabler-Domäne ist es, alle Komplexität der Berechtigungs-Workflows auszublenden und der oberen Ebene (über die AccessEnabler-Bibliothek) eine Reihe einfacher Berechtigungs-Primitive bereitzustellen, mit denen Sie die Berechtigungs-Workflows implementieren:
+Das Ziel der `AccessEnabler` Die Domäne besteht darin, alle Komplexität der Berechtigungs-Workflows auszublenden und die Anwendung auf der obersten Ebene bereitzustellen (über die `AccessEnabler` -Bibliothek) eine Reihe einfacher Berechtigungsprimitive. Mithilfe dieses Prozesses können Sie die Berechtigungs-Workflows implementieren:
 
-1. Anfragenidentität festlegen
-1. Überprüfen und Abrufen der Authentifizierung für einen bestimmten Identitäts-Provider
-1. Prüfen und Autorisieren einer bestimmten Ressource
-1. Abmelden
+1. Legen Sie die Anfragenkennung fest.
+1. Überprüfen Sie die Authentifizierung für einen bestimmten Identitäts-Provider und rufen Sie ihn ab.
+1. Überprüfen Sie die Autorisierung für eine bestimmte Ressource und erhalten Sie sie.
+1. Abmelden.
 
-Die Netzwerkaktivität von AccessEnabler erfolgt in einem anderen Thread, sodass der UI-Thread nie blockiert wird. Daher muss der bidirektionale Kommunikationskanal zwischen den beiden Anwendungsdomänen einem vollständig asynchronen Muster folgen:
+Die `AccessEnabler`Die Netzwerkaktivität von findet in einem anderen Thread statt, sodass der UI-Thread nie blockiert wird. Daher muss der bidirektionale Kommunikationskanal zwischen den beiden Anwendungsdomänen einem vollständig asynchronen Muster folgen:
 
-- Die Anwendungsebene der Benutzeroberfläche sendet Nachrichten über die API-Aufrufe, die von der AccessEnabler-Bibliothek verfügbar gemacht werden, an die AccessEnabler-Domäne.
-- Der AccessEnabler antwortet auf die UI-Ebene über die Callback-Methoden, die im AccessEnabler -Protokoll enthalten sind und die die UI-Ebene mit der AccessEnabler -Bibliothek registriert.
+- Die UI-Anwendungsebene sendet Nachrichten an `AccessEnabler` -Domäne über die API-Aufrufe, die von der `AccessEnabler` -Bibliothek.
+- Die `AccessEnabler` antwortet über die Callback-Methoden, die in der `AccessEnabler` Protokoll, das die UI-Ebene beim `AccessEnabler` -Bibliothek.
 
 ## Berechtigungsflüsse {#entitlement}
 
@@ -50,8 +50,6 @@ Die Netzwerkaktivität von AccessEnabler erfolgt in einem anderen Thread, sodass
 1. [Autorisierungsfluss](#authz_flow)
 1. [Medienfluss anzeigen](#media_flow)
 1. [Abmeldefluss](#logout_flow)
-
-
 
 ### A. Voraussetzungen {#prereqs}
 
@@ -113,9 +111,9 @@ Die `event` Parameter gibt an, welches Berechtigungsereignis aufgetreten ist; di
 1. Starten Sie die Anwendung der obersten Ebene.
 1. Initiieren der Adobe Pass-Authentifizierung.
 
-   1. Aufruf [`getInstance`](#$getInstance) , um eine einzelne Instanz von Adobe Pass Authentication AccessEnabler zu erstellen.
+   1. Aufruf [`getInstance`](#$getInstance) , um eine Instanz der Adobe Pass-Authentifizierung zu erstellen `AccessEnabler`.
 
-      - **Abhängigkeit:** Adobe Pass Authentication Native Amazon FireOS Library (AccessEnabler)
+      - **Abhängigkeit:** Adobe Pass Authentication Native Amazon FireOS Library (`AccessEnabler`)
 
    1. Aufruf` setRequestor()` Festlegung der Identität des Programmierers; Weiterleitung der Programmierung `requestorID` und (optional) ein Array von Adobe Pass-Authentifizierungsendpunkten.
 
@@ -127,8 +125,8 @@ Die `event` Parameter gibt an, welches Berechtigungsereignis aufgetreten ist; di
 
    Sie haben zwei Implementierungsoptionen: Sobald die Identifizierungsinformationen des Anfragenden an den Backend-Server gesendet wurden, kann die UI-Anwendungsschicht einen der beiden folgenden Ansätze wählen:</p>
 
-   1. Warten Sie auf die Auslösung der `setRequestorComplete()` callback (Teil des AccessEnabler -Delegates).  Diese Option bietet die größte Sicherheit, dass `setRequestor()` abgeschlossen ist, daher wird dies für die meisten Implementierungen empfohlen.
-   1. Fahren Sie fort, ohne auf die Aktivierung der `setRequestorComplete()` zurücksetzen und mit der Ausgabe von Berechtigungsanfragen beginnen. Diese Aufrufe (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) werden von der AccessEnabler-Bibliothek in die Warteschlange gestellt, die die tatsächlichen Netzwerkaufrufe nach der `setRequestor()`. Diese Option kann gelegentlich unterbrochen werden, wenn beispielsweise die Netzwerkverbindung instabil ist.
+   1. Warten Sie auf die Auslösung der `setRequestorComplete()` callback (Teil der `AccessEnabler` delegate).  Diese Option bietet die größte Sicherheit, dass `setRequestor()` abgeschlossen ist, daher wird dies für die meisten Implementierungen empfohlen.
+   1. Fahren Sie fort, ohne auf die Aktivierung der `setRequestorComplete()` zurücksetzen und mit der Ausgabe von Berechtigungsanfragen beginnen. Diese Aufrufe (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) werden vom `AccessEnabler` -Bibliothek, die die tatsächlichen Netzwerkaufrufe nach der `setRequestor()`. Diese Option kann gelegentlich unterbrochen werden, wenn beispielsweise die Netzwerkverbindung instabil ist.
 
 1. Aufruf [checkAuthentication()](#$checkAuthN) um nach einer vorhandenen Authentifizierung zu suchen, ohne den vollständigen Authentifizierungsfluss zu starten.  Wenn dieser Aufruf erfolgreich ist, können Sie direkt zum Autorisierungsfluss übergehen.  Ist dies nicht der Fall, fahren Sie mit dem Authentifizierungsfluss fort.
 
@@ -150,10 +148,10 @@ Die `event` Parameter gibt an, welches Berechtigungsereignis aufgetreten ist; di
 
    >[!NOTE]
    >
-   >An dieser Stelle hat der Benutzer die Möglichkeit, den Authentifizierungsfluss abzubrechen. In diesem Fall bereinigt der AccessEnabler den internen Status und setzt den Authentifizierungsfluss zurück.
+   >An dieser Stelle hat der Benutzer die Möglichkeit, den Authentifizierungsfluss abzubrechen. Wenn dies der Fall ist, wird die `AccessEnabler` bereinigt den internen Status und setzt den Authentifizierungsfluss zurück.
 
 1. Nach erfolgreicher Anmeldung durch den Benutzer wird die WebView geschlossen.
-1. call `getAuthenticationToken(),` , der den AccessEnabler anweist, das Authentifizierungstoken vom Backend-Server abzurufen.
+1. call `getAuthenticationToken(),` , der die `AccessEnabler` , um das Authentifizierungstoken vom Backend-Server abzurufen.
 1. [Optional] Aufruf [`checkPreauthorizedResources(resources)`](#$checkPreauth) , um zu überprüfen, welche Ressourcen der Benutzer anzeigen darf. Die `resources` parameter ist ein Array geschützter Ressourcen, die mit dem Authentifizierungstoken des Benutzers verknüpft sind.
 
    **Trigger:** `preAuthorizedResources()` callback\
@@ -196,6 +194,6 @@ Die `event` Parameter gibt an, welches Berechtigungsereignis aufgetreten ist; di
 
 ### F. Abmeldefluss {#logout_flow}
 
-1. Aufruf [`logout()`](#$logout) , um den Benutzer abzumelden. AccessEnabler löscht alle zwischengespeicherten Werte und Token, die der Benutzer für das aktuelle MVPD von allen Anfragenden erhält, die die Anmeldung über Single Sign On nutzen. Nachdem der Cache gelöscht wurde, führt der AccessEnabler einen Server-Aufruf durch, um die Server-seitigen Sitzungen zu bereinigen.  Da der Server-Aufruf zu einer SAML-Umleitung zum IdP führen kann (dies ermöglicht die Sitzungsbereinigung auf der IdP-Seite), muss dieser Aufruf allen Umleitungen folgen. Aus diesem Grund wird dieser Aufruf innerhalb eines WebView-Steuerelements verarbeitet, das für den Benutzer unsichtbar ist.
+1. Aufruf [`logout()`](#$logout) , um den Benutzer abzumelden. Die `AccessEnabler` löscht alle zwischengespeicherten Werte und Token, die der Benutzer für das aktuelle MVPD erhalten hat, auf allen Anfragenden, die die Anmeldung über Single Sign On nutzen. Nach dem Löschen des Cache wird die `AccessEnabler` führt einen Server-Aufruf aus, um die Server-seitigen Sitzungen zu bereinigen.  Da der Server-Aufruf zu einer SAML-Umleitung zum IdP führen kann (dies ermöglicht die Sitzungsbereinigung auf der IdP-Seite), muss dieser Aufruf allen Umleitungen folgen. Aus diesem Grund wird dieser Aufruf innerhalb eines WebView-Steuerelements verarbeitet, das für den Benutzer unsichtbar ist.
 
    **Hinweis:** Der Abmeldefluss unterscheidet sich vom Authentifizierungsfluss insofern, als der Benutzer in keiner Weise mit der WebView interagieren muss. Daher ist es möglich (und empfohlen), das WebView-Steuerelement während des Abmeldevorgangs unsichtbar (d. h. ausgeblendet) zu machen.

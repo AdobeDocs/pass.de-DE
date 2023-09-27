@@ -2,7 +2,7 @@
 title: Android SDK - Übersicht
 description: Android SDK - Übersicht
 exl-id: a1d98325-32a1-4881-8635-9a3c38169422
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
 source-wordcount: '2720'
 ht-degree: 0%
@@ -14,9 +14,6 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
-
-</br>
-
 
 ## Einführung {#intro}
 
@@ -34,8 +31,6 @@ Native Client-Workflows sind in der Regel mit denen von browserbasierten Adobe P
 - [Allgemeiner Workflow für die anfängliche Authentifizierung](#generic)
 - [Workflow abmelden](#logout)
 
-
-
 ### Nachinitialisierungs-Workflow {#post-init}
 
 Alle vom AccessEnabler unterstützten Berechtigungs-Workflows setzen voraus, dass Sie zuvor [`setRequestor()`](#setRequestor) , um Ihre Identität festzustellen. Sie führen diesen Aufruf aus, um Ihre Anforderer-ID nur einmal bereitzustellen, normalerweise während der Initialisierungs-/Setup-Phase Ihrer Anwendung.
@@ -50,8 +45,6 @@ Bei den nativen Clients (z. B. Android) nach dem ersten Aufruf von [`setRequesto
 - Oder machen Sie beides.
 
 Es liegt an Ihnen, auf die Benachrichtigung über den Erfolg der [`setRequestor()`](#setRequestor) oder sich auf den Aufruf-Warteschlangenmechanismus von AccessEnabler zu verlassen. Da alle nachfolgenden Autorisierungs- und Authentifizierungsanfragen die Anforderer-ID und die zugehörigen Konfigurationsinformationen benötigen, muss die [`setRequestor()`](#setRequestor) -Methode blockiert effektiv alle Authentifizierungs- und Autorisierungs-API-Aufrufe, bis die Initialisierung abgeschlossen ist.
-
-
 
 ### Allgemeiner Workflow für die anfängliche Authentifizierung {#generic}
 

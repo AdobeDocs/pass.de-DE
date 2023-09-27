@@ -2,7 +2,7 @@
 title: Android SDK Cookbook
 description: Android SDK Cookbook
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
 source-wordcount: '1685'
 ht-degree: 0%
@@ -32,10 +32,13 @@ Die Berechtigungslösung für Adobe Pass-Authentifizierung für Android ist letz
 
 Ziel der AccessEnabler-Domäne ist es, alle Komplexität der Berechtigungs-Workflows auszublenden und der oberen Ebene (über die AccessEnabler-Bibliothek) eine Reihe einfacher Berechtigungs-Primitive bereitzustellen, mit denen Sie die Berechtigungs-Workflows implementieren:
 
-1. Anfragenidentität festlegen
-1. Überprüfen und Abrufen der Authentifizierung für einen bestimmten Identitäts-Provider
-1. Prüfen und Autorisieren einer bestimmten Ressource
-1. Abmelden
+1. Legen Sie die Anfragenkennung fest.
+
+1. Überprüfen Sie die Authentifizierung für einen bestimmten Identitäts-Provider und rufen Sie ihn ab.
+
+1. Überprüfen Sie die Autorisierung für eine bestimmte Ressource und erhalten Sie sie.
+
+1. Abmelden.
 
 Die Netzwerkaktivität von AccessEnabler erfolgt in einem anderen Thread, sodass der UI-Thread nie blockiert wird. Daher muss der bidirektionale Kommunikationskanal zwischen den beiden Anwendungsdomänen einem vollständig asynchronen Muster folgen:
 
@@ -50,8 +53,6 @@ Die Netzwerkaktivität von AccessEnabler erfolgt in einem anderen Thread, sodass
 1. [Autorisierungsfluss](#authz_flow)
 1. [Medienfluss anzeigen](#media_flow)
 1. [Abmeldefluss](#logout_flow)
-
-
 
 ### A. Voraussetzungen {#prereqs}
 
@@ -137,8 +138,6 @@ Die Netzwerkaktivität von AccessEnabler erfolgt in einem anderen Thread, sodass
 
    - **Trigger:** setAuthenticationStatus()-Rückruf
 
-
-
 ### C. Authentifizierungsfluss {#authn_flow}
 
 1. Aufruf [`getAuthentication()`](#$getAuthN) , um den Authentifizierungsfluss zu initiieren oder um zu bestätigen, dass der Benutzer bereits authentifiziert ist.\
@@ -151,7 +150,6 @@ Die Netzwerkaktivität von AccessEnabler erfolgt in einem anderen Thread, sodass
 1. Nachdem der Benutzer einen Anbieter ausgewählt hat, rufen Sie die URL des MVPD des Benutzers aus der `navigateToUrl()` Callback.  Öffnen Sie eine WebView und leiten Sie dieses WebView-Steuerelement an die URL weiter.
 
 1. Über die im vorherigen Schritt instanziierte WebView gelangt der Benutzer auf die Anmeldeseite des MVPD und gibt Anmeldedaten ein. In WebView finden verschiedene Umleitungsvorgänge statt.
-
 
    **Hinweis:** An dieser Stelle hat der Benutzer die Möglichkeit, den Authentifizierungsfluss abzubrechen. In diesem Fall ist Ihre UI-Schicht dafür verantwortlich, den AccessEnabler über dieses Ereignis zu informieren, indem sie `setSelectedProvider()` mit `null` als Parameter. Dadurch kann AccessEnabler den internen Status bereinigen und den Authentifizierungsfluss zurücksetzen.
 
