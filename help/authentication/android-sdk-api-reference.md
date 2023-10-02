@@ -2,9 +2,9 @@
 title: Android-SDK-API-Referenz
 description: Android-SDK-API-Referenz
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: 2ccfa8e018b854a359881eab193c1414103eb903
+source-git-commit: 854698397d9d14c1bfddcc10eecc61c7e3c32b71
 workflow-type: tm+mt
-source-wordcount: '4518'
+source-wordcount: '4526'
 ht-degree: 0%
 
 ---
@@ -165,7 +165,7 @@ Die Werte werden unabhängig vom aktuellen Ablauf (Authentifizierung/Autorisieru
 
 ### checkAuthentication {#checkAuthN}
 
-**Beschreibung:** Überprüft den Authentifizierungsstatus. Dazu wird nach einem gültigen Authentifizierungstoken im lokalen Token-Speicher gesucht. Der Aufruf dieser Methode führt keine Netzwerkaufrufe durch. Sie wird von der Anwendung verwendet, um den Authentifizierungsstatus des Benutzers abzufragen und die Benutzeroberfläche entsprechend zu aktualisieren (d. h. die Anmelde-/Abmelde-Benutzeroberfläche zu aktualisieren). Der Authentifizierungsstatus wird der Anwendung über das [*setAuthenticationStatus()*](#setAuthNStatus) Callback.
+**Beschreibung:** Überprüft den Authentifizierungsstatus. Dazu wird nach einem gültigen Authentifizierungstoken im lokalen Token-Speicher gesucht. Diese Methode führt keine Netzwerkaufrufe durch. Wir empfehlen, sie im Haupt-Thread aufzurufen. Sie wird von der Anwendung verwendet, um den Authentifizierungsstatus des Benutzers abzufragen und die Benutzeroberfläche entsprechend zu aktualisieren (d. h. die Anmelde-/Abmelde-Benutzeroberfläche zu aktualisieren). Der Authentifizierungsstatus wird der Anwendung über das [*setAuthenticationStatus()*](#setAuthNStatus) Callback.
 
 Wenn ein MVPD die Funktion &quot;Authentifizierung pro Anforderer&quot;unterstützt, können mehrere Authentifizierungstoken auf einem Gerät gespeichert werden.  Weitere Informationen zu dieser Funktion finden Sie unter [Caching-Richtlinien](#$caching) im technischen Überblick von Android.
 
