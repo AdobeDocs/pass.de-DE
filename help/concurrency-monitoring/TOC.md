@@ -2,17 +2,17 @@
 product: adobe primetime
 feature: Concurrency Monitoring
 audience: end-user
-user-guide-title: Überwachung von Adobe Pass-Parallelen
+user-guide-title: Überwachung der Parallelität von Adobe Pass
 user-guide-description: Erfahren Sie, wie Sie Begrenzungen für die gleichzeitige Nutzung mehrerer Anwendungen definieren und durchsetzen.
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
 source-wordcount: '141'
-ht-degree: 0%
+ht-degree: 17%
 
 ---
 
 
-# Hilfe zur Adobe Pass-Überwachung {#cm}
+# Überwachung der Parallelität von Adobe Pass help {#cm}
 
 + [Einführung der Parallelüberwachung](cm-home.md)
 + [Glossar zur Überwachung der Parallelität](cm-glossary.md)
