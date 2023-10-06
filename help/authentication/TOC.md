@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass-Authentifizierung
 user-guide-description: Die Adobe Pass-Authentifizierung ist eine Berechtigungslösung für TV Everywhere. Sie bietet ein modulares Framework, mit dem festgestellt werden kann, ob eine Person, die Zugriff auf eine Ressource anfordert, dazu berechtigt ist.
-source-git-commit: fd65582522d6b40e5797dff192e2340c5575ef3b
+source-git-commit: 05184defb3d912050240be7763ced4ccce6a35ad
 workflow-type: tm+mt
-source-wordcount: '776'
+source-wordcount: '785'
 ht-degree: 4%
 
 ---
@@ -161,10 +161,12 @@ ht-degree: 4%
    + [Versionshinweise zur Adobe Pass-Authentifizierung 2.64](auth-rn-264.md)
    + [Versionshinweise zur Adobe Pass-Authentifizierung 2.63](auth-rn-263.md)
    + [Versionshinweise zur Adobe Pass-Authentifizierung 2.62.1](auth-rn-2621.md)
-   + [Adobe Pass Authentication iOS/tvOS 3.7.0 - Versionshinweise](authn-rn-ios-tvos-370.md)
-   + [Adobe Pass Authentication iOS/tvOS 3.8.1 - Versionshinweise](authn-rn-ios-tvos-381.md)
-   + [Versionshinweise zu Adobe Pass Authentication iOS/tvOS 3.8.2](authn-rn-ios-tvos-382.md)
-   + [Versionshinweise zur Adobe Pass-Authentifizierung Android 3.7.3](authn-rn-android-373.md)
+   + Versionshinweise zum iOS/tvOS-SDK  {#release-notes-ios}
+      + [Versionshinweise zu Adobe Pass Authentication iOS/tvOS 3.8.2](authn-rn-ios-tvos-382.md)
+      + [Adobe Pass Authentication iOS/tvOS 3.8.1 - Versionshinweise](authn-rn-ios-tvos-381.md)
+      + [Adobe Pass Authentication iOS/tvOS 3.7.0 - Versionshinweise](authn-rn-ios-tvos-370.md)
+   + Android SDK - Versionshinweise {#release-notes-android}
+      + [Versionshinweise zur Adobe Pass-Authentifizierung Android 3.7.3](authn-rn-android-373.md)
 + Technische Hinweise {#tech-notes}
    + Adobe Pass Authentication SDKs {#primetime-authentication-sdks}
       + [Fragen und Antworten zu Zertifikaten](certificates-qa.md)
