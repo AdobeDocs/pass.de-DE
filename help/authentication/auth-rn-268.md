@@ -1,9 +1,9 @@
 ---
 title: Versionshinweise zur Adobe Pass-Authentifizierung 2.68
 description: Versionshinweise zur Adobe Pass-Authentifizierung 2.68
-source-git-commit: 3271a0c31670ba086d1b0d464f4f255d1d311808
+source-git-commit: dc9572912371fb23586eafa93d06c3f3a5c546bc
 workflow-type: tm+mt
-source-wordcount: '135'
+source-wordcount: '142'
 ht-degree: 0%
 
 ---
@@ -29,9 +29,9 @@ Releasedatum: **21.11.2023 - 11.23.2023**
 
 ### Neue Funktionen {#new-features-268}
 
-* Aktualisierungen für unsere neuen REST-APIs.  Die neuen Endpunkte sind noch nicht verfügbar. Wir arbeiten jedoch an der Aktualisierung der Dokumentation, die die Verwendung dieser neuen APIs genauer beschreibt.
+* Laufende Entwicklung für neue REST-APIs. Die neuen Endpunkte und Flüsse, die in einer künftigen dedizierten Version verfügbar sein sollen. Die Dokumentation zur Verwendung dieser neuen APIS wird derzeit aktualisiert.
 * Weitere interne Architekturverbesserungen.
-* Die Device Atlas-Bibliothek wurde aktualisiert, um die Geräteerkennung zu verbessern.
+* Die Device Atlas-Bibliothek wurde auf die neueste Version aktualisiert, um die Geräteerkennung zu verbessern.
 
 #### Fehlerkorrekturen {#bug-fixes-268}
 
