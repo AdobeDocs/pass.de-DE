@@ -2,11 +2,11 @@
 product: adobe primetime
 audience: end-user
 feature: Account IQ
-user-guide-description: Die Hilfe zu Adobe Pass Account IQ gibt Informationen zu den Komponenten von Account IQ und führt Sie durch Benutzertouren, die die Verwendung der verschiedenen Komponenten erklären.
-source-git-commit: 2ced89dc1f77d2c090b599c40e778f3054f1a8dd
+user-guide-description: Adobe Pass Account IQ hilft Ihnen, Informationen über die Account IQ-Komponenten zu erhalten und führt Sie durch die Journey der Benutzer, die verschiedenen Komponenten zu verwenden.
+source-git-commit: 964ca5d24682662df2f7f766924ac062ca49b54e
 workflow-type: tm+mt
-source-wordcount: '142'
-ht-degree: 16%
+source-wordcount: '144'
+ht-degree: 0%
 
 ---
 
