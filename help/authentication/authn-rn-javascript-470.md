@@ -1,0 +1,38 @@
+---
+title: Versionshinweise zur Adobe Pass-Authentifizierung JavaScript 4.7.0
+description: Versionshinweise zur Adobe Pass-Authentifizierung JavaScript 4.7.0
+source-git-commit: 9c491478a5560d1f9208e786de285733997bb24b
+workflow-type: tm+mt
+source-wordcount: '121'
+ht-degree: 0%
+
+---
+
+# Versionshinweise zur Adobe Pass-Authentifizierung JavaScript 4.7.0 {#javascript-sdk-470-release-notes}
+
+>[!NOTE]
+>
+>Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+
+Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme in dieser Version beschrieben:
+
+## Build-Nummer {#build-no-javascript-sdk-470}
+
+Adobe Pass-Authentifizierung: JavaScript 4.7.0
+
+Releasedatum: **27.02.2024 - 29.02.2024**
+
+## Versionsübersicht {#overview-javascript-sdk-470}
+
+* Die veraltete Version 2.0.1 von Access Enabler JavaScript SDK wurde aufgrund von Sicherheitslücken entfernt.
+Die folgenden URLs werden nicht mehr unterstützt und geben einen HTTP 410-Status-Code zurück:
+   * https://entitlement.auth.adobe.com/entitlement/AccessEnabler.js
+   * http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js
+   * https://entitlement.auth.adobe.com/entitlement/AccessEnablerDebug.js
+   * http://entitlement.auth.adobe.com/entitlement/AccessEnablerDebug.js
+
+## Versionspaket {#rel-pkg-javascript-sdk-470}
+
+Die Produktions-URL lautet: https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js
+
+Staging-URL: https://entitlement.auth-staging.adobe.com/entitlement/v4/AccessEnabler.js
