@@ -2,9 +2,9 @@
 title: SSO in iOS bei Verwendung des Adobe Pass Authentication Access Enabler
 description: SSO in iOS bei Verwendung des Adobe Pass Authentication Access Enabler
 exl-id: 882f0abb-2e6e-461d-a375-3ab410991935
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 929d1cc2e0466155b29d1f905f2979c942c9ab8c
 workflow-type: tm+mt
-source-wordcount: '1164'
+source-wordcount: '1121'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ Das SSO-Verhalten sieht wie folgt aus:
    - **Wichtig:** Beachten Sie, dass die iOS SDK-Version 1.9.4 [Das iOS-Bereitstellungsziel wurde auf iOS 7 erhöht.](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
 - **iOS 7 und höher**: SSO funktioniert unter folgenden Bedingungen:
 
-1. Apps werden mit demselben Apple-Verteilungsprofil oder Profilen veröffentlicht, die demselben Team angehören. Dies ist die einzige Möglichkeit für Apps, benutzerdefinierte Whiteboards auf iOS 7 und höher freizugeben. In allen anderen Szenarien ist die Zwischenablage je Anwendung mit Sandbox versehen. Von [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html): \+\[UIPasteboard pasteboardWithName:create:\] und +\[UIPasteboard pasteboardWithUniqueName\] geben jetzt den angegebenen Namen ein, damit nur die Apps in derselben Anwendungsgruppe auf die Whiteboard zugreifen können. Wenn der Entwickler versucht, eine Zwischenablage mit einem bereits vorhandenen Namen zu erstellen, der nicht zur gleichen App-Suite gehört, erhält er eine eigene eindeutige und private Zwischenablage. Beachten Sie, dass sich dies nicht auf die vom System bereitgestellten Zwischenablagen, die allgemeinen und die Suche auswirkt.
+1. Apps werden mit demselben Apple-Verteilungsprofil oder Profilen veröffentlicht, die demselben Team angehören. Dies ist die einzige Möglichkeit für Apps, benutzerdefinierte Whiteboards auf iOS 7 und höher freizugeben. In allen anderen Szenarien ist die Zwischenablage je Anwendung mit Sandbox versehen. Von [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html): \+\[`UIPasteboard pasteboardWithName:create:\`] und +\[`UIPasteboard pasteboardWithUniqueName`\] gibt jetzt den angegebenen Namen eindeutig an, damit nur Apps in derselben Anwendungsgruppe auf die Whiteboard zugreifen können. Wenn der Entwickler versucht, eine Zwischenablage mit einem bereits vorhandenen Namen zu erstellen, der nicht zur gleichen App-Suite gehört, erhält er eine eigene eindeutige und private Zwischenablage. Beachten Sie, dass sich dies nicht auf die vom System bereitgestellten Zwischenablagen, die allgemeinen und die Suche auswirkt.
 
 1. Apps haben dasselbe Bundle-ID-Präfix (alle Komponenten außer der letzten). Nur Anwendungen, die dasselbe Bundle-ID-Präfix verwenden, berechnen denselben IDFV. Von [*https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice\_Class/index.html\#//apple\_ref/occ/instp/UIDevice/identifierForVendor*](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/identifierForVendor): In IOS 7 werden alle Komponenten des Bundles mit Ausnahme der letzten Komponente zum Generieren der Anbieter-ID verwendet. Wenn die Bundle-ID nur eine einzelne Komponente enthält, wird die gesamte Bundle-ID verwendet.
 
