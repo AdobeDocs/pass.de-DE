@@ -2,10 +2,10 @@
 title: Kostenlose Vorschau für den temporären Pass und den temporären Weiterleitungs-Pass
 description: Kostenlose Vorschau für den temporären Pass und den temporären Weiterleitungs-Pass
 exl-id: c584bf0c-15c4-4a4d-b6a2-8d15ee786fe3
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '406'
-ht-degree: 1%
+source-wordcount: '399'
+ht-degree: 0%
 
 ---
 
@@ -14,6 +14,10 @@ ht-degree: 1%
 >[!NOTE]
 >
 >Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+
+>[!NOTE]
+>
+> Die REST-API-Implementierung wird durch [Drosselmechanismus](/help/authentication/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 

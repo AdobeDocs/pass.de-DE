@@ -2,9 +2,9 @@
 title: REST API-Cookbook (Server-zu-Server)
 description: REST API-Cookbook-Server an den Server.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '1825'
+source-wordcount: '1847'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,9 @@ ht-degree: 0%
 
 In diesem Cookbook-Dokument werden Best Practices für die Implementierung der Adobe Pass-Authentifizierung unter Verwendung der Server-zu-Server-Architekturen beschrieben.  Es bietet grundlegende Anforderungen, eine schrittweise Flussimplementierung und allgemeine Überlegungen für Produktionsumgebungen und -vorgänge.
 
+### Drosselmechanismus
+
+Die Adobe Pass Authentication REST API wird von einer [Drosselmechanismus](/help/authentication/throttling-mechanism.md).
 
 
 ## Komponenten {#components}

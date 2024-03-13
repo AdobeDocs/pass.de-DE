@@ -2,9 +2,9 @@
 title: Benutzermetadaten
 description: Benutzermetadaten
 exl-id: 3d7b6429-972f-4ccb-80fd-a99870a02f65
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '485'
+source-wordcount: '495'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+
+>[!NOTE]
+>
+> Die REST-API-Implementierung wird durch [Drosselmechanismus](/help/authentication/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
