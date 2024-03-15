@@ -1,7 +1,7 @@
 ---
 title: Drosselmechanismus
 description: Erfahren Sie mehr über den in der Adobe Pass-Authentifizierung verwendeten Drosselmechanismus. Einen Überblick über diesen Mechanismus finden Sie auf dieser Seite.
-source-git-commit: 036fe2be0981e21e5b82022348cba03dca0b33d3
+source-git-commit: 4f81f39427d87e4274c27d8f1b4bd1eb366d9abb
 workflow-type: tm+mt
 source-wordcount: '987'
 ht-degree: 0%
@@ -34,8 +34,7 @@ Die Pass-Authentifizierung basiert auf der Benutzeridentifizierung und einem Tok
 
 ### Geräteidentifizierungsmechanismus
 
-Der vorgeschlagene Drosselmechanismus verwendet die identifizierten Geräte einzeln mithilfe des Headers &quot;X-Forwarded-For&quot;.
-Die Beschränkungen werden für jedes Gerät auf die gleiche Weise angewendet.
+Der vorgeschlagene Drosselmechanismus verwendet die identifizierten Geräte einzeln mithilfe des Headers &quot;X-Forwarded-For&quot;. Die Beschränkungen werden für jedes Gerät auf die gleiche Weise angewendet.
 
 ### Erforderliche Updates
 
@@ -45,8 +44,7 @@ Weitere Informationen dazu, wie Sie den Header &quot;X-Forwarded-For&quot;überg
 
 ### Tatsächliche Einschränkungen und Endpunkte
 
-Derzeit erlaubt das Standardlimit maximal 1 Anfrage pro Sekunde, mit einem anfänglichen Berst von 3 Anforderungen (einmalige Berücksichtigung der ersten Interaktion des identifizierten Clients, wodurch die Initialisierung erfolgreich abgeschlossen werden kann).
-Dies sollte sich nicht auf reguläre Geschäftsfälle für alle unsere Kunden auswirken.
+Derzeit erlaubt das Standardlimit maximal 1 Anfrage pro Sekunde, mit einem anfänglichen Berst von 3 Anforderungen (einmalige Berücksichtigung der ersten Interaktion des identifizierten Clients, wodurch die Initialisierung erfolgreich abgeschlossen werden kann). Dies sollte sich nicht auf reguläre Geschäftsfälle für alle unsere Kunden auswirken.
 
 Der Drosselmechanismus wird für die folgenden Endpunkte aktiviert:
 
