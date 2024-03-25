@@ -1,7 +1,7 @@
 ---
 title: Zugriff auf CMU-API
 description: Zugriff auf CMU-API
-source-git-commit: 30631ac006b7944cb2eb8996c2c165343b6be5fe
+source-git-commit: 598eb878168f6e352a8eae369cbc8cb833033328
 workflow-type: tm+mt
 source-wordcount: '407'
 ht-degree: 0%
@@ -16,8 +16,7 @@ ht-degree: 0%
 
 ## Übersicht über Zugriffsverfahren {#api-access-procedure-overview}
 
-Wir haben den Zugriff auf CMU-Berichte aktualisiert, um mit dem Dynamic Client Registration Protocol von OAuth 2.0 kompatibel zu sein.
-Ein benutzerdefinierter OAuth 2.0-Autorisierungsserver wird bereitgestellt, um die Anforderungen der Anwendung zur Überwachung der Parallelität zu erfüllen. \
+Wir haben den Zugriff auf CMU-Berichte aktualisiert, um mit dem Dynamic Client Registration Protocol von OAuth 2.0 kompatibel zu sein. Ein benutzerdefinierter OAuth 2.0-Autorisierungsserver wird bereitgestellt, um die Anforderungen der Anwendung zur Überwachung der Parallelität zu erfüllen. \
 Damit die Client-Anwendungen die OAuth 2.0-Autorisierung verwenden können, muss sich der Server dynamisch registrieren, um bestimmte Informationen (Client-Anmeldeinformationen) zu erhalten und damit mit ihnen interagieren zu können. Im Rahmen des Registrierungsprozesses muss der Client eine Reihe integrierter Metadaten für den Client-Registrierungs-Endpunkt bereitstellen.
 Diese Metadaten werden als Softwareanweisung übermittelt, die eine &quot;software_id&quot;enthält, damit unser Autorisierungsserver verschiedene Instanzen einer Anwendung mit derselben Softwareanweisung korrelieren kann.
 Eine Softwareanweisung ist ein JSON Web Token (JWT), das Metadatenwerte über die Client-Software als Bundle durchsetzt. Wenn die Software dem Autorisierungsserver als Teil einer Anfrage zur Clientregistrierung präsentiert wird, muss sie digital signiert oder mit JSON Web Signature (JWS) als MACed signiert werden. \
@@ -28,7 +27,7 @@ Führen Sie die Schritte in den folgenden Abschnitten aus, um Zugriff zu erhalte
 
 1. Sie benötigen eine registrierte Anwendung im Adobe Pass DCR-Server. Wenden Sie sich für diesen Schritt an unsere [Supportteam](mailto:tve-support@adobe.com).
 2. Softwareanweisung abrufen
-   1. Navigieren zum TVE-Dashboard <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pre-Prod </a> oder <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
+   1. Navigieren zum TVE-Dashboard <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pre-Prod </a>  oder <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
    2. Programmierer auswählen
    3. Registerkarte &quot;Anwendungen&quot;
    4. Anwendung auswählen
