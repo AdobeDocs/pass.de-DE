@@ -2,86 +2,90 @@
 title: Exportieren von Informationen zu Konten mit hoher Sharing-Punktzahl
 description: Exportieren Sie Informationen für Konten mit hoher Sharing-Punktzahl.
 exl-id: df41ddd2-fde3-4861-abd4-6e32f0be9ea5
-source-git-commit: d543bbe972944ad83f4cb28c8a17ea6e10f66975
+source-git-commit: 88b11527b2a432c2cd27bf9e29fd286969036eb0
 workflow-type: tm+mt
-source-wordcount: '697'
+source-wordcount: '676'
 ht-degree: 1%
 
 ---
 
 # Exportieren von Informationen zu Konten mit hoher Sharing-Punktzahl {#export-account-info-high-score}
 
-[!UICONTROL Account IQ] bietet Ihnen die Möglichkeit, Kontofreigabe-Details für die 1000 wichtigsten Abonnentenkonten basierend auf ihren [Freigabewahrscheinlichkeiten](/help/accountiq/product-concepts.md#account-sharing-probability-def). Die Daten in der exportierten CSV-Datei werden in der absteigenden Reihenfolge der Freigabewahrscheinlichkeiten der Abonnentenkonten - der ausgewählten MVPDs in der [Segment](/help/accountiq/product-concepts.md#segment-def)für [angegebener Zeitrahmen](/help/accountiq/product-concepts.md#time-frame-def).
+[!UICONTROL Account IQ] ermöglicht den Export von Details zur Kontofreigabe für Top-1000-Abonnentenkonten basierend auf deren [Freigabewahrscheinlichkeiten](/help/accountiq/product-concepts.md#account-sharing-probability-def). Sie können Informationen zur Kontofreigabe für die aktuelle [Segment](/help/accountiq/product-concepts.md#segment-def) und [angegebenes Zeitintervall](/help/accountiq/product-concepts.md#time-interval-def) auf [Berichte zu freigegebenen Konten](/help/accountiq/shared-acc-reports.md) Seite.
 
-Die Option zum Exportieren der Kontofreigabeinformationen finden Sie unter [Allgemeine Nutzungsberichte](/help/accountiq/general-usage-reports.md) und [Berichte zu freigegebenen Konten](/help/accountiq/shared-acc-reports.md) Seiten.
+Führen Sie die Schritte aus, um die Kontofreigabe-Informationen von Abonnentenkonten für ein bestimmtes Segment zu exportieren.
 
->[!NOTE]
->
->Die Zahlen in der heruntergeladenen CSV-Datei unterscheiden sich von den Seiten Allgemeine Nutzung und Gemeinsame Konten-Berichte . Dies liegt daran, dass die Seite Allgemeine Nutzungsberichte über zusätzliche Filter verfügt, mit denen die Programmierer Schwellenwerte für die Anzahl der Geräte, IPs und Postleitzahlen auswählen können. Daher basieren die aus den allgemeinen Nutzungsberichten exportierten Daten auf dem angewendeten zusätzlichen Schwellenwertfilter.
+1. Melden Sie sich mit Ihren Anmeldedaten an.
+1. Navigieren Sie zum **Freigegebene Konten** Registerkarte unter **Berichte** Abschnitt.
+1. Wählen Sie das erforderliche Segment und das erforderliche Zeitintervall aus dem Segment- und Zeitintervallbereich aus. Lernen [Auswählen eines Segments und eines Zeitintervalls](segments-timeinterval.md).
 
-![Exportoption in Allgemeine Verwendung](assets/export.png)
+   Falls erforderlich, lesen Sie die Anleitung für [Erstellen eines Segments](work-with-segments.md#create-new-segment) oder [Bearbeiten eines Segments](work-with-segments.md#edit-segment).
 
-So exportieren Sie die Informationen zur Kontofreigabe:
+1. Auswählen **[!UICONTROL Export top 1000 accounts]** befindet sich in der rechten oberen Ecke des Segment- und Zeitintervallbereichs.
 
-1. Definieren Sie ein gewünschtes Segment entsprechend den Schritten unter [Definieren von Segmenten und Auswählen von Zeitrahmen](/help/accountiq/howto-select-segment-timeframe.md) zur Bewertung von [Segment und Zeitrahmen](/help/accountiq/segments-timeframe.md) Bedienfeld.
+   ![Export der 1000 wichtigsten Konten](assets/export-top-1000-accounts.png)
 
-1. Wählen Sie die **[!UICONTROL Export top 1000 accounts]** Option zum Exportieren der Kontoinformationen für 1000 Abonnenten mit der höchsten Freigabewahrscheinlichkeit.
+   *Wählen Sie die Option Top 1000-Konten exportieren aus.*
 
-Wenn Sie die Exportoption verwenden, werden die Statistiken für 1000 Konten mit den höchsten Teilungswahrscheinlichkeiten (für einen bestimmten Zeitraum) in den Ordner Downloads Ihres lokalen Computers heruntergeladen.
+Die Datei wird automatisch als CSV-Datei auf Ihren lokalen Computer heruntergeladen.
 
->[!NOTE]
->
->Die heruntergeladene CSV-Datei kann mit jeder Anwendung geöffnet werden, die eine CSV-Datei liest, z. B. Microsoft Excel.
+Diese Datei enthält die Daten für die Top-1000-Konten basierend auf den Teilungswahrscheinlichkeiten der Abonnentenkonten im aktuellen Segment in absteigender Reihenfolge.
 
-![exportierte Daten im CSV-Format](assets/exported-csv.png)
+Im Folgenden finden Sie ein Beispiel für die exportierte .csv -Datei.
 
-*Abbildung: Exportierte freigegebene Kontodaten im CSV-Format*
+![exportierte Daten in .csv-Datei](assets/exported-csv.png)
+
+*Exportierte Daten in .csv-Datei*
 
 ## Spalten im exportierten Bericht {#columns-in-export}
 
-**Woche/ Monat**
+**Woche/Monat**
 
-Die Woche oder der Monat, die bzw. den Sie auf der **[!UICONTROL Granularity and Time Frame]** in der Segmentauswahl, für die die Freigabestatistiken gesucht werden.
+Die ausgewählte Woche oder der ausgewählte Monat innerhalb der **[!UICONTROL Granularity and Time Interval]** in der Segmentauswahl.
 
 **MVPD**
 
-Wenn Sie Programmierer sind, zeigt die Spalte an, zu welchem MVPD das Abonnentenkonto gehört.
+Wenn Sie Programmierer sind, zeigt die Spalte den Distributor an, mit dem das Konto angemeldet ist.
+
+>[!NOTE]
+>
+> Die **MVPD** -Spalte ist nur für TV-Überall-Versionen verfügbar.
 
 **Abonnenten-ID**
 
-Spezifisches Konto, über das wir in einer Reihe sprechen.
+Die eindeutige Kennung für das spezifische Konto.
 
 **Minimale Anzahl der Geräte**
 
-Die tatsächliche Anzahl der Geräte (die Stream-Inhalte) ist mit ziemlicher Sicherheit größer als die Mindestanzahl der Geräte, die für ein bestimmtes Konto angegeben sind.
+Die Mindestanzahl der Geräte, von denen Benutzer Inhalte aktiv streamen.
 
 >[!NOTE]
 >
->Die tatsächliche Anzahl der Geräte (diese Stream-Inhalte) ist mit Sicherheit größer als die Mindestanzahl der Geräte, die für ein bestimmtes Konto angegeben sind.
+>Die tatsächliche Anzahl der Geräte-Streaming-Inhalte übersteigt die für ein bestimmtes Konto angegebene Mindestanzahl von Geräten.
 
 **Mindestanzahl von Personen**
 
-Die absolute Mindestanzahl von Personen, die mit diesen Geräten aktive Streaming-Inhalte verwendet haben.
+Die Mindestanzahl von Einzelanwendern, die aktiv Inhalte mit diesen Geräten gestreamt.
 
 >[!NOTE]
 >
->Die tatsächliche Anzahl der Personen (dieser Stream-Inhalt) ist fast sicher viel größer als die Mindestanzahl der Personen, die für ein bestimmtes Konto angegeben sind.
+>Die tatsächliche Anzahl der Einzelanwender, die Streaming-Inhalte nutzen, übersteigt die Mindestanzahl der Personen, die einem bestimmten Konto zugewiesen sind.
 
 **[!UICONTROL # IPs]**
 
-Anzahl der IP-Adressen, von denen Inhalte gestreamt werden.
+Die Anzahl der IP-Adressen, von denen Inhalte gestreamt werden.
 
 **[!UICONTROL # Locations]**
 
-Anzahl der Speicherorte (basierend auf der Postleitzahl), von denen der Inhalt gestreamt wird.
+Die Anzahl der Speicherorte (basierend auf der Postleitzahl), von denen der Inhalt gestreamt wird.
 
 **[!UICONTROL # Cities]**
 
-Anzahl der Städte, in denen das Streaming stattgefunden hat.
+Die Anzahl der Städte, in denen die Streaming-Aktivität stattgefunden hat.
 
 **[!UICONTROL # States]**
 
-Anzahl der Staaten, in denen das Streaming stattgefunden hat.
+Die Anzahl der Status, in denen die Streaming-Aktivität stattgefunden hat.
 
 **[!UICONTROL # Clusters]**
 
@@ -93,46 +97,113 @@ Der maximale Abstand zwischen den Streaming-Speicherorten, die mit dem Konto ver
 
 **[!UICONTROL # AuthN OK]**
 
-Die Häufigkeit, mit der sich die Benutzer während des Zeitraums mit diesem Konto angemeldet haben.
+Die Anzahl der Anmeldungen, die Benutzer während des angegebenen Zeitraums mit diesem Konto vornehmen.
+
+>[!NOTE]
+>
+> Einige D2C-Dienste werden nicht angezeigt **[!UICONTROL # AuthN OK]** Daten, da sie möglicherweise nicht in den Daten ihres Unternehmens enthalten sind.
 
 **[!UICONTROL # AuthZ OK]**
 
-Gibt an, wie oft ein MVPD einen Stream autorisiert oder Zugriff (auf Inhalte) auf dieses Konto gewährt hat.
+Die Häufigkeit, mit der ein MVPD einen Stream autorisiert oder den Zugriff auf Inhalte für dieses Konto gewährt hat.
 
 >[!NOTE]
 >
->Die **[!UICONTROL # AuthZ OK]** ist mit dem **[!UICONTROL # Play Requests]**; sie ist kleiner als die **[!UICONTROL # Play Requests]** weil Adobe die Berechtigungen, die für MVPDs kommen, in der Regel 24 Stunden lang zwischenspeichert.
+>**[!UICONTROL # AuthZ OK]** ist nicht für D2C-Dienste verfügbar.
+
+>[!NOTE]
+>
+>TV-überall: **[!UICONTROL # AuthZ OK]** ist mit der Anzahl der **[# Abspielanforderungen](/help/accountiq/product-concepts.md##play-requests-def)**. Sie wird immer kleiner sein als **[!UICONTROL # Play Requests]** weil Adobe die Berechtigungen von MVPDs normalerweise ca. 24 Stunden lang zwischenspeichert.
+
 
 **[!UICONTROL # Play Requests]**
 
-Die tatsächliche Anzahl der Streams während des Zeitraums.
+Die tatsächliche Anzahl der Streams in einem bestimmten Zeitraum.
+
+>[!NOTE]
+>
+>Die [# Abspielanforderungen](/help/accountiq/product-concepts.md##play-requests-def) -Spalte ist nicht in TV Anywhere MVPD-Version verfügbar.
 
 **[!UICONTROL # Channels]**
 
-Gesamtzahl der verschiedenen Kanäle, die das Konto im Zeitraum angesehen hat.
+Die Gesamtanzahl der Kanäle, die das Konto während eines bestimmten Zeitraums gesehen hat.
 
 >[!NOTE]
 >
->**[!UICONTROL # Channels]** enthält die Kanäle, die nicht notwendigerweise zum angemeldeten Programmierer gehörten.
+> Für D2C-Dienste **[!UICONTROL # Channels]** entspricht der Zahl der **[!UICONTROL # Video categories]**.
+
+>[!NOTE]
 >
->Diese Nummer für das Konto wurde angezeigt, weil das Konto Ihren Kanal angesehen hat, aber während dieses Zeitraums auch auf andere Kanäle zugegriffen hat.
+>Für TV Anywhere enthalten sie die Kanäle, die möglicherweise nicht zum angemeldeten Programmierer gehören. Diese Kontonummer enthält Ihren Kanal und andere Kanäle, auf die während des angegebenen Zeitraums zugegriffen wurde.
+
 
 **Nutzungsmuster**
 
-Die Zahlen in dieser Spalte sind Kennungen, die einem der 14 Muster zugeordnet sind, als die wir alle Benutzerkonten identifizieren.
+Die Werte in diesen Spalten dienen als Bezeichner für eines der 14 Muster, die wir zur Kategorisierung aller Benutzerkonten verwenden.
 
-*Tabelle: Nutzungsmuster-IDs in exportierter CSV-Zuordnung mit Nutzungsmustern*
+<table>
+    <tbody>
+      <tr>
+        <th style="width:10%">ID</th>
+        <th style="width:30%">Nutzungsmuster</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Regulärer Benutzer</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Reisende oder Pendler</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Großfamilie</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Enge Familie und Freunde</td>
+      </tr>
+      </tr>
+         <td>5 und 8</td>
+         <td>Social-Gruppenfreigabe</td>
+      </tr>
+      </tr>
+         <td>6</td>
+         <td>Große Gruppe von Freunden</td>
+      </tr>
+      </tr>
+         <td>7</td>
+         <td>Gleichzeitiges Streaming</td>
+      </tr>
+      </tr>
+         <td>9</td>
+         <td>Community-Freigabe</td>
+      </tr>
+      </tr>
+         <td>10 und 11</td>
+         <td>Unsicheres Verhalten</td>
+      </tr>
+      </tr>
+         <td>12</td>
+         <td>Kleine Familie</td>
+      </tr>
+      </tr>
+         <td>13</td>
+         <td>Zweites Heim </td>
+      </tr>
+      </tr>
+         <td>14</td>
+         <td>Anormale Verwendung</td>
+      </tr>
+    </tbody>
+  </table>
 
-| ID | 1 | 2 | 3 | 4 | 5 und 8 | 6 | 7 | 9 | 10 und 11 | 12 | 13 | 14 |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Nutzungsmuster | Regulärer Benutzer | Reisende oder Pendler | Großfamilie | Enge Familie und Freunde | Social-Gruppenfreigabe | Große Gruppe von Freunden | Gleichzeitiges Streaming | Community-Freigabe | Unsicheres Verhalten | Kleine Familie | Zweites Heim | Ungewöhnliche Nutzung |
-
-{style="table-layout:auto"}
+*Nutzungsmuster-IDs in der exportierten .csv-Zuordnung mit Nutzungsmustern*
 
 **Freigabewahrscheinlichkeit**
 
-Die Freigabewahrscheinlichkeit ist die Wahrscheinlichkeit, mit der das spezifische Konto seine Anmeldeinformationen teilt.
+Die Wahrscheinlichkeit, dass ein bestimmtes Konto seine Anmeldeinformationen teilt.
 
 >[!NOTE]
 >
-> Die durchschnittliche Freigabewahrscheinlichkeit aller Konten (im ausgewählten Segment) wird zur Berechnung der [Freigabestufe](/help/accountiq/dashboard.md#sharing-level) des [Aggregierte Teilungsbewertung](/help/accountiq/dashboard.md#aggregated-sharing).
+> Die durchschnittliche Freigabewahrscheinlichkeit aller Konten im ausgewählten Segment wird zur Berechnung der [Freigabestufe](/help/accountiq/data-panels.md#sharing-level) des [durchschnittliche Teilungsbewertung](/help/accountiq/data-panels.md#aggregated-sharing).

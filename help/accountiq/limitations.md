@@ -1,42 +1,35 @@
 ---
-title: Einschränkungen und bekannte Probleme
-description: Bekannte Probleme im Produkt.
+title: Einschränkungen
+description: Erfahren Sie mehr über Einschränkungen und den Isolationsmodus MVPD für Programmierer in Konto IQ.
 exl-id: 08d65716-8b6a-4300-acda-fec63e1e6815
-source-git-commit: 2ced89dc1f77d2c090b599c40e778f3054f1a8dd
+source-git-commit: 791d661e1495bdb6fe4eb25efbefeecd813f0f3a
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '273'
 ht-degree: 0%
 
 ---
 
-# Bekannte Probleme und Einschränkungen {#known-issues}
+# Einschränkungen {#limitations}
 
-Adobe bemüht sich durch seine Angebote um robuste Funktionen und nahtlose Benutzererlebnisse. Die aktuelle Version (Version 1.0) von Account IQ bietet Streaming-Anbietern mit hoher Konfidenz Analysen zur Nutzung und Abonnementfreigabe. Die folgenden Einschränkungen werden jedoch in den kommenden Versionen behoben.
+Die D2C- und TV-Überall-Versionen von Account IQ bieten Streaming-Anbietern Analysen zur Nutzung und zum Teilen von Abonnements. Die aktuelle Version 1.3 weist jedoch einige Einschränkungen auf, die in zukünftigen Versionen behoben werden.
 
-* Bei der Definition von Kohorten auf den Dashboard- oder Berichtsseiten gibt es derzeit keine Option zum Hinzufügen von Metriken wie **Anzahl der Geräte** , um das Segment zu verfeinern. Diese Funktion wird in einer zukünftigen Version verfügbar sein.
+* Die [Gesamte Teilungsbewertung](/help/accountiq/data-panels.md#overall-sharing-score) derzeit beinhaltet [Freigabestufe](/help/accountiq/data-panels.md#sharing-level) und [Nutzung durch freigegebene Konten](/help/accountiq/data-panels.md#usage-from-shared-accounts). Zukünftige Versionen werden weitere Metriken enthalten.
 
-* Bei der Schätzung der Teilungsbewertungen für einzelne Konten verfolgt Konto IQ einen konservativen Ansatz, der es Unternehmen ermöglicht, mit großem Vertrauen auf die Freigabe zu reagieren. Dieser Ansatz tendiert jedoch dazu, den Gesamtbetrag der Freigabe zu unterschätzen, wenn er über viele Konten hinweg aggregiert wird.
+* Beim Definieren von Segmenten im Dashboard oder bei Nutzungsmustern wird die [Videokategorien im Segment](/help/accountiq/data-panels.md#video-categories-segment), [Teilungsbewertung nach Kanälen und MVPDs](/help/accountiq/data-panels.md#sharin-score-by-channels-and-mvpds), und [Verteilung der Nutzungsmuster für Videokategorien](/help/accountiq/usage-patterns.md#usage-pattern-dis-video-categories) -Berichte können nur Daten für bis zu 20 anzeigen [Videokategorien](product-concepts.md#video-category-def). Segmente mit mehr als 20 Videokategorien zeigen in diesen Berichten keine Daten an.
 
-* Die [Sharing-Gesamtbewertung](/help/accountiq/dashboard.md#overall-sharing-score) derzeit nur Faktoren in [Sharing Level](/help/accountiq/dashboard.md#sharing-level) und [Verwendung von freigegebenen Konten](/help/accountiq/dashboard.md#usage-from-shared-accounts). Zukünftige Versionen werden zusätzliche Metriken berücksichtigen.
+* Derzeit ist die Option, Kontostatistiken zu exportieren, auf den Export von 1000 Konten beschränkt.
 
-* Bei der Definition von Kohorten auf den Dashboard- oder Berichtsseiten fehlt den Selektoren für MVPDs und Kanäle ab sofort der Suchmechanismus.
+* Bei der Definition von Vorgängen wird die Option zur Auswahl [Segmenttyp](/help/accountiq/operations.md#segment) beschränkt auf **Feste Anzahl von Konten**. Die **Variablenanzahl Konten** in künftigen Versionen verfügbar sein.
 
-* Bei der Definition von Kohorten auf den Dashboard- oder Berichtsseiten besteht eine Beschränkung, um nur bis zu 10 MVPDs und Programmierer (oder einzelne Kanäle) auszuwählen.
+* Die **Benchmarking**, **Erkennungsmodelle**, **Aktionen**, und **Einstellungen** -Abschnitte im linken Navigationsbereich sind derzeit deaktiviert und werden in einer zukünftigen Version verfügbar sein.
 
-* Die Option, Kontostatistiken zu exportieren, ist ab sofort auf den Export von 1000 Konten beschränkt.
+* Beim Erstellen von Vorgängen können Sie nur zwei Arten von [Aktionen](/help/accountiq/operations.md#action) — Regeln zur Überwachung der Parallelität und externe Maßnahmen.
 
-* Die ausgewählte Option [Segmenttyp](#segment-type) bei der Definition von Vorgängen auf **Feste Anzahl von Konten**. Die **Variablenanzahl Konten** in einer kommenden Version verfügbar sein.
+* Derzeit können Sie [erstellen](/help/accountiq/operations.md#create-new-operation) und [Zeitplan](/help/accountiq/operations.md#schedule) Vorgänge. Zukünftige Versionen werden es Ihnen ermöglichen, sie anzuhalten, wieder aufzunehmen und vollständig zu verwalten.
 
-* Die Abschnitte &quot;Benchmarking&quot;, &quot;Detection Models&quot;, &quot;Segmente&quot;, &quot;Snapshots&quot;und &quot;Regeln&quot;im linken Navigationsbereich sind derzeit deaktiviert und werden in einer kommenden Version verfügbar sein.
+* Bei der Auswahl von Granularität und Zeitintervall können Sie Daten nur für eine Woche oder einen Monat gleichzeitig analysieren.
 
-* Beim Erstellen [Aktivitäten](/help/accountiq/operation-affecting-user-segment.md), können Sie nur zwei Arten von [Aktionen](/help/accountiq/operation-affecting-user-segment.md) ab sofort — Regeln zur Überwachung der Parallelität und externe Maßnahmen.
+* Sie können der Segmentdefinition keine Isolationsmodus-MVPDs mit anderen MVPDs hinzufügen. Einige MVPDs identifizieren Abonnenten nicht eindeutig über mehrere Programmierkanäle hinweg. Daher werden diese MVPDs getrennt für TV-Programmierer behandelt.
 
-* Derzeit können Vorgänge nur erstellt und [terminiert](/help/accountiq/operation-affecting-user-segment.md#action). Zukünftige Versionen ermöglichen es Ihnen, sie anzuhalten, fortzusetzen und vollständig zu verwalten.
 
-* Aufgrund der eingeschränkteren Menge der verwendeten Daten spiegelt der Isolationsmodus nicht wirklich die Menge der Freigabe wider. Daher kann MVPD im Isolationsmodus nicht mit einem anderen MVPD verglichen werden. <!--do we need to separate out this limitation, which is from a different persona i.e. only for Programmer persona?-->
 
-* Wenn Sie eine neue [Segment](/help/accountiq/segments-timeframe.md) für einen Vorgang können Sie Metriken hinzufügen. Wenn Sie jedoch ein gespeichertes Segment auswählen, können Sie keine weiteren Metriken hinzufügen, um das Segment zu verfeinern.
-
-* Die Granularität und die Zeitrahmen-Auswahl ist auf eine Woche oder einen Monat beschränkt, was bedeutet, dass Daten nur für eine Woche oder einen Monat ausgewertet werden können.
-
-* Vordefinierte Intervalle sind derzeit in der Granularität und der Zeitrahmen-Auswahl deaktiviert und werden in einer zukünftigen Version verfügbar sein.

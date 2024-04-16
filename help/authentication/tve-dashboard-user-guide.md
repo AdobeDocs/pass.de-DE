@@ -2,9 +2,9 @@
 title: Primetime TVE Dashboard-Benutzerhandbuch
 description: Primetime TVE Dashboard-Benutzerhandbuch
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: c6afb9b080ffe36344d7a3d658450e9be767be61
 workflow-type: tm+mt
-source-wordcount: '4386'
+source-wordcount: '4377'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,7 @@ Um zwischen Umgebungen zu wechseln, kann der Benutzer auf die gewünschte Umgebu
 *Abbildung 2: Dropdown-Liste der Adobe Pass TVE-Dashboard-Umgebungen*
 
 >[!IMPORTANT]
+>
 >Es ist sehr wichtig zu beachten, dass wir Ihnen bei administrativen Änderungen an Ihrer Adobe Pass-Authentifizierungskonfiguration über das TVE-Dashboard dringend empfehlen, die unten stehende Reihenfolge zu befolgen, um eine ordnungsgemäße Funktion sicherzustellen.
 
 So nehmen Sie über das TVE-Dashboard Verwaltungsänderungen an Ihrer Adobe Pass-Authentifizierungskonfiguration vor:
@@ -69,6 +70,7 @@ So nehmen Sie über das TVE-Dashboard Verwaltungsänderungen an Ihrer Adobe Pass
 * Führen Sie die Änderungen unter [Versionsverwaltung und Validierung](http://sp.auth-staging.adobe.com/apitest/api.html).
 
 >[!IMPORTANT]
+>
 >Damit die Verwaltungsänderungen in Kraft treten können, müssen Benutzer zum Abschnitt &quot;Änderungen überprüfen und push-Benachrichtigungen&quot;navigieren, indem sie die Schaltfläche auswählen, die unten links in der Seitenleiste angezeigt wird. Damit sie die Änderungen überprüfen können, fügen Sie eine Beschreibung für die neu erstellten Änderungen hinzu und bestätigen Sie die Konfigurationsaktualisierung durch Auswahl der Option &quot;Push-Konfiguration&quot;.
 
 ![Überprüfung einer Push-Benachrichtigung durch das Dashboard](assets/tve-review-push-notifications.png)

@@ -1,10 +1,10 @@
 ---
-title: Häufig gestellte Fragen zu Konto-IQs
+title: Häufig gestellte Fragen zu Konto-IQ
 description: Antworten auf häufig gestellte Kundenfragen.
 exl-id: d6e11fc9-0d14-46d8-9a85-f1006ac81fb1
-source-git-commit: ffc7caa9a857a60380d15f69abf346718de6fa4c
+source-git-commit: cfcaa00ab05c99a64bcb0edfe5af60845a6769a9
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '587'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 1. Wer ist [!UICONTROL Account IQ] für entwickelt?
 
-   **Antwort.** [!UICONTROL Account IQ] entwickelt wurde, um Programmierer, MVPDs und D2C-Dienste zu bedienen, es gibt jedoch geringfügige Unterschiede zwischen diesen Versionen. Es gibt Einschränkungen und Einschränkungen dafür, welche Daten den einzelnen Gruppen angezeigt werden können.
+   **Antwort.** [!UICONTROL Account IQ] ist für D2C-Dienste und TV Anywhere Programmierer und MVPDs entwickelt. Es gibt jedoch geringfügige Unterschiede zwischen diesen Versionen. Es gibt Einschränkungen und Einschränkungen dafür, welche Daten den einzelnen Gruppen angezeigt werden können.
 
 1. Wie weit gehen die Daten zurück?
 
@@ -25,23 +25,23 @@ ht-degree: 0%
 
 1. Ist es möglich, die Testkonten herauszufiltern?
 
-   **Antwort.** Die Funktion zum Filtern der Testkonten ist in dieser Version nicht verfügbar, die Funktion wird jedoch in einer zukünftigen Version verfügbar sein.
+   **Antwort.** Die Funktion zum Filtern der Testkonten ist derzeit nicht verfügbar, die Funktion wird jedoch in einer zukünftigen Version verfügbar sein.
 
-1. Kann ich die Kontofreigabe für jeden meiner Kanäle sehen? <!--shall we separate out this question for the persona of programmer?-->
+1. Kann ich die Kontofreigabe für verschiedene Videokategorien sehen?
 
-   **Antwort.** Ja, Sie können die Kontofreigabe für einzelne Kanäle, eine Gruppe von Kanälen oder ganze Netzwerke (z. B. Programmierer) sehen.
+   **Antwort.** Ja, Sie können die Kontofreigabe für eine bestimmte Kategorie oder eine Gruppe von Kategorien sehen. Beispiel: ein D2C-Service-Set aus Regionen oder eine TV-überall-Sammlung von Kanälen.
 
 1. Welche Datenquelle wird verwendet, um die Freigabe von Anmeldedaten zu identifizieren?
 
-   **Antwort.** Der Dienst untersucht die gesamte Abonnenten-Streaming-Aktivität und verbessert sie durch proprietäre Datenquellen. Für TV Anywhere umfasst dies alle Transaktionen zwischen Programmierern und MVPDs. Von dort werden Analysedaten auf höherer Ebene zu Kontofreigabebewertungen synthetisiert.
+   **Antwort.** Der Dienst untersucht die gesamte Abonnenten-Streaming-Aktivität und verbessert sie durch proprietäre Datenquellen. Bei D2C-Diensten stammt die Aktivität des Abonnenten normalerweise von Repositorys wie Adobe Analytics oder Data Warehouse von Drittanbietern. Für TV Anywhere umfasst dies alle Transaktionen zwischen Programmierern und MVPDs, die von Adobe Pass verarbeitet werden.
 
-1. Wie hoch ist der Branchendurchschnitt?
+1. Was ist der Service- oder Branchendurchschnitt?
 
-   **Antwort.** Der Branchendurchschnitt spiegelt sich in den drei primären Teilungsindikatoren wider: Teilungsstufe, Nutzung über freigegebene Konten und Gesamtwert der Freigabe. Diese Werte stellen die Durchschnittswerte aller Abonnenten für alle Dienste dar.
+   **Antwort.** Bei D2C-Diensten spiegelt der Dienst die Basisaktivität über alle Konten hinweg wider. Für TV Überall spiegelt der Branchendurchschnitt die Gesamtsumme für alle Programmierer und MVPDs wider. In beiden Fällen werden diese Werte in den primären Freigabeindikatoren angezeigt: Freigabestufe, Nutzung über freigegebene Konten und Gesamtwert der Freigabe.
 
 1. Ist AccountIQ ein Durchsetzungstool? Wenn nicht, wie verwenden wir es, um die Freigabe zu beenden?
 
-   **Antwort.** AIQ verwendet leistungsstarke Analysen, um Erkenntnisse zu gewinnen. Diese Einblicke können jedoch unbegrenzte Aktionen durch Integrationen mit Adobe-Produkten, wie z. B. der Überwachung der Parallelität, oder Ihren Enterprise-Tools ermöglichen.
+   **Antwort.** Konto-IQ verwendet leistungsstarke Analysen, um Einblicke zu bieten. Diese Einblicke können jedoch unbegrenzte Aktionen durch Integrationen mit Adobe-Produkten, wie z. B. der Überwachung der Parallelität, oder Ihren Enterprise-Tools ermöglichen.
 
 1. Wie wirksam ist die gleichzeitige Überwachung bei der Eindämmung der Teilhabe an der Industrie?
 
@@ -57,11 +57,11 @@ ht-degree: 0%
 
 1. Wie kann ich die durch [!UICONTROL Account IQ]?
 
-   **Antwort.** Das Ausmaß und die Art der Freigabe zu verstehen ist der erste Schritt in unseren empfohlenen Best Practices. Die Durchführung gezielter Aktionen mit bestimmten Konten wie Upselling oder Beschränkung von Streams ist der Schritt. Die vollständige Empfehlung besteht darin, klein zu beginnen, die Ergebnisse der Aktion zu messen und den Prozess zu verfeinern und zu skalieren.
+   **Antwort.** Das Ausmaß und die Art der Freigabe zu verstehen ist der erste Schritt in unseren empfohlenen Best Practices. Die Durchführung gezielter Aktionen mit bestimmten Konten wie dem Hochladen oder Beschränken von Streams ist der zweite Schritt. Die vollständige Empfehlung besteht darin, klein zu beginnen, die Ergebnisse der Aktion zu messen und den Prozess zu verfeinern und zu skalieren.
 
 1. Müssen wir mit internen Technologiegruppen und Vertriebspartnern zusammenarbeiten, um Maßnahmen wie Smart CM (Concurrency Monitoring) umzusetzen?
 
-   **Antwort.** Nicht unbedingt. [!DNL Adobe Pass] Der Support kann daran arbeiten, Ihre eigenen CM-Regeln basierend auf Ihren AIQ-Daten zu erstellen.
+   **Antwort.** Nicht unbedingt. [!DNL Adobe Pass] Der Support kann daran arbeiten, Ihre eigenen CM-Regeln basierend auf Ihren Konto-IQ-Daten zu erstellen.
 
 1. Kann ich sehen, wie sich Segmente im Zeitverlauf entwickeln?
 

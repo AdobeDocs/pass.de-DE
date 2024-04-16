@@ -1,51 +1,66 @@
 ---
-title: Anzeigen von Berichten im Isolationsmodus
-description: Anzeigen von Berichten im Isolationsmodus für Xfinity
-exl-id: e7cf24c5-9bfa-48f6-b5c8-20443a976891
-source-git-commit: d543bbe972944ad83f4cb28c8a17ea6e10f66975
+title: MVPDs im Isolationsmodus
+description: Erfahren Sie mehr über den Isolationsmodus-MVPDs für TV-Programmierer überall
+source-git-commit: 5639319ce8915f0c33d927ca9554c405b3b2e87d
 workflow-type: tm+mt
-source-wordcount: '459'
+source-wordcount: '502'
 ht-degree: 0%
 
 ---
 
-# Anzeigen von Berichten im Isolationsmodus {#report-isolation-mode}
 
-Im Isolationsmodus identifizieren MVPDs (z. B. Xfinity) Abonnenten systematisch geräteübergreifend, identifizieren ihre Abonnenten jedoch unterschiedlich, basierend auf den Programmierern, mit denen sie interagieren. Im Standardmodus identifizieren MVPDs Abonnenten konsistent geräteübergreifend, unabhängig von den Programmierern.
+# Isolationsmodus-MVPDs für TV-Programmierer überall {#isolation-mode-tve}
 
-Wenn beispielsweise in der folgenden Abbildung ein Abonnent B eines Isolationsmodus-MVPD (z. B. Xfinity) auf den Inhalt zugreift, der von zwei verschiedenen Programmierern mit demselben Gerät bereitgestellt wird, ordnet der MVPD unterschiedliche Kennungen den beiden verschiedenen Zugriffsversuchen zu. Für diese Programmierer (L und M in der Abbildung) und für Konto IQ scheint es, dass es zwei verschiedene Abonnenten gibt, die auf den Inhalt zugreifen. Wenn jedoch bei Standard-MVPD Abonnenten B auf Inhalte zugreift, die von zwei verschiedenen Programmierern bereitgestellt werden, verknüpft der MVPD eine einzige Zugriffskennung für beide Zugriffsversuche. MVPDs (z. B. Xfinity) im Isolationsmodus identifizieren einen Abonnenten nicht konsistent, selbst wenn der Abonnent dasselbe Gerät über verschiedene Programmierer hinweg verwendet.
+>[!IMPORTANT]
+>
+> Die Beschränkung des Isolationsmodus-MVPDs gilt nur für TV-Programmierer überall.
+
+Im Isolationsmodus identifizieren MVPDs (z. B. Xfinity) Abonnenten über Geräte hinweg auf der Grundlage ihrer Interaktionen mit bestimmten Programmierern. Im Standardmodus identifizieren MVPDs Abonnenten konsistent geräteübergreifend, unabhängig von den beteiligten Programmierern.
+
+Im Folgenden finden Sie ein Beispiel:
 
 ![](assets/isolation-diff-new.png)
 
-*Abbildung: Isolationsmodus MVPD identifiziert vier verschiedene Abonnenten anstelle von zwei*
+*Isolationsmodus-MVPDs identifizieren vier verschiedene Abonnenten anstelle von zwei*
 
-Um die Datenverzerrung zu verwalten (da derselbe Abonnent aufgrund des Zugriffs auf verschiedene Programmierer als unterschiedlich identifiziert wird), beschränkt der Isolationsmodus die über einen Programmierer berichtete Aktivität auf die Aktivität nur in den Anwendungen dieses Programmierers. Beispielsweise sieht Programmierer für den Isolationsmodus im obigen Bild Daten nur basierend auf der Aktivität von Identitäten W und Y, wobei Identitäten X und Z ignoriert werden.
+* Wenn ein Abonnent B eines Isolationsmodus-MVPD (z. B. Xfinity) auf den Inhalt zugreift, der von zwei verschiedenen Programmierern mit demselben Gerät bereitgestellt wird, ordnet der MVPD den beiden unterschiedlichen Zugriffsversuchen unterschiedliche Kennungen zu. Es scheint, dass zwei verschiedene Abonnenten auf den Inhalt für die Programmierer zugreifen (L und M in der Abbildung).
+
+* Wenn Abonnent B bei Standard-MVPDs auf Inhalte zugreift, die von zwei verschiedenen Programmierern bereitgestellt werden, verknüpft der MVPD eine einzige Zugriffskennung für beide Zugriffsversuche.
+
+* MVPDs (z. B. Xfinity) im Isolationsmodus identifizieren einen Abonnenten nicht konsistent, selbst wenn der Abonnent dasselbe Gerät über verschiedene Programmierer hinweg verwendet.
+
+Um Datenverzerrungen zu verhindern, die durch die Zählung eines einzelnen Abonnenten als mehrere Abonnenten aufgrund des Zugriffs auf verschiedene Programmierer verursacht werden, beschränkt der Isolationsmodus die gemeldete Aktivität eines Programmierers auf nur seine Anwendungen.
+
+Beispielsweise kann Programmierer L Daten nur basierend auf der Aktivität von Identitäten W und Y anzeigen, wobei Identitäten X und Z im vorherigen Bild ignoriert werden.
 
 >[!IMPORTANT]
 >
 > Der Nachteil ist, dass Programmierer L aufgrund von Aktivitäten mit anderen Programmierern als L keine Informationen über Abonnenten A und B weitergeben kann.
 
-Im Isolationsmodus werden alle Berechnungen zum Abrufen der Sharing-Werte und aller zugehörigen Metriken nur mithilfe der Aktivität des Geräte-Streaming aus Anwendungen durchgeführt, die zum ausgewählten Programmierer und zu Kanälen gehören.
-Die Bewertungen und Wahrscheinlichkeiten der Freigabe werden nur anhand des Streams berechnet, der von den aktuell ausgewählten Kanälen aus beginnt.
+Im Isolationsmodus werden die Bewertungen und zugehörigen Metriken für die Freigabe ausschließlich aus der Aktivität von Geräten berechnet, die aus den Anwendungen des ausgewählten Programmierers und Kanals gestreamt werden. Die Freigabewerte und -wahrscheinlichkeiten werden anhand der Stream-Starts auf den aktuell ausgewählten Kanälen berechnet.
 
-So zeigen Sie Metriken im Isolationsmodus an:
+Das System arbeitet automatisch im Isolationsmodus, wenn das ausgewählte Segment einen Isolationsmodus-MVPD enthält, der einzelne Abonnenten beim Streaming von verschiedenen Programmierern als mehrere Abonnenten identifiziert. Alle Diagramme für diese Segmente spiegeln die Ergebnisse dieses geänderten Verhaltens wider.
 
-1. Auswählen **[!UICONTROL isolation mode]** aus dem **[!UICONTROL MVPDs in segment]** Dropdown-Option und wählen Sie **[!UICONTROL Apply Selection]**.
+>[!IMPORTANT]
+>
+> Das Verhalten im Isolationsmodus ist mit dem Standardmodus inkompatibel, der Isolationsmodus MVPD kann nicht mit anderen MVPDs gemischt werden und umgekehrt.
 
-   ![](assets/xfinity-in-segment.gif)
+Um ein Segment zu erstellen, das im Isolationsmodus analysiert wird, ziehen Sie den Isolationsmodus MVPD, z. B. **Xfinity**, zum Abschnitt MVPDs der Segmentdefinition.
 
-   *Abbildung: MVPD-Auswahl im Isolationsmodus*
+>[!NOTE]
+>
+> Da Isolationsmodus-MVPDs nicht mit anderen MVPDs gemischt werden können, lässt der MVPD-Abschnitt der Segmentdefinition nicht zu, dass ein anderer MVPD dorthin gezogen wird.
 
-1. Wählen Sie die gewünschten Kanäle aus dem **[!UICONTROL Channels in segment]** Dropdown-Option und wählen Sie **[!UICONTROL Apply Selection]**.
+![](assets/xfinity-in-segment.png)
 
-   Wählen Sie außerdem eine [Zeitrahmen](/help/accountiq/product-concepts.md#granularity-def).
+*Xfinity-Auswahl im Isolationsmodus*
 
-   >[!IMPORTANT]
-   >
-   >Da die Kontofreigabe bei der Messung für das Streaming über alle Programme von Programmierern relevanter ist, werden im Isolationsmodus niedrigere Sharing-Werte und einige Abweichungen in den Metriken angezeigt.
+>[!IMPORTANT]
+>
+> Die Kontofreigabe ist relevanter, wenn sie für das Streaming über alle Programme des Programmierers hinweg gemessen wird. Niedriger erwarten **Freigabe von Werten** und einige Varianten der Metriken im Isolationsmodus.
 
-   ![](assets/aggregate-sharing-isolation.png)
+![](assets/aggregate-sharing-isolation.png)
 
-   *Abbildung: Freigeben von Wahrscheinlichkeitsmesswerten im Isolationsmodus*
+*Freigeben von Wahrscheinlichkeitsmesswerten im Isolationsmodus*
 
-   Beachten Sie, dass die oben genannten Kennzahlen zeigen, dass nur 6 % aller Konten freigegeben werden und dass nur 8 % des Inhalts von diesen 8 % genutzt werden. Die Kanäle können also ihre Punktzahl im Isolationsmodus mit der anderer MVPDs vergleichen. Daher sollten die Informationen, die mit dem Isolationsmodus abgerufen werden, anders interpretiert werden als die anderen Daten.
+Die obigen Kennzahlen zeigen, dass nur 9 % aller Konten geteilt werden und von diesen nur 11 % des Inhalts verbraucht werden. Aufgrund der natürlich niedrigeren Werte sollten die Ergebnisse im Isolationsmodus anders interpretiert werden als die Ergebnisse im Standardmodus.

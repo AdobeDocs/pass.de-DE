@@ -2,9 +2,9 @@
 title: Weiterleitungs-Temp-Pass
 description: Weiterleitungs-Temp-Pass
 exl-id: 705c1ba9-0430-4e3b-add1-d9e4da3f82d1
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: c88fba76b1805dd88fccb68b13bde11b1b8ea181
 workflow-type: tm+mt
-source-wordcount: '1529'
+source-wordcount: '1510'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ Basierend auf der Geräte-ID und den vom Benutzer angegebenen Informationen und 
 
 * Vom Benutzer bereitgestellter Informationsschlüssel (z. B. E-Mail)
 * Anzahl der Ressourcen, zu deren Nutzung der Benutzer berechtigt ist
-* TTL - der Zeitraum, in dem der Benutzer berechtigt ist, die konfigurierte Anzahl von Ressourcen zu nutzen
+* TTL - das Zeitintervall, in dem der Benutzer berechtigt ist, die konfigurierte Anzahl von Ressourcen zu nutzen
 
 ### Benutzermetadaten {#user-metadata}
 
@@ -74,7 +74,7 @@ Um die Umsetzung der Programmanwendung zu erleichtern, gehen Sie wie folgt vor: 
 
 ### Wie wird die Anzeigezeit berechnet? {#compute-viewing-time}
 
-Die Dauer, die ein Temp-Pass gültig bleibt, korreliert nicht mit der Zeit, die ein Benutzer mit der Anzeige von Inhalten in der Anwendung des Programmierers verbringt. Bei der ersten Benutzeranfrage zur Autorisierung über den Promotional Temp Pass wird eine Ablaufzeit berechnet, indem die anfängliche aktuelle Anforderungszeit der vom Programmierer angegebenen TTL (Dauer-Zeitrahmen) hinzugefügt wird.
+Die Dauer, die ein Temp-Pass gültig bleibt, korreliert nicht mit der Zeit, die ein Benutzer mit der Anzeige von Inhalten in der Anwendung des Programmierers verbringt. Bei der ersten Benutzeranfrage zur Autorisierung über den Promotional Temp Pass wird eine Ablaufzeit berechnet, indem die anfängliche aktuelle Anforderungszeit der vom Programmierer angegebenen TTL (duration time interval) hinzugefügt wird.
 
 ### Authentifizierung und Autorisierung {#authn-authz}
 

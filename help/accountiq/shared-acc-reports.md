@@ -2,20 +2,20 @@
 title: Berichte zu freigegebenen Konten
 description: Berichte zu freigegebenen Konten
 exl-id: 16c5ded1-2a95-4373-8b90-b445131f333a
-source-git-commit: d543bbe972944ad83f4cb28c8a17ea6e10f66975
+source-git-commit: 85316a40ba5f6564c84a5aecf689c077e936a91a
 workflow-type: tm+mt
-source-wordcount: '452'
+source-wordcount: '492'
 ht-degree: 0%
 
 ---
 
 # Berichte zu freigegebenen Konten {#shared-accounts-reports}
 
-Die Berichte zu freigegebenen Konten unterteilen die Metriken wie Anzahl der Geräte und Gerätetypen nach dem ausgewählten Bereich der Freigabewahrscheinlichkeit, z. B. **[!UICONTROL Over Moderate Probability]** und **[!UICONTROL Over Low Probability]** für das aktuelle Segment.
+Die Berichte zu freigegebenen Konten bieten eine weitere Gruppe von Diagrammen und Diagrammen, die das Freigabeverhalten und die Nutzung des aktuellen Segments widerspiegeln. Beispiel: **[!UICONTROL Over Moderate Probability]** und **[!UICONTROL Over Low Probability]** für das aktuelle Segment.
 
-Diese Bereiche können dann als benutzerdefinierte Schwellenwerte dienen und die Diagramme werden anhand der ausgewählten Schwellenwerte aktualisiert.
+## Wahrscheinlichkeit der Kontofreigabe {#accounts-sharing-probability}
 
-Konto-IQ klassifiziert alle Abonnentenkonten des definierten Segments in die Konten mit den folgenden fünf Kategorien auf der Grundlage ihrer Freigabewahrscheinlichkeiten:
+Diese Ringdiagramme und Balkendiagramme zeigen die Prozentsätze (und absoluten Zahlen) der Abonnentenkonten, die in bestimmte Bereiche der Freigabewahrscheinlichkeit fallen. Diese Bereiche werden wie folgt definiert:
 
 * Sehr hoch (80 %-100 %)
 * Hoch (60 %-80 %)
@@ -23,25 +23,23 @@ Konto-IQ klassifiziert alle Abonnentenkonten des definierten Segments in die Kon
 * Niedrig (20 %-40 %)
 * Sehr niedrig (0 %-20 %)
 
-## Wahrscheinlichkeit der Kontofreigabe {#accounts-sharing-probability}
-
-Das Ringdiagramm hier kategorisiert und zeigt die Prozentsätze (und absoluten Zahlen) der Abonnentenkonten aus verschiedenen Wahrscheinlichkeitskategorien.
-
-Die rote Linie markiert den von den Benutzern in [Konten über dem Schwellenwert im aktuellen Segment](#threshold-selector) Bedienfeld.
+Die rote Linie markiert den im [Konten über dem Schwellenwert im aktuellen Segment](#threshold-selector) -Bedienfeld und der hellrote Bereich enthält die Summe aller Konten über diesem Schwellenwert.
 
 ![](assets/accounts-sharing-probability-pie.png)
 
-Das Balkendiagramm zeigt die Anzahl der Konten auf der Y-Achse für verschiedene Kategorien von Teilungswahrscheinlichkeiten (auf der X-Achse dargestellt).
+Das Balkendiagramm zeigt die Anzahl der Konten, die in jeden Bereich auf der Y-Achse für jeden Bereich fallen (dargestellt auf der x-Achse).
 
 ![](assets/accounts-sharing-probability-bar.png)
 
-Die rote Linie markiert den Schwellenwert und kann im Balkendiagramm angepasst werden. Die im Balkendiagramm angepasste Schwelle spiegelt sich im Bereich der Schwelle im Ringdiagramm wider.
+Auch hier markiert die rote Linie den aktuellen Schwellenwert, und der hellrote Bereich enthält die Summe aller Konten über diesem Schwellenwert.
 
-<!--![](assets/shared-accounts-rep.gif)-->
+>[!NOTE]
+>
+> Die Y-Achse des Balkendiagramms ist logarithmisch.
 
 ### Konten über dem Schwellenwert im aktuellen Segment{#threshold-selector}
 
-In diesem Bedienfeld können Sie einen Bereich aus dem folgenden auswählen, um einen Schwellenwert für Abonnentenkonten festzulegen (basierend auf ihren Freigabewahrscheinlichkeiten):
+In diesem Bedienfeld können Sie den Schwellenwert für die oben genannten Ringdiagramme und Balkendiagramme auswählen. Die vier Optionen sind:
 
 * Konten **über sehr niedrig** Freigabe **wahrscheinlichkeit**
 
@@ -55,44 +53,43 @@ In diesem Bedienfeld können Sie einen Bereich aus dem folgenden auswählen, um 
 
 Nachdem Sie den Schwellenwert ausgewählt haben, zeigt das Bedienfeld den Prozentsatz (und die Anzahl) der Konten von allen Abonnentenkonten im ausgewählten Segment an.
 
-## Segment - Wiedergabe von Anforderungen insgesamt {#play-request-out-total}
+## Anforderungen zur Segmentwiedergabe aus der Gesamtsumme {#play-request-out-total}
 
 Das Ringdiagramm zeigt den Prozentsatz (und die Anzahl) der Wiedergabeanforderungen, die von Abonnenten im Segment gestellt werden, und ermöglicht den Vergleich der Wiedergabeanforderungen von Abonnenten, die nicht im definierten Segment enthalten sind.
 
 ![](assets/play-req-outof-total.png)
 
-Wenn Sie den Cursor auf das Ringdiagramm bewegen, werden auch die Prozentsätze und Zahlen der Abonnenten aus verschiedenen Wahrscheinlichkeitsbereichen angezeigt.
+Wenn Sie den Cursor über das Ringdiagramm bewegen, werden auch die Prozentsätze und Zahlen der Abonnenten aus verschiedenen Wahrscheinlichkeitsbereichen angezeigt.
 
 <!--![](assets/play-request-total.gif)-->
 
 ## Segmentdurchschnittliche Anzahl der Geräte pro Konto{#avg-devices-account}
 
-Das Balkendiagramm zeigt die durchschnittliche Anzahl der Geräte jedes Gerätetyps, die von Abonnenten im aktuellen Segment und von Abonnenten, die sich nicht im aktuellen Segment befinden, verwendet werden.
+Das Balkendiagramm zeigt die durchschnittliche Anzahl der Geräte jedes Typs, die aktuell von Abonnenten im aktuellen Segment verwendet werden, sowie der Geräte, die nicht im aktuellen Segment enthalten sind.
 
 ![](assets/avg-devices-per-acc.png)
 
-## Segment - Postleitzahlen pro Zeitraum pro Konto {#zip-codes-period-account}
+## Segment-Postleitzahlen pro Zeitraum und Konto {#zip-codes-period-account}
 
-Dieses Diagramm informiert Sie über die Anzahl der Abonnenten, die Inhalte von verschiedenen Orten in einem Zeitrahmen verbrauchen.
+Dieses Diagramm informiert Sie über die Anzahl der Abonnenten im aktuellen Segment, die für das angegebene Zeitintervall Inhalte von verschiedenen Orten (gemessen anhand der Postleitzahl) verbrauchen.
 
 ![](assets/zip-period-account.png)
 
-Sie können heranzoomen, um die Details eines Balkens im Diagramm, das verschiedene Positionen abbildet, einzuschränken und anzuzeigen.
+>[!NOTE]
+>
+>Sie können in die Balken einzoomen, die für mehr als einen Satz von Postleitzahlen stehen, die durch eine **+** (plus) Zeichen (z. B. 10+) durch Doppelklick darauf.
 
-<!--![](assets/zip-code-period.gif)-->
 
-## Segment - Geografischer Bereich/Zeitraum/Konto {#geo-span-period-account}
+## Segmentgeografische Spanne pro Zeitraum und Konto {#geo-span-period-account}
 
-Dieses Balkendiagramm zeigt die Anzahl der Teilnehmerkonten in Bezug auf verschiedene geografische Bereiche in Meilen. Der Bereich basiert auf der maximalen Entfernung zwischen den Standorten, von denen ein Abonnent während des Zeitraums gestreamt hat.
-
-<!--Total number of users ...
-
-How many accounts are within 99 miles of each other.....and how many are apart. 
-
-Based on points on the map.-->
+Dieses Balkendiagramm zeigt die Anzahl der Abonnentenkonten, die Inhalte von Orten konsumieren, die in verschiedene geografische Bereiche in Meilen fallen. Der Bereich basiert auf der maximalen Entfernung zwischen den Standorten, von denen ein Abonnent während des Zeitintervalls gestreamt hat.
 
 ![](assets/geogr-span-account.png)
 
-Wenn Sie eine Leiste auswählen, die einen Bereich von geografischer Entfernung darstellt, erweitert sie den Bereich, um Ihnen weitere Details anzuzeigen.
+>[!NOTE]
+>
+> Sie können in die Balken einzoomen, die mehrere geografische Entfernungen darstellen, die durch eine **+** (Plus) (z. B. 1000+) durch Doppelklick.
 
-<!--![](assets/geo-span-period-acc.gif)-->
+>[!MORELIKETHIS]
+>
+>* Erfahren Sie, wie Sie Berichte für die 1000 wichtigsten Abonnenten im ausgewählten Segment mithilfe von Filtern in Berichten zu freigegebenen Konten mit [Export der 1000 wichtigsten Konten](/help/accountiq/export-acc-information.md) -Option.
