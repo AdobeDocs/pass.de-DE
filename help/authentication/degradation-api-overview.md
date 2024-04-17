@@ -2,9 +2,9 @@
 title: Übersicht über die Abbau-API
 description: Übersicht über die Abbau-API
 exl-id: c7d6685b-a235-42eb-9c9c-0ffa1747f614
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: f918d7f9f7b2af5b4364421f6703211e413eafb4
 workflow-type: tm+mt
-source-wordcount: '367'
+source-wordcount: '431'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,17 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Um die Abbauungs-API verwenden zu können, müssen Sie:
+>- Bitten Sie das Supportteam um eine Softwareanweisung für Ihre registrierte Anwendung
+>- Abrufen eines Zugriffstokens basierend auf [Dynamische Kundenregistrierung](dynamic-client-registration.md)
+> 
+
+>[!NOTE]
+>
+>Um die Abbauungs-API verwenden zu können, müssen Sie:
+>- Bitten Sie das Supportteam um eine Softwareanweisung für Ihre registrierte Anwendung
+>- Abrufen eines Zugriffstokens basierend auf [Dynamische Kundenregistrierung](dynamic-client-registration.md)
+> 
 
 ## Allgemeine Informationen {#general_info}
 
@@ -29,9 +40,9 @@ Eine Abbauregel wird nur für einen bestimmten Zeitraum angewendet. Obwohl die H
 
 Notizen zur Verschlechterung:
 
-* Diese Funktion ist für die Verwendung mit der API zur Nutzungsüberwachung konzipiert, die Echtzeitinformationen über die Anzahl der Authentifizierungen und Berechtigungen pro MVPD, die durchschnittliche Autorisierungslatenz und andere Metriken bereitstellt, die für eine vollständige Übersicht über den Service erforderlich sind.
-* Diese Funktion lässt das Umgehen des Adobe Primetim-Authentifizierungsdienstes nicht zu. Wenn die Adobe Pass-Authentifizierung deaktiviert ist, gibt es keinen Mechanismus innerhalb des Dienstes, der verwendet werden kann, um Benutzern das Anzeigen von Inhalten zu ermöglichen. Die Sites oder Apps können jedoch allein die Adobe Pass-Authentifizierung umleiten.
-* Adobe wird derzeit nicht direkt die Verschlechterung des Triggers bewirken. Die Entscheidung muss immer bei einem bestimmten Programmierer liegen, der mit MVPDs diesen Bedingungen zugestimmt hat. In Zukunft könnte die Adobe Pass-Authentifizierung proaktiv Abbauregeln auslösen, wenn mit MVPDs Vereinbarungen (SLA-Schutz) getroffen werden können.
+- Diese Funktion ist für die Verwendung mit der API zur Nutzungsüberwachung konzipiert, die Echtzeitinformationen über die Anzahl der Authentifizierungen und Berechtigungen pro MVPD, die durchschnittliche Autorisierungslatenz und andere Metriken bereitstellt, die für eine vollständige Übersicht über den Service erforderlich sind.
+- Diese Funktion lässt die Umgehung des Adobe Primetim-Authentifizierungsdienstes nicht zu. Wenn die Adobe Pass-Authentifizierung deaktiviert ist, gibt es keinen Mechanismus innerhalb des Dienstes, der verwendet werden kann, um Benutzern das Anzeigen von Inhalten zu ermöglichen. Die Sites oder Apps können jedoch allein die Adobe Pass-Authentifizierung umleiten.
+- Adobe wird derzeit nicht direkt die Verschlechterung des Triggers bewirken - die Entscheidung muss immer bei einem bestimmten Programmierer liegen, der mit MVPDs diesen Bedingungen zugestimmt hat. In Zukunft könnte die Adobe Pass-Authentifizierung proaktiv Abbauregeln auslösen, wenn mit MVPDs Vereinbarungen (SLA-Schutz) getroffen werden können.
 
 <!--
 ## Related Information {#related}
