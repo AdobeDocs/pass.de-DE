@@ -1,7 +1,8 @@
 ---
 title: Arbeiten mit Segmenten
 description: Segmente verstehen und verwenden. Erfahren Sie, wie Sie ein Segment erstellen und verwalten.
-source-git-commit: cfcaa00ab05c99a64bcb0edfe5af60845a6769a9
+exl-id: 01431437-55f5-464d-8ee4-7a79ec553e4f
+source-git-commit: 38402b411dd4fad3490115cff1854faa7f3cb293
 workflow-type: tm+mt
 source-wordcount: '1970'
 ht-degree: 0%
@@ -40,7 +41,7 @@ Der Prozess der Erstellung eines neuen Segments ähnelt dem von D2C-Diensten und
 
 Um ein Segment zu erstellen und das Freigabeverhalten des Abonnenten zu analysieren, wählen Sie **[!UICONTROL Create new segment]** oben rechts.
 
-![Neues Segment erstellen](assets/d2c-create-new-segment.png)
+![Neues Segment erstellen](assets/create-new-segment-d2c.png)
 
 *Neues Segment erstellen*
 
@@ -220,7 +221,7 @@ Sie können ein Segment aus der Segmentliste auswählen und dann die folgenden A
 
 *Auswählen eines Segments zum Bearbeiten, Duplizieren oder Löschen*
 
-**A.** [Videokategorien](product-concepts.md#video-category-def) **B.** [Standardsegment](#work-with-segments)
+**A.** [Standardsegment](#work-with-segments) **B.** [Videokategorien](product-concepts.md#video-category-def)
 
 >[!NOTE]
 >
@@ -278,5 +279,3 @@ Eine Kopie des ausgewählten Segments wird generiert und am Ende der Segmentlist
    >[!NOTE]
    >
    >Das Segment wird dauerhaft aus dem System gelöscht und Sie können diese Aktion nicht rückgängig machen.
-
-
