@@ -1,13 +1,13 @@
 ---
 title: API-Übersicht
 description: API-Übersicht über die Überwachung der Parallelität
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
+source-git-commit: dd370b231acc08ea0544c0dedaa1bdb0683e378f
 workflow-type: tm+mt
-source-wordcount: '1425'
+source-wordcount: '1556'
 ht-degree: 0%
 
 ---
-
 
 # API-Übersicht {#api-overview}
 
@@ -101,6 +101,24 @@ Verwenden Sie dieselben Parameter für den -Aufruf wie für den Sitzungs-Heartbe
 * 202 FÜR EINE erfolgreiche Antwort AKZEPTIERT
 * 410 FERTIG, wenn die Sitzung bereits beendet war.
 
+#### Abrufen aller laufenden Streams {#get-all-running-streams}
+
+Dieser Endpunkt bietet alle derzeit ausgeführten Sitzungen für einen bestimmten Mandanten in allen seinen Anwendungen. Verwendung **subject** und **idp** Parameter für den Aufruf:
+
+![](assets/get-all-running-streams-parameters.png)
+
+Wenn Sie den Aufruf vornehmen, erhalten Sie die folgende Antwort:
+
+![](assets/get-all-running-streams-success.png)
+
+Bitte beachten Sie Folgendes: **Läuft ab** -Kopfzeile. Dies ist der Zeitpunkt, zu dem die erste Sitzung abläuft, sofern kein Heartbeat gesendet wird. Andere Streams haben den Wert 0, da für diesen Benutzer keine anderen Streams in den Anwendungen anderer Mandanten ausgeführt werden.
+Das Metadatenfeld wird mit allen Metadaten gefüllt, die beim Start der Sitzung gesendet wurden. Wir filtern sie nicht, Sie erhalten alles, was Sie geschickt haben.
+Wenn es keine laufenden Sitzungen für einen bestimmten Benutzer gibt, wenn Sie den Aufruf ausführen, erhalten Sie diese Antwort:
+
+![](assets/get-all-running-streams-empty.png)
+
+Beachten Sie außerdem, dass in diesem Fall die **Läuft ab** -Kopfzeile nicht vorhanden ist.
+
 #### Die Richtlinie durchbrechen {#breaking-policy-app-first}
 
 
@@ -157,4 +175,3 @@ Um die Regel zu beschädigen, die wir in der dieser Anwendung zugewiesenen Richt
 Wenn wir bei jeder Erstellung einer neuen Sitzung unterschiedliche Werte für die Kanalmetadaten verwenden, sind alle Aufrufe erfolgreich, da der Schwellenwert von 2 auf jeden Wert einzeln festgelegt wird.
 
 Wie im ersten Beispiel können wir den Terminierungscode verwenden, um in Konflikt stehende Streams remote zu stoppen, oder wir können warten, bis einer der Streams abläuft, vorausgesetzt, dass kein Heartbeat auf ihnen betrieben wird.
-
