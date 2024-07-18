@@ -2,9 +2,9 @@
 title: Übersicht über die Überwachung des Entitätsdienstes
 description: Übersicht über die Überwachung des Entitätsdienstes
 exl-id: ebd5d650-0a32-4583-9045-5156356494e2
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1ad2a4e75cd64755ccbde8f3b208148b7d990d82
 workflow-type: tm+mt
-source-wordcount: '1182'
+source-wordcount: '1303'
 ht-degree: 0%
 
 ---
@@ -54,7 +54,7 @@ Die ESM-API ist nicht allgemein verfügbar.  Wenden Sie sich bei Fragen zur Verf
 
 
 | *Dimension Name* | *Beschreibung* |
-|---|---|
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | year | Das vierstellige Jahr |
 | month | Der Monat des Jahres (1-12) |
 | day | Der Tag des Monats (1-31) |
@@ -68,18 +68,23 @@ Die ESM-API ist nicht allgemein verfügbar.  Wenden Sie sich bei Fragen zur Verf
 | channel | Die Kanalwebsite, die aus dem Ressourcenfeld extrahiert wird (aus der MRSS-Payload als Kanal/Titel extrahiert, sofern vorhanden, oder dem Ressourcenwert zugeordnet, wenn er nicht im RSS-Format vorliegt). |
 | resource-id | Der tatsächliche Ressourcentitel, der an der Autorisierungsanforderung beteiligt ist (aus der MRSS-Payload als Element/Titel extrahiert, sofern angegeben) |
 | Gerät | Die Geräteplattform (PC, Mobilgerät, Konsole usw.) |
-| eap | Der externe Authentifizierungsanbieter, wenn die Authentifizierung über ein externes System durchgeführt wird. </br> Die Werte können wie folgt lauten: </br> - Nicht zutreffend: Die Authentifizierung wurde durch die Adobe Pass-Authentifizierung bereitgestellt. </br> - Apple - das externe System, das die Authentifizierung bereitgestellt hat, ist Apple |
+| eap | Der externe Authentifizierungsanbieter, wenn die Authentifizierung über ein externes System durchgeführt wird. </br> Die Werte können lauten: </br> - Nicht zutreffend - die Authentifizierung wurde von Adobe Pass Authentication </br> - Apple - das externe System, für das die Authentifizierung durchgeführt wurde, ist Apple |
 | os-family | Betriebssystem auf dem Gerät |
 | browser-family | Benutzeragent für den Zugriff auf die Adobe Pass-Authentifizierung |
-| cdt | Die Geräteplattform (Alternative), die derzeit für ClientLess verwendet wird. </br>  Die Werte können wie folgt lauten: </br> - Nicht zutreffend: Das Ereignis stammte nicht von einem Client-losen SDK. </br> - Unbekannt - Da der Parameter deviceType einer clientlosen API optional ist, gibt es Aufrufe, die keinen Wert enthalten. </br> - alle anderen Werte, die über die clientlose API gesendet wurden, z. B. xbox, appletv, roku usw. </br> |
+| cdt | Die Geräteplattform (Alternative), die derzeit für ClientLess verwendet wird. </br> Die Werte können lauten: </br> - Nicht zutreffend - das Ereignis stammte nicht von einem clientless SDK </br> - Unbekannt - Da der Parameter deviceType von einer clientless-API optional ist, gibt es Aufrufe, die keinen Wert enthalten. </br> - jeder andere Wert, der über die clientlose API gesendet wurde, z. B. xbox, appletv, roku usw. </br> |
 | platform-version | Die Version des Client-losen SDK |
 | os-type | Betriebssystem, das auf dem Gerät ausgeführt wird, Alternative (derzeit nicht verwendet) |
 | browser-version | Benutzeragenten-Version |
-| sdk-type | Das verwendete Client-SDK (Flash, HTML5, natives Android-SDK, iOS, Clientless usw.) |
-| sdk-version | Die Version des Adobe Pass Authentication Client SDK |
+| nsdk | Das verwendete Client-SDK (Android, fireTV, js, iOS, tvOS, non-sdk) |
+| nsdk-version | Die Version des Adobe Pass Authentication Client SDK |
 | event | Der Ereignisname für die Adobe Pass-Authentifizierung |
 | reason | Der Grund für Fehler, wie von der Adobe Pass-Authentifizierung gemeldet |
 | sso-type | Der zugrunde liegende SSO-Mechanismus: platform/passive/adobe. Gibt an, dass das Autorisierungstoken ausgegeben wurde, indem AuthN in einer anderen Anwendung wiederverwendet wurde |
+| platform | Die vom Gerät identifizierte Plattform. Mögliche Werte: </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> - etc |
+| application-name | Der Anwendungsname, der im TVE Dashboard für die zur Verwendung konfigurierte registrierte DCR-Anwendung konfiguriert wurde. |
+| application-version | Die im TVE Dashboard konfigurierte Anwendungsversion für die zur Verwendung durch DCR registrierte Anwendung. |
+| customer-app | Die benutzerdefinierte Anwendungs-ID, die über [Geräteinformationen](/help/authentication/passing-client-information-device-connection-and-application.md) weitergegeben wird. |
+| content-category | Die Kategorie des Inhalts, der von Ihrer Anwendung angefordert wird. |
 
 ## ESM für MVPDs {#esm-for-mvpds}
 
@@ -100,27 +105,30 @@ Die ESM-API ist nicht allgemein verfügbar.  Wenden Sie sich bei Fragen zur Verf
 ### MVPDs können die oben aufgeführten Metriken nach den folgenden Dimensionen filtern:
 
 | *Dimension Name* | *Beschreibung* |
-|---|---|
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | year | Das vierstellige Jahr |
 | month | Der Monat des Jahres (1-12) |
 | day | Der Tag des Monats (1-31) |
 | hour | Die Stunde des Tages |
 | minute | Die Stunde |
+| mvpd | Die mvpd-ID, die zur Durchführung der Berechtigungsanforderung verwendet wird |
 | requestor-id | Die Anfragende-ID, die zum Ausführen der Berechtigungsanforderung verwendet wird |
-| eap | Der externe Authentifizierungsanbieter, wenn die Authentifizierung über ein externes System durchgeführt wird. </br> Die Werte können wie folgt lauten: </br> - Nicht zutreffend: Die Authentifizierung wurde durch die Adobe Pass-Authentifizierung bereitgestellt. </br> - Apple - das externe System, das die Authentifizierung bereitgestellt hat, ist Apple |
-| cdt | Die Geräteplattform (Alternative), die derzeit für ClientLess verwendet wird. </br>  Die Werte können wie folgt lauten: </br> - Nicht zutreffend: Das Ereignis stammte nicht von einem Client-losen SDK. </br> - Unbekannt - Da der Parameter deviceType einer clientlosen API optional ist, gibt es Aufrufe, die keinen Wert enthalten. </br> - alle anderen Werte, die über die clientlose API gesendet wurden, z. B. xbox, appletv, roku usw. </br> |
-| sdk-type | Das verwendete Client-SDK (Flash, HTML5, natives Android-SDK, iOS, Clientless usw.) |
-
+| eap | Der externe Authentifizierungsanbieter, wenn die Authentifizierung über ein externes System durchgeführt wird. </br> Die Werte können lauten: </br> - Nicht zutreffend - die Authentifizierung wurde von Adobe Pass Authentication </br> - Apple - das externe System, für das die Authentifizierung durchgeführt wurde, ist Apple |
+| cdt | Die Geräteplattform (Alternative), die derzeit für ClientLess verwendet wird. </br> Die Werte können lauten: </br> - Nicht zutreffend - das Ereignis stammte nicht von einem clientless SDK </br> - Unbekannt - Da der Parameter deviceType von einer clientless-API optional ist, gibt es Aufrufe, die keinen Wert enthalten. </br> - jeder andere Wert, der über die clientlose API gesendet wurde, z. B. xbox, appletv, roku usw. </br> |
+| sdk-type | Das verwendete Client-SDK (Flash, HTML5, nativ Android, iOS, Clientlos usw.) |
+| platform | Die vom Gerät identifizierte Plattform. Mögliche Werte: </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> - etc |
+| nsdk | Das verwendete Client-SDK (Android, fireTV, js, iOS, tvOS, non-sdk) |
+| nsdk-version | Die Version des Adobe Pass Authentication Client SDK |
 
 ## Nutzungsszenarios {#use-cases}
 
 Sie können die ESM-Daten für die folgenden Anwendungsfälle verwenden:
 
-- **Überwachung** - Ops- oder Überwachungsteams können ein Dashboard oder Diagramm erstellen, das die API jede Minute aufruft. Mithilfe der angezeigten Informationen können sie ein Problem erkennen (mit Adobe Pass-Authentifizierung oder einem MVPD), sobald es erscheint.
+- **Überwachung** - Opt-ins oder Überwachungsteams können ein Dashboard oder Diagramm erstellen, das die API jede Minute aufruft. Mithilfe der angezeigten Informationen können sie ein Problem erkennen (mit Adobe Pass-Authentifizierung oder einem MVPD), sobald es erscheint.
 
 - **Debugging/Qualitätstests** - Da die Daten auch nach Plattform, Gerät, Browser und Betriebssystem aufgeschlüsselt werden, können bei der Analyse von Nutzungsmustern Probleme auf bestimmten Kombinationen (z. B. Safari unter OSX) ermittelt werden.
 
-- **Analytics** - Die bereitgestellten Daten können verwendet werden, um die clientseitigen Daten zu ergänzen/zu überprüfen, die über Adobe Analytics oder ein anderes Analysetool erfasst werden.
+- **Analytics** - Die bereitgestellten Daten können verwendet werden, um die clientseitigen Daten zu ergänzen/zu prüfen, die über Adobe Analytics oder ein anderes Analysetool erfasst werden.
 
 <!--
 ## Related Information {#related-information}

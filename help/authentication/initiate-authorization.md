@@ -2,9 +2,9 @@
 title: Autorisierung initiieren
 description: Autorisierung initiieren
 exl-id: 2f8a5499-e94f-40dd-9fb0-aac8e080de66
-source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
+source-git-commit: 1ad2a4e75cd64755ccbde8f3b208148b7d990d82
 workflow-type: tm+mt
-source-wordcount: '413'
+source-wordcount: '423'
 ht-degree: 0%
 
 ---
@@ -17,16 +17,16 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch [Drosselmechanismus](/help/authentication/throttling-mechanism.md)
+> Die REST-API-Implementierung wird durch den [Drosselmechanismus](/help/authentication/throttling-mechanism.md) begrenzt
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
 * Produktion - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produktion - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -37,9 +37,9 @@ ht-degree: 0%
 
 Erhält die Antwort auf die Autorisierung.
 
-| Endpunkt | aufgerufen  </br>von | Eingabe   </br>Parameter | HTTP  </br>Methode | Reaktion | HTTP  </br>Reaktion |
+| Endpunkt | </br>von aufgerufen | Eingabe   </br>Parameter | HTTP </br>Methode | Reaktion | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/authorize | Streaming-App</br></br>oder</br></br>Programmiererdienst | 1. Antragsteller (erforderlich)</br>2.  deviceId (Obligatorisch)</br>3.  resource (erforderlich)</br>4.  device_info/X-Device-Info (erforderlich)</br>5.  _deviceType_</br> 6.  _deviceUser_ (Veraltet)</br>7.  _appId_ (Veraltet)</br>8.  Zusätzliche Parameter (optional) | GET | XML oder JSON mit Autorisierungsdetails oder Fehlerdetails, falls nicht erfolgreich. Siehe Beispiele unten. | 200 - Erfolg  </br>403 - Kein Erfolg |
+| &lt;SP_FQDN>/api/v1/authorize | Streaming-App</br></br>oder</br></br>Programmierer-Dienst | 1. Antragsteller (erforderlich)</br>2.  deviceId (erforderlich)</br>3.  resource (erforderlich)</br>4.  device_info/X-Device-Info (erforderlich)</br>5.  _deviceType_</br> 6.  _deviceUser_ (Veraltet)</br>7.  _appId_ (veraltet)</br>8.  Zusätzliche Parameter (optional) | GET | XML oder JSON mit Autorisierungsdetails oder Fehlerdetails, falls nicht erfolgreich. Siehe Beispiele unten. | 200 - Erfolg </br>403 - Kein Erfolg |
 
 {style="table-layout:auto"}
 
@@ -51,24 +51,24 @@ Erhält die Antwort auf die Autorisierung.
 | Anfragender | Die Programmer-Anfrage-ID, für die dieser Vorgang gültig ist. |
 | deviceId | Die Geräte-ID-Bytes. |
 | resource | Eine Zeichenfolge, die eine resourceId (oder ein MRSS-Fragment) enthält, den von einem Benutzer angeforderten Inhalt identifiziert und von MVPD-Autorisierungsendpunkten erkannt wird. |
-| device_info/</br></br>X-Device-Info | Informationen zum Streaming-Gerät.</br></br>**Hinweis**: Dieser Parameter kann als URL-Parameter an device_info übergeben werden. Aufgrund der potenziellen Größe dieses Parameters und der Längenbeschränkungen einer GET-URL sollte er jedoch als X-Device-Info in der HTTP-Kopfzeile übergeben werden. </br></br><!--See the full details in [Passing Device and Connection Information](http://tve.helpdocsonline.com/passing-device-information)-->. |
-| _deviceType_ | Der Gerätetyp (z. B. Roku, PC).</br></br>Wenn dieser Parameter korrekt festgelegt ist, bietet ESM Metriken an, die [aufgeschlüsselt nach Gerätetyp](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) bei Verwendung von ClientLess, sodass verschiedene Arten der Analyse für z. B. Roku, AppleTV, Xbox usw. durchgeführt werden können.</br></br>Siehe [Vorteile des Parameters für Client-lose Gerätetypen in Pass-Metriken ](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Hinweis**: Der Parameter device_info ersetzt diesen Parameter. |
+| device_info/</br></br>X-Device-Info | Informationen zum Streaming-Gerät.</br></br>**Hinweis**: Dieser Parameter kann als URL-Parameter an device_info übergeben werden. Aufgrund der potenziellen Größe dieses Parameters und der Längenbeschränkungen einer GET-URL sollte er jedoch als X-Device-Info in der HTTP-Kopfzeile übergeben werden. </br></br>Weitere Informationen finden Sie unter [Übergeben von Geräte- und Verbindungsinformationen](/help/authentication/passing-client-information-device-connection-and-application.md). |
+| _deviceType_ | Der Gerätetyp (z. B. Roku, PC).</br></br>Wenn dieser Parameter korrekt festgelegt ist, bietet ESM Metriken an, die bei Verwendung von ClientLess [nach Gerätetyp aufgeschlüsselt sind](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type), sodass für Roku, AppleTV, Xbox usw. unterschiedliche Analysetypen durchgeführt werden können.</br></br>Siehe [Vorteile des Parameters für Client-lose Gerätetypen in den Pass-Metriken ](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Hinweis**: Der Parameter device_info ersetzt diesen Parameter. |
 | _deviceUser_ | Die Benutzer-ID des Geräts. |
 | _appId_ | Die Anwendungs-ID/der Name. </br></br>**Hinweis**: Der Parameter device_info ersetzt diesen. |
-| zusätzliche Parameter | Der Aufruf kann auch optionale Parameter enthalten, die andere Funktionen wie:</br></br>* generic_data - ermöglicht die Verwendung von [Promotional TempPass](/help/authentication/promotional-temp-pass.md)</br></br>Beispiel: `generic_data=("email":"email@domain.com")` |
+| zusätzliche Parameter | Der Aufruf kann auch optionale Parameter enthalten, die andere Funktionen wie </br></br>* generic_data - ermöglicht die Verwendung von [Promotional TempPass](/help/authentication/promotional-temp-pass.md)</br></br>Beispiel: `generic_data=("email":"email@domain.com")` |
 
 {style="table-layout:auto"}
 
 >[!CAUTION]
 >
 >**IP-Adresse des Streaming-Geräts**</br>
->Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts implizit mit diesem Aufruf gesendet.  Bei Server-zu-Server-Implementierungen, bei denen die Variable **regcode** wird vom Programmierer-Dienst und nicht vom Streaming-Gerät aufgerufen. Der folgende Header ist erforderlich, um die IP-Adresse des Streaming-Geräts zu übergeben:</br></br>
+>Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts implizit mit diesem Aufruf gesendet.  Bei Server-zu-Server-Implementierungen, bei denen der **regcode** -Aufruf vom Programmierer-Dienst und nicht vom Streaming-Gerät erfolgt, muss die folgende Kopfzeile die IP-Adresse des Streaming-Geräts übergeben:</br></br>
 >
 >```
 >X-Forwarded-For : <streaming\_device\_ip>
 >```
 >
->where `<streaming\_device\_ip>` ist die öffentliche IP-Adresse des Streaming-Geräts.</br></br>
+>wobei `<streaming\_device\_ip>` die öffentliche IP-Adresse des Streaming-Geräts ist.</br></br>
 >Beispiel :</br>
 >
 >```
@@ -80,7 +80,7 @@ Erhält die Antwort auf die Autorisierung.
 
 ### Beispielantwort {#sample-response}
 
-* **1. Fall: Erfolg**
+* **1: Erfolg**
 </br>
   * **XML:**
   </br>
@@ -89,7 +89,7 @@ Erhält die Antwort auf die Autorisierung.
     &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
     &lt;authorization>
     &lt;expires>1348148289000&lt;/expires>
-    &lt;mvpd>sampleMvpdId&lt;/mvpd>
+    &lt;mvpd>sampleMvpdId&lt;/mvpres d>
     &lt;requestor>sampleRequestorId&lt;/requestor>
     &lt;resource>sampleResourceId&lt;/resource>
     &lt;/authorization>
@@ -110,11 +110,11 @@ Erhält die Antwort auf die Autorisierung.
 
 >[!IMPORTANT]
 >
->Wenn die Antwort von einem Proxy-MVPD stammt, kann sie ein zusätzliches Element namens `proxyMvpd`.
+>Wenn die Antwort von einem Proxy-MVPD stammt, kann sie ein zusätzliches Element namens `proxyMvpd` enthalten.
 
 
 
-* **2. Fall: Genehmigung verweigert**
+* **2: Autorisierung verweigert**
 
 
   ```JSON

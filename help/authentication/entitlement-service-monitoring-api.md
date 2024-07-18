@@ -2,9 +2,9 @@
 title: API zur Überwachung von Entitätsdiensten
 description: API zur Überwachung von Entitätsdiensten
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: 1ad2a4e75cd64755ccbde8f3b208148b7d990d82
 workflow-type: tm+mt
-source-wordcount: '2026'
+source-wordcount: '2010'
 ht-degree: 0%
 
 ---
@@ -17,34 +17,44 @@ ht-degree: 0%
 
 ## API-Übersicht {#api-overview}
 
-Die Entitätsdienst-Überwachung (ESM) wird als WOLAP (Web-basiert) implementiert [Online Analytics-Verarbeitung](https://en.wikipedia.org/wiki/Online_analytical_processing){target=_blank}). ESM ist eine generische Web-API für Geschäftsberichte, die von einem Data Warehouse unterstützt wird. Es dient als HTTP-Abfragesprache, die die Ausführung typischer OLAP-Vorgänge in RESTfull ermöglicht.
+Entitlement Service Monitoring (ESM) wird als WOLAP-Projekt (Web-based [Online Analytical Processing](https://en.wikipedia.org/wiki/Online_analytical_processing){target=_blank}) implementiert. ESM ist eine generische Web-API für Geschäftsberichte, die von einem Data Warehouse unterstützt wird. Es dient als HTTP-Abfragesprache, die die Ausführung typischer OLAP-Vorgänge in RESTfull ermöglicht.
 
 >[!NOTE]
 >
 >Die ESM-API ist nicht allgemein verfügbar. Wenden Sie sich bei Fragen zur Verfügbarkeit an Ihren Adobe-Support-Mitarbeiter.
 
-Die ESM-API bietet eine hierarchische Ansicht der zugrunde liegenden OLAP-Cubes. Jede Ressource ([Dimension](#esm_dimensions) in der Dimensionshierarchie, die als URL-Pfadsegment zugeordnet ist) generiert Berichte mit (aggregierter) [Metriken](#esm_metrics) für die aktuelle Auswahl. Jede Ressource verweist auf ihre übergeordnete Ressource (für Datenaggregationen) und ihre Unterressourcen (für Drilldown). Slicing und Dicing werden über Abfragezeichenfolgenparameter erreicht, die Dimensionen an bestimmte Werte oder Bereiche anhängen.
+Die ESM-API bietet eine hierarchische Ansicht der zugrunde liegenden OLAP-Cubes. Jede Ressource ([Dimension](#esm_dimensions) in der Dimensionshierarchie, die als URL-Pfadsegment zugeordnet ist) generiert Berichte mit (aggregierten) [Metriken](#esm_metrics) für die aktuelle Auswahl. Jede Ressource verweist auf ihre übergeordnete Ressource (für Datenaggregationen) und ihre Unterressourcen (für Drilldown). Slicing und Dicing werden über Abfragezeichenfolgenparameter erreicht, die Dimensionen an bestimmte Werte oder Bereiche anhängen.
 
 Die REST-API stellt die verfügbaren Daten innerhalb eines in der Anfrage angegebenen Zeitintervalls bereit (wobei auf die Standardwerte zurückgegriffen wird, wenn keine Werte angegeben sind). Dies hängt vom Dimensionspfad, den bereitgestellten Filtern und ausgewählten Metriken ab. Der Zeitraum wird nicht für Berichte angewendet, die keine Zeitdimensionen enthalten (Jahr, Monat, Tag, Stunde, Minute, Sekunde).
 
 Der Stammpfad der Endpunkt-URL gibt die aggregierten Gesamtmetriken innerhalb eines einzelnen Datensatzes zusammen mit den Links zu den verfügbaren Drilldown-Optionen zurück. Die API-Version wird als nachstehendes Segment des Endpunkt-URI-Pfads zugeordnet. Beispiel: `https://mgmt.auth.adobe.com/*v2*` bedeutet, dass die Clients auf WOLAP Version 2 zugreifen.
 
-Die verfügbaren URL-Pfade können über die in der Antwort enthaltenen Links gefunden werden. Gültige URL-Pfade werden gespeichert, um einen Pfad innerhalb der zugrunde liegenden Drilldown-Struktur zuzuordnen, der aggregierte (vorab erstellte) Metriken enthält. Ein Pfad im Formular `/dimension1/dimension2/dimension3` spiegelt eine Voraggregation dieser drei Dimensionen wider (entspricht einer SQL `clause GROUP` NACH `dimension1`, `dimension2`, `dimension3`). Wenn eine solche Voraggregation nicht vorhanden ist und das System sie nicht sofort berechnen kann, gibt die API eine Antwort &quot;404 Not Found&quot;zurück.
+Die verfügbaren URL-Pfade können über die in der Antwort enthaltenen Links gefunden werden. Gültige URL-Pfade werden gespeichert, um einen Pfad innerhalb der zugrunde liegenden Drilldown-Struktur zuzuordnen, der aggregierte (vorab erstellte) Metriken enthält. Ein Pfad im Formular `/dimension1/dimension2/dimension3` spiegelt eine Voraggregation dieser drei Dimensionen wider (entspricht einer SQL `clause GROUP` BY `dimension1`, `dimension2`, `dimension3`). Wenn eine solche Voraggregation nicht vorhanden ist und das System sie nicht sofort berechnen kann, gibt die API eine Antwort &quot;404 Not Found&quot;zurück.
 
 ## Drilldown-Struktur {#drill-down-tree}
 
-Die folgenden Drilldown-Bäume veranschaulichen die in ESM 2.0 verfügbaren Dimensionen (Ressourcen) für [Programmierer] (#esm_dimensions) und [MVPDs](#esm_dimensions_mvpd).
+Die folgenden Drilldown-Bäume veranschaulichen die in ESM 2.0 verfügbaren Dimensionen (Ressourcen) für [Programmierer](#progr-dimensions) und [MVPDs](#mvpd-dimensions).
 
 
 ### Dimensionen für Programmierer {#progr-dimensions}
 
-![](assets/esm-progr-dimensions.png)
+#### Tag
+
+![](assets/esm-progr-dimensions-day.png)
+
+#### Stunde
+
+![](assets/esm-progr-dimensions-hour.png)
+
+#### Minute
+
+![](assets/esm-progr-dimensions-minute.png)
 
 ### Für MVPDs verfügbare Dimensionen {#mvpd-dimensions}
 
 ![](assets/esm-mvpd-dimensions.png)
 
-Ein GET zum `https://mgmt.auth.adobe.com/v2` Der API-Endpunkt gibt eine Darstellung zurück, die Folgendes enthält:
+Ein GET zum API-Endpunkt `https://mgmt.auth.adobe.com/v2` gibt eine Darstellung zurück, die Folgendes enthält:
 
 * Links zu den verfügbaren Root-Drilldown-Pfaden:
 
@@ -52,13 +62,15 @@ Ein GET zum `https://mgmt.auth.adobe.com/v2` Der API-Endpunkt gibt eine Darstell
 
    * `<link rel="drill-down" href="/v2/dimensionB"/>`
 
-* Eine Zusammenfassung (aggregierte Werte) für alle Metriken (im Standardintervall, da keine Abfragezeichenfolgenparameter angegeben sind, siehe unten).
+* Eine Zusammenfassung (aggregierte Werte) für alle Metriken (standardmäßig
+-Intervall, da keine Abfragezeichenfolgenparameter angegeben sind, siehe unten).
 
 
 Folgen Sie einem Drilldown-Pfad (Schritt für Schritt):
-`/dimensionA/year/month/day/dimensionX` ruft die folgende Antwort ab:
+`/dimensionA/year/month/day/dimensionX` ruft Folgendes ab
+Antwort:
 
-* Links zu &quot;`dimensionY`&quot; und &quot;`dimensionZ`&quot;Drilldown-Optionen
+* Links zu den Drilldown-Optionen &quot;`dimensionY`&quot;und &quot;`dimensionZ`&quot;
 
 * Ein Bericht mit täglichen Aggregaten für jeden Wert von `dimensionX`
 
@@ -69,29 +81,29 @@ Mit Ausnahme der Datums-/Uhrzeitdimensionen kann jede für die aktuelle Projekti
 
 Die folgenden Filteroptionen sind verfügbar:
 
-* **Gleich** -Filter bereitgestellt werden, indem der Dimensionsname auf einen bestimmten Wert in der Abfragezeichenfolge gesetzt wird.
+* **Entspricht** Filtern wird bereitgestellt, indem der Dimensionsname in der Abfragezeichenfolge auf einen bestimmten Wert gesetzt wird.
 
-* **IN** Filter können angegeben werden, indem der Parameter &quot;dimension-name&quot;mehrmals mit verschiedenen Werten hinzugefügt wird: dimension=value1\&amp;dimension=value2
+* **IN** -Filter können angegeben werden, indem der Parameter &quot;dimension-name&quot;mehrmals mit verschiedenen Werten hinzugefügt wird: dimension=value1\&amp;dimension=value2
 
-* **Ungleich** -Filter müssen &quot;\!&quot;verwenden Symbol hinter dem Dimensionsnamen, das zu &quot;\!&quot;führt.=&#39; &quot;operator&quot;: dimension\!=value
+* **Nicht gleich** Filter müssen den &#39;\!&#39; verwenden Symbol hinter dem Dimensionsnamen, das zu &quot;\!&quot;führt.=&#39; &quot;operator&quot;: dimension\!=value
 
-* **NOT IN** -Filter erfordert das &#39;\!=&#39;&#39;-Operator, der mehrmals verwendet wird, einmal für jeden Wert im Satz: Dimension\!=value1\&amp;dimension\!=value2&amp;...
+* **NOT IN** -Filter erfordern den &#39;\!=&#39;&#39;-Operator, der mehrmals verwendet wird, einmal für jeden Wert im Satz: Dimension\!=value1\&amp;dimension\!=value2&amp;...
 
 Außerdem werden die Dimensionsnamen in der Abfragezeichenfolge besonders verwendet: Wenn der Dimensionsname als Abfragezeichenfolgenparameter ohne Wert verwendet wird, weist dies die API an, eine Projektion zurückzugeben, die diese Dimension im Bericht enthält.
 
 ### Beispiel-ESM-Abfragen
 
-| *URL* | *SQL-Entsprechung* |
+| *URL* | *SQL-Äquivalent* |
 |---|---|
-| /dimension1/dimension2/dimension3?dimension1=value1 | SELECT * from projektion WHERE dimension1 = &#39;value1&#39; </br> GRUPPE NACH Dimension1, Dimension2, Dimension3 |
-| /dimension1/dimension2/dimension3?dimension1=value1&amp;dimension1=value2 | SELECT * from projektion WHERE dimension1 IN (&#39;value1&#39;, &#39;value2&#39;) </br> GRUPPE NACH Dimension1, Dimension2, Dimension3 |
+| /dimension1/dimension2/dimension3?dimension1=value1 | SELECT * from projektion WHERE dimension1 = &#39;value1&#39; </br> GROUP BY dimension1, dimension2, dimension3 |
+| /dimension1/dimension2/dimension3?dimension1=value1&amp;dimension1=value2 | SELECT * from projektion WHERE dimension1 IN (&#39;value1&#39;, &#39;value2&#39;) </br> GROUP BY dimension1, dimension2, dimension3 |
 | /dimension1/dimension2/dimension3?dimension1!=value1 | SELECT * from projektion WHERE dimension1 &lt;> &#39;value1&#39; | </br> GRUPPE NACH Dimension1, Dimension2, Dimension3 |
 | /dimension1/dimension2/dimension3?dimension1!=value1&amp;dimension2!=value2 | SELECT * from projektion WHERE dimension1 NOT IN (&#39;value1&#39;, &#39;value2&#39;) | </br> GRUPPE NACH Dimension1, Dimension2, Dimension3 |
-| Angenommen, es gibt keinen direkten Pfad: /dimension1/dimension3 </br> aber es gibt einen Pfad: /dimension1/dimension2/dimension3 </br> </br> /dimension1?dimension3 | AUSWÄHLEN * AUS ProjektionsGRUPPE NACH Dimension1, Dimension3 |
+| Angenommen, es gibt keinen direkten Pfad: /dimension1/dimension3 </br>, aber es gibt einen Pfad: /dimension1/dimension2/dimension3 </br> </br> /dimension1?dimension3 | AUSWÄHLEN * AUS ProjektionsGRUPPE NACH Dimension1, Dimension3 |
 
 >[!NOTE]
 >
->Keine dieser Filtermethoden funktioniert für `date/time` Dimensionen. Die einzige Möglichkeit zum Filtern `date/time` festzulegen, `start` und `end` Abfragezeichenfolgenparameter (siehe unten) an die erforderlichen Werte an.
+>Keine dieser Filtermethoden funktioniert für `date/time` -Dimensionen. Die einzige Möglichkeit, `date/time` -Dimensionen zu filtern, besteht darin, die Abfragezeichenfolgenparameter `start` und `end` (siehe unten) auf die erforderlichen Werte festzulegen.
 
 Die folgenden Abfragezeichenfolgenparameter haben reservierte Bedeutungen für die API (und können daher nicht als Dimensionsnamen verwendet werden, sonst ist keine Filterung für eine solche Dimension möglich).
 
@@ -105,16 +117,17 @@ Die folgenden Abfragezeichenfolgenparameter haben reservierte Bedeutungen für d
 | format | Ja | Wird für die Inhaltsverhandlung verwendet (mit demselben Effekt, aber geringerer Priorität als der Pfad &quot;Erweiterung&quot;- siehe unten). | Keine: Bei der Inhaltsverhandlung werden die anderen Strategien getestet | format=json |
 | limit | Ja | Maximale Anzahl an zurückzugebenden Zeilen | Der vom Server im Self-Link gemeldete Standardwert, wenn in der Anfrage keine Begrenzung angegeben ist | limit=1500 |
 | Metriken | Ja | Kommagetrennte Liste der zurückzugebenden Metriknamen. Diese sollte zum Filtern einer Untergruppe der verfügbaren Metriken (um die Payload-Größe zu reduzieren) und auch zum Erzwingen der API verwendet werden, eine Projektion zurückzugeben, die die angeforderten Metriken enthält (und nicht die standardmäßige optimale Projektion). | Alle für die aktuelle Projektion verfügbaren Metriken werden zurückgegeben, falls dieser Parameter nicht angegeben wird. | metrics=m1,m2 |
-| start | Ja | Startzeit für den Bericht als ISO8601; der Server füllt den verbleibenden Teil aus, wenn nur ein Präfix angegeben wird: Beispielsweise führt start=2012 zu start=2012-01-01:00:00:00 | Vom Server in der Selbstverknüpfung gemeldet; der Server versucht, basierend auf der ausgewählten Zeitgranularität angemessene Standardwerte bereitzustellen. | start=2012-07-15 |
+| start | Ja | Startzeit für den Bericht als ISO8601; der Server füllt den verbleibenden Teil aus, wenn nur ein Präfix angegeben wird: Beispielsweise führt start=2012 zu start=2012-01-01:00:00:00. | Vom Server in der Selbstverknüpfung gemeldet; der Server versucht, basierend auf der ausgewählten Zeitgranularität angemessene Standardwerte bereitzustellen. | start=2012-07-15 |
 
-Die einzige verfügbare HTTP-Methode ist derzeit GET. In zukünftigen Versionen können OPTIONS-/HEAD-Methoden unterstützt werden.
+Die einzige verfügbare HTTP-Methode ist derzeit GET. Unterstützung für OPTIONS /
+HEAD-Methoden können in zukünftigen Versionen bereitgestellt werden.
 
 ## ESM-API-Statuscodes {#esm-api-status-codes}
 
 | Status-Code | Reason Phrase | Beschreibung |
 |---|---|---|
 | 200 | OK | Die Antwort enthält Links für &quot;Datenaggregation&quot;und &quot;Drilldown&quot;(falls zutreffend). Der Bericht wird als Attribut der Ressource gerendert: als verschachteltes Element/Eigenschaft &quot;Bericht&quot;. |
-| 400 | Ungültige Anfrage | Der Antworttext enthält eine Textmeldung, die erklärt, was mit der Anfrage nicht stimmt. </br> </br> Der Status &quot;Bad Request&quot;(400-Ungültige Anfrage) wird von einem erklärenden Text im Antworttext (Nur-/Text-Medientyp) begleitet, der nützliche Informationen zum Client-Fehler liefert. Neben trivialen Szenarien wie ungültigen Datumsformaten oder Filtern, die auf nicht vorhandene Dimensionen angewendet werden, weicht das System auch die Beantwortung von Abfragen ab, bei denen ein massives Datenvolumen sofort zurückgegeben oder aggregiert werden muss. |
+| 400 | Ungültige Anfrage | Der Antworttext enthält eine Textmeldung, die erklärt, was mit der Anfrage nicht stimmt. </br> </br> Dem Status &quot;Ungültige Anfrage 400&quot;wird ein erläuternder Text im Antworttext (Nur-/Text-Medientyp) hinzugefügt, der nützliche Informationen zum Client-Fehler liefert. Neben trivialen Szenarien wie ungültigen Datumsformaten oder Filtern, die auf nicht vorhandene Dimensionen angewendet werden, weicht das System auch die Beantwortung von Abfragen ab, bei denen ein massives Datenvolumen sofort zurückgegeben oder aggregiert werden muss. |
 | 401 | Unerlaubt | Wird durch eine Anfrage ausgelöst, die nicht die richtigen OAuth-Header enthält, um den Benutzer zu authentifizieren |
 | 403 | Verboten | Gibt an, dass die Anfrage im aktuellen Sicherheitskontext nicht zulässig ist. Dies geschieht, wenn der Benutzer authentifiziert ist, aber nicht auf die angeforderten Informationen zugreifen darf |
 | 404 | Nicht gefunden | Tritt auf, wenn die Anfrage einen ungültigen URL-Pfad enthält. Dies sollte niemals vorkommen, wenn der Client den Links &quot;Drilldown&quot;/&quot;Rollout&quot; folgt, die mit 200 Antworten bereitgestellt werden |
@@ -149,7 +162,7 @@ Wenn von keiner der Strategien ein Medientyp angegeben wird, erzeugt die API sta
 
 ## Hypertext Application Language {#hypertext-application-language}
 
-Für JSON und XML wird die Payload als HAL kodiert, wie hier beschrieben:  <http://stateless.co/hal_specification.html>.
+Bei JSON und XML wird die Payload als HAL kodiert, wie hier beschrieben: <http://stateless.co/hal_specification.html>.
 
 Der tatsächliche Bericht (ein verschachteltes Tag/eine verschachtelte Eigenschaft namens &quot;Bericht&quot;) besteht aus der tatsächlichen Liste der Datensätze, die alle ausgewählten/anwendbaren Dimensionen und Metriken mit ihren Werten enthalten, die wie folgt kodiert sind:
 
@@ -179,9 +192,9 @@ Der tatsächliche Bericht (ein verschachteltes Tag/eine verschachtelte Eigenscha
 
 Bei XML- und JSON-Formaten ist die Reihenfolge der Felder (Dimensionen und Metriken) in einem Datensatz nicht angegeben - aber konsistent (die Reihenfolge ist in allen Datensätzen identisch). Clients sollten sich jedoch nicht auf eine bestimmte Reihenfolge der Felder in einem Datensatz verlassen.
 
-Der Ressourcenlink (das &quot;self&quot;-rel in JSON und das &quot;href&quot;-Ressourcenattribut in XML) enthält den aktuellen Pfad und die Abfragezeichenfolge, die für den Inline-Bericht verwendet werden. Die Abfragezeichenfolge zeigt alle impliziten und expliziten Parameter an, sodass die Payload explizit auf das verwendete Zeitintervall, die impliziten Filter (falls vorhanden) usw. verweist. Der Rest der Links innerhalb der Ressource enthält alle verfügbaren Segmente, die verfolgt werden können, um einen Drilldown in den aktuellen Daten durchzuführen. Es wird auch ein Link für die Datenaggregation bereitgestellt, der auf den übergeordneten Pfad verweist (falls vorhanden). Die `href` -Wert für die Drilldown-/Rollup-Links enthält nur den URL-Pfad (er enthält nicht die Abfragezeichenfolge, daher muss dieser bei Bedarf vom Client angehängt werden). Beachten Sie, dass nicht alle von der aktuellen Ressource verwendeten (oder impliziten) Abfragezeichenfolgenparameter für &quot;Datenaggregations&quot;- oder &quot;Drilldown&quot;-Links gelten (z. B. gelten die Filter nicht für Unter- oder Super-Ressourcen).
+Der Ressourcenlink (das &quot;self&quot;-rel in JSON und das &quot;href&quot;-Ressourcenattribut in XML) enthält den aktuellen Pfad und die Abfragezeichenfolge, die für den Inline-Bericht verwendet werden. Die Abfragezeichenfolge zeigt alle impliziten und expliziten Parameter an, sodass die Payload explizit auf das verwendete Zeitintervall, die impliziten Filter (falls vorhanden) usw. verweist. Der Rest der Links innerhalb der Ressource enthält alle verfügbaren Segmente, die verfolgt werden können, um einen Drilldown in den aktuellen Daten durchzuführen. Es wird auch ein Link für die Datenaggregation bereitgestellt, der auf den übergeordneten Pfad verweist (falls vorhanden). Der Wert `href` für die Drilldown-/Rollup-Links enthält nur den URL-Pfad (er enthält nicht die Abfragezeichenfolge, daher muss dieser bei Bedarf vom Client angehängt werden). Beachten Sie, dass nicht alle von der aktuellen Ressource verwendeten (oder impliziten) Abfragezeichenfolgenparameter für &quot;Datenaggregations&quot;- oder &quot;Drilldown&quot;-Links gelten (z. B. gelten die Filter nicht für Unter- oder Super-Ressourcen).
 
-Beispiel (vorausgesetzt, wir haben eine einzelne Metrik namens `clients` und es eine Voraggregation für `year/month/day/...`):
+Beispiel (vorausgesetzt, wir haben eine einzelne Metrik namens `clients` und es gibt eine Voraggregation für `year/month/day/...`):
 
 * https://mgmt.auth.adobe.com/esm/v2/year/month.xml
 
@@ -233,7 +246,7 @@ Im CSV-Datenformat werden keine Links oder anderen Metadaten (mit Ausnahme der K
     esm__<start-date>_<end-date>_<filter-values,...>.csv
 ```
 
-Die CSV-Datei enthält eine Kopfzeile und dann die Berichtsdaten als nachfolgende Zeilen. Die Kopfzeile enthält alle Dimensionen, gefolgt von allen Metriken. Die Sortierreihenfolge der Berichtsdaten wird in der Reihenfolge der Dimensionen angezeigt. Wenn die Daten daher nach `D1` und dann durch `D2`sieht die CSV-Kopfzeile wie folgt aus: `D1, D2, ...metrics...`.
+Die CSV-Datei enthält eine Kopfzeile und dann die Berichtsdaten als nachfolgende Zeilen. Die Kopfzeile enthält alle Dimensionen, gefolgt von allen Metriken. Die Sortierreihenfolge der Berichtsdaten wird in der Reihenfolge der Dimensionen angezeigt. Wenn Daten nach `D1` und dann nach `D2` sortiert werden, sieht der CSV-Header daher wie folgt aus: `D1, D2, ...metrics...`.
 
 Die Reihenfolge der Felder in der Kopfzeile entspricht der Sortierreihenfolge der Tabellendaten.
 
@@ -248,7 +261,7 @@ Beispiel: https://mgmt.auth.adobe.com/v2/year/month.csv erstellt eine Datei mit 
 
 ## Datenfreude {#data-freshness}
 
-Die erfolgreichen HTTP-Antworten enthalten eine `Last-Modified` -Kopfzeile, die den Zeitpunkt angibt, zu dem der Bericht im Hauptteil zuletzt aktualisiert wurde. Das Fehlen einer Kopfzeile vom Typ Letzte Änderung zeigt an, dass die Berichtsdaten in Echtzeit berechnet werden.
+Die erfolgreichen HTTP-Antworten enthalten einen `Last-Modified` -Header, der den Zeitpunkt angibt, zu dem der Bericht im Textkörper zuletzt aktualisiert wurde. Das Fehlen einer Kopfzeile vom Typ Letzte Änderung zeigt an, dass die Berichtsdaten in Echtzeit berechnet werden.
 
 Normalerweise werden grobkörnige Daten weniger häufig aktualisiert als fein abgestufte Daten (z. B. Minuswerte oder Stundenwerte), die aktueller als die täglichen Werte sein können, insbesondere für Metriken, die nicht anhand kleinerer Granularitäten berechnet werden können (z. B. eindeutige Werte).
 
@@ -258,7 +271,7 @@ Zukünftige Versionen von ESM können es Kunden ermöglichen, bedingte GETs ausz
 
 Adobe empfiehlt dringend, dass Sie die gzip-Unterstützung in Clients aktivieren, die ESM-Berichte abrufen. Dadurch wird die Größe der Antwort erheblich reduziert, was wiederum Ihre Reaktionszeit reduziert. (Das Komprimierungsverhältnis für ESM-Daten liegt im Bereich von 20-30.)
 
-Um die gzip-Komprimierung in Ihrem Client zu aktivieren, legen Sie die `Accept-Encoding:` -Kopfzeile wie folgt:
+Um die gzip-Komprimierung in Ihrem Client zu aktivieren, legen Sie die Kopfzeile `Accept-Encoding:` wie folgt fest:
 
 * Accept-Encoding: gzip, deflate
 
