@@ -1,14 +1,13 @@
 ---
 title: Benutzerspezifische Metadaten
 description: Benutzerspezifische Metadaten
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 0cfd1158-8c6c-47c2-b838-5490ff4bf0ce
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '367'
 ht-degree: 0%
 
 ---
-
-
 
 # Benutzerspezifische Metadaten {#cm}
 
@@ -41,9 +40,8 @@ Je nach gesendeten Schlüsseln/Werten können unterschiedliche Regeln festgelegt
 1. Der Kunde entscheidet, dass er die Parametergruppe senden möchte, die die Werte &quot;SPORTS&quot; und &quot;KIDS&quot; enthält.
 1. Anschließend muss die App dies tun:
    * Bei Sportkanälen sendet die App bei der Stream-Initialisierung ***type=SPORTS*** als Abfrageparameter
-   * Für Kanäle mit kinderbezogenen Inhalten sendet die App bei der Stream-Initialisierung ***type=KIDS*** als Abfrageparameter
+   * Bei Kanälen mit kinderbezogenem Inhalt sendet die App bei der Stream-Initialisierung ***type=KIDS*** als Abfrageparameter
 1. Anschließend könnte eine Richtlinie wie die folgende definiert werden:
    * `GROUP by type HAVING COUNT(streamID) < 4) IF type=KIDS`
    * `GROUP by type HAVING COUNT(streamID) < 2) IF type=SPORTS`
 1. Das würde im Grunde bedeuten, dass ein Benutzer beim Ansehen von Sport nicht auf mehr als einem Gerät darauf zugreifen kann. Wenn der Benutzer jedoch Inhalte von Kindern ansieht, ist die Anzeige auf maximal 3 Geräten erlaubt.
-

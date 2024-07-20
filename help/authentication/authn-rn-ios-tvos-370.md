@@ -4,7 +4,7 @@ description: Versionshinweise zur Authentifizierung iOS/tvOS 3.7.0
 exl-id: 19c1179e-16b1-4608-954f-25b0980d7ad9
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '117'
+source-wordcount: '126'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Releasedatum: 03.09.2021
 
 Fügt Verbesserungen für die Verwendung des AccessEnabler-Frameworks hinzu, indem Keychain-Speichervorgänge zugelassen werden, wenn sich die Anwendung im Hintergrund befindet oder das Gerät gesperrt ist. Dies kann beispielsweise die Implementierung von AirPlay erleichtern.
 
-## Versionspaket {#rel=pkg-iostvos370}
+## Release-Paket {#rel=pkg-iostvos370}
 
 Sie können das iOS/tvOS SDK v3.7.0 von hier herunterladen.
 

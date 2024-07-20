@@ -20,14 +20,14 @@ ht-degree: 0%
 
 ## Fehler: Nicht autorisiert
 
-### Ursachen:
+### Bewirkt:
 
 1. Autorisierung Kopfzeile fehlt im POST
 1. Problem mit Autorisierung Kopfzeile – prüfen Sie, ob Anfrage Zeit in Millisekunden angegeben ist.
 
 ## Fehler: SC 400 während der Authentifizierung
 
-### Ursachen:
+### Bewirkt:
 
 1. Der Server konnte den registrierung Code, der für eine bestimmte Anforderung erstellt wurde, nicht finden, und Umgebung.
 1. Möglicherweise treten domänenübergreifende Scripting Probleme auf
@@ -42,14 +42,14 @@ ht-degree: 0%
 
 ## Fehler: 403 Verboten
 
-### Ursachen:
+### Bewirkt:
 
 1. Zu viele schnelle Anfragen - eine Funktion des API-Managements, um DoS-Angriffe zu verhindern.
 2. Wenn Sie prequal Umgebung verwenden, fügen Sie Spoofing hinzu, andernfalls stellen Sie sicher, dass Spoofing aus der Datei /etc/hosts entfernt wurde
 
 ## Fehler: Anmeldung zu MVPD-Seite nicht möglich
 
-### Ursachen:
+### Bewirkt:
 
 1. Benutzername und Kennwort stimmen nicht überein
 2. Anmeldung wurde möglicherweise deaktiviert

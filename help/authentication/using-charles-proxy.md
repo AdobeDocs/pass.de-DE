@@ -4,7 +4,7 @@ description: Charles Proxy verwenden
 exl-id: bb38543f-f6bc-4b5a-91b8-41bc51ee4c56
 source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
 workflow-type: tm+mt
-source-wordcount: '457'
+source-wordcount: '369'
 ht-degree: 0%
 
 ---
@@ -21,8 +21,8 @@ ht-degree: 0%
 
 ## Herunterladen, Installieren und Erste Schritte mit Charles Proxy {#download-install-and-get-stared-with-charles-proxy}
 
-- **Herunterladen** - <http://www.charlesproxy.com/download/>
-- **Installieren** - <http://www.charlesproxy.com/documentation/installation/>
+- **Download** - <http://www.charlesproxy.com/download/>
+- **Install** - <http://www.charlesproxy.com/documentation/installation/>
 - **Erste Schritte** - <http://www.charlesproxy.com/documentation/getting-started/>
 
 
@@ -36,7 +36,7 @@ Es gibt zwei verschiedene Möglichkeiten, den Traffic anzuzeigen:
 
 ## SSL und Zertifikate {#ssl-and-certificates}
 
-Aktivieren der SSL-Proxy `\[ *Proxy -\> Proxy Settings... -\> SSL* \]`
+Aktivieren der SSL-Proxying `\[ *Proxy -\> Proxy Settings... -\> SSL* \]`
 
 Aktivieren Sie das Kontrollkästchen &quot;SSL-Proxying aktivieren&quot;und fügen Sie alle HTTPS-Speicherorte hinzu.
 
@@ -45,7 +45,7 @@ Aktivieren Sie das Kontrollkästchen &quot;SSL-Proxying aktivieren&quot;und füg
 
 
 
-- SSL-Proxying - <http://www.charlesproxy.com/documentation/proxying/ssl-proxying/>
+- SSL-Proxy - <http://www.charlesproxy.com/documentation/proxying/ssl-proxying/>
 - SSL-Zertifikate - <http://www.charlesproxy.com/documentation/using-charles/ssl-certificates/>
 - SSL-Proxy von Mobilgeräten - siehe unten.
 
@@ -55,7 +55,7 @@ Aktivieren Sie das Kontrollkästchen &quot;SSL-Proxying aktivieren&quot;und füg
 Wenn Ihre Ausgabe zu übersichtlich wird, können Sie Positionen ignorieren oder ausschließen. Sie können Positionen ignorieren oder ausschließen, indem Sie einen der folgenden Schritte ausführen:
 
 - Klicken Sie mit der rechten Maustaste auf die Anforderungen, die Sie ignorieren möchten, und wählen Sie &quot;Ignorieren&quot;
-- Fügen Sie die Orte manuell hinzu, von denen Sie ausschließen möchten `\[ *Proxy -\> Recording Settings... -\> Exclude* \]`
+- Fügen Sie die Orte manuell hinzu, die von `\[ *Proxy -\> Recording Settings... -\> Exclude* \]` ausgeschlossen werden sollen
 
 
 ## DNS-Spoofing {#dns-spoffing}
@@ -77,7 +77,7 @@ DNS-Spoofing ist sehr nützlich, wenn versucht wird, eine Anfrage an eine andere
 
 
 
-Mit map remote können Sie eine &quot;eingehende&quot;Anfrage an einen anderen Endpunkt umleiten. Der häufigste Anwendungsfall für diese Funktion ist &quot;Zuordnung&quot;. `AccessEnabler.swf` nach `AccessEnablerDebug.swf:`
+Mit map remote können Sie eine &quot;eingehende&quot;Anfrage an einen anderen Endpunkt umleiten. Der häufigste Anwendungsfall für diese Funktion ist die Zuordnung von `AccessEnabler.swf` zu `AccessEnablerDebug.swf:`
 
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/MapRemote.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/MapRemoteAdd.PNG)
 
@@ -95,13 +95,13 @@ Mit map remote können Sie eine &quot;eingehende&quot;Anfrage an einen anderen E
 
 #### SSL-Verbindung von iPhone {#ssl-connection-from-iphone}
 
-Navigieren Sie zu <http://charlesproxy.com/charles.crt> von Ihrem iOS-Gerät aus.  Dadurch wird das Dialogfeld für die Zertifikatinstallation gestartet:
+Navigieren Sie auf Ihrem iOS-Gerät zu &quot;<http://charlesproxy.com/charles.crt>&quot;.  Dadurch wird das Dialogfeld für die Zertifikatinstallation gestartet:
 
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate1\(1\).PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate2\(1\).PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate3.PNG)
 
 </br>
 
-Klicks `\[ *Install*... *Install*... *Done* \]` , um die Installation des Zertifikats abzuschließen.
+Klicken Sie auf `\[ *Install*... *Install*... *Done* \]` , um die Installation des Zertifikats abzuschließen.
 
 <http://www.charlesproxy.com/documentation/faqs/ssl-connections-from-within-iphone-applications/>
 
@@ -109,7 +109,7 @@ Klicks `\[ *Install*... *Install*... *Done* \]` , um die Installation des Zertif
 
 #### Verwenden von Charles auf einem iOS-Gerät {#using-charles-from-an-ios-device}
 
-Wählen Sie auf Ihrem iOS-Gerät aus. `\[ *Settings* -\> *Wi-FI* -\> (*YOUR\_WIFI\_NETWORK)* \]`. Klicken Sie auf den kleinen blauen Pfeil neben Ihrem Netzwerk, gehen Sie dann zum HTTP-Proxy und wählen Sie &quot;Manuell&quot;:
+Wählen Sie auf Ihrem iOS-Gerät `\[ *Settings* -\> *Wi-FI* -\> (*YOUR\_WIFI\_NETWORK)* \]` aus. Klicken Sie auf den kleinen blauen Pfeil neben Ihrem Netzwerk, gehen Sie dann zum HTTP-Proxy und wählen Sie &quot;Manuell&quot;:
 
 
 </br>
@@ -125,7 +125,8 @@ Hier müssen Sie die IP und den Port des Computers angeben, auf dem Sie Charles 
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy3.PNG)
 
 </br>
-Klicken Sie auf "Zulassen", damit das Gerät Charles zum Proxy aller Anforderungen verwenden kann.
+Klicken Sie auf "Zulassen", damit das Gerät Charles zum Proxy aller zugehörigen Elemente verwenden kann
+-Anfragen.
 
 <http://www.charlesproxy.com/documentation/faqs/using-charles-from-an-iphone/>
 
@@ -144,4 +145,4 @@ Klicken Sie auf "Zulassen", damit das Gerät Charles zum Proxy aller Anforderung
 <http://www.charlesproxy.com/documentation/configuration/browser-and-system-configuration>
 
 
-Navigieren Sie zu [Charles Proxy](http://charlesproxy.com/charles.crt) von Ihrem Android-Gerät aus.
+Navigieren Sie von Ihrem Android-Gerät zu [Charles proxy](http://charlesproxy.com/charles.crt).

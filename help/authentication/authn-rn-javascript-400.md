@@ -1,7 +1,8 @@
 ---
 title: Versionshinweise zur Adobe Pass-Authentifizierung JavaScript 4.0.0
 description: Versionshinweise zur Adobe Pass-Authentifizierung JavaScript 4.0.0
-source-git-commit: 7057aeda34b4fe0d059912ab0a71ea856427654c
+exl-id: 2ded9ad8-56f7-44b5-87a2-12a195cd0829
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '262'
 ht-degree: 0%
@@ -20,7 +21,7 @@ Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme in di
 
 Adobe Pass-Authentifizierung: JavaScript 4.0.0
 
-Releasedatum: **05.7.2018**
+Releasedatum: **07/05/2018**
 
 
 ## Versionsübersicht {#overview-javascript-sdk-400}

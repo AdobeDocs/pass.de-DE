@@ -4,7 +4,7 @@ description: AccessEnabler iOS/tvOS 3.7.0 Aktualisierungspfad
 exl-id: f15c7414-ec9b-4e21-b457-1ecf59f47441
 source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '320'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 0%
 
 </br>
 
-Änderungen am Keychain-Speicher von [neue AccessEnabler-Version 3.7.0](/help/authentication/authn-rn-ios-tvos-370.md) sind nicht mit der Implementierung des Keychain-Speichers aus der AccessEnabler-Version unter 3.7.0 kompatibel.
+Änderungen des Schlüsselspeicherplatzes aus der [neuen AccessEnabler-Version 3.7.0](/help/authentication/authn-rn-ios-tvos-370.md) sind nicht mit der Implementierung des Schlüsselchain-Speichers aus der AccessEnabler-Version unter 3.7.0 kompatibel.
 
-Der Aktualisierungspfad für eine Anwendung, die die neue AccessEnabler-Version 3.7.0 verwendet, migriert alle Token aus früheren Versionen des Keychain-Speichers. Daher werden die Endnutzer **sollte keinen Verlust von Authentifizierungs-/Autorisierungssitzungen erleben** während des Aktualisierungsprozesses des AccessEnabler-Frameworks.
+Der Aktualisierungspfad für eine Anwendung, die die neue AccessEnabler-Version 3.7.0 verwendet, migriert alle Token aus früheren Versionen des Keychain-Speichers. Daher sollten Endbenutzer **während des Aktualisierungsprozesses des AccessEnabler-Frameworks keine Authentifizierungs-/Autorisierungssitzungen** verlieren.
 
 ## Bekannte Einschränkungen
 

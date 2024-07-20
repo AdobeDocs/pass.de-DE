@@ -1,19 +1,19 @@
 ---
 title: Richtlinie zur Datenaufbewahrung
 description: Richtlinie zur Datenaufbewahrung
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: aa7d2d5e-9a8b-404b-874c-9e5923417784
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '298'
 ht-degree: 0%
 
 ---
-
 
 # Richtlinie zur Datenaufbewahrung {#data-retention-policy}
 
 >[!WARNING]
 >
->**Hinweis:** Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>**Hinweis:** Der Inhalt auf dieser Seite wird nur zu Informationszwecken bereitgestellt. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
 
 ## Einführung {#introduction}
@@ -22,7 +22,7 @@ Adobe muss in seiner Rolle als Datenverarbeiter geeignete Maßnahmen ergreifen, 
 
 ## Definitionen {#definitions}
 
-Eine Richtlinie zur Datenaufbewahrung bestimmt, wie lange Adobe Kundendaten speichert. Die standardmäßige Datenaufbewahrungsrichtlinie für die Überwachung der Parallelität lautet **25 Monate**.
+Eine Richtlinie zur Datenaufbewahrung bestimmt, wie lange Adobe Kundendaten speichert. Die standardmäßige Datenaufbewahrungsrichtlinie für die Überwachung der Parallelität ist **25 Monate**.
 
 | Datenaufbewahrungszeitraum | Der Datenaufbewahrungszeitraum ist der standardmäßige Datenaufbewahrungszeitraum (25 Monate). |
 |---|---|
@@ -30,7 +30,7 @@ Eine Richtlinie zur Datenaufbewahrung bestimmt, wie lange Adobe Kundendaten spei
 
 ## Datenerfassung {#data-collection}
 
-*Clickstream-Daten* stellt Daten dar, die von Kunden für die Sitzungs-Heartbeats freigegeben wurden (z. B. subjectID, mvpdName und Metadaten). Alle benutzerdefinierten Metadatenfelder werden im Abschnitt [Standard-Metadatenattribute](/help/concurrency-monitoring/standard-metadata-attributes.md).
+*Clickstream-Daten* stellen Daten dar, die von Kunden in den Sitzungs-Heartbeats freigegeben werden (z. B. subjectID, mvpdName und Metadaten). Alle benutzerdefinierten Metadatenfelder werden in den [Standard-Metadatenattributen](/help/concurrency-monitoring/standard-metadata-attributes.md) referenziert.
 
 ## Kundentypen {#customer-types}
 
@@ -38,15 +38,14 @@ Eine Richtlinie zur Datenaufbewahrung bestimmt, wie lange Adobe Kundendaten spei
 
 Sofern der Kunde keine Datenaufbewahrungserweiterungen erwirbt, erfüllt die Überwachung der Gleichzeitigkeit die folgenden Anforderungen an die Kundendatenaufbewahrung:
 
-* *Clickstream-Daten* von der Überwachung der Parallelität gesammelt werden, muss spätestens am **25 Monate** ab dem Datum der Sammlung.
+* *Clickstream-Daten*, die von der gleichzeitigen Überwachung erfasst werden, müssen spätestens **25 Monate** ab dem Datum der Erfassung gelöscht werden.
 
 ### Terminierte Kunden {#terminated-customers}
 
 Ein beendeter Kunde ist ein Kunde, der die Beziehung zu Adobe beendet hat und die gleichzeitige Überwachung nicht mehr verwendet.
 
-* *Clickstream-Daten* von der Überwachung der Parallelität gesammelt werden, müssen innerhalb von **6 Monate** ab dem Datum der Vertragsbeendigung.
+* *Clickstream-Daten*, die von der gleichzeitigen Überwachung erfasst werden, müssen innerhalb von **6 Monaten** ab dem Datum der Vertragsbeendigung gelöscht werden.
 
 ## Datenlöschung {#data-deletion}
 
 Adobe behält sich das Recht vor, Daten für Daten, die über die Datenaufbewahrungsdauer hinausgehen, ohne Wiederherstellungsoption zu löschen. Daten aktueller Kunden sollten monatlich rollierend gelöscht werden.
-

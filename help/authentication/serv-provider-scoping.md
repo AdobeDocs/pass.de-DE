@@ -4,7 +4,7 @@ description: Umfang des Dienstleisters
 exl-id: 730c43e1-46c0-4eec-b562-b1ad93cce6d3
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '313'
+source-wordcount: '314'
 ht-degree: 0%
 
 ---
@@ -25,9 +25,9 @@ Da die Adobe Pass-Authentifizierung die Rolle von SP für den Programmierer übe
 
 Die Adobe Pass-Authentifizierung unterstützt die folgenden beiden Möglichkeiten, das SP-Scoping von Authentifizierungsanforderungen zu aktivieren:
 
-* **Der SAML-Ausstelleransatz.**  Bei diesem Ansatz wird die &quot;Anforderer-ID&quot;in der SAML-Authentifizierungsanforderung an die Zeichenfolge SAML-Aussteller angehängt.
+* **Der SAML-Ausstelleransatz.** Bei diesem Ansatz wird die &quot;Anforderer-ID&quot;in der SAML-Authentifizierungsanforderung an die SAML-Ausstellerzeichenfolge angehängt.
 
-* **Der Ansatz der benutzerdefinierten Scoping-Eigenschaft.**  Bei diesem Ansatz ist die &quot;Anforderer-ID&quot;explizit als benutzerdefinierte Eigenschaft &quot;Scoping&quot;in der SAML-Authentifizierungsanforderung enthalten.
+* **Der benutzerdefinierte Scoping-Eigenschaftsansatz.** Bei diesem Ansatz ist die &quot;Anforderer-ID&quot;explizit als benutzerdefinierte Eigenschaft &quot;Scoping&quot;in der SAML-Authentifizierungsanforderung enthalten.
 
 >[!NOTE]
 >
@@ -35,7 +35,7 @@ Die Adobe Pass-Authentifizierung unterstützt die folgenden beiden Möglichkeite
 
 ### SAML-Ausstellungsansatz {#saml-issuer-approach}
 
-Bei diesem Ansatz wird SAML verwendet `<Issuer>` -Element in der SAML-Authentifizierungsanforderung ein, wie in diesem Snippet gezeigt:
+Bei diesem Ansatz wird das SAML `<Issuer>` -Element in der SAML-Authentifizierungsanforderung verwendet, wie in diesem Snippet gezeigt:
 
 ```xml
 ...

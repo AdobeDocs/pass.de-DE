@@ -1,7 +1,8 @@
 ---
 title: Versionshinweise zur Adobe Pass-Authentifizierung 2.69
 description: Versionshinweise zur Adobe Pass-Authentifizierung 2.69
-source-git-commit: 4417c5c50873c73c615f9845cadd4a42c26f3068
+exl-id: d031c4c5-dbd5-4a77-b298-a53b992cc4c5
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '215'
 ht-degree: 0%
@@ -23,7 +24,7 @@ Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme in di
 
 ### Build-Nummer {#build-number-269}
 
-Adobe Pass-Authentifizierung: adobe-pass-**2,69**
+Adobe Pass-Authentifizierung: adobe-pass-**2.69**
 Releasedatum: **27.02.2024 - 29.02.2024**
 
 ### Neue Funktionen {#new-features-269}
@@ -32,7 +33,7 @@ Releasedatum: **27.02.2024 - 29.02.2024**
 
 * Sicherheitslücken behoben.
 * Verbesserungen beim Zurücksetzen der Sicherheitsschicht &quot;Temp Pass&quot;mit Dynamic Client Registration (DCR).
-   * Weitere Informationen finden Sie hier: [Zurücksetzen des Vorübergangs](reset-temp-pass.md)
+   * Weitere Informationen finden Sie hier: [Temporären Pass zurücksetzen](reset-temp-pass.md)
 * Verbesserungen bei der Berichterstellung zur Platform-Identifizierung.
 
 #### REST-APIs {#rest-apis}
@@ -47,7 +48,7 @@ Releasedatum: **27.02.2024 - 29.02.2024**
    * In einer kommenden Version wird das neue TVE-Dashboard vorgestellt, das in einer separaten Benachrichtigung angekündigt wird.
    * Die Dokumentation zur Verwendung dieses neuen TVE-Dashboards wird derzeit aktualisiert.
 
-#### JavaScript-SDK 4.7.0 {#js-sdk}
+#### JavaScript SDK 4.7.0 {#js-sdk}
 
 * Die veraltete Version 2.0.1 von Access Enabler JavaScript SDK wurde aufgrund von Sicherheitslücken entfernt.
    * Weitere Informationen finden Sie unter dem Link: [Versionshinweise zur Adobe Pass-Authentifizierung JavaScript 4.7.0](authn-rn-javascript-470.md)

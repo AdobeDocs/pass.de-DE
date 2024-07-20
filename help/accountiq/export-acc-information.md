@@ -11,21 +11,21 @@ ht-degree: 1%
 
 # Exportieren von Informationen zu Konten mit hoher Sharing-Punktzahl {#export-account-info-high-score}
 
-[!UICONTROL Account IQ] ermöglicht den Export von Details zur Kontofreigabe für Top-1000-Abonnentenkonten basierend auf deren [Freigabewahrscheinlichkeiten](/help/accountiq/product-concepts.md#account-sharing-probability-def). Sie können Informationen zur Kontofreigabe für die aktuelle [Segment](/help/accountiq/product-concepts.md#segment-def) und [angegebenes Zeitintervall](/help/accountiq/product-concepts.md#time-interval-def) auf [Berichte zu freigegebenen Konten](/help/accountiq/shared-acc-reports.md) Seite.
+Mit [!UICONTROL Account IQ] können Sie Details zur Kontofreigabe für die Top-1000-Abonnentenkonten basierend auf ihren [Freigabewahrscheinlichkeiten](/help/accountiq/product-concepts.md#account-sharing-probability-def) exportieren. Sie können die Kontofreigabeinformationen für das aktuelle [Segment](/help/accountiq/product-concepts.md#segment-def) und das [angegebene Zeitintervall](/help/accountiq/product-concepts.md#time-interval-def) auf der Seite [Berichte zu freigegebenen Konten](/help/accountiq/shared-acc-reports.md) exportieren.
 
 Führen Sie die Schritte aus, um die Kontofreigabe-Informationen von Abonnentenkonten für ein bestimmtes Segment zu exportieren.
 
 1. Melden Sie sich mit Ihren Anmeldedaten an.
-1. Navigieren Sie zum **Freigegebene Konten** Registerkarte unter **Berichte** Abschnitt.
-1. Wählen Sie das erforderliche Segment und das erforderliche Zeitintervall aus dem Segment- und Zeitintervallbereich aus. Lernen [Auswählen eines Segments und eines Zeitintervalls](segments-timeinterval.md).
+1. Navigieren Sie zur Registerkarte **Freigegebene Konten** im Abschnitt **Berichte** .
+1. Wählen Sie das erforderliche Segment und das erforderliche Zeitintervall aus dem Segment- und Zeitintervallbereich aus. Erfahren Sie [, wie Sie ein Segment und ein Zeitintervall auswählen](segments-timeinterval.md).
 
-   Falls erforderlich, lesen Sie die Anleitung für [Erstellen eines Segments](work-with-segments.md#create-new-segment) oder [Bearbeiten eines Segments](work-with-segments.md#edit-segment).
+   Lesen Sie bei Bedarf die Anweisungen zum [Erstellen eines Segments](work-with-segments.md#create-new-segment) oder [Bearbeiten eines Segments](work-with-segments.md#edit-segment).
 
-1. Auswählen **[!UICONTROL Export top 1000 accounts]** befindet sich in der rechten oberen Ecke des Segment- und Zeitintervallbereichs.
+1. Wählen Sie **[!UICONTROL Export top 1000 accounts]** in der oberen rechten Ecke des Segment- und Zeitintervallbereichs aus.
 
-   ![Export der 1000 wichtigsten Konten](assets/export-top-1000-accounts.png)
+   ![Top-1000-Konten exportieren](assets/export-top-1000-accounts.png)
 
-   *Wählen Sie die Option Top 1000-Konten exportieren aus.*
+   *Wählen Sie die Option &quot;Top 1000-Konten exportieren&quot;*
 
 Die Datei wird automatisch als CSV-Datei auf Ihren lokalen Computer heruntergeladen.
 
@@ -33,7 +33,7 @@ Diese Datei enthält die Daten für die Top-1000-Konten basierend auf den Teilun
 
 Im Folgenden finden Sie ein Beispiel für die exportierte .csv -Datei.
 
-![exportierte Daten in .csv-Datei](assets/exported-csv.png)
+![ exportierte Daten in .csv-Datei](assets/exported-csv.png)
 
 *Exportierte Daten in .csv-Datei*
 
@@ -41,7 +41,7 @@ Im Folgenden finden Sie ein Beispiel für die exportierte .csv -Datei.
 
 **Woche/Monat**
 
-Die ausgewählte Woche oder der ausgewählte Monat innerhalb der **[!UICONTROL Granularity and Time Interval]** in der Segmentauswahl.
+Die ausgewählte Woche oder der ausgewählte Monat innerhalb der **[!UICONTROL Granularity and Time Interval]** -Option in der Segmentauswahl.
 
 **MVPD**
 
@@ -49,13 +49,13 @@ Wenn Sie Programmierer sind, zeigt die Spalte den Distributor an, mit dem das Ko
 
 >[!NOTE]
 >
-> Die **MVPD** -Spalte ist nur für TV-Überall-Versionen verfügbar.
+> Die Spalte **MVPD** ist nur für TV Anywhere-Versionen verfügbar.
 
 **Abonnenten-ID**
 
 Die eindeutige Kennung für das spezifische Konto.
 
-**Minimale Anzahl der Geräte**
+**Minimum # Devices**
 
 Die Mindestanzahl der Geräte, von denen Benutzer Inhalte aktiv streamen.
 
@@ -63,7 +63,7 @@ Die Mindestanzahl der Geräte, von denen Benutzer Inhalte aktiv streamen.
 >
 >Die tatsächliche Anzahl der Geräte-Streaming-Inhalte übersteigt die für ein bestimmtes Konto angegebene Mindestanzahl von Geräten.
 
-**Mindestanzahl von Personen**
+**Minimum # persons**
 
 Die Mindestanzahl von Einzelanwendern, die aktiv Inhalte mit diesen Geräten gestreamt.
 
@@ -89,7 +89,7 @@ Die Anzahl der Status, in denen die Streaming-Aktivität stattgefunden hat.
 
 **[!UICONTROL # Clusters]**
 
-Die Anzahl der einzelnen [Cluster](/help/accountiq/product-concepts.md#cluster-def) wo Streaming stattgefunden hat.
+Die Anzahl unterschiedlicher [Cluster](/help/accountiq/product-concepts.md#cluster-def), in denen Streaming stattgefunden hat.
 
 **[!UICONTROL Geographic span (miles)]**
 
@@ -101,7 +101,7 @@ Die Anzahl der Anmeldungen, die Benutzer während des angegebenen Zeitraums mit 
 
 >[!NOTE]
 >
-> Einige D2C-Dienste werden nicht angezeigt **[!UICONTROL # AuthN OK]** Daten, da sie möglicherweise nicht in den Daten ihres Unternehmens enthalten sind.
+> Einige D2C-Dienste sehen möglicherweise keine **[!UICONTROL # AuthN OK]** -Daten, da diese möglicherweise nicht in den Daten ihres Unternehmens enthalten sind.
 
 **[!UICONTROL # AuthZ OK]**
 
@@ -113,7 +113,7 @@ Die Häufigkeit, mit der ein MVPD einen Stream autorisiert oder den Zugriff auf 
 
 >[!NOTE]
 >
->TV-überall: **[!UICONTROL # AuthZ OK]** ist mit der Anzahl der **[# Abspielanforderungen](/help/accountiq/product-concepts.md##play-requests-def)**. Sie wird immer kleiner sein als **[!UICONTROL # Play Requests]** weil Adobe die Berechtigungen von MVPDs normalerweise ca. 24 Stunden lang zwischenspeichert.
+>Für TV-Sendungen überall wird **[!UICONTROL # AuthZ OK]** mit der Anzahl der **[#-Abspielanforderungen](/help/accountiq/product-concepts.md##play-requests-def)** korreliert. Der Wert ist immer kleiner als **[!UICONTROL # Play Requests]**, da Adobe die Berechtigungen von MVPDs normalerweise ca. 24 Stunden lang zwischenspeichert.
 
 
 **[!UICONTROL # Play Requests]**
@@ -122,7 +122,7 @@ Die tatsächliche Anzahl der Streams in einem bestimmten Zeitraum.
 
 >[!NOTE]
 >
->Die [# Abspielanforderungen](/help/accountiq/product-concepts.md##play-requests-def) -Spalte ist nicht in TV Anywhere MVPD-Version verfügbar.
+>Die Spalte [# Play Requests](/help/accountiq/product-concepts.md##play-requests-def) ist nicht in TV Anywhere MVPD-Version verfügbar.
 
 **[!UICONTROL # Channels]**
 
@@ -130,7 +130,7 @@ Die Gesamtanzahl der Kanäle, die das Konto während eines bestimmten Zeitraums 
 
 >[!NOTE]
 >
-> Für D2C-Dienste **[!UICONTROL # Channels]** entspricht der Zahl der **[!UICONTROL # Video categories]**.
+> Bei D2C-Diensten entspricht **[!UICONTROL # Channels]** der Nummer **[!UICONTROL # Video categories]**.
 
 >[!NOTE]
 >
@@ -206,4 +206,4 @@ Die Wahrscheinlichkeit, dass ein bestimmtes Konto seine Anmeldeinformationen tei
 
 >[!NOTE]
 >
-> Die durchschnittliche Freigabewahrscheinlichkeit aller Konten im ausgewählten Segment wird zur Berechnung der [Freigabestufe](/help/accountiq/data-panels.md#sharing-level) des [durchschnittliche Teilungsbewertung](/help/accountiq/data-panels.md#aggregated-sharing).
+> Der Durchschnitt der Freigabewahrscheinlichkeit aller Konten im ausgewählten Segment wird verwendet, um die [Teilungsstufe](/help/accountiq/data-panels.md#sharing-level) des [durchschnittlichen Teilungswerts](/help/accountiq/data-panels.md#aggregated-sharing) zu berechnen.

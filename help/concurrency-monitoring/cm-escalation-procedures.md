@@ -1,32 +1,32 @@
 ---
 title: Eskalationsverfahren für die gleichzeitige Überwachung
 description: Eskalationsverfahren für die gleichzeitige Überwachung
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+exl-id: eb110465-3a74-489e-a521-0e17f5aeecb8
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '849'
 ht-degree: 0%
 
 ---
-
 
 # Eskalationsverfahren für die gleichzeitige Überwachung {#esc-procedures}
 
 >[!NOTE]
 >
->Rufen Sie die Hotline an: +1-205-693-9813 und senden Sie eine E-Mail an `tve-support@adobe.com` einschließlich &quot;DRINGEND - INCIDENT&quot;in der Betreffzeile.
+>Rufen Sie die Hotline auf: +1-205-693-9813 und senden Sie eine E-Mail an `tve-support@adobe.com` einschließlich &quot;DRINGEND - INCIDENT&quot;in der Betreffzeile.
 
 
 ## Einführung {#cm-escalation-intro}
 
-In diesem Dokument werden die Unterstützungsverfahren für größere Zwischenfälle beschrieben (**SCHWERE 1** Ebene), die sich auf die Adobe Pass-Authentifizierung, die Adobe Pass-Überwachung der Parallelität und ihre Partner auswirken.
+In diesem Dokument werden die Supportverfahren für größere Vorfälle (**SEVERITY 1**-Ebene) beschrieben, die sich auf die Adobe Pass-Authentifizierung, die Adobe Pass-Überwachung der Parallelität und ihre Partner auswirken.
 
 ## Definition der Eskalation Schweregrad 1 Level {#defn-escl-sevrityone-level}
 
-A **SCHWERE 1** Level-Vorfall ist **LIVE** Situation, **in der Produktionsumgebung**, das nicht den Abschluss der Authentifizierungs- und/oder Autorisierungsflüsse für einen Kanal und einen MVPD zulässt, was eine große Anzahl von Abonnenten des MVPD betrifft, der den Fluss durchführt.
+Ein Vorfall auf Ebene **SEVERITY 1** ist eine **LIVE**-Situation, **die in der Produktionsumgebung stattfindet**, die den Abschluss der Authentifizierungs- und/oder Autorisierungsflüsse für einen Kanal und einen MVPD nicht zulässt, was eine große Anzahl von Abonnenten des MVPD betrifft, der den Fluss durchführt.
 
 ## Beispiele für Fälle von Schweregrad 1 {#exampl-sevone-incident}
 
-* Der Produktions-Access-Enabler, der unter <http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js> ist nicht verfügbar.
+* Der unter <http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js> gehostete Produktions-Access-Enabler ist nicht verfügbar.
 
 * Bei einem bestimmten MVPD leitet Adobe die Anmeldeseite nicht mehr weiter/zeigt sie an, nachdem der Benutzer das MVPD (in einem der unterstützten Browser) ausgewählt hat.
 
@@ -35,9 +35,9 @@ A **SCHWERE 1** Level-Vorfall ist **LIVE** Situation, **in der Produktionsumgebu
 * Während des Authentifizierungsprozesses hängt der Benutzer auf einer Adobe-Fehlerseite, ohne den Authentifizierungs-/Autorisierungsfluss neu starten zu können.
 
 
-## Beispiele für *NOT* Schweregrad 1 {#exampl-not-sev1}
+## Beispiele für den Vorfall vom Typ *NOT* wegen Schweregrad 1 {#exampl-not-sev1}
 
-*Bei Problemen dieser Art wird Adobe Untersuchungen unterstützen, es handelt sich jedoch nicht um Fälle von Schweregrad 1:*
+*Bei Problemen dieser Art bietet Adobe Unterstützung für Untersuchungen, es handelt sich jedoch nicht um Vorfälle des Schweregrads 1:*
 
 * Ein oder mehrere Abonnenten können den Ablauf aufgrund eines Flash-Versionsfehlers (fehlende Flash, Flash-Blocker, falsche Flash-Version) nicht durchführen.
 * Ein oder mehrere Abonnenten können sich nicht authentifizieren und bleiben auf der MVPD-Anmeldeseite.
@@ -66,11 +66,11 @@ Vorfälle des Schweregrads 1 können entweder von Adobe oder einem Adobe Pass-Au
    * **1-205-693-9813**
 
 
-**Wenn Sie &quot;URGENT-INCIDENT&quot;nicht in den Titel des Tickets aufnehmen, wird dies nicht von unserem Benachrichtigungssystem übernommen.**
+**Wenn Sie &quot;URGENT-INCIDENT&quot;nicht in den Titel des Tickets aufnehmen, wird dies nicht von unserem Benachrichtigungssystem erfasst.**
 
 ### Adobe-initiierter Fluss {#adobe-initiated-flow}
 
-**...bei einem Adobe Pass-Authentifizierungsproblem**
+**...für ein Adobe Pass-Authentifizierungsproblem**
 
 1. Adobe identifiziert ein internes Problem und öffnet ein Ticket mit unserem Tracking-System.
 
@@ -83,7 +83,7 @@ Vorfälle des Schweregrads 1 können entweder von Adobe oder einem Adobe Pass-Au
 
 1. Adobe identifiziert ein Problem im Zusammenhang mit der Integration mit einem MVPD oder auf einer der Sites des Programmierers.
 
-1. Adobe benachrichtigt den betroffenen Partner **nach den mit diesem Partner bestehenden Unterstützungsverfahren** und öffnet ein Ticket bei der Support-Organisation des Partners.
+1. Adobe benachrichtigt den betroffenen Partner **über die Einhaltung der mit diesem Partner bestehenden Supportverfahren** und öffnet ein Ticket bei der Support-Organisation des Partners.
 
 1. Wenn Adobe bei der Folgenabschätzung feststellt, dass das Problem zu einer der im Voraus vereinbarten Entscheidungen über Störungsszenarien gehört (siehe Abschnitt &quot;Vorab vereinbarte Entscheidungen über Störungsszenarien&quot;unten), wird es entsprechend handeln, ohne auf den Partner1 zu warten. -Eingabe.
 

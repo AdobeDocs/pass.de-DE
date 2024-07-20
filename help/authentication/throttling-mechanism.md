@@ -1,13 +1,13 @@
 ---
 title: Drosselmechanismus
 description: Erfahren Sie mehr über den in der Adobe Pass-Authentifizierung verwendeten Drosselmechanismus. Einen Überblick über diesen Mechanismus finden Sie auf dieser Seite.
-source-git-commit: 4f81f39427d87e4274c27d8f1b4bd1eb366d9abb
+exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '987'
 ht-degree: 0%
 
 ---
-
 
 # Drosselmechanismus {#throttling-mechanism}
 
@@ -40,7 +40,7 @@ Der vorgeschlagene Drosselmechanismus verwendet die identifizierten Geräte einz
 
 Bei Server-zu-Server-Implementierungen müssen die IP-Adressen ihrer Kunden mithilfe des Header-Mechanismus &quot;X-Forwarded-For&quot;weitergeleitet werden.
 
-Weitere Informationen dazu, wie Sie den Header &quot;X-Forwarded-For&quot;übergeben, finden Sie [here](rest-api-cookbook-servertoserver.md).
+Weitere Informationen zum Übergeben der X-Forwarded-For-Kopfzeile [finden Sie hier](rest-api-cookbook-servertoserver.md).
 
 ### Tatsächliche Einschränkungen und Endpunkte
 
@@ -76,24 +76,24 @@ Da Clients, die die SDK mit Adobe Pass-Authentifizierung verwenden, nicht expliz
 
 #### setRequest
 
-Bei Erreichen der Drosselgrenze durch `setRequestor` -Funktion vom SDK aus verwenden, gibt das SDK einen CFG429-Fehlercode über zurück. `errorHandler` Callback.
+Wenn das SDK die Drosselgrenze mithilfe der Funktion `setRequestor` aus dem SDK erreicht, gibt es einen CFG429-Fehlercode über den Rückruf `errorHandler` zurück.
 
 #### getAuthorization
 
-Bei Erreichen der Drosselgrenze durch `getAuthorization` -Funktion vom SDK aus verwenden, gibt das SDK einen Z100-Fehlercode zurück durch `errorHandler` Callback.
+Wenn das SDK die Drosselgrenze mithilfe der Funktion `getAuthorization` aus dem SDK erreicht, gibt es einen Z100-Fehlercode über den Rückruf `errorHandler` zurück.
 
 #### checkPreauthorizedResources
 
-Bei Erreichen der Drosselgrenze durch `checkPreauthorizedResources` -Funktion vom SDK aus verwenden, gibt das SDK einen P100-Fehlercode zurück durch `errorHandler` Callback.
+Wenn das SDK die Drosselgrenze mithilfe der Funktion `checkPreauthorizedResources` aus dem SDK erreicht, gibt es einen P100-Fehlercode über den Rückruf `errorHandler` zurück.
 
 #### getMetadata
 
-Bei Erreichen der Drosselgrenze durch `getMetadata` -Funktion aus dem SDK zurückgibt, gibt das SDK eine leere Antwort über `setMetadataStatus` Callback.
+Wenn das SDK die Drosselgrenze mithilfe der Funktion `getMetadata` aus dem SDK erreicht, gibt es eine leere Antwort über den Rückruf `setMetadataStatus` zurück.
 
 Weiterführende Informationen zu einzelnen Implementierungsdetails finden Sie in der jeweiligen SDK-Dokumentation.
 
-- [JavaScript-SDK-API-Referenz](javascript-sdk-api-reference.md)
-- [Android-SDK-API-Referenz](android-sdk-api-reference.md)
+- [JavaScript SDK-API-Referenz](javascript-sdk-api-reference.md)
+- [Android SDK-API-Referenz](android-sdk-api-reference.md)
 - [iOS/tvOS-API-Referenz](iostvos-sdk-api-reference.md)
 
 ### API-Antwortänderungen und -Antwort
@@ -135,7 +135,7 @@ p3p: CP="NOI DSP COR CURa ADMa DEVa OUR BUS IND UNI COM NAV STA"
 
 Kunden, die eine benutzerdefinierte Implementierung (einschließlich Server-zu-Server-API) zur Interaktion mit der API für die Pass-Authentifizierung verwenden, sollten sicherstellen, dass sie ihre Benutzer-IP-Adresse erfassen und korrekt weiterleiten können. Dazu wird der Header X-Forwarded-For verwendet, der weiter zur API für die Pass-Authentifizierung dient.
 
-Siehe [here](rest-api-cookbook-servertoserver.md) für weitere Details.
+Weitere Informationen finden Sie unter [hier](rest-api-cookbook-servertoserver.md) .
 
 ### Reagieren auf neuen Antwort-Code
 

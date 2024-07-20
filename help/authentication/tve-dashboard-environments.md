@@ -1,7 +1,8 @@
 ---
 title: Tv Dashboard-Umgebungen
 description: Machen Sie sich mit der Verwendung und Funktionsweise verschiedener Umgebungen im TVE-Dashboard vertraut.
-source-git-commit: 06c2e1e54515a2ec47722ba1f360467dadd1f73b
+exl-id: 591becb8-2f6c-46e0-b108-c64e6df69f89
+source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
 workflow-type: tm+mt
 source-wordcount: '346'
 ht-degree: 0%
@@ -16,15 +17,15 @@ ht-degree: 0%
 
 Das TVE-Dashboard bietet verschiedene Umgebungen, die an bestimmte Zwecke innerhalb der Adobe Pass-Authentifizierung angepasst wurden. Es gibt zwei primäre Umgebungen:
 
-* **Prequal**: Die Umgebung für die Vorqualifizierung dient als Testgrundlage für die Vorbereitung und Prüfung neuer Builds vor der Bereitstellung in der Produktion.
+* **Prequal**: Die Umgebung für die Vorqualifizierung dient als Testgrundlage für die Vorbereitung und den Test neuer Builds vor der Bereitstellung in der Produktion.
 
 * **Version**: Die Veröffentlichungsumgebung hostet die finalisierten und getesteten Builds für die Produktion.
 
 In jeder Umgebung gibt es zwei verschiedene Profile:
 
-* **Staging**: Das Staging-Profil stellt eine Verbindung zum MVPD-Staging-Server her, um Integrationen vor der Live-Schaltung zu testen und zu validieren.
+* **Staging**: Das Staging-Profil stellt eine Verbindung zum Staging-Server des MVPD her, um Integrationen vor der Live-Schaltung zu testen und zu validieren.
 
-* **Produktion**: Das Produktionsprofil stellt eine Verbindung zum Produktionsprofil des MVPD für tatsächliche Produktionstätigkeiten her.
+* **Produktion**: Das Produktionsprofil stellt eine Verbindung zum Produktionsprofil des MVPD für tatsächliche Produktionsaktivitäten her.
 
 ## Anwendungsbeispiele
 
@@ -56,13 +57,12 @@ Die Umgebungen im TVE-Dashboard unterstützen verschiedene Anwendungsfälle wäh
 Führen Sie die Schritte aus, um zwischen Adobe Pass Authentication TVE Dashboard-Umgebungen zu wechseln.
 
 1. Melden Sie sich mit Ihren Programmiereranmeldeinformationen an.
-1. Wählen Sie die erforderliche Staging- oder Produktionsumgebung aus der **Umgebung** Dropdown-Menü oben im linken Bereich.
+1. Wählen Sie die erforderliche Staging- oder Produktionsumgebung aus dem Dropdown-Menü **Umgebung** oben im linken Bereich aus.
 
-   ![Dropdown-Liste &quot;TVE Dashboard-Umgebungen&quot;](assets/tve-dashboard-env.png)
+   ![Dropdown-Liste &quot;TVE Dashboard environment&quot;](assets/tve-dashboard-env.png)
 
-   *Dropdown-Menü &quot;Adobe Pass Authentication TVE Dashboard&quot;*
+   *Das Dropdown-Menü für die Adobe Pass-Authentifizierungs-TVE-Dashboard-Umgebung*
 
 >[!NOTE]
 >
 > Die Konfigurationen können je nach Ihren Einstellungen in den einzelnen Umgebungen variieren.
-

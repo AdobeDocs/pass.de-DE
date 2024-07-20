@@ -1,13 +1,13 @@
 ---
 title: Kanäle
 description: Erfahren Sie mehr über Kanäle und ihre verschiedenen Konfigurationen im TVE-Dashboard.
-source-git-commit: b81cc7498a8035f4c274ba25952dcd1dcd8d71f5
+exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
+source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
 workflow-type: tm+mt
 source-wordcount: '1140'
 ht-degree: 0%
 
 ---
-
 
 # Kanäle {#channels}
 
@@ -15,25 +15,25 @@ ht-degree: 0%
 >
 >Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle -Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
-Die **Kanäle** im TVE-Dashboard können Sie die Einstellungen für die Kanäle anzeigen und verwalten, die mit einem bestimmten Programmierer verbunden sind. Sie können auch [neuen Kanal hinzufügen](#add-new-channel) gemäß Ihren Anforderungen.
+Im Bereich **Kanäle** des TVE-Dashboards können Sie Einstellungen für die Kanäle anzeigen und verwalten, die einem bestimmten Programmierer zugeordnet sind. Sie können entsprechend Ihren Anforderungen auch [einen neuen Kanal hinzufügen](#add-new-channel).
 
-Die **Kanäle** im linken Bereich eine Liste der verknüpften Kanäle mit den folgenden Details angezeigt:
+Auf der Registerkarte **Kanäle** im linken Bereich wird eine Liste der verknüpften Kanäle mit den folgenden Details angezeigt:
 
 * **Anzeigename**: Der Markenname des für kommerzielle Zwecke verwendeten Kanals.
 * **Kanal-ID**: Eine eindeutige Kennung, die auch als Anforderer-ID bezeichnet wird.
-* **Integrationen**: Die Anzahl der Verbindungen, die mit [MVPDs](/help/authentication/glossary.md#mvpd).
+* **Integrationen**: Die Anzahl der Verbindungen, die mit [MVPDs](/help/authentication/glossary.md#mvpd) hergestellt wurden.
 
 ![Liste der vorhandenen Kanäle](assets/channels-list.png)
 
 *Liste der vorhandenen Kanäle*
 
-Geben Sie den Namen des Kanals im **Suche** oberhalb der Liste, um mehr über den Kanal zu erfahren.
+Geben Sie den Namen des Kanals in die Leiste **Suchen** oberhalb der Liste ein, um mehr über den Kanal zu erfahren.
 
 ## Verwalten von Kanalkonfigurationen {#manage-channel-conf}
 
 Führen Sie die Schritte zum Verwalten verschiedener Einstellungen eines bestimmten Kanals aus.
 
-1. Wählen Sie die **Kanäle** im linken Bereich.
+1. Wählen Sie im linken Bereich die Registerkarte **Kanäle** aus.
 1. Wählen Sie den Kanal aus der verfügbaren Liste aus.
 1. Wählen Sie eine der folgenden Registerkarten aus, um die entsprechenden Einstellungen des ausgewählten Kanals anzuzeigen und zu bearbeiten:
 
@@ -50,11 +50,11 @@ Führen Sie die Schritte zum Verwalten verschiedener Einstellungen eines bestimm
 
 >[!IMPORTANT]
 >
-> Ansicht [Änderungen überprüfen und pushen](/help/authentication/tve-dashboard-review-push-changes.md) Weitere Informationen zum Aktivieren der Konfigurationsänderungen.
+> Weitere Informationen zum Aktivieren der Konfigurationsänderungen finden Sie unter [Überprüfen und Pushen von Änderungen](/help/authentication/tve-dashboard-review-push-changes.md) .
 
 ### Allgemeine Einstellungen {#general-settings}
 
-Diese Registerkarte zeigt **Kanalinformationen** und **Analytics-Konfiguration**.
+Auf dieser Registerkarte werden **Kanalinformationen** und **Analytics-Konfiguration** angezeigt.
 
 #### Kanalinformationen {#channel-information}
 
@@ -64,7 +64,7 @@ In diesem Abschnitt können Sie die folgenden Details bearbeiten:
 
 * **Standard-Umleitungs-URL**: Die Backup-Umleitungs-URL für Authentifizierung und Abmeldung.
 
-* **Fehlerberichte**: Bei Auswahl **Ja**, senden die Adobe Pass-SDKs Fehlerberichte zur Analyse an das Adobe Pass-Backend.
+* **Fehlerberichterstellung**: Bei Auswahl von **Ja** senden die Adobe Pass-SDKs Fehlerberichte an das Adobe Pass-Backend für Analysen.
 
 ![Kanalinformationen bearbeiten](assets/channel-information.png)
 
@@ -74,19 +74,19 @@ In diesem Abschnitt können Sie die folgenden Details bearbeiten:
 
 In diesem Abschnitt können Sie die Weiterleitung von Adobe Pass-Authentifizierungsereignissen an Adobe Analytics konfigurieren.
 
-Aktivieren **Analytics-Konfiguration** Wenden Sie sich an Ihren technischen Kundenbetreuer (TAM), um weitere Informationen zum Einrichten der Report Suite-ID (RSID) zu erhalten.
+Wenden Sie sich zur Aktivierung von **Analytics-Konfiguration** an Ihren technischen Kundenbetreuer (TAM), um weitere Informationen zum Einrichten der Report Suite-ID (RSID) zu erhalten.
 
-![Aktivieren von Analytics-Konfigurationen](assets/channel-analytical-conf.png)
+![Analytics-Konfigurationen aktivieren](assets/channel-analytical-conf.png)
 
-*Aktivieren von Analytics-Konfigurationen*
+*Analytics-Konfigurationen aktivieren*
 
-Auswählen **Neue Analysekonfiguration hinzufügen** , um mehrere Konfigurationen hinzuzufügen.
+Wählen Sie **Neue Analysekonfiguration hinzufügen** aus, um mehrere Konfigurationen hinzuzufügen.
 
-Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. So verwenden Sie die neue Analytics-Konfiguration aus dem **Analytics-Konfiguration** und fahren Sie mit dem [Änderungen überprüfen und pushen](/help/authentication/tve-dashboard-review-push-changes.md) Fluss.
+Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. Um die neue Analysekonfiguration aus dem Abschnitt **Analytics-Konfiguration** zu verwenden, fahren Sie mit dem Fluss [Überprüfung und Push-Änderungen](/help/authentication/tve-dashboard-review-push-changes.md) fort.
 
 ### Integrationen {#integrations}
 
-In diesem Tab wird eine Liste der verfügbaren Integrationen zwischen dem aktuell ausgewählten Kanal und den MVPDs angezeigt. Die Liste zeigt jede Integration mit ihrem Status an und zeigt an, ob sie aktiviert ist oder nicht. Wählen Sie eine bestimmte Integration aus dieser Liste aus, um auf detaillierte Informationen im Abschnitt [Integrationen](tve-dashboard-integrations.md) Abschnitt.
+In diesem Tab wird eine Liste der verfügbaren Integrationen zwischen dem aktuell ausgewählten Kanal und den MVPDs angezeigt. Die Liste zeigt jede Integration mit ihrem Status an und zeigt an, ob sie aktiviert ist oder nicht. Wählen Sie eine bestimmte Integration aus dieser Liste aus, um auf detaillierte Informationen im Abschnitt [Integrationen](tve-dashboard-integrations.md) zuzugreifen.
 
 ![Liste der verfügbaren Integrationen](assets/channel-integrations.png)
 
@@ -94,15 +94,15 @@ In diesem Tab wird eine Liste der verfügbaren Integrationen zwischen dem aktuel
 
 ### Zertifikate {#certificates}
 
-Auf dieser Registerkarte wird eine Liste der [verfügbare Zertifikate](#available-certificates) und [geerbte verfügbare Zertifikate](#inherited-avail-certificates) wird in den Verschlüsselungsabläufen für Benutzermetadaten verwendet. Es werden Details zu jedem Zertifikat angezeigt, das Folgendes enthält:
+Auf dieser Registerkarte wird eine Liste der [verfügbaren Zertifikate](#available-certificates) und [vererbten verfügbaren Zertifikate](#inherited-avail-certificates) angezeigt, die in den Verschlüsselungsflüssen für Benutzermetadaten verwendet werden. Es werden Details zu jedem Zertifikat angezeigt, das Folgendes enthält:
 
-* Der Status (ob für **Anwendermetadaten-Verschlüsselung** Verwendung oder nicht)
+* Der Status (ob für die Verwendung der **Benutzer-Metadatenverschlüsselung** aktiviert ist oder nicht)
 * Seriennummer
 * Name der Organisation des Emittenten
 * Name der Betrefforganisation
 * Ausgegebener Zeitpunkt
 * Ablaufdatum
-* Ein Dropdown-Menü zum Verschlüsseln von Benutzermetadaten (wenn Sie **Ja**, verschlüsselt das Zertifikat vertrauliche Benutzerinformationen, wie z. B. Postleitzahlenwerte).
+* Ein Dropdown-Menü zum Verschlüsseln von Benutzermetadaten (wenn Sie **Ja** auswählen, verschlüsselt das Zertifikat vertrauliche Benutzerinformationen wie z. B. Postleitzahlenwerte).
 
 #### Verfügbare Zertifikate {#available-certificates}
 
@@ -116,39 +116,39 @@ Sie können die folgenden Änderungen im Abschnitt &quot;Verfügbare Zertifikate
 
 Gehen Sie wie folgt vor, um ein neues Zertifikat hinzuzufügen:
 
-1. Auswählen **Neues Zertifikat hinzufügen** oben im **Verfügbare Zertifikate** Abschnitt.
+1. Wählen Sie oben im Abschnitt **Verfügbare Zertifikate** die Option **Neues Zertifikat hinzufügen** aus.
 
    ![Neues Zertifikat hinzufügen](assets/add-new-certificate.png)
 
    *Neues Zertifikat hinzufügen*
 
-1. Fügen Sie den öffentlichen Schlüssel Ihres Zertifikats in den **Neues Zertifikat** Dialogfeld.
-1. Auswählen **Zertifikat hinzufügen**.
+1. Fügen Sie den öffentlichen Schlüssel Ihres Zertifikats in das Dialogfeld **Neues Zertifikat** ein.
+1. Wählen Sie **Zertifikat hinzufügen** aus.
 
-   Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. So verwenden Sie das neue Zertifikat, das im **Verfügbare Zertifikate** und fahren Sie mit dem [Änderungen überprüfen und pushen](/help/authentication/tve-dashboard-review-push-changes.md) Fluss.
+   Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. Um das neue Zertifikat zu verwenden, das im Abschnitt **Verfügbare Zertifikate** aufgeführt ist, fahren Sie mit dem Fluss [Überprüfung und Push-Änderungen](/help/authentication/tve-dashboard-review-push-changes.md) fort.
 
-1. Suchen Sie das neue Zertifikat in der Liste der **Verfügbare Zertifikate**.
+1. Suchen Sie das neue Zertifikat in der Liste der **Verfügbaren Zertifikate**.
 
    >[!IMPORTANT]
    >
    > Stellen Sie sicher, dass Ihre Systeme auf dem neuesten Stand sind und das neue Zertifikat verwenden können.
 
-1. Auswählen **Ja** von **Dient zum Verschlüsseln von Benutzermetadaten** Dropdown-Menü, um ein neues Zertifikat zu aktivieren.
+1. Wählen Sie im Dropdown-Menü **Verwendet zum Verschlüsseln von Benutzermetadaten** die Option **Ja** aus, um ein neues Zertifikat zu aktivieren.
 
 ##### Zertifikat löschen {#delete-certificate}
 
 Führen Sie die folgenden Schritte aus, um ein Zertifikat zu löschen.
 
-1. Bewegen Sie den Mauszeiger über das Zertifikat, das Sie aus der Liste der **Verfügbare Zertifikate**.
-1. Auswählen **Entfernen**.
+1. Bewegen Sie den Mauszeiger über das Zertifikat, das Sie aus der Liste der **Verfügbaren Zertifikate** löschen möchten.
+1. Wählen Sie **Entfernen** aus.
 
-   ![Das ausgewählte Zertifikat entfernen](assets/channel-delete-certificate.png)
+   ![Entfernen Sie das ausgewählte Zertifikat](assets/channel-delete-certificate.png)
 
-   *Das ausgewählte Zertifikat entfernen*
+   *Entfernen Sie das ausgewählte Zertifikat*
 
-1. Auswählen **Löschen** aus dem **Aktives Zertifikat löschen** Dialogfeld.
+1. Wählen Sie **Löschen** aus dem Dialogfeld **Aktives Zertifikat löschen**.
 
-Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. Das Zertifikat wird aus dem **Verfügbare Zertifikate** Abschnitt nur nach [Änderungen überprüfen und pushen](/help/authentication/tve-dashboard-review-push-changes.md).
+Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. Das Zertifikat wird erst aus dem Abschnitt **Verfügbare Zertifikate** gelöscht, nachdem [Änderungen überprüft und gepusht haben](/help/authentication/tve-dashboard-review-push-changes.md).
 
 #### Vererbte verfügbare Zertifikate {#inherited-avail-certificates}
 
@@ -175,59 +175,58 @@ Sie können die folgenden Änderungen an Domänen vornehmen:
 
 Führen Sie die folgenden Schritte aus, um eine Domäne hinzuzufügen.
 
-1. Auswählen **Neue Domäne hinzufügen** oben rechts im **Verfügbare Domänen** Abschnitt.
+1. Wählen Sie oben rechts im Abschnitt **Verfügbare Domänen** die Option **Neue Domäne hinzufügen** aus.
 
    ![Neue Domäne hinzufügen](assets/add-new-domain.png)
 
    *Neue Domäne hinzufügen*
 
-1. Geben Sie den Namen Ihrer Domäne in die **Neue Domäne** Dialogfeld.
+1. Geben Sie den Namen Ihrer Domäne im Dialogfeld **Neue Domäne** ein.
 
-1. Auswählen **Domain hinzufügen** , um eine neue Domäne für den ausgewählten Kanal hinzuzufügen.
+1. Wählen Sie **Domäne hinzufügen** aus, um eine neue Domäne für den ausgewählten Kanal hinzuzufügen.
 
-Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. So verwenden Sie die neue Domäne, die im **Verfügbare Domänen** und fahren Sie mit dem [Änderungen überprüfen und pushen](/help/authentication/tve-dashboard-review-push-changes.md) Fluss.
+Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. Um die neue Domäne zu verwenden, die im Abschnitt **Verfügbare Domänen** aufgeführt ist, fahren Sie mit dem Fluss [Überprüfung und Push-Änderungen](/help/authentication/tve-dashboard-review-push-changes.md) fort.
 
 #### Domain löschen {#delete-domain}
 
 Führen Sie die folgenden Schritte aus, um eine Domäne zu löschen.
 
-1. Bewegen Sie den Mauszeiger über die Domäne, die Sie aus der Liste der **Verfügbare Domänen**.
-1. Auswählen **Entfernen**.
+1. Bewegen Sie den Mauszeiger über die Domäne, die Sie aus der Liste der **Verfügbaren Domänen** löschen möchten.
+1. Wählen Sie **Entfernen** aus.
 
-   ![Die ausgewählte Domäne entfernen](assets/remove-domain.png)
+   ![Entfernen Sie die ausgewählte Domäne](assets/remove-domain.png)
 
-   *Die ausgewählte Domäne entfernen*
+   *Entfernen Sie die ausgewählte Domäne*
 
-1. Auswählen **Löschen** auf **Domain löschen** Dialogfeld.
+1. Wählen Sie **Löschen** im Dialogfeld **Domäne löschen** aus.
 
-Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. Die Domäne wird aus der **Verfügbare Domänen** Abschnitt nur nach [Änderungen überprüfen und pushen](/help/authentication/tve-dashboard-review-push-changes.md).
+Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. Die Domäne wird erst aus dem Abschnitt **Verfügbare Domänen** gelöscht, nachdem [Änderungen überprüft und gepusht hat](/help/authentication/tve-dashboard-review-push-changes.md).
 
 Die ausgewählte Domäne ist nicht mehr verfügbar. Daher verliert die mit dieser Domäne verknüpfte Anwendung den Zugriff auf die Adobe Pass-Authentifizierungsdienste.
 
 ### Registrierte Anwendungen {#registered-applications}
 
-Dieser Tab enthält eine Liste der Registrierungen für Anwendungen. Ansicht [Dynamisches Client-Registrierungs-Management](/help/authentication/dynamic-client-registration-management.md) für weitere Informationen.
+Dieser Tab enthält eine Liste der Registrierungen für Anwendungen. Weitere Informationen finden Sie unter [Dynamisches Client-Registrierungs-Management](/help/authentication/dynamic-client-registration-management.md) .
 
 ### Benutzerdefinierte Schemata {#custom-schemes}
 
-Auf dieser Registerkarte wird eine Liste benutzerdefinierter Schemata angezeigt. Ansicht [Registrierung der iOS/tvOS-Anwendung](/help/authentication/iostvos-application-registration.md) und [Dynamisches Client-Registrierungs-Management](/help/authentication/dynamic-client-registration-management.md) für weitere Informationen.
+Auf dieser Registerkarte wird eine Liste benutzerdefinierter Schemata angezeigt. Weitere Informationen finden Sie unter [iOS/tvOS-Anwendungsregistrierung](/help/authentication/iostvos-application-registration.md) und [Dynamisches Client-Registrierungsmanagement](/help/authentication/dynamic-client-registration-management.md) .
 
 ## Neuen Kanal hinzufügen {#add-new-channel}
 
 Führen Sie diese Schritte aus, um einen neuen Kanal hinzuzufügen.
 
-1. Wählen Sie die **Kanäle** im linken Bereich.
-1. Auswählen **Neuen Kanal hinzufügen** oben rechts im **Kanäle** Abschnitt.
+1. Wählen Sie im linken Bereich die Registerkarte **Kanäle** aus.
+1. Wählen Sie oben rechts im Abschnitt **Kanäle** die Option **Neuen Kanal hinzufügen** aus.
 
-   ![Neuen Kanal hinzufügen](assets/add-new-channel.png)
+   ![Hinzufügen eines neuen Kanals](assets/add-new-channel.png)
 
-   *Neuen Kanal hinzufügen*
+   *Hinzufügen eines neuen Kanals*
 
-1. Auswählen **Programmierer-ID** aus dem Dropdown-Menü im **Neuer Kanal** Dialogfeld.
+1. Wählen Sie **Programmierer-ID** aus dem Dropdown-Menü im Dialogfeld **Neuer Kanal** aus.
 
-1. Geben Sie einen eindeutigen Bezeichner in **Kanal-ID**.
-1. Geben Sie den Markennamen des für kommerzielle Zwecke verwendeten Kanals in das Feld **Anzeigename**.
-1. Auswählen **Kanal hinzufügen**.
+1. Geben Sie eine eindeutige Kennung in **Kanal-ID** ein.
+1. Geben Sie den Markennamen des für kommerzielle Zwecke verwendeten Kanals in den **Anzeigenamen** ein.
+1. Wählen Sie **Kanal hinzufügen** aus.
 
-Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. So verwenden Sie den neuen Kanal, der im **Kanäle** und fahren Sie mit dem [Änderungen überprüfen und pushen](/help/authentication/tve-dashboard-review-push-changes.md) Fluss.
-
+Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. Um den neuen Kanal zu verwenden, der im Abschnitt **Kanäle** aufgeführt ist, fahren Sie mit dem Fluss [Überprüfung und Push-Änderungen](/help/authentication/tve-dashboard-review-push-changes.md) fort.

@@ -4,7 +4,7 @@ description: Migrieren der MVPD-Anmeldeseite von iFrame zu Popup
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '686'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Bei einigen Benutzern traten bei der iFrame-Implementierung einer MVPD-Anmeldese
 * [Adobe Pass Authentication and Safari login issues](https://tve.helpdocsonline.com/adobe-pass)
 * [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)-->
 
-Das Adobe Pass-Authentifizierungsteam **empfiehlt die Implementierung der Anmeldeseite für Popup/neues Fenster** anstatt der iFrame-Version in Firefox und Safari.  Wenn Sie jedoch eine Anmeldeseite für Internet Explorer implementieren, kann es bei der Popup-Implementierung zu Problemen kommen. Die IE-Probleme werden dadurch verursacht, dass die Adobe Pass-Authentifizierung nach der Authentifizierung des Benutzers mit seinem MVPD im Popup-Fenster eine Umleitung der übergeordneten Seite erzwingt, die von Internet Explorer als Popup-Blocker betrachtet wird. Das Adobe Pass-Authentifizierungsteam **empfiehlt die Implementierung der iFrame-Anmeldung für Internet Explorer**.
+Das Adobe Pass-Authentifizierungsteam empfiehlt die Implementierung der Anmeldeseite für das Popup-/neue Fenster **anstelle der iFrame-Version in Firefox und Safari.**  Wenn Sie jedoch eine Anmeldeseite für Internet Explorer implementieren, kann es bei der Popup-Implementierung zu Problemen kommen. Die IE-Probleme werden dadurch verursacht, dass die Adobe Pass-Authentifizierung nach der Authentifizierung des Benutzers mit seinem MVPD im Popup-Fenster eine Umleitung der übergeordneten Seite erzwingt, die von Internet Explorer als Popup-Blocker betrachtet wird. Das Adobe Pass-Authentifizierungsteam empfiehlt die Implementierung der iFrame-Anmeldung für Internet Explorer **.**
 
 Der in dieser Technote vorgestellte Beispielcode verwendet eine hybride Implementierung von iFrame und Popup - Öffnen eines iFrame in Internet Explorer und ein Popup in den anderen Browsern.
 
@@ -32,7 +32,7 @@ Wenn man bedenkt, dass bereits eine iFrame-Implementierung vorhanden ist, zeigt 
 
 ## MVPD-Auswahl mit Anmeldeseite in einem iFrame {#mvpd-pickr-iframe}
 
-Frühere Codebeispiele zeigten eine HTML-Seite, die die &lt;div> -Tag, in dem der iFrame zusammen mit der Schließen-iFrame-Schaltfläche erstellt werden soll:
+Frühere Codebeispiele zeigten eine HTML-Seite, die das &lt;div> -Tag enthält, auf dem der iFrame zusammen mit der Schließen-iFrame-Schaltfläche erstellt werden soll:
 
 ```HTML
 <body> 
@@ -48,7 +48,7 @@ Frühere Codebeispiele zeigten eine HTML-Seite, die die &lt;div> -Tag, in dem de
 </body>
 ```
 
-Hier ist die zugehörige **JavaScript** code:
+Im Folgenden finden Sie den zugehörigen Code für **JavaScript**:
 
 ```JavaScript
 /*
@@ -105,7 +105,7 @@ function setSelectedProvider(providerID) {
 
 ## MVPD-Auswahl mit Anmeldeseite in einem Popup-Fenster {#mvpd-pickr-popup}
 
-Da wir keine **iFrame** Der HTML-Code enthält nicht mehr den iFrame oder die Schaltfläche zum Schließen des iFrames. Das div, das zuvor den iFrame enthielt: **mvpddiv** - wird aufbewahrt und für Folgendes verwendet:
+Da wir keinen **iFrame** mehr verwenden werden, enthält der HTML-Code weder den iFrame noch die Schaltfläche zum Schließen des iFrames. Das div, das zuvor den iFrame enthielt - **mvpddiv** - wird beibehalten und für Folgendes verwendet:
 
 * , um den Benutzer darüber zu informieren, dass die MVPD-Anmeldeseite bereits geöffnet ist, wenn der Popup-Fokus verloren geht
 * um einen Link bereitzustellen, um den Fokus wieder auf das Popup zu lenken
@@ -134,9 +134,9 @@ Da wir keine **iFrame** Der HTML-Code enthält nicht mehr den iFrame oder die Sc
 </body>
 ```
 
-Die Liste der MVPDs wird im div angezeigt, **Picker** als Auswahl **-mvpdList**.
+Die Liste der MVPDs wird im div mit dem Namen **picker** als ausgewählte **-mvpdList** angezeigt.
 
-Es wird ein neuer API-Rückruf verwendet: **setConfig(configXML)**. Der Rückruf wird ausgelöst, nachdem die Funktion setRequestor(requestorID) aufgerufen wurde. Dieser Rückruf gibt die Liste der MVPDs zurück, die in die zuvor festgelegte requestorID integriert sind. In der Callback-Methode wird die eingehende XML analysiert und die Liste der MVPDs zwischengespeichert. Die MVPD-Auswahl wird ebenfalls erstellt, aber nicht angezeigt.
+Es wird ein neuer API-Rückruf verwendet - **setConfig(configXML)**. Der Rückruf wird ausgelöst, nachdem die Funktion setRequestor(requestorID) aufgerufen wurde. Dieser Rückruf gibt die Liste der MVPDs zurück, die in die zuvor festgelegte requestorID integriert sind. In der Callback-Methode wird die eingehende XML analysiert und die Liste der MVPDs zwischengespeichert. Die MVPD-Auswahl wird ebenfalls erstellt, aber nicht angezeigt.
 
 ```JavaScript
 var mvpdList;  // The list of cached MVPDs
@@ -187,7 +187,7 @@ In der iFrame-Implementierung wurde das Zurücksetzen des Authentifizierungsflus
 "<a href="javascript:mvpdWindow.focus();">Click here to open it.</a>".
 ```
 
-Im Rückruf createIFrame() wird die **mvpddiv** div wird angezeigt.
+Beim Rückruf createIFrame() wird das div **mvpddiv** angezeigt.
 
 ```JavaScript
 function createIFrame(width, height) {
@@ -230,5 +230,5 @@ function checkClosed() {
 >
 >* Der Beispielcode enthält eine fest codierte Variable für die verwendete Anforderer-ID - &quot;REF&quot;, die durch eine reale Programmierer-Anforderer-ID ersetzt werden sollte.
 >* Der Beispielcode wird nur ordnungsgemäß von einer auf die Whitelist gesetzten Domäne ausgeführt, die mit der verwendeten Anforderer-ID verknüpft ist.
->* Da der gesamte Code zum Herunterladen verfügbar ist, wurde der in dieser Technote vorgestellte Code abgeschnitten. Ein vollständiges Beispiel finden Sie unter **JS-iFrame vs. Popup-Beispiel**.
->* Die externen JavaScript-Bibliotheken wurden aus [Von Google gehostete Dienste](https://developers.google.com/speed/libraries/).
+>* Da der gesamte Code zum Herunterladen verfügbar ist, wurde der in dieser Technote vorgestellte Code abgeschnitten. Ein vollständiges Beispiel finden Sie unter **JS iFrame vs. Popup-Beispiel**.
+>* Die externen JavaScript-Bibliotheken wurden über [Google-gehostete Dienste](https://developers.google.com/speed/libraries/) verknüpft.

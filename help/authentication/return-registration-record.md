@@ -17,7 +17,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch [Drosselmechanismus](/help/authentication/throttling-mechanism.md)
+> Die REST-API-Implementierung wird durch den [Drosselmechanismus](/help/authentication/throttling-mechanism.md) begrenzt
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -43,9 +43,9 @@ Gibt den Registrierungs-Code-Datensatz mit der Registrierungs-Code-UUID, dem Reg
 
 
 
-| Endpunkt | aufgerufen  </br>von | Eingabe   </br>Parameter | HTTP  </br>Methode | Reaktion | HTTP  </br>Reaktion |
+| Endpunkt | </br>von aufgerufen | Eingabe   </br>Parameter | HTTP </br>Methode | Reaktion | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Beispiel:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestId/regcode/TJJCFK?format=xml | Streaming-App</br></br>oder</br></br>Programmiererdienst | 1. Antragsteller  </br>    (Pfadkomponente)</br>2.  Registrierungscode  </br>    (Pfadkomponente) | GET | XML oder JSON, die einen Registrierungs-Code und Informationen enthalten. Siehe Schema und Beispiel unten. | 200 |
+| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Beispiel:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestId/regcode/TJJCFK?format=xml | Streaming-App</br></br>oder</br></br>Programmierer-Dienst | 1. Anforderer </br>    (Pfadkomponente)</br>2.  Registrierungs-Code </br>    (Pfadkomponente) | GET | XML oder JSON, die einen Registrierungs-Code und Informationen enthalten. Siehe Schema und Beispiel unten. | 200 |
 
 {style="table-layout:auto"}
 

@@ -1,13 +1,13 @@
 ---
 title: Glossar
 description: Glossar der Begriffe in der Überwachung der Parallelität
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '760'
+source-wordcount: '762'
 ht-degree: 0%
 
 ---
-
 
 # Glossar {#glossary}
 
@@ -17,26 +17,26 @@ ht-degree: 0%
 
 ## Aktion {#action-defn}
 
-* Die Art des Zugriffs, den der Betreff anfordert; die möglichen Werte für CM sind ***Initiieren*** oder ***continue*** Streaming-Sitzung.
+* Der Zugriffstyp, den der Betreff anfordert; die möglichen Werte für CM sind ***Initiator*** oder ***continue*** für eine Streaming-Sitzung.
 
 ## Aktiver Stream {#active-stream-defn}
 
 * Ein Stream, der in den letzten 90 Sekunden mindestens 1 Ereignis (Heartbeat) erhalten hat.
 
-* ***Hinweis:*** Wenn das letzte Ereignis im Stream vom Typ stop (`?event=stop`), wird er nicht gezählt. Dies ist eine Optimierung, die es einem Player ermöglicht, einen Stream explizit zu schließen, sodass er nicht mehr als &quot;aktiv&quot;betrachtet wird.
+* ***Hinweis:*** Wenn das letzte Ereignis im Stream vom Typ &quot;stop&quot;(`?event=stop`) ist, wird es nicht gezählt. Dies ist eine Optimierung, die es einem Player ermöglicht, einen Stream explizit zu schließen, sodass er nicht mehr als &quot;aktiv&quot;betrachtet wird.
 
 ## Anwendung {#application-defn}
 
 * Vom Mandanten für den Videoinhaltszugriff entwickelt
-* Erzwingt Entscheidungen über den Inhaltszugriff anhand von Informationen, die vom Concurrency Monitoring Service bereitgestellt werden (dies gilt für [Richtlinienerklärungspunkt](/help/concurrency-monitoring/policy-info-pt-versionone.md) Case)
-* Hat eine eindeutige **application ID** bereitgestellt von Adobe.
+* Erzwingt Entscheidungen über den Inhaltszugriff anhand von Informationen, die vom Concurrency Monitoring Service bereitgestellt werden (gilt für den Fall [Policy Information Point](/help/concurrency-monitoring/policy-info-pt-versionone.md) ).
+* wird über eine eindeutige **Anwendungs-ID** verfügen, die von Adobe bereitgestellt wird.
 
 ## Dienst zur Überwachung von Parallelen {#cm-service-defn}
 
 * fungiert als Überwachungssystem für die Abonnenten und unterstützt die MVPDs und Programmierer bei ihren anwendungsübergreifenden Richtliniendurchsetzungsanforderungen.
 * Ruft Heartbeats auf, die auf Stream-Aktivitäten hinweisen.
-* Acts as a _Policy Decision Point_ durch Bewertung von Autorisierungsanfragen auf der Grundlage der Benutzeraktivität und Bereitstellung einer Antwort auf die Genehmigung/Ablehnung.
-* Acts as a _Richtlinienerklärungspunkt_ durch Angabe der Anzahl der aktiven Streams (und zusätzlicher Stream-Metadaten) für einen Abonnenten.
+* fungiert als _Policy Decisioning Point_, indem Autorisierungsanfragen anhand der Benutzeraktivität bewertet und eine Antwort auf &quot;allow/deny&quot;bereitgestellt werden.
+* fungiert als _Richtlinieninformationspunkt_, indem die Anzahl der aktiven Streams (und zusätzlichen Stream-Metadaten) für einen Abonnenten gemeldet wird.
 
 ## Umgebung {#env-defn}
 
@@ -76,7 +76,7 @@ ht-degree: 0%
 * Muss den MVPD bei der Erfassung von Abonnentenaktivitäten und der Durchsetzung der Begrenzungsregeln bei ihren Eigenschaften unterstützen.
 * Sie können auch daran interessiert sein, den gleichzeitigen Zugriff auf ihre Inhalte über alle Zielportale hinweg zu beschränken, als separate Regel.
 
-  *F: Warum Programmierer und nicht Anforderer-ID wie in der übrigen Adobe Pass-Authentifizierung?*
+  *Q: Warum die Programmierer- und nicht die Anforderer-ID wie bei der übrigen Adobe Pass-Authentifizierung?*
 
   *A: Der Grund besteht darin, dass Programmierer diesen Parameter flexibel verwenden können, um Daten zwischen ihren Eigenschaften je nach Anwendungsfall weiterzugeben oder zu isolieren.*
 
@@ -94,7 +94,7 @@ ht-degree: 0%
 
 ## Betreff {#subj-defn}
 
-* Der Nutzer des (Video-)Inhalts über das Internet. Wir vermeiden den Begriff bewusst _**Benutzer**_, da sich die Überwachung der Parallelität normalerweise mit MVPD-Konto-IDs befasst (an denen mehrere tatsächliche Benutzer beteiligt sind, die denselben Vertrag gemeinsam haben, z. B. Familienmitglieder für einen Haushalt).
+* Der Nutzer des (Video-)Inhalts über das Internet. Wir vermeiden bewusst den Begriff _**Benutzer**_, da sich die Überwachung der Parallelität normalerweise mit MVPD-Konto-IDs befasst (an denen mehrere tatsächliche Benutzer beteiligt sind, die denselben Vertrag teilen, z. B. Familienmitglieder für einen Haushalt).
 
 * Für jeden Stream kann der Betreff durch Attribute erweitert werden, die sich auf die tatsächliche Person beziehen, die den Dienst verwendet, ihr netzwerkgebundenes Gerät usw.
 

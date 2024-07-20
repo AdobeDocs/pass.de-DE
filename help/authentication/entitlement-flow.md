@@ -4,7 +4,7 @@ description: Berechtigungsfluss des Programmierers
 exl-id: b1c8623a-55da-4b7b-9827-73a9fe90ebac
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1824'
+source-wordcount: '1823'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Bei beiden Schnittstellentypen vermittelt die Adobe Pass-Authentifizierung den B
 ![](assets/prog-entitlement-flow.png)
 
 
-*Abbildung: Adobe Pass Authentication Ecosystem*
+*Abbildung: Adobe Pass-Authentifizierungs-Ökosystem*
 
 >[!IMPORTANT]
 >
@@ -39,7 +39,8 @@ Bei beiden Schnittstellentypen vermittelt die Adobe Pass-Authentifizierung den B
 
 ## Berechtigungsfluss {#entitlement-flow}
 
-Der grundlegende Berechtigungsfluss besteht aus vier verschiedenen Unterflüssen:
+Es gibt vier verschiedene Unterflüsse, aus denen die grundlegende Berechtigung besteht
+Fluss:
 
 1. [Startup-Fluss](/help/authentication/entitlement-flow.md#startup)
 1. [Authentifizierungsfluss](/help/authentication/entitlement-flow.md#authentication)
@@ -54,7 +55,7 @@ Stellt die Identität des Programmierers und des Geräts her und führt Initiali
 
 **AccessEnabler**
 
-* **`setRequestor()`** - Stellt Ihre Identität mit dem AccessEnalber und der Adobe Pass-Authentifizierungsserver per Erweiterung her. Dieser Aufruf ist ein Vorläufer zum Rest des Berechtigungsflusses. Beispiel: in JavaScript:
+* **`setRequestor()`** - Stellt Ihre Identität mit dem AccessEnalber und damit mit den Adobe Pass-Authentifizierungsservern her. Dieser Aufruf ist ein Vorläufer zum Rest des Berechtigungsflusses. Beispiel in JavaScript:
 
   ```JavaScript
     /* Define the requestor ID (Programmer/aggregator ID). */
@@ -70,7 +71,7 @@ Stellt die Identität des Programmierers und des Geräts her und führt Initiali
 
 **Clientlose API**
 
-* **`\<REGGIE\_FQDN\>/reggie/v1/{requestorId}/regcode`** - Abhängig von der Plattform müssen möglicherweise vorbereitende Aufgaben ausgeführt werden, bevor die App-Aufrufe zur Regcodierung durchgeführt werden. Siehe **Dokumentation zur Client-losen API** für Details. Beispielsweise müssen Sie bei den Xbox-Plattformen die vorgeschriebenen Sicherheitsschritte ausführen, bevor Sie regcode aufrufen.
+* **`\<REGGIE\_FQDN\>/reggie/v1/{requestorId}/regcode`** - Abhängig von der Plattform müssen möglicherweise vorbereitende Aufgaben ausgeführt werden, bevor Ihre App die Regcodierung aufruft. Weitere Informationen finden Sie in der Dokumentation zur **clientless API** . Beispielsweise müssen Sie bei den Xbox-Plattformen die vorgeschriebenen Sicherheitsschritte ausführen, bevor Sie regcode aufrufen.
 
 ### Authentifizierungsfluss {#authentication}
 
@@ -78,14 +79,14 @@ Bei erfolgreicher Authentifizierung wird ein AuthN-Token generiert, das an das G
 
 **AccessEnabler**
 
-* `checkAuthentication()` - Überprüft, ob ein gültiges zwischengespeichertes Authentifizierungstoken im lokalen Token-Cache vorhanden ist, ohne dass tatsächlich der vollständige Authentifizierungsfluss ausgelöst wird. Dies Trigger die `setAuthenticationStatus()` Callback-Funktion.
+* `checkAuthentication()` - Überprüft, ob ein gültiges zwischengespeichertes Authentifizierungstoken im lokalen Token-Cache vorhanden ist, ohne dass tatsächlich der vollständige Authentifizierungsfluss ausgelöst wird. Dadurch wird die Rückruffunktion `setAuthenticationStatus()` Trigger.
 * `getAuthentication()` - Startet den vollständigen Authentifizierungsfluss. Bei erfolgreichem Abschluss generiert die Adobe Pass-Authentifizierung ein AuthN-Token und speichert es auf dem Client zwischen. Der Benutzer meldet sich auf seiner ausgewählten MVPDs-Site an, die je nach Plattform entweder in einem iFrame-, Popup-Fenster oder einer Webansicht angezeigt wird. Dadurch wird das displayProviderDialog() Trigger.
 
 **Clientlose API**
 
-* `<FQDN>/.../checkauthn` - Die Webdienstversion von `checkAuthentication()` höher.
-* `<FQDN>/.../config` - Gibt die Liste der MVPDs an die 2. Bildschirmanwendung zurück.
-* `<FQDN>/.../authenticate` - Startet den Authentifizierungsfluss von der 2.-Bildschirm-App aus und leitet Benutzer zur Anmeldung zu ihrem ausgewählten MVPD weiter. Bei erfolgreichem Abschluss generiert die Adobe Pass-Authentifizierung ein AuthN-Token und speichert es auf dem Server. Der Benutzer kehrt dann zu seinem ursprünglichen Gerät zurück, um den Berechtigungsfluss abzuschließen.
+* `<FQDN>/.../checkauthn` - Die Webdienstversion von `checkAuthentication()` oben.
+* `<FQDN>/.../config` - Gibt die Liste der MVPDs an die App am 2. Bildschirm zurück.
+* `<FQDN>/.../authenticate` - Startet den Authentifizierungsfluss von der 2. Bildschirmanwendung und leitet Benutzer zur Anmeldung zu ihrem ausgewählten MVPD weiter. Bei erfolgreichem Abschluss generiert die Adobe Pass-Authentifizierung ein AuthN-Token und speichert es auf dem Server. Der Benutzer kehrt dann zu seinem ursprünglichen Gerät zurück, um den Berechtigungsfluss abzuschließen.
 
 Ein AuthN-Token gilt als gültig, wenn die folgenden beiden Punkte wahr sind:
 
@@ -94,27 +95,27 @@ Ein AuthN-Token gilt als gültig, wenn die folgenden beiden Punkte wahr sind:
 
 #### Allgemeiner Workflow für die anfängliche Authentifizierung von AccessEnabler {#generic-ae-initial-authn-flow}
 
-1. Ihre App startet den Authentifizierungs-Workflow mit einem Aufruf von `getAuthentication()`, das nach einem gültigen zwischengespeicherten Authentifizierungstoken sucht. Diese Methode verfügt über eine optionale `redirectURL` Parameter; wenn Sie keinen Wert für `redirectURL`nach erfolgreicher Authentifizierung wird der Benutzer an die URL zurückgegeben, von der aus die Authentifizierung initialisiert wurde.
-1. Der AccessEnabler bestimmt den aktuellen Authentifizierungsstatus. Wenn der Benutzer derzeit authentifiziert ist, ruft AccessEnabler Ihre `setAuthenticationStatus()` Callback-Funktion, die einen Authentifizierungsstatus übergibt, der auf Erfolg hinweist.
-1. Wenn der Benutzer nicht authentifiziert ist, setzt der AccessEnabler den Authentifizierungsfluss fort, indem er bestimmt, ob der letzte Authentifizierungsversuch des Benutzers mit einem bestimmten MVPD erfolgreich war. Wenn eine MVPD-ID zwischengespeichert wird UND die `canAuthenticate` Flag ist wahr ODER ein MVPD wurde mit `setSelectedProvider()`, wird der Benutzer nicht mit dem MVPD-Auswahldialogfeld aufgefordert. Der Authentifizierungsfluss wird mit dem zwischengespeicherten Wert des MVPD fortgesetzt (d. h. mit dem MVPD, der bei der letzten erfolgreichen Authentifizierung verwendet wurde). Ein Netzwerkaufruf erfolgt an den Backend-Server und der Benutzer wird zur MVPD-Anmeldeseite weitergeleitet.
+1. Ihre App startet den Authentifizierungs-Workflow mit einem Aufruf von `getAuthentication()`, der nach einem gültigen zwischengespeicherten Authentifizierungstoken sucht. Diese Methode weist einen optionalen Parameter `redirectURL` auf. Wenn Sie keinen Wert für `redirectURL` angeben, wird der Benutzer nach einer erfolgreichen Authentifizierung an die URL zurückgegeben, von der aus die Authentifizierung initialisiert wurde.
+1. Der AccessEnabler bestimmt den aktuellen Authentifizierungsstatus. Wenn der Benutzer derzeit authentifiziert ist, ruft der AccessEnabler Ihre `setAuthenticationStatus()` -Rückruffunktion auf und übergibt einen Authentifizierungsstatus, der auf den Erfolg hinweist.
+1. Wenn der Benutzer nicht authentifiziert ist, setzt der AccessEnabler den Authentifizierungsfluss fort, indem er bestimmt, ob der letzte Authentifizierungsversuch des Benutzers mit einem bestimmten MVPD erfolgreich war. Wenn eine MVPD-ID zwischengespeichert wird UND das `canAuthenticate`-Flag wahr ist ODER ein MVPD mit `setSelectedProvider()` ausgewählt wurde, wird der Benutzer nicht mit dem MVPD-Auswahldialogfeld aufgefordert. Der Authentifizierungsfluss wird mit dem zwischengespeicherten Wert des MVPD fortgesetzt (d. h. mit dem MVPD, der bei der letzten erfolgreichen Authentifizierung verwendet wurde). Ein Netzwerkaufruf erfolgt an den Backend-Server und der Benutzer wird zur MVPD-Anmeldeseite weitergeleitet.
 
-1. Wenn keine MVPD-ID zwischengespeichert wurde UND kein MVPD mit `setSelectedProvider()` ODER `canAuthenticate` Flag auf &quot;false&quot;festgelegt ist, wird die `displayProviderDialog()` Callback wird aufgerufen. Dieser Rückruf weist Ihre App an, die Benutzeroberfläche zu erstellen, über die dem Benutzer eine Liste der MVPDs zur Auswahl angezeigt wird. Es wird ein Array von MVPD-Objekten bereitgestellt, die die erforderlichen Informationen zum Erstellen des MVPD-Selektors enthalten. Jedes MVPD-Objekt beschreibt eine MVPD-Entität und enthält Informationen wie die Kennung des MVPD und die URL, unter der das MVPD-Logo zu finden ist.
+1. Wenn keine MVPD-ID zwischengespeichert wird UND kein MVPD mit `setSelectedProvider()` ausgewählt wurde ODER das Flag `canAuthenticate` auf &quot;false&quot;gesetzt ist, wird der Rückruf `displayProviderDialog()` aufgerufen. Dieser Rückruf weist Ihre App an, die Benutzeroberfläche zu erstellen, über die dem Benutzer eine Liste der MVPDs zur Auswahl angezeigt wird. Es wird ein Array von MVPD-Objekten bereitgestellt, die die erforderlichen Informationen zum Erstellen des MVPD-Selektors enthalten. Jedes MVPD-Objekt beschreibt eine MVPD-Entität und enthält Informationen wie die Kennung des MVPD und die URL, unter der das MVPD-Logo zu finden ist.
 
-1. Nachdem ein MVPD ausgewählt wurde, muss Ihre App den AccessEnabler über die Auswahl des Benutzers informieren. Bei Nicht-Flash-Clients informieren Sie den AccessEnabler über die Benutzerauswahl, sobald der Benutzer den gewünschten MVPD auswählt. `setSelectedProvider()` -Methode. Flash-Clients senden stattdessen eine freigegebene `MVPDEvent` des Typs &quot;`mvpdSelection`&quot;, wobei der ausgewählte Provider übergeben wird.
+1. Nachdem ein MVPD ausgewählt wurde, muss Ihre App den AccessEnabler über die Auswahl des Benutzers informieren. Bei Nicht-Flash-Clients informieren Sie den AccessEnabler über die Benutzerauswahl, sobald der Benutzer den gewünschten MVPD auswählt, über einen Aufruf der `setSelectedProvider()` -Methode. Flash-Clients senden stattdessen eine freigegebene `MVPDEvent` vom Typ &quot;`mvpdSelection`&quot;, wobei der ausgewählte Provider übergeben wird.
 
 1. Wenn der AccessEnabler über die MVPD-Auswahl des Benutzers informiert wird, wird ein Netzwerkaufruf an den Backend-Server gesendet und der Benutzer wird zur MVPD-Anmeldeseite weitergeleitet.
 
-1. Im Authentifizierungs-Workflow kommuniziert der AccessEnabler mit der Adobe Pass-Authentifizierung und dem ausgewählten MVPD, um die Anmeldeinformationen des Benutzers (Benutzer-ID und Kennwort) abzurufen und seine Identität zu überprüfen. Während einige MVPDs zur Anmeldung zu ihrer eigenen Site weiterleiten, müssen Sie bei anderen ihre Anmeldeseite in einem iFrame anzeigen. Ihre Seite muss den Callback enthalten, der einen iFrame erstellt, falls der Kunde einen dieser MVPDs auswählt.<!-- For more information on creating a login iFrame, see  [Managing the Login IFrame](https://tve.helpdocsonline.com/managing-the-login-iframe)-->.
+1. Im Authentifizierungs-Workflow kommuniziert der AccessEnabler mit der Adobe Pass-Authentifizierung und dem ausgewählten MVPD, um die Anmeldeinformationen des Benutzers (Benutzer-ID und Kennwort) abzurufen und seine Identität zu überprüfen. Während einige MVPDs zur Anmeldung zu ihrer eigenen Site weiterleiten, müssen Sie bei anderen ihre Anmeldeseite in einem iFrame anzeigen. Ihre Seite muss den Callback enthalten, der einen iFrame erstellt, falls der Kunde einen dieser MVPDs auswählt.<!-- For more information on creating a login iFrame, see  [Managing the Login IFrame](https://tve.helpdocsonline.com/managing-the-login-iframe)-->
 
-1. Sobald sich der Benutzer erfolgreich angemeldet hat, ruft der AccessEnabler das Authentifizierungstoken ab und informiert Ihre App darüber, dass der Authentifizierungsvorgang abgeschlossen ist. AccessEnabler ruft die `setAuthenticationStatus()` Callback mit Status-Code 1, der auf Erfolg hinweist. Wenn bei der Ausführung dieser Schritte ein Fehler auftritt, wird die `setAuthenticationStatus()` -Callback wird mit dem Status-Code 0 ausgelöst, der auf einen Authentifizierungsfehler sowie einen entsprechenden Fehlercode hinweist.
+1. Sobald sich der Benutzer erfolgreich angemeldet hat, ruft der AccessEnabler das Authentifizierungstoken ab und informiert Ihre App darüber, dass der Authentifizierungsvorgang abgeschlossen ist. Der AccessEnabler ruft den Rückruf `setAuthenticationStatus()` mit dem Status-Code 1 auf und zeigt den Erfolg an. Wenn bei der Ausführung dieser Schritte ein Fehler auftritt, wird der Rückruf `setAuthenticationStatus()` mit dem Statuscode 0 ausgelöst, was auf einen Authentifizierungsfehler sowie einen entsprechenden Fehlercode hinweist.
 
 >[!IMPORTANT]
->Comcast ist derzeit das einzige MVPD, das keine statische URL für das Logo bereitstellt. Programmierer sollten die aktuellsten Logos von [XFINITY Developer&#39;s portal](https://developers.xfinity.com/products/tv-everywhere).
+>Comcast ist derzeit das einzige MVPD, das keine statische URL für das Logo bereitstellt. Programmierer sollten die aktuellsten Logos vom [XFINITY Developer&#39;s portal](https://developers.xfinity.com/products/tv-everywhere) abrufen.
 >
 
 ### Autorisierungsfluss {#authorization}
 
-Die Autorisierung ist eine Voraussetzung für die Anzeige geschützter Inhalte. Bei erfolgreicher Autorisierung wird ein AuthZ-Token zusammen mit einem kurzlebigen Media Token generiert, das der App des Programmierers aus Sicherheitsgründen bereitgestellt wird. Beachten Sie, dass Sie zur Unterstützung des Autorisierungs-Workflows zuvor die erforderliche Einrichtung des Anfragenden durchgeführt und die [Media Token Verifier](/help/authentication/media-token-verifier-int.md). Nach Abschluss dieser Schritte können Sie die Autorisierung einleiten.
+Die Autorisierung ist eine Voraussetzung für die Anzeige geschützter Inhalte. Bei erfolgreicher Autorisierung wird ein AuthZ-Token zusammen mit einem kurzlebigen Media Token generiert, das der App des Programmierers aus Sicherheitsgründen bereitgestellt wird. Beachten Sie, dass Sie zur Unterstützung des Autorisierungs-Workflows zuvor die erforderliche Anfrageneinrichtung durchgeführt und den [Medien-Token-Verifikator](/help/authentication/media-token-verifier-int.md) integriert haben müssen. Nach Abschluss dieser Schritte können Sie die Autorisierung einleiten.
 
 Ihre App initiiert eine Autorisierung, wenn ein Benutzer den Zugriff auf eine geschützte Ressource anfordert. Sie übergeben eine Ressourcen-ID, die die angeforderte Ressource angibt (z. B. einen Kanal, eine Folge usw.). Ihre App sucht zunächst nach einem gespeicherten Authentifizierungstoken. Wenn keine gefunden wird, starten Sie den Authentifizierungsprozess.
 
@@ -124,9 +125,10 @@ Ihre App initiiert eine Autorisierung, wenn ein Benutzer den Zugriff auf eine ge
 
 * `getAuthorization()` - Startet den vollständigen Autorisierungsfluss.
 
-Sie stellen die folgenden Callback-Funktionen bereit, um die Ergebnisse des Autorisierungsaufrufs zu verarbeiten:
+Sie stellen die folgenden Rückruffunktionen bereit, um die Ergebnisse von
+den Autorisierungsaufruf:
 
-* `setToken()` - Wenn die Authentifizierung zuvor erfolgreich war und die Autorisierung erfolgreich war, ruft AccessEnabler Ihre `setToken()` Callback-Funktion, die das kurzlebige Medien-Token übergibt und einen erfolgreichen Abschluss des Berechtigungsflusses für die Adobe Pass-Authentifizierung angibt. (Bevor Benutzer geschützte Inhalte anzeigen können, prüft die App des Programmierers die Gültigkeit des Medien-Tokens mit dem Media Token Verifier.
+* `setToken()` - Wenn die Authentifizierung zuvor erfolgreich war und die Autorisierung erfolgreich war, ruft der AccessEnabler Ihre `setToken()` -Rückruffunktion auf und übergibt das kurzlebige Medien-Token, was auf einen erfolgreichen Abschluss des Berechtigungsflusses für die Adobe Pass-Authentifizierung hinweist. (Bevor Benutzer geschützte Inhalte anzeigen können, prüft die App des Programmierers die Gültigkeit des Medien-Tokens mit dem Media Token Verifier.
 
 * `tokenRequestFailed()` - Wenn der Benutzer für die angeforderte Ressource nicht autorisiert ist (oder die Abfrage aus einem anderen Grund fehlschlägt), ruft AccessEnabler diese Rückruffunktion (sowie Ihre eigenen Fehlerberichtsfunktionen) auf und übergibt Details zum Fehler.
 
@@ -136,14 +138,15 @@ Sie stellen die folgenden Callback-Funktionen bereit, um die Ergebnisse des Auto
 
 #### Generischer AccessEnabler Authorization-Workflow {#generic-ae-authr-wf}
 
-1. Stellen Sie eine Callback-Funktion bereit, die Ihre zugewiesene Programmierer-GUID mit dem Access Enabler registriert, indem Sie `setReqestor()`. Diese Rückruffunktion wird aufgerufen, wenn der AccessEnabler erfolgreich heruntergeladen wurde.
+1. Stellen Sie mithilfe von `setReqestor()` eine Callback-Funktion bereit, die Ihre zugewiesene Programmierer-GUID beim Access Enabler registriert. Diese Rückruffunktion wird aufgerufen, wenn der AccessEnabler
+erfolgreich heruntergeladen wurde.
 
-1. Aufruf `getAuthorization()` wenn ein Benutzer den Zugriff auf eine geschützte Ressource anfordert. Verwenden `getAuthorization()`, übergeben Sie eine Ressourcen-ID, die die angeforderte Ressource angibt (z. B. einen Kanal, eine Folge usw.). Der AccessEnabler sucht nach einem zwischengespeicherten Authentifizierungstoken, das mit der Autorisierungsanforderung übergeben wird. Wenn keine gefunden wird, wird der Authentifizierungsfluss initiiert.
+1. Rufen Sie `getAuthorization()` auf, wenn ein Benutzer den Zugriff auf eine geschützte Ressource anfordert. Übergeben Sie mit &quot;`getAuthorization()`&quot; eine Ressourcen-ID, mit der die angeforderte Ressource spezifiziert wird (z. B. einen Kanal, eine Folge usw.). Der AccessEnabler sucht nach einem zwischengespeicherten Authentifizierungstoken, das mit der Autorisierungsanforderung übergeben wird. Wenn keine gefunden wird, wird der Authentifizierungsfluss initiiert.
 1. Stellen Sie Callback-Funktionen bereit, um die Ergebnisse der Autorisierung zu verarbeiten:
 
-   * `setToken()` - Wenn die Autorisierung erfolgreich war oder der Benutzer zuvor autorisiert wurde, setzt der Access Enabler den Autorisierungsprozess fort, indem er Ihre `setToken()` Callback-Funktion, die das kurzlebige Autorisierungstoken übergibt.
+   * `setToken()` - Wenn die Autorisierung erfolgreich ist oder der Benutzer zuvor autorisiert wurde, setzt der Access Enabler den Autorisierungsprozess fort, indem er Ihre `setToken()` -Callback-Funktion aufruft und das kurzlebige Autorisierungstoken übergibt.
 
-   * `tokenRequestFailed()` - Wenn der Benutzer nicht für die angeforderte Ressource autorisiert ist (oder die Abfrage aus einem anderen Grund fehlschlägt), ruft AccessEnabler alle von Ihnen registrierten Fehlerberichtsfunktionen sowie die `tokenRequestFailed()` Callback, Übergabe von Details zum Fehler.
+   * `tokenRequestFailed()` - Wenn der Benutzer für die angeforderte Ressource nicht autorisiert ist (oder die Abfrage aus einem anderen Grund fehlschlägt), ruft AccessEnabler alle von Ihnen registrierten Fehlerberichtsfunktionen sowie den `tokenRequestFailed()` -Rückruf auf und übergibt Details zum Fehler.
 
 ### Abmeldefluss {#logout}
 
@@ -159,9 +162,11 @@ Löscht Token und andere mit dem Berechtigungsfluss des aktuellen Benutzers verk
 
 ## Verhalten von AccessEnabler {#ae-behavior}
 
-Alle AccessEnabler-API-Aufrufe sind asynchron (mit einer Ausnahme, die in den API-Referenzen angegeben ist). Sie können eine API beliebig oft aufrufen. Es gibt jedoch keine Garantie dafür, dass die durch die Aufrufe ausgelösten Aktionen in derselben Reihenfolge ausgeführt werden wie die Aufrufe. (Eine Ausnahme hiervon ist die aktuelle Flash Player-Laufzeit. Da es sich nicht um Multi-Thread-Aufrufe handelt, werden Aufrufe sichergestellt. *do* in der Reihenfolge ihres Aufrufs abgeschlossen.)
+Alle AccessEnabler-API-Aufrufe sind asynchron (mit einer Ausnahme, die in den API-Referenzen angegeben ist). Sie können eine API beliebig oft aufrufen, es gibt jedoch keine starke Garantie dafür, dass die Aktionen ausgelöst werden
+durch die Aufrufe in derselben Reihenfolge abgeschlossen werden, in der die Aufrufe getätigt wurden. (Eine Ausnahme hiervon ist die aktuelle Flash Player-Laufzeitumgebung. Wenn nicht mehrere Threads verwendet werden, wird sichergestellt, dass die Aufrufe *do* in der Reihenfolge abgeschlossen werden
+sie werden aufgerufen.)
 
-Um zwischen Antworten zu unterscheiden und Antworten mit Aufrufen zu kombinieren, wiederholen alle Rückrufe ihre Eingabeparameter. Dazu gehören `setToken()` und`tokenRequestFailed()`, die letztendlich durch `checkAuthorization()`. (Für `checkAuthorization()` -Rückrufe, wird die verwendete Ressource zurückverfolgt.) Mithilfe dieser Funktion können Sie ermitteln, welche Antwort dem jeweiligen Aufruf entspricht. Um diese Funktion verwenden zu können, können Sie etwa Folgendes kodieren:
+Um zwischen Antworten zu unterscheiden und Antworten mit Aufrufen zu kombinieren, wiederholen alle Rückrufe ihre Eingabeparameter. Dazu gehören `setToken()` und `tokenRequestFailed()`, die letztendlich durch `checkAuthorization()` ausgelöst werden. (Bei `checkAuthorization()` -Rückrufen wird die verwendete Ressource zurückverfolgt.) Mithilfe dieser Funktion können Sie ermitteln, welche Antwort dem jeweiligen Aufruf entspricht. Um diese Funktion verwenden zu können, können Sie etwa Folgendes kodieren:
 
 ```JavaScript
     for each (resource in ["TNT", "CNN", "TBS", "AdultSwim"] ) {

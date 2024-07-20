@@ -17,16 +17,16 @@ ht-degree: 1%
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch [Drosselmechanismus](/help/authentication/throttling-mechanism.md)
+> Die REST-API-Implementierung wird durch den [Drosselmechanismus](/help/authentication/throttling-mechanism.md) begrenzt
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
 * Produktion - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produktion - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -38,9 +38,9 @@ ht-degree: 1%
 Diese Ressource erzeugt Profilanfragen für eine Anforderungs-ID und einen MVPD-Tupel.
 
 
-| Endpunkt | aufgerufen  </br>von | Eingabe   </br>Parameter | HTTP  </br>Methode | Reaktion | HTTP  </br>Reaktion |
+| Endpunkt | </br>von aufgerufen | Eingabe   </br>Parameter | HTTP </br>Methode | Reaktion | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/{requestor}/profile-requests/{mvpd} | Streaming-App</br></br>oder</br></br>Programmiererdienst | 1. requestor (path param)</br>2. mvpd (path param)</br>3. deviceType (Obligatorisch) | GET | Der Content-Type der Antwort ist application/octet-stream, da die tatsächliche Payload für die Client-Anwendung undurchsichtig ist.</br></br>Die Antwort sollte von der Anwendung an die Plattform weitergeleitet werden</br></br>SSO-Engine für den Erhalt einer Profil-SSO. | 200 - Erfolg   </br>400 - Ungültige Anfrage |
+| &lt;SP_FQDN>/api/v1/{requestor}/profile-requests/{mvpd} | Streaming-App</br></br>oder</br></br>Programmierer-Dienst | 1. requestor (path param)</br>2. mvpd (path param)</br>3. deviceType (Obligatorisch) | GET | Der Content-Type der Antwort ist application/octet-stream, da die tatsächliche Payload für die Client-Anwendung undurchsichtig ist.</br></br>Die Antwort sollte von der Anwendung an die Platform</br></br>SSO-Engine weitergeleitet werden, um eine Profil-SSO zu erhalten. | 200 - Erfolg   </br>400 - Ungültige Anfrage |
 
 
 | Eingabeparameter | Beschreibung |

@@ -1,13 +1,13 @@
 ---
 title: Berichte zur gleichzeitigen Überwachung der Nutzung
 description: Berichte zur gleichzeitigen Überwachung der Nutzung
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 20220436-e748-4b22-8e7c-e074e0bfe242
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '723'
+source-wordcount: '757'
 ht-degree: 0%
 
 ---
-
 
 # Berichte zur gleichzeitigen Überwachung der Nutzung {#cm-usage-reports}
 
@@ -19,11 +19,11 @@ ht-degree: 0%
 
 ## Übersicht {#usage-rep-overview}
 
-Die **Berichte zur gleichzeitigen Überwachung der Nutzung** -Dienst ist über eine REST-API verfügbar, die einen Einblick in die gleichzeitige Nutzung bietet, die von den Anwendungen des Kunden gemeldet wird.
+Der Dienst **Gebrauchsberichte zur gleichzeitigen Überwachung** ist über eine REST-API verfügbar, die Einblicke in die gleichzeitige Nutzung bietet, die von den Anwendungen des Kunden gemeldet wird.
 
 ## Voraussetzungen {#usage-rep-prerequisites}
 
-Um auf das Produkt &quot;Gebrauchsberichte zur Überwachung der Parallelität&quot;zugreifen zu können, muss sich ein Kunde zunächst an die Überwachung der Parallelität wenden [Supportteam](mailto:tve-support@adobe.com) und führt die erforderlichen Schritte aus, um Ihnen den Zugriff auf das API-Produkt zu ermöglichen.
+Um auf das Produkt &quot;Gebrauchsberichte zur Überwachung der Parallelität&quot;zugreifen zu können, muss sich ein Kunde zunächst an das Supportteam zur Überwachung der Parallelität [1} wenden und die erforderlichen Schritte ausführen, um Ihnen den Zugriff auf das API-Produkt zu ermöglichen.](mailto:tve-support@adobe.com)
 
 ## Allgemeine Berichtsmetriken und -aufschlüsselungen {#general-rep-metrics-breakdown}
 
@@ -68,7 +68,7 @@ Um auf das Produkt &quot;Gebrauchsberichte zur Überwachung der Parallelität&qu
 
 ## Metriken und Aufschlüsselungen von gleichzeitigen Berichten {#concurrency-reports-metrics-breakdown}
 
-Ab der Concurrency Monitoring-Version 2.9.0 haben wir einen neuen Bericht zum Verständnis der gleichzeitigen Verwendung eingeführt: ein Histogramm für **Parallelitätsstufe** und **Aktivitätsebene**.
+Ab der Version 2.9.0 der Überwachung der Parallelität haben wir einen neuen Bericht eingeführt, um die gleichzeitige Verwendung zu verstehen: ein Histogramm für **Parallelitätsstufe** und **Aktivitätsebene**.
 
 Dieser Bericht soll Ihnen vor allem helfen, die Auswirkungen der Festlegung einer Richtlinie mit einer bestimmten Parallelitätsbegrenzung zu verstehen und Ihnen genügend Informationen zu geben, damit Sie entscheiden können, ob Sie die Grenze erhöhen sollten.
 
@@ -85,6 +85,6 @@ Dieser Bericht soll Ihnen vor allem helfen, die Auswirkungen der Festlegung eine
 | year | Das vierstellige Jahr |
 | month | Der Monat des Jahres (1-12) |
 | day | Der Tag des Monats (1-31) |
-| Parallelitätsstufe | Bezeichnet eine beliebige Unterscheidung **Stream-Aktivität, die in der Sitzungsinitialisierungsphase genehmigt wurde** für einen Benutzer, um feststellen zu können, wie viele gleichzeitige Streams **wurden geöffnet** durch einen Benutzer und um die Auswirkungen der Anwendung einer bestimmten Parallelitätsbegrenzung zu verstehen. |
-| Aktivitätsebene | Bezeichnet eine beliebige Unterscheidung **Stream-Aktivität (unabhängig von ihrem Status: gestartet, aktiv, gestoppt, abgelehnt)** für einen Benutzer, um feststellen zu können, wie viele gleichzeitige Streams von einem Benutzer geöffnet werden sollten, und um zu verstehen, wie sich die Anwendung einer bestimmten Parallelitätsbegrenzung auswirkt |
+| Parallelitätsstufe | Stellt eine eindeutige **Stream-Aktivität dar, die in der Sitzungsinitialisierungsphase** für einen Benutzer genehmigt wurde, um feststellen zu können, wie viele gleichzeitige Streams **von einem Benutzer geöffnet wurden, und um die Auswirkungen der Anwendung einer bestimmten Parallelitätsbegrenzung zu verstehen.** |
+| Aktivitätsebene | Stellt eine beliebige **Stream-Aktivität dar (unabhängig vom Status: gestartet, aktiv, gestoppt, abgelehnt)** für einen Benutzer, um feststellen zu können, wie viele gleichzeitige Streams von einem Benutzer geöffnet werden konnten, und um die Auswirkungen der Anwendung einer bestimmten Parallelitätsbegrenzung zu verstehen. |
 | mvpd | Der bei der Sitzungsverwaltung bereitgestellte MVPD |

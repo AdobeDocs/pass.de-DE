@@ -1,5 +1,5 @@
 ---
-title: Glossar zu Konto-IQ
+title: Glossar zu Account IQ
 description: Ein Glossar der Produktterminologie.
 exl-id: 2ee54442-9538-4c30-b999-265310b3935f
 source-git-commit: cfcaa00ab05c99a64bcb0edfe5af60845a6769a9
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## Häufige Begriffe in D2C und TV überall
 
-Die folgenden Produktterminologie und ihre Definitionen sind für alle [Versionen von Konto IQ](versions-aiq.md).
+Die folgenden Produktbegriffe und ihre Definitionen gelten für alle [Versionen von Account IQ](versions-aiq.md).
 
 ### [!UICONTROL Accounts Sharing Probability] {#account-sharing-probability-def}
 
@@ -21,7 +21,7 @@ Ein Dashboard-Bedienfeld mit Diagrammen, in dem die Teilungswerte des aktuellen 
 
 ### [!UICONTROL Action] {#action-def}
 
-Ein direktes oder indirektes Ereignis, das mit einem [Vorgang](#operation-def) , die sich auf die Eigenschaften (z. B. Teilungsbewertung oder Anzahl der verwendeten Geräte) eines zugehörigen Vorgangssegments auswirkt.
+Ein direktes oder indirektes Ereignis, das mit einem [Vorgang](#operation-def) verknüpft ist, der sich auf die Eigenschaften (z. B. Teilungsbewertung oder Anzahl der verwendeten Geräte) eines zugehörigen Vorgangssegments auswirkt.
 
 ### [!UICONTROL Aggregated sharing score] {#sharing-probability-level-def}
 
@@ -90,7 +90,7 @@ Ein Gerät mit hoher Mobilität. Zum Beispiel Mobiltelefon und Tablet.
 
 ### Vorgang {#operation-def}
 
-Vorgang ist ein Datensatz, der erstellt wurde, um die Wirkung eines bestimmten [action](#action-def) in einem zugehörigen Segment. Ein Beispiel für eine Aktion kann eine Begrenzung der Anzahl gleichzeitiger Streams sein, die für die vom Segment identifizierten Konten zulässig sind.
+Der Vorgang ist ein Datensatz, der erstellt wurde, um die Auswirkungen einer bestimmten [Aktion](#action-def) auf ein verknüpftes Segment zu verfolgen. Ein Beispiel für eine Aktion kann eine Begrenzung der Anzahl gleichzeitiger Streams sein, die für die vom Segment identifizierten Konten zulässig sind.
 
 ### [!UICONTROL Overall sharing score] {#overall-sharing-score}
 

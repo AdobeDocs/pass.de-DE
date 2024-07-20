@@ -1,9 +1,10 @@
 ---
 title: Versionshinweise zur Adobe Pass-Authentifizierung 2.67
 description: Versionshinweise zur Adobe Pass-Authentifizierung 2.67
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: d899fe96-a273-4681-90a5-bde54cc2f3b3
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '125'
+source-wordcount: '131'
 ht-degree: 0%
 
 ---
@@ -25,8 +26,8 @@ Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme in di
 
 ### Build-Nummer {#build-number-267}
 
-Adobe Pass-Authentifizierung: adobe-pass-**2 67 0,1**
-Releasedatum: **12.9.2023 - 09.14.2023**
+Adobe Pass-Authentifizierung: adobe-pass-**2.67.0.1**
+Releasedatum: **12.09.2023 - 14.09.2023**
 
 ### Neue Funktionen {#new-features-267}
 
@@ -35,7 +36,7 @@ Releasedatum: **12.9.2023 - 09.14.2023**
 
 ### MVPD-Aktualisierungen {#mvpd-updates-267}
 
-* Aktualisierungen für **DirecTV Puerto Rico** Integration mit Adobe. Weitere Informationen erhalten Sie von Ihrem TAM.
+* Updates für die Integration von **DirecTV Puerto Rico** mit Adobe. Weitere Informationen erhalten Sie von Ihrem TAM.
 
 #### Fehlerkorrekturen {#bug-fixes-267}
 

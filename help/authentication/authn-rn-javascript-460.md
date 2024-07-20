@@ -1,7 +1,8 @@
 ---
 title: Versionshinweise zur Adobe Pass-Authentifizierung JavaScript 4.6.0
 description: Versionshinweise zur Adobe Pass-Authentifizierung JavaScript 4.6.0
-source-git-commit: 7057aeda34b4fe0d059912ab0a71ea856427654c
+exl-id: 09b79384-2385-48ce-9ee2-6db93bbce15d
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '126'
 ht-degree: 0%
@@ -20,12 +21,12 @@ Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme in di
 
 Adobe Pass-Authentifizierung: JavaScript 4.6.0
 
-Releasedatum: **20.9.2022 - 09.22.2022**
+Releasedatum: **20.09.2022 - 22.09.2022**
 
 
 ## Versionsübersicht {#overview-javascript-sdk-460}
 
-* Die Verwendung von `eval` -Funktion verwenden, sodass das SDK mit der Content Security Policy konform ist.
+* Die Verwendung der Funktion `eval` wurde entfernt, sodass das SDK mit der Inhaltssicherheitsrichtlinie konform ist.
 * Fehlerkorrektur - Der Authentifizierungsfluss kann jetzt erfolgreich abgeschlossen werden, wenn der lokale Speicher des Browsers explizit von einer Partner-Anwendung gelöscht wird.
 
 

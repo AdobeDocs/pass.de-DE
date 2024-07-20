@@ -4,7 +4,7 @@ description: Anhang B "Tipps zum Debuggen"
 exl-id: ea024797-315e-47c0-99ea-1ac49c8c9697
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '170'
+source-wordcount: '161'
 ht-degree: 0%
 
 ---
@@ -31,9 +31,9 @@ Es ist browserabhängig, aber in Firefox: &quot;Tools&quot;-\> &quot;Letzten Ver
 
 ## Löschen des LSO-Cache {#clearing-lsos-cache}
 
-Zugriff auf [Flash Player-Hilfe](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
+Rufen Sie die [Flash Player-Hilfe](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html) auf.
 
-Wählen Sie die ```entitlement.\*``` (je nachdem, was getestet wird) und klicken Sie auf &quot;Website löschen&quot;.
+Wählen Sie den Wert ```entitlement.\*``` (je nachdem, was getestet wird) aus und klicken Sie auf &quot;Website löschen&quot;.
 
 
 ## Debugging-Tools {#tools}

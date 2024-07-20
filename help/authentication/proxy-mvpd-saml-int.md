@@ -5,7 +5,7 @@ exl-id: 6c83e703-d8cd-476b-8514-05b8230902be
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
 source-wordcount: '711'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -48,24 +48,24 @@ Damit die Adobe Pass-Authentifizierung mit einem Proxy-MVPD integriert werden ka
 * (Empfohlen) - Der Proxy-MVPD verarbeitet zusätzliche Weiterleitungen zur Anmeldeseiten-URL des abgesicherten MVPD.
 
 * Der MVPD-Proxy muss die Ports 443 und 80 für die folgenden IPs öffnen:
-   * 192.150.4.5
-   * 192.150.10.200
-   * 192.150.11.4
-   * 4.53.93.130
-   * 193.105.140.131
-   * 193.105.140.132
-   * 76.74.170.204
-   * 63.140.39.4
-   * 66.235.132.38
-   * 66.235.139.38
-   * 66.235.139.168
+   * 192 150,4,5
+   * 192 150 10 200
+   * 192 150,11,4
+   * 4 53 93 130
+   * 193 105 140 131
+   * 193 105 140 132
+   * 76 74 170 204
+   * 63 140 39,4
+   * 66 235 132 38
+   * 66 235 139 38
+   * 66 235 139 168
 
 
 #### SAML-Authentifizierungsanfrage und -Antwort {#authn-saml-req-resp}
 
 In der SAML-AuthN-Anfrage enthalten Proxy-Integrationen die folgende zusätzliche Eigenschaft, die vom MVPD-Proxy verarbeitet werden muss.  Diese Eigenschaft ist erforderlich, um den Anforderer im Namen des Proxied MVPD korrekt zu verarbeiten und das richtige Anmeldeerlebnis zu rendern. (Diese Eigenschaft wird in der folgenden Beispielanfrage hervorgehoben.)
 
-**Scoping-Eigenschaft** - Enthält ein IDPEntry -Element, das die spezifische MVPD_ID und den MVPD-Namen enthält.  Dies stellt den MVPD dar, den der Benutzer tatsächlich aus der Auswahl des Programmierers ausgewählt hat, und entspricht der im Proxy-Webdienst angegebenen MVPD_ID.
+**Scoping-Eigenschaft** - Enthält ein IDPEntry-Element, das die spezifische MVPD_ID und den MVPD-Namen enthält.  Dies stellt den MVPD dar, den der Benutzer tatsächlich aus der Auswahl des Programmierers ausgewählt hat, und entspricht der im Proxy-Webdienst angegebenen MVPD_ID.
 
 Es gibt eine zusätzliche Scoping-Eigenschaft für RequestorID, die verwendet werden kann, um die Anmeldung für die bestimmte Marke des Programmierers anzupassen (falls erforderlich). Oder sie kann einfach für Analysen verwendet werden, bei denen die Anfrage ursprünglich ausgeführt wurde.
 
@@ -170,7 +170,7 @@ Für den Autorisierungsteil müsste der MVPD die vom Programmierer angegebene Re
 
 In der AuthZ-Antwort muss der ISSUER mit dem ISSUER aus der SAML-Antwort übereinstimmen, die die gefilterte MVPD-Kennung sein sollte.
 
-**Beispiel einer AuthZ XACML-Anfrage**
+**Beispiel-AuthZ-XACML-Anforderung**
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>

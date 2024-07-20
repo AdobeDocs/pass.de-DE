@@ -4,7 +4,7 @@ description: Einrichten der Umgebung und Testen in der Pre-Qual-Phase
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '473'
+source-wordcount: '477'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Der Zweck dieses technischen Hinweises besteht darin, unseren Partnern bei der Einrichtung ihrer Umgebung zu helfen und Beginn eine neue Build zu testen, die auf dem Adobe Systems Präqualifikations-Umgebung bereitgestellt wird.
 
-Da es zwei Build Varianten gibt: ***Produktion*** und ***Staging, werden wir in diesem Dokument auf das Produktions-Setup konzentrieren mit der Erwähnung, dass alle Schritte für das Staging*** gleich sind, nur die URLs sind unterschiedlich.
+Da es zwei Build Varianten gibt: ***Produktion*** und ***Staging***, werden wir in diesem Dokument auf das Produktions-Setup konzentrieren mit der Erwähnung, dass alle Schritte für das Staging gleich sind, nur die URLs sind unterschiedlich.
 
 In den Schritten 1 und 2 wird die Test Umgebung auf einer der Prüfmaschinen eingerichtet, in Schritt 3 wird der grundlegende Ablauf überprüft und in den Schritten 4 und 5 werden einige Prüfrichtlinien vorgestellt.
 
@@ -70,9 +70,9 @@ In den Schritten 1 und 2 wird die Test Umgebung auf einer der Prüfmaschinen ein
 * Spoof-Produktion Profil
    * 52.13.71.11 http://entitlement.auth.adobe.com, http://sp.auth.adobe.com http://api.auth.adobe.com
 
-**Spoofing unter Android:** Um unter Android zu spielen, müssen Sie einen Android-Emulator verwenden.
+**Spoofing in Android:** Um in Android zu spielen, müssen Sie einen Android-Emulator verwenden.
 
-* Sobald die Spoofing-Funktion eingerichtet ist, können Sie einfach die regulären URLs für die Produktions- und Staging-Profile verwenden: (d. h. `http://sp.auth-staging.adobe.com` und `http://entitlement.auth-staging.adobe.com` und Sie werden tatsächlich *Pre-Qualifizierungsumgebung/ Produktion* des* neuen Builds.
+* Sobald der Spoofing eingerichtet ist, können Sie einfach die normalen URLs für die Produktions- und Staging-Profile verwenden: (d. h. `http://sp.auth-staging.adobe.com` und `http://entitlement.auth-staging.adobe.com` und Sie werden tatsächlich die *Pre-Qualifizierungsumgebung/ Produktion* des neuen Builds erreichen.
 
 
 ## SCHRITT 3.  Überprüfen Sie, ob Sie auf die richtige Umgebung verweisen. {#Verify-you-are-pointing-to-the-right-environment}
@@ -93,6 +93,6 @@ In den Schritten 1 und 2 wird die Test Umgebung auf einer der Prüfmaschinen ein
 
 ## SCHRITT 6.  Testen mit der API-Test-Site {#perform-testing-using-api-testing-site}
 
-* Wenn Sie die Adobe Pass-Authentifizierung genauer testen möchten, empfehlen wir, die [API-Testseite](http://entitlement-prequal.auth.adobe.com/apitest/api.html).
+* Wenn Sie die Adobe Pass-Authentifizierung genauer testen möchten, empfehlen wir die Verwendung der [API-Test-Site](http://entitlement-prequal.auth.adobe.com/apitest/api.html).
 
-Weitere Informationen zur API-Test-Site finden Sie unter [Testen der Authentifizierungs-Autorisierungsflüsse mithilfe der Adobe API-Test-Site](/help/authentication/test-authn-authz-flows-using-adobes-api-test-site.md).
+Weitere Informationen zur API-Test-Site finden Sie unter [Testen der Authentifizierungs- und Autorisierungsflüsse mithilfe der Adobe API-Test-Site](/help/authentication/test-authn-authz-flows-using-adobes-api-test-site.md).

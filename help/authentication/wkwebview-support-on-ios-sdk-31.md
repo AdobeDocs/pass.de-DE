@@ -4,7 +4,7 @@ description: WKWebView-Unterstützung für iOS SDK 3.1+
 exl-id: 90062be0-1a0a-44ae-8d8e-f4d97a92b17a
 source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '311'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 </br>
 
-**Da Apple UIWebView auf iOS nicht mehr unterstützt, haben wir iOS SDK 3.1 mit Unterstützung für WKWebView aktualisiert.**
+**Da Apple UIWebView auf iOS eingestellt hat, wurde das iOS SDK 3.1 mit Unterstützung für WKWebView aktualisiert.**
 
 ## Kompatibilität {#compatibility}
 
@@ -27,7 +27,7 @@ Beachten Sie, dass die Migration lediglich bedeutet, dass die UIWebView-Klasse m
 
 ## Bekannte Probleme {#known-issues}
 
-Adobe AccessEnabler verwendete eine ausgeblendete interne UIWebView-Instanz, um &quot;[passive Authentifizierung](/help/authentication/sso-passive-authn.md)&quot;für bestimmte MVPDs. Der &quot;passive&quot;Fluss war für MVPDs nützlich, die Authentifizierung für jede Anfragende-ID erfordern. Von diesem Fluss profitierten jene Programmierer, die dieselbe Team-ID über mehrere iOS-Anwendungen hinweg nutzten, um ein SSO-Erlebnis (Adobe SSO) zu simulieren. Diese Funktion wird derzeit von einer begrenzten Anzahl von MVPDs verwendet.
+Adobe AccessEnabler verwendete eine ausgeblendete interne UIWebView-Instanz, um für bestimmte MVPDs eine &quot;[passive Authentifizierung](/help/authentication/sso-passive-authn.md)&quot; durchzuführen. Der &quot;passive&quot;Fluss war für MVPDs nützlich, die Authentifizierung für jede Anfragende-ID erfordern. Von diesem Fluss profitierten jene Programmierer, die dieselbe Team-ID über mehrere iOS-Anwendungen hinweg nutzten, um ein SSO-Erlebnis (Adobe SSO) zu simulieren. Diese Funktion wird derzeit von einer begrenzten Anzahl von MVPDs verwendet.
 
 Die Funktion nutzte ein UIWebView-Verhalten, das es Adobe ermöglichte, die Authentifizierungs-Cookies zu erfassen und sie während des &quot;passiven&quot;Flusses erneut abzuspielen. WKWebView bietet eine höhere Sicherheit, die verhindert, dass Adobe die bei der Anmeldung eingestellten Cookies erfasst und mithilfe einer verborgenen Instanz von WKWebView erneut abspielt. Aufgrund dieser Sicherheitsverbesserung und angesichts der Tatsache, dass der &quot;passive&quot;Fluss nur einer sehr begrenzten Anzahl von MVPDs in einem sehr spezifischen Implementierungsszenario zugute kam (mehrere Anwendungen mit derselben Team-ID), entfernte Adobe die &quot;passive Authentifizierungsfunktion&quot;für MVPDs, die zur Authentifizierung Webansichten verwenden.
 

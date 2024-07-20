@@ -17,16 +17,16 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch [Drosselmechanismus](/help/authentication/throttling-mechanism.md)
+> Die REST-API-Implementierung wird durch den [Drosselmechanismus](/help/authentication/throttling-mechanism.md) begrenzt
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
 * Produktion - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produktion - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -40,9 +40,9 @@ Initiiert den Authentifizierungsprozess durch Information über ein MVPD-Auswahl
 
 
 
-| Endpunkt | aufgerufen  </br>von | Eingabe   </br>Parameter | HTTP  </br>Methode | Reaktion | HTTP  </br>Reaktion |
+| Endpunkt | </br>von aufgerufen | Eingabe   </br>Parameter | HTTP </br>Methode | Reaktion | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/authenticate | AuthN-Modul | 1. requestor_id (erforderlich)</br>2.  mso_id (erforderlich)</br>3.  reg_code (erforderlich)</br>4.  domain_name (erforderlich)</br>5.  noflash=true -  </br>    (Obligatorisch, Restparameter)</br>6.  no_iframe=true (Obligatorisch, Restparameter)</br>7.  Zusätzliche Parameter (optional)</br>8.  redirect_url (erforderlich) | GET | Die Anmelde-Webanwendung wird zur MVPD-Anmeldeseite weitergeleitet. | 302 für vollständige Umleitungsimplementierungen |
+| &lt;SP_FQDN>/api/v1/authenticate | AuthN-Modul | 1. requestor_id (erforderlich)</br>2.  mso_id (erforderlich)</br>3.  reg_code (erforderlich)</br>4.  domain_name (erforderlich)</br>5.  noflash=true - </br>    (Obligatorischer, Restparameter)</br>6.  no_iframe=true (Obligatorisch, Restparameter)</br>7.  zusätzliche Parameter (optional)</br>8.  redirect_url (erforderlich) | GET | Die Anmelde-Webanwendung wird zur MVPD-Anmeldeseite weitergeleitet. | 302 für vollständige Umleitungsimplementierungen |
 
 {style="table-layout:auto"}
 
@@ -89,12 +89,12 @@ Initiiert den Authentifizierungsprozess durch Information über ein MVPD-Auswahl
 >```
 
 
-### **Hinweise** {#notes}
+### **Notizen** {#notes}
 
-* Der Wert der `domain_name` muss auf einen der bei der Adobe Pass-Authentifizierung registrierten Domänennamen festgelegt werden. Weitere Informationen finden Sie unter [Registrierung und Initialisierung](/help/authentication/programmer-overview.md).
+* Der Wert des Parameters `domain_name` muss auf einen der bei der Adobe Pass-Authentifizierung registrierten Domänennamen festgelegt werden. Weitere Informationen finden Sie unter [Registrierung und Initialisierung](/help/authentication/programmer-overview.md).
 
 * [Vermeiden Sie die Verwendung von &quot;&amp;&#39;reg\_code&quot;in /authenticate request (Tech Note)](/help/authentication/clientless-avoid-using-reg-code-in-authenticate-request.md)
 
-* Die `redirect_url` -Parameter muss der letzte sein in der Reihenfolge
+* Der Parameter `redirect_url` muss der letzte in der Reihenfolge sein.
 
-* Der Wert der `redirect_url` Der Parameter muss URL-kodiert sein
+* Der Wert des Parameters `redirect_url` muss URL-kodiert sein

@@ -4,7 +4,7 @@ description: Apple SSO-Cookbook (iOS/tvOS SDK)
 exl-id: 2d59cd33-ccfd-41a8-9697-1ace3165bc44
 source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
 workflow-type: tm+mt
-source-wordcount: '1867'
+source-wordcount: '1861'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 Das Adobe Primetime Authentication AccessEnabler iOS/tvOS SDK unterstützt die SSO-Authentifizierung (Single Sign-On) für Endbenutzer von Clientanwendungen, die auf iOS, iPadOS oder tvOS ausgeführt werden, über einen so genannten Apple SSO-Workflow.
 
-Beachten Sie, dass dieses Dokument als Erweiterung der vorhandenen AccessEnabler iOS/tvOS SDK-Dokumentation dient, die Sie hier finden [here](/help/authentication/iostvos-sdk-api-reference.md).
+Beachten Sie, dass dieses Dokument als Erweiterung der vorhandenen AccessEnabler iOS/tvOS SDK-Dokumentation dient, die Sie [hier](/help/authentication/iostvos-sdk-api-reference.md) finden.
 
 </br>
 
@@ -37,19 +37,19 @@ Um von der Apple SSO-Benutzererfahrung zu profitieren, muss eine Anwendung das A
 
 >[!TIP]
 >
-> **<u>Pro Tipp:</u>** Um Zugriff auf die Abonnementinformationen des Benutzers zu erhalten, muss der Benutzer der Anwendung die Berechtigung zum Fortfahren erteilen, ähnlich wie beim Gewähren des Zugriffs auf die Kamera oder das Mikrofon des Geräts. Diese Berechtigung muss pro Anwendung angefordert werden. Das Gerät speichert die Auswahl des Benutzers. Beachten Sie, dass der Benutzer seine Entscheidung ändern kann, indem er zu den Anwendungseinstellungen (Zugriffsberechtigung für TV-Anbieter) oder zum Abschnitt über *`Settings -> TV Provider`* auf iOS/iPadOS oder *`Settings -> Accounts -> TV Provider`* auf tvOS.
+> **<u>Pro Tipp:</u>** Um Zugriff auf die Abonnementinformationen des Benutzers zu erhalten, muss der Benutzer der Anwendung die Berechtigung zum Fortfahren erteilen, ähnlich wie bei der Bereitstellung des Zugriffs auf die Kamera oder das Mikrofon des Geräts. Diese Berechtigung muss pro Anwendung angefordert werden. Das Gerät speichert die Auswahl des Benutzers. Beachten Sie, dass der Benutzer seine Entscheidung ändern kann, indem er zu den Anwendungseinstellungen (Zugriffsberechtigung für TV-Anbieter) oder zum Abschnitt &quot;*`Settings -> TV Provider`*&quot;unter iOS/iPadOS oder &quot;*`Settings -> Accounts -> TV Provider`*&quot;unter tvOS navigiert.
 
 >[!TIP]
 >
-> **<u>Pro Tipp:</u>** Es wird empfohlen, die Berechtigung des Benutzers anzufordern, wenn die Anwendung in den Vordergrund wechselt. Dies ist jedoch nur ein Vorschlag, da die Anwendung nach [Zugriffsberechtigung](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) die Abonnementinformationen des Benutzers zu jedem Zeitpunkt, bevor eine Benutzerauthentifizierung erforderlich ist. Außerdem fordern die AccessEnabler iOS/tvOS SDK-APIs bei Bedarf automatisch die Benutzerberechtigung an.
+> **<u>Pro Tipp:</u>** Es wird empfohlen, die Berechtigung des Benutzers anzufordern, wenn die Anwendung in den Vordergrundzustand wechselt. Dies ist jedoch nur ein Vorschlag, da die Anwendung jederzeit nach [Berechtigung für den Zugriff auf die Abonnementinformationen des Benutzers suchen kann, bevor eine Benutzerauthentifizierung erforderlich ist. ](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) Außerdem fordern die AccessEnabler iOS/tvOS SDK-APIs bei Bedarf automatisch die Benutzerberechtigung an.
 
 >[!TIP]
 >
-> **<u>Pro Tipp:</u>** Wenn der Benutzer keinen Zugriff auf seine Abonnementinformationen gewährt oder die Kommunikation mit dem Video Subscriber Account Framework fehlschlägt, kehrt das AccessEnabler iOS/tvOS SDK zum regulären Authentifizierungsfluss zurück.
+> **<u>Pro Tipp:</u>** Wenn der Benutzer keinen Zugriff auf seine Abonnementinformationen gewährt oder die Kommunikation mit dem Video-Abonnentenkonto-Framework fehlschlägt, kehrt das AccessEnabler iOS/tvOS-SDK zum regulären Authentifizierungsfluss zurück.
 
 >[!TIP]
 >
-> **<u>Pro Tipp:</u>** Es wird empfohlen, Benutzer, die die Erlaubnis zum Zugriff auf Abonnementinformationen verweigern, dazu anzuregen, indem die Vorteile des Single Sign-On (SSO)-Benutzererlebnisses erläutert werden. Beachten Sie, dass der Benutzer seine Entscheidung ändern kann, indem er zu den Anwendungseinstellungen (Zugriffsberechtigung für TV-Anbieter) oder zum Abschnitt über *`Settings -> TV Provider`* auf iOS/iPadOS oder *`Settings -> Accounts -> TV Provider`* auf tvOS.
+> **<u>Pro Tipp:</u>** Es wird empfohlen, Benutzer, die sich weigern, Zugriff auf Abonnementinformationen zu gewähren, dazu anzuregen, die Vorteile des Single Sign-On (SSO)-Benutzererlebnisses zu erläutern. Beachten Sie, dass der Benutzer seine Entscheidung ändern kann, indem er zu den Anwendungseinstellungen (Zugriffsberechtigung für TV-Anbieter) oder zum Abschnitt &quot;*`Settings -> TV Provider`*&quot;unter iOS/iPadOS oder &quot;*`Settings -> Accounts -> TV Provider`*&quot;unter tvOS navigiert.
 
 
 ```swift
@@ -77,10 +77,10 @@ Um von der Apple SSO-Benutzererfahrung zu profitieren, muss eine Anwendung das A
 
 >[!TIP]
 >
-> **<u>Pro Tipp:</u>** Implementieren Sie die folgende Liste von [Callbacks](/help/authentication/iostvos-sdk-api-reference.md) die spezifisch für den Apple SSO-Workflow sind.
+> **<u>Pro Tipp:</u>** Implementieren Sie die folgende Liste von [Callbacks](/help/authentication/iostvos-sdk-api-reference.md), die speziell für den Apple SSO-Workflow gelten.
 
-- [*presentTVProviderDialog*](/help/authentication/iostvos-sdk-api-reference.md#presenttvproviderdialog-presenttvdialog) - Callback ausgelöst, wenn der Apple MVPD-Picker geöffnet wird.
-- [*dismissTVProviderDialog*](/help/authentication/iostvos-sdk-api-reference.md#dismisstvproviderdialog-dismisstvdialog) - Callback ausgelöst, wenn der Apple MVPD-Picker geschlossen wird.
+- [*presentTVProviderDialog*](/help/authentication/iostvos-sdk-api-reference.md#presenttvproviderdialog-presenttvdialog) - Callback wird ausgelöst, wenn die Apple-MVPD-Auswahl geöffnet wird.
+- [*dismissTVProviderDialog*](/help/authentication/iostvos-sdk-api-reference.md#dismisstvproviderdialog-dismisstvdialog) - Callback ausgelöst, wenn die Apple-MVPD-Auswahl geschlossen wird.
 
 </br>
 
@@ -88,15 +88,15 @@ Um von der Apple SSO-Benutzererfahrung zu profitieren, muss eine Anwendung das A
 
 >[!TIP]
 >
-> **<u>Pro Tipp:</u>** Implementieren Sie die folgende Liste von [erweiterte Fehlercodes](/help/authentication/error-reporting.md) die spezifisch für den Apple SSO-Workflow sind.
+> **<u>Pro Tipp:</u>** Implementieren Sie die folgende Liste von [erweiterten Fehlercodes](/help/authentication/error-reporting.md), die speziell für den Apple SSO-Workflow gelten.
 
-- ***N003*** - Der Benutzer hat in der Apple MVPD-Auswahl die Option &quot;Andere TV-Anbieter&quot;ausgewählt.
-- ***N004*** - Der Benutzer hat einen Fernsehanbieter aus der Apple MVPD-Auswahl ausgewählt, der vom aktuellen Anfragenden nicht unterstützt wird (Integration oder Single-Sign-On ist deaktiviert).
-- ***N005*** - Der Benutzer hat beschlossen, den regulären MVPD-Picker oder die Apple-MVPD-Auswahl abzubrechen.
-- ***VSA403*** - Die Berechtigung TV Provider des Benutzers für die Anwendung wird verweigert.
-- ***VSA404*** - Die Berechtigung TV Provider des Benutzers für die Anwendung wird nicht festgelegt.
-- ***VSA 503*** - Die Metadaten-Anfrage für das Video-Abonnentenkonto ist fehlgeschlagen. Mehr Kontext wird im Abschnitt *message* -Feld.
-- ***AAPL / APPL_ERROR*** - Die Metadaten-Anfrage für das Video-Abonnentenkonto ist fehlgeschlagen. Mehr Kontext wird im Abschnitt *details* -Feld.
+- ***N003*** - Der Benutzer hat in der Apple-MVPD-Auswahl die Option &quot;Andere TV-Anbieter&quot;ausgewählt.
+- ***N004*** - Der Benutzer hat einen Fernsehanbieter aus der Apple-MVPD-Auswahl ausgewählt, der vom aktuellen Anfragenden nicht unterstützt wird (Integration oder Single-Sign-On ist deaktiviert).
+- ***N005*** - Der Benutzer hat beschlossen, die normale MVPD-Auswahl oder Apple-MVPD-Auswahl abzubrechen.
+- ***VSA403*** - Die TV Provider-Berechtigung des Benutzers für die Anwendung wird verweigert.
+- ***VSA404*** - Die TV Provider-Berechtigung des Benutzers wird für die Anwendung nicht festgelegt.
+- ***VSA503*** - Die Metadatenanforderung für das Videoponnentenkonto ist fehlgeschlagen. Im Feld *message* wird mehr Kontext bereitgestellt.
+- ***AAPL / APPL_ERROR*** - Die Metadatenanfrage für das Video-Abonnentenkonto ist fehlgeschlagen. Im Feld *Details* wird mehr Kontext bereitgestellt.
 
 </br>
 
@@ -104,18 +104,18 @@ Um von der Apple SSO-Benutzererfahrung zu profitieren, muss eine Anwendung das A
 
 >[!TIP]
 >
-> **<u>Tipp:</u>** Gehen Sie wie folgt vor, um die Implementierung von iOS/iPadOS/tvOS durchzuführen.
+> **<u>Tipp:</u>** Gehen Sie wie folgt vor, um die iOS/iPadOS/tvOS-Implementierung/en zu implementieren.
 
-1. Der Antrag müsste [initialize](/help/authentication/iostvos-sdk-api-reference.md#initsoftwarestatement-initwithsoftwarestatement) das AccessEnabler iOS/tvOS-SDK.
-1. Der Antrag müsste [Festlegen der aktuellen Anforderungs-ID](/help/authentication/iostvos-sdk-api-reference.md#setrequestorrequestorid-setrequestorrequestoridserviceproviders-setreqv3).
+1. Die Anwendung muss das AccessEnabler iOS/tvOS-SDK [initialisieren](/help/authentication/iostvos-sdk-api-reference.md#initsoftwarestatement-initwithsoftwarestatement).
+1. Die Anwendung muss [die aktuelle Anfragenkennung ](/help/authentication/iostvos-sdk-api-reference.md#setrequestorrequestorid-setrequestorrequestoridserviceproviders-setreqv3) festlegen.
 
-   **Wichtig:** In diesem zweiten Schritt kann ein Trigger [erweiterter Fehlercode](/help/authentication/error-reporting.md) die für den Apple SSO-Workflow spezifisch ist, falls **eines der folgenden Ereignisse wahr ist**:
+   **Wichtig:** Mit diesem zweiten Schritt wird möglicherweise ein [erweiterter Fehlercode](/help/authentication/error-reporting.md) Trigger, der für den Apple SSO-Workflow spezifisch ist, falls **einer der folgenden Werte wahr** ist:
 
-   - ***VSA403*** - Die Berechtigung TV Provider des Benutzers für die Anwendung wird verweigert.
-   - ***VSA404*** - Die Berechtigung TV Provider des Benutzers für die Anwendung wird nicht festgelegt.
-   - ***APPL*** - Bei der Kommunikation zwischen dem AccessEnabler iOS/tvOS SDK und dem Video Subscriber Account Framework ist ein Fehler aufgetreten.
+   - ***VSA403*** - Die TV Provider-Berechtigung des Benutzers für die Anwendung wird verweigert.
+   - ***VSA404*** - Die TV Provider-Berechtigung des Benutzers wird für die Anwendung nicht festgelegt.
+   - ***APPL*** - Bei der Kommunikation zwischen dem AccessEnabler iOS/tvOS SDK und dem Framework für Videoponnentenkonten wurde ein Fehler festgestellt.
 
-   In diesem zweiten Schritt wird versucht, das Apple SSO-Profil für ein Adobe-Authentifizierungstoken still zu tauschen, falls **alle oben genannten Werte falsch sind** und **alle folgenden Punkte sind wahr**:
+   In diesem zweiten Schritt wird versucht, das Apple SSO-Profil still gegen ein Adobe-Authentifizierungstoken zu tauschen, falls **alle oben genannten Werte falsch** und **alle folgenden Werte wahr** sind:
 
    - Die TV Provider-Berechtigung des Benutzers wird für die Anwendung gewährt.
    - Der Benutzer ist auf Geräteebene bei seinem TV-Provider-Konto angemeldet.
@@ -125,17 +125,24 @@ Um von der Apple SSO-Benutzererfahrung zu profitieren, muss eine Anwendung das A
    - Der Fernsehanbieter des Benutzers wird nicht über das Adobe Primetime TVE-Dashboard beschädigt.
    - Das AccessEnabler iOS/tvOS SDK hat die SAML-Antwort des Fernsehanbieters des Benutzers vom Framework für Videoponnentenkonten erhalten.
 
-   **<u>Pro Tipp:</u>** In diesem zweiten Schritt werden neben dem [setRequestorComplete](/help/authentication/iostvos-sdk-api-reference.md#setrequestorcomplete-setreqcomplete) Callback, da die Authentifizierung nicht explizit von der Anwendung initiiert wurde.
+   **<u>Pro Tipp:</u>** In diesem zweiten Schritt werden neben dem Rückruf [setRequestorComplete](/help/authentication/iostvos-sdk-api-reference.md#setrequestorcomplete-setreqcomplete) keine weiteren Rückrufe Trigger, da die Authentifizierung nicht explizit von der Anwendung initiiert wurde.
 
-1. Der Antrag müsste [Authentifizierungsstatus überprüfen](/help/authentication/iostvos-sdk-api-reference.md#checkauthentication-checkauthn).
+1. Die Anwendung muss [den Authentifizierungsstatus](/help/authentication/iostvos-sdk-api-reference.md#checkauthentication-checkauthn) überprüfen.
 
-   **Wichtig:** Dieser dritte Schritt könnte einen Trigger [erweiterter Fehlercode](/help/authentication/error-reporting.md) die für den Apple SSO-Workflow spezifisch ist, falls **eines der folgenden Ereignisse wahr ist**:
+   **Wichtig:** Mit diesem dritten Schritt kann ein [erweiterter Fehlercode](/help/authentication/error-reporting.md) Trigger werden, der für den Apple SSO-Workflow spezifisch ist, falls **einer der folgenden Werte wahr** ist:
 
-   - ***VSA403** - Der Benutzer ist auf Geräteebene beim TV-Provider-Konto angemeldet, aber die TV Provider-Berechtigung des Benutzers für die Anwendung wird verweigert.
-   - ***VSA404** - Der Benutzer ist auf Geräteebene beim TV-Provider-Konto angemeldet, aber die TV-Provider-Berechtigung des Benutzers für die Anwendung wird nicht festgelegt.
-   - ***APPL\_ERROR** - Der Benutzer ist auf Geräteebene beim TV-Provider-Konto angemeldet, bei der Kommunikation zwischen dem AccessEnabler iOS/tvOS SDK und dem Video Subscriber Account Framework ist jedoch ein Fehler aufgetreten.
+   - ***VSA403** - Der Benutzer ist bei seinem TV-Provider-Konto unter angemeldet.
+die Systemebene des Geräts, aber die Berechtigung des TV-Anbieters des Benutzers lautet
+abgelehnt wurde.
+   - ***VSA404** - Der Benutzer ist bei seinem TV-Provider-Konto unter angemeldet.
+die Systemebene des Geräts, aber die Berechtigung des TV-Anbieters des Benutzers
+für die Anwendung unbestimmt ist.
+   - ***APPL\_ERROR** - Der Benutzer ist bei seinem TV-Anbieter angemeldet.
+-Konto auf der Gerätesystemebene, aber die Kommunikation zwischen
+das AccessEnabler iOS/tvOS-SDK und das Video-Abonnentenkonto
+Framework ist ein Fehler aufgetreten.
 
-   **Wichtig:** Dieser dritte Schritt wird den Trigger [*setAuthenticationStatus*](/help/authentication/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus) Callback mit *status* gleich 0, in dem Fall **eines der folgenden Ereignisse wahr ist**:
+   **Wichtig:** Dieser dritte Schritt Trigger den Rückruf [*setAuthenticationStatus*](/help/authentication/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus) mit *status* gleich 0, falls **einer der folgenden Werte wahr** ist:
 
    - Der Benutzer ist nicht beim TV-Provider-Konto auf Gerätesystemebene oder über einen normalen Authentifizierungsfluss angemeldet.
    - Der Benutzer ist auf Gerätesystemebene oder über einen normalen Authentifizierungsfluss bei seinem TV Provider-Konto angemeldet, aber die TTL des TV Provider-Authentifizierungstokens des Benutzers wurde übergeben.
@@ -145,29 +152,29 @@ Um von der Apple SSO-Benutzererfahrung zu profitieren, muss eine Anwendung das A
    - Der Benutzer ist auf Gerätesystemebene bei seinem TV-Provider-Konto angemeldet, aber die TV Provider-Berechtigung des Benutzers für die Anwendung wird nicht festgelegt.
    - Der Benutzer ist auf Geräteebene beim TV-Provider-Konto angemeldet, bei der Kommunikation zwischen dem AccessEnabler iOS/tvOS SDK und dem Video Subscriber Account Framework ist jedoch ein Fehler aufgetreten.
 
-   **Wichtig:** Dieser dritte Schritt wird den Trigger [*setAuthenticationStatus*](/help/authentication/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus) Callback mit *status* gleich 1, in dem Fall **alle oben genannten Werte sind falsch.**
+   **Wichtig:** Dieser dritte Schritt Trigger den Rückruf [*setAuthenticationStatus*](/help/authentication/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus) mit *status* gleich 1, falls **alle oben genannten Werte falsch sind.**
 
 
-1. Der Antrag müsste [Authentifizierung initialisieren](/help/authentication/iostvos-sdk-api-reference.md#getauthentication-getauthenticationwithdata-getauthn) falls die vorherige Prüfung des Authentifizierungsstatus die [*setAuthenticationStatus*](/help/authentication/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus) Callback mit *status* gleich 0.
+1. Die Anwendung muss [die Authentifizierung initialisieren](/help/authentication/iostvos-sdk-api-reference.md#getauthentication-getauthenticationwithdata-getauthn), falls die vorherige Authentifizierungsstatusprüfung den Rückruf [*setAuthenticationStatus*](/help/authentication/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus) ausgelöst hat, bei dem *status* gleich 0 ist.
 
-   **<u>Pro Tipp:</u>** Implementieren Sie eine der folgenden AccessEnabler iOS/tvOS SDK-API [getAuthentication](/help/authentication/iostvos-sdk-api-reference.md#getAuthN) oder [getAuthentication:filter](/help/authentication/iostvos-sdk-api-reference.md#getAuthN_filter).
+   **<u>Pro Tipp:</u>** Implementieren Sie eine der folgenden AccessEnabler iOS/tvOS SDK API [getAuthentication](/help/authentication/iostvos-sdk-api-reference.md#getAuthN) oder [getAuthentication:filter](/help/authentication/iostvos-sdk-api-reference.md#getAuthN_filter).
 
-   **Wichtig:** Dieser vierte Schritt könnte Trigger eines [erweiterter Fehlercode](/help/authentication/error-reporting.md) die für den Apple SSO-Workflow spezifisch ist, falls **eines der folgenden Ereignisse wahr ist**:
+   **Wichtig:** Mit diesem vierten Schritt kann ein [erweiterter Fehlercode](/help/authentication/error-reporting.md) Trigger werden, der für den Apple SSO-Workflow spezifisch ist, falls **einer der folgenden Werte wahr** ist:
 
-   - ***VSA403*** - Die Berechtigung TV Provider des Benutzers für die Anwendung wird verweigert.
-   - ***VSA404*** - Die Berechtigung TV Provider des Benutzers für die Anwendung wird nicht festgelegt.
-   - ***VSA 503*** - Bei der Kommunikation zwischen dem AccessEnabler iOS/tvOS SDK und dem Video Subscriber Account Framework ist ein Fehler aufgetreten.
-   - ***N003*** - Der Benutzer hat in der Apple MVPD-Auswahl die Option &quot;Andere TV-Anbieter&quot;ausgewählt.
-   - ***N004*** - Der Benutzer hat einen Fernsehanbieter aus der Apple MVPD-Auswahl ausgewählt, der vom aktuellen Anfragenden nicht unterstützt wird (Integration oder Single-Sign-On ist deaktiviert).
-   - ***N005*** - Der Benutzer hat beschlossen, den regulären MVPD-Picker oder die Apple-MVPD-Auswahl abzubrechen.
+   - ***VSA403*** - Die TV Provider-Berechtigung des Benutzers für die Anwendung wird verweigert.
+   - ***VSA404*** - Die TV Provider-Berechtigung des Benutzers wird für die Anwendung nicht festgelegt.
+   - ***VSA503*** - Bei der Kommunikation zwischen dem AccessEnabler iOS/tvOS SDK und dem Framework für Videoponnentenkonten wurde ein Fehler festgestellt.
+   - ***N003*** - Der Benutzer hat in der Apple-MVPD-Auswahl die Option &quot;Andere TV-Anbieter&quot;ausgewählt.
+   - ***N004*** - Der Benutzer hat einen Fernsehanbieter aus der Apple-MVPD-Auswahl ausgewählt, der vom aktuellen Anfragenden nicht unterstützt wird (Integration oder Single-Sign-On ist deaktiviert).
+   - ***N005*** - Der Benutzer hat beschlossen, die normale MVPD-Auswahl oder Apple-MVPD-Auswahl abzubrechen.
 
-   **Wichtig:** Dieser vierte Schritt würde zum normalen Authentifizierungsfluss zurückfallen, indem der [displayProviderDialog](/help/authentication/iostvos-sdk-api-reference.md#dispProvDialog) Callback und **one** der oben genannten [erweiterte Fehlercodes](/help/authentication/error-reporting.md), falls **einer der oben genannten ist wahr**.
+   **Wichtig:** Dieser vierte Schritt würde zum normalen Authentifizierungsfluss zurückgreifen, indem der Rückruf [displayProviderDialog](/help/authentication/iostvos-sdk-api-reference.md#dispProvDialog) und der Rückruf **one** der oben genannten [erweiterten Fehlercodes](/help/authentication/error-reporting.md) ausgelöst werden, falls **einer der oben genannten Werte &quot;true**&quot;ist.
 
-   **Wichtig:** Dieser vierte Schritt würde zum normalen Authentifizierungsfluss zurückfallen, indem der [navigateToUrl](/help/authentication/iostvos-sdk-api-reference.md#nav2url) oder [navigateToUrl:useSVC](/help/authentication/iostvos-sdk-api-reference.md#nav2urlSVC) Callback und **Keine** der oben genannten [erweiterte Fehlercodes](/help/authentication/error-reporting.md), falls der Benutzer einen TV-Anbieter ausgewählt hat, der Apple SSO nicht unterstützt, aber in der Apple-MVPD-Auswahl vorhanden ist.
+   **Wichtig:** Dieser vierte Schritt würde zum normalen Authentifizierungsfluss zurückgreifen, indem der Rückruf [navigateToUrl](/help/authentication/iostvos-sdk-api-reference.md#nav2url) oder [navigateToUrl:useSVC](/help/authentication/iostvos-sdk-api-reference.md#nav2urlSVC) und der Rückruf **none** der oben genannten [erweiterten Fehlercodes](/help/authentication/error-reporting.md) ausgelöst werden, falls der Benutzer einen TV-Anbieter ausgewählt hat, der Apple SSO nicht unterstützt, aber in der Apple-MVPD-Auswahl.
 
-   **<u>Pro Tipp:</u>** Das AccessEnabler iOS/tvOS-SDK ruft die [setSelectedProvider](/help/authentication/iostvos-sdk-api-reference.md#setSelProv) API, falls der Benutzer einen TV-Anbieter ausgewählt hat, der die Apple SSO nicht unterstützt, aber in der Apple-MVPD-Auswahl vorhanden ist.
+   **<u>Pro Tipp:</u>** Das AccessEnabler iOS/tvOS-SDK ruft die API [setSelectedProvider](/help/authentication/iostvos-sdk-api-reference.md#setSelProv) still auf, falls der Benutzer einen TV-Anbieter ausgewählt hat, der die Apple-SSO nicht unterstützt, aber in der Apple-MVPD-Auswahl vorhanden ist.
 
-   **Wichtig:** In diesem vierten Schritt wird versucht, das Apple SSO-Profil still gegen ein Adobe-Authentifizierungstoken zu tauschen, falls **alle oben genannten Werte falsch sind** und **alle folgenden Punkte sind wahr**:
+   **Wichtig:** Dieser vierte Schritt würde versuchen, das Apple SSO-Profil still gegen ein Adobe-Authentifizierungstoken zu tauschen, falls **alle oben genannten Werte falsch** und **alle folgenden Werte wahr** sind:
 
    - Die TV Provider-Berechtigung des Benutzers wird für die Anwendung gewährt.
    - Der Benutzer ist angemeldet/meldet sich derzeit beim TV Provider-Konto auf Gerätesystemebene an.
@@ -179,14 +186,14 @@ Um von der Apple SSO-Benutzererfahrung zu profitieren, muss eine Anwendung das A
 
 
 
->**<u>Pro Tipp:</u>** Dieser vierte Schritt wird den Trigger [*setAuthenticationStatus*](/help/authentication/iostvos-sdk-api-reference.md#setAuthNStatus) Rückruf, unabhängig von *status* Ergebnis, da die Authentifizierung explizit von der Anwendung initiiert wurde.
+>**<u>Pro Tipp:</u>** Dieser vierte Schritt Trigger den Rückruf [*setAuthenticationStatus*](/help/authentication/iostvos-sdk-api-reference.md#setAuthNStatus), unabhängig vom Ergebnis *status* , da die Authentifizierung explizit von der Anwendung initiiert wurde.
 
 
 </br>
 
 ### Metadaten {#Metadata}
 
-Die Anwendung kann mithilfe der Funktion &quot;&quot;bestimmen, ob die Authentifizierung infolge einer Anmeldung über die Plattform-SSO erfolgte oder nicht.*tokenSource&quot;* [Benutzermetadaten](/help/authentication/iostvos-sdk-api-reference.md#getMeta) API vom AccessEnabler iOS/tvOS SDK.
+Die Anwendung kann mithilfe der API &quot;*tokenSource&quot;* [Benutzermetadaten](/help/authentication/iostvos-sdk-api-reference.md#getMeta)&quot;aus dem AccessEnabler iOS/tvOS SDK bestimmen, ob die Authentifizierung durch eine Anmeldung über die Plattform-SSO erfolgte oder nicht.
 
 ```swift
     ...
@@ -198,26 +205,26 @@ Die Anwendung kann mithilfe der Funktion &quot;&quot;bestimmen, ob die Authentif
 
 ### Abmelden {#Logout}
 
-Die [Video-Abonnentenkonto](https://developer.apple.com/documentation/videosubscriberaccount) Framework stellt keine API zum programmatischen Abmelden von Personen bereit, die sich auf Gerätesystemebene bei ihrem TV-Anbieterkonto angemeldet haben. Damit die Abmeldung vollständig wirksam wird, muss sich der Endbenutzer daher explizit von abmelden *`Settings -> TV Provider`* auf iOS/iPadOS oder *`Settings -> Accounts -> TV Provider`* auf tvOS. Die andere Option, die der Benutzer haben würde, besteht darin, die Berechtigung zum Zugriff auf die Abonnementinformationen des Benutzers aus dem Abschnitt für die spezifischen Anwendungseinstellungen (Zugriffsberechtigungen des TV-Anbieters) zu entziehen.
+Das Framework [Video Subscriber Account](https://developer.apple.com/documentation/videosubscriberaccount) bietet keine API zum programmatischen Abmelden von Personen, die sich auf Geräteebene bei ihrem TV-Anbieterkonto angemeldet haben. Damit die Abmeldung vollständig wirksam wird, muss sich der Endbenutzer daher explizit von *`Settings -> TV Provider`* bei iOS/iPadOS oder *`Settings -> Accounts -> TV Provider`* bei tvOS abmelden. Die andere Option, die der Benutzer haben würde, besteht darin, die Berechtigung zum Zugriff auf die Abonnementinformationen des Benutzers aus dem Abschnitt für die spezifischen Anwendungseinstellungen (Zugriffsberechtigungen des TV-Anbieters) zu entziehen.
 
 >[!TIP]
 >
-> **<u>Tipp:</u>** Implementieren Sie dies über AccessEnabler iOS/tvOS SDK [Abmelden](/help/authentication/iostvos-sdk-api-reference.md#logout) API.
+> **<u>Tipp:</u>** Implementieren Sie dies über die AccessEnabler iOS/tvOS SDK [logout](/help/authentication/iostvos-sdk-api-reference.md#logout) -API.
 
 
 >[!TIP]
 >
-> **<u>Pro Tipp:</u>** Führen Sie die folgenden Schritte für die tvOS-Implementierung/-Implementierungen aus.
+> **<u>Pro Tipp:</u>** Gehen Sie wie folgt vor, um die tvOS-Implementierung/en durchzuführen.
 
-- Der Antrag müsste [Logout starten](/help/authentication/iostvos-sdk-api-reference.md#logout) vom AccessEnabler iOS/tvOS SDK. Dies würde die Sitzungsbereinigung auf der MVPD-Seite nicht erleichtern.
-- Die Anwendung muss den Benutzer anweisen/auffordern, sich explizit von abzumelden *`Settings -> Accounts -> TV Provider`* nur bei tvOS [*VSA203* Statuscode wird ausgelöst](/help/authentication/error-reporting.md).
+- Die Anwendung muss [die Abmeldung ](/help/authentication/iostvos-sdk-api-reference.md#logout) vom AccessEnabler iOS/tvOS SDK initiieren. Dies würde die Sitzungsbereinigung auf der MVPD-Seite nicht erleichtern.
+- Die Anwendung muss den Benutzer anweisen/auffordern, sich nur dann explizit von *`Settings -> Accounts -> TV Provider`* unter tvOS abzumelden, wenn der Statuscode [*VSA203* ausgelöst wird](/help/authentication/error-reporting.md).
 
 >[!TIP]
 >
-> **<u>Pro Tipp:</u>** Führen Sie die folgenden Schritte für die iOS/iPadOS-Implementierung aus.
+> **<u>Pro Tipp:</u>** Gehen Sie wie folgt vor, um die iOS/iPadOS-Implementierung/iPadOS zu implementieren.
 
-- Der Antrag müsste [Logout starten](/help/authentication/iostvos-sdk-api-reference.md#logout) vom AccessEnabler iOS/tvOS SDK. Dies würde die Sitzungsbereinigung auf der MVPD-Seite erleichtern.
-- Die Anwendung muss den Benutzer anweisen/auffordern, sich explizit von abzumelden *`Settings -> TV Provider`* nur auf iOS/iPadOS [*VSA203* Statuscode wird ausgelöst](/help/authentication/error-reporting.md).
+- Die Anwendung muss [die Abmeldung ](/help/authentication/iostvos-sdk-api-reference.md#logout) vom AccessEnabler iOS/tvOS SDK initiieren. Dies würde die Sitzungsbereinigung auf der MVPD-Seite erleichtern.
+- Die Anwendung muss den Benutzer anweisen/auffordern, sich unter iOS/iPadOS nur dann explizit von *`Settings -> TV Provider`* abzumelden, wenn der Statuscode [*VSA203* ausgelöst wird](/help/authentication/error-reporting.md).
 
 
 <!--

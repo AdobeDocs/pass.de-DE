@@ -11,9 +11,9 @@ ht-degree: 0%
 
 # Nutzungsmuster {#usage-patterns}
 
-Konto IQ klassifiziert Benutzer von Abonnentenkonten in verschiedene Kategorien hinsichtlich ihres sozialen Verhaltens, wie z. B. Reisende oder Pendler, große Familien und Community-Freigabe. Die **Nutzungsmuster** Seite zeigt mehrere verschiedene Analyse- und Berichtstypen für diese Benutzertypologien. Beispiel: **Verteilung der Nutzungsmuster** -Berichte vergleichen das Nutzungsverhalten für das aktuelle Segment mit dem für alle Ihre Konten.
+Account IQ klassifiziert Benutzer von Abonnentenkonten in verschiedene Kategorien hinsichtlich ihres sozialen Verhaltens, wie z. B. Reisende oder Pendler, große Familien und Community-Freigabe. Auf der Seite **Nutzungsmuster** werden mehrere verschiedene Analysen und Berichte für diese Benutzertypologien angezeigt. In den Berichten zur Verteilung der Nutzungsmuster **wird beispielsweise das Nutzungsverhalten für das aktuelle Segment mit dem für alle Konten verglichen.**
 
-Wie die anderen Seiten in der App basieren die Analyse und Berichte hier auf dem aktuellen Segment, das in der [Segmentbereich](/help/accountiq/segments-timeinterval.md).
+Wie die anderen Seiten in der App basieren die Analyse und Berichte hier auf dem aktuellen Segment, das im [Segmentbereich](/help/accountiq/segments-timeinterval.md) definiert wurde.
 
 ## Verteilung der Nutzungsmuster {#usage-pattern-dis}
 
@@ -25,7 +25,7 @@ Das unten stehende Cluster-Balkendiagramm vergleicht die Verteilung des Nutzungs
 
 ![](assets/d2c-segment-users-industry.png)
 
-*Verteilung der Nutzungsmuster - Benutzer im Segment*
+*Nutzungsmuster Verteilung-Benutzer im Segment*
 
 +++
 
@@ -35,13 +35,13 @@ Neben dem Vergleich der einzelnen Nutzungsmuster im aktuellen Segment mit der ge
 
 ![](assets/segment-users-industry.png)
 
-*Verteilung der Nutzungsmuster - Benutzer im Segment im Vergleich zur Branche*
+*Nutzungsmuster Verteilung - Benutzer im Segment vs. Branche*
 
 +++
 
 ## Verteilung der Nutzungsmuster im Segment {#usage-pattern-dis-segment}
 
-Die **[!UICONTROL Usage patterns distribution in segment]** -Bedienfeld enthält die folgenden Informationen für jedes Benutzermuster:
+Das Bedienfeld **[!UICONTROL Usage patterns distribution in segment]** enthält die folgenden Informationen für jedes Benutzermuster:
 
 * Teilungswahrscheinlichkeitsbereich, in den die einzelnen Konten fallen.
 * Anzahl und Prozentsatz der Konten in diesem Muster.
@@ -63,7 +63,7 @@ Beispiel: In der obigen Visualisierung:
 
 ++ + D2C-Dienste: Verteilung des Nutzungsmusters für Regionen
 
-Die **[!UICONTROL Usage pattern distribution]** -Tabelle bietet einen Vergleich der Nutzungsmuster in [Videokategorien](product-concepts.md##video-category-def) im aktuellen Segment.
+Die Tabelle **[!UICONTROL Usage pattern distribution]** bietet einen Vergleich der Nutzungsmuster für [Videokategorien](product-concepts.md##video-category-def) im aktuellen Segment.
 
 ![](assets/d2c-usage-patterns-regions.png)
 
@@ -71,13 +71,13 @@ Die **[!UICONTROL Usage pattern distribution]** -Tabelle bietet einen Vergleich 
 
 >[!NOTE]
 >
->Die im vorherigen Bild angezeigte Videokategorie, z. B. **Regionen** ist nur ein Beispiel. Wenn Sie sich bei Konto IQ anmelden, zeigt der Titel die spezifischen Videokategorien Ihres Unternehmens an.
+>Die im vorherigen Bild angezeigte Videokategorie, z. B. **Regionen**, ist nur ein Beispiel. Wenn Sie sich bei Account IQ anmelden, zeigt der Titel die spezifischen Videokategorien Ihres Unternehmens an.
 
 +++
 
 +++Programmer: Verteilung des Nutzungsmusters für MVPDs
 
-Die **[!UICONTROL Usage pattern distribution]** -Tabelle bietet einen Vergleich der Verteilung des Nutzungsmusters für die MVPDs im aktuellen Segment.
+Die Tabelle **[!UICONTROL Usage pattern distribution]** bietet einen Vergleich der Verteilung des Nutzungsmusters für die MVPDs im aktuellen Segment.
 
 ![](assets/usage-patterns-mvpdwise.png)
 
@@ -87,7 +87,7 @@ Die **[!UICONTROL Usage pattern distribution]** -Tabelle bietet einen Vergleich 
 
 +++MVPD: Verteilung des Nutzungsmusters für Programmierer
 
-Die **[!UICONTROL Usage pattern distribution]** -Tabelle bietet einen Vergleich der Verteilung des Nutzungsmusters für die Programmierer oder Kanäle im aktuellen Segment.
+Die Tabelle **[!UICONTROL Usage pattern distribution]** bietet einen Vergleich der Verteilung des Nutzungsmusters für die Programmierer oder Kanäle im aktuellen Segment.
 
 ![](assets/usage-patterns-programmerwise.png)
 

@@ -4,7 +4,7 @@ description: SSO über passive Authentifizierung
 exl-id: ce45899f-6e94-4bb0-a2c1-51f03bd66d8d
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '776'
+source-wordcount: '778'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,8 @@ Das folgende Diagramm zeigt den verbesserten Fluss und die passive Authentifizie
 
 
 
-SAML-Anforderungsbeispiel Hier finden Sie eine SAML-Anforderungsstichprobe für den passiven authN-Fluss:
+SAML-Anforderungsbeispiel
+Hier finden Sie ein SAML-Anforderungsbeispiel für den passiven authN-Fluss:
 
 
 ```xml
@@ -101,7 +102,7 @@ SAML-Anforderungsbeispiel Hier finden Sie eine SAML-Anforderungsstichprobe für 
 </saml2p:AuthnRequest>
 ```
 
-## Geschäftsregeln
+## Verfahrensregeln
 
 MVPDs weisen bestimmte SSO-Scoping-Domänenbeschränkungen auf. So könnten beispielsweise nur einige Domänen von einigen MVPDs zugelassen werden (SSO für dasselbe Medienunternehmen, aber nicht unternehmensübergreifend).
 Einige MVPDs erfordern möglicherweise unterschiedliche Authentifizierungsregeln, um durchgesetzt zu werden. Beispielsweise können MVPDs je nach Netzwerk unterschiedliche Authentifizierungs-TTLs aufweisen. MVPDs können auch für einige Netzwerke eine häusliche Authentifizierung ermöglichen, für andere jedoch nicht (Anwendungsfälle der elterlichen Kontrolle sind hier stark vertreten).

@@ -4,7 +4,7 @@ description: MVPD-Autorisierung
 exl-id: 215780e4-12b6-4ba6-8377-4d21b63b6975
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '579'
+source-wordcount: '584'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Bei AuthZ-Anforderungen sollte der Autorisierungsendpunkt mindestens die folgend
 
 * **Ressourcen-ID**. Eine Zeichenfolge, die eine bestimmte Inhaltsressource angibt. Diese Ressourcen-ID wird vom Programmierer angegeben und der MVPD muss die Geschäftsregeln für diese Ressourcen verschärfen (z. B. durch Überprüfung, ob der Benutzer einen bestimmten Kanal abonniert hat).
 
-Zusätzlich zur Entscheidung, ob der Benutzer autorisiert ist, muss die Antwort die Time-to-Live (TTL) dieser Autorisierung enthalten, d. h., wenn die Autorisierung abläuft. Wenn die TTL nicht festgelegt ist, schlägt die AuthZ-Anfrage fehl.  Aus diesem Grund **Die TTL ist eine obligatorische Konfigurationseinstellung auf der Seite &quot;Adobe Pass-Authentifizierung&quot;.**, um den Fall abzudecken, dass ein MVPD die TTL nicht in ihre Anfrage einbezieht.
+Zusätzlich zur Entscheidung, ob der Benutzer autorisiert ist, muss die Antwort die Time-to-Live (TTL) dieser Autorisierung enthalten, d. h., wenn die Autorisierung abläuft. Wenn die TTL nicht festgelegt ist, schlägt die AuthZ-Anfrage fehl.  Aus diesem Grund ist **die TTL eine obligatorische Konfigurationseinstellung auf der Seite &quot;Adobe Pass-Authentifizierung&quot;**, um den Fall abzudecken, dass ein MVPD die TTL nicht in die Anfrage einbezieht.
 
 ## Die Genehmigungsanfrage {#authz-req}
 
@@ -106,15 +106,15 @@ Die Antwort auf die AuthZ-Anfrage erfolgt, nachdem der MVPD die Anfrage ausgewer
 
 Im Folgenden finden Sie eine Liste von DENY-Verpflichtungen, die von Adobe Pass Authentication unterstützt werden und die es Programmierern ermöglicht, diese zu erfüllen:
 
-* **urn:tve:xacml:2.0:obligations:restricted-pc** - Der Abonnent hat die elterliche Kontrolle nicht bestanden und der SP muss geeignete Maßnahmen ergreifen, um den Zugang zu diesem Inhalt zu beschränken.
+* **urn:tve:xacml:2.0:obligations:limit-pc** - Der Abonnent hat eine Prüfung der elterlichen Kontrolle fehlgeschlagen und der SP muss geeignete Maßnahmen ergreifen, um den Zugriff auf diesen Inhalt zu beschränken.
 
-* **urn:tve:xacml:2.0:obligations:Upgrade** - Der Abonnent hat keine geeignete Abonnementebene.  Muss ein Abonnement aktualisieren, um auf Inhalte zugreifen zu können.
+* **urn:tve:xacml:2.0:obligations:upgrade** - Der Abonnent verfügt nicht über die entsprechende Abonnementebene.  Muss ein Abonnement aktualisieren, um auf Inhalte zugreifen zu können.
 
-Die Adobe Pass-Authentifizierung unterstützt Folgendes **ERLAUBEN** Verpflichtungen und ermöglicht es Programmierern, diese zu erfüllen:
+Die Adobe Pass-Authentifizierung unterstützt die folgenden **PERMIT**-Verpflichtungen und ermöglicht es Programmierern, diese zu erfüllen:
 
-* **urn:cablelabs:olca:1.0:obligations:log** - Adobe Pass protokolliert die Transaktion und kann über den vereinbarten Berichterstattungsmechanismus verfügbar gemacht werden.
+* **urn:cablelabs:olca:1.0:obligations:log** - Adobe Pass protokolliert die Transaktion und kann über den vereinbarten Berichterstellungsmechanismus verfügbar gemacht werden.
 
-* **urn:cablelabs:olca:1.0:obligations:reauthz** - Adobe Pass-Authentifizierung aktualisiert die Autorisierung in n Sekunden erneut (als Argument für die Obligation über eine XACML-Attributzuweisung angegeben - siehe XACML-Kernspezifikation , Abschnitt 5.46).
+* **urn:cablelabs:olca:1.0:obligations:re-authz** - Die Adobe Pass-Authentifizierung aktualisiert die Autorisierung erneut in n Sekunden (als Argument für die Obligation über eine XACML-Attributzuweisung angegeben - siehe XACML-Kernspezifikation , Abschnitt 5.46).
 
 <!--
 >![RelatedInformation]

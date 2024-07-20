@@ -1,13 +1,13 @@
 ---
 title: Versionshinweise zur Überwachung der Parallelität mit Adobe Pass 2.3.2
 description: Versionshinweise zur Überwachung der Parallelität mit Adobe Pass 2.3.2
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: 3996da45-498c-482a-b374-3cda1c5df2f7
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '130'
-ht-degree: 0%
+source-wordcount: '141'
+ht-degree: 1%
 
 ---
-
 
 # Versionshinweise zur Überwachung der Parallelität mit Adobe Pass 2.3.2 {#cm-232}
 
@@ -22,7 +22,7 @@ Releasedatum: 11.12.2015
    * mvpd - der in der Aufruf-URL gemeldete MVPD
    * channel - der benutzerdefinierte Metadatenkanal
    * platform - die benutzerdefinierte Metadatenanwendung &quot;applicationPlatform&quot;
-* Neue Metriken im Zusammenhang mit **Stream-Dauer** in den Nutzungsberichten verfügbar. Die neuen Metriken können verwendet werden, um ein Histogramm mit Stream-Dauer zu erstellen. Die folgenden Intervalle in Minuten sind derzeit verfügbar:
+* Neue Metriken im Zusammenhang mit der **Stream-Dauer**, die in den Nutzungsberichten verfügbar sind. Die neuen Metriken können verwendet werden, um ein Histogramm mit Stream-Dauer zu erstellen. Die folgenden Intervalle in Minuten sind derzeit verfügbar:
    * duration_0-15
    * duration_15-30
    * duration_30-60

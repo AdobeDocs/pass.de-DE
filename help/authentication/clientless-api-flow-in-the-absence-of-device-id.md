@@ -4,7 +4,7 @@ description: Clientloser API-Ablauf bei Fehlen der Geräte-ID
 exl-id: 6549a6d6-03a9-4d95-99fb-d3ada832323d
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '238'
+source-wordcount: '242'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Nicht alle Apps mit intelligenten Geräten können eine eindeutige Geräte-ID be
 
 Für Clients ohne Geräte-ID:
 
-1. Rufen Sie den Registrierungs-Code-Dienst zum ersten Mal mit `deviceId=dummy`
+1. Rufen Sie den Registrierungscode-Dienst zum ersten Mal mit `deviceId=dummy` auf
 1. Extrahieren Sie aus der Antwort die UUID. Die UUID ist im Element &quot;id&quot;der Registrierungscode-Antwort (XML- und JSON-Antwortformate) verfügbar.
 1. Rufen Sie den Registrierungsdienst ein zweites Mal auf. Übergeben Sie diese Zeit `deviceId=<uuid obtained in step #2>`
 1. Anzeigen des Registrierungs-Codes, der in Schritt 3 auf der Benutzeroberfläche der Konsole abgerufen wurde
@@ -39,7 +39,7 @@ Nachdem diese Schritte ausgeführt wurden, verwendet die Adobe Pass-Authentifizi
 
 ## Ständige Lösung
 
-Adobe wird dies in einer zukünftigen Version ändern, indem Sie `deviceId` eine optionale Nutzlast beim Erstellen des reg-Codes und bei Verwendung von UUID als Token-Schlüssel anstelle von `deviceId`, wenn `deviceId` nicht vorhanden ist.
+Adobe ändert dies in einer zukünftigen Version, indem `deviceId` bei der Erstellung des Reg-Codes als optionale Payload verwendet wird und UUID als Token-Schlüssel anstelle von `deviceId` verwendet wird, wenn `deviceId` nicht vorhanden ist.
 
 <!--
 ## Related Information

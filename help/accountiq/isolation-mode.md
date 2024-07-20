@@ -1,13 +1,13 @@
 ---
 title: MVPDs im Isolationsmodus
 description: Erfahren Sie mehr über den Isolationsmodus-MVPDs für TV-Programmierer überall
-source-git-commit: 5639319ce8915f0c33d927ca9554c405b3b2e87d
+exl-id: 7ffe4ce3-e9cb-4382-a421-bb57d1927b53
+source-git-commit: 2bb570ab14a3295d46ee6dc0d38485697d63809c
 workflow-type: tm+mt
 source-wordcount: '502'
 ht-degree: 0%
 
 ---
-
 
 # Isolationsmodus-MVPDs für TV-Programmierer überall {#isolation-mode-tve}
 
@@ -45,7 +45,7 @@ Das System arbeitet automatisch im Isolationsmodus, wenn das ausgewählte Segmen
 >
 > Das Verhalten im Isolationsmodus ist mit dem Standardmodus inkompatibel, der Isolationsmodus MVPD kann nicht mit anderen MVPDs gemischt werden und umgekehrt.
 
-Um ein Segment zu erstellen, das im Isolationsmodus analysiert wird, ziehen Sie den Isolationsmodus MVPD, z. B. **Xfinity**, zum Abschnitt MVPDs der Segmentdefinition.
+Um ein Segment zu erstellen, das im Isolationsmodus analysiert wird, ziehen Sie den Isolationsmodus-MVPD, z. B. **Xfinity**, in den Abschnitt &quot;MVPDs&quot;der Segmentdefinition.
 
 >[!NOTE]
 >
@@ -57,10 +57,10 @@ Um ein Segment zu erstellen, das im Isolationsmodus analysiert wird, ziehen Sie 
 
 >[!IMPORTANT]
 >
-> Die Kontofreigabe ist relevanter, wenn sie für das Streaming über alle Programme des Programmierers hinweg gemessen wird. Niedriger erwarten **Freigabe von Werten** und einige Varianten der Metriken im Isolationsmodus.
+> Die Kontofreigabe ist relevanter, wenn sie für das Streaming über alle Programme des Programmierers hinweg gemessen wird. Rechnen Sie im Isolationsmodus mit niedrigeren **Sharing Scores** und einigen Varianten der Metriken.
 
 ![](assets/aggregate-sharing-isolation.png)
 
-*Freigeben von Wahrscheinlichkeitsmesswerten im Isolationsmodus*
+*Teilen von Wahrscheinlichkeitsmessern im Isolationsmodus*
 
 Die obigen Kennzahlen zeigen, dass nur 9 % aller Konten geteilt werden und von diesen nur 11 % des Inhalts verbraucht werden. Aufgrund der natürlich niedrigeren Werte sollten die Ergebnisse im Isolationsmodus anders interpretiert werden als die Ergebnisse im Standardmodus.

@@ -1,15 +1,15 @@
 ---
-title: Übersicht über das JavaScript-SDK
-description: Übersicht über das JavaScript-SDK
+title: Übersicht über das JavaScript SDK
+description: Übersicht über das JavaScript SDK
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '510'
 ht-degree: 0%
 
 ---
 
-# Übersicht über das JavaScript-SDK {#javascript-sdk-overview}
+# Übersicht über das JavaScript SDK {#javascript-sdk-overview}
 
 >[!NOTE]
 >
@@ -19,19 +19,19 @@ ht-degree: 0%
 
 Adobe empfiehlt dringend, zur neuesten JS v4.x der AccessEnabler-Bibliothek zu migrieren.
 
-Die Adobe Pass Authentication JavaScript-Integration bietet Programmierern eine TV-Überall-Lösung in der bekannten Entwicklungsumgebung für JS-Webanwendungen. Die Hauptkomponenten der Integration sind Ihre &quot;High-Level&quot;-Anwendung (Benutzerinteraktion, Videopräsentation) und die von der Adobe bereitgestellte &quot;Low-Level&quot;-AccessEnabler-Bibliothek, die Ihren Eintrag zu den Berechtigungsflüssen bereitstellt und die Kommunikation mit Adobe Pass-Authentifizierungsservern verarbeitet.
+Die Integration von Adobe Pass Authentication JavaScript bietet Programmierern eine TV-Überall-Lösung in der bekannten Entwicklungsumgebung für JS-Webanwendungen. Die Hauptkomponenten der Integration sind Ihre &quot;High-Level&quot;-Anwendung (Benutzerinteraktion, Videopräsentation) und die von der Adobe bereitgestellte &quot;Low-Level&quot;-AccessEnabler-Bibliothek, die Ihren Eintrag zu den Berechtigungsflüssen bereitstellt und die Kommunikation mit Adobe Pass-Authentifizierungsservern verarbeitet.
 
-Der allgemeine Berechtigungsfluss für die Adobe Pass-Authentifizierung wird unter [Berechtigungsablauf für Programmierer](/help/authentication/entitlement-flow.md)und das Cookbook für die JavaScript-Integration führt Sie durch die Implementierung. In den folgenden Abschnitten finden Sie Beschreibungen und Beispiele für die Integration von JavaScript AccessEnabler .
+Der allgemeine Berechtigungsfluss für die Adobe Pass-Authentifizierung wird im [Berechtigungsfluss für Programmierer](/help/authentication/entitlement-flow.md) behandelt, und das JavaScript-Integrations-Cookbook führt Sie durch die Implementierung. In den folgenden Abschnitten finden Sie Beschreibungen und Beispiele für die Integration von JavaScript AccessEnabler.
 
 >[!IMPORTANT]
 >
->In diesem Dokument wird die Implementierung für eine Desktop-Web-Lösung beschrieben. Die JavaScript-Bibliothek wird auf mobilen Plattformen nicht unterstützt (z. B. Safari auf iOS, Chrome auf Android). Verwenden Sie unsere nativen SDKs, wenn Sie eine mobile Plattform (iOS, Android, Windows) verwenden möchten.
+>In diesem Dokument wird die Implementierung für eine Desktop-Web-Lösung beschrieben. Die JavaScript-Bibliothek wird nicht auf mobilen Plattformen unterstützt (z. B. Safari auf iOS, Chrome auf Android). Verwenden Sie unsere nativen SDKs, wenn Sie eine mobile Plattform (iOS, Android, Windows) verwenden möchten.
 
 ## Erstellen des MVPD-Auswahldialogfelds {#creating-the-mvpd-selection-dialog}
 
 Damit sich ein Benutzer bei seinem MVPD anmelden und authentifiziert werden kann, muss Ihre Seite oder Ihr Player eine Möglichkeit bieten, mit der er seinen MVPD identifizieren kann. Für die Entwicklung wird eine Standardversion eines MVPD-Auswahldialogfelds bereitgestellt. Zur Verwendung in der Produktion müssen Sie Ihren eigenen MVPD-Selektor implementieren.
 
-Wenn Sie bereits wissen, wer der Anbieter des Kunden ist, können Sie [MVPD programmgesteuert festlegen](/help/authentication/home.md), ohne Benutzerinteraktion. Die Technik ist identisch, umgeht jedoch den Schritt, das Dialogfeld Provider Selector aufzurufen und den Kunden zur Auswahl seines MVPD aufzufordern.
+Wenn Sie bereits wissen, wer der Anbieter des Kunden ist, können Sie den MVPD programmgesteuert ](/help/authentication/home.md) festlegen, ohne dass der Benutzer interagiert. [ Die Technik ist identisch, umgeht jedoch den Schritt, das Dialogfeld Provider Selector aufzurufen und den Kunden zur Auswahl seines MVPD aufzufordern.
 
 ## Anzeigen des Dienstleisters {#displaying-the-service-provider}
 
@@ -197,19 +197,19 @@ Im folgenden Codebeispiel wird gezeigt, wie der Dienstleister für den aktuellen
 
 ## Abmelden {#logout}
 
-Aufruf `logout()` , um den Abmeldevorgang zu starten. Diese Methode akzeptiert keine Argumente. Er meldet den aktuellen Benutzer ab, löscht alle Authentifizierungs- und Autorisierungsinformationen für diesen Benutzer und löscht alle AuthN- und AuthZ-Token aus dem lokalen System.
+Rufen Sie `logout()` auf, um den Abmeldevorgang zu starten. Diese Methode akzeptiert keine Argumente. Er meldet den aktuellen Benutzer ab, löscht alle Authentifizierungs- und Autorisierungsinformationen für diesen Benutzer und löscht alle AuthN- und AuthZ-Token aus dem lokalen System.
 
 In einigen Fällen ist Ihr Player nicht für die Verarbeitung von Benutzerabmeldungen verantwortlich:
 
 
 
-- **Wenn der Abmeldevorgang von einer Site initiiert wird, die nicht in die Adobe Pass-Authentifizierung integriert ist.** In diesem Fall kann der MVPD den Adobe Pass Authentication Single Logout-Dienst über eine Browserumleitung aufrufen. (Der Aufruf von SLO über einen Backchannel-Aufruf wird derzeit nicht unterstützt.)
+- **Wenn der Abmeldevorgang von einer Site initiiert wird, die nicht mit der Adobe Pass-Authentifizierung integriert ist.** In diesem Fall kann der MVPD den Adobe Pass Authentication Single Logout-Dienst über eine Browserumleitung aufrufen. (Der Aufruf von SLO über einen Backchannel-Aufruf wird derzeit nicht unterstützt.)
 
 >[!NOTE]
 >
 >Wenn der Benutzer seinen Computer so lange im Leerlauf lässt, dass seine Token ablaufen, kann er dennoch zu seiner Sitzung zurückkehren und die Abmeldung erfolgreich starten. Die Adobe Pass-Authentifizierung stellt sicher, dass alle Token gelöscht werden, und benachrichtigt den MVPD darüber, dass er auch seine Sitzung löscht.
 
-Der folgende JavaScript-Code zeigt, wie sich ein aktuell authentifizierter Benutzer abmeldet (d. h. seine Authentifizierung aufhebt):
+Der folgende JavaScript-Code veranschaulicht die Abmeldung (Deauthentifizierung) eines derzeit authentifizierten Benutzers:
 
 ```JS
     [...]

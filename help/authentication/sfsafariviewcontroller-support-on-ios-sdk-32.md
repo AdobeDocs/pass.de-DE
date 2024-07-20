@@ -18,7 +18,7 @@ ht-degree: 0%
 </br>
 
 
-**Aufgrund von Sicherheitsanforderungen MÜSSEN einige Anmeldeseiten von MVPD in einem SFSafariViewController anstatt in Webansichten angezeigt werden.**
+**Aus Sicherheitsgründen MÜSSEN einige Anmeldeseiten von MVPD in einem SFSafariViewController anstatt in Webansichten angezeigt werden.**
 
 Einige MVPDs erfordern, dass ihre Anmeldeseiten in einem sicheren Browser-Steuerelement wie SFSafariViewController angezeigt werden. Sie blockieren aktiv Webansichten. Um sich bei ihnen authentifizieren zu können, müssen wir SVC verwenden.
 
@@ -35,9 +35,9 @@ In solchen Fällen bietet die Version 3.2 dem Programmierer die Möglichkeit, da
 Um SVC manuell zu verwalten, muss der Implementor die folgenden Schritte ausführen:
 
 
-1. call **setOptions([&quot;handleSVC&quot;:true])** nach der Initialisierung von AccessEnabler (stellen Sie sicher, dass dieser Aufruf durchgeführt wird, bevor die Authentifizierung beginnt). Dies ermöglicht die &quot;manuelle&quot;SVC-Verwaltung. Das SDK stellt die SVC nicht automatisch bereit, sondern ruft bei Bedarf stattdessen **navigate(toUrl:*{url}* useSVC:true)**.
+1. Rufen Sie **setOptions([&quot;handleSVC&quot;:true])** nach der Initialisierung von AccessEnabler auf (stellen Sie sicher, dass dieser Aufruf vor Beginn der Authentifizierung durchgeführt wird). Dies ermöglicht die &quot;manuelle&quot;SVC-Verwaltung. Das SDK zeigt die SVC nicht automatisch an, sondern bei Bedarf     Aufruf **navigate(toUrl:*{url}* useSVC:true)**.
 
-1. den optionalen Rückruf implementieren **`navigateToUrl:useSVC:`** Innerhalb der Implementierung müssen Sie mithilfe der SFSafariViewController -Instanz mithilfe der angegebenen URL eine svc-Instanz erstellen und sie auf dem Bildschirm darstellen:
+1. implementieren Sie den optionalen Callback **`navigateToUrl:useSVC:`** in der Implementierung. Sie müssen eine svc-Instanz mithilfe der SFSafariViewController -Instanz mithilfe der bereitgestellten URL erstellen und auf dem Bildschirm darstellen:
 
    ```obj-c
    func navigate(toUrl url: String!, useSVC: Bool) {
@@ -47,14 +47,14 @@ Um SVC manuell zu verwalten, muss der Implementor die folgenden Schritte ausfüh
        }
    ```
 
-   ***Hinweise:***
+   ***Notizen:***
 
    - *Sie können den SFSafariViewController beliebig anpassen. Beispielsweise können Sie in iOS 11 und höher die Bezeichnung &quot;Fertig&quot;in &quot;Abbrechen&quot;ändern.*
-   - *Um die svc schließen zu können, benötigen Sie einen Verweis darauf. Erstellen Sie ihn bitte nicht im Rahmen von **navigateToUrl:useSVC***
-   - *Verwenden Sie Ihren eigenen Ansichtscontroller für &quot;myController&quot;.*
+   - *Um die svc schließen zu können, benötigen Sie einen Verweis darauf. Erstellen Sie ihn nicht im Bereich von **navigateToUrl:useSVC***
+   - *Verwenden Sie Ihren eigenen Ansichtscontroller für &quot;myController&quot;*
 
 
-1. In der Delegate-Implementierung Ihrer Anwendung von **application(\_app: UIApplication, open url: URL, options: \[UIApplicationOpenURLOptionsKey: Any\]) -\> Bool**, fügen Sie Code hinzu, um den svc zu schließen. Sie sollten dort bereits Code haben, der Aufrufe **accessEnabler.handleExternalURL()**. Fügen Sie Folgendes hinzu:
+1. Öffnen Sie in der Delegate-Implementierung Ihrer Anwendung von **application(\_app: UIApplication, url: URL, options: \[UIApplicationOpenURLOptionsKey: Any\]) -\> Bool** den Code zum Schließen des SVC. Dort sollte bereits Code vorhanden sein, der **accessEnabler.handleExternalURL()** aufruft. Fügen Sie Folgendes hinzu:
 
    ```obj-c
    if(svc != nil) {
@@ -65,7 +65,7 @@ Um SVC manuell zu verwalten, muss der Implementor die folgenden Schritte ausfüh
    Auch hier ist svc ein Verweis auf den SFSafariViewController, den Sie in Schritt 2 erstellt haben.
 
 
-1. Implementierung **safariViewControllerDidFinish(\_ controller: SFSafariViewController)** von **SFSafariViewControllerDelegate** um zu erfassen, wann der Benutzer die svc mithilfe der Schaltfläche &quot;Fertig&quot;abgebrochen hat. In dieser Funktion müssen Sie Folgendes aufrufen, um das SDK darüber zu informieren, dass die Authentifizierung abgebrochen wurde:
+1. Implementieren Sie **safariViewControllerDidFinish(\_ controller: SFSafariViewController)** von **SFSafariViewControllerDelegate** , um zu erfassen, wann der Benutzer die SVC über die Schaltfläche &quot;Fertig&quot;abgebrochen hat. In dieser Funktion müssen Sie Folgendes aufrufen, um das SDK darüber zu informieren, dass die Authentifizierung abgebrochen wurde:
 
    ```obj-c
    accessEnabler.setSelectedProvider(nil)

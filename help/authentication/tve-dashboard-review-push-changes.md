@@ -1,7 +1,8 @@
 ---
 title: Änderungen überprüfen und pushen
 description: Erfahren Sie, wie Sie Änderungen im TVE-Dashboard überprüfen und pushen können.
-source-git-commit: b81cc7498a8035f4c274ba25952dcd1dcd8d71f5
+exl-id: 2f29712e-7b3f-472a-a36f-32780bec1508
+source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
 workflow-type: tm+mt
 source-wordcount: '250'
 ht-degree: 0%
@@ -20,38 +21,36 @@ Führen Sie diese Schritte aus, um Änderungen zu überprüfen und per Push zu �
 
 1. Suchen Sie die Benachrichtigung zu Überprüfungs- und Push-Änderungen am unteren Bildschirmrand.
 
-   ![Benachrichtigung zu Push-Änderungen überprüfen](assets/review-changes.png)
+   ![Benachrichtigung über Änderungen überprüfen und pushen](assets/review-changes.png)
 
-   *Benachrichtigungs-Feld für Push-Änderungen überprüfen*
+   *Benachrichtigungsfeld für Änderungen überprüfen und pushen*
 
-1. Auswählen **Änderungen überprüfen** aus dem **Änderungen überprüfen und pushen** Benachrichtigungsfeld.
+1. Wählen Sie **Änderungen überprüfen** aus dem Benachrichtigungsfeld **Überprüfung und Änderungen pushen** .
 
-1. Geben Sie eine kurze Beschreibung der Änderung in **Konfigurationsbeschreibung** den Zweck jeder Änderung wirksam zu verfolgen und zu verstehen.
+1. Geben Sie eine kurze Beschreibung der Änderung in **Konfigurationsbeschreibung** ein, um den Zweck jeder Änderung effektiv zu verfolgen und zu verstehen.
 
-   ![Konfigurationsbeschreibung hinzufügen](assets/add-conf-desc.png)
+   ![Hinzufügen einer Konfigurationsbeschreibung](assets/add-conf-desc.png)
 
-   *Konfigurationsbeschreibung hinzufügen*
+   *Hinzufügen einer Konfigurationsbeschreibung*
 
-1. Navigieren Sie zum **Konfigurationsänderungen** um eine Zusammenfassung der Änderungen anzuzeigen.
+1. Navigieren Sie zum Abschnitt **Konfigurationsänderungen** , um eine Zusammenfassung der Änderungen anzuzeigen.
 
 1. Bewegen Sie den Mauszeiger über die Änderung, die Sie überprüfen möchten.
 
-1. Auswählen **Ansicht** , um die vorherigen und neuen Werte zu überprüfen, die mit einer Konfigurationsänderung verknüpft sind.
+1. Wählen Sie **Ansicht** aus, um die vorherigen und neuen Werte zu überprüfen, die mit einer Konfigurationsänderung verknüpft sind.
 
    ![Konfigurationsänderungen anzeigen](assets/view-configuration-changes.png)
 
    *Konfigurationsänderungen anzeigen*
 
-1. Nachdem Sie alle Änderungen überprüft haben und alles korrekt aussieht, wählen Sie **Push-Änderungen** , um die aktualisierte Konfiguration auf den Server anzuwenden.
+1. Nachdem Sie alle Änderungen überprüft haben und alles korrekt aussieht, wählen Sie **Push changes** aus, um die aktualisierte Konfiguration auf den Server anzuwenden.
 
    >[!NOTE]
    >
-   >Die **Push-Änderungen** Schaltfläche wird erst aktiv, nachdem eine **Konfigurationsbeschreibung**.
+   >Die Schaltfläche **Push changes** wird erst aktiv, nachdem eine **Konfigurationsbeschreibung** hinzugefügt wurde.
 
    ![Push-Änderungen](assets/push-changes.png)
 
    *Push-Änderungen*
 
-   Alternativ können Sie **Änderungen verwerfen** , wenn Sie alle aufgelisteten Konfigurationsänderungen rückgängig machen möchten.
-
-
+   Alternativ können Sie **Änderungen verwerfen** auswählen, wenn Sie alle aufgelisteten Konfigurationsänderungen wiederherstellen möchten.

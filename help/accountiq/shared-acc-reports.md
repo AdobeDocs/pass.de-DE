@@ -23,7 +23,7 @@ Diese Ringdiagramme und Balkendiagramme zeigen die Prozentsätze (und absoluten 
 * Niedrig (20 %-40 %)
 * Sehr niedrig (0 %-20 %)
 
-Die rote Linie markiert den im [Konten über dem Schwellenwert im aktuellen Segment](#threshold-selector) -Bedienfeld und der hellrote Bereich enthält die Summe aller Konten über diesem Schwellenwert.
+Die rote Linie markiert den im Bereich [Konten über dem Schwellenwert im aktuellen Segment](#threshold-selector) ausgewählten Schwellenwert und der hellrote Bereich enthält die Summe aller Konten über diesem Schwellenwert.
 
 ![](assets/accounts-sharing-probability-pie.png)
 
@@ -41,13 +41,13 @@ Auch hier markiert die rote Linie den aktuellen Schwellenwert, und der hellrote 
 
 In diesem Bedienfeld können Sie den Schwellenwert für die oben genannten Ringdiagramme und Balkendiagramme auswählen. Die vier Optionen sind:
 
-* Konten **über sehr niedrig** Freigabe **wahrscheinlichkeit**
+* Konten **über sehr niedrige** Freigabe **Wahrscheinlichkeit**
 
-* Konten **über niedrig** Freigabe **wahrscheinlichkeit**
+* Konten **über niedrige** Freigabe **Wahrscheinlichkeit**
 
-* Konten **moderieren** Freigabe **wahrscheinlichkeit**
+* Konten **über moderat** Freigabe **Wahrscheinlichkeit**
 
-* Konten **über Hoch** Freigabe **wahrscheinlichkeit**
+* Konten **über hohe** Freigabe **Wahrscheinlichkeit**
 
 ![](assets/threshold-selector-shared-accounts.png)
 
@@ -77,7 +77,7 @@ Dieses Diagramm informiert Sie über die Anzahl der Abonnenten im aktuellen Segm
 
 >[!NOTE]
 >
->Sie können in die Balken einzoomen, die für mehr als einen Satz von Postleitzahlen stehen, die durch eine **+** (plus) Zeichen (z. B. 10+) durch Doppelklick darauf.
+>Sie können in die Balken einzoomen, die mehr als einen Satz von Postleitzahlen darstellen, die durch ein Pluszeichen (**+** ) (z. B. 10+) dargestellt werden, indem Sie darauf doppelklicken.
 
 
 ## Segmentgeografische Spanne pro Zeitraum und Konto {#geo-span-period-account}
@@ -88,8 +88,8 @@ Dieses Balkendiagramm zeigt die Anzahl der Abonnentenkonten, die Inhalte von Ort
 
 >[!NOTE]
 >
-> Sie können in die Balken einzoomen, die mehrere geografische Entfernungen darstellen, die durch eine **+** (Plus) (z. B. 1000+) durch Doppelklick.
+> Sie können die Balken heranzoomen, die mehrere geografische Entfernungen darstellen, dargestellt durch ein Pluszeichen (**+**) (z. B. 1000+), indem Sie darauf doppelklicken.
 
 >[!MORELIKETHIS]
 >
->* Erfahren Sie, wie Sie Berichte für die 1000 wichtigsten Abonnenten im ausgewählten Segment mithilfe von Filtern in Berichten zu freigegebenen Konten mit [Export der 1000 wichtigsten Konten](/help/accountiq/export-acc-information.md) -Option.
+>* Erfahren Sie, wie Sie Berichte für die 1000 wichtigsten Abonnenten im ausgewählten Segment mithilfe von Filtern in Berichten zu freigegebenen Konten mit der Option [Top 1000-Konten exportieren](/help/accountiq/export-acc-information.md) exportieren.

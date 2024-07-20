@@ -10,11 +10,11 @@ ht-degree: 28%
 
 ---
 
-# Hilfe zu Konto IQ {#aiq-help}
+# Hilfe zu Account IQ {#aiq-help}
 
-+ [Übersicht über Konto-IQ](/help/accountiq/home.md)
-+ [Versionen von Konto IQ](/help/accountiq/versions-aiq.md)
-+ [Erste Schritte mit Konto-IQ](/help/accountiq/get-started.md)
++ [Übersicht über Account IQ](/help/accountiq/home.md)
++ [Versionen von Account IQ](/help/accountiq/versions-aiq.md)
++ [Erste Schritte mit Account IQ](/help/accountiq/get-started.md)
 + [Arbeiten mit Segmenten](/help/accountiq/work-with-segments.md)
 + Dashboard {#dashboard}
    + [Einführung in das Dashboard](/help/accountiq/introduction-dashboard.md)
@@ -26,7 +26,7 @@ ht-degree: 28%
    + [Berichte zu freigegebenen Konten](/help/accountiq/shared-acc-reports.md)
    + [Exportieren von Konten mit hoher Freigabe](/help/accountiq/export-acc-information.md)
 + [Nutzungsmuster](/help/accountiq/usage-patterns.md)
-+ [Aktivitäten](/help/accountiq/operations.md)
++ [Vorgänge](/help/accountiq/operations.md)
 + [Best Practices](/help/accountiq/best-practices.md)
 + [Einschränkungen](/help/accountiq/limitations.md)
 + [MVPDs im Isolationsmodus](/help/accountiq/isolation-mode.md)

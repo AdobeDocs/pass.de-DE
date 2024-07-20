@@ -1,13 +1,13 @@
 ---
 title: Dashboard
 description: Erfahren Sie mehr über die Startseite des TVE-Dashboards.
-source-git-commit: 06c2e1e54515a2ec47722ba1f360467dadd1f73b
+exl-id: 3073cd86-89f8-4c65-996b-24edda24f25b
+source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
 workflow-type: tm+mt
 source-wordcount: '276'
 ht-degree: 0%
 
 ---
-
 
 # Dashboard {#dashboard}
 
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle -Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
-Die **Dashboard** im linken Bereich dient als Startseite des Adobe Pass Authentication TVE-Dashboards.
+Der Abschnitt **Dashboard** im linken Bereich dient als Startseite des Adobe Pass Authentication TVE-Dashboards.
 
 Auf der Startseite stehen zwei Abschnitte zur Verfügung:
 
@@ -26,10 +26,10 @@ Auf der Startseite stehen zwei Abschnitte zur Verfügung:
 
 In diesem Abschnitt können Sie direkt von der Willkommensnachricht aus auf die öffentliche Dokumentation zugreifen und eine Momentaufnahme Ihrer aktuellen Konfigurationen anzeigen.
 
-* **Aktive Integrationen**: Die Anzahl der aktiven Integrationen in der aktuellen Umgebung. Auswählen **Mehr dazu im Integrationsabschnitt anzeigen** für den Zugriff auf detaillierte Informationen in [Integrationen](tve-dashboard-integrations.md) Abschnitt.
-* **Aktive Kanäle**: Die Anzahl der aktiven Kanäle in der aktuellen Umgebung. Auswählen **Weitere Informationen im Abschnitt Kanäle anzeigen** für den Zugriff auf detaillierte Informationen in [Kanäle](tve-dashboard-channels.md) Abschnitt.
-* **Datenbankaktualisierungen**: Die Anzahl der Konfigurationsänderungen, die an der aktuellen Umgebung vorgenommen wurden. Auswählen **Weitere Informationen im Abschnitt Änderungsprotokoll anzeigen** für den Zugriff auf detaillierte Informationen in [Änderungsprotokoll](tve-dashboard-changes-log.md) Abschnitt.
-* **ESM-Dashboard**: Sehen Sie sich das bevorstehende ESM-Dashboard an und bieten Sie detaillierte Metriken zur Eigenschaftsnutzung in der aktuellen Umgebung an. Diese Funktion wird in zukünftigen Updates verfügbar sein.
+* **Aktive Integrationen**: Die Anzahl der aktiven Integrationen in der aktuellen Umgebung. Wählen Sie **Mehr im Integrationsabschnitt anzeigen** aus, um auf detaillierte Informationen im Abschnitt [Integrationen](tve-dashboard-integrations.md) zuzugreifen.
+* **Aktive Kanäle**: Die Anzahl der aktiven Kanäle in der aktuellen Umgebung. Wählen Sie &quot;**Mehr in Kanälen anzeigen&quot;im Abschnitt &quot;**&quot;, um auf detaillierte Informationen im Abschnitt &quot;[Kanäle](tve-dashboard-channels.md)&quot;zuzugreifen.
+* **Datenbankaktualisierungen**: Die Anzahl der Konfigurationsänderungen, die an der aktuellen Umgebung vorgenommen wurden. Wählen Sie **Mehr im Abschnitt Änderungsprotokoll anzeigen** aus, um auf detaillierte Informationen im Abschnitt [Änderungsprotokoll](tve-dashboard-changes-log.md) zuzugreifen.
+* **ESM-Dashboard**: Behalten Sie das bevorstehende ESM-Dashboard im Auge und bieten Sie detaillierte Metriken zur Eigenschaftsnutzung in der aktuellen Umgebung an. Diese Funktion wird in zukünftigen Updates verfügbar sein.
 
 ![Willkommensbildschirm](assets/welcome-screen.png)
 
@@ -40,11 +40,11 @@ In diesem Abschnitt können Sie direkt von der Willkommensnachricht aus auf die 
 In diesem Abschnitt werden die 10 neuesten Konfigurationsänderungen vorgestellt, die Folgendes enthalten:
 
 * **Änderungsbeschreibung**: Eine kurze Beschreibung der vom Benutzer ausgewählten Änderung.
-* **Überstürzt von**: Das Konto, das für die Änderung verantwortlich ist.
+* **Pushed by**: Das Konto, das für die Änderung verantwortlich ist.
 * **Push-Datum**: Das Datum, an dem die Änderung vorgenommen wurde.
 
 ![Konfigurationsstatus eines Änderungsprotokolls](assets/configuration-status.png)
 
 *Konfigurationsstatus eines Änderungsprotokolls*
 
-Um die vollständige Liste der Änderungen anzuzeigen, wählen Sie **Weitere Informationen im Änderungsprotokoll anzeigen** unten rechts, um die [Änderungsprotokoll](tve-dashboard-changes-log.md) Abschnitt.
+Um die vollständige Liste der Änderungen anzuzeigen, wählen Sie rechts unten **Mehr im Änderungsprotokoll anzeigen** aus, um den Abschnitt [Änderungsprotokoll](tve-dashboard-changes-log.md) anzuzeigen.

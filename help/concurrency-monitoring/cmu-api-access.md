@@ -1,7 +1,8 @@
 ---
 title: Zugriff auf CMU-API
 description: Zugriff auf CMU-API
-source-git-commit: 598eb878168f6e352a8eae369cbc8cb833033328
+exl-id: 8d216703-aabc-489e-93fe-d4d105616b1d
+source-git-commit: 52c0ffe75f6ac9fda3da39ff08b0dc4c5d5ca428
 workflow-type: tm+mt
 source-wordcount: '407'
 ht-degree: 0%
@@ -20,14 +21,14 @@ Wir haben den Zugriff auf CMU-Berichte aktualisiert, um mit dem Dynamic Client R
 Damit die Client-Anwendungen die OAuth 2.0-Autorisierung verwenden können, muss sich der Server dynamisch registrieren, um bestimmte Informationen (Client-Anmeldeinformationen) zu erhalten und damit mit ihnen interagieren zu können. Im Rahmen des Registrierungsprozesses muss der Client eine Reihe integrierter Metadaten für den Client-Registrierungs-Endpunkt bereitstellen.
 Diese Metadaten werden als Softwareanweisung übermittelt, die eine &quot;software_id&quot;enthält, damit unser Autorisierungsserver verschiedene Instanzen einer Anwendung mit derselben Softwareanweisung korrelieren kann.
 Eine Softwareanweisung ist ein JSON Web Token (JWT), das Metadatenwerte über die Client-Software als Bundle durchsetzt. Wenn die Software dem Autorisierungsserver als Teil einer Anfrage zur Clientregistrierung präsentiert wird, muss sie digital signiert oder mit JSON Web Signature (JWS) als MACed signiert werden. \
-Eine ausführlichere Erläuterung zu den Software-Anweisungen und ihrer Funktionsweise finden Sie in der offiziellen Dokumentation  <a href="https://datatracker.ietf.org/doc/html/rfc7591" target="_blank">[RFC 7591]</a>.
+Eine detailliertere Erklärung dazu, was Softwareanweisungen sind und wie sie funktionieren, finden Sie in der offiziellen Dokumentation <a href="https://datatracker.ietf.org/doc/html/rfc7591" target="_blank">[RFC7591]</a>.
 Führen Sie die Schritte in den folgenden Abschnitten aus, um Zugriff zu erhalten.
 
 ## Schritte für Zugriffsverfahren {#access-procedure-steps}
 
-1. Sie benötigen eine registrierte Anwendung im Adobe Pass DCR-Server. Wenden Sie sich für diesen Schritt an unsere [Supportteam](mailto:tve-support@adobe.com).
+1. Sie benötigen eine registrierte Anwendung im Adobe Pass DCR-Server. Wenden Sie sich für diesen Schritt an unser [Supportteam](mailto:tve-support@adobe.com).
 2. Softwareanweisung abrufen
-   1. Navigieren zum TVE-Dashboard <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pre-Prod </a>  oder <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
+   1. Wechseln Sie zu TVE Dashboard <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pre-Prod </a> oder <a href="https://console.auth.adobe.com/" target="_blank">PROD</a> .
    2. Programmierer auswählen
    3. Registerkarte &quot;Anwendungen&quot;
    4. Anwendung auswählen

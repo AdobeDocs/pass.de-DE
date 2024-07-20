@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# Fehlerbehebung bei Problemen in Konto IQ {#troubleshoot}
+# Fehlerbehebung bei Problemen in Account IQ {#troubleshoot}
 
 Wenn Sie beim Laden von Daten und Diagrammen, beim Exportieren von Berichten oder bei anderen Problemen im Zusammenhang mit Metriken oder Diagrammen Verzögerungen feststellen, lesen Sie die Informationen zur sofortigen Fehlerbehebung weiter.
 
@@ -17,6 +17,6 @@ Wenn Sie beim Laden von Daten und Diagrammen, beim Exportieren von Berichten ode
 
   ![](assets/troubleshoot.png)
 
-* Wenn Sie nach der Aktualisierung keine Daten oder Diagramme sehen können, melden Sie sich bei Konto-IQ ab und dann erneut an.
+* Wenn Sie nach der Aktualisierung keine Daten oder Diagramme sehen können, melden Sie sich bei Account IQ ab und dann erneut an.
 
-* Wenn keine der oben genannten Methoden zur Fehlerbehebung hilft oder Sie andere Fragen im Zusammenhang mit Daten haben oder Statistiken nicht exportieren können, wenden Sie sich an den Adobe-Support, indem Sie eine E-Mail an senden an <tve-support@adobe.com>.
+* Wenn keine der oben genannten Methoden zur Fehlerbehebung hilfreich ist oder Sie andere Fragen im Zusammenhang mit Daten haben oder Statistiken nicht exportieren können, wenden Sie sich an den Adobe-Support, indem Sie eine E-Mail an <tve-support@adobe.com> senden.

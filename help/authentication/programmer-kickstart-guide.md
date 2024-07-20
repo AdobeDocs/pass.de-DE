@@ -4,7 +4,7 @@ description: Handbuch zum Schnellstart für Programmierer
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '971'
+source-wordcount: '972'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Willkommen bei der Adobe Pass-Authentifizierung für TV überall. Wir freuen uns
 
 >[!NOTE]
 >
->Dies ist das Schnellstartanleitung für Programmierer (Content Provider). Wenn Sie über einen Multi-Channel-Videoverzeichnungs-Distributor (MVPD) verfügen, sehen Sie sich bitte die [MVPD-Schnellstartanleitung](/help/authentication/mvpd-kickstart-guide.md).
+>Dies ist das Schnellstartanleitung für Programmierer (Content Provider). Wenn Sie mit einem Multi-Channel-Videoverzeichnungs-Distributor (MVPD) arbeiten, sehen Sie sich bitte das [MVPD-Schnellstarthandbuch](/help/authentication/mvpd-kickstart-guide.md) an.
 
 
 Adobe Pass-Authentifizierungskontakte:
@@ -50,7 +50,7 @@ Wenn keine kritischen Probleme während des vorangegangenen zweiwöchigen Testfe
 Adobe stellt Folgendes bereit:
 
 * Implementierungshandbuch: **`https://tve.zendesk.com/entries/498741-tve-deployment-guide`**
-* Zugriff auf unser Zendesk Kundenunterstützungssystem. Hier finden Sie auch Beispiele, Informationen und Video-Tutorials zu einigen Prozessen. Um auf dieses Dokument auf Zendesk zugreifen zu können, müssen Sie sich registrieren und ein Konto erstellen unter `https://tve.zendesk.com/home`. Die Anzahl der Benutzer, die Sie registrieren können, ist nicht beschränkt.  Sie können Kommentare zu jedem eingereichten Ticket sehen und teilen. Alle Supportfragen sollten an `tve-support@adobe.com`.
+* Zugriff auf unser Zendesk Kundenunterstützungssystem. Hier finden Sie auch Beispiele, Informationen und Video-Tutorials zu einigen Prozessen. Um auf Zendesk auf dieses Dokument zugreifen zu können, müssen Sie sich bei `https://tve.zendesk.com/home` registrieren und ein Konto erstellen. Die Anzahl der Benutzer, die Sie registrieren können, ist nicht beschränkt.  Sie können Kommentare zu jedem eingereichten Ticket sehen und teilen. Alle Supportfragen sollten an `tve-support@adobe.com` adressiert werden.
 * [Handbuch zur Programmierintegration](/help/authentication/programmer-integration-guide-overview.md)
 * Media Token Verifier Library: `https://tve.zendesk.com/entries/471323-media-token-validator-library`.
 
@@ -81,15 +81,15 @@ Sie stellen (über MVPD) Folgendes bereit:
 
 Die Adobe Pass-Authentifizierung unterstützt ein MRSS-basiertes Metadatenschema. Das bedeutet, dass Ressourcen-IDs nach Bedarf so spezifisch sein können und Identifikatoren enthalten können, die für ein bestimmtes MVPD eindeutig sein können.
 
-**NEUE MVPD-Integration**: Beachten Sie, dass Ihr ausgewählter MVPD eine wesentliche Rolle beim Abschluss einer Integration spielt. Adobe muss Code für jedes MVPD gemäß ihren Spezifikationen schreiben. Bis diese Schritte abgeschlossen sind, können Sie diesen MVPD nicht im Dialogfeld auswählen oder Ihre Produkttests abschließen. Adobe muss diese Arbeit im Voraus planen, um sie an den nächsten verfügbaren Sprint anzupassen. (Aktuelle Planinformationen finden Sie im Release-Kalender.)
+**NEUE MVPD-Integration**: Es ist wichtig, sich daran zu erinnern, dass Ihr ausgewählter MVPD eine wesentliche Rolle beim Abschluss einer Integration spielt. Adobe muss Code für jedes MVPD gemäß ihren Spezifikationen schreiben. Bis diese Schritte abgeschlossen sind, können Sie diesen MVPD nicht im Dialogfeld auswählen oder Ihre Produkttests abschließen. Adobe muss diese Arbeit im Voraus planen, um sie an den nächsten verfügbaren Sprint anzupassen. (Aktuelle Planinformationen finden Sie im Release-Kalender.)
 
-**Vorhandene MVPD-Integrationen**: Wenn Ihr ausgewählter MVPD bereits mit Adobe eingerichtet ist, sollten die Konnektivitätsschritte wesentlich einfacher (schneller) sein und oft kann die Konnektivität durch Konfigurationsänderungen erreicht werden.
+**Vorhandene MVPD-Integrationen**: Wenn Ihr ausgewählter MVPD bereits mit Adobe eingerichtet ist, sollten die Verbindungsschritte wesentlich einfacher (schneller) sein und die Konnektivität kann oft durch Konfigurationsänderungen erreicht werden.
 
 >[!NOTE]
 >
 >Der MVPD muss weiterhin den Programmierer aktivieren und alle relevanten Geschäftsabschlüsse abzeichnen.
 
-**QE mit MVPDs**: Alle Integrationen erfordern eine gemeinsame QE, und da der Endbenutzer letztendlich Kunde des MVPD ist, haben viele Testzyklen festgelegt, bevor er &quot;live&quot;geschaltet wird. Da dies die Planung von MVPD-Ressourcen beinhaltet, ist dies ein potenzieller Bereich für Verzögerungen.
+**QE mit MVPDs**: Alle Integrationen erfordern eine gemeinsame QE, und da der Endbenutzer letztendlich Kunde des MVPD ist, haben viele vor dem &quot;Live&quot;-Pushen Testzyklen festgelegt. Da dies die Planung von MVPD-Ressourcen beinhaltet, ist dies ein potenzieller Bereich für Verzögerungen.
 
 <!--
 >[RELATEDINFORMATION]

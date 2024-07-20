@@ -17,16 +17,16 @@ ht-degree: 0%
 
 </br>
 
-Mit der neuen Version von Android 6 Marshmallow werden einige Aktualisierungen des Berechtigungsmodells eingeführt, die sich auf das Verhalten von Apps auswirken können, die das vorhandene Adobe Pass Authentication SDK Version 1.8 und älter verwenden.
+Mit der neuen Version Android 6 Marshmallow werden einige Aktualisierungen des Berechtigungsmodells eingeführt, die sich auf das Verhalten von Apps auswirken können, die das vorhandene Adobe Pass Authentication SDK, Version 1.8 und älter, verwenden.
 
-Als neue Funktion bietet das neue Android OS [granulare Kontrolle über die Berechtigungen, die Apps zum Zeitpunkt der Installation und zur Laufzeit benötigen](https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html).
+Als neue Funktion bietet das neue Android OS [granulare Steuerung der Berechtigungen, die Apps zum Zeitpunkt der Installation und zur Laufzeit benötigen](https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html).
 
 >[!IMPORTANT]
 >
->Die unten beschriebenen Änderungen werden **betreffen nur Anwendungen, die speziell für Android 6.0 entwickelt wurden** (targetSdkVersion=23). Sie haben keine Auswirkungen auf ältere Anwendungen, die bereits auf dem Gerät des Benutzers installiert sind, wenn auf Android 6.0 aktualisiert wird.
+>Die unten beschriebenen Änderungen betreffen **nur Anwendungen, die speziell für Android 6.0** entwickelt wurden (targetSdkVersion=23). Sie wirken sich nicht auf ältere Anwendungen aus, die bereits auf dem Gerät des Benutzers installiert sind, wenn auf Android 6.0 aktualisiert wird.
 
 
-Insbesondere für Apps, die in Android Studio mit [API-Ebene 23](http://developer.android.com/sdk/api_diff/23/changes.html) und die das Adobe Pass Authentication SDK verwenden, muss der Entwickler benutzerdefinierten Code schreiben (siehe Code-Snippet unten). [zum Trigger des Dialogfelds &quot;Berechtigungen zulassen/verweigern&quot;](https://developer.android.com/training/permissions/requesting.html).
+Insbesondere muss der Entwickler für Apps, die in Android Studio mit [API-Stufe 23](http://developer.android.com/sdk/api_diff/23/changes.html) entwickelt wurden und das Adobe Pass Authentication SDK verwenden, benutzerdefinierten Code schreiben (siehe Code-Snippet unten) [, um das Dialogfeld &quot;Berechtigungen zulassen/verweigern&quot;](https://developer.android.com/training/permissions/requesting.html) Trigger.
 
 Im Folgenden finden Sie den Codeausschnitt, der zum Anfordern des Schreibzugriffs auf den externen Speicher des Geräts verwendet wird:
 
@@ -62,21 +62,21 @@ if (ContextCompat.checkSelfPermission(thisActivity,
 
 
 
-**Aus der Perspektive der Benutzer**, werden Benutzer bei der Installation von einem Fenster begrüßt, in dem sie aufgefordert werden, Lese-/Schreibberechtigungen für Dateien zu bestätigen (siehe Abbildung 2 unten). Dies führt zu einem der beiden folgenden Ergebnisse:
+**Aus der Perspektive der Benutzer** werden Benutzer bei der Installation von einem Fenster begrüßt, in dem sie aufgefordert werden, Lese-/Schreibberechtigungen für Dateien zu bestätigen (siehe Abbildung 2 unten). Dies führt zu einem der beiden folgenden Ergebnisse:
 
-1. Wenn der Benutzer **bestätigt** Bei den Berechtigungen wird der normale Authentifizierungsfluss beibehalten und Token werden im globalen Speicher gespeichert. Benutzer bleiben bei der Authentifizierung in der App und über Apps hinweg mit der Adobe Pass-Authentifizierung authentifiziert, solange die Tokens gültig sind.
-1. Wenn der Benutzer **Leugnungen** Wenn die Berechtigungen festgelegt sind, schlagen die Schreibaktionen im Speicher fehl und die Benutzer werden nur authentifiziert, bis sie die App verlassen. Beachten Sie, dass einige Anwendungen beim Wechsel zwischen Vordergrund und Hintergrund neu initialisiert werden, sodass die Benutzer bei dieser Aktion abgemeldet werden. Token werden NICHT gespeichert und die Benutzer müssen sich jedes Mal authentifizieren, wenn sie die App verwenden.
+1. Wenn der Benutzer die Berechtigungen **bestätigt**, wird der normale Authentifizierungsfluss beibehalten und Token werden im globalen Speicher gespeichert. Benutzer bleiben bei der Authentifizierung in der App und über Apps hinweg mit der Adobe Pass-Authentifizierung authentifiziert, solange die Tokens gültig sind.
+1. Wenn der Benutzer **die Berechtigungen verweigert**, schlagen die Schreibaktionen im Speicher fehl und die Benutzer werden nur authentifiziert, bis sie die App verlassen. Beachten Sie, dass einige Anwendungen beim Wechsel zwischen Vordergrund und Hintergrund neu initialisiert werden, sodass die Benutzer bei dieser Aktion abgemeldet werden. Token werden NICHT gespeichert und die Benutzer müssen sich jedes Mal authentifizieren, wenn sie die App verwenden.
 
 
 >[!TIP]
 >
->Eine Funktion, die die Speicherwiderstandsfähigkeit einführt, wird derzeit für das Adobe Pass Authentication SDK 1.9 entwickelt. Das neue SDK wurde für **Veröffentlichung in der letzten Oktober-Woche**. Die Anwendung schreibt in den Sandbox-Speicher der Anwendung, wenn der allgemeine Speicher nicht verwendet werden kann. Dies gilt für den Fall, dass Benutzer bei Anwendungen, die auf API-Ebene 23 entwickelt wurden, KEINE Lese-/Schreibberechtigungen im globalen Speicher akzeptieren. Die Token werden einzeln pro App gespeichert. Das bedeutet, dass Single-Sign-On zwischen Apps, die die Adobe Pass-Authentifizierung verwenden, deaktiviert wird.
+>Eine Funktion, die die Speicherwiderstandsfähigkeit einführt, wird derzeit für das Adobe Pass Authentication SDK 1.9 entwickelt. Das neue SDK soll in der letzten Woche im Oktober **für die** Veröffentlichung freigegeben werden. Die Anwendung schreibt in den Sandbox-Speicher der Anwendung, wenn der allgemeine Speicher nicht verwendet werden kann. Dies gilt für den Fall, dass Benutzer bei Anwendungen, die auf API-Ebene 23 entwickelt wurden, KEINE Lese-/Schreibberechtigungen im globalen Speicher akzeptieren. Die Token werden einzeln pro App gespeichert. Das bedeutet, dass Single-Sign-On zwischen Apps, die die Adobe Pass-Authentifizierung verwenden, deaktiviert wird.
 
 
 ![](assets/android-permissions-request.png)
 
-*Abbildung: Dialogfeld mit der Berechtigungsanfrage für Apps, die auf der API-Ebene 23 geschrieben wurden*
+*Abbildung: Dialogfeld für Berechtigungsanfragen für Apps, die auf API-Ebene 23* geschrieben wurden
 
 >[!IMPORTANT]
 >
-> Adobe-Empfehlungen **ihre Partner Apps mit API-Stufe 22 (targetSdkVersion=22) oder älter entwickeln, um das bestmögliche Benutzererlebnis im Authentifizierungsprozess zu gewährleisten**.
+> Adobe empfiehlt **seinen Partnern, Apps mit API-Stufe 22 (targetSdkVersion=22) oder älter zu entwickeln, um ein bestmögliches Benutzererlebnis im Authentifizierungsprozess zu gewährleisten**.

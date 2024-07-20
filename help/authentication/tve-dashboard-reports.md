@@ -1,7 +1,8 @@
 ---
 title: Berichte
 description: Erfahren Sie, wie die Daten in TVE Dashboard-Berichten aggregiert werden.
-source-git-commit: b81cc7498a8035f4c274ba25952dcd1dcd8d71f5
+exl-id: d8ba48de-d743-4dc2-866c-7d6e3ff94773
+source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 0%
@@ -14,15 +15,15 @@ ht-degree: 0%
 >
 >Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle -Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
-Die **Berichte** im TVE Dashboard bietet Zugriff auf aggregierte Daten für AuthN TTL-, AuthZ TTL- und SSO-Berichte. Diese Berichte umfassen Ihre Kanalintegrationen mit verschiedenen MVPDs für alle [Plattformen](#platforms).
+Der Abschnitt **Berichte** im TVE-Dashboard bietet Zugriff auf aggregierte Daten für AuthN TTL-, AuthZ TTL- und SSO-Berichte. Diese Berichte umfassen Ihre Kanalintegrationen mit verschiedenen MVPDs für alle [Plattformen](#platforms).
 
-Mit Berichten können Sie Daten filtern und Erkenntnisse über [bestimmte Kanäle oder MVPDs](#selecting-specific-channels-mvpds). Sie können Berichte auch in eine CSV-Datei exportieren, um sie weiter zu analysieren.
+Mit Berichten können Sie Daten filtern und Erkenntnisse über [bestimmte Kanäle oder MVPDs](#selecting-specific-channels-mvpds) sammeln. Sie können Berichte auch in eine CSV-Datei exportieren, um sie weiter zu analysieren.
 
 ## Berichte anzeigen {#view-reports}
 
 Führen Sie diese Schritte aus, um einen bestimmten Bericht anzuzeigen.
 
-1. Wählen Sie die **Berichte** im linken Bereich.
+1. Wählen Sie im linken Bereich die Registerkarte **Berichte** aus.
 1. Wählen Sie eine der folgenden Registerkarten aus, um aggregierte Daten der enthaltenen Kanäle und MVPDs anzuzeigen und zu exportieren:
    * [AuthN TTL-Berichte](#authn-ttl-reports)
    * [AuthZ TTL-Berichte](#authz-ttl-reports)
@@ -34,9 +35,9 @@ Führen Sie diese Schritte aus, um einen bestimmten Bericht anzuzeigen.
 
 ### AuthN TTL-Berichte {#authn-ttl-reports}
 
-Die AuthN-TTL-Berichte, auch &quot;Authentication Time-To-Live (TTL)&quot;genannt, zeigen die Dauer an, für die Authentifizierungstoken für Ihre Kanalintegrationen mit verschiedenen MVPDs in allen [Plattformen](#platforms). Mit diesen Berichten können Sie überprüfen, wie lange ein Benutzer für einen bestimmten MVPD und eine bestimmte Plattform authentifiziert ist. Die Dauer-Werte werden in benutzerfreundlichen Formaten wie **Tage**, **Stunden**, **Minuten**, und **Sekunden**. Die Tabelle AuthN TTL Reports bietet horizontale und vertikale Scrollfunktionen, um verschiedene Bildschirmgrößen aufzunehmen.
+Die AuthN-TTL-Berichte, auch &quot;Authentication Time-To-Live (TTL)&quot;genannt, zeigen die Dauer an, für die Authentifizierungstoken für Ihre Kanalintegrationen mit verschiedenen MVPDs auf allen [Plattformen](#platforms) konfiguriert sind. Mit diesen Berichten können Sie überprüfen, wie lange ein Benutzer für einen bestimmten MVPD und eine bestimmte Plattform authentifiziert ist. Die Dauer-Werte werden in benutzerfreundlichen Formaten wie **Tage**, **Stunden**, **Minuten** und **Sekunden** dargestellt. Die Tabelle AuthN TTL Reports bietet horizontale und vertikale Scrollfunktionen, um verschiedene Bildschirmgrößen aufzunehmen.
 
-Sie können auch Daten für [bestimmte Kanäle oder MVPDs](#selecting-specific-channels-mvpds).
+Sie können auch Daten für [bestimmte Kanäle oder MVPDs](#selecting-specific-channels-mvpds) anzeigen und herunterladen.
 
 ![AuthN TTL-Berichte exportieren](assets/authn-ttl-reports.png)
 
@@ -44,15 +45,15 @@ Sie können auch Daten für [bestimmte Kanäle oder MVPDs](#selecting-specific-c
 
 >[!IMPORTANT]
 >
-> Die **Festgelegt durch MVPD** Platzhalter wird verwendet, wenn der MVPD den AuthN-TTL-Wert anstelle der Adobe Pass-Authentifizierungskonfiguration erzwingt.
+> Der Platzhalter **Von MVPD gesetzt** wird verwendet, wenn der MVPD den AuthN-TTL-Wert anstelle der Adobe Pass-Authentifizierungskonfiguration erzwingt.
 
-Auswählen **Berichte exportieren** , um die Daten als CSV-Datei auf Ihrem lokalen Computer zu speichern.
+Wählen Sie **Berichte exportieren** aus, um die Daten als CSV-Datei auf Ihrem lokalen Computer zu speichern.
 
 ### AuthZ TTL-Berichte {#authz-ttl-reports}
 
-Die AuthZ-TTL-Berichte, auch &quot;Authorization Time-To-Live&quot;(TTL) genannt, zeigen die Dauer des Autorisierungstokens an, das für Ihre Kanalintegrationen mit verschiedenen MVPDs in allen Bereichen konfiguriert wurde [Plattformen](#platforms). Mit diesen Berichten können Sie überprüfen, wie viel Zeit ein Benutzer für die Wiedergabe von Inhalten auf einem bestimmten MVPD und einer bestimmten Plattform benötigt. Die Dauer-Werte werden in benutzerfreundlichen Formaten wie **Tage**, **Stunden**, **Minuten**, und **Sekunden**. Die Tabelle &quot;AuthZ TTL Reports&quot;verfügt über ein horizontales und vertikales Scrollen, um verschiedene Bildschirmgrößen aufzunehmen.
+Die AuthZ-TTL-Berichte, auch &quot;Authorization Time-To-Live&quot;(TTL) genannt, zeigen die Dauer des Autorisierungstokens an, das für Ihre Kanalintegrationen mit verschiedenen MVPDs auf allen [Plattformen](#platforms) konfiguriert wurde. Mit diesen Berichten können Sie überprüfen, wie viel Zeit ein Benutzer für die Wiedergabe von Inhalten auf einem bestimmten MVPD und einer bestimmten Plattform benötigt. Die Dauer-Werte werden in benutzerfreundlichen Formaten wie **Tage**, **Stunden**, **Minuten** und **Sekunden** dargestellt. Die Tabelle &quot;AuthZ TTL Reports&quot;verfügt über ein horizontales und vertikales Scrollen, um verschiedene Bildschirmgrößen aufzunehmen.
 
-Sie können auch die Daten für [bestimmte Kanäle oder MVPDs](#selecting-specific-channels-mvpds).
+Sie können die Daten auch für [bestimmte Kanäle oder MVPDs](#selecting-specific-channels-mvpds) anzeigen und herunterladen.
 
 ![AuthZ TTL-Berichte exportieren](assets/authz-ttl-reports.png)
 
@@ -60,43 +61,43 @@ Sie können auch die Daten für [bestimmte Kanäle oder MVPDs](#selecting-specif
 
 >[!IMPORTANT]
 >
-> Die **Festgelegt durch MVPD** Platzhalter wird verwendet, wenn der MVPD den AuthZ-TTL-Wert anstelle der Adobe Pass-Authentifizierungskonfiguration erzwingt.
+> Der Platzhalter **Von MVPD gesetzt** wird verwendet, wenn der MVPD den AuthZ-TTL-Wert anstelle der Adobe Pass-Authentifizierungskonfiguration erzwingt.
 
-Auswählen **Berichte exportieren** , um die Daten als CSV-Datei auf Ihrem lokalen Computer zu speichern.
+Wählen Sie **Berichte exportieren** aus, um die Daten als CSV-Datei auf Ihrem lokalen Computer zu speichern.
 
 ### SSO-Berichte {#sso-reports}
 
-Die SSO-Berichte, auch Single Sign-on genannt, zeigen den Single Sign-On-Status an, der für Ihre Kanal-Integrationen mit verschiedenen MVPDs in allen [Plattformen](#platforms). Mit diesen Berichten können Sie das erwartete SSO-Erlebnis für die Benutzerauthentifizierung auf einen bestimmten MVPD und eine bestimmte Plattform überprüfen. Die Werte werden in benutzerfreundlichen Formaten wie **SSO deaktiviert**, **SSO aktiviert**, und **SSO Nicht sicher**. Die Tabelle &quot;SSO-Berichte&quot;verfügt über ein horizontales und vertikales Scrollen, um verschiedene Bildschirmgrößen aufzunehmen.
+Die SSO-Berichte, auch Single Sign-on genannt, zeigen den Single Sign-On-Status an, der für Ihre Kanal-Integrationen mit verschiedenen MVPDs auf allen [Plattformen](#platforms) konfiguriert ist. Mit diesen Berichten können Sie das erwartete SSO-Erlebnis für die Benutzerauthentifizierung auf einen bestimmten MVPD und eine bestimmte Plattform überprüfen. Die Werte werden in benutzerfreundlichen Formaten wie &quot;**SSO deaktiviert**&quot;, &quot;**SSO aktiviert**&quot;und &quot;**SSO nicht sicher**&quot;dargestellt. Die Tabelle &quot;SSO-Berichte&quot;verfügt über ein horizontales und vertikales Scrollen, um verschiedene Bildschirmgrößen aufzunehmen.
 
-Sie können auch Daten für [bestimmte Kanäle oder MVPDs](#selecting-specific-channels-mvpds).
+Sie können auch Daten für [bestimmte Kanäle oder MVPDs](#selecting-specific-channels-mvpds) anzeigen und herunterladen.
 
-![Exportieren von SSO-Berichten](assets/sso-reports.png)
+![SSO-Berichte exportieren](assets/sso-reports.png)
 
-*Exportieren von SSO-Berichten*
+*SSO-Berichte exportieren*
 
 >[!IMPORTANT]
 >
-> Die **SSO Nicht sicher** Platzhalter gibt an, dass Single Sign-On (SSO) aktiviert ist und potenziell funktionsfähig ist. Die unten aufgeführten Einstellungen können jedoch die SSO-Authentifizierung verhindern, wie in den folgenden Beispielen erläutert:
+> Der Platzhalter **SSO Unsicher** gibt an, dass Single Sign-On (SSO) aktiviert ist und möglicherweise funktionsfähig ist. Die unten aufgeführten Einstellungen können jedoch die SSO-Authentifizierung verhindern, wie in den folgenden Beispielen erläutert:
 >
 > * Benutzerplattformeinstellungen: Die Option zum Blockieren von Drittanbieter-Cookies.
 > * Benutzerentscheidungen: Die Benutzer verweigern den Plattformzugriff auf ihr Abonnement des TV-Anbieters.
 > * MVPD-Einstellungen: MVPD fordert Authentifizierung für jeden Kanal an.
 
-Auswählen **Berichte exportieren** , um die Daten als CSV-Datei auf Ihrem lokalen Computer zu speichern.
+Wählen Sie **Berichte exportieren** aus, um die Daten als CSV-Datei auf Ihrem lokalen Computer zu speichern.
 
 ## Plattformen {#platforms}
 
-Die [AuthN TTL-Berichte](#authn-ttl-reports), [AuthZ TTL-Berichte](#authz-ttl-reports), und [SSO-Berichte](#sso-reports) Daten über verschiedene Plattformen hinweg darstellen, z. B.:
+Die [AuthN TTL-Berichte](#authn-ttl-reports), [AuthZ TTL-Berichte](#authz-ttl-reports) und [SSO-Berichte](#sso-reports) enthalten Daten über verschiedene Plattformen, z. B.:
 
 * **Desktop**: Zeigt Werte an, die auf die Programmimplementierungen über das Adobe Pass Authentication JavaScript SDK angewendet wurden.
 
-* **Mobilnummer**
+* **Mobil**
 
   **iOS**: Zeigt Werte an, die mit dem Adobe Pass Authentication iOS SDK angewendet wurden.
 
   **Android**: Zeigt Werte an, die über das Adobe Pass Authentication Android SDK angewendet werden.
 
-  **sonstige**: Zeigt Werte an, die mit der Adobe Pass Authentication REST API angewendet wurden, die für Mobilgeräte entwickelt wurde.
+  **Sonstige**: Zeigt Werte an, die mit der Adobe Pass Authentication REST API angewendet wurden, die für Mobilgeräte entwickelt wurde.
 
 * **TVCD**
 
@@ -106,46 +107,46 @@ Die [AuthN TTL-Berichte](#authn-ttl-reports), [AuthZ TTL-Berichte](#authz-ttl-re
 
   **AppleTV**: Zeigt Werte an, die über das Adobe Pass Authentication tvOS SDK angewendet wurden.
 
-  **sonstige**: Zeigt Werte an, die mit der Adobe Pass Authentication REST API für TV-verbundene Geräte angewendet wurden.
+  **Sonstige**: Zeigt Werte an, die mit der Adobe Pass Authentication REST API für TV-verbundene Geräte angewendet wurden.
 
 * **Plattform nicht identifiziert**: Zeigt Werte an, die auf Programmimplementierungen angewendet werden, wenn die Adobe Pass-Authentifizierungsdienste einen unbekannten Gerätetyp erkennen.
 
-Weitere Informationen zum Freigeben des gewünschten Gerätetyps, z. B. **Roku** mit Adobe Pass Authentication REST APIs oder SDKs, den Mechanismus von [Übergeben von Client-Informationen](/help/authentication/passing-client-information-device-connection-and-application.md).
+Um mehr darüber zu erfahren, wie Sie den gewünschten Gerätetyp, z. B. **Roku** mit Adobe Pass Authentication REST APIs oder SDKs teilen können, sehen Sie sich den Mechanismus zur Weitergabe von Client-Informationen an [ an.](/help/authentication/passing-client-information-device-connection-and-application.md)
 
 >[!IMPORTANT]
 >
-> Die aggregierten Daten basieren auf der spezifischen Konfiguration jeder Adobe Pass-Authentifizierungsumgebung. Beim Wechsel zwischen verschiedenen TVE-Dashboard-Umgebungen sollten Sie Abweichungen in den Daten zwischen den Berichten erwarten. Siehe Abschnitt [Adobe Pass-Authentifizierungsumgebungen](/help/authentication/tve-dashboard-environments.md) um mehr zu erfahren.
+> Die aggregierten Daten basieren auf der spezifischen Konfiguration jeder Adobe Pass-Authentifizierungsumgebung. Beim Wechsel zwischen verschiedenen TVE-Dashboard-Umgebungen sollten Sie Abweichungen in den Daten zwischen den Berichten erwarten. Weitere Informationen finden Sie in den [Adobe Pass-Authentifizierungsumgebungen](/help/authentication/tve-dashboard-environments.md) .
 
 ## Auswählen bestimmter Kanäle und MVPDs {#selecting-specific-channels-mvpds}
 
-Die [AuthN TTL-Berichte](#authn-ttl-reports), [AuthZ TTL-Berichte](#authz-ttl-reports), und [SSO-Berichte](#sso-reports) Daten für **Alle Kanäle** Integrationen mit **Alle MVPDs** Standardmäßig.
+Die [AuthN TTL Reports](#authn-ttl-reports), [AuthZ TTL Reports](#authz-ttl-reports) und [SSO Reports](#sso-reports) enthalten standardmäßig Daten für die Integration von **Alle Kanäle** mit **Alle MVPDs**.
 
 >[!NOTE]
 >
-> Wenn Sie die Auswahl aufheben **Alle Kanäle** oder **Alle MVPDs** In den entsprechenden Dropdown-Menüs wird eine Meldung angezeigt, die eine Auswahl trifft, um aussagekräftige Berichte anzuzeigen.
+> Wenn Sie die Auswahl von **Alle Kanäle** oder **Alle MVPDs** in den entsprechenden Dropdown-Menüs aufheben, wird eine Meldung angezeigt, die eine Auswahl trifft, um aussagekräftige Berichte anzuzeigen.
 
 So generieren Sie einen Bericht für bestimmte Kanäle:
 
-1. Wählen Sie die **Einbezogene Kanäle** Dropdown-Menü am oberen Rand des ausgewählten Berichts aus.
+1. Wählen Sie oben im ausgewählten Bericht das Dropdown-Menü **Einbezogene Kanäle** aus.
 
    ![Dropdown-Menü &quot;Einbezogene Kanäle&quot;](assets/include-channels.png)
 
    *Dropdown-Menü &quot;Einbezogene Kanäle&quot;*
 
-1. Auswahl deaktivieren **Alle Kanäle**.
-1. Wählen Sie die erforderlichen Kanäle aus dem **Einbezogene Kanäle** Dropdown-Menü, für das Sie Daten generieren möchten.
+1. Heben Sie die Auswahl von **Alle Kanäle** auf.
+1. Wählen Sie die erforderlichen Kanäle aus dem Dropdown-Menü **Einbezogene Kanäle** aus, für die Sie Daten generieren möchten.
 
 >[!NOTE]
 >
-> So stellen Sie Optionen in der **Enthaltene MVPDs** Dropdown-Menü müssen Sie mindestens einen Kanal im **Einbezogene Kanäle** Dropdown-Menü.
+> Um Optionen im Dropdown-Menü **Eingeschlossene MVPDs** verfügbar zu haben, müssen Sie mindestens einen Kanal im Dropdown-Menü **Einbezogene Kanäle** auswählen.
 
 So generieren Sie einen Bericht für bestimmte MVPDs:
 
-1. Wählen Sie die **Enthaltene MVPDs** Dropdown-Menü am oberen Rand des ausgewählten Berichts aus.
+1. Wählen Sie das Dropdown-Menü **Eingeschlossene MVPDs** oben im ausgewählten Bericht aus.
 
-   ![Eingeschlossenes Dropdown-Menü MVPDs](assets/include-mvpds.png)
+   ![ Dropdown-Menü &quot;Eingeschlossene MVPDs&quot;](assets/include-mvpds.png)
 
-   *Eingeschlossenes Dropdown-Menü MVPDs*
+   *Dropdown-Menü &quot;Eingeschlossene MVPDs&quot;*
 
-1. Auswahl deaktivieren **Alle MVPDs**.
-1. Wählen Sie die erforderlichen MVPDs aus der **Enthaltene MVPDs** Dropdown-Menü, für das Sie Daten generieren möchten.
+1. Deaktivieren Sie **Alle MVPDs**.
+1. Wählen Sie die erforderlichen MVPDs aus dem Dropdown-Menü **des** eingebetteten MVPDs aus, für das Sie Daten generieren möchten.

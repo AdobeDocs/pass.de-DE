@@ -1,13 +1,13 @@
 ---
 title: Übersicht über TVE Dashboard
 description: Erfahren Sie mehr über das TVE-Dashboard und die Ressourcen.
-source-git-commit: b81cc7498a8035f4c274ba25952dcd1dcd8d71f5
+exl-id: 91baeb34-a32a-4dc3-94d8-f6cfca59dc4e
+source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
 workflow-type: tm+mt
 source-wordcount: '295'
 ht-degree: 0%
 
 ---
-
 
 # Übersicht über TVE Dashboard {#tve-db-overview}
 
@@ -15,24 +15,24 @@ ht-degree: 0%
 >
 >Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle -Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
-Die [[!DNL Adobe] TVE-Dashboard übermitteln](https://experience.adobe.com/pass/authentication) ist ein Tool für Adobe Pass-Authentifizierungskunden (Programmierer) zur Verwaltung ihrer Konfiguration und Daten. Dieses Self-Service-Dashboard ermöglicht eine Reihe von Funktionen, z. B.:
+Das [[!DNL Adobe] TVE-Dashboard übergeben](https://experience.adobe.com/pass/authentication) ist ein Tool für Adobe Pass-Authentifizierungskunden (Programmierer) zur Verwaltung ihrer Konfiguration und Daten. Dieses Self-Service-Dashboard ermöglicht eine Reihe von Funktionen, z. B.:
 
-* **Integrationsmanagement**: Fügen Sie neue Integrationen zwischen den jeweiligen Marken (Channels) eines Programmierers und Multichannel Video Programming Distributors (MVPDs) im Adobe Pass Authentication-Ökosystem hinzu.
+* **Integrationsverwaltung**: Fügen Sie neue Integrationen zwischen den jeweiligen Marken (Kanäle) eines Programmierers und MVPDs (Multichannel Video Programming Distributors) im Adobe Pass Authentication-Ökosystem hinzu.
 
-* **Eigenschaftenkonfiguration**: Konfigurieren Sie mehrere Eigenschaften für jede Integration, um detaillierte Geschäftsregeln zu implementieren, die an bestimmte Plattformanforderungen angepasst sind.
+* **Eigenschaftenkonfiguration**: Konfigurieren Sie mehrere Eigenschaften für jede Integration, um detaillierte Geschäftsregeln zu implementieren, die auf bestimmte Plattformanforderungen abgestimmt sind.
 
-* **Berichterstellung**: Rufen Sie detaillierte Berichte zur Konfigurationseinrichtung über MVPDs hinweg auf und exportieren Sie sie. Zu diesen Berichten gehören:
-   * Plattformkategorien wie *Desktop-, Mobil- und TV-vernetzte Geräte*
+* **Berichterstellung**: Greifen Sie auf detaillierte Berichte zur Konfiguration über MVPDs zu und exportieren Sie sie. Zu diesen Berichten gehören:
+   * Plattformkategorien wie *Desktop, Mobilgeräte und TV-vernetzte Geräte*
    * Plattformen wie *iOS, Android™, tvOS, Roku und FireTV*
 
   Die Berichte bieten Einblicke in die Unterstützung von Single Sign-On (SSO) und die Dauer der Abonnentenauthentifizierung oder Autorisierung auf MVPD- und Plattformebene.
 
-* **Verkehrsvisualisierung**: Visualisieren Sie allgemeine Authentifizierungs- und Autorisierungs-Traffic-Daten der Programmierer-Eigenschaften.
+* **Traffic-Visualisierung**: Visualisieren Sie die allgemeinen Authentifizierungs- und Autorisierungs-Traffic-Daten der Programmierer-Eigenschaften.
 
 Wenden Sie sich an Ihren technischen Kundenbetreuer (TAM), um auf das TVE-Dashboard zuzugreifen. Für diesen Zugriff müssen zwei neue Benutzergruppen in Ihrer Adobe Marketing Cloud-Organisation konfiguriert werden:
 
-* **TVE Dashboard - Lesen und Schreiben**: Die Mitglieder dieser Gruppe verfügen über sämtliche Bearbeitungsrechte für alle Bereiche des Dashboards.
-* **TVE Dashboard schreibgeschützt**: Mitglieder dieser Gruppe erhalten nur Lesezugriff auf das gesamte Dashboard.
+* **TVE Dashboard Read-Write**: Die Mitglieder dieser Gruppe verfügen über alle Bearbeitungsrechte für alle Bereiche des Dashboards.
+* **TVE Dashboard - Schreibgeschützt**: Mitgliedern dieser Gruppe wird nur Anzeigezugriff auf das gesamte Dashboard gewährt.
 
 Die Adobe Pass-Authentifizierung bietet die folgenden Abschnitte im TVE-Dashboard:
 
@@ -54,5 +54,3 @@ Adobe schlägt vor, die folgenden Ressourcen zu verwenden, um die Flüsse und Fu
 * [Handbuch für Programmstart-Schnellstart](/help/authentication/programmer-kickstart-guide.md)
 * [Berechtigungsfluss](/help/authentication/entitlement-flow.md)
 * [Glossar](/help/authentication/glossary.md)
-
-

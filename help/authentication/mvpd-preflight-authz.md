@@ -4,7 +4,7 @@ description: MVPD Preflight-Autorisierung
 exl-id: da2e7150-b6a8-42f3-9930-4bc846c7eee9
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '745'
+source-wordcount: '750'
 ht-degree: 0%
 
 ---
@@ -21,9 +21,9 @@ ht-degree: 0%
 
 Die Adobe Pass-Authentifizierung kann die Preflight-Autorisierung derzeit auf zwei Arten für MVPDs unterstützen, entweder über AuthN-Antwortattribute oder über eine mehrkanalige AuthZ-Anfrage.  In den folgenden Szenarien werden die Kosten/Nutzen der verschiedenen Methoden beschrieben, mit denen Sie die Vorabgenehmigung implementieren können:
 
-* **Best-Case-Szenario** - Der MVPD stellt die Liste der bereits autorisierten Ressourcen während der Autorisierungsphase (Multi-Channel AuthZ) zur Verfügung.
-* **Szenario mit dem schlimmsten Fall** - Wenn ein MVPD keine Mehrfachressourcenautorisierung unterstützt, führt der Adobe Pass-Authentifizierungsserver einen Autorisierungsaufruf an den MVPD für jede Ressource in der Ressourcenliste durch. Dieses Szenario wirkt sich (proportional zur Anzahl der Ressourcen) auf die Reaktionszeit für die Vorabgenehmigung aus. Dies kann die Auslastung auf beiden Adobe- und MVPD-Servern erhöhen und zu Leistungsproblemen führen. Außerdem werden Autorisierungsanfragen/Antwortereignisse generiert, ohne dass eine Wiedergabe tatsächlich erforderlich ist.
-* **Veraltet** - Der MVPD stellt während der Authentifizierungsphase die Liste der bereits autorisierten Ressourcen bereit, sodass keine Netzwerkaufrufe erforderlich sind, nicht einmal die Preflight-Anfrage, da die Liste auf dem Client zwischengespeichert wird.
+* **Best Case Scenario** - Das MVPD stellt die Liste der vorab autorisierten Ressourcen während der Autorisierungsphase (Multi-Channel AuthZ) bereit.
+* **Schlimmstes Szenario** - Wenn ein MVPD keine Autorisierung mehrerer Ressourcen unterstützt, führt der Adobe Pass-Authentifizierungsserver für jede Ressource in der Ressourcenliste einen Autorisierungsaufruf an den MVPD durch. Dieses Szenario wirkt sich (proportional zur Anzahl der Ressourcen) auf die Reaktionszeit für die Vorabgenehmigung aus. Dies kann die Auslastung auf beiden Adobe- und MVPD-Servern erhöhen und zu Leistungsproblemen führen. Außerdem werden Autorisierungsanfragen/Antwortereignisse generiert, ohne dass eine Wiedergabe tatsächlich erforderlich ist.
+* **Veraltet** - Der MVPD stellt die Liste der vorab autorisierten Ressourcen während der Authentifizierungsphase bereit, sodass keine Netzwerkaufrufe erforderlich sind, nicht einmal die Preflight-Anfrage, da die Liste auf dem Client zwischengespeichert wird.
 
 Während MVPDs keine Preflight-Autorisierung unterstützen müssen, werden in den folgenden Abschnitten einige Vorabgenehmigungsverfahren beschrieben, die von der Adobe Pass-Authentifizierung unterstützt werden können, bevor auf das oben genannte Worst-Case-Szenario zurückgegriffen wird.
 

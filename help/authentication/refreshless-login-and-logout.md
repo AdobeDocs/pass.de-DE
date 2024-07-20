@@ -4,7 +4,7 @@ description: Anmeldung ohne Aktualisierung und Abmeldung
 exl-id: 3ce8dfec-279a-4d10-93b4-1fbb18276543
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1772'
+source-wordcount: '1761'
 ht-degree: 0%
 
 ---
@@ -44,18 +44,18 @@ Beginnen wir mit einer Zusammenfassung der ursprünglichen Authentifizierungs- u
 
 Die Adobe Pass-Authentifizierungs-Webclients bieten je nach den Anforderungen von MVPDs zwei Möglichkeiten zur Authentifizierung:
 
-1. **Umleitung auf ganze Seiten -** Nachdem der Benutzer einen (mit einer vollständigen Umleitung konfigurierten) Anbieter aus der MVPD-Auswahl auf der Website des Programmierers ausgewählt hat, `setSelectedProvider(<mvpd>)` wird auf dem AccessEnabler aufgerufen und der Benutzer wird zur Anmeldeseite des MVPD weitergeleitet. Nachdem der Benutzer gültige Anmeldeinformationen angegeben hat, wird er auf die Website des Programmierers zurückgeleitet. AccessEnabler wird initialisiert und das Authentifizierungstoken wird bei der Adobe Pass-Authentifizierung während der `setRequestor`.
-1. **iFrame/Popup-Fenster -** Nachdem der Benutzer einen Provider ausgewählt hat (der mit iFrame konfiguriert wurde), `setSelectedProvider(<mvpd>)` wird auf dem AccessEnabler aufgerufen. Diese Aktion Trigger die `createIFrame(width, height)` Callback, der den Programmierer anweist, einen iFrame (oder ein Popup - je nach Browser/Voreinstellungen) mit dem Namen zu erstellen `"mvpdframe"` und die bereitgestellten Dimensionen. Nachdem der iFrame/Popup erstellt wurde, lädt der AccessEnabler die Anmeldeseite des MVPD in den iFrame/Popup. Der Benutzer stellt gültige Anmeldeinformationen bereit und das iFrame/Popup wird zur Adobe Pass-Authentifizierung weitergeleitet, die ein JS-Snippet zurückgibt, das den iFrame/Popup schließt und die übergeordnete Seite (Programmierer-Website) neu lädt. Ähnlich wie bei Fluss 1 wird das Authentifizierungstoken während `setRequestor`.
+1. **Umleitung auf vollständige Seite -** Nachdem der Benutzer einen Anbieter ausgewählt hat    (mit Vollseitenumleitung konfiguriert) aus der MVPD-Auswahl auf der    Die Website des Programmierers, `setSelectedProvider(<mvpd>)` wird auf dem AccessEnabler aufgerufen und der Benutzer wird zur Anmeldeseite des MVPD weitergeleitet. Nachdem der Benutzer gültige Anmeldeinformationen angegeben hat, wird er auf die Website des Programmierers zurückgeleitet. Der AccessEnabler wird initialisiert und das Authentifizierungstoken wird während `setRequestor` aus der Adobe Pass-Authentifizierung abgerufen.
+1. **iFrame/Popup-Fenster -** Nachdem der Benutzer einen (mit iFrame konfigurierten) Provider ausgewählt hat, wird `setSelectedProvider(<mvpd>)` auf dem AccessEnabler aufgerufen. Diese Aktion Trigger den Rückruf `createIFrame(width, height)` und benachrichtigt den Programmierer, einen iFrame (oder ein Popup - je nach Browser/Voreinstellungen) mit dem Namen `"mvpdframe"` und den bereitgestellten Dimensionen zu erstellen. Nachdem der iFrame/Popup erstellt wurde, lädt der AccessEnabler die Anmeldeseite des MVPD in den iFrame/Popup. Der Benutzer stellt gültige Anmeldeinformationen bereit und das iFrame/Popup wird zur Adobe Pass-Authentifizierung weitergeleitet, die ein JS-Snippet zurückgibt, das den iFrame/Popup schließt und die übergeordnete Seite (Programmierer-Website) neu lädt. Ähnlich wie bei Fluss 1 wird das Authentifizierungstoken während `setRequestor` abgerufen.
 
-Die `displayProviderDialog` Callback (ausgelöst durch `getAuthentication`/`getAuthorization`) gibt eine Liste der MVPDs und der entsprechenden Einstellungen zurück. Die `iFrameRequired` -Eigenschaft eines MVPD ermöglicht dem Programmierer zu wissen, ob es Fluss 1 oder Fluss 2 aktivieren soll. Beachten Sie, dass der Programmierer nur für Fluss 2 zusätzliche Aktionen (Erstellen eines iFrame/Popup) ausführen muss.
+Der Rückruf `displayProviderDialog` (ausgelöst durch `getAuthentication`/`getAuthorization`) gibt eine Liste der MVPDs und der entsprechenden Einstellungen zurück. Mit der Eigenschaft `iFrameRequired` eines MVPD kann der Programmierer wissen, ob Fluss 1 oder Fluss 2 aktiviert werden soll. Beachten Sie, dass der Programmierer nur für Fluss 2 zusätzliche Aktionen (Erstellen eines iFrame/Popup) ausführen muss.
 
 **Authentifizierung abbrechen**
 
 Es gibt auch die Situation, in der der Benutzer den Authentifizierungsfluss explizit abbricht, indem er die Anmeldeseite schließt. Im Folgenden finden Sie die Szenarien und die vorgeschlagene Lösung für die Programmierer:
 
-1. **Umleitung auf einer vollständigen Seite -** Wenn die Anmeldeseite geschlossen wird, muss der Benutzer erneut zur Website des Programmierers navigieren und den gesamten Fluss von Anfang an initiieren. In diesem Szenario ist keine explizite Aktion auf der Seite des Programmierers erforderlich.
-1. **iFrame -** Der Programmierer wird empfohlen, den iFrame in einem `div` (oder eine ähnliche UI-Komponente), an die eine Schließen-Schaltfläche angehängt ist. Wenn der Benutzer die Schaltfläche Schließen drückt, zerstört der Programmierer den iFrame zusammen mit der zugehörigen Benutzeroberfläche und führt `setSelectedProvider(null)`. Dieser Aufruf ermöglicht es dem AccessEnabler, seinen internen Status zu löschen, und ermöglicht es dem Benutzer, einen nachfolgenden Authentifizierungsfluss zu starten. `setAuthenticationStatus` und `sendTrackingData(AUTHENTICATION_DETECTION...)` wird ausgelöst, um einen fehlgeschlagenen Authentifizierungsfluss zu signalisieren (beide aktiviert `getAuthentication` und `getAuthorization`).
-1. **Popup -** Einige Browser können das Fensterschließen-Ereignis nicht genau erkennen. Daher muss hier ein anderer Ansatz gewählt werden (im Gegensatz zum obigen iFrame-Fluss). Adobe empfiehlt, dass der Programmierer einen Timer initialisiert, der regelmäßig überprüft, ob das Anmelde-Popup vorhanden ist. Wenn das Fenster nicht vorhanden ist, kann der Programmierer sicherstellen, dass der Benutzer den Anmeldefluss manuell abgebrochen hat, und der Programmierer kann mit dem Aufruf `setSelectedProvider(null)`. Die ausgelösten Rückrufe sind mit denen im obigen Fluss 2 identisch.
+1. **Umleitung auf der vollständigen Seite -** Wenn die Anmeldeseite geschlossen ist, muss der Benutzer erneut zur Website des Programmierers navigieren und den gesamten Fluss von Anfang an initiieren. In diesem Szenario ist keine explizite Aktion auf der Seite des Programmierers erforderlich.
+1. **iFrame -** Der Programmierer wird empfohlen, den iFrame in einer `div` -Komponente (oder einer ähnlichen UI-Komponente) zu hosten, an die eine Schließen -Schaltfläche angehängt ist. Wenn der Benutzer die Schaltfläche Schließen drückt, zerstört der Programmierer den iFrame zusammen mit der zugehörigen Benutzeroberfläche und führt `setSelectedProvider(null)` aus. Dieser Aufruf ermöglicht es dem AccessEnabler, seinen internen Status zu löschen, und ermöglicht es dem Benutzer, einen nachfolgenden Authentifizierungsfluss zu starten. `setAuthenticationStatus` und `sendTrackingData(AUTHENTICATION_DETECTION...)` werden ausgelöst, um einen fehlgeschlagenen Authentifizierungsfluss zu signalisieren (sowohl bei `getAuthentication` als auch bei `getAuthorization`).
+1. **Popup -** Einige Browser können das Schließen des Fensters nicht genau erkennen. Daher muss hier ein anderer Ansatz gewählt werden (im Gegensatz zum obigen iFrame-Fluss). Adobe empfiehlt, dass der Programmierer einen Timer initialisiert, der regelmäßig überprüft, ob das Anmelde-Popup vorhanden ist. Wenn das Fenster nicht vorhanden ist, kann der Programmierer sicherstellen, dass der Benutzer den Anmeldefluss manuell abgebrochen hat und der Programmierer mit dem Aufruf von `setSelectedProvider(null)` fortfahren kann. Die ausgelösten Rückrufe sind mit denen im obigen Fluss 2 identisch.
 
 </br>
 
@@ -75,7 +75,7 @@ Die Abmelde-API des AccessEnabler löscht den lokalen Status der Bibliothek und 
 >
 >Aufgrund der verbesserten Aktualisierungs- und Abmeldevorgänge müssen moderne HTML5-Technologien einschließlich Webnachrichten vom Browser unterstützt werden.
 
-Sowohl die oben erläuterten Authentifizierungs- (Anmelde-) als auch die Abmelde-Flüsse bieten ein ähnliches Benutzererlebnis, indem die Hauptseite nach jedem Durchlauf neu geladen wird.  Die aktuelle Funktion soll das Benutzererlebnis verbessern, indem eine erneute (Hintergrund-)Anmeldung und Abmeldung bereitgestellt werden. Der Programmierer kann die Hintergrundanmeldung und -abmeldung aktivieren/deaktivieren, indem er zwei boolesche Flags (`backgroundLogin` und `backgroundLogout`) auf `configInfo` Parameter der `setRequestor` API. Standardmäßig sind die Hintergrundanmeldung/-abmeldung deaktiviert (dies bietet Kompatibilität mit der vorherigen Implementierung).
+Sowohl die oben erläuterten Authentifizierungs- (Anmelde-) als auch die Abmelde-Flüsse bieten ein ähnliches Benutzererlebnis, indem die Hauptseite nach jedem Durchlauf neu geladen wird.  Die aktuelle Funktion soll das Benutzererlebnis verbessern, indem eine erneute (Hintergrund-)Anmeldung und Abmeldung bereitgestellt werden. Der Programmierer kann die Hintergrundanmeldung und -abmeldung aktivieren/deaktivieren, indem er zwei boolesche Flags (`backgroundLogin` und `backgroundLogout`) an den Parameter `configInfo` der API `setRequestor` übergibt. Standardmäßig sind die Hintergrundanmeldung/-abmeldung deaktiviert (dies bietet Kompatibilität mit der vorherigen Implementierung).
 
 **Beispiel:**
 
@@ -92,13 +92,13 @@ Sowohl die oben erläuterten Authentifizierungs- (Anmelde-) als auch die Abmelde
 
 Die folgenden Punkte beschreiben den Übergang zwischen den ursprünglichen Authentifizierungsflüssen und den verbesserten Flüssen:
 
-1. Die ganzseitige Umleitung wird durch eine neue Browser-Registerkarte ersetzt, in der die MVPD-Anmeldung durchgeführt wird. Der Programmierer muss eine neue Registerkarte erstellen (über `window.open`) benannt `mvpdwindow` wenn der Benutzer einen MVPD auswählt (mit `iFrameRequired = false`). Der Programmierer wird dann ausgeführt `setSelectedProvider(<mvpd>)`, wodurch der AccessEnabler die MVPD-Anmelde-URL in die neue Registerkarte laden kann. Nachdem der Benutzer gültige Anmeldeinformationen angegeben hat, schließt die Adobe Pass-Authentifizierung die Registerkarte und sendet eine window.postMessage an die Website des Programmierers, die dem AccessEnabler signalisiert, dass der Authentifizierungsfluss abgeschlossen ist. Die folgenden Rückrufe werden ausgelöst:
+1. Die ganzseitige Umleitung wird durch eine neue Browser-Registerkarte ersetzt, in der die MVPD-Anmeldung durchgeführt wird. Der Programmierer muss eine neue Registerkarte (über `window.open`) mit dem Namen `mvpdwindow` erstellen, wenn der Benutzer einen MVPD auswählt (mit `iFrameRequired = false`). Der Programmierer führt dann `setSelectedProvider(<mvpd>)` aus, sodass der AccessEnabler die MVPD-Anmelde-URL in die neue Registerkarte laden kann. Nachdem der Benutzer gültige Anmeldeinformationen angegeben hat, schließt die Adobe Pass-Authentifizierung die Registerkarte und sendet eine window.postMessage an die Website des Programmierers, die dem AccessEnabler signalisiert, dass der Authentifizierungsfluss abgeschlossen ist. Die folgenden Rückrufe werden ausgelöst:
 
-   - Wenn der Fluss durch `getAuthentication`: `setAuthenticationStatus` und `sendTrackingData(AUTHENTICATION_DETECTION...)` wird ausgelöst, um die erfolgreiche/fehlgeschlagene Authentifizierung zu signalisieren.
+   - Wenn der Fluss durch `getAuthentication` initiiert wurde: `setAuthenticationStatus` und `sendTrackingData(AUTHENTICATION_DETECTION...)` werden ausgelöst, um die erfolgreiche/nicht erfolgreiche Authentifizierung zu signalisieren.
 
-   - Wenn der Fluss durch `getAuthorization`: `setToken/tokenRequestFailed` und `sendTrackingData(AUTHORIZATION_DETECTION...)` wird ausgelöst, um eine erfolgreiche/nicht erfolgreiche Autorisierung zu signalisieren.
+   - Wenn der Fluss durch `getAuthorization` initiiert wurde: `setToken/tokenRequestFailed` und `sendTrackingData(AUTHORIZATION_DETECTION...)` werden ausgelöst, um eine erfolgreiche/nicht erfolgreiche Autorisierung zu signalisieren.
 
-1. Der iFrame-/Popup-Fensterfluss bleibt größtenteils unverändert, wobei der Unterschied darin besteht, dass die übergeordnete Seite nicht neu geladen wird, nachdem der Benutzer gültige Anmeldeinformationen angegeben hat. iFrame/Popup schließt sich nach der Anmeldung automatisch und ein `window.postMessage` an die übergeordnete Seite gesendet wird, um den AccessEnabler darüber zu informieren, dass der Fluss abgeschlossen ist. Dieselben Rückrufe werden wie im vorherigen Fluss ausgelöst, **plus der folgende neue Rückruf:`destroyIFrame`**. Die `destroyIFrame` callback ermöglicht dem Programmierer das Entfernen aller iFrame-verknüpften/Hilfskomponenten, wie z. B. Benutzeroberflächen-Dekorationen. Im alten Authentifizierungsfluss war das Vorhandensein dieses Rückrufs nicht erforderlich, da die Adobe Pass-Authentifizierung nach Abschluss der Anmeldung die Seite des Programmierers neu laden und damit alle darin enthaltenen Benutzeroberflächen-Komponenten zerstören würde.
+1. Der iFrame-/Popup-Fensterfluss bleibt größtenteils unverändert, wobei der Unterschied darin besteht, dass die übergeordnete Seite nicht neu geladen wird, nachdem der Benutzer gültige Anmeldeinformationen angegeben hat. Der iFrame/Popup wird nach der Anmeldung automatisch geschlossen und ein `window.postMessage` wird an die übergeordnete Seite gesendet. Dadurch wird der AccessEnabler informiert, dass der Fluss abgeschlossen ist. Dieselben Rückrufe werden wie im vorherigen Fluss ausgelöst, **plus der folgende neue Rückruf:`destroyIFrame`**. Mit dem Rückruf `destroyIFrame` kann der Programmierer alle mit iFrame verbundenen/zusätzlichen Komponenten entfernen, z. B. Benutzeroberflächen-Dekorationen. Im alten Authentifizierungsfluss war das Vorhandensein dieses Rückrufs nicht erforderlich, da die Adobe Pass-Authentifizierung nach Abschluss der Anmeldung die Seite des Programmierers neu laden und damit alle darin enthaltenen Benutzeroberflächen-Komponenten zerstören würde.
 
 </br>
 
@@ -112,9 +112,9 @@ Die folgenden Punkte beschreiben den Übergang zwischen den ursprünglichen Auth
 
 Dies sind die Flüsse zum Abbrechen der Authentifizierung:
 
-1. **Registerkarte Browser -** Da es sich bei der Registerkarte im Grunde um ein neues Fenster handelt, hat die Erfassung des zugehörigen Schließen-Ereignisses dieselben Einschränkungen wie in Szenario 3 aus den alten Authentifizierungsflüssen beschrieben. Darüber hinaus ist der Timer-Ansatz hier nicht möglich, da es nicht möglich ist, zwischen einem Tabulator zu unterscheiden, der manuell vom Benutzer geschlossen wurde, und einem Tab, der am Ende des Anmeldeflusses automatisch geschlossen wurde. Die Lösung besteht darin, dass der AccessEnabler &quot;still&quot;bleibt (keine Rückrufe werden ausgelöst), wenn der Benutzer den Fluss abbricht. Außerdem ist der Programmierer nicht verpflichtet, spezifische Maßnahmen zu ergreifen. Der Benutzer kann einen weiteren Authentifizierungsfluss starten, ohne den Fehler &quot;Fehler bei Mehrfachauthentifizierungsanforderungen&quot;zu erhalten (dieser Fehler wurde im AccessEnabler für die Hintergrundanmeldung deaktiviert).
+1. **Registerkarte &quot;Browser&quot;-** Da es sich bei der Registerkarte im Wesentlichen um ein neues Fenster handelt, hat die Erfassung des zugehörigen Schließen-Ereignisses dieselben Einschränkungen wie in Szenario 3 aus den alten Authentifizierungsflüssen beschrieben. Darüber hinaus ist der Timer-Ansatz hier nicht möglich, da es nicht möglich ist, zwischen einem Tabulator zu unterscheiden, der manuell vom Benutzer geschlossen wurde, und einem Tab, der am Ende des Anmeldeflusses automatisch geschlossen wurde. Die Lösung besteht darin, dass der AccessEnabler &quot;still&quot;bleibt (keine Rückrufe werden ausgelöst), wenn der Benutzer den Fluss abbricht. Außerdem ist der Programmierer nicht verpflichtet, spezifische Maßnahmen zu ergreifen. Der Benutzer kann einen weiteren Authentifizierungsfluss starten, ohne den Fehler &quot;Fehler bei Mehrfachauthentifizierungsanforderungen&quot;zu erhalten (dieser Fehler wurde im AccessEnabler für die Hintergrundanmeldung deaktiviert).
 
-1. **iFrame -** Der Programmierer kann den in Szenario 2 erläuterten Ansatz aus den alten Authentifizierungsflüssen übernehmen (Wrapper-Benutzeroberfläche aus dem iFrame erstellen und zugehörige Schließen-Schaltfläche verwenden, die Trigger verwenden). `setSelectedProvider(null)`. Dieser Ansatz ist zwar nicht mehr unbedingt erforderlich (mehrere Authentifizierungsflüsse sind für die Hintergrundanmeldung zulässig, wie in Szenario 1 erläutert), wird jedoch dennoch von Adobe empfohlen.
+1. **iFrame -** Der Programmierer kann den in Szenario 2 erläuterten Ansatz aus den alten Authentifizierungsflüssen verwenden (Wrapper-Benutzeroberfläche aus dem iFrame und der zugehörigen Schließen-Schaltfläche erstellen, die Trigger `setSelectedProvider(null)` ist. Dieser Ansatz ist zwar nicht mehr unbedingt erforderlich (mehrere Authentifizierungsflüsse sind für die Hintergrundanmeldung zulässig, wie in Szenario 1 erläutert), wird jedoch dennoch von Adobe empfohlen.
 
 1. **Popup -** Dies entspricht dem obigen Fluss der Browser-Registerkarte.
 
@@ -124,11 +124,11 @@ Dies sind die Flüsse zum Abbrechen der Authentifizierung:
 
 Der neue Abmeldefluss wird in einem ausgeblendeten iFrame ausgeführt, wodurch die vollständige Seitenumleitung entfällt.  Dies ist möglich, da der Benutzer auf der MVPD-Abmeldeseite keine bestimmte Aktion ausführen muss.
 
-Nach Abschluss des Abmeldevorgangs wird der iFrame an einen benutzerdefinierten Adobe Pass-Authentifizierungsendpunkt umgeleitet. Dadurch wird ein JS-Snippet bereitgestellt, das einen `window.postMessage` dem übergeordneten Element, der den AccessEnabler darüber informiert, dass die Abmeldung abgeschlossen ist. Die folgenden Rückrufe werden ausgelöst: `setAuthenticationStatus()` und `sendTrackingData(AUTHENTICATION_DETECTION ...)`, wodurch signalisiert wird, dass der Benutzer nicht mehr authentifiziert ist.
+Nach Abschluss des Abmeldevorgangs wird der iFrame an einen benutzerdefinierten Adobe Pass-Authentifizierungsendpunkt umgeleitet. Dadurch wird ein JS-Snippet bereitgestellt, das dem übergeordneten Element einen `window.postMessage` ausführt und dem AccessEnabler mitteilt, dass die Abmeldung abgeschlossen ist. Die folgenden Rückrufe werden ausgelöst: `setAuthenticationStatus()` und `sendTrackingData(AUTHENTICATION_DETECTION ...)`, was bedeutet, dass der Benutzer nicht mehr authentifiziert ist.
 
 Die folgende Abbildung zeigt den Fluss &quot;Refresh-less&quot;, mit dem sich ein Benutzer bei seinem MVPD anmelden kann, ohne die Hauptseite Ihrer Anwendung zu aktualisieren:
 
-**Verbesserter (nicht aktualisierter) Authentifizierungs-/Abmeldefluss**
+**Verbesserter (nicht aktualisierbarer) Authentifizierungs-/Abmeldefluss**
 
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/AE_with_no_refresh_web.png)
 
@@ -142,13 +142,13 @@ Da der TempPass-Fluss erfordert, dass ein Fenster automatisch erstellt und ohne 
 
 Im Folgenden finden Sie die Aspekte, die der Programmierer bei der Implementierung von TempPass für die erneute Anmeldung und Abmeldung beachten muss:
 
-- Bevor die Authentifizierung gestartet wird, muss das iFrame- oder Popup-Fenster nur für Nicht-TempPass-MVPDs erstellt werden. Der Programmierer kann erkennen, ob ein MVPD TempPass ist oder nicht, indem er die `tempPass` Eigenschaft des MVPD-Objekts (zurückgegeben von `setConfig()` / `displayProviderDialog()`).
+- Bevor die Authentifizierung gestartet wird, muss das iFrame- oder Popup-Fenster nur für Nicht-TempPass-MVPDs erstellt werden. Der Programmierer kann erkennen, ob ein MVPD TempPass ist oder nicht, indem er die Eigenschaft `tempPass` des MVPD-Objekts liest (zurückgegeben von `setConfig()` / `displayProviderDialog()`).
 
-- Die `createIFrame()` -Callback muss eine Prüfung für TempPass enthalten und seine Logik nur ausführen, wenn der MVPD NICHT TempPass ist.
+- Der Rückruf `createIFrame()` muss eine Prüfung für TempPass enthalten und seine Logik nur ausführen, wenn der MVPD NICHT TempPass ist.
 
-- Die `destroyIFrame()` -Callback muss eine Prüfung für TempPass enthalten und seine Logik nur ausführen, wenn der MVPD NICHT TempPass ist.
+- Der Rückruf `destroyIFrame()` muss eine Prüfung für TempPass enthalten und seine Logik nur ausführen, wenn der MVPD NICHT TempPass ist.
 
-- Die `setAuthenticationStatus()` und `sendTrackingData()` -Rückrufe werden nach Abschluss der Authentifizierung aufgerufen (genau wie im Fluss &quot;Refresh-less&quot;für normale MVPDs).
+- Die Rückrufe `setAuthenticationStatus()` und `sendTrackingData()` werden nach Abschluss der Authentifizierung aufgerufen (genau wie im Fluss Refresh-less für normale MVPDs).
 
 >[!NOTE]
 >

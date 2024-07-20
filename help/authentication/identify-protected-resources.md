@@ -56,7 +56,7 @@ Ein komplexerer Bezeichner kann beispielsweise zusätzliche Bewertungsinformatio
     getAuthorization(resource);
 ```
 
-Ressourcenspezifikatoren sind für die Adobe Pass-Authentifizierung opak; sie werden einfach an den MVPD weitergeleitet. Wenn der MVPD Ihren Ressourcenbezeichner nicht erkennt oder nicht analysieren kann, wird ein Fehler an die Adobe Pass-Authentifizierung zurückgegeben, der den Fehler an Ihre `tokenRequestFailed()` Callback.
+Ressourcenspezifikatoren sind für die Adobe Pass-Authentifizierung opak; sie werden einfach an den MVPD weitergeleitet. Wenn der MVPD Ihren Ressourcenbezeichner nicht erkennt oder nicht analysieren kann, wird ein Fehler an die Adobe Pass-Authentifizierung zurückgegeben, wodurch der Fehler an Ihren `tokenRequestFailed()` -Rückruf zurückgegeben wird.
 
 <!--
 ## Related Information {#related}

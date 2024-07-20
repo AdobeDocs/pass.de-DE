@@ -17,16 +17,16 @@ ht-degree: 2%
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch [Drosselmechanismus](/help/authentication/throttling-mechanism.md)
+> Die REST-API-Implementierung wird durch den [Drosselmechanismus](/help/authentication/throttling-mechanism.md) begrenzt
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
 * Produktion - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produktion - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -37,9 +37,9 @@ ht-degree: 2%
 
 Gibt eine Liste der konfigurierten MVPDs für den Anfragenden zurück.
 
-| Endpunkt | aufgerufen  </br>von | Eingabe   </br>Parameter | HTTP  </br>Methode | Reaktion | HTTP  </br>Reaktion |
+| Endpunkt | </br>von aufgerufen | Eingabe   </br>Parameter | HTTP </br>Methode | Reaktion | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/config/{requestorId}</br></br>Beispiel:</br></br>&lt;sp_fqdn>/api/v1/config/sampleRequestorId | Adobe Pass-Authentifizierung | 1. Antragsteller</br>    (Pfadkomponente)</br>_2.  deviceType (nicht mehr unterstützt)_ | GET | XML oder JSON mit einer Liste von MVPDs. | 200 |
+| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Beispiel:</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Adobe Pass-Authentifizierung | 1. Antragsteller</br>    (Pfadkomponente)</br>_2.  deviceType (nicht mehr unterstützt)_ | GET | XML oder JSON mit einer Liste von MVPDs. | 200 |
 
 {style="table-layout:auto"}
 
@@ -57,8 +57,8 @@ Wie vorhandene MVPD XML-Antwort auf /config Servlet
 
 Hinweis: Alle MVPDs, die für die Verwendung von Platform SSO konfiguriert sind, verfügen über die folgenden zusätzlichen Eigenschaften innerhalb des entsprechenden Knotens (JSON/XML):
 
-* **enablePlatformServices (boolean):** Markierung, die angibt, ob dieses MVPD über Platform SSO integriert wird
-* **boardingStatus (Zeichenfolge):** Markierung, die angibt, ob der MVPD Platform SSO (SUPPORTED) vollständig unterstützt oder ob der MVPD nur in der Plattformauswahl (PICKER) angezeigt wird
-* **displayInPlatformPicker (boolean):** sollte dieser MVPD in der Plattformauswahl angezeigt werden
+* **enablePlatformServices (boolean):**-Markierung, die angibt, ob dieser MVPD über Platform SSO integriert ist
+* **boardingStatus (string):** -Markierung, die angibt, ob der MVPD Platform SSO (SUPPORTED) vollständig unterstützt oder ob der MVPD nur in der Plattformauswahl (PICKER) angezeigt wird
+* **displayInPlatformPicker (boolean):** , sollte dieser MVPD in der Plattformauswahl angezeigt werden
 * **platformMappingId (Zeichenfolge):** die Kennung dieses MVPD, wie von der Plattform bekannt
-* **requiredMetadataFields (String-Array):** die Metadatenfelder des Benutzers, die bei erfolgreicher Anmeldung verfügbar sein sollen
+* **requiredMetadataFields (String-Array):** die Metadatenfelder des Benutzers, die bei einer erfolgreichen Anmeldung verfügbar sein sollen

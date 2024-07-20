@@ -11,18 +11,18 @@ ht-degree: 0%
 
 # API-Übersicht {#api-overview}
 
-Anzeigen der [Online-API-Dokumentation](http://docs.adobeptime.io/cm-api-v2/) für weitere Details.
+Weitere Informationen finden Sie in der [Online-API-Dokumentation](http://docs.adobeptime.io/cm-api-v2/) .
 
 ## Zweck und Voraussetzungen {#purpose-prerequisites}
 
-Dieses Dokument unterstützt Anwendungsentwickler bei der Verwendung unserer Swagger-API-Spezifikation bei der Implementierung einer Integration mit der gleichzeitigen Überwachung. Es wird dringend empfohlen, dass der Leser über ein vorheriges Verständnis der vom Dienst definierten Konzepte verfügt, bevor er diese Richtlinie befolgt. Um dieses Verständnis zu erhalten, muss ein Überblick über die [Produktdokumentation](/help/concurrency-monitoring/cm-home.md) und [Swagger-API-Spezifikation](http://docs.adobeptime.io/cm-api-v2/).
+Dieses Dokument unterstützt Anwendungsentwickler bei der Verwendung unserer Swagger-API-Spezifikation bei der Implementierung einer Integration mit der gleichzeitigen Überwachung. Es wird dringend empfohlen, dass der Leser über ein vorheriges Verständnis der vom Dienst definierten Konzepte verfügt, bevor er diese Richtlinie befolgt. Um dieses Verständnis zu erhalten, ist es erforderlich, einen Überblick über die [Produktdokumentation](/help/concurrency-monitoring/cm-home.md) und die [Swagger-API-Spezifikation](http://docs.adobeptime.io/cm-api-v2/) zu erhalten.
 
 
 ## Einführung {#api-overview-intro}
 
 Während des Entwicklungsprozesses stellt die öffentliche Swagger-Dokumentation die Referenzrichtlinie zum Verständnis und Testen der API-Flüsse dar. Dies ist ein guter Ausgangspunkt, um einen praxisorientierten Ansatz zu haben und sich mit der Art und Weise vertraut zu machen, wie sich reale Anwendungen in verschiedenen Szenarien der Benutzerinteraktion verhalten würden.
 
-Einreichen eines Tickets [Zendesk](mailto:tve-support@adobe.com) , um Ihr Unternehmen und Ihre Anwendungen in Concurrency Monitoring zu registrieren. Adobe weist jeder Entität eine Anwendungs-ID zu. In diesem Handbuch werden wir zwei Referenzanwendungen mit IDs verwenden **demo-app** und **demo-app-2** , das unter der Mandanten-Adobe liegt.
+Senden Sie ein Ticket in [Zendesk](mailto:tve-support@adobe.com) , um Ihr Unternehmen und Ihre Anwendungen in der Überwachung der Parallelität zu registrieren. Adobe weist jeder Entität eine Anwendungs-ID zu. In diesem Handbuch verwenden wir zwei Referenzanwendungen mit den IDs **demo-app** und **demo-app-2**, die sich unter dem Mandanten-Adobe befinden.
 
 
 ## Anwendungsbeispiele {#api-use-case}
@@ -31,12 +31,12 @@ Der erste Schritt beim Testen eines Flusses mit Swagger besteht darin, die Anwen
 
 ![](assets/setting-app-id.png)
 
-Danach drücken wir **Erkunden** , um die ID festzulegen, die im Autorisierungs-Header für alle Aufrufe der REST-API verwendet wird.  Bei jedem API-Aufruf wird erwartet, dass die Anwendungs-ID über eine einfache HTTP-Authentifizierung übergeben wird. Der Benutzername ist die Anwendungs-ID und das Kennwort ist leer.
+Danach drücken wir **Explore** , um die ID festzulegen, die im Autorisierungs-Header für alle Aufrufe an die REST-API verwendet wird.  Bei jedem API-Aufruf wird erwartet, dass die Anwendungs-ID über eine einfache HTTP-Authentifizierung übergeben wird. Der Benutzername ist die Anwendungs-ID und das Kennwort ist leer.
 
 
 ### Erste Anwendung {#first-app-use-cases}
 
-Anwendung mit ID **demo-app** wurde vom Adobe-Team eine Richtlinie mit einer Regel zugewiesen, die die Anzahl der gleichzeitigen Streams auf 3 beschränkt. Eine Richtlinie wird einer bestimmten Anwendung basierend auf der in Zendesk gesendeten Anfrage zugewiesen.
+Die Anwendung mit der ID **demo-app** wurde vom Adobe-Team einer Richtlinie zugewiesen, die die Anzahl der gleichzeitigen Streams auf 3 begrenzt. Eine Richtlinie wird einer bestimmten Anwendung basierend auf der in Zendesk gesendeten Anfrage zugewiesen.
 
 
 #### Abrufen von Metadaten {#retrieve-metadata-use-case}
@@ -45,11 +45,11 @@ Der erste Aufruf, den wir durchführen, erfolgt für die Metadatenressource, um 
 
 ![](assets/retrieving-metadata.png)
 
-Nach dem Drücken von &quot;Probieren Sie es aus&quot; für die Anwendung mit ID **demo-app** erhalten wir folgendes Ergebnis:
+Nach dem Drücken von &quot;Testen Sie es aus&quot;, erhalten wir für die Anwendung mit der ID **demo-app** folgendes Ergebnis:
 
 ![](assets/empty-metadata-call.png)
 
-Wie wir im Antworttextfeld sehen können, ist die Liste der Metadatenattribute leer. Das bedeutet, dass die für das Design erforderlichen Attribute ausreichen, um die dieser Anwendung zugewiesene 3-Streams-Richtlinie zu bewerten. Siehe auch [Dokumentation zu Standard-Metadatenfeldern](/help/concurrency-monitoring/standard-metadata-attributes.md). Nach diesem Aufruf können wir eine neue Sitzung für die Ressource Sitzungs-REST erstellen.
+Wie wir im Antworttextfeld sehen können, ist die Liste der Metadatenattribute leer. Das bedeutet, dass die für das Design erforderlichen Attribute ausreichen, um die dieser Anwendung zugewiesene 3-Streams-Richtlinie zu bewerten. Siehe auch die Dokumentation zu [Standard-Metadatenfeldern](/help/concurrency-monitoring/standard-metadata-attributes.md) . Nach diesem Aufruf können wir eine neue Sitzung für die Ressource Sitzungs-REST erstellen.
 
 
 #### Sitzungsinitialisierung {#session-initial}
@@ -60,7 +60,7 @@ Der Sitzungsinitialisierungsaufruf wird von einer Anwendung ausgeführt, nachdem
 
 Es ist nicht erforderlich, beim ersten Aufruf einen Terminierungscode anzugeben, da wir keine anderen aktiven Streams haben. Und kein Metadatenattribut, da keines vom Aufruf &quot;Retrieving Metadata&quot;zurückgegeben wurde.
 
-Die **subject** und **idp** -Parameter erforderlich sind, werden sie als URI-Pfad-Variablen angegeben. Sie können die **subject** und **idp** Parameter, indem Sie für die **mvpd** und **UpstreamUserID** Metadatenfelder aus der Adobe Pass-Authentifizierung. Siehe auch [Übersicht über Metadaten-APIs](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=en#). In diesem Beispiel geben wir den Wert &quot;12345&quot;als Betreff und &quot;adobe&quot;als idp an.
+Die Parameter **subject** und **idp** sind obligatorisch. Sie werden als URI-Pfadvariablen angegeben. Sie können die Parameter **subject** und **idp** abrufen, indem Sie einen Aufruf für die Metadatenfelder **mvpd** und **UpstreamUserID** aus der Adobe Pass-Authentifizierung durchführen. Siehe auch [Überblick über Metadaten-APIs](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=en#). In diesem Beispiel geben wir den Wert &quot;12345&quot;als Betreff und &quot;adobe&quot;als idp an.
 
 
 ![](assets/session-init-params-frstapp.png)
@@ -71,11 +71,11 @@ Rufen Sie die Sitzungsinitialisierung auf. Sie erhalten die folgende Antwort:
 ![](assets/session-init-result-first-app.png)
 
 
-Alle benötigten Daten sind in den Antwortheadern enthalten. Die **Standort** -Header stellt die ID der neu erstellten Sitzung dar und die **Datum** und **Läuft ab** -Header stellen die Werte dar, die verwendet werden, um Ihre Anwendung so zu planen, dass sie den nächsten Heartbeat erstellt, damit die Sitzung fortgesetzt wird.
+Alle benötigten Daten sind in den Antwortheadern enthalten. Die Kopfzeile **Position** stellt die ID der neu erstellten Sitzung dar und die Kopfzeilen **Datum** und **Ablauf** stellen die Werte dar, die verwendet werden, um Ihre Anwendung für den nächsten Heartbeat zu planen, damit die Sitzung fortgesetzt wird.
 
 #### Heartbeat {#heartbeat}
 
-Führen Sie einen Heartbeat-Aufruf durch. Stellen Sie die **session id** im Sitzungsinitialisierungsaufruf abgerufen wurde, zusammen mit dem **subject** und **idp** verwendete Parameter.
+Führen Sie einen Heartbeat-Aufruf durch. Geben Sie die **Sitzungs-ID** an, die Sie im Sitzungsinitialisierungsaufruf erhalten haben, zusammen mit den verwendeten Parametern **Betreff** und **idp** .
 
 ![](assets/heartbeat.png)
 
@@ -84,7 +84,7 @@ Wenn die Sitzung weiterhin gültig ist (sie nicht abgelaufen ist oder manuell ge
 
 ![](assets/heartbeat-succesfull-result.png)
 
-Wie im ersten Fall werden wir die **Datum** und **Läuft ab** Header, um einen weiteren Heartbeat für diese bestimmte Sitzung zu planen. Wenn die Sitzung nicht mehr gültig ist, schlägt dieser Aufruf mit einem 410 GONE HTTP Status-Code fehl.
+Wie im ersten Fall verwenden wir die Header **Datum** und **Läuft ab** , um einen weiteren Heartbeat für diese bestimmte Sitzung zu planen. Wenn die Sitzung nicht mehr gültig ist, schlägt dieser Aufruf mit einem 410 GONE HTTP Status-Code fehl.
 
 Sie können die Option &quot;Stream lebendig halten&quot;in der Swagger-Benutzeroberfläche verwenden, um automatische Heartbeats für eine bestimmte Sitzung auszuführen. So können Sie eine Regel testen, ohne sich Gedanken über die Vorlage machen zu müssen, die für rechtzeitige Sitzungs-Heartbeats erforderlich ist. Diese Schaltfläche befindet sich auf der Registerkarte Swagger Heartbeat neben der Schaltfläche &quot;Testen Sie es aus&quot;. Um einen automatischen Heartbeat für alle erstellten Sitzungen festzulegen, müssen Sie diese für jede Sitzung in einer separaten Swagger-Benutzeroberfläche planen lassen, die in einer Webbrowser-Registerkarte geöffnet wird.
 
@@ -103,7 +103,7 @@ Verwenden Sie dieselben Parameter für den -Aufruf wie für den Sitzungs-Heartbe
 
 #### Abrufen aller laufenden Streams {#get-all-running-streams}
 
-Dieser Endpunkt bietet alle derzeit ausgeführten Sitzungen für einen bestimmten Mandanten in allen seinen Anwendungen. Verwendung **subject** und **idp** Parameter für den Aufruf:
+Dieser Endpunkt bietet alle derzeit ausgeführten Sitzungen für einen bestimmten Mandanten in allen seinen Anwendungen. Verwenden Sie die Parameter **subject** und **idp** für den Aufruf:
 
 ![](assets/get-all-running-streams-parameters.png)
 
@@ -111,13 +111,13 @@ Wenn Sie den Aufruf vornehmen, erhalten Sie die folgende Antwort:
 
 ![](assets/get-all-running-streams-success.png)
 
-Bitte beachten Sie Folgendes: **Läuft ab** -Kopfzeile. Dies ist der Zeitpunkt, zu dem die erste Sitzung abläuft, sofern kein Heartbeat gesendet wird. Andere Streams haben den Wert 0, da für diesen Benutzer keine anderen Streams in den Anwendungen anderer Mandanten ausgeführt werden.
+Beachten Sie die Kopfzeile **Läuft ab** . Dies ist der Zeitpunkt, zu dem die erste Sitzung abläuft, sofern kein Heartbeat gesendet wird. Andere Streams haben den Wert 0, da für diesen Benutzer keine anderen Streams in den Anwendungen anderer Mandanten ausgeführt werden.
 Das Metadatenfeld wird mit allen Metadaten gefüllt, die beim Start der Sitzung gesendet wurden. Wir filtern sie nicht, Sie erhalten alles, was Sie geschickt haben.
 Wenn es keine laufenden Sitzungen für einen bestimmten Benutzer gibt, wenn Sie den Aufruf ausführen, erhalten Sie diese Antwort:
 
 ![](assets/get-all-running-streams-empty.png)
 
-Beachten Sie außerdem, dass in diesem Fall die **Läuft ab** -Kopfzeile nicht vorhanden ist.
+Beachten Sie außerdem, dass in diesem Fall die Kopfzeile **Läuft ab** nicht vorhanden ist.
 
 #### Die Richtlinie durchbrechen {#breaking-policy-app-first}
 
@@ -127,9 +127,9 @@ Um das Verhalten unserer Anwendung zu simulieren, wenn die ihr zugewiesene 3-Str
 ![](assets/breaking-policy-frstapp.png)
 
 
-Wir erhalten eine 409 CONFLICT-Antwort zusammen mit einem Auswertungsergebnis-Objekt in der Payload. Eine vollständige Beschreibung des Auswertungsergebnisses finden Sie im [Swagger-API-Spezifikation](http://docs.adobeptime.io/cm-api-v2/#evaluation-result).
+Wir erhalten eine 409 CONFLICT-Antwort zusammen mit einem Auswertungsergebnis-Objekt in der Payload. Lesen Sie eine vollständige Beschreibung des Auswertungsergebnisses in der [Swagger API-Spezifikation](http://docs.adobeptime.io/cm-api-v2/#evaluation-result).
 
-Die Anwendung kann die Informationen aus dem Bewertungsergebnis verwenden, um dem Benutzer beim Anhalten des Videos eine bestimmte Nachricht anzuzeigen und bei Bedarf weitere Aktionen durchzuführen. Ein Anwendungsfall kann sein, andere vorhandene Streams zu stoppen, um einen neuen zu starten. Dies geschieht mithilfe der **terminationCode** Wert, der in **Konflikte** -Feld für ein bestimmtes in Konflikt stehendes Attribut. Der Wert wird als HTTP-Header X-Terminate im Aufruf für eine neue Sitzungsinitialisierung bereitgestellt.
+Die Anwendung kann die Informationen aus dem Bewertungsergebnis verwenden, um dem Benutzer beim Anhalten des Videos eine bestimmte Nachricht anzuzeigen und bei Bedarf weitere Aktionen durchzuführen. Ein Anwendungsfall kann sein, andere vorhandene Streams zu stoppen, um einen neuen zu starten. Dazu wird der Wert **terminierungscode** im Feld **conflict** für ein bestimmtes in Konflikt befindliches Attribut verwendet. Der Wert wird als HTTP-Header X-Terminate im Aufruf für eine neue Sitzungsinitialisierung bereitgestellt.
 
 ![](assets/session-init-termination-code.png)
 
@@ -139,7 +139,7 @@ Wenn Sie bei der Sitzungsinitialisierung einen oder mehrere Terminierungscodes a
 
 ### Zweite Anwendung {#second-application}
 
-Die andere Beispielanwendung, die wir verwenden werden, ist die mit ID **demo-app-2**. Diesem wurde eine Richtlinie mit einer Regel zugewiesen, die die Anzahl der für einen Kanal verfügbaren Streams auf maximal 2 begrenzt.   Sie müssen die Kanalvariable angeben, um diese Richtlinie bewerten zu können.
+Die andere Beispielanwendung, die wir verwenden werden, ist die mit der ID **demo-app-2**. Diesem wurde eine Richtlinie mit einer Regel zugewiesen, die die Anzahl der für einen Kanal verfügbaren Streams auf maximal 2 begrenzt.   Sie müssen die Kanalvariable angeben, um diese Richtlinie bewerten zu können.
 
 #### Abrufen von Metadaten {#retrieving-metadata}
 
@@ -147,12 +147,12 @@ Legen Sie die neue Anwendungs-ID in der oberen rechten Ecke der Seite fest und r
 
 ![](assets/non-empty-metadata-secndapp.png)
 
-Diesmal ist der Antworttext keine leere Liste mehr, wie im Beispiel der ersten Anwendung. Der Dienst für die Überwachung der Parallelität gibt im Antworttext an, dass die **channel** Metadaten sind bei der Sitzungsinitialisierung erforderlich, um die Richtlinie zu bewerten.
+Diesmal ist der Antworttext keine leere Liste mehr, wie im Beispiel der ersten Anwendung. Jetzt gibt der Dienst für die Überwachung der Parallelität im Antworttext an, dass die **channel** -Metadaten bei der Sitzungsinitialisierung erforderlich sind, um die Richtlinie zu bewerten.
 
-Wenn Sie einen Aufruf vornehmen, ohne einen Wert für die **channel** -Parameter erhalten Sie Folgendes:
+Wenn Sie einen Aufruf vornehmen, ohne einen Wert für den Parameter **channel** anzugeben, erhalten Sie Folgendes:
 
 * Antwort-Code - 400 BAD-ANFRAGE
-* Response Body - eine Payload des Bewertungsergebnisses, die im Abschnitt **Verpflichtungen** in das Feld ein, was in der Anfrage zur Sitzungsinitialisierung erwartet wird, damit der Vorgang erfolgreich ausgeführt werden kann.
+* Response Body - eine Payload des Bewertungsergebnisses, die im Feld **Obligationen** beschreibt, was in der Anfrage zur Sitzungsinitialisierung erwartet wird, damit der Vorgang erfolgreich ausgeführt werden kann.
 
 ![](assets/metadata-request-secndapp.png)
 

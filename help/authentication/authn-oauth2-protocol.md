@@ -4,7 +4,7 @@ description: Authentifizierung mit dem OAuth 2.0-Protokoll
 exl-id: 0c1f04fe-51dc-4b4d-88e7-66e8f4609e02
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1074'
+source-wordcount: '1088'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Das Protokoll bietet außerdem mehr Flexibilität in Bezug auf die Daten, die ve
 
 Um die Authentifizierung mit OAuth 2.0 zu unterstützen, muss ein MVPD die folgenden Voraussetzungen erfüllen:
 
-Zuallererst muss der MVPD sicherstellen, dass er die [Autorisierungs-Code-Förderung](https://oauthlib.readthedocs.io/en/latest/oauth2/grants/authcode.html) Fluss.
+Zuallererst muss der MVPD sicherstellen, dass er den Fluss [Autorisierungscode Grant](https://oauthlib.readthedocs.io/en/latest/oauth2/grants/authcode.html) unterstützt.
 
 Nach Bestätigung, dass der Fluss unterstützt wird, muss uns der MVPD die folgenden Informationen zur Verfügung stellen:
 
@@ -50,14 +50,14 @@ Nach Bestätigung, dass der Fluss unterstützt wird, muss uns der MVPD die folge
    * Das Aktualisierungs-Token muss stabil sein (es darf sich nicht bei jeder Anforderung eines neuen Zugriffstokens ändern
    * MVPD muss für jedes Aktualisierungstoken mehrere aktive Zugriffstoken zulassen
    * dieser Endpunkt tauscht auch ein Aktualisierungs-Token gegen ein Zugriffstoken
-* benötigen wir eine **Endpunkt für Benutzerprofil**
+* benötigen wir einen **Endpunkt für das Benutzerprofil**
    * Dieser Endpunkt stellt die userID bereit, die für ein Konto eindeutig sein muss und keine personenbezogenen Informationen enthalten sollte.
-* die **/logout** Endpunkt (optional)
+* den Endpunkt **/logout** (optional)
    * Die Adobe Pass-Authentifizierung leitet zu diesem Endpunkt weiter, stellt dem MVPD einen Weiterleitungs-URI bereit. An diesem Endpunkt kann das MVPD die Cookies auf dem Clientcomputer löschen oder eine beliebige Logik für die Abmeldung anwenden.
 * Es wird dringend empfohlen, die Unterstützung autorisierter Clients zu nutzen (Client-Apps, die keine Benutzerautorisierungsseite Trigger haben)
 * Außerdem benötigen wir:
-   * **clientID** und **Client-Geheimnis** für die Integrationskonfigurationen
-   * **Live-Zeit** (TTL)-Werte für das Aktualisierungs-Token und Zugriffstoken
+   * **clientID** und **client secret** für die Integrationskonfigurationen
+   * **Time to Live** (TTL)-Werte für das Aktualisierungs-Token und das Zugriffstoken
    * Wir können dem MVPD einen Autorisierungs-Callback- und Abmelde-Callback-URI bereitstellen. Bei Bedarf können wir MVPDs auch eine Liste von IPs zur Verfügung stellen, die in Ihren Firewall-Einstellungen auf die Whitelist gesetzt werden sollen.
 
 
@@ -67,7 +67,7 @@ Im Authentifizierungsfluss kommuniziert die Adobe Pass-Authentifizierung mit dem
 
 
 
-![Diagramm zur Anzeige des Authentifizierungsflusses in der Adobe-Authentifizierung, die mit dem MVPD über das in der Konfiguration ausgewählte Protokoll kommuniziert.](assets/authn-flow.png)
+![Diagramm zum Anzeigen des Authentifizierungsflusses bei der Adobe-Authentifizierung, die mit dem MVPD über das in der Konfiguration ausgewählte Protokoll kommuniziert.](assets/authn-flow.png)
 
 **Abbildung 1: OAuth 2.0-Authentifizierungsfluss**
 
@@ -102,7 +102,7 @@ Ein typischer Autorisierungsfluss führt einen Austausch des im AuthNToken gespe
 
 Die Migration von Integrationen von SAML auf OAuth 2.0 wird von Adobe und dem MVPD durchgeführt. Es sind keine technischen Änderungen auf der Seite des Programmierers erforderlich, obwohl der Programmierer das Co-Branding auf der MVPD-Anmeldeseite überprüfen/testen möchte. Aus Sicht des MVPD sind die Endpunkte und andere Informationen erforderlich, die in Oauth 2.0-Anforderungen angefordert werden.
 
-Um **Bewahren von SSO**, werden die Benutzer, die bereits über SAML ein Authentifizierungstoken erhalten haben, weiterhin als authentifiziert betrachtet und ihre Anfragen werden über die alte SAML-Integration weitergeleitet.
+Damit **SSO** beibehalten wird, werden Benutzer, die bereits über SAML ein Authentifizierungstoken erhalten haben, weiterhin als authentifiziert betrachtet und ihre Anforderungen werden über die alte SAML-Integration weitergeleitet.
 
 Aus technischer Sicht:
 

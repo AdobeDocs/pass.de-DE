@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
-Die offizielle Dokumentation zu den Adobe-Umgebungen ist verfügbar. [Einrichten der Umgebung und Testen in der Pre-qual-Phase](/help/authentication/setting-up-your-environment-and-testing-in-prequal.md):
+Die offizielle Dokumentation, die die Adobe-Umgebungen beschreibt, finden Sie unter [Einrichten der Umgebung und Testen in Pre-qual](/help/authentication/setting-up-your-environment-and-testing-in-prequal.md):
 
 Die Adobe-Umgebungen, zusammengefasst in wenigen Worten:
 
@@ -32,6 +32,6 @@ Jede Umgebung hat zwei Profile: **staging** und **production**.
 
 Der Grund für die Verwendung der beiden Profile besteht darin, dass wir im Testprofil neue Partner für die Live-Schaltung vorbereiten und das System entweder mit dem bevorstehenden Build (Vorqualifikation) oder mit der Version 1 (stabiler) testen möchten.
 
-Wenn ein Partner die neue Version testen möchte, müssen einige weitere Schritte durchgeführt werden. Siehe [Einrichten der Umgebung und Testen in der Pre-qual-Phase](/help/authentication/setting-up-your-environment-and-testing-in-prequal.md).
+Wenn ein Partner die neue Version testen möchte, müssen einige weitere Schritte durchgeführt werden. Siehe [Einrichten Ihrer Umgebung und Testen in Pre-qual](/help/authentication/setting-up-your-environment-and-testing-in-prequal.md).
 
 Wenn Sie die obigen Schritte ausführen, ist sichergestellt, dass die bevorstehende Version in der Vorqualifikationsumgebung getestet wird.

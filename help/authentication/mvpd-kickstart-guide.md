@@ -4,7 +4,7 @@ description: MVPD Direct Integration Plan
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1067'
+source-wordcount: '1071'
 ht-degree: 0%
 
 ---
@@ -21,13 +21,13 @@ Willkommen bei der Adobe Pass-Authentifizierung für TV überall.  Wir freuen un
 
 >[!NOTE]
 >
->Dies ist die Schnellstartanleitung für Multichannel Video Programming Distributors (MVPDs). Wenn Sie ein Programmierer sind (Inhaltsanbieter), lesen Sie den Abschnitt [Schnellstartanleitung für Programmierer](/help/authentication/programmer-kickstart-guide.md).
+>Dies ist die Schnellstartanleitung für Multichannel Video Programming Distributors (MVPDs). Wenn Sie ein Programmierer (Content Provider) sind, lesen Sie den Schnellstartanleitung für [Programmierer](/help/authentication/programmer-kickstart-guide.md).
 
-Der Support ist jederzeit über das Ticketsystem Adobe Pass-Authentifizierung auf Zendesk verfügbar. Hier finden Sie auch Beispiele, Dokumentationen und Videoschulungen zu unseren Prozessen. Zur Verwendung [Zendesk](https://adobeprimetime.zendesk.com/)müssen Sie sich registrieren und ein Konto unter https://tve.zendesk.com/home erstellen. Es gibt keine Beschränkung für die Anzahl der Benutzer, die Sie registrieren können und die Kommentare zu einem ausgefüllten Ticket sehen oder posten können. Alle Support-Fragen sollten an: tve-support unter adobe.com gerichtet werden.
+Der Support ist jederzeit über das Ticketsystem Adobe Pass-Authentifizierung auf Zendesk verfügbar. Hier finden Sie auch Beispiele, Dokumentationen und Videoschulungen zu unseren Prozessen. Um [Zendesk](https://adobeprimetime.zendesk.com/) verwenden zu können, müssen Sie sich registrieren und ein Konto unter https://tve.zendesk.com/home erstellen. Es gibt keine Beschränkung für die Anzahl der Benutzer, die Sie registrieren können und die Kommentare zu einem ausgefüllten Ticket sehen oder posten können. Alle Support-Fragen sollten an: tve-support unter adobe.com gerichtet werden.
 
 **Teamkontakte**:
 
-**Support** - Bei allen Fragen, Vorfällen oder Funktionsanfragen **tve-support@adobe.com**.
+**Support** - Für alle Fragen, Vorfälle oder Funktionsanfragen **tve-support@adobe.com**.
 
 ## 1. Kick-Off-Sitzungen {#kickoff-meetings}
 
@@ -37,14 +37,14 @@ Diese Treffen sind der Beginn technischer Diskussionen zwischen der Adobe und de
 
 Adobe richtet einen wöchentlichen Statusaufruf ein, um den Gesamtplan, die Schritte, den Zeitplan und die Implementierungsdetails der Integration zu besprechen und zu verfolgen. In dieser Phase überprüft Adobe die Spezifikationen des MVPD. Das Ergebnis sollte eine spezifische Seite sein, auf der alle vom MVPD benötigten Funktionen beschrieben werden. Der MVPD sendet der Adobe ein Spezifikationsdokument, in dem die Authentifizierungs-/Autorisierungsimplementierung des MVPD detailliert beschrieben wird.
 
-Zu klärende Punkte finden Sie unter [MVPD-Integrationsfunktionen](/help/authentication/mvpd-integr-features.md).
+Elemente zur Klarstellung finden Sie unter [MVPD-Integrationsfunktionen](/help/authentication/mvpd-integr-features.md).
 
 Es gibt verschiedene Einstellungen, die zu diesem Zeitpunkt detailliert beschrieben werden müssen:
 
-* **Logo-URL von MVPD** - Dies ist eine Datei mit den folgenden Abmessungen: 112 x 33 Pixel. Das Logo wird von Programmierern auf ihren Websites angezeigt, wenn der Benutzer auf die Schaltfläche &quot;Anmelden&quot;klickt, um seinen Pay TV-Anbieter auszuwählen.
-* **TTL-Werte (Time-to-Live)** - Die TTL wird normalerweise vom MVPD während des Authentifizierungs-/Autorisierungsprozesses festgelegt. Adobe kann diese TTL-Werte jedoch außer Kraft setzen und je nach Vereinbarung des Programmierers und des MVPD unterschiedliche Werte bereitstellen.
-* **Anzeigename** - Dies wird von Programmierern auf ihren Websites angezeigt, wenn der Benutzer auf die Schaltfläche &quot;Anmelden&quot;klickt, um seinen Pay TV-Anbieter auszuwählen.
-* **Testen von Anmeldeinformationen** - Beide Profile (Staging und Produktion) sollten über eine Liste mit Testberechtigungen verfügen.
+* **Logo-URL des MVPD** - Dies ist eine Datei mit den folgenden Abmessungen: 112 x 33 Pixel. Das Logo wird von Programmierern auf ihren Websites angezeigt, wenn der Benutzer auf die Schaltfläche &quot;Anmelden&quot;klickt, um seinen Pay TV-Anbieter auszuwählen.
+* **TTL (Time-to-Live)-Werte** - Die TTL wird normalerweise vom MVPD während des Authentifizierungs-/Autorisierungsprozesses festgelegt. Adobe kann diese TTL-Werte jedoch außer Kraft setzen und je nach Vereinbarung des Programmierers und des MVPD unterschiedliche Werte bereitstellen.
+* **Anzeigename** - Dies wird von Programmierern auf ihren Sites angezeigt, wenn der Benutzer auf die Schaltfläche &quot;Anmelden&quot;klickt, um seinen Pay TV-Anbieter auszuwählen.
+* **Testberechtigungen** - Beide Profile (Staging und Produktion) sollten über eine Liste mit Testberechtigungen verfügen.
 
 >[!IMPORTANT]
 >
@@ -59,8 +59,8 @@ Es gibt verschiedene Einstellungen, die zu diesem Zeitpunkt detailliert beschrie
 Beide Seiten müssen die Metadaten für alle beteiligten Umgebungen (Produktion, Staging usw.) austauschen.
 
 * **Adobe**
-   * Für die Staging-Umgebung können Adobe-SP-Metadaten abgerufen werden von: [Authentifizierungs-Staging-sp-Metadaten](https://sp.auth-staging.adobe.com/sp/metadata)
-   * Für die Produktionsumgebung können Adobe-SP-Metadaten abgerufen werden von: [Authentifizierungs-Produktions-sp-Metadaten](https://sp.auth.adobe.com/sp/metadata)
+   * Für die Staging-Umgebung können Adobe-SP-Metadaten abgerufen werden von: [Authentifizierungsstaging sp metadata](https://sp.auth-staging.adobe.com/sp/metadata)
+   * Für die Produktionsumgebung können Adobe-Metadaten abgerufen werden von: [Authentifizierungs-Produktionsmetadaten sp](https://sp.auth.adobe.com/sp/metadata)
 
 * **MVPD**
    * Hinzufügen von Metadaten (Staging/Produktion).
@@ -85,10 +85,10 @@ Die Dauer der Entwicklungsphase wird nach Überprüfung der Spezifikationen und 
 
 Adobe bietet verschiedene Umgebungen für verschiedene Phasen des Entwicklungsprozesses:
 
-* **Vorqualifizierung** (PRE-QUAL): Die Umgebung PRE-QUAL enthält den Kandidaten für die nächste Version. Adobe integriert zunächst neue Partner in diese Umgebung, bevor die Integration in die Versionsumgebung aktualisiert wird. Partner haben zwei Wochen Zeit, um die PRE-QUAL-Umgebung zu testen, und müssen explizit Änderungen an der PRE-QUAL-Konfiguration anfordern (kontaktieren Sie Ihren Adobe-Support-Mitarbeiter, um Einzelheiten zum Änderungsanfrageprozess zu erhalten). Fehlerkorrektur - In dieser Umgebung werden neue Trigger-Implementierungen behoben.
-* **Version** (RELEASE): Der aktuelle Produktionsaufbau wird hier in einer Live-Umgebung bereitgestellt.
+* **Vorqualifizierung** (PRE-QUAL): Die Umgebung PRE-QUAL enthält den nächsten Release-Kandidaten. Adobe integriert zunächst neue Partner in diese Umgebung, bevor die Integration in die Versionsumgebung aktualisiert wird. Partner haben zwei Wochen Zeit, um die PRE-QUAL-Umgebung zu testen, und müssen explizit Änderungen an der PRE-QUAL-Konfiguration anfordern (kontaktieren Sie Ihren Adobe-Support-Mitarbeiter, um Einzelheiten zum Änderungsanfrageprozess zu erhalten). Fehlerkorrektur - In dieser Umgebung werden neue Trigger-Implementierungen behoben.
+* **Version** (VERSION): Der aktuelle Adobe-Produktionsaufbau wird hier in einer Live-Umgebung bereitgestellt.
 
-Weitere Informationen zur Verwendung von Adobe-Umgebungen finden Sie unter [Grundlagen zu Adobe-Umgebungen](/help/authentication/understanding-the-adobe-environments.md)
+Weitere Informationen zur Verwendung von Adobe-Umgebungen finden Sie unter [Grundlegendes zu den Adobe-Umgebungen](/help/authentication/understanding-the-adobe-environments.md)
 
 ## 7. Staging-Bereitstellung {#stag-env}
 

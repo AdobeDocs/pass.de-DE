@@ -4,7 +4,7 @@ description: iOS/tvOS-Cookbook
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
 source-git-commit: 2ccfa8e018b854a359881eab193c1414103eb903
 workflow-type: tm+mt
-source-wordcount: '2404'
+source-wordcount: '2402'
 ht-degree: 0%
 
 ---
@@ -44,70 +44,71 @@ Die Netzwerkaktivität von AccessEnabler erfolgt in einem eigenen Thread, sodass
 
 ## Konfigurieren des Experience Cloud ID-Diensts (Besucher-ID) {#visitorIDSetup}
 
-Konfigurieren der [Experience Cloud-ID](https://experienceleague.adobe.com/docs/id-service/using/home.html) -Wert ist wichtig aus der [!DNL Analytics] aus. Einmal `visitorID` festgelegt ist, sendet das SDK diese Informationen zusammen mit jedem Netzwerkaufruf und dem [!DNL Adobe Pass] Der Authentifizierungsserver erfasst diese Informationen. Sie können die Analysen des Adobe Pass-Authentifizierungsdienstes mit allen anderen Analyseberichten korrelieren, die Sie möglicherweise aus anderen Anwendungen oder Websites haben. Informationen zum Einrichten der visitorID finden Sie unter [here](#setOptions).
+Die Konfiguration des Werts [Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html) ist aus Sicht von [!DNL Analytics] wichtig. Sobald ein `visitorID` -Wert festgelegt ist, sendet das SDK diese Informationen zusammen mit jedem Netzwerkaufruf und der [!DNL Adobe Pass]-Authentifizierungsserver erfasst diese Informationen. Sie können die Analysen des Adobe Pass-Authentifizierungsdienstes mit allen anderen Analyseberichten korrelieren, die Sie möglicherweise aus anderen Anwendungen oder Websites haben. Informationen zum Einrichten der visitorID finden Sie [hier](#setOptions).
 
 ## Berechtigungsflüsse {#entitlement}
 
-A.  [Voraussetzungen](#prereqs) </br>
-B.  [Startup-Fluss](#startup_flow) </br>
-C.  [Authentifizierungsfluss ohne Apple SSO](#authn_flow_wo_applesso)  </br>
-D.  [Authentifizierungsfluss mit Apple SSO in iOS](#authn_flow_with_applesso) </br>
-E.  [Authentifizierungsfluss mit Apple SSO auf tvOS](#authn_flow_with_applesso_tvOS) </br>
-F.  [Autorisierungsfluss](#authz_flow) </br>
-G.  [Medienfluss anzeigen](#media_flow) </br>
-H.  [Abmeldefluss ohne Apple SSO](#logout_flow_wo_AppleSSO) </br>
-I.  [Abmeldefluss mit Apple SSO](#logout_flow_with_AppleSSO) </br>
+A. [Voraussetzungen](#prereqs) </br>
+B. [Startup Flow](#startup_flow) </br>
+C. [Authentifizierungsfluss ohne Apple SSO](#authn_flow_wo_applesso) </br>
+D. [Authentifizierungsfluss mit Apple SSO auf iOS](#authn_flow_with_applesso) </br>
+E. [Authentifizierungsfluss mit Apple SSO auf tvOS](#authn_flow_with_applesso_tvOS) </br>
+F. [Autorisierungsfluss](#authz_flow) </br>
+G. [Medienfluss anzeigen](#media_flow) </br>
+H. [Abmeldefluss ohne Apple SSO](#logout_flow_wo_AppleSSO) </br>
+I. [Abmeldefluss mit Apple SSO](#logout_flow_with_AppleSSO) </br>
 
 
 ### A. Voraussetzungen {#prereqs}
 
 1. Erstellen Sie Ihre Callback-Funktionen:
    * `setRequestorComplete()` </br>
-   * Ausgelöst von [setRequestor()](#$setReq), gibt Erfolg oder Fehler zurück. </br>
+   * Wird durch [setRequestor()](#$setReq) ausgelöst und gibt Erfolg oder Fehler zurück. </br>
    * &quot;Erfolg&quot;bedeutet, dass Sie mit Berechtigungsaufrufen fortfahren können.
 
    * [`displayProviderDialog(mvpds)`](#$dispProvDialog) </br>
-      * Ausgelöst von [`getAuthentication()`](#$getAuthN) nur dann, wenn der Benutzer keinen Anbieter (MVPD) ausgewählt hat und noch nicht authentifiziert ist. </br>
-      * Die `mvpds` -Parameter ist ein Array von Anbietern, die dem Benutzer zur Verfügung stehen.
+      * Wird von [`getAuthentication()`](#$getAuthN) nur ausgelöst, wenn der Benutzer keinen Anbieter (MVPD) ausgewählt hat und noch nicht authentifiziert ist. </br>
+      * Der Parameter `mvpds` ist ein Array von Anbietern, die dem Benutzer zur Verfügung stehen.
 
    * `setAuthenticationStatus(status, errorcode)` </br>
-      * Ausgelöst von `checkAuthentication()` jedes Mal. </br>
-      * Ausgelöst von [`getAuthentication()`](#$getAuthN) nur dann, wenn der Benutzer bereits authentifiziert ist und einen Provider ausgewählt hat. </br>
+      * Wird jedes Mal von `checkAuthentication()` ausgelöst. </br>
+      * Wird nur von [`getAuthentication()`](#$getAuthN) ausgelöst, wenn der Benutzer bereits authentifiziert ist und einen Provider ausgewählt hat. </br>
       * Status zurückgegeben ist erfolgreich oder fehlgeschlagen, der Fehlertyp wird im Fehlercode beschrieben.
 
    * [`navigateToUrl(url)`](#$nav2url) </br>
-      * Ausgelöst von [`getAuthentication()`](#$getAuthN) nachdem der Benutzer einen MVPD ausgewählt hat. Die `url` liefert den Speicherort der Anmeldeseite des MVPD.
+      * Wird durch [`getAuthentication()`](#$getAuthN) ausgelöst, nachdem der Benutzer einen MVPD ausgewählt hat. Der Parameter `url` stellt den Speicherort der Anmeldeseite des MVPD bereit.
 
    * `sendTrackingData(event, data)` </br>
-      * Ausgelöst von `checkAuthentication()`, [`getAuthentication()`](#$getAuthN), `checkAuthorization()`, [`getAuthorization()`](#$getAuthZ), `setSelectedProvider()`.
-      * Die `event` -Parameter gibt an, welches Berechtigungsereignis aufgetreten ist; der `data` -Parameter ist eine Liste von Werten, die sich auf das Ereignis beziehen.
+      * Wird durch `checkAuthentication()`, [`getAuthentication()`](#$getAuthN), `checkAuthorization()`, [`getAuthorization()`](#$getAuthZ), `setSelectedProvider()` ausgelöst.
+      * Der Parameter `event` gibt an, welches Berechtigungsereignis aufgetreten ist. Der Parameter `data` ist eine Liste von Werten, die sich auf das Ereignis beziehen.
 
    * `setToken(token, resource)`
 
-      * Ausgelöst von [checkAuthorization()](#checkAuthZ) und [getAuthorization()](#$getAuthZ) nach erfolgreicher Autorisierung zum Anzeigen einer Ressource.
-      * Die `token` -Parameter ist das kurzlebige Medien-Token; die `resource` -Parameter ist der Inhalt, den der Benutzer anzeigen darf.
+      * Wird von [checkAuthorization()](#checkAuthZ) und [getAuthorization()](#$getAuthZ) nach einer erfolgreichen Autorisierung zum Anzeigen einer Ressource ausgelöst.
+      * Der Parameter `token` ist das kurzlebige Medien-Token. Der Parameter `resource` ist der Inhalt, den der Benutzer anzeigen darf.
 
    * `tokenRequestFailed(resource, code, description)` </br>
-      * Ausgelöst von [checkAuthorization()](#checkAuthZ) und [getAuthorization()](#$getAuthZ) nach einer nicht erfolgreichen Autorisierung.
-      * Die `resource` -Parameter ist der Inhalt, den der Benutzer anzuzeigen versucht hat; die `code` -Parameter ist der Fehlercode, der angibt, welcher Fehlertyp aufgetreten ist; der `description` -Parameter beschreibt den Fehler, der dem Fehlercode zugeordnet ist.
+      * Wird von [checkAuthorization()](#checkAuthZ) und [getAuthorization()](#$getAuthZ) nach einer nicht erfolgreichen Autorisierung ausgelöst.
+      * Der Parameter `resource` ist der Inhalt, den der Benutzer anzeigen wollte. Der Parameter `code` ist der Fehlercode, der angibt, welcher Fehlertyp aufgetreten ist. Der Parameter `description` beschreibt den Fehler, der mit dem Fehlercode verknüpft ist.
 
    * `selectedProvider(mvpd)` </br>
-      * Ausgelöst von [`getSelectedProvider()`](#getSelProv).
-      * Die `mvpd` liefert Informationen zum vom Benutzer ausgewählten Provider.
+      * Wird durch [`getSelectedProvider()`](#getSelProv) ausgelöst.
+      * Der Parameter `mvpd` enthält Informationen zum vom Benutzer ausgewählten Provider.
 
    * `setMetadataStatus(metadata, key, arguments)`
-      * Ausgelöst von `getMetadata().`
-      * Die `metadata` liefert die spezifischen Daten, die Sie angefordert haben; die `key` -Parameter ist der Schlüssel, der in der Variablen [getMetadata()](#getMeta) und die `arguments` ist dasselbe Wörterbuch, das an [getMetadata()](#getMeta).
+      * Wird durch `getMetadata().` ausgelöst
+      * Der Parameter `metadata` stellt die spezifischen Daten bereit, die Sie angefordert haben. Der Parameter `key` ist der Schlüssel, der in der Anforderung [getMetadata()](#getMeta) verwendet wird, und der Parameter `arguments` ist dasselbe Wörterbuch, das an [getMetadata()](#getMeta) übergeben wurde.
 
    * [`preauthorizedResources(authorizedResources]`](#preauthResources)
 
-      * Ausgelöst von [`checkPreauthorizedResources()`](#checkPreauth).
+      * Wird durch [`checkPreauthorizedResources()`](#checkPreauth) ausgelöst.
 
-      * Die `authorizedResources` -Parameter zeigt die Ressourcen an, die der Benutzer anzeigen darf.
+      * Der Parameter `authorizedResources` stellt die Ressourcen dar, die der Benutzer
+ist zur Ansicht berechtigt.
 
    * [`presentTvProviderDialog(viewController)`](#presentTvDialog)
 
-      * Ausgelöst von [getAuthentication()](#getAuthN) wenn der aktuelle Anfragende mindestens MVPD unterstützt, das SSO-Unterstützung hat.
+      * Wird von [getAuthentication()](#getAuthN) ausgelöst, wenn der aktuelle Anforderer mindestens MVPD unterstützt, das SSO-Unterstützung besitzt.
       * Der Parameter viewController ist das Apple SSO-Dialogfeld und muss auf dem Hauptansichtscontroller angezeigt werden.
 
    * [`dismissTvProviderDialog(viewController)`](#dismissTvDialog)
@@ -120,61 +121,63 @@ I.  [Abmeldefluss mit Apple SSO](#logout_flow_with_AppleSSO) </br>
 ### B. Startup Flow {#startup_flow}
 
 1. Starten Sie die Anwendung der obersten Ebene.</br>
-1. Adobe Pass-Authentifizierung initiieren </br>
+1. Adobe Pass-Authentifizierung starten </br>
 
-   a. Aufruf [`init`](#$init) , um eine einzelne Instanz von Adobe Pass Authentication AccessEnabler zu erstellen.
+   a. Rufen Sie [`init`](#$init) auf, um eine einzelne Instanz von Adobe Pass Authentication AccessEnabler zu erstellen.
    * **Abhängigkeit:** Native iOS/tvOS-Bibliothek für Adobe Pass-Authentifizierung (AccessEnabler)
 
-   b. Aufruf `setRequestor()` die Identität des Programmierers festzustellen; `requestorID` und (optional) ein Array von Adobe Pass-Authentifizierungsendpunkten. Für tvOS müssen Sie auch den öffentlichen Schlüssel und das Geheimnis angeben. Siehe [Clientlose Dokumentation](#create_dev) für Details.
+   b. Rufen Sie `setRequestor()` auf, um die Identität des Programmierers festzulegen. Geben Sie die `requestorID` des Programmierers und (optional) ein Array von Adobe Pass-Authentifizierungsendpunkten an. Für tvOS müssen Sie auch den öffentlichen Schlüssel und das Geheimnis angeben. Weitere Informationen finden Sie unter [Clientlose Dokumentation](#create_dev) .
 
-   * **Abhängigkeit:** Gültige Adobe Pass Authentication RequestID (wenden Sie sich an Ihren Adobe Pass Authentication Account Manager, um dies anzuordnen).
+   * **Abhängigkeit:** Gültige Adobe Pass Authentication RequestID (Work with your Adobe Pass Authentication Account)
+Manager, um dies anzuordnen).
 
    * **Trigger:**
-     [setRequestorComplete()](#$setReqComplete) Callback.
+     [setRequestComplete()](#$setReqComplete) -Rückruf.
 
    >[!NOTE]
    >
-   >Berechtigungsanfragen können erst abgeschlossen werden, wenn die Identität des Anfragenden vollständig ermittelt wurde. Dies bedeutet effektiv, dass [`setRequestor()`](#$setReq)  weiterhin ausgeführt wird, werden alle nachfolgenden Berechtigungsanfragen ausgeführt. Beispiel: [`checkAuthentication()`](#checkAuthN) blockiert werden.
+   >Berechtigungsanfragen können erst abgeschlossen werden, wenn die Identität des Anfragenden vollständig ermittelt wurde. Dies bedeutet effektiv, dass während [`setRequestor()`](#$setReq) noch ausgeführt wird, alle nachfolgenden Berechtigungsanfragen ausgeführt werden. Beispielsweise sind [`checkAuthentication()`](#checkAuthN) blockiert.
 
-   Sie haben zwei Implementierungsoptionen: Sobald die Identifizierungsinformationen des Anfragenden an den Backend-Server gesendet wurden, kann die UI-Anwendungsschicht einen der beiden folgenden Ansätze wählen: </br>
+   Sie haben zwei Implementierungsoptionen: Sobald die Identifizierungsinformationen des Anforderers an den Backend-Server gesendet wurden, kann die UI-Anwendungsschicht einen der beiden folgenden Ansätze wählen: </br>
 
-   1. Warten Sie auf die Auslösung der [`setRequestorComplete()`](#setReqComplete) callback (Teil des AccessEnabler -Delegates). Diese Option bietet die größte Sicherheit, dass [`setRequestor()`](#$setReq) abgeschlossen ist, daher wird dies für die meisten Implementierungen empfohlen.
+   1. Warten Sie auf die Auslösung des [`setRequestorComplete()`](#setReqComplete) -Rückrufs (Teil des AccessEnabler -Delegats). Diese Option bietet die höchste Sicherheit, dass [`setRequestor()`](#$setReq) abgeschlossen ist. Daher wird sie für die meisten Implementierungen empfohlen.
 
-   1. Fahren Sie fort, ohne auf die Aktivierung der [`setRequestorComplete()`](#setReqComplete) zurücksetzen und mit der Ausgabe von Berechtigungsanfragen beginnen. Diese Aufrufe (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) werden von der AccessEnabler-Bibliothek in die Warteschlange gestellt, die die tatsächlichen Netzwerkaufrufe nach der [`setRequestor()`](#$setReq). Diese Option kann gelegentlich unterbrochen werden, wenn beispielsweise die Netzwerkverbindung instabil ist.
+   1. Fahren Sie fort, ohne auf das Auslösen des [`setRequestorComplete()`](#setReqComplete) -Rückrufs zu warten, und beginnen Sie mit der Ausgabe von Berechtigungsanfragen. Diese Aufrufe (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) werden von der AccessEnabler-Bibliothek in die Warteschlange gestellt, die die tatsächlichen Netzwerkaufrufe nach dem [`setRequestor()`](#$setReq) durchführt. Diese Option kann gelegentlich unterbrochen werden, wenn beispielsweise die Netzwerkverbindung instabil ist.
 
-1. Aufruf `checkAuthentication()` um nach einer vorhandenen Authentifizierung zu suchen, ohne den vollständigen Authentifizierungsfluss zu starten.  Wenn dieser Aufruf erfolgreich ist, können Sie direkt zum Autorisierungsfluss übergehen. Ist dies nicht der Fall, fahren Sie mit dem Authentifizierungsfluss fort.
+1. Rufen Sie `checkAuthentication()` auf, um nach einer vorhandenen Authentifizierung zu suchen, ohne den vollständigen Authentifizierungsfluss zu starten.  Wenn dieser Aufruf erfolgreich ist, können Sie direkt zum Autorisierungsfluss übergehen. Ist dies nicht der Fall, fahren Sie mit dem Authentifizierungsfluss fort.
 
-   * **Abhängigkeit:** Ein erfolgreicher Aufruf an [setRequestor()](#$setReq) (Diese Abhängigkeit gilt auch für alle nachfolgenden Aufrufe).
+   * **Abhängigkeit:** Ein erfolgreicher Aufruf von [setRequestor()](#$setReq) (diese Abhängigkeit gilt auch für alle nachfolgenden Aufrufe).
 
-   * **Trigger:** [setAuthenticationStatus()](#$setAuthNStatus) Callback.
+   * **Trigger:** [setAuthenticationStatus()](#$setAuthNStatus) -Rückruf.
 
 
 ### C. Authentifizierungsfluss ohne Apple SSO {#authn_flow_wo_applesso}
 
-1. Aufruf [`getAuthentication()`](#$getAuthN) , um den Authentifizierungsfluss zu initiieren oder um zu bestätigen, dass der Benutzer bereits authentifiziert ist.
+1. Rufen Sie [`getAuthentication()`](#$getAuthN) auf, um den Authentifizierungsfluss zu initiieren oder zu bestätigen, dass der Benutzer bereits
+authentifiziert.
 
    **Trigger:**
 
-   * Die [setAuthenticationStatus()](#$setAuthNStatus) Callback, wenn der Benutzer bereits authentifiziert ist. Gehen Sie in diesem Fall direkt zum [Autorisierungsfluss](#authz_flow).
+   * Der Rückruf [setAuthenticationStatus()](#$setAuthNStatus) , wenn der Benutzer bereits authentifiziert ist. Fahren Sie in diesem Fall direkt mit dem Autorisierungsfluss [ fort.](#authz_flow)
 
-   * Die [displayProviderDialog()](#$dispProvDialog) Callback, wenn der Benutzer noch nicht authentifiziert ist.
+   * Der Rückruf [displayProviderDialog()](#$dispProvDialog) , wenn der Benutzer noch nicht authentifiziert ist.
 
 1. Präsentieren Sie den Benutzer mit der Liste der Anbieter, die an gesendet werden
    [`displayProviderDialog()`](#dispProvDialog).
 
-1. Nachdem der Benutzer einen Anbieter ausgewählt hat, rufen Sie die URL des MVPD des Benutzers aus der `navigateToUrl:` oder `navigateToUrl:useSVC:` Callback und Öffnen einer `UIWebView/WKWebView` oder `SFSafariViewController` und leitet diesen Controller zur URL weiter.
+1. Nachdem der Benutzer einen Anbieter ausgewählt hat, rufen Sie die URL des MVPD des Benutzers aus dem Rückruf `navigateToUrl:` oder `navigateToUrl:useSVC:` ab, öffnen Sie einen Controller `UIWebView/WKWebView` oder `SFSafariViewController` und leiten Sie diesen Controller an die URL weiter.
 
-1. Durch die `UIWebView/WKWebView` oder `SFSafariViewController` im vorherigen Schritt instanziiert wurde, landet der Benutzer auf der Anmeldeseite des MVPD und gibt Anmeldedaten ein. Mehrere Umleitungsvorgänge finden innerhalb des Controllers statt.</br>
+1. Durch die im vorherigen Schritt instanziierten `UIWebView/WKWebView` oder `SFSafariViewController` landet der Benutzer auf der Anmeldeseite des MVPD und gibt Anmeldedaten ein. Mehrere Umleitungsvorgänge finden innerhalb des Controllers statt.</br>
 
 >[!NOTE]
 >
->An dieser Stelle hat der Benutzer die Möglichkeit, den Authentifizierungsfluss abzubrechen. In diesem Fall ist Ihre UI-Schicht dafür verantwortlich, den AccessEnabler über dieses Ereignis zu informieren, indem sie [setSelectedProvider()](#setSelProv) mit `null` als Parameter. Dadurch kann AccessEnabler den internen Status bereinigen und den Authentifizierungsfluss zurücksetzen.
+>An dieser Stelle hat der Benutzer die Möglichkeit, den Authentifizierungsfluss abzubrechen. In diesem Fall ist Ihre UI-Schicht dafür verantwortlich, den AccessEnabler über dieses Ereignis zu informieren, indem sie [setSelectedProvider()](#setSelProv) mit `null` als Parameter aufruft. Dadurch kann AccessEnabler den internen Status bereinigen und den Authentifizierungsfluss zurücksetzen.
 
-1. Nach erfolgreicher Anmeldung durch den Benutzer erkennt Ihre Anwendungsebene das Laden einer bestimmten benutzerdefinierten URL. Beachten Sie, dass diese spezifische benutzerdefinierte URL tatsächlich ungültig ist und nicht für den Controller vorgesehen ist, sie tatsächlich zu laden. Sie darf nur von Ihrer Anwendung als Signal interpretiert werden, dass der Authentifizierungsvorgang abgeschlossen ist und dass das Schließen der `UIWebView/WKWebView` oder `SFSafariViewController` Controller. Im Fall von `SFSafariViewController`Der Controller muss verwendet werden, wenn die spezifische benutzerdefinierte URL von der **`application's custom scheme`** (z. B.`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Andernfalls wird diese spezifische benutzerdefinierte URL durch die Variable **`ADOBEPASS_REDIRECT_URL`** Konstante (d. h. `adobepass://ios.app`).
+1. Nach erfolgreicher Anmeldung durch den Benutzer erkennt Ihre Anwendungsebene das Laden einer bestimmten benutzerdefinierten URL. Beachten Sie, dass diese spezifische benutzerdefinierte URL tatsächlich ungültig ist und nicht für den Controller vorgesehen ist, sie tatsächlich zu laden. Es darf nur von Ihrer Anwendung als Signal interpretiert werden, dass der Authentifizierungsfluss abgeschlossen ist und dass es sicher ist, den Controller `UIWebView/WKWebView` oder `SFSafariViewController` zu schließen. Wenn ein `SFSafariViewController`Controller verwendet werden muss, wird die spezifische benutzerdefinierte URL durch den **`application's custom scheme`** definiert (z. B. `adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Andernfalls wird diese spezifische benutzerdefinierte URL durch die **`ADOBEPASS_REDIRECT_URL`** -Konstante definiert (d. h. `adobepass://ios.app`).
 
-1. Schließen Sie den Controller UIWebView/WKWebView oder SFSafariViewController und rufen Sie den `handleExternalURL:url` API-Methode, die den AccessEnabler anweist, das Authentifizierungstoken vom Backend-Server abzurufen.
+1. Schließen Sie den Controller UIWebView/WKWebView oder SFSafariViewController und rufen Sie die API-Methode `handleExternalURL:url` von AccessEnabler auf, die AccessEnabler anweist, das Authentifizierungstoken vom Backend-Server abzurufen.
 
-1. (Optional) Aufruf [`checkPreauthorizedResources(resources)`](#$checkPreauth) , um zu überprüfen, welche Ressourcen der Benutzer anzeigen darf. Die `resources` parameter ist ein Array geschützter Ressourcen, die mit dem Authentifizierungstoken des Benutzers verknüpft sind. Eine Verwendung der Autorisierungsinformationen, die vom MVPD des Benutzers erhalten werden, besteht darin, Ihre Benutzeroberfläche zu dekorieren (z. B. gesperrte/entsperrte Symbole neben geschützten Inhalten).
+1. (Optional) Rufen Sie [`checkPreauthorizedResources(resources)`](#$checkPreauth) auf, um zu überprüfen, welche Ressourcen der Benutzer anzeigen darf. Der Parameter `resources` ist ein Array geschützter Ressourcen, die mit dem Authentifizierungstoken des Benutzers verknüpft sind. Eine Verwendung der Autorisierungsinformationen, die vom MVPD des Benutzers erhalten werden, besteht darin, Ihre Benutzeroberfläche zu dekorieren (z. B. gesperrte/entsperrte Symbole neben geschützten Inhalten).
 
    * **Trigger:** [`preauthorizedResources()`](#preauthResources) callback
    * **Ausführungspunkt:** Nach Abschluss des Authentifizierungsablaufs
@@ -183,16 +186,16 @@ I.  [Abmeldefluss mit Apple SSO](#logout_flow_with_AppleSSO) </br>
 
 ### D. Authentifizierungsfluss mit Apple SSO auf iOS {#authn_flow_with_applesso}
 
-1. Aufruf [`getAuthentication()`](#$getAuthN) , um den Authentifizierungsfluss zu initiieren oder um zu bestätigen, dass der Benutzer bereits authentifiziert ist.
+1. Rufen Sie [`getAuthentication()`](#$getAuthN) auf, um den Authentifizierungsfluss zu initiieren oder um zu bestätigen, dass der Benutzer bereits authentifiziert ist.
    **Trigger:**
 
-   * Die [presentTvProviderDialog()](#presentTvDialog) Callback, wenn der Benutzer nicht authentifiziert ist und der aktuelle Anforderer mindestens über MVPD verfügt, der SSO unterstützt. Wenn keine MVPDs SSO unterstützen, wird der klassische Authentifizierungsfluss verwendet.
+   * Der Rückruf [presentTvProviderDialog()](#presentTvDialog) , wenn der Benutzer nicht authentifiziert ist und der aktuelle Anfragende mindestens über MVPD verfügt, der SSO unterstützt. Wenn keine MVPDs SSO unterstützen, wird der klassische Authentifizierungsfluss verwendet.
 
 1. Nachdem der Benutzer einen Anbieter ausgewählt hat, ruft die AccessEnabler-Bibliothek ein Authentifizierungstoken mit den Informationen ab, die vom VSA-Framework von Apple bereitgestellt werden.
 
-1. Die [setAuthenticationsStatus()](#setAuthNStatus) Callback wird ausgelöst. An dieser Stelle sollte der Benutzer bei Apple SSO authentifiziert werden.
+1. Der Rückruf [setAuthenticationsStatus()](#setAuthNStatus) wird ausgelöst. An dieser Stelle sollte der Benutzer bei Apple SSO authentifiziert werden.
 
-1. [Optional] Aufruf [`checkPreauthorizedResources(resources)`](#$checkPreauth) , um zu überprüfen, welche Ressourcen der Benutzer anzeigen darf. Die `resources` parameter ist ein Array geschützter Ressourcen, die mit dem Authentifizierungstoken des Benutzers verknüpft sind. Eine Verwendung der Autorisierungsinformationen, die vom MVPD des Benutzers erhalten werden, besteht darin, Ihre Benutzeroberfläche zu dekorieren (z. B. gesperrte/entsperrte Symbole neben geschützten Inhalten).
+1. [Optional] Rufen Sie [`checkPreauthorizedResources(resources)`](#$checkPreauth) auf, um zu überprüfen, welche Ressourcen der Benutzer anzeigen darf. Der Parameter `resources` ist ein Array geschützter Ressourcen, die mit dem Authentifizierungstoken des Benutzers verknüpft sind. Eine Verwendung der Autorisierungsinformationen, die vom MVPD des Benutzers erhalten werden, besteht darin, Ihre Benutzeroberfläche zu dekorieren (z. B. gesperrte/entsperrte Symbole neben geschützten Inhalten).
 
    * **Trigger:** [`preauthorizedResources()`](#preauthResources) callback
    * **Ausführungspunkt:** Nach Abschluss des Authentifizierungsablaufs
@@ -201,14 +204,16 @@ I.  [Abmeldefluss mit Apple SSO](#logout_flow_with_AppleSSO) </br>
 
 ### E. Authentifizierungsfluss mit Apple SSO auf tvOS {#authn_flow_with_applesso_tvOS}
 
-1. Aufruf [`getAuthentication()`](#$getAuthN) , um den Authentifizierungsfluss zu initiieren oder um zu bestätigen, dass der Benutzer bereits authentifiziert ist.
+1. Rufen Sie [`getAuthentication()`](#$getAuthN) auf, um den
+Authentifizierungsfluss oder um zu bestätigen, dass der Benutzer bereits
+authentifiziert.
    **Trigger:**
-   * Die [`presentTvProviderDialog()`](#presentTvDialog) Callback, wenn der Benutzer nicht authentifiziert ist und der aktuelle Anforderer mindestens über MVPD verfügt, der SSO unterstützt. Wenn keine MVPDs SSO unterstützen, wird der klassische Authentifizierungsfluss verwendet.
+   * Der Rückruf [`presentTvProviderDialog()`](#presentTvDialog) , wenn der Benutzer nicht authentifiziert ist und der aktuelle Anfragende mindestens über MVPD verfügt, der SSO unterstützt. Wenn keine MVPDs SSO unterstützen, wird der klassische Authentifizierungsfluss verwendet.
 
-1. Nachdem der Benutzer einen Anbieter ausgewählt hat, wird der [`status()`](#status_callback_implementation) Callback wird aufgerufen. Es wird ein Registrierungs-Code bereitgestellt und die AccessEnabler-Bibliothek beginnt mit der Abfrage des Servers auf eine erfolgreiche Zweitbildschirmauthentifizierung.
+1. Nachdem der Benutzer einen Anbieter ausgewählt hat, wird der Rückruf [`status()`](#status_callback_implementation) aufgerufen. Es wird ein Registrierungs-Code bereitgestellt und die AccessEnabler-Bibliothek beginnt mit der Abfrage des Servers auf eine erfolgreiche Zweitbildschirmauthentifizierung.
 
-1. Wenn der angegebene Registrierungs-Code für die erfolgreiche Authentifizierung auf dem zweiten Bildschirm verwendet wurde, wird die [`setAuthenticatiosStatus()`](#setAuthNStatus) Callback wird ausgelöst. An dieser Stelle sollte der Benutzer bei Apple SSO authentifiziert werden.
-1. [Optional] Aufruf [`checkPreauthorizedResources(resources)`](#$checkPreauth) , um zu überprüfen, welche Ressourcen der Benutzer anzeigen darf. Die `resources` parameter ist ein Array geschützter Ressourcen, die mit dem Authentifizierungstoken des Benutzers verknüpft sind. Eine Verwendung der Autorisierungsinformationen, die vom MVPD des Benutzers erhalten werden, besteht darin, Ihre Benutzeroberfläche zu dekorieren (z. B. gesperrte/entsperrte Symbole neben geschützten Inhalten).
+1. Wenn der angegebene Registrierungs-Code für die erfolgreiche Authentifizierung auf dem zweiten Bildschirm verwendet wurde, wird der Rückruf [`setAuthenticatiosStatus()`](#setAuthNStatus) ausgelöst. An dieser Stelle sollte der Benutzer bei Apple SSO authentifiziert werden.
+1. [Optional] Rufen Sie [`checkPreauthorizedResources(resources)`](#$checkPreauth) auf, um zu überprüfen, welche Ressourcen der Benutzer anzeigen darf. Der Parameter `resources` ist ein Array geschützter Ressourcen, die mit dem Authentifizierungstoken des Benutzers verknüpft sind. Eine Verwendung der Autorisierungsinformationen, die vom MVPD des Benutzers erhalten werden, besteht darin, Ihre Benutzeroberfläche zu dekorieren (z. B. gesperrte/entsperrte Symbole neben geschützten Inhalten).
 
    * **Trigger:** [`preauthorizedResources()`](#preauthResources) callback
 
@@ -217,22 +222,22 @@ I.  [Abmeldefluss mit Apple SSO](#logout_flow_with_AppleSSO) </br>
 
 ### F. Genehmigungsprozess {#authz_flow}
 
-1. Aufruf [getAuthorization()](#$getAuthZ) , um den Genehmigungsprozess einzuleiten.
+1. Rufen Sie [getAuthorization()](#$getAuthZ) auf, um den Autorisierungsfluss zu starten.
 
    * **Abhängigkeit:** Gültige ResourceID(s), die mit den MVPD(s) vereinbart wurde.
    * Die Ressourcen-IDs sollten mit denen auf anderen Geräten oder Plattformen übereinstimmen und sind über MVPDs hinweg identisch. Informationen zu Ressourcen-IDs finden Sie unter [Ermitteln geschützter Ressourcen](/help/authentication/identify-protected-resources.md)
 
 1. Validieren Sie Authentifizierung und Autorisierung.
 
-   * Wenn die Variable [getAuthorization()](#$getAuthZ) Aufruf erfolgreich: Der Benutzer verfügt über gültige AuthN- und AuthZ-Token (der Benutzer ist authentifiziert und berechtigt, die angeforderten Medien zu sehen).
+   * Wenn der Aufruf [getAuthorization()](#$getAuthZ) erfolgreich ist: Der Benutzer verfügt über gültige AuthN- und AuthZ-Token (der Benutzer ist authentifiziert und berechtigt, die angeforderten Medien anzuzeigen).
 
-   * Wenn [getAuthorization()](#$getAuthZ) schlägt fehl: Untersuchen Sie die ausgelöste Ausnahme, um ihren Typ zu bestimmen (AuthN, AuthZ oder etwas Anderes):
+   * Wenn [getAuthorization()](#$getAuthZ) fehlschlägt: Untersuchen Sie die ausgelöste Ausnahme, um ihren Typ zu bestimmen (AuthN, AuthZ oder etwas Anderes):
       * Wenn es sich um einen Authentifizierungsfehler (AuthN) handelte, starten Sie den Authentifizierungsfluss neu.
       * Wenn es sich um einen Autorisierungsfehler (AuthZ) handelt, ist der Benutzer nicht berechtigt, das angeforderte Medium zu sehen und dem Benutzer sollte eine Fehlermeldung angezeigt werden.
       * Wenn ein anderer Fehlertyp aufgetreten ist (Verbindungsfehler, Netzwerkfehler usw.) zeigen Sie dem Benutzer eine entsprechende Fehlermeldung an.
 
 1. Validieren Sie das Token für kurze Medien.\
-   Verwenden Sie die Adobe Pass Authentication Media Token Verifier-Bibliothek, um das von der [getAuthorization()](#$getAuthZ) Aufruf oben:
+   Verwenden Sie die Adobe Pass Authentication Media Token Verifier-Bibliothek, um das vom obigen Aufruf [getAuthorization()](#$getAuthZ) zurückgegebene kurzlebige Medien-Token zu überprüfen:
 
    * Wenn die Validierung erfolgreich ist: Wiedergabe des angeforderten Mediums für den Benutzer.
    * Wenn die Validierung fehlschlägt: Das AuthZ-Token war ungültig, die Medienanforderung sollte abgelehnt werden und dem Benutzer sollte eine Fehlermeldung angezeigt werden.
@@ -245,17 +250,18 @@ I.  [Abmeldefluss mit Apple SSO](#logout_flow_with_AppleSSO) </br>
 1. Der Benutzer wählt das Medium aus, das angezeigt werden soll.
 1. Sind die Medien geschützt? Ihre Anwendung prüft, ob die ausgewählten Medien geschützt sind:
 
-   * Wenn das ausgewählte Medium geschützt ist, startet Ihre Anwendung die [Autorisierungsfluss](#authz_flow) höher.
+   * Wenn das ausgewählte Medium geschützt ist, startet Ihre Anwendung den obigen [Autorisierungsfluss](#authz_flow).
 
-   * Wenn das ausgewählte Medium nicht geschützt ist, geben Sie das Medium für den Benutzer wieder.
+   * Wenn das ausgewählte Medium nicht geschützt ist, geben Sie das Medium für
+den Benutzer.
 
 ### H. Abmeldefluss ohne Apple SSO {#logout_flow_wo_AppleSSO}
 
-1. Aufruf [`logout()`](#$logout) , um den Benutzer abzumelden. AccessEnabler löscht alle zwischengespeicherten Werte und Token. Nachdem der Cache gelöscht wurde, führt der AccessEnabler einen Server-Aufruf durch, um die Server-seitigen Sitzungen zu bereinigen. Da der Server-Aufruf zu einer SAML-Umleitung zum IdP führen kann (dies ermöglicht die Sitzungsbereinigung auf der IdP-Seite), muss dieser Aufruf allen Umleitungen folgen. Aus diesem Grund muss dieser Aufruf innerhalb eines UIWebView/WKWebView- oder SFSafariViewController-Controllers verarbeitet werden.
+1. Rufen Sie [`logout()`](#$logout) auf, um den Benutzer abzumelden. AccessEnabler löscht alle zwischengespeicherten Werte und Token. Nachdem der Cache gelöscht wurde, führt der AccessEnabler einen Server-Aufruf durch, um die Server-seitigen Sitzungen zu bereinigen. Da der Server-Aufruf zu einer SAML-Umleitung zum IdP führen kann (dies ermöglicht die Sitzungsbereinigung auf der IdP-Seite), muss dieser Aufruf allen Umleitungen folgen. Aus diesem Grund muss dieser Aufruf innerhalb eines UIWebView/WKWebView- oder SFSafariViewController-Controllers verarbeitet werden.
 
-   a. Entsprechend dem gleichen Muster wie der Authentifizierungs-Workflow sendet die AccessEnabler-Domäne über die `navigateToUrl:` oder `navigateToUrl:useSVC:` Callback, um einen UIWebView/WKWebView- oder SFSafariViewController-Controller zu erstellen und diesen anzuweisen, die im Callback bereitgestellte URL zu laden `url` -Parameter. Dies ist die URL des Abmelde-Endpunkts auf dem Backend-Server.
+   a. Entsprechend dem gleichen Muster wie der Authentifizierungs-Workflow sendet die AccessEnabler-Domäne über den Callback `navigateToUrl:` oder `navigateToUrl:useSVC:` eine Anfrage an die UI-Anwendungsebene, um einen UIWebView/WKWebView- oder SFSafariViewController zu erstellen und anzuweisen, die im Parameter `url` des Rückrufs angegebene URL zu laden. Dies ist die URL des Abmelde-Endpunkts auf dem Backend-Server.
 
-   b. Ihre Anwendung muss die Aktivität der `UIWebView/WKWebView or SFSafariViewController` steuern und den Moment erkennen, in dem eine bestimmte benutzerdefinierte URL geladen wird, da sie mehrere Umleitungen durchläuft. Beachten Sie, dass diese spezifische benutzerdefinierte URL tatsächlich ungültig ist und nicht für den Controller vorgesehen ist, sie tatsächlich zu laden. Sie darf von Ihrer Anwendung nur als Signal interpretiert werden, dass der Abmeldefluss abgeschlossen ist und dass es sicher ist, die `UIWebView/WKWebView` oder `SFSafariViewController` Controller. Wenn der Controller diese spezifische benutzerdefinierte URL lädt, muss Ihre Anwendung die `UIWebView/WKWebView or SFSafariViewController` Controller und Aufruf von AccessEnabler `handleExternalURL:url`API-Methode. Im Fall von `SFSafariViewController`Der Controller muss verwendet werden, wenn die spezifische benutzerdefinierte URL von der **`application's custom scheme`** (zum Beispiel: `adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Andernfalls wird diese spezifische benutzerdefinierte URL durch die Variable **`ADOBEPASS_REDIRECT_URL`**  Konstante (d. h. `adobepass://ios.app`).
+   b. Ihre Anwendung muss die Aktivität des `UIWebView/WKWebView or SFSafariViewController`-Controllers überwachen und den Zeitpunkt erkennen, zu dem sie eine bestimmte benutzerdefinierte URL lädt, da sie mehrere Umleitungen durchläuft. Beachten Sie, dass diese spezifische benutzerdefinierte URL tatsächlich ungültig ist und nicht für den Controller vorgesehen ist, sie tatsächlich zu laden. Es darf nur von Ihrer Anwendung als Signal interpretiert werden, dass der Abmeldefluss abgeschlossen ist und dass es sicher ist, den Controller `UIWebView/WKWebView` oder `SFSafariViewController` zu schließen. Wenn der Controller diese spezifische benutzerdefinierte URL lädt, muss Ihre Anwendung den `UIWebView/WKWebView or SFSafariViewController`-Controller schließen und die `handleExternalURL:url`API-Methode von AccessEnabler aufrufen. Wenn ein `SFSafariViewController`Controller verwendet werden muss, wird die spezifische benutzerdefinierte URL durch den **`application's custom scheme`** definiert (z. B. `adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Andernfalls wird diese spezifische benutzerdefinierte URL durch die **`ADOBEPASS_REDIRECT_URL`** -Konstante definiert (d. h. `adobepass://ios.app`).
 
    >[!NOTE]
    >
@@ -264,8 +270,8 @@ I.  [Abmeldefluss mit Apple SSO](#logout_flow_with_AppleSSO) </br>
 
 ### I. Abmeldefluss mit Apple SSO {#logout_flow_with_AppleSSO}
 
-1. Aufruf [`logout()`](#$logout) , um den Benutzer abzumelden.
-1. Die [status()](#status_callback_implementation) callback wird mit id VSA203 aufgerufen.
+1. Rufen Sie [`logout()`](#$logout) auf, um den Benutzer abzumelden.
+1. Der Rückruf [status()](#status_callback_implementation) wird mit der ID VSA203 aufgerufen.
 1. Der Benutzer sollte angewiesen werden, sich auch über die Systemeinstellungen anzumelden. Andernfalls wird eine erneute Authentifizierung durchgeführt, wenn die Anwendung neu gestartet wird.
 
 

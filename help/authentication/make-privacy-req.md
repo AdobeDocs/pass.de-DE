@@ -4,7 +4,7 @@ description: Datenschutzanfrage stellen
 exl-id: abb21306-98d6-4899-914a-bdfa85cbd204
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '590'
+source-wordcount: '558'
 ht-degree: 0%
 
 ---
@@ -221,24 +221,24 @@ Für eine Löschanfrage:
 
 Kunden haben zwei Möglichkeiten, Datenschutzanfragen an Adobe zu senden:
 
-* **manuell** - durch Verwendung von [Privacy Service-Benutzeroberfläche](#privacy-service-ui)
-* **automatisch** - durch Verwendung von [Privacy Service-API](#privacy-service-api)
+* **manuell** - durch Verwendung der [Privacy Service-Benutzeroberfläche](#privacy-service-ui)
+* **automatisch** - durch Verwendung der [Privacy Service-API](#privacy-service-api)
 
 ### Über die Privacy Service-Benutzeroberfläche {#privacy-service-ui}
 
-A [complete-Tutorial](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) Informationen zum Zugriff auf und zur Verwendung der Privacy Service-Benutzeroberfläche finden Sie online über Adobe I/O-Dienste. Darüber hinaus können Kunden über diesen Link auf die Bibliothek mit Videos und Artikeln zu Datenschutzbestimmungen zugreifen. Klicken Sie auf das Menü Adobe Experience Cloud und DSGVO . Dadurch werden eine Reihe von Videos geöffnet. In &quot;Anleitung zur DSGVO-Benutzeroberfläche&quot;wird erläutert, wie sie verwendet werden kann.
+Ein [vollständiges Tutorial](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) zum Zugriff auf und zur Verwendung der Privacy Service-Benutzeroberfläche ist online über Adobe I/O-Services verfügbar. Darüber hinaus können Kunden über diesen Link auf die Bibliothek mit Videos und Artikeln zu Datenschutzbestimmungen zugreifen. Klicken Sie auf das Menü Adobe Experience Cloud und DSGVO . Dadurch werden eine Reihe von Videos geöffnet. In &quot;Anleitung zur DSGVO-Benutzeroberfläche&quot;wird erläutert, wie sie verwendet werden kann.
 
 In der Benutzeroberfläche müssen Kunden ihre eigene IMSOrgID und eine JSON mit Details zu DSGVO-Anfragen für jedes Produkt laden.
 
 ### Durch Verwendung der Privacy Service-API {#privacy-service-api}
 
-Adobe Experience Platform Privacy Service bietet eine gebräuchliche, zentralisierte Erleichterung von Zugriffs-/Löschanfragen und Opt-out-Anfragen für personenbezogene Daten.
+Adobe Experience Platform Privacy Service bietet eine gemeinsame, zentralisierte Erleichterung von Zugriffs-/Löschanfragen und Opt-out-Anfragen für personenbezogene Daten.
 
-Die **Dokumentation zur Privacy Service-API** beschreibt ausführlich, wie ein Adobe-Kunde mit der Adobe-API integriert werden kann.
+Die **Privacy Service API-Dokumentation** beschreibt ausführlich, wie ein Adobe-Kunde mit der Adobe-API integriert werden kann.
 
-**Visualisieren Sie API-Aufrufe mit Postman (einer kostenlosen Drittanbietersoftware):**
+**Visualisieren von API-Aufrufen mit Postman (einer kostenlosen Drittanbietersoftware):**
 
-* [Privacy Service API Postman-Sammlung auf GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
+* [Privacy Service-API Postman-Sammlung auf GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
 * [Videoleitfaden zum Erstellen der Postman-Umgebung](https://video.tv.adobe.com/v/28832)
 * [Schritte zum Importieren von Umgebungen und Sammlungen in Postman](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
@@ -252,8 +252,8 @@ Die **Dokumentation zur Privacy Service-API** beschreibt ausführlich, wie ein A
 
 **Erforderliche Kopfzeilen:**
 
-* Alle Aufrufe erfordern die Kopfzeilen `Authorization`, `x-gw-ims-org-id`, und `x-api-key`. Weitere Informationen zum Abrufen dieser Werte finden Sie unter **Authentifizierungs-Tutorial**.
-* Alle Anfragen mit einer Payload im Anfragetext (wie POST-, PUT- und PATCH-Aufrufe) müssen die Kopfzeile enthalten `Content-Type` mit dem Wert `application/json`.
+* Alle Aufrufe erfordern die Header `Authorization`, `x-gw-ims-org-id` und `x-api-key`. Weitere Informationen zum Abrufen dieser Werte finden Sie im **Authentifizierungs-Tutorial**.
+* Alle Anfragen mit einer Payload im Anfragetext (wie POST-, PUT- und PATCH-Aufrufe) müssen die Kopfzeile `Content-Type` mit dem Wert `application/json` enthalten.
 
 <!--
 

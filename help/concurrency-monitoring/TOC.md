@@ -23,14 +23,14 @@ ht-degree: 9%
 + [Richtlinie zur Datenaufbewahrung](data-retention-policy.md)
 + [Drosselmechanismus](throttling-mechanism.md)
 + [Eskalationsverfahren](cm-escalation-procedures.md)
-+ Verwendung der gleichzeitigen Überwachung {#cmu}
++ Nutzung der Parallelitätsüberwachung {#cmu}
    + [Berichte zur gleichzeitigen Überwachung der Nutzung](cm-usage-reports.md)
    + [Context Monitoring-Nutzungs-API](cmu-api.md)
    + [Zugriff auf die API zur Überwachung der gleichzeitigen Verwendung](cmu-api-access.md)
 + Version 1 API{#v1-api}
    + [Informationsstelle für Richtlinien](policy-info-pt-versionone.md)
    + [Benutzerspezifische Metadaten](custom-metadata.md)
-   + Integrations-Cookies {#int-cookbooks}
+   + Integrations-Cookbooks {#int-cookbooks}
       + [Beschränkung der gleichzeitigen Nutzung mit mehreren Anwendungen, die verschiedenen Eigentümern gehören](restrict-concurr-usage-mult-apps.md)
       + [Einzelner Mandant/Richtlinie und mehrere Anwendungen](single-tenant-policy-mult-app.md)
    + [Implementierungsmodelle](implementation-models.md)

@@ -34,9 +34,10 @@ Im Fall eines unerwarteten Fehlers (z. B. Netzwerkproblem, nicht verfügbarer MV
 
 **Parameter:**
 
-- *PreauthorizeRequest*: Builder-Objekt, das zum Definieren der Anforderung verwendet wird
+- *PreauthorizeRequest*: Builder-Objekt, das zur Definition der Anforderung verwendet wird
 - AccessEnablerCallback : Rückruf, der zum Zurückgeben der API-Antwort verwendet wird
-- PreauthorizeResponse : Objekt, das zum Zurückgeben des API-Antwortinhalts verwendet wird
+- PreauthorizeResponse : Objekt, das zur Ausgabe der API verwendet wird
+Antwortinhalt
 
 
 ### public class PreauthorizeRequest {#androidpreauthorizerequest}
@@ -62,7 +63,7 @@ Im Fall eines unerwarteten Fehlers (z. B. Netzwerkproblem, nicht verfügbarer MV
     ///
 ```
 
-**public Builder setResources(List\&lt;string> resources)**
+**public Builder setResources(List\&lt;String\> resources)**
 
 ```
     ///
@@ -84,8 +85,8 @@ Im Fall eines unerwarteten Fehlers (z. B. Netzwerkproblem, nicht verfügbarer MV
 ```
 
 
-**public Builder disableFeatures(Set\&lt;preauthorizerequest.feature>
--Funktionen)**
+**public Builder disableFeatures(Set\&lt;PreauthorizeRequest.Feature\>
+features)**
 
 ```
     ///
@@ -226,7 +227,7 @@ Im Fall eines unerwarteten Fehlers (z. B. Netzwerkproblem, nicht verfügbarer MV
 
 </br>
 
->**class Decision** {#decision}
+>**Klassenentscheidung** {#decision}
 
 ```
     ///

@@ -4,7 +4,7 @@ description: Dynamische Kundenregistrierung
 exl-id: 9bc2597d-b634-4542-849b-8e91a76cb8da
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '265'
+source-wordcount: '263'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,8 @@ ht-degree: 0%
 
 ## Kontext {#context}
 
-Zur Anpassung an moderne Sicherheitspraktiken, verbesserte UX- und Plattformeigentümeranforderungen, das Adobe Pass Authentication Android SDK und das iOS SDK gehen in Richtung der Übernahme [Benutzerdefinierte Registerkarten für Android Chrome](https://developer.chrome.com/multidevice/android/customtabs){target=_blank} and [Apple Safari view controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}.
+Zur Anpassung an moderne Sicherheitspraktiken, verbesserte UX- und Plattformbesitzer
+Anforderungen, das Adobe Pass Authentication Android SDK und das iOS SDK gehen in Richtung der Übernahme der benutzerdefinierten Registerkarten [Android Chrome](https://developer.chrome.com/multidevice/android/customtabs){target=_blank} und [Apple Safari View Controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}.
 
 Die aktuelle AdobePass-Implementierung verwendet plattformspezifische Webansichten, um die Webumgebung für die Anzeige der MVPD-Anmeldeseite bereitzustellen. Diese Webansichten verwenden keine gemeinsame Berechtigungsverwaltung für Plattformbrowser. Daher kann der Benutzer bei Verwendung einer Adobe Pass-Authentifizierungsanwendung kein im Browser gespeichertes Kennwort verwenden. Aus Sicherheitsgründen werden die WebView-Controller bei einigen Plattformen für Authentifizierungsaufgaben nicht mehr unterstützt. Sowohl Google als auch Apple bieten alternative Optionen wie &quot;Benutzerdefinierte Chrome-Registerkarten&quot;und &quot;Safari View Controller&quot;. Dabei handelt es sich im Wesentlichen um einzelne Benutzerregisterkarten ihrer jeweiligen Browser. Die Adobe Pass-Authentifizierung wird diese neuen Komponenten 2018 übernehmen.
 
@@ -26,9 +27,9 @@ Die aktuelle AdobePass-Implementierung verwendet plattformspezifische Webansicht
 Derzeit gibt es zwei Möglichkeiten, wie Adobe Pass Authentication Anwendungen identifiziert und registriert:
 
 * Browser-basierte Clients werden über die Zulassungsdomänenliste registriert
-* native Anwendungsclients wie iOS und Android-Anwendungen werden über den signierten Anforderungsmechanismus registriert.
+* native Anwendungs-Clients wie iOS- und Android-Anwendungen werden über den signierten Anforderungsmechanismus registriert.
 
-Um die neuen Flüsse für den Chrome Custom Tabs &amp; Safari View Controller zu beheben, schlägt Adobe Pass einen neuen Client-Registrierungsmechanismus für die Registrierung neuer Anwendungen vor. Dieser Mechanismus ermöglicht eine sicherere und granularere Steuerung Ihrer Anwendungen und kann zur Registrierung von Anwendungen auf allen Plattformen verwendet werden.
+Um die neuen Flüsse für den benutzerdefinierten Chrome Tabs &amp; Safari View Controller zu beheben, schlägt Adobe Pass einen neuen Mechanismus zur Kundenregistrierung für die Registrierung neuer Anwendungen vor. Dieser Mechanismus ermöglicht eine sicherere und granularere Steuerung Ihrer Anwendungen und kann zur Registrierung von Anwendungen auf allen Plattformen verwendet werden.
 
 <!--
 ## Related Information

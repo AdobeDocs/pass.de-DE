@@ -53,13 +53,13 @@ ht-degree: 3%
          + [Token Exchange](token-exchange.md)
          + [Kostenlose Vorschau für den temporären Pass und den temporären Weiterleitungs-Pass](free-preview-for-temp-pass-and-promotional-temp-pass.md)
    + AccessEnabler SDK {#accessenabler-sdk}
-      + JavaScript-SDK {#javascriptsdk}
-         + [Übersicht über das JavaScript-SDK](javascript-sdk-overview.md)
+      + JavaScript SDK {#javascriptsdk}
+         + [Übersicht über das JavaScript SDK](javascript-sdk-overview.md)
          + [JavaScript SDK-Cookbook](javascript-sdk-cookbook.md)
-         + [JavaScript-SDK-API-Referenz](javascript-sdk-api-reference.md)
+         + [JavaScript SDK-API-Referenz](javascript-sdk-api-reference.md)
          + Richtlinien {#js-sdk-guidelines}
             + [Anmeldung ohne Aktualisierung und Abmeldung](refreshless-login-and-logout.md)
-         + JavaScript-API {#js-api}
+         + JavaScript API {#js-api}
             + [Vorautorisieren](js-preauthorize.md)
       + iOS/tvOS-SDK {#ios-sdk}
          + [Übersicht über das iOS/tvOS-SDK](iostvos-sdk-overview.md)
@@ -71,14 +71,14 @@ ht-degree: 3%
                + [Migrationshandbuch für iOS/tvOS v3.x](iostvos-v3x-migration-guide.md)
             + [iOS/tvOS-Speicherintegritätsprüfungen](iostvos-sdk-storage-integrity-checks.md)
          + iOS/tvOS-API {#ios-tvos-api}
-            + [Vorautorisieren](preauthorize.md)
+            + [Preauthorize](preauthorize.md)
       + Android SDK {#androidsdk}
-         + [Android SDK - Übersicht](android-sdk-overview.md)
-         + [Android SDK Cookbook](android-sdk-cookbook.md)
-         + [Android-SDK-API-Referenz](android-sdk-api-reference.md)
+         + [Übersicht über das Android SDK](android-sdk-overview.md)
+         + [Android SDK-Cookbook](android-sdk-cookbook.md)
+         + [Android SDK-API-Referenz](android-sdk-api-reference.md)
          + Richtlinien {#androidguidelines}
-            + [Registrierung von Android-Anwendungen](android-application-registration.md)
-            + [Android-SDK mit dynamischer Client-Registrierung](android-sdk-with-dynamic-client-registration.md)
+            + [Android-Anwendungsregistrierung](android-application-registration.md)
+            + [Android SDK mit dynamischer Client-Registrierung](android-sdk-with-dynamic-client-registration.md)
          + Android-API{#androidapi}
             + [Vorautorisieren](preauthorize-android.md)
       + Amazon FireOS-SDK {#fireossdk}
@@ -90,7 +90,7 @@ ht-degree: 3%
          + [Amazon FireOS-Anwendungsregistrierung](amazon-fireos-application-registration.md)
          + [FireOS-SDK mit dynamischer Client-Registrierung](fireos-sdk-with-dynamic-client-registration.md)
    + Platform SSO {#platform-sso}
-      + APPLE SSO {#apple-sso}
+      + Apple SSO {#apple-sso}
          + [Überblick über Apple SSO](apple-sso-overview.md)
          + [Apple SSO-Cookbook (REST-API)](apple-sso-cookbook-rest-api.md)
          + [Apple SSO-Cookbook (iOS/tvOS SDK)](apple-sso-cookbook-iostvos-sdk.md)
@@ -98,11 +98,11 @@ ht-degree: 3%
          + [Roku SSO](roku-sso-overview.md)
    + Inhaltsmetadaten {#content-metadata}
       + [Identifizieren geschützter Ressourcen](identify-protected-resources.md)
-   + Integration von Inhaltsservern {#content-serv-int}
+   + Integration des Inhaltsservers {#content-serv-int}
       + [Integration des Media Token Verifier](media-token-verifier-int.md)
    + Anhänge {#appendices}
       + [Tipps zum Debuggen](appendix-b-debugging-tips.md)
-+ Handbuch zur MVPD-Integration {#mvpd-int-guide}
++ MVPD-Integrationsleitfaden {#mvpd-int-guide}
    + [Integrationsfunktionen](mvpd-integr-features.md)
    + [Authentifizierung](authn-usecase.md)
    + [Authentifizierung mit dem OAuth 2.0-Protokoll](authn-oauth2-protocol.md)
@@ -123,20 +123,20 @@ ht-degree: 3%
       + [Übersicht über die Überwachung des Berechtigungsdienstes](entitlement-service-monitoring-overview.md)
       + [API zur Überwachung des Entitätsdienstes](entitlement-service-monitoring-api.md)
       + [Serverseitige Metriken](understanding-serverside-metrics.md)
-   + Temporärer Übergang {#temp-pass}
+   + Temporärer Ablauf {#temp-pass}
       + [Temporärer Übergang](temp-pass.md)
       + [vorübergehender Promotionsübergang](promotional-temp-pass.md)
-      + [Zurücksetzen des Vorübergangs](reset-temp-pass.md)
+      + [Temporären Pass zurücksetzen](reset-temp-pass.md)
    + Single Sign-On {#sso}
       + [Unterstützung für Single Sign-On](sso-support.md)
       + [SSO über passive Authentifizierung](sso-passive-authn.md)
-   + Eigene Authentifizierung {#home-based-auth}
+   + Hausbasierte Authentifizierung {#home-based-auth}
       + [Hausbasierte Authentifizierung für TV überall](home-based-authn-tve.md)
       + [HBA-Status für MVPDs](hba-status-mvpds.md)
    + Benutzermetadaten {#user-metadat}
       + [Benutzermetadaten](user-metadata-feature.md)
    + [Vorabgenehmigung](preflight-authz.md)
-   + Fehlerberichte {#error-reportn}
+   + Fehlerberichterstellung {#error-reportn}
       + [Fehlerberichte](error-reporting.md)
       + [Erweiterte Fehlercodes](enhanced-error-codes.md)
    + Kundenregistrierung {#client-regn}
@@ -167,7 +167,7 @@ ht-degree: 3%
    + [Versionshinweise zur Adobe Pass-Authentifizierung 2.64](auth-rn-264.md)
    + [Versionshinweise zur Adobe Pass-Authentifizierung 2.63](auth-rn-263.md)
    + [Versionshinweise zur Adobe Pass-Authentifizierung 2.62.1](auth-rn-2621.md)
-   + Versionshinweise zum JavaScript-SDK  {#release-notes-javascript}
+   + JavaScript SDK - Versionshinweise {#release-notes-javascript}
       + [Versionshinweise zur Adobe Pass-Authentifizierung JavaScript 4.7.0](authn-rn-javascript-470.md)
       + [Versionshinweise zur Adobe Pass-Authentifizierung JavaScript 4.6.0](authn-rn-javascript-460.md)
       + [Versionshinweise zur Adobe Pass-Authentifizierung JavaScript 4.4.0](authn-rn-javascript-440.md)
@@ -176,7 +176,7 @@ ht-degree: 3%
       + [Versionshinweise zur Adobe Pass-Authentifizierung JavaScript 4.1.0](authn-rn-javascript-410.md)
       + [Versionshinweise zur Adobe Pass-Authentifizierung JavaScript 4.0.0](authn-rn-javascript-400.md)
       + [Versionshinweise zur Adobe Pass-Authentifizierung JavaScript 3.5.0](authn-rn-javascript-350.md)
-   + Versionshinweise zum iOS/tvOS-SDK  {#release-notes-ios}
+   + Versionshinweise zum iOS/tvOS-SDK {#release-notes-ios}
       + [Versionshinweise zu Adobe Pass Authentication iOS/tvOS 3.9.2](authn-rn-ios-tvos-392.md)
       + [Versionshinweise zu Adobe Pass Authentication iOS/tvOS 3.8.4](authn-rn-ios-tvos-384.md)
       + [Versionshinweise zu Adobe Pass Authentication iOS/tvOS 3.8.3](authn-rn-ios-tvos-383.md)
@@ -188,7 +188,7 @@ ht-degree: 3%
 + Technische Hinweise {#tech-notes}
    + Adobe Pass Authentication SDKs {#primetime-authentication-sdks}
       + [Fragen und Antworten zu Zertifikaten](certificates-qa.md)
-      + JavaScript-SDK {#javascript}
+      + JavaScript SDK {#javascript}
          + [Tracking Prevention Assessment - Apple Safari](tracking-prevention-assessment-apple-safari.md)
          + [Tracking Prevention Assessment - Google Chrome](tracking-prevention-assessment-google-chrome.md)
          + [Cookie-Updates - SameSite- und Secure-Flags](cookies-updates-samesite-and-secure-flags.md)
@@ -213,7 +213,7 @@ ht-degree: 3%
       + [Clientlos: Vermeiden Sie die Verwendung von &quot;&amp;&quot;reg_code in /authenticate request](clientless-avoid-using-reg-code-in-authenticate-request.md)
       + [Aktivieren von Adobe Pass Entitlement Services für ein Programm in Xbox 360 und XboxOne Clientless](enabling-primetime-entitlement-services-for-a-programmer-on-xbox-360-and-xboxone-clientless-solution.md)
       + [Clientloser Gerätetyp und Metriken](benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)
-   + Anwendererlebnis {#user-exp}
+   + Benutzererlebnis {#user-exp}
       + [Migrieren der MVPD-Anmeldeseite von iFrame zum Popup](migr-mvpd-login-iframe-popup.md)
       + [Preflight-Funktion: Anleitung zum Aktivieren, Beheben oder Ermitteln des Problems](preflight-feature.md)
    + Tools und Hilfsprogramme {#tools-and-utilities}

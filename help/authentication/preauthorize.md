@@ -19,9 +19,9 @@ Die Vorabautorisierungs-API kann verwendet werden, um eine Vorabautorisierungsen
 
 >[!IMPORTANT]
 >
->Die Autorisierungs-API **must** verwendet werden, bevor dem Benutzer Zugriff auf die angegebenen Ressourcen gewährt wird.
+>Die Autorisierungs-API **muss** verwendet werden, bevor dem Benutzer Zugriff auf die angegebenen Ressourcen gewährt wird.
 
-Wenn das Antwortergebnis der Vorabautorisierungs-API eine oder mehrere Ressourcen mit einer verweigerten Vorautorisierungsentscheidung enthält, können zusätzliche Fehlerinformationen hinzugefügt werden **(siehe unten stehende Anmerkung)** für jede betroffene Ressource.
+Wenn das Ergebnis der API-Antwort vorautorisieren eine oder mehrere Ressourcen mit einer verweigerten Vorautorisierungsentscheidung enthält, können für jede betroffene Ressource zusätzliche Fehlerinformationen **(siehe unten)** hinzugefügt werden.
 
 >[!IMPORTANT]
 >
@@ -169,7 +169,7 @@ In diesem Abschnitt wird die JSON-Struktur einiger möglicher PreauthorizeRespon
 
 >[!IMPORTANT]
 >
->Die Liste möglicher zusätzlicher Fehler, die über das Medium der erweiterten Fehlerberichterstellungsfunktion abgerufen werden, ist im Abschnitt [Erweiterte Fehlerberichte](/help/authentication/enhanced-error-codes.md).
+>Die Liste möglicher zusätzlicher Fehler, die über das Medium der erweiterten Fehlerberichterstellungsfunktion abgerufen werden, ist in [Erweiterte Fehlerberichte](/help/authentication/enhanced-error-codes.md) beschrieben.
 
 #### Erfolgreich
 
@@ -377,7 +377,7 @@ Adobe Pass Authentication SDK löst einen Fehler aus, während die API-Anfrage z
 
 <br>
 
-## **class Decision** {#decision}
+## **Klassenentscheidung** {#decision}
 
 ```
     ///

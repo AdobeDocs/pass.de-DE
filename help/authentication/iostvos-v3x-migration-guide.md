@@ -4,7 +4,7 @@ description: Migrationshandbuch für iOS/tvOS v3.x
 exl-id: 4c43013c-40af-48b7-af26-0bd7f8df2bdb
 source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
 workflow-type: tm+mt
-source-wordcount: '561'
+source-wordcount: '559'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!TIP]
 > 
-> **Hinweise:**
+> **Notizen:**
 >
 > - Ab iOS SDK-Version 3.1 können Implementoren jetzt WKWebView oder UIWebView austauschbar verwenden. Da UIWebView veraltet ist, sollten Apps zu WKWebView migrieren, um Probleme mit zukünftigen iOS-Versionen zu vermeiden.
 > - Beachten Sie, dass die Migration lediglich bedeutet, dass die UIWebView-Klasse mit WKWebView gewechselt wird. Es gibt keine spezielle Arbeit in Bezug auf Adobe AccessEnabler.
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 ## Build-Einstellungen aktualisieren {#update}
 
-Diese Version enthält Funktionen, die in der SWIFT-Sprache geschrieben wurden. Wenn Ihre App vollständig Objective-C ist, müssen Sie das Kontrollkästchen &quot;Swift-Standardbibliotheken immer einbetten&quot;in den Build-Einstellungen Ihres Ziels auf &quot;Ja&quot;setzen. Wenn diese Option festgelegt ist, scannt Xcode die gebündelten Frameworks in Ihrer App und kopiert, wenn eines davon Swift-Code enthält, die entsprechenden Bibliotheken in das Bundle Ihrer App. Wenn Sie die Build-Einstellungen nicht aktualisieren, stürzt Ihre App möglicherweise mit Fehlern ab, die darauf hinweisen, dass sie AccessEnabler.framework oder verschiedene `ibswift*` -Bibliotheken.
+Diese Version enthält Funktionen, die in der SWIFT-Sprache geschrieben wurden. Wenn Ihre App vollständig Objective-C ist, müssen Sie das Kontrollkästchen &quot;Swift-Standardbibliotheken immer einbetten&quot;in den Build-Einstellungen Ihres Ziels auf &quot;Ja&quot;setzen. Wenn diese Option festgelegt ist, scannt Xcode die gebündelten Frameworks in Ihrer App und kopiert, wenn eines davon Swift-Code enthält, die entsprechenden Bibliotheken in das Bundle Ihrer App. Wenn Sie die Build-Einstellungen nicht aktualisieren, stürzt Ihre App möglicherweise mit Fehlern ab, die darauf hinweisen, dass sie AccessEnabler.framework oder verschiedene `ibswift*` -Bibliotheken nicht laden kann.
 
 </br>
 
@@ -42,7 +42,7 @@ Sobald Sie über Ihre Softwareanweisung verfügen, sollten Sie sie auf einem Rem
     accessEnabler = AccessEnabler("YOUR_SOFTWARE_STATEMENT_HERE");
 ```
 
-> API-Informationen hier: [API-Referenz zu iOS/tvOS](/help/authentication/iostvos-sdk-api-reference.md)
+> API-Informationen hier: [iOS/tvOS-API-Referenz](/help/authentication/iostvos-sdk-api-reference.md)
 
 </br>
 
@@ -50,7 +50,7 @@ Sobald Sie über Ihre Softwareanweisung verfügen, sollten Sie sie auf einem Rem
 
 > Informationen zum Abrufen eines benutzerdefinierten URL-Schemas finden Sie auf dieser Seite: [Abrufen eines Kunden-URL-Schemas](/help/authentication/iostvos-application-registration.md)
 
-Nachdem Sie das benutzerdefinierte URL-Schema abgerufen haben, müssen Sie es zur Datei info.plist der Anwendung hinzufügen. Das benutzerdefinierte Schema hat folgendes Format: `adbe.u-XFXJeTSDuJiIQs0HVRAg://`. Sie müssen den Doppelpunkt und die Schrägstriche beim Hinzufügen zur Datei weglassen. Das obige Beispiel wird `adbe.u-XFXJeTSDuJiIQs0HVRAg`.
+Nachdem Sie das benutzerdefinierte URL-Schema abgerufen haben, müssen Sie es zur Datei info.plist der Anwendung hinzufügen. Das benutzerdefinierte Schema hat folgendes Format: `adbe.u-XFXJeTSDuJiIQs0HVRAg://`. Sie müssen den Doppelpunkt und die Schrägstriche beim Hinzufügen zur Datei weglassen. Das obige Beispiel wird zu `adbe.u-XFXJeTSDuJiIQs0HVRAg`.
 
 ```plist
     <key>CFBundleURLTypes</key>
@@ -68,11 +68,11 @@ Nachdem Sie das benutzerdefinierte URL-Schema abgerufen haben, müssen Sie es zu
 
 ## Abfangen von Aufrufen im benutzerdefinierten URL-Schema {#intercept}
 
-Dies gilt nur, wenn Ihre Anwendung zuvor die manuelle Verarbeitung des Safari View Controller (SVC) über das [setOptions(\[&quot;handleSVC&quot;:true&quot;\])](/help/authentication/iostvos-sdk-api-reference.md) Rufen Sie und für bestimmte MVPDs auf, die den Safari View Controller (SVC) erfordern, sodass das Laden der URLs der Authentifizierungs- und Abmelde-Endpunkte von einem SFSafariViewController-Controller anstelle eines UIWebView-/WKWebView-Controllers erforderlich ist.
+Dies gilt nur, wenn Ihre Anwendung die manuelle Verarbeitung des Safari View Controller (SVC) über den Aufruf [setOptions(\[&quot;handleSVC&quot;:true&quot;\])](/help/authentication/iostvos-sdk-api-reference.md) aktiviert hat und für bestimmte MVPDs, die einen Safari View Controller (SVC) erfordern, sodass die URLs der Authentifizierungs- und Abmelde-Endpunkte von einem SFSafariController anstelle eines UIWebController geladen werden müssen Controller anzeigen/WKWebView.
 
-Während der Authentifizierung und des Abmeldevorgangs muss Ihre Anwendung die Aktivität der `SFSafariViewController `Controller, während er mehrere Umleitungen durchläuft. Ihre Anwendung muss den Moment erkennen, in dem sie eine bestimmte benutzerdefinierte URL lädt, die von Ihrer `application's custom URL scheme` (z. B.`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com)`. Wenn der Controller diese spezifische benutzerdefinierte URL lädt, muss Ihre Anwendung die `SFSafariViewController` und rufen Sie AccessEnabler `handleExternalURL:url `API-Methode.
+Während der Authentifizierung und des Abmeldevorgangs muss Ihre Anwendung die Aktivität des `SFSafariViewController `Controllers überwachen, da sie mehrere Umleitungen durchläuft. Ihre Anwendung muss den Zeitpunkt erkennen, zu dem sie eine bestimmte benutzerdefinierte URL lädt, die durch Ihre `application's custom URL scheme` definiert wurde (z. B.`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com)`). Wenn der Controller diese spezifische benutzerdefinierte URL lädt, muss Ihre Anwendung die `SFSafariViewController` schließen und die `handleExternalURL:url `API-Methode von AccessEnabler aufrufen.
 
-In der `AppDelegate` die folgende Methode hinzufügen:
+Fügen Sie in Ihrem `AppDelegate` die folgende Methode hinzu:
 
 ```swift
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any]) -> Bool {
@@ -83,13 +83,13 @@ In der `AppDelegate` die folgende Methode hinzufügen:
         }
 ```
 
-> API-Informationen hier: [Umgang mit externen URLs](/help/authentication/iostvos-sdk-api-reference.md)
+> API-Informationen hier: [Verarbeiten externer URL](/help/authentication/iostvos-sdk-api-reference.md)
 
 </br>
 
 ## Aktualisieren der Signatur der setRequestor-Methode {#update-setreq}
 
-Da das neue SDK einen neuen Authentifizierungsmechanismus verwendet, ist weder der Parameter signedRequestId noch der öffentliche Schlüssel und das Geheimnis (für tvOS) erforderlich. Die `setRequestor` -Methode vereinfacht und benötigt nur die Anforderer-ID.
+Da das neue SDK einen neuen Authentifizierungsmechanismus verwendet, ist weder der Parameter signedRequestId noch der öffentliche Schlüssel und das Geheimnis (für tvOS) erforderlich. Die `setRequestor` -Methode ist vereinfacht und erfordert nur die Anforderer-ID.
 
 ### iOS
 
@@ -128,7 +128,7 @@ wird:
 
 ## Ersetzen der getAuthenticationToken-Methode durch die handleExternalURL-Methode {#replace}
 
-`getAuthentication` -Methode wurde in der Vergangenheit zum Abschließen des Authentifizierungsflusses verwendet. Da der Name irreführend war, wurde er in `handleExternalURL` und nimmt die URL als Parameter.
+`getAuthentication` -Methode wurde in der Vergangenheit zum Abschließen des Authentifizierungsflusses verwendet. Da der Name irreführend war, wurde er in `handleExternalURL` umbenannt und nimmt die URL als Parameter an.
 
 Ändern Sie alle Vorkommen:
 
@@ -142,4 +142,4 @@ wie folgt:
     accessEnabler.handleExternalURL(request.url?.description);
 ```
 
-> API-Informationen hier: [Umgang mit externen URLs](/help/authentication/iostvos-sdk-api-reference.md)
+> API-Informationen hier: [Verarbeiten externer URL](/help/authentication/iostvos-sdk-api-reference.md)

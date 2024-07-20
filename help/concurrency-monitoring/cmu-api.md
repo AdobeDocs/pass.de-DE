@@ -1,13 +1,13 @@
 ---
 title: API-Übersicht
 description: API-Übersicht
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 3fe6f6d8-5b2f-47e5-a8da-06fb18a5d46b
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '2054'
+source-wordcount: '2043'
 ht-degree: 0%
 
 ---
-
 
 # Context Monitoring-Nutzungs-API {#cmu-api-usage}
 
@@ -17,14 +17,14 @@ ht-degree: 0%
 
 ## API-Übersicht {#api-overview}
 
-Die Verwendung der Parallelüberwachung (CMU) wird als WOLAP (Web-basiert) implementiert [Online Analytics-Verarbeitung](http://en.wikipedia.org/wiki/Online_analytical_processing)). CMU ist eine generische Web-API für Geschäftsberichte, die von einem Data Warehouse unterstützt wird. Es dient als HTTP-Abfragesprache, die die Ausführung typischer OLAP-Vorgänge in RESTfull ermöglicht.
+Die Verwendung der gleichzeitigen Überwachung (CMU) wird als WOLAP-Projekt (Web-basiertes [Online Analytics Processing](http://en.wikipedia.org/wiki/Online_analytical_processing)-Projekt) implementiert. CMU ist eine generische Web-API für Geschäftsberichte, die von einem Data Warehouse unterstützt wird. Es dient als HTTP-Abfragesprache, die die Ausführung typischer OLAP-Vorgänge in RESTfull ermöglicht.
 
 
 >[!NOTE]
 >
 >Die CMU-API ist nicht allgemein verfügbar. Wenden Sie sich bei Fragen zur Verfügbarkeit an Ihren Adobe-Support-Mitarbeiter.
 
-Die CMU-API bietet eine hierarchische Ansicht der zugrunde liegenden OLAP-Cubes. Jede Ressource ([Dimension](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics) in der Dimensionshierarchie, die als URL-Pfadsegment zugeordnet ist) generiert Berichte mit (aggregierter) [Metriken](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics) für die aktuelle Auswahl. Jede Ressource verweist auf ihre übergeordnete Ressource (für Datenaggregationen) und ihre Unterressourcen (für Drilldown). Slicing und Dicing werden über Abfragezeichenfolgenparameter erreicht, die Dimensionen an bestimmte Werte oder Bereiche anhängen.
+Die CMU-API bietet eine hierarchische Ansicht der zugrunde liegenden OLAP-Cubes. Jede Ressource ([Dimension](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics) in der Dimensionshierarchie, die als URL-Pfadsegment zugeordnet ist) generiert Berichte mit (aggregierten) [Metriken](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics) für die aktuelle Auswahl. Jede Ressource verweist auf ihre übergeordnete Ressource (für Datenaggregationen) und ihre Unterressourcen (für Drilldown). Slicing und Dicing werden über Abfragezeichenfolgenparameter erreicht, die Dimensionen an bestimmte Werte oder Bereiche anhängen.
 
 Die REST-API stellt die verfügbaren Daten innerhalb eines in der Anfrage angegebenen Zeitintervalls bereit (wobei auf die Standardwerte zurückgegriffen wird, wenn keine Werte angegeben sind). Dies hängt vom Dimensionspfad, den bereitgestellten Filtern und ausgewählten Metriken ab. Der Zeitraum wird nicht für Berichte angewendet, die keine Zeitdimensionen enthalten (Jahr, Monat, Tag, Stunde, Minute, Sekunde).
 
@@ -40,7 +40,7 @@ Die folgenden Drilldown-Bäume veranschaulichen die in CMU 2.0 verfügbaren Dime
 
 ![](assets/new_breakdown.png)
 
-A `GET` der `https://mgmt.auth.adobe.com/cmu/v2` Der API-Endpunkt gibt eine Darstellung zurück, die Folgendes enthält:
+Ein `GET` an den `https://mgmt.auth.adobe.com/cmu/v2` -API-Endpunkt gibt eine Darstellung zurück, die Folgendes enthält:
 
 * Links zu den verfügbaren Root-Drilldown-Pfaden:
 
@@ -62,10 +62,10 @@ Mit Ausnahme der Datums-/Uhrzeitdimensionen kann jede für die aktuelle Projekti
 
 Die folgenden Filteroptionen sind verfügbar:
 
-* **Gleich** -Filter bereitgestellt werden, indem der Dimensionsname auf einen bestimmten Wert in der Abfragezeichenfolge gesetzt wird.
-* **IN** Filter können angegeben werden, indem der Parameter &quot;dimension-name&quot;mehrmals mit verschiedenen Werten hinzugefügt wird: dimension=value1&amp;dimension=value2
-* **Ungleich** Filter müssen &#39;!&#39; verwenden Symbol hinter dem Dimensionsnamen, das zu &quot;!&quot;führt.=&#39; &quot;Operator&quot;: Dimension!=value
-* **NOT IN** Filter erfordern das &#39;!=&#39; Operator, der mehrmals verwendet wird, einmal für jeden Wert im Satz: Dimension!=value1&amp;dimension!=value2&amp;...
+* **Entspricht** Filtern wird bereitgestellt, indem der Dimensionsname in der Abfragezeichenfolge auf einen bestimmten Wert gesetzt wird.
+* **IN** -Filter können angegeben werden, indem der Parameter &quot;dimension-name&quot;mehrmals mit verschiedenen Werten hinzugefügt wird: dimension=value1&amp;dimension=value2
+* **Nicht gleich** Filter müssen den Wert &#39;!&#39; verwenden Symbol hinter dem Dimensionsnamen, das zu &quot;!&quot;führt.=&#39; &quot;Operator&quot;: Dimension!=value
+* **NOT IN** -Filter erfordern das &#39;!=&#39; Operator, der mehrmals verwendet wird, einmal für jeden Wert im Satz: Dimension!=value1&amp;dimension!=value2&amp;...
 
 
 Außerdem werden die Dimensionsnamen in der Abfragezeichenfolge besonders verwendet: Wenn der Dimensionsname als Abfragezeichenfolgenparameter ohne Wert verwendet wird, weist dies die API an, eine Projektion zurückzugeben, die diese Dimension im Bericht enthält.
@@ -78,7 +78,7 @@ Beispiel-CMU-Abfragen:
 | /dimension1/dimension2/dimension3?dimension1=value1&amp;dimension1=value2 | SELECT * from projektion WHERE dimension1 IN (&#39;value1&#39;, &#39;value2&#39;) GROUP BY dimension1, dimension2, dimension3 |
 | /dimension1/dimension2/dimension3?dimension1!=value1 | SELECT * from projektion WHERE dimension1 &lt;> &#39;value1&#39; GROUP BY dimension1, dimension2, dimension3 |
 | /dimension1/dimension2/dimension3?dimension1!=value1&amp;dimension2!=value2 | SELECT * from projektion WHERE dimension1 NOT IN (&#39;value1&#39;, &#39;value2&#39;) GROUP BY dimension1, dimension2, dimension3 |
-| Angenommen, es gibt keinen direkten Pfad: /dimension1/dimension3, aber es gibt einen Pfad: /dimension1/dimension2/dimension3  </br></br> /dimension1?dimension3 | SELECT * from ProjektionsGRUPPE BY dimension1,dimension3 |
+| Angenommen, es gibt keinen direkten Pfad: /dimension1/dimension3, aber es gibt einen Pfad: /dimension1/dimension2/dimension3 </br></br> /dimension1?dimension3 | SELECT * from ProjektionsGRUPPE BY dimension1,dimension3 |
 
 >[!NOTE]
 >
@@ -96,7 +96,7 @@ Abfragezeichenfolgenparameter, die durch die CMU-API reserviert sind:
 | format | Ja | Wird für die Inhaltsverhandlung verwendet (mit demselben Effekt, aber geringerer Priorität als der Pfad &quot;Erweiterung&quot;- siehe unten). | Keine: Bei der Inhaltsverhandlung werden die anderen Strategien getestet | format=json |
 | limit | Ja | Maximale Anzahl an zurückzugebenden Zeilen | Der vom Server im Self-Link gemeldete Standardwert, wenn in der Anfrage keine Begrenzung angegeben ist | limit=1500 |
 | Metriken | Ja | Kommagetrennte Liste der zurückzugebenden Metriknamen. Diese sollte zum Filtern einer Untergruppe der verfügbaren Metriken (um die Payload-Größe zu reduzieren) und auch zum Erzwingen der API verwendet werden, eine Projektion zurückzugeben, die die angeforderten Metriken enthält (und nicht die standardmäßige optimale Projektion). | Alle für die aktuelle Projektion verfügbaren Metriken werden zurückgegeben, falls dieser Parameter nicht angegeben wird. | metrics=m1,m2 |
-| start | Ja | Startzeit für den Bericht als ISO8601; der Server füllt den verbleibenden Teil aus, wenn nur ein Präfix angegeben wird: Beispielsweise führt start=2012 zu start=2012-01-01:00:00:00 | Vom Server in der Selbstverknüpfung gemeldet; der Server versucht, basierend auf der ausgewählten Zeitgranularität angemessene Standardwerte bereitzustellen. | start=2012-07-15 |
+| start | Ja | Startzeit für den Bericht als ISO8601; der Server füllt den verbleibenden Teil aus, wenn nur ein Präfix angegeben wird: Beispielsweise führt start=2012 zu start=2012-01-01:00:00:00. | Vom Server in der Selbstverknüpfung gemeldet; der Server versucht, basierend auf der ausgewählten Zeitgranularität angemessene Standardwerte bereitzustellen. | start=2012-07-15 |
 
 
 Die einzige verfügbare HTTP-Methode ist derzeit GET. In zukünftigen Versionen können OPTIONS-/HEAD-Methoden unterstützt werden.
@@ -144,7 +144,7 @@ Wenn von keiner der Strategien ein Medientyp angegeben wird, erzeugt die API sta
 
 ## Hypertext Application Language (HAL) {#hypertext-app-lang}
 
-Für JSON und XML wird die Payload als HAL kodiert, wie hier beschrieben: `http://stateless.co/hal_specification.html`.
+Bei JSON und XML wird die Payload als HAL kodiert, wie hier beschrieben: `http://stateless.co/hal_specification.html`.
 
 Der tatsächliche Bericht (ein verschachteltes Tag/eine verschachtelte Eigenschaft namens &quot;Bericht&quot;) besteht aus der tatsächlichen Liste der Datensätze, die alle ausgewählten/anwendbaren Dimensionen und Metriken mit ihren Werten enthalten, die wie folgt kodiert sind:
 
@@ -174,7 +174,7 @@ Der tatsächliche Bericht (ein verschachteltes Tag/eine verschachtelte Eigenscha
 
 Bei XML- und JSON-Formaten ist die Reihenfolge der Felder (Dimensionen und Metriken) in einem Datensatz nicht angegeben - aber konsistent (die Reihenfolge ist in allen Datensätzen identisch). Clients sollten sich jedoch nicht auf eine bestimmte Reihenfolge der Felder in einem Datensatz verlassen.
 
-Der Ressourcenlink (das &quot;self&quot;-rel in JSON und das &quot;href&quot;-Ressourcenattribut in XML) enthält den aktuellen Pfad und die Abfragezeichenfolge, die für den Inline-Bericht verwendet werden. Die Abfragezeichenfolge zeigt alle impliziten und expliziten Parameter an, sodass die Payload explizit auf das verwendete Zeitintervall, die impliziten Filter (falls vorhanden) usw. verweist. Der Rest der Links innerhalb der Ressource enthält alle verfügbaren Segmente, die verfolgt werden können, um einen Drilldown in den aktuellen Daten durchzuführen. Es wird auch ein Link für die Datenaggregation bereitgestellt, der auf den übergeordneten Pfad verweist (falls vorhanden). Die `href` -Wert für die Drilldown-/Rollup-Links enthält nur den URL-Pfad (er enthält nicht die Abfragezeichenfolge, daher muss dieser bei Bedarf vom Client angehängt werden). Beachten Sie, dass nicht alle von der aktuellen Ressource verwendeten (oder impliziten) Abfragezeichenfolgenparameter für &quot;Datenaggregations&quot;- oder &quot;Drilldown&quot;-Links gelten (z. B. gelten die Filter nicht für Unter- oder Super-Ressourcen).
+Der Ressourcenlink (das &quot;self&quot;-rel in JSON und das &quot;href&quot;-Ressourcenattribut in XML) enthält den aktuellen Pfad und die Abfragezeichenfolge, die für den Inline-Bericht verwendet werden. Die Abfragezeichenfolge zeigt alle impliziten und expliziten Parameter an, sodass die Payload explizit auf das verwendete Zeitintervall, die impliziten Filter (falls vorhanden) usw. verweist. Der Rest der Links innerhalb der Ressource enthält alle verfügbaren Segmente, die verfolgt werden können, um einen Drilldown in den aktuellen Daten durchzuführen. Es wird auch ein Link für die Datenaggregation bereitgestellt, der auf den übergeordneten Pfad verweist (falls vorhanden). Der Wert `href` für die Drilldown-/Rollup-Links enthält nur den URL-Pfad (er enthält nicht die Abfragezeichenfolge, daher muss dieser bei Bedarf vom Client angehängt werden). Beachten Sie, dass nicht alle von der aktuellen Ressource verwendeten (oder impliziten) Abfragezeichenfolgenparameter für &quot;Datenaggregations&quot;- oder &quot;Drilldown&quot;-Links gelten (z. B. gelten die Filter nicht für Unter- oder Super-Ressourcen).
 
 Beispiel (vorausgesetzt, wir haben eine einzelne Metrik namens &quot;Clients&quot;und es gibt eine Voraggregation für `year/month/day/...`):
 
@@ -241,14 +241,14 @@ Beispiel: https://mgmt.auth.adobe.com/cmu/v2/year/month.csv erstellt eine Datei 
 
 ## Datenfreude {#data-freshness}
 
-Obwohl die Anforderung eine Kopfzeile vom Typ &quot;Zuletzt geändert&quot;enthält, enthält sie **NICHT** spiegeln den Zeitpunkt wider, zu dem der Bericht im Text zuletzt aktualisiert wurde. Die allgemeinen Berichte werden regelmäßig mit folgenden Regeln berechnet:
+Obwohl die Anforderung eine Kopfzeile vom Typ &quot;Letzte Änderung&quot;enthält, entspricht sie **NICHT** dem Zeitpunkt, zu dem der Bericht im Textkörper zuletzt aktualisiert wurde. Die allgemeinen Berichte werden regelmäßig mit folgenden Regeln berechnet:
 
-* wenn die Zeitgranularität **year** oder **month**&#x200B;ändern, wird der Bericht alle 2 Tage aktualisiert.
-* wenn die Zeitgranularität **day**&#x200B;ändern, wird der Bericht alle 3 Stunden aktualisiert.
-* wenn die Zeitgranularität **hour** eingeben, wird der Bericht stündlich aktualisiert.
-* wenn die Zeitgranularität **minute** und der Bericht jede Minute aktualisiert wird
+* Wenn die Zeitgranularität **Jahr** oder **Monat** ist, wird der Bericht alle 2 Tage aktualisiert.
+* Wenn die Zeitgranularität **Tag** ist, wird der Bericht alle 3 Stunden aktualisiert
+* Wenn die Zeitgranularität **Stunde** beträgt, wird der Bericht stündlich aktualisiert.
+* Wenn die Zeitgranularität **Minute** beträgt, wird der Bericht jede Minute aktualisiert.
 
-Die **Aktivitätsstufe** und **Parallelitätsstufe** Berichte werden täglich aktualisiert, unabhängig von der Zeitgranularität.
+Die Berichte **Aktivitätsebene** und **Parallelitätsstufe** werden täglich aktualisiert, unabhängig von der Zeitgranularität.
 
 ## GZIP-Komprimierung {#gzip-compression}
 

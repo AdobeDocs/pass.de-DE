@@ -16,14 +16,14 @@ ht-degree: 0%
 >Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 >Um die Abbauungs-API verwenden zu können, müssen Sie:
 >- Bitten Sie das Supportteam um eine Softwareanweisung für Ihre registrierte Anwendung
->- Abrufen eines Zugriffstokens basierend auf [Dynamische Kundenregistrierung](dynamic-client-registration.md)
+>- Abrufen eines Zugriffstokens basierend auf der [dynamischen Client-Registrierung](dynamic-client-registration.md)
 > 
 
 >[!NOTE]
 >
 >Um die Abbauungs-API verwenden zu können, müssen Sie:
 >- Bitten Sie das Supportteam um eine Softwareanweisung für Ihre registrierte Anwendung
->- Abrufen eines Zugriffstokens basierend auf [Dynamische Kundenregistrierung](dynamic-client-registration.md)
+>- Abrufen eines Zugriffstokens basierend auf der [dynamischen Client-Registrierung](dynamic-client-registration.md)
 > 
 
 ## Allgemeine Informationen {#general_info}

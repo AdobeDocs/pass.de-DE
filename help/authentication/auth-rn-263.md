@@ -4,7 +4,7 @@ description: Versionshinweise zur Adobe Pass-Authentifizierung 2.63
 exl-id: 40987328-6d41-4948-aa4a-bab31f98a18a
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '296'
+source-wordcount: '304'
 ht-degree: 0%
 
 ---
@@ -24,8 +24,8 @@ Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme in di
 
 ### Build-Nummer {#build-number-263}
 
-Adobe Pass-Authentifizierung: adobe-pass-**2,63**
-Releasedatum: **20.9.2022 - 09.22.2022**
+Adobe Pass-Authentifizierung: adobe-pass-**2.63**
+Releasedatum: **20.09.2022 - 22.09.2022**
 
 ### Neue Funktionen {#new-features-263}
 
@@ -52,7 +52,7 @@ Mit dieser Funktion wird die ID eines von Synacor proximierten MVPD im Header de
 In dieser Version haben wir ein Problem behoben, bei dem authN oder authZ TTL auf MVPD-Ebene nicht korrekt in den Konfigurationsberichten berechnet wurden.
 
 
-#### JavaScript-SDK 4.6.0 {#js-sdk}
+#### JavaScript SDK 4.6.0 {#js-sdk}
 
-* Die Verwendung von `eval` -Funktion verwenden, sodass das SDK mit der Content Security Policy konform ist.
+* Die Verwendung der Funktion `eval` wurde entfernt, sodass das SDK mit der Inhaltssicherheitsrichtlinie konform ist.
 * Fehlerkorrektur - Der Authentifizierungsfluss kann jetzt erfolgreich abgeschlossen werden, wenn der lokale Speicher des Browsers explizit von einer Partner-Anwendung gelöscht wird.

@@ -34,7 +34,7 @@ Wird als Kurzbezeichnung für &quot;Autorisierung&quot;verwendet, wie in &quot;A
 
 ## AuthZ-Token {#authz-token}
 
-Autorisierungstoken, das von der Adobe Pass-Authentifizierung generiert wird, nachdem ein Benutzer zur Anzeige geschützter Inhalte autorisiert wurde. Das AuthZ-Token wird auf Adobe Pass-Authentifizierungsservern gespeichert und zum Generieren einer [Kurzlebige Medien-Token](#short-lived-token).
+Autorisierungstoken, das von der Adobe Pass-Authentifizierung generiert wird, nachdem ein Benutzer zur Anzeige geschützter Inhalte autorisiert wurde. Das AuthZ-Token wird auf Adobe Pass-Authentifizierungsservern gespeichert und zum Generieren eines [Tokens für kurzlebige Medien](#short-lived-token) verwendet.
 
 ## Kanal-ID (nicht mehr unterstützt) {#channel_id}
 
@@ -96,11 +96,11 @@ Ein MVPD, das keine direkte Integration mit dem Adobe SP hat, aber über einen P
 
 ## Anforderer-ID {#requestor-id}
 
-Identifiziert eindeutig eine [Programmierer](#programmer) (ein Konto, eine Marke, einen Kanal oder eine Eigenschaft) innerhalb der Adobe Pass-Authentifizierung. Diese ID wird während der Ersteinrichtung des Kontos zwischen dem Programmierer und der Adobe bestimmt. Im Internet ist die Anforderer-ID mit einer Reihe von auf der Whitelist befindlichen Domänen verknüpft. Aufrufe, die eine Kennung von einer externen Domäne verwenden, werden abgelehnt. Programmierer verwenden auch die Anforderer-ID für Analysen. Normalerweise gibt es nur eine Anforderer-ID pro Programmierer. Eine zusätzliche Funktion im Zusammenhang mit der Anforderer-ID besteht darin, dass der Programmierer Adobe ein öffentliches Zertifikat bereitstellen muss, da der setRequestor-API-Aufruf erwartet, dass verschlüsselte Daten gesendet werden, die zur Authentifizierung des Programmierers im Adobe Pass-Authentifizierungssystem verwendet werden.
+Identifiziert eindeutig einen [Programmierer](#programmer) (ein Konto, eine Marke, einen Kanal oder eine Eigenschaft) innerhalb der Adobe Pass-Authentifizierung. Diese ID wird während der Ersteinrichtung des Kontos zwischen dem Programmierer und der Adobe bestimmt. Im Internet ist die Anforderer-ID mit einer Reihe von auf der Whitelist befindlichen Domänen verknüpft. Aufrufe, die eine Kennung von einer externen Domäne verwenden, werden abgelehnt. Programmierer verwenden auch die Anforderer-ID für Analysen. Normalerweise gibt es nur eine Anforderer-ID pro Programmierer. Eine zusätzliche Funktion im Zusammenhang mit der Anforderer-ID besteht darin, dass der Programmierer Adobe ein öffentliches Zertifikat bereitstellen muss, da der setRequestor-API-Aufruf erwartet, dass verschlüsselte Daten gesendet werden, die zur Authentifizierung des Programmierers im Adobe Pass-Authentifizierungssystem verwendet werden.
 
 ## Ressourcen-ID {#resource-id}
 
-Eine Zeichenfolge oder mRSS-Ressource, die eine [Programmierer](#programmer) in MVPDs. Es wird zwischen dem Programmierer und den MVPDs vereinbart. Die Adobe Pass-Authentifizierung übergibt die Ressourcen-ID über &quot;unberührt&quot;, daher muss sie für alle MVPDs gleich sein. Ein Programmierer kann mehrere Ressourcen-IDs verwenden, solange die MVPDs wissen, was jede ID darstellt.
+Eine Zeichenfolge oder mRSS-Ressource, die einen [Programmierer](#programmer) für MVPDs angibt. Es wird zwischen dem Programmierer und den MVPDs vereinbart. Die Adobe Pass-Authentifizierung übergibt die Ressourcen-ID über &quot;unberührt&quot;, daher muss sie für alle MVPDs gleich sein. Ein Programmierer kann mehrere Ressourcen-IDs verwenden, solange die MVPDs wissen, was jede ID darstellt.
 
 ## SessionGUID {#sessionGUID}
 
@@ -116,7 +116,7 @@ Ein Begriff, der in der gesamten Adobe Pass-Authentifizierungsdokumentation verw
 
 ## SP{#sp}
 
-Dienstleister; dies bezieht sich normalerweise auf die *Rolle* von SP, gespielt von Adobe Pass Authentication, im Namen eines Programmierers in einer Integration mit einer [MVPD](#mvpd).
+Service Provider; dies bezieht sich normalerweise auf die *Rolle* von SP, die von der Adobe Pass-Authentifizierung im Auftrag eines Programmierers in einer Integration mit einem [MVPD](#mvpd) gespielt wird.
 
 ## Temporärer Pass {#temp-pass}
 

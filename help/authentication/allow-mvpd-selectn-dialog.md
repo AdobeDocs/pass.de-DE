@@ -4,7 +4,7 @@ description: MVPDs im Dialogfeld "Auswahl"zulassen
 exl-id: 2c0e0f06-ddc6-4bea-90dc-d7ef8e78d27e
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '129'
+source-wordcount: '128'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Der Programmierer kann die Benutzererfahrung neuer MVPD-Integrationen testen ode
 
 ## Lösung {#solution}
 
-Im `displayProviderDialog()` -Rückruf, gibt die Adobe Pass-Authentifizierung alle MVPDs zurück, die mit dem ausgewählten Programmierer (Anforderer-ID) integriert sind. Der Programmierer kann jedoch einen Filter auf das Rückgabe-Array von MVPDs anwenden und nur diejenigen anzeigen, die sich in beiden Listen befinden.
+Im Rückruf `displayProviderDialog()` gibt die Adobe Pass-Authentifizierung alle mit dem ausgewählten Programmierer (Anforderer-ID) integrierten MVPDs zurück. Der Programmierer kann jedoch einen Filter auf das Rückgabe-Array von MVPDs anwenden und nur diejenigen anzeigen, die sich in beiden Listen befinden.
 
 ## Beispiel {#example}
 

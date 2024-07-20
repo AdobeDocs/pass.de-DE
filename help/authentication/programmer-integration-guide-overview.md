@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## Cookbooks {#cookbooks}
 
-* AccessEnabler JavaScript-SDK-Cookbook
+* AccessEnabler JavaScript SDK-Cookbook
 * AccessEnabler iOS/tvOS SDK-Cookbook
 * AccessEnabler Android SDK-Cookbook
 * REST API-Cookbook (Server-zu-Server)
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 ## API-Referenzen {#api-references}
 
-* AccessEnabler JavaScript-SDK-API-Referenz
+* AccessEnabler JavaScript SDK-API-Referenz
 * AccessEnabler iOS/tvOS SDK-API-Referenz
 * AccessEnabler Android SDK-API-Referenz
 * REST-API-Referenz

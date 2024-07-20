@@ -4,7 +4,7 @@ description: Amazon FireOS SSO mit clientless API-Cookbook
 exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '762'
+source-wordcount: '755'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Dieses Dokument enthält Anweisungen zur Implementierung der SSO-Version des Ado
 
 Der zweite Teil des Dokuments umfasst die wichtigsten Schritte zur Implementierung der clientless-API für die Adobe Pass-Authentifizierung.
 
-Einen umfassenden technischen Überblick über die Funktionsweise der Clientless-Lösung finden Sie im Abschnitt [REST API - Übersicht](/help/authentication/rest-api-overview.md). Adobe ist der bevorzugte Ansprechpartner für Support zur Gesamtarchitektur und zu den ersten Implementierungen.
+Einen umfassenden technischen Überblick über die Funktionsweise der clientlosen Lösung finden Sie in der [REST API Overview](/help/authentication/rest-api-overview.md) . Adobe ist der bevorzugte Ansprechpartner für Support zur Gesamtarchitektur und zu den ersten Implementierungen.
 
 ## Amazon Clientless SSO {#AMZ-Clientless-SSO}
 
@@ -37,16 +37,16 @@ Wenn die Payload erkannt wird und einer authentifizierten Sitzung entspricht, ge
 
 ### Erstellen der Anwendung zur Verwendung des Amazon SDK {#Build-entries}
 
-* Neueste Version herunterladen und kopieren [Amazon Stub SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar) in einen Ordner /SSOEnabler parallel zum App-Ordner
+* Laden Sie das neueste [Amazon Stub SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar) herunter und kopieren Sie es in einen /SSOEnabler -Ordner, der parallel zum App-Ordner liegt.
 * Aktualisieren Sie die Manifest-/Gradle-Dateien, um die Bibliothek zu verwenden:
 
-  **Fügen Sie Ihrer Manifestdatei die folgende Zeile hinzu:**
+  **Fügen Sie der Manifestdatei die folgende Zeile hinzu:**
 
   ```Java
   <uses-library android:name="com.amazon.ottssotokenlib" android:required="false"/\>
   ```
 
-  **Gradle-Dateieinträge:**
+  **Gradle file items:**
 
   Unter Repositorys:
 
@@ -65,7 +65,7 @@ Wenn die Payload erkannt wird und einer authentifizierten Sitzung entspricht, ge
 
 * Umgang mit dem Fehlen der Amazon-Companion-App:
 
-  Sollte der Companion nicht auf dem Amazon-Gerät vorhanden sein, auf dem Ihre Anwendung ausgeführt wird, sollten Sie während der Laufzeit in der folgenden Klasse auf eine ClassNotFoundException stoßen: `com.amazon.ottssotokenlib.SSOEnabler`.
+  Sollte der Companion nicht auf dem Amazon-Gerät vorhanden sein, auf dem Ihre Anwendung ausgeführt wird, sollte während der Laufzeit in der folgenden Klasse eine ClassNotFoundException auftreten: `com.amazon.ottssotokenlib.SSOEnabler`.
 
   In diesem Fall müssen Sie nur den Payload-Schritt überspringen und auf den normalen PrimeTime-Fluss zurückgreifen. SSO wird nicht aktiviert, aber der normale Autorisierungsfluss erfolgt normal.
 
@@ -113,7 +113,7 @@ Wenn die API-Aufrufe aus irgendeinem Grund keine Payload zurückgeben, verwenden
 
 * Diese API stellt die Antwort über den während des Init festgelegten Callback bereit.
 
-  **Ex**. Aufruf mithilfe der Singleton-Instanz, die während der init erstellt wurde:
+  **ex**. Aufruf mithilfe der Singleton-Instanz, die während der init erstellt wurde:
 
   ```JAVA
   ssoEnabler.getSSOTokenAsync().
@@ -145,13 +145,13 @@ Wenn die API-Aufrufe aus irgendeinem Grund keine Payload zurückgeben, verwenden
 
 ### Adobe Pass Clientlose API-Update zur Verwendung der dynamischen Client-Registrierung {#clientlessdcr}
 
-Wenn dies Ihre erste Implementierung ist, lesen Sie die Informationen unter **Clientlose technische Übersicht** und kontaktieren Sie Adobe, falls Sie Support benötigen.
+Wenn dies Ihre erste Implementierung ist, lesen Sie den Abschnitt **Clientlose technische Übersicht** und wenden Sie sich an den Adobe, falls Sie Support benötigen.
 
 Für die Adobe Client-lose-API müssen Anwendungen die Dynamic Client-Registrierung verwenden, um Adobe-Server aufzurufen.
 
-* Um die Dynamic Client-Registrierung in Ihrer Anwendung zu verwenden, befolgen Sie die Anweisungen unter [Dynamisches Client-Registrierungs-Management zur Registrierung der Anwendung](/help/authentication/dynamic-client-registration-management.md).
+* Um die dynamische Client-Registrierung in Ihrer Anwendung zu verwenden, befolgen Sie die Anweisungen unter [Dynamisches Client-Registrierungs-Management , um die Anwendung zu registrieren](/help/authentication/dynamic-client-registration-management.md).
 
-* Um die Dynamic Client Registration API zu implementieren, um Authentifizierungs- und Autorisierungsanfragen an Adobe Pass-Server durchzuführen, folgen Sie den Anweisungen unter [Dynamische Client-Registrierungs-API](/help/authentication/dynamic-client-registration-api.md) .
+* Um die Dynamic Client Registration-API zu implementieren, um Authentifizierungs- und Autorisierungsanfragen an Adobe Pass-Server durchzuführen, folgen Sie den Anweisungen in der [Dynamic Client Registration API](/help/authentication/dynamic-client-registration-api.md) .
 
 ### Adobe Pass Clientlose API-Update zur Verwendung von Amazon SSO {#clientlesssso}
 
@@ -189,7 +189,7 @@ GET /adobe-services/config/requestor HTTP/1.1 Host: sp-preprod.auth.adobe.com
 Adobe-Subject-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaWF0IjoxNTExMzY4ODAyLCJleHAiOjE1NDI5MDQ4MDIsImF1ZCI6ImFkb2JlIiwic3ViIjoiNWZjYzMwODctYWJmZi00OGU4LWJhZTgtODQzODViZTFkMzQwIiwiZGlkIjoiY2FmZjQ1ZDAtM2NhMy00MDg3LWI2MjMtNjFkZjNhMmNlOWM4In0.JlBFhNhNCJCDXLwBjy5tt3PtPcqbMKEIGZ6sr2NA
 ```
 
-**Senden als Abfrageparameter**
+**Als Abfrageparameter senden**
 
 ```HTTPS
 GET /adobe-services/config/requestor?ast=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaWF0IjoxNTExMzY4ODAyLCJleHAiOjE1NDI5MDQ4MDIsImF1ZCI6ImFkb2JlIiwic3ViIjoiNWZjYzMwODctYWJmZi00OGU4LWJhZTgtODQzODViZTFkMzQwIiwiZGlkIjoiY2FmZjQ1ZDAtM2NhMy00MDg3LWI2MjMtNjFkZjNhMmNlOWM4In0.JlBFhNhNCJCDXLwBjy5tt3PtPcqbMKEIGZ6sr2NA
@@ -199,7 +199,7 @@ Host: sp.auth.adobe.com
 ```
 
 
-**Senden als Post-Parameter**
+**Als Post-Parameter senden**
 
 
 ```HTTPS

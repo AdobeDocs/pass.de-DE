@@ -4,7 +4,7 @@ description: Mindestsystemanforderungen
 exl-id: 57b21e2a-abd7-4b4b-85f1-25584a850e40
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '434'
+source-wordcount: '446'
 ht-degree: 0%
 
 ---
@@ -43,12 +43,12 @@ Adobe Pass ermutigt unsere Kunden und Partner, ein Upgrade auf die neuesten Vers
 
 | Betriebssystem | Unterstützte Versionen |
 |---|---|
-| *Android* | **7,0** (Nougat) oder höher |
+| *Android* | **7.0** (Nougat) oder höher |
 | *iOS* | **14** oder höher |
 | *iPadOS* | **14** oder höher |
 | *tvOS* | **14** oder höher |
 | *Fire OS* | **5 (Android 5.1)** oder höher |
-| *MAC OS* | **10,13** oder höher |
+| *Mac OS* | **10.13** oder höher |
 | *Microsoft Windows* | **10** oder höher |
 
 
@@ -62,7 +62,7 @@ Adobe Pass ermutigt unsere Kunden und Partner, ein Upgrade auf die neuesten Vers
 ## Geräteanforderungen für clientlose (REST)-Implementierungen {#general_clientless_reqs}
 
 
-Jedes Gerät, das Adobe Pass-Authentifizierungsdienste über clientlose Implementierungen nutzt **muss**:
+Jedes Gerät, das Adobe Pass-Authentifizierungsdienste über clientlose Implementierungen **nutzt, muss in der Lage sein,**:
 
 * Stellen Sie eine eindeutige Hash-Geräte-ID bereit. Wenn das Gerät keine eindeutige Hash-Geräte-ID bereitstellt, muss es in der Lage sein, eine eindeutige ID beizubehalten, die von der Adobe Pass-Authentifizierung bereitgestellt wird. Das Gerät sollte in der Lage sein, die eindeutige ID dauerhaft im lokalen Speicher zu speichern und die eindeutige ID als Geräte-ID anzugeben, wenn die Adobe Pass-Authentifizierungs-APIs aufgerufen werden.
 * Generieren digitaler Signaturen mit dem HMAC-SHA1-Algorithmus

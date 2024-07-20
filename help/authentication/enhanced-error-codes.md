@@ -4,7 +4,7 @@ description: Verbesserte Fehlercodes
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
 source-git-commit: 87639ad93d8749ae7b1751cd13a099ccfc2636ac
 workflow-type: tm+mt
-source-wordcount: '2299'
+source-wordcount: '2207'
 ht-degree: 2%
 
 ---
@@ -23,7 +23,7 @@ Um in der Programmeranwendung Enhanced Error Codes zu verwenden, muss eine Anfra
 
 ## Umgang mit Antwortfehlern {#response-error-handling}
 
-In den meisten Fällen enthält die Adobe Pass-Authentifizierungs-API zusätzliche Fehlerinformationen im Antworttext, um **aussagekräftiger Kontext** , um herauszufinden, warum ein bestimmter Fehler aufgetreten ist und/oder mögliche Lösungen zur automatischen Behebung des Problems.  *In bestimmten Fällen, bei denen es sich um Authentifizierungs- oder Abmeldevorgänge handelt, geben die Adobe Pass-Authentifizierungsdienste möglicherweise eine HTML-Antwort oder einen leeren Text zurück. Weitere Informationen finden Sie in der API-Dokumentation .*
+In den meisten Szenarien enthält die Adobe Pass-Authentifizierungs-API zusätzliche Fehlerinformationen im Antworttext, um **einen aussagekräftigen Kontext** zu bieten, warum ein bestimmter Fehler aufgetreten ist, und/oder mögliche Lösungen zur automatischen Behebung des Problems.  *In bestimmten Fällen, bei denen es sich um Authentifizierungs- oder Abmeldevorgänge handelt, geben die Adobe Pass-Authentifizierungsdienste möglicherweise eine HTML-Antwort oder einen leeren Text zurück. Weitere Informationen finden Sie in der API-Dokumentation.*
 
 Während bestimmte Fehlertypen automatisch verarbeitet werden können (z. B. eine Autorisierungsanfrage im Fall einer Netzwerk-Zeitüberschreitung erneut auszuführen oder eine erneute Authentifizierung des Benutzers zu verlangen, wenn seine Sitzung abgelaufen ist), erfordern andere Typen möglicherweise Konfigurationsänderungen oder die Interaktion des Kundenbetreuungsteams. Es ist wichtig, dass Programmierer in solchen Fällen vollständige Fehlerinformationen erfassen und bereitstellen.
 
@@ -66,11 +66,11 @@ Die zusätzlichen Fehlerinformationen sind im Feld &quot;Fehler&quot;im Antwortt
 
 </br>
 
-Adobe Pass-APIs, die mehrere Elemente verarbeiten (API für die Vorabautorisierung usw.), können mithilfe von Fehlerinformationen auf Elementebene anzeigen, ob die Verarbeitung für ein bestimmtes Element fehlgeschlagen ist und für andere Elemente erfolgreich war. In diesem Fall wird die ***&quot;error&quot;*** -Objekt befindet sich auf der Elementebene und der Antworttext kann mehrere ***&quot;errors&quot;*** Objekte - lesen Sie bitte die API-Dokumentation.
+Adobe Pass-APIs, die mehrere Elemente verarbeiten (API für die Vorabautorisierung usw.), können mithilfe von Fehlerinformationen auf Elementebene anzeigen, ob die Verarbeitung für ein bestimmtes Element fehlgeschlagen ist und für andere Elemente erfolgreich war. In diesem Fall befindet sich das Objekt ***&quot;error&quot;*** auf der Elementebene und der Antworttext kann mehrere Objekte vom Typ ***&quot;errors&quot;*** enthalten. Weitere Informationen finden Sie in der API-Dokumentation.
 
 </br>
 
-**Beispiel mit Teilerfolg und Fehler auf Artikelebene**
+**Beispiel mit Teilerfolg und Fehler auf Elementebene**
 
 ```json
 {
@@ -104,37 +104,40 @@ Jedes Fehlerobjekt verfügt über die folgenden Parameter:
 
 | Name | Typ | Beispiel | Beschränkt | Beschreibung |
 |---|---|----|:---:|---|
-| *status* | *integer* | *403* | &amp;check; | Der Antwort-HTTP-Statuscode, wie in RFC 7231 dokumentiert (<https://tools.ietf.org/html/rfc7231#section-6>) <ul><li>400 Ungültige Anfrage</li><li>401 Nicht autorisiert</li><li>403 Verboten</li><li>404 Nicht gefunden</li><li>405 Methode nicht zulässig</li><li>409 Konflikt</li><li>410 Stück</li><li>412 Vorbedingung fehlgeschlagen</li><li>429 Zu viele Anfragen</li><li>500 Interval server error</li><li>503 Dienst nicht verfügbar</li></ul> |
-| *code* | *Zeichenfolge* | *network_connection_failure* | &amp;check; | Der standardmäßige Adobe Pass-Authentifizierungsfehlercode. Die vollständige Liste der Fehler-Codes finden Sie unten. |
-| *message* | *Zeichenfolge* | *Der TV-Provider kann nicht kontaktiert werden.* | | Vom Menschen lesbare Nachricht, die dem Endbenutzer angezeigt werden kann. |
-| *details* | *Zeichenfolge* | *Ihr Abonnement-Paket enthält keinen Live-Kanal* | | In einigen Fällen wird eine detaillierte Meldung von den MVPD-Autorisierungsendpunkten oder vom Programmierer durch Abbauregeln bereitgestellt. <p> Beachten Sie, dass dieses Feld möglicherweise nicht in den Fehlerfeldern vorhanden ist, wenn von den Partnerdiensten keine benutzerdefinierte Nachricht empfangen wurde. |
+| *status* | *integer* | *403* | &amp;check; | Der Antwort-HTTP-Statuscode, wie in RFC 7231 (<https://tools.ietf.org/html/rfc7231#section-6>) dokumentiert <ul><li>400 Ungültige Anfrage</li><li>401 Nicht autorisiert</li><li>403 Verboten</li><li>404 Nicht gefunden</li><li>405 Methode nicht zulässig</li><li>409 Konflikt</li><li>410 Stück</li><li>412 Vorbedingung fehlgeschlagen</li><li>429 Zu viele Anfragen</li><li>500 Interval server error</li><li>503 Dienst nicht verfügbar</li></ul> |
+| *code* | *string* | *network_connection_failure* | &amp;check; | Der standardmäßige Adobe Pass-Authentifizierungsfehlercode. Die vollständige Liste der Fehler-Codes finden Sie unten. |
+| *message* | *string* | *Der Dienst Ihres Fernsehanbieters kann nicht kontaktiert werden* | | Vom Menschen lesbare Nachricht, die dem Endbenutzer angezeigt werden kann. |
+| *details* | *string* | *Ihr Abonnement-Paket enthält nicht den Kanal &quot;Live&quot;* | | In einigen Fällen wird eine detaillierte Meldung von den MVPD-Autorisierungsendpunkten oder vom Programmierer durch Abbauregeln bereitgestellt. <p> Beachten Sie, dass dieses Feld möglicherweise nicht in den Fehlerfeldern vorhanden ist, wenn von den Partnerdiensten keine benutzerdefinierte Nachricht empfangen wurde. |
 | *helpUrl* | *url* | &quot;`http://`&quot; | | Eine URL, die Links zu weiteren Informationen über den Grund dieses Fehlers und mögliche Lösungen enthält. <p>Der URI stellt eine absolute URL dar und sollte nicht aus dem Fehlercode abgeleitet werden. Je nach Fehlerkontext kann eine andere URL angegeben werden. Beispielsweise liefert derselbe &quot;bad_request&quot;-Fehlercode verschiedene URLs für Authentifizierungs- und Autorisierungsdienste. |
-| *trace* | *Zeichenfolge* | *12f6fef9-d2e0-422b-a9d7-60d799abe353* | | Eine eindeutige Kennung für diese Antwort, die verwendet werden kann, wenn der Support kontaktiert wird, um bestimmte Probleme in komplexeren Szenarien zu identifizieren. |
-| *action* | *Zeichenfolge* | *Wiederholen* | &amp;check; | Empfohlene Maßnahmen zur Behebung der Situation: <ul><li> *Keine* - Leider gibt es keine vordefinierten Maßnahmen, um dieses Problem zu beheben. Dies könnte auf einen falschen Aufruf der öffentlichen API hindeuten</li><li>*Konfiguration* - Eine Konfigurationsänderung ist über das TVE-Dashboard oder durch Kontaktaufnahme mit dem Support erforderlich. </li><li>*application-registration* - Die Anmeldung muss sich selbst registrieren. </li><li>*Authentifizierung* - Der Benutzer muss sich authentifizieren oder erneut authentifizieren. </li><li>*Autorisierung* - Der Benutzer muss die Autorisierung für die jeweilige Ressource einholen. </li><li>*Abbau* - Eine gewisse Abbauweise sollte angewendet werden. </li><li>*Wiederholen* - Ein erneuter Versuch mit der Anfrage kann das Problem lösen.</li><li>*Wiederholen* - Das Problem kann durch Wiederholen der Anfrage nach dem angegebenen Zeitraum behoben werden.</li></ul> |
+| *trace* | *string* | *12f6fef9-d2e0-422b-a9d7-60d799abe353* | | Eine eindeutige Kennung für diese Antwort, die verwendet werden kann, wenn der Support kontaktiert wird, um bestimmte Probleme in komplexeren Szenarien zu identifizieren. |
+| *action* | *string* | *retry* | &amp;check; | Empfohlene Maßnahmen zur Behebung der Situation: <ul><li> *none* - Leider gibt es keine vordefinierten Maßnahmen, um dieses Problem zu beheben. Dies könnte auf einen falschen Aufruf der öffentlichen API hindeuten</li><li>*configuration* - Eine Konfigurationsänderung ist über das TVE-Dashboard oder durch Kontaktaufnahme mit dem Support erforderlich. </li><li>*application-registration* - Die Anwendung muss sich selbst registrieren. </li><li>*Authentifizierung* - Der Benutzer muss sich authentifizieren oder erneut authentifizieren. </li><li>*Autorisierung* - Der Benutzer muss die Autorisierung für die jeweilige Ressource erhalten. </li><li>*Abbau* - Es sollte eine Form des Abbaus angewendet werden. </li><li>*retry* - Ein erneuter Versuch der Anfrage kann das Problem lösen</li><li>*retry-after* - Ein erneuter Versuch nach dem angegebenen Zeitraum kann das Problem lösen.</li></ul> |
 
 </br>
 
-**Hinweise:**
+**Notizen:**
 
-- ***Beschränkt*** column *gibt an, ob der entsprechende Feldwert einen endlichen Satz darstellt* (z. B. vorhandene HTTP-Status-Codes für &quot;*status*&quot;). Zukünftige Aktualisierungen dieser Spezifikation könnten Werte zur eingeschränkten Liste hinzufügen, vorhandene Werte werden jedoch nicht entfernt oder geändert. Unbeschränkte Felder können in der Regel beliebige Daten enthalten, es gibt jedoch Einschränkungen, um eine angemessene Größe sicherzustellen.
+- ***Eingeschränkt*** Spalte *gibt an, ob der entsprechende Feldwert einen endlichen Satz darstellt* (z. B. vorhandene HTTP-Statuscodes für das Feld &quot;*status*&quot;). Zukünftige Aktualisierungen dieser Spezifikation könnten Werte zur eingeschränkten Liste hinzufügen, vorhandene Werte werden jedoch nicht entfernt oder geändert. Unbeschränkte Felder können in der Regel beliebige Daten enthalten, es gibt jedoch Einschränkungen, um eine angemessene Größe sicherzustellen.
 
-- Jede Adobe-Antwort enthält eine &quot;Adobe-Request-Id&quot;, die die Client-Anfrage über unsere HTTP-Dienste hinweg identifiziert. Die &quot;**trace**&quot; -Feld ergänzt dies und sollte zusammen gemeldet werden.
+- Jede Adobe-Antwort enthält eine &quot;Adobe-Request-Id&quot;, die die Client-Anfrage über unsere HTTP-Dienste hinweg identifiziert. Das Feld &quot;**trace**&quot; ergänzt dies und sollte zusammen gemeldet werden.
 
 ## HTTP-Status-Codes und Fehlercodes {#http-status-codes-and-error-codes}
 
-Die Inkonsistenzen zwischen verschiedenen Fehlercodes und den zugehörigen HTTP-Status-Codes sind auf die Abwärtskompatibilitätsanforderungen bei älteren SDK und Anwendungen zurückzuführen (z. B. *unknown\_application* gibt 400 Bad Request zurück, während *unknown\_software\_statement* Erträge 401 Nicht autorisiert). Die Behebung dieser Inkonsistenzen wird in künftigen Ausführungen angestrebt.
+Die Inkonsistenzen zwischen verschiedenen Fehlercodes und den zugehörigen HTTP-Status-Codes sind auf die Abwärtskompatibilitätsanforderungen mit älteren SDKs und Anwendungen ( für
+Beispiel: *unknown\_application* gibt 400 Bad Request zurück, während *unknown\_software\_statement* 401 Unauthorized ergibt. Die Behebung dieser Inkonsistenzen wird in künftigen Ausführungen angestrebt.
 
 ## Aktionen und Fehlercodes {#actions-and-error-codes}
 
-Für die meisten Fehler-Codes können mehrere Aktionen als Pfade zur Behebung des vorliegenden Problems geeignet sein, oder sogar mehrere Aktionen können erforderlich sein, um sie automatisch zu beheben. Wir haben uns dafür entschieden, die Person mit der höchsten Wahrscheinlichkeit anzugeben, den Fehler zu beheben. Die **Aktionen** kann in drei Kategorien unterteilt werden:
+Für die meisten Fehler-Codes können mehrere Aktionen als Pfade zur Behebung des vorliegenden Problems geeignet sein, oder sogar mehrere Aktionen können erforderlich sein, um sie automatisch zu beheben. Wir haben uns dafür entschieden, die Person mit der höchsten Wahrscheinlichkeit anzugeben, den Fehler zu beheben. Die **Aktionen** können in drei Kategorien unterteilt werden:
 
 1. , die versuchen, den Anforderungskontext zu beheben (Wiederholen, Wiederholen)
-1. , die versuchen, den Benutzerkontext innerhalb der Anwendung zu beheben (Anwendungsregistrierung, Authentifizierung, Autorisierung)
-1. , die versuchen, den Integrationskontext zwischen einer Anwendung und einem Identitäts-Provider zu beheben (Konfiguration, Verschlechterung)
+1. , die versuchen, den Benutzerkontext in der Anwendung zu beheben
+(Registrierung, Authentifizierung, Autorisierung)
+1. , die versuchen, den Integrationskontext zwischen einer Anwendung zu beheben
+und einen Identitäts-Provider (Konfiguration, Abbau)
 
-Für die erste Kategorie (Wiederholen und Wiederholen) reicht es möglicherweise aus, dieselbe Anfrage einfach erneut auszuführen, um das Problem zu lösen. Im Fall von APIs, die mehrere Elemente verarbeiten, sollte die Anwendung die Anfrage wiederholen und nur die Elemente mit der Aktion &quot;Wiederholen&quot;oder &quot;Wiederholen nach&quot;einschließen. Für &quot;*Wiederholen*&quot; Aktion, ein &quot;<u>Wiederholen nach</u>&quot;-Kopfzeile gibt an, wie viele Sekunden die Anwendung warten soll, bevor die Anfrage wiederholt wird.
+Für die erste Kategorie (Wiederholen und Wiederholen) reicht es möglicherweise aus, dieselbe Anfrage einfach erneut auszuführen, um das Problem zu lösen. Im Fall von APIs, die mehrere Elemente verarbeiten, sollte die Anwendung die Anfrage wiederholen und nur die Elemente mit der Aktion &quot;Wiederholen&quot;oder &quot;Wiederholen nach&quot;einschließen. Für die Aktion &quot;*retry-after*&quot; gibt die Kopfzeile &quot;<u>Retry-After</u>&quot; an, wie viele Sekunden die Anwendung warten soll, bevor die Anfrage wiederholt wird.
 
-Bei der zweiten und dritten Kategorie hängt die tatsächliche Aktionsimplementierung in hohem Maße von den Anwendungsfunktionen ab. Beispiel: &quot;*Abbau*&quot; kann entweder als &quot;Wechsel zu 15 Minuten temporären Pässe implementiert werden, um Benutzern die Wiedergabe des Inhalts zu ermöglichen&quot; oder als &quot;automatisches Tool zur Anwendung von AUTHN-ALL oder AUTHZ-ALL-Abbau für die Integration mit dem angegebenen MVPD&quot;. Ähnlich wie &quot;*Authentifizierung*&quot;Trigger einer passiven Authentifizierung (Back-Channel-Authentifizierung) auf einem Tablet und eines Vollbildauthentifizierungsflusses auf vernetzten TVs. Deshalb haben wir uns dafür entschieden, vollständige URLs mit Schema und allen Parametern bereitzustellen.
+Bei der zweiten und dritten Kategorie hängt die tatsächliche Aktionsimplementierung in hohem Maße von den Anwendungsfunktionen ab. Beispielsweise kann &quot;*Abbau*&quot;entweder als &quot;Umschalten auf 15 Minuten temporärer Durchgänge implementiert werden, um Benutzern die Wiedergabe des Inhalts zu ermöglichen&quot;oder als &quot;automatisches Tool zur Anwendung von AUTHN-ALL oder AUTHZ-ALL-Abbau für die Integration mit dem angegebenen MVPD&quot;implementiert werden. Ähnlich wie bei einer &quot;*Authentifizierung*&quot;-Aktion kann auf einem Tablet eine passive Authentifizierung (Back-Channel-Authentifizierung) und auf vernetzten TV-Geräten ein Vollbild-Authentifizierungsfluss Trigger werden. Deshalb haben wir uns dafür entschieden, vollständige URLs mit Schema und allen Parametern bereitzustellen.
 
 ## Fehlercodes {#error-codes}
 
@@ -142,8 +145,8 @@ In der folgenden Tabelle sind die möglichen Fehlercodes, die zugehörigen Nachr
 
 | Aktion | Fehler-Code | HTTP-Statuscode | Beschreibung |
 |---|---|---|---|
-| **Keine** | *authorization_denied_by_mvpd* | 403 | Der MVPD hat eine &quot;Ablehnen&quot;-Entscheidung zurückgegeben, wenn er eine Autorisierung für die angegebene Ressource anfordert. |
-|  | *authorization_denied_by_parental_Controls* | 403 | Der MVPD hat die Entscheidung &quot;Ablehnen&quot;zurückgegeben, da die elterlichen Kontrolleinstellungen für die angegebene Ressource festgelegt wurden. |
+| **none** | *authorization_denied_by_mvpd* | 403 | Der MVPD hat eine &quot;Ablehnen&quot;-Entscheidung zurückgegeben, wenn er eine Autorisierung für die angegebene Ressource anfordert. |
+|  | *authorization_denied_by_parental_control* | 403 | Der MVPD hat die Entscheidung &quot;Ablehnen&quot;zurückgegeben, da die elterlichen Kontrolleinstellungen für die angegebene Ressource festgelegt wurden. |
 |  | *authorization_denied_by_programmer* | 403 | Die vom Programmierer angewendete Abbauregel erzwingt eine &quot;Ablehnen&quot;-Entscheidung für den aktuellen Benutzer. |
 |  | *bad_request* | 400 | Die API-Anfrage ist ungültig oder falsch gebildet. Lesen Sie die API-Dokumentation , um die Anforderungsanforderungen zu ermitteln. |
 |  | *individualization_service_unavailable* | 503 | Die Anfrage schlug fehl, da der Individualisierungsdienst nicht verfügbar war. |
@@ -165,27 +168,27 @@ In der folgenden Tabelle sind die möglichen Fehlercodes, die zugehörigen Nachr
 |  | *service_unavailable* | 503 | Die Anfrage schlug fehl, weil der Authentifizierungs- oder Autorisierungsdienst nicht verfügbar ist. |
 |  | *access_token_unavailable* | 400 | Die Anfrage schlug aufgrund eines unerwarteten Fehlers beim Abrufen des Zugriffstokens fehl. In der TVE-Dashboard-Konfiguration finden Sie verfügbare Softwareanweisungen und registrierte benutzerdefinierte Schemata. |
 |  | *unsupported_client_version* | 400 | Diese Version des Adobe Pass Authentication SDK ist zu alt und wird nicht mehr unterstützt. In der API-Dokumentation finden Sie die Schritte, die für die Aktualisierung auf die neueste Version erforderlich sind. |
-| **Konfiguration** | *network_required_ssl* | 403 | Es gibt ein SSL-Verbindungsproblem für den Ziel-Partner-Service. Wenden Sie sich an das Supportteam. |
+| **configuration** | *network_required_ssl* | 403 | Es gibt ein SSL-Verbindungsproblem für den Ziel-Partner-Service. Wenden Sie sich an das Supportteam. |
 |  | *too_many_resources* | 403 | Die Autorisierungs- oder Vorabautorisierungsanfrage schlug fehl, da zu viele Ressourcen abgefragt wurden. Wenden Sie sich an das Supportteam, um die Autorisierungs- und Vorautorisierungsbeschränkungen ordnungsgemäß zu konfigurieren. |
-|  | *unknown_programmer* | 400 | Der Programmierer oder Dienstleister wird nicht erkannt. Registrieren Sie den angegebenen Programmierer über das TVE-Dashboard. |
+|  | *unknown_programmierer* | 400 | Der Programmierer oder Dienstleister wird nicht erkannt. Registrieren Sie den angegebenen Programmierer über das TVE-Dashboard. |
 |  | *unknown_application* | 400 | Die Anwendung wird nicht erkannt. Registrieren Sie die angegebene Anwendung über das TVE-Dashboard. |
 |  | *unknown_integration* | 400 | Die Integration zwischen dem angegebenen Programmierer und Identitätsanbieter existiert nicht. Verwenden Sie das TVE-Dashboard , um die erforderliche Integration zu erstellen. |
 |  | *unknown_software_statement* | 401 | Die mit dem Zugriffstoken verknüpfte Softwareanweisung wird nicht erkannt. Wenden Sie sich an das Support-Team, um den Status der Software-Anweisung zu klären. |
-| **application-registration** | *access_token_expires* | 401 | Das Zugriffstoken ist abgelaufen. Das Programm sollte das Zugriffstoken aktualisieren, wie in der API-Dokumentation angegeben. |
+| **application-registration** | *access_token_expied* | 401 | Das Zugriffstoken ist abgelaufen. Das Programm sollte das Zugriffstoken aktualisieren, wie in der API-Dokumentation angegeben. |
 |  | *invalid_access_token_signature* | 401 | Die Unterschrift des Zugriffstokens ist nicht mehr gültig. Das Programm sollte das Zugriffstoken aktualisieren, wie in der API-Dokumentation angegeben. |
 |  | *invalid_client_id* | 401 | Die zugehörige Client-Kennung wird nicht erkannt. Die Anwendung sollte den in der API-Dokumentation angegebenen Registrierungsprozess für Anwendungen befolgen. |
-| **Authentifizierung** | *authentication_session_expied* | 410 | Die aktuelle Authentifizierungssitzung ist abgelaufen. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
+| **authentication** | *authentication_session_expied* | 410 | Die aktuelle Authentifizierungssitzung ist abgelaufen. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
 |  | *authentication_session_missing* | 401 | Die mit dieser Anfrage verknüpfte Authentifizierungssitzung konnte nicht abgerufen werden. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
 |  | *authentication_session_invalidated* | 401 | Die Authentifizierungssitzung wurde vom Identitäts-Provider ungültig gemacht. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
-|  | *authentication_session_issu_mismatch* | 400 | Die Autorisierungsanfrage schlug fehl, weil der angegebene MVPD für den Autorisierungsfluss sich von dem unterscheidet, der die Authentifizierungssitzung ausgestellt hat. Der Benutzer muss sich erneut mit dem gewünschten MVPD authentifizieren, um fortfahren zu können. |
+|  | *authentication_session_emitter_mismatch* | 400 | Die Autorisierungsanfrage schlug fehl, weil der angegebene MVPD für den Autorisierungsfluss sich von dem unterscheidet, der die Authentifizierungssitzung ausgestellt hat. Der Benutzer muss sich erneut mit dem gewünschten MVPD authentifizieren, um fortfahren zu können. |
 |  | *authorization_denied_by_hba_policies* | 403 | Der MVPD hat aufgrund von Home-basierten Authentifizierungsrichtlinien eine &quot;Ablehnen&quot;-Entscheidung zurückgegeben. Die aktuelle Authentifizierung wurde mithilfe eines Home-based Authentication Flow (HBA) abgerufen, aber das Gerät ist nicht mehr zu Hause, wenn die Autorisierung für die angegebene Ressource angefordert wird. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
 |  | *identity_not_acknowledged_by_mvpd* | 403 | Die Autorisierungsanfrage schlug fehl, weil die Benutzeridentität vom MVPD nicht erkannt wurde. |
-| **Autorisierung** | *authorization_expires* | 410 | Die vorherige Autorisierung für die angegebene Ressource ist abgelaufen. Der Benutzer muss eine neue Autorisierung einholen, um fortfahren zu können. |
+| **Autorisierung** | *authorization_expi}* | 410 | Die vorherige Autorisierung für die angegebene Ressource ist abgelaufen. Der Benutzer muss eine neue Autorisierung einholen, um fortfahren zu können. |
 |  | *authorization_not_found* | 404 | Für die angegebene Ressource wurde keine Autorisierung gefunden. Der Benutzer muss eine neue Autorisierung einholen, um fortfahren zu können. |
 |  | *device_identifier_mismatch* | 403 | Die angegebene Geräte-ID stimmt nicht mit der Identifizierung des Autorisierungsgeräts überein. Der Benutzer muss eine neue Autorisierung einholen, um fortfahren zu können. |
-| **Wiederholen** | *network_connection_failure* | 403 | Es ist ein Verbindungsfehler mit dem zugehörigen Partnerdienst aufgetreten. Ein erneuter Versuch mit der Anfrage kann das Problem lösen. |
+| **retry** | *network_connection_failure* | 403 | Es ist ein Verbindungsfehler mit dem zugehörigen Partnerdienst aufgetreten. Ein erneuter Versuch mit der Anfrage kann das Problem lösen. |
 |  | *network_connection_timeout* | 403 | Es gab einen Verbindungstimeout mit dem zugehörigen Partnerdienst. Ein erneuter Versuch mit der Anfrage kann das Problem lösen. |
 |  | *network_received_error* | 403 | Beim Abrufen der Antwort vom zugehörigen Partnerdienst trat ein Lesefehler auf. Ein erneuter Versuch mit der Anfrage kann das Problem lösen. |
 |  | *maximum_execution_time_exceeded* | 403 | Die Anfrage wurde in der maximal zulässigen Zeit nicht abgeschlossen. Ein erneuter Versuch mit der Anfrage kann das Problem lösen. |
-| **Wiederholen** | *too_many_requests* | 429 | Es wurden zu viele Anfragen innerhalb eines bestimmten Intervalls gesendet. Die Anwendung kann die Anfrage nach dem vorgeschlagenen Zeitraum erneut versuchen. |
+| **retry-after** | *too_many_requests* | 429 | Es wurden zu viele Anfragen innerhalb eines bestimmten Intervalls gesendet. Die Anwendung kann die Anfrage nach dem vorgeschlagenen Zeitraum erneut versuchen. |
 |  | *user_rate_limit_exceeded* | 429 | Es wurden zu viele Anfragen von einem bestimmten Benutzer innerhalb eines bestimmten Zeitraums ausgegeben. Die Anwendung kann die Anfrage nach dem vorgeschlagenen Zeitraum erneut versuchen. |

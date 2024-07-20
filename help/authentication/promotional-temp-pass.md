@@ -19,13 +19,13 @@ ht-degree: 0%
 
 Mit dem temporären Weiterleitungs-Pass können Programmierer Benutzern, die keine Kontoanmeldeinformationen mit einem MVPD haben, temporären Zugriff auf ihren geschützten Inhalt anbieten.
 
-Der temporäre Weiterleitungs-Pass ist für die Durchführung von Werbekampagnen konzipiert, bei denen ein Benutzer nach der Bereitstellung gültiger Identifizierungsinformationen (z. B. E-Mail-Adresse) an den Programmierer eine **vordefinierte Anzahl verschiedener VOD-Titel für einen vordefinierten Zeitraum**.
+Der Promotional Temp Pass ist für die Durchführung von Werbekampagnen konzipiert, bei denen ein Benutzer nach der Bereitstellung gültiger Identifizierungsinformationen (z. B. E-Mail-Adresse) an den Programmierer eine **vordefinierte Anzahl verschiedener VOD-Titel für einen vordefinierten Zeitraum verarbeiten kann**.
 
 >[!IMPORTANT]
 >
 >Adobe speichert keine personenbezogenen Daten (PII). Daher muss der Programmierer einen Hash über die vom Unique User bereitgestellten Informationen über die Adobe Pass-Authentifizierungs-APIs festlegen.
 
-Der temporäre Weiterleitungs-Pass basiert auf dem [Temporärer Pass](/help/authentication/temp-pass.md) -Funktion, d. h., sie enthält alle Funktionen für den Temp-Pass.
+Der temporäre Weiterleitungs-Pass basiert auf der Funktion [Temp Pass](/help/authentication/temp-pass.md) , d. h. er umfasst alle Funktionen für den Vorübergehenden Pass.
 
 Sobald die vordefinierte maximale Anzahl von VOD-Titeln oder der vordefinierte Zeitraum überschritten ist, kann dieser Benutzer erst dann auf Inhalte auf demselben Gerät oder mithilfe derselben Benutzerkennung (z. B. E-Mail-Adresse) zugreifen, wenn die Autorisierungstoken vom Adobe Pass-Authentifizierungsserver gelöscht werden.
 
@@ -58,7 +58,7 @@ Basierend auf der Geräte-ID und den vom Benutzer angegebenen Informationen und 
 >[!NOTE]
 >Die Validierung und das Hashing der vom Benutzer bereitgestellten Informationen wird vom Programmierer und nicht von Adobe durchgeführt.
 
-**Die Funktion zum Weiterleiten eines Vorlagenpasses kann auf der Grundlage der folgenden Eigenschaften konfiguriert werden:**
+**Die Funktion zum Weiterleiten von Vorlagenübergängen kann anhand der folgenden Eigenschaften konfiguriert werden:**
 
 * Vom Benutzer bereitgestellter Informationsschlüssel (z. B. E-Mail)
 * Anzahl der Ressourcen, zu deren Nutzung der Benutzer berechtigt ist
@@ -66,11 +66,11 @@ Basierend auf der Geräte-ID und den vom Benutzer angegebenen Informationen und 
 
 ### Benutzermetadaten {#user-metadata}
 
-Um die Umsetzung der Programmanwendung zu erleichtern, gehen Sie wie folgt vor: **Benutzermetadaten werden angezeigt** im Vorlagenübergang für Werbeaktionen mit entsprechenden Schlüsseln (zur Aktivierung der Schlüssel wenden Sie sich an tve-support@adobe.com):
+Um die Implementierung der Programmeranwendung zu erleichtern, werden die folgenden **Benutzer-Metadateninformationen** im Promotional Temp Pass mit entsprechenden Schlüsseln angezeigt (zum Aktivieren der Schlüssel wenden Sie sich an tve-support@adobe.com):
 
-* **rest_resources**: die Anzahl der verbleibenden Ressourcen, die der aktuelle Benutzer verbrauchen darf.
-* **used_assets**: die Liste der Ressourcen, die der aktuelle Benutzer bereits verwendet hat
-* **expiration_date**: das Ablaufdatum des aktuellen Benutzers
+* **rest_resources**: die Anzahl der verbleibenden Ressourcen, die der aktuelle Benutzer nutzen darf
+* **used_assets**: die Liste der Ressourcen, die der aktuelle Benutzer bereits verbraucht hat
+* **expiration_date**: Das Ablaufdatum des aktuellen Benutzers
 
 ### Wie wird die Anzeigezeit berechnet? {#compute-viewing-time}
 
@@ -78,11 +78,11 @@ Die Dauer, die ein Temp-Pass gültig bleibt, korreliert nicht mit der Zeit, die 
 
 ### Authentifizierung und Autorisierung {#authn-authz}
 
-Bei temporären Weiterleitungsströmen kommunizieren Authentifizierung und Autorisierung nicht mit einem tatsächlichen MVPD, **damit alle Genehmigungsanfragen erfolgreich sind** solange alle diese Bedingungen erfüllt sind:
+Bei temporären Weiterleitungs-Weiterleitungsflüssen kommunizieren Authentifizierung und Autorisierung nicht mit einem tatsächlichen MVPD, **sodass alle Autorisierungsanfragen erfolgreich sind** , solange alle diese Bedingungen erfüllt sind:
 
 * Autorisierungstoken sind für bestimmte Ressourcen gültig
-* Anzahl der **used_assets** liegt unter dem vom Programmierer festgelegten Grenzwert
-* **expiration_date** nach dem aktuellen Datum.
+* Die Anzahl der **used_assets** ist niedriger als die vom Programmierer festgelegte Grenze.
+* Der Wert **expiration_date** liegt nach dem aktuellen Datum.
 
 ### Preflight-Verhalten {#preflight-beh}
 
@@ -96,46 +96,46 @@ SSO ist nicht für Instanzen von Promotional Temp Pass aktiviert, der mit aktivi
 
 ### Abmelden {#logout}
 
-Alle Token auf einem Gerät werden beim Abmelden gelöscht. Daher sollte der Wechsel vom Promotional Temp Pass zu einem regulären, vom Benutzer ausgewählten MVPD nicht auf diese Implementierung angewiesen sein. Es wird empfohlen, die `setSelectedProvider(null)` -Funktion verwenden, um den Anwendungsstatus zu löschen und dann den Authentifizierungsfluss neu zu starten, was ein besseres Benutzererlebnis bietet.
+Alle Token auf einem Gerät werden beim Abmelden gelöscht. Daher sollte der Wechsel vom Promotional Temp Pass zu einem regulären, vom Benutzer ausgewählten MVPD nicht auf diese Implementierung angewiesen sein. Es wird empfohlen, die Funktion `setSelectedProvider(null)` zu verwenden, um den Anwendungsstatus zu löschen und dann den Authentifizierungsfluss neu zu starten, was ein besseres Benutzererlebnis bietet.
 
 ### Flussdiagramm für den temporären Weiterlauf der Promotion {#promo-tempass-flowdia}
 
 ![Flussdiagramm für den temporären Weiterlauf der Promotion](assets/promo-temp-pass-flow.png)
 
-*Abbildung: Fluss der Weiterleitungstermine*
+*Abbildung: Fluss für den temporären Weiterleitungstyp*
 
 ## Implementieren des Weiterleitungs-Temp-Übergangs {#impl-promo-tempass}
 
 Für den vorübergehenden Weiterlauf der Werbeaktion sind die folgenden clientseitigen Funktionen erforderlich:
 
-* **Informationen zur Benutzerkennung, z. B. die Verbreitung von E-Mail-Adressen** (Senden der E-Mail-Adresse des Benutzers bezüglich der Authentifizierungs- und Autorisierungsflüsse). Die E-Mail ist für die Adobe Pass-Authentifizierung erforderlich, um die Authentifizierungs- und Autorisierungstoken zu binden (ähnlich wie bei der `device_ID`, erforderlich bei allen Aufrufen).
-* **Authentifizierung erzwingen** - Ermöglicht dem Programmierer, einen Authentifizierungsfluss zu erzwingen, wenn der Benutzer bereits authentifiziert ist. Diese Funktion ist erforderlich, um die Aktualisierung von Benutzermetadaten zu erzwingen (der Benutzer-Metadatenschlüssel) **used_assets** enthält die Anzahl der verfügbaren Ressourcen) jedes Mal, wenn die App gestartet wird. Da sich der Benutzer auf mehreren Geräten anmelden kann, sind die Benutzermetadaten, die beim Start der App auf dem Gerät vorhanden sind, nicht zuverlässig. Daher müssen wir sie aktualisieren, um den aktuellen Status für diesen bestimmten Benutzer (identifiziert durch E-Mail-Adresse) widerzuspiegeln.
+* **Informationen zur Benutzerkennung, z. B. Verbreitung der E-Mail-Adresse** (Senden der E-Mail-Adresse des Benutzers für die Authentifizierungs- und Autorisierungsflüsse). Die E-Mail ist für die Adobe Pass-Authentifizierung erforderlich, um die Authentifizierungs- und Autorisierungstoken zu binden (ähnlich wie bei `device_ID` , erforderlich für alle Aufrufe).
+* **Authentifizierung erzwingen** - Ermöglicht dem Programmierer, einen Authentifizierungsfluss zu erzwingen, wenn der Benutzer bereits authentifiziert ist. Diese Funktion ist erforderlich, um eine Aktualisierung der Benutzermetadaten zu erzwingen (der Benutzer-Metadatenschlüssel **used_assets** enthält die Anzahl der verfügbaren Ressourcen), sobald die App gestartet wird. Da sich der Benutzer auf mehreren Geräten anmelden kann, sind die Benutzermetadaten, die beim Start der App auf dem Gerät vorhanden sind, nicht zuverlässig. Daher müssen wir sie aktualisieren, um den aktuellen Status für diesen bestimmten Benutzer (identifiziert durch E-Mail-Adresse) widerzuspiegeln.
 
 
 >[!IMPORTANT]
->Authentifizierung erzwingen ist nur unter iOS und Android möglich.
->Die Adobe Pass-Authentifizierung verfügt nicht über einen integrierten Mechanismus, um das kostenlose Streaming nach Ablauf der X Minuten zu stoppen. Adobe Pass-Authentifizierung wird nicht mehr ausgegeben **Autorisierung** und **Kurzmedien** Token, sobald der Benutzer die kostenlosen Y-Ressourcen verbraucht. Es ist Sache der Programmierer, den Zugriff einzuschränken, sobald der Promotiontempass abläuft.
+>Authentifizierung erzwingen ist nur auf iOS und Android möglich.
+>Die Adobe Pass-Authentifizierung verfügt nicht über einen integrierten Mechanismus, um das kostenlose Streaming nach Ablauf der X Minuten zu stoppen. Die Adobe Pass-Authentifizierung stellt die Ausgabe von Token für **Autorisierung** und **Kurzmedien** ein, sobald der Benutzer die kostenlosen Y-Ressourcen nutzt. Es ist Sache der Programmierer, den Zugriff einzuschränken, sobald der Promotiontempass abläuft.
 
 ## Sicherheit {#security}
 
 >[!IMPORTANT]
 >Adobe speichert keine personenbezogenen Daten (PII). Daher muss der Programmierer einen Hash über die vom Unique User bereitgestellten Informationen über die Adobe Pass-Authentifizierungs-APIs festlegen.
 
-**Hashing von Benutzerkennung-Informationen**
+**Hashing of user identifier information**
 
-Adobe empfiehlt die Verwendung der **SHA-2** oder ihrer spezifischen **SHA-256**, **SHA-512** -Funktionen auf Daten vor der Übermittlung an Adobe.
+Adobe empfiehlt die Verwendung der **SHA-2**-Familie oder ihrer spezifischen **SHA-256**-, **SHA-512**-Funktionen für Daten, bevor sie an Adobe gesendet werden.
 
-Beispiel: **SHA-256** over **&quot;user@domain.com&quot;** is **&quot;f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7&quot;**.
+Beispiel: **SHA-256** over **&quot;user@domain.com&quot;** is **&quot;f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a3 32b18b88d09069fb7&quot;**.
 
 ## Zurücksetzen oder Bereinigen des Weiterleitungs-Temp-Übergangs {#reset-promo-tempass}
 
-Bestimmte Geschäftsregeln erfordern eine regelmäßige Bereinigung von &quot;Promotional Temp Pass&quot;. Dazu bietet die Adobe Pass-Authentifizierung Programmierern eine *öffentlich* Web-API, siehe unten:
+Bestimmte Geschäftsregeln erfordern eine regelmäßige Bereinigung von &quot;Promotional Temp Pass&quot;. Dazu stellt die Adobe Pass-Authentifizierung Programmierern eine Web-API für *public* bereit, wie nachfolgend beschrieben:
 
 | `DELETE https://mgmt.auth.adobe.com/reset-tempass/v2/reset` |
 |----|
-| <ul><li>Protokoll: **https**</li><li>Host:<ul><li>Version: **mgmt.auth.adobe.com**</li><li>Prequal: **mgmt-prequal.auth.adobe.com**</li></ul></li><li>Pfad: **/reset-tempass/v2/reset**</li><li>Abfrageparameter: **device_id=all&amp;requestor_id=THE_REQUESTOR_ID&amp;mvpd_id=THE_TEMPASS_MVPD_ID**</li><li>headers: ApiKey: **1232293681726481**</li> <li>Antwort:<ul><li>Erfolg: **HTTP 204**</li><li>Fehler: **HTTP 400** bei falschen Anforderungen, **HTTP 401** wenn ApiKey nicht angegeben ist, **HTTP 403** wenn ApiKey ungültig ist</li></ul></li></ul> |
+| <ul><li>Protokoll: **https**</li><li>Host:<ul><li>Release: **mgmt.auth.adobe.com**</li><li>Prequal: **mgmt-prequal.auth.adobe.com**</li></ul></li><li>Pfad: **/reset-tempass/v2/reset**</li><li>Abfrageparameter: **device_id=all&amp;requestor_id=THE_REQUESTOR_ID&amp;mvpd_id=THE_TEMPASS_MVPD_ID**</li><li>headers: APIKey: **1232293681726481**</li> <li>Antwort:<ul><li>Erfolg: **HTTP 204**</li><li>Fehler: **HTTP 400** für falsche Anforderungen, **HTTP 401**, wenn ApiKey nicht angegeben ist, **HTTP 403**, wenn ApiKey ungültig ist</li></ul></li></ul> |
 
-Zusätzlich zu den Anforderungen zum Bereinigen des Temp-Übergangs verwendet der Promotional Temp Pass den Hash über die Benutzer-ID-Informationen, die als **generic_data** zur Authentifizierung und Autorisierung für die Bereinigung.
+Zusätzlich zu den Anforderungen zum Bereinigen des Temp-Übergangs verwendet der Promotional Temp Pass den Hash über die Informationen zur Benutzerkennung, die bei Authentifizierung und Autorisierung zur Bereinigung als **generic_data** gesendet wurden.
 
 Der Hash wird gesendet, nicht die gesamte JSON:
 

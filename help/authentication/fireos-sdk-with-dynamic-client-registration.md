@@ -4,7 +4,7 @@ description: Amazon FireOS-SDK mit dynamischer Client-Registrierung
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1150'
+source-wordcount: '1145'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 Das FireOS AccessEnabler SDK für FireTV wurde geändert, um die Authentifizierung zu aktivieren, ohne Sitzungs-Cookies zu verwenden. Da immer mehr Browser den Zugriff auf Cookies einschränken, war eine andere Methode erforderlich, um die Authentifizierung zu ermöglichen.
 
-**FireOS-SDK 3.0.4** ersetzt den aktuellen App-Registrierungsmechanismus basierend auf der signierten Anfrage-ID und der Sitzungs-Cookie-Authentifizierung durch [Dynamische Kundenregistrierung](/help/authentication/dynamic-client-registration.md).
+**FireOS SDK 3.0.4** ersetzt den aktuellen App-Registrierungsmechanismus, der auf der signierten Anfrage-ID und der Sitzungs-Cookie-Authentifizierung basiert, durch die Funktion [Dynamische Client-Registrierung](/help/authentication/dynamic-client-registration.md).
 
 
 ## API-Änderungen {#API}
@@ -39,10 +39,10 @@ Das FireOS AccessEnabler SDK für FireTV wurde geändert, um die Authentifizieru
 **Parameter:**
 
 - *appContext*: Android-Anwendungskontext
-- *softwareStatement*: Wert, der vom TVE Dashboard abgerufen wird oder *null* wenn &quot;software\_statement&quot;in strings.xml festgelegt ist
+- *softwareStatement*: Wert, der vom TVE Dashboard abgerufen wird, oder *null*, wenn &quot;software\_statement&quot;in strings.xml festgelegt ist
 - *redirectUrl* : Bei FireTV-Implementierungen sollte dieser Parameter null sein. Alle Einstellungen für dieses Attribut werden ignoriert.
 
-**Hinweise**
+**Notizen**
 
 - Eine ungültige softwareStatement führt dazu, dass die Anwendung AccessEnabler nicht initialisiert oder die Anwendung für die Adobe Pass-Authentifizierung und -Autorisierung registriert.
 - Der Parameter redirectUrl für FireTV wird vom SDK auf adobepass://android.app gesetzt, da die Authentifizierung von der eindeutigen AccessEnabler-Instanz verarbeitet wird.
@@ -53,9 +53,9 @@ Das FireOS AccessEnabler SDK für FireTV wurde geändert, um die Authentifizieru
 
 Die Server-Antwort enthält eine Liste von MVPDs sowie einige Konfigurationsinformationen, die an die Identität des Kanals angehängt sind. Die Server-Antwort wird intern vom Access Enabler-Code verwendet. Nur der Status des Vorgangs (d. h. SUCCESS/FAIL) wird Ihrer Anwendung über den Rückruf setRequestorComplete() angezeigt.
 
-Wenn die Variable *urls* nicht verwendet wird, zielt der resultierende Netzwerkaufruf auf die Standard-Service-Provider-URL: die Adobe Release Production-Umgebung.
+Wenn der Parameter *urls* nicht verwendet wird, wird der resultierende Netzwerkaufruf auf die Standard-Service-Provider-URL ausgerichtet: die Adobe Release Production-Umgebung.
 
-Wenn ein Wert für *urls* festgelegt ist, werden alle in der Variablen *urls* -Parameter. Alle Konfigurationsanfragen werden gleichzeitig in separaten Threads ausgelöst. Der erste Antwortsender hat beim Kompilieren der Liste der MVPDs Vorrang. Für jeden MVPD in der Liste speichert der Access Enabler die URL des zugehörigen Dienstleisters. Alle nachfolgenden Berechtigungsanfragen werden an die URL weitergeleitet, die dem Dienstanbieter zugeordnet ist, der während der Konfigurationsphase mit dem Ziel-MVPD gepaart wurde.
+Wenn ein Wert für den Parameter *urls* angegeben wird, werden alle im Parameter *urls* angegebenen URLs vom resultierenden Netzwerkaufruf als Ziel ausgewählt. Alle Konfigurationsanfragen werden gleichzeitig in separaten Threads ausgelöst. Der erste Antwortsender hat beim Kompilieren der Liste der MVPDs Vorrang. Für jeden MVPD in der Liste speichert der Access Enabler die URL des zugehörigen Dienstleisters. Alle nachfolgenden Berechtigungsanfragen werden an die URL weitergeleitet, die dem Dienstanbieter zugeordnet ist, der während der Konfigurationsphase mit dem Ziel-MVPD gepaart wurde.
 
 | API-Aufruf: Konfiguration des Anforderers |
 | --- |
@@ -76,7 +76,7 @@ Wenn ein Wert für *urls* festgelegt ist, werden alle in der Variablen *urls* -P
 
 Veraltet:
 
-- *signedRequestorID*: Eine Kopie der Anforderer-ID, die digital mit Ihrem privaten Schlüssel signiert ist. <!--For more details, see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
+- *signedRequestorID*: Eine Kopie der Anforderer-ID, die digital mit Ihrem privaten Schlüssel signiert ist. 2.<!--For more details, see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->
 
 **Ausgelöste Rückrufe:** `setRequestorComplete()`
 
@@ -84,7 +84,7 @@ Veraltet:
 
 ### Abmelden
 
-**Beschreibung:** Verwenden Sie diese Methode, um den Abmeldefluss zu starten. Die Abmeldung ist das Ergebnis einer Reihe von HTTP-Weiterleitungsvorgängen, da der Benutzer sowohl von den Adobe Pass-Authentifizierungsservern als auch von den MVPD-Servern abgemeldet werden muss. Daher öffnet dieser Fluss ein ChromeCustomTab-Fenster, um die Abmeldung auszuführen.
+**Beschreibung:** Verwenden Sie diese Methode, um den Abmeldefluss zu initiieren. Die Abmeldung ist das Ergebnis einer Reihe von HTTP-Weiterleitungsvorgängen, da der Benutzer sowohl von den Adobe Pass-Authentifizierungsservern als auch von den MVPD-Servern abgemeldet werden muss. Daher öffnet dieser Fluss ein ChromeCustomTab-Fenster, um die Abmeldung auszuführen.
 
 | API-Aufruf: Logout-Fluss initiieren |
 | --- |
@@ -92,7 +92,7 @@ Veraltet:
 
 **Verfügbarkeit:** v3.0+
 
-**Parameter:** Keines
+**Parameter:** None
 
 **Ausgelöste Rückrufe:** `setAuthenticationStatus()`
 
@@ -118,23 +118,23 @@ Veraltet:
 
   Das SDK führt die folgenden Vorgänge aus:
 
-   - Registrierungsanwendung: mithilfe von **software\_statement**, erhält das SDK eine **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Diese Informationen werden im internen Speicher der Anwendung gespeichert.
-   - eine **access\_token** Verwenden Sie client\_id, client\_secret und grant\_type=&quot;client\_credentials&quot;. Dieser access\_token wird für jeden Aufruf verwendet, den das SDK an Adobe Pass-Server sendet.
+   - Registrierungsanwendung: Mit **software\_statement** erhält das SDK eine **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Diese Informationen werden im internen Speicher der Anwendung gespeichert.
+   - Rufen Sie einen **access\_token** mit client\_id, client\_secret und grant\_type=&quot;client\_credentials&quot; ab. Dieser access\_token wird für jeden Aufruf verwendet, den das SDK an Adobe Pass-Server sendet.
 
 | Token-Fehlerantworten : |  |  |
 |--- | --- | --- |
 | HTTP 400 (ungültige Anforderung) | {&quot;error&quot;: &quot;invalid\_request&quot;} | Der Anfrage fehlt ein erforderlicher Parameter, enthält einen nicht unterstützten Parameterwert (außer dem Grant-Typ), wiederholt einen Parameter, enthält mehrere Anmeldeinformationen, verwendet mehr als einen Mechanismus zur Authentifizierung des Clients oder ist anderweitig fehlerhaft. |
-| HTTP 400 (ungültige Anforderung) | {&quot;error&quot;: &quot;invalid\_client&quot;} | Die Client-Authentifizierung schlug fehl, da der Client unbekannt war. Das SDK *MUST* sich erneut beim Autorisierungsserver registrieren. |
+| HTTP 400 (ungültige Anforderung) | {&quot;error&quot;: &quot;invalid\_client&quot;} | Die Client-Authentifizierung schlug fehl, da der Client unbekannt war. Das SDK *MUST* muss sich erneut beim Autorisierungsserver registrieren. |
 | HTTP 400 (ungültige Anforderung) | {&quot;error&quot;: &quot;unauthorized\_client&quot;} | Der authentifizierte Client ist nicht berechtigt, diesen Autorisierungstyp zu verwenden. |
 
 - Wenn ein MVPD eine passive Authentifizierung erfordert, wird eine WebView geöffnet, um passiv mit diesem MVPD auszuführen, und wird nach Abschluss geschlossen.
 
 - b. checkAuthentication()
 
-   - *true* : Gehen Sie zur Autorisierung
+   - *true* : Wechseln Sie zur Autorisierung
    - *false* : Wechseln Sie zu Select MVPD
 
-- c. getAuthentication : Das SDK enthält **access_token** in Aufrufparametern
+- c. getAuthentication : Das SDK nimmt **access_token** in die Aufrufparameter auf
 
    - mvpd merkte : go to setSelectedProvider(mvpd\_id)
    - mvpd not selected : displayProviderDialog
@@ -147,20 +147,20 @@ Veraltet:
    - Anmeldung abgebrochen : MVPD-Auswahl zurücksetzen
    - Das URL-Schema wird als &quot;adobepass://android.app&quot;festgelegt, um zu erfassen, wenn die Authentifizierung abgeschlossen ist.
 
-- e. get/checkAuthorization : Das SDK enthält **access\_token **in der Kopfzeile als Authorization: Bearer **access\_token**
+- e. get/checkAuthorization : Das SDK enthält **access\_token **in der Kopfzeile als Autorisierung: Bearer **access\_token**
 
 - Wenn die Autorisierung erfolgreich ist, wird zum Abrufen des Medien-Tokens aufgerufen.
 
 - f. Abmeldung :
 
    - SDK löscht gültiges Token für den aktuellen Anforderer (Authentifizierungen, die von anderen Anwendungen und nicht über SSO abgerufen wurden, bleiben gültig)
-   - Das SDK öffnet benutzerdefinierte Chrome-Tabs, um den mvpd\_id-Abmelde-Endpunkt zu erreichen. Nach Abschluss werden die benutzerdefinierten Registerkarten für Chrome geschlossen
+   - Das SDK öffnet benutzerdefinierte Chrome-Registerkarten, um den mvpd\_id-Abmelde-Endpunkt zu erreichen. Nach Abschluss werden die benutzerdefinierten Registerkarten von Chrome geschlossen
    - Das URL-Schema wird als &quot;adobepass://logout&quot;festgelegt, um den Zeitpunkt zu erfassen, zu dem die Abmeldung abgeschlossen ist.
    - Die Abmeldung Trigger ein sendTrackingData(new Event(EVENT\_LOGOUT,USER\_NOT\_AUTHENTICATED\_ERROR) und einen callback: setAuthenticationStatus(0,&quot;Logout&quot;)
 
 
 
-**Hinweis:** da jeder Aufruf **access_token**, werden mögliche Fehlercodes unten im SDK verarbeitet.
+**Hinweis:** Da jeder Aufruf ein **access_token** erfordert, werden mögliche Fehlercodes unten im SDK verarbeitet.
 
 | Fehlerantworten |  |  |
 |--- | --- | --- |

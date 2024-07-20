@@ -49,16 +49,16 @@ Programmierer sollten überprüfen, ob ihre aktuellen Implementierungen, die auf
 
 ## FAQs {#faq}
 
-* **Wie wird die einmalige Anmeldung funktionieren?**
+* **Wie funktioniert die einmalige Anmeldung?**
 
   SSO funktioniert für alle Programmierer-Anwendungen, die mit Adobe Pass-Authentifizierung betrieben werden, auf allen Roku-Geräten, die mit demselben Roku-Benutzer verknüpft sind.
 Nicht alle MVPDs ermöglichen Roku SSO.
 
-* **Werden die Authentifizierungs-TTLs geändert?**
+* **Gibt es eine Änderung an den Authentifizierungs-TTLs?**
 
   Das erste gültige Authentifizierungstoken wird für die Durchführung der einmaligen Anmeldung verwendet. In diesem Fall verwenden alle anderen Anwendungen, die über SSO authentifiziert werden, dieselbe TTL, bis sie abläuft. Wenn Sie also von einer Anwendung zur anderen navigieren, teilt die zweite Anwendung die TTL der ersten authentifizierten Anwendung.
 
-* **Funktionieren andere Adobe-Funktionen wie bisher?**
+* **Funktionieren andere Adobe-Funktionen wie zuvor?**
 
   Alle Adobe Pass-Authentifizierungsfunktionen funktionieren wie bisher.
 

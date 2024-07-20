@@ -1,7 +1,8 @@
 ---
-title: Dashboard "Konto-IQ"
+title: Account IQ-Dashboard
 description: Das Dashboard hilft, die Instanzen der Kennwortfreigabe zu identifizieren, indem es eine breite Palette von Abonnentendaten analysiert.
-source-git-commit: cfcaa00ab05c99a64bcb0edfe5af60845a6769a9
+exl-id: 23d31cc1-50c1-4810-a730-b09c7db01f74
+source-git-commit: 2bb570ab14a3295d46ee6dc0d38485697d63809c
 workflow-type: tm+mt
 source-wordcount: '267'
 ht-degree: 0%
@@ -10,7 +11,7 @@ ht-degree: 0%
 
 # Einführung in das Dashboard {#introduction-dashboard}
 
-Das Dashboard fasst Daten in einer Sammlung von Diagrammen und Berichten zusammen und bietet so einen allgemeinen Überblick über den Umfang und die Auswirkungen der Kontofreigabe. Es bietet eine einzelne Seite mit den wichtigsten Berichten und Metriken aus [!UICONTROL Account IQ].
+Das Dashboard fasst Daten in einer Sammlung von Diagrammen und Berichten zusammen und bietet so einen allgemeinen Überblick über den Umfang und die Auswirkungen der Kontofreigabe. Es bietet eine einzelne Seite, die die wichtigsten Berichte und Metriken aus [!UICONTROL Account IQ] enthält.
 
 >[!NOTE]
 >
@@ -18,23 +19,23 @@ Das Dashboard fasst Daten in einer Sammlung von Diagrammen und Berichten zusamme
 
 ++ + D2C-Dienste: Dashboard
 
-![Dashboard von Konto IQ für D2C-Dienste](assets/dashboard-d2c.png){align="left"}
+![Dashboard von Account IQ für D2C-Dienste](assets/dashboard-d2c.png){align="left"}
 
 
 *Dashboard für D2C-Dienste*
 
-**A.** Bedienfeld &quot;Segment und Zeitintervall&quot; **B.** Seitennavigation **C.** Datenfelder
+**A.** Segment- und Zeitintervallbedienfeld **B.** Seitennavigation **C.** Datenbedienfelder
 
 +++
 
 +++ Programmierer: Dashboard
 
-![Dashboard von Konto-IQ für Programmierer](assets/dashboard-programr.png){align="left"}
+![Dashboard von Account IQ für Programmierer](assets/dashboard-programr.png){align="left"}
 
 
 *Dashboard für Programmierer*
 
-**A.** Bedienfeld &quot;Segment und Zeitintervall&quot; **B.** Seitennavigation **C.** Datenfelder
+**A.** Segment- und Zeitintervallbedienfeld **B.** Seitennavigation **C.** Datenbedienfelder
 
 +++
 
@@ -46,15 +47,14 @@ Das Dashboard für MVPDs unterscheidet sich geringfügig von dem der Programmier
 
 *Dashboard für MVPDs*
 
-**A.** Bedienfeld &quot;Segment und Zeitintervall&quot; **B.** Seitennavigation **C.** Datenfelder
+**A.** Segment- und Zeitintervallbedienfeld **B.** Seitennavigation **C.** Datenbedienfelder
 
 +++
 
 Das Dashboard für D2C-Dienste, Programmierer und MVPDs umfasst Folgendes:
 
-* **Bedienfeld &quot;Segmente und Zeitintervall&quot;**: In diesem Bereich können Sie Segmente und Zeitintervalle auswählen, um Berichte zur Kontofreigabe zu generieren, und eine Zusammenfassung des ausgewählten Segments bereitstellen. Ansicht [Segmente und Zeitintervall](/help/accountiq/segments-timeinterval.md) für weitere Informationen.
+* **Bedienfeld &quot;Segmente und Zeitintervalle&quot;**: In diesem Bedienfeld können Sie Segment und Zeitintervall auswählen, um Berichte zur Kontofreigabe zu generieren, und eine Zusammenfassung des ausgewählten Segments bereitstellen. Anzeigen von [Segmenten und Zeitintervall](/help/accountiq/segments-timeinterval.md) für weitere Informationen.
 
-* **Seitennavigation**: Mit diesen Registerkarten können Sie zu verschiedenen Abschnitten und Seiten von Konto IQ navigieren und diese durchsuchen.
+* **Seitennavigation**: Mit diesen Registerkarten können Sie in verschiedene Bereiche und Seiten von Account IQ navigieren und diese durchsuchen.
 
-* **Datenfelder**: In den Bedienfeldern werden Berichte zur Kontofreigabe über Tabellen und Diagramme angezeigt, sodass sie als Berichte direkt auf Ihr lokales Gerät exportiert werden können. Ansicht [Datenbedienfelder](/help/accountiq/data-panels.md) und [Export von Datenbereichsberichten](/help/accountiq/export-reports.md) für weitere Informationen.
-
+* **Datenbedienfelder**: Die Bedienfelder zeigen Berichte zur Kontofreigabe über Tabellen und Diagramme an und bieten die Möglichkeit, sie als Berichte direkt auf Ihr lokales Gerät zu exportieren. Weitere Informationen finden Sie unter [Datenbedienfelder](/help/accountiq/data-panels.md) und [Datenbereichsberichte exportieren](/help/accountiq/export-reports.md) .

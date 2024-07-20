@@ -1,7 +1,8 @@
 ---
 title: Berichte zum Datenbereich exportieren
 description: Erfahren Sie, wie Sie Datenbereichsberichte über das Dashboard exportieren.
-source-git-commit: 88b11527b2a432c2cd27bf9e29fd286969036eb0
+exl-id: ee76bb87-6cbf-4150-bcdd-31ffae2c0571
+source-git-commit: 2bb570ab14a3295d46ee6dc0d38485697d63809c
 workflow-type: tm+mt
 source-wordcount: '239'
 ht-degree: 0%
@@ -20,19 +21,19 @@ Sie können die folgenden Datenbereichsberichte exportieren:
 Führen Sie die Schritte aus, um Datenbereichsberichte für ein bestimmtes Segment zu exportieren.
 
 1. Melden Sie sich mit Ihren Anmeldedaten an.
-1. Wählen Sie ein erforderliches Segment und ein Zeitintervall aus dem Segment- und Zeitintervallbereich aus. Ansicht [Segmente und Zeitintervall](segments-timeinterval.md#segment-selection) für weitere Informationen.
+1. Wählen Sie ein erforderliches Segment und ein Zeitintervall aus dem Segment- und Zeitintervallbereich aus. Anzeigen von [Segmenten und Zeitintervall](segments-timeinterval.md#segment-selection) für weitere Informationen.
 
-   Falls erforderlich, lesen Sie die Anleitung für [Erstellen eines Segments](work-with-segments.md#create-new-segment) oder [Bearbeiten eines Segments](work-with-segments.md#edit-segment).
+   Lesen Sie bei Bedarf die Anweisungen zum [Erstellen eines Segments](work-with-segments.md#create-new-segment) oder [Bearbeiten eines Segments](work-with-segments.md#edit-segment).
 
 1. Navigieren Sie zum Datenbereich, den Sie exportieren möchten.
 
-   Betrachten Sie beispielsweise die **Anzahl der Konten und Nutzung nach Freigabe der Wahrscheinlichkeitsstufe** wie unten dargestellt.
+   Betrachten Sie beispielsweise den Bereich **Anzahl der Konten und Verwendung durch Freigabe der Wahrscheinlichkeitsstufe** wie unten dargestellt.
 
-   ![Exportanzahl Konten und Nutzung nach Freigabewahrscheinlichkeitsstufe](assets/export-report.png){align="left"}
+   ![Anzahl der Konten und Nutzung durch Freigabe der Wahrscheinlichkeitsstufe exportieren](assets/export-report.png){align="left"}
 
-   *Exportanzahl Konten und Nutzung nach Freigabewahrscheinlichkeitsstufe*
+   *Anzahl der Konten und Nutzung durch Freigabe der Wahrscheinlichkeitsstufe exportieren*
 
-1. Auswählen **[!UICONTROL Export]** befindet sich in der rechten oberen Ecke des Datenbereichs.
+1. Wählen Sie **[!UICONTROL Export]** in der oberen rechten Ecke des Datenbereichs aus.
 
 Die Datei wird automatisch auf Ihren lokalen Computer heruntergeladen. Das System speichert die Daten für die Anzahl der Konten und die Nutzung, indem es die Wahrscheinlichkeitsstufe als CSV-Datei teilt.
 

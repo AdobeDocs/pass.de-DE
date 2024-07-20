@@ -1,13 +1,13 @@
 ---
 title: Implementieren von CM für einen einzelnen Mandanten/eine Richtlinie und mehrere Anwendungen
 description: Implementieren von CM für einen einzelnen Mandanten/eine Richtlinie und mehrere Anwendungen
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: 5c579c7d-f235-4dba-95c2-8485021d9065
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '241'
 ht-degree: 0%
 
 ---
-
 
 # Implementieren von CM für einen einzelnen Mandanten/eine Richtlinie und mehrere Anwendungen {#imp-cm}
 
@@ -29,7 +29,7 @@ Zum Starten von Streams werden zwei Apps + eine Website verwendet:
 
 1. Der Benutzer startet einen Stream über die iPhone-App und einen Stream über die iPad-App. Die Richtlinie erlaubt dies.
 1. Der Benutzer startet dann einen dritten Stream von der Website des Programmierers.
-1. Die Regel in der Richtlinie (max. 2 Streams, aktuelle Gewinne) ermöglicht es dem neuesten Stream, dies wiederzugeben **Der erste Stream, der gestartet wurde, wird als nicht konform mit der Richtlinie markiert und angehalten.**
+1. Die Regel in der Richtlinie (max. 2 Streams, aktuelle Gewinne) ermöglicht die Wiedergabe des neuesten Streams, sodass **der erste gestartete Stream als nicht konform mit der Richtlinie markiert und gestoppt wird.**
 
 
 

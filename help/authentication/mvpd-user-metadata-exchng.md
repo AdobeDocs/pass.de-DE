@@ -4,7 +4,7 @@ description: MVPD-Benutzermetadaten-Exchange
 exl-id: 8bce6acc-cd33-476c-af5e-27eb2239cad1
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '943'
+source-wordcount: '940'
 ht-degree: 0%
 
 ---
@@ -111,7 +111,7 @@ Die Adobe Pass-Authentifizierung geht von folgenden Annahmen aus:
 
 Die Adobe Pass-Authentifizierung kann auch eine transparente Konvertierung von der Legacy-Kanalzeichenfolge in die entsprechende RSS-Ressource für MVPDs unterstützen, die RSS erfordern. Andernfalls unterstützt die Adobe Pass-Authentifizierung die Konvertierung von RSS+MRSS in den reinen Kanaltitel für nur kanalübergreifende MVPDs.
 
-**Die Adobe Pass-Authentifizierung stellt eine vollständige Abwärtskompatibilität mit vorhandenen Integrationen sicher.** Das heißt, für Programmierer, die eine Authentifizierung auf Kanalebene verwenden, sorgt Adobe Pass Authentication dafür, die Kanalkennung im erforderlichen Format zu verpacken, bevor sie an ein MVPD gesendet wird, das dieses Format versteht. Das Gegenteil trifft auch zu: Wenn ein Programmierer alle seine Ressourcen in einem neuen Format angibt, übersetzt die Adobe Pass-Authentifizierung das neue Format in eine einfache Kanalzeichenfolge, wenn sie für eine MVPD autorisiert wird, die nur die Kanalebenenautorisierung durchführt.
+**Adobe Pass-Authentifizierung stellt die vollständige Abwärtskompatibilität mit vorhandenen Integrationen sicher.** Das bedeutet, dass für Programmierer, die die Authentifizierung auf Kanalebene verwenden, die Adobe Pass-Authentifizierung darauf achtet, die Kanal-ID im erforderlichen Format zu verpacken, bevor sie an einen MVPD gesendet wird, der dieses Format versteht. Das Gegenteil trifft auch zu: Wenn ein Programmierer alle seine Ressourcen in einem neuen Format angibt, übersetzt die Adobe Pass-Authentifizierung das neue Format in eine einfache Kanalzeichenfolge, wenn sie für eine MVPD autorisiert wird, die nur die Kanalebenenautorisierung durchführt.
 
 ## Anwendungsfälle für Benutzermetadaten {#user-metadata-use-cases}
 

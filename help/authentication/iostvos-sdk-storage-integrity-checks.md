@@ -1,9 +1,10 @@
 ---
 title: iOS/tvOS-Mechanismus zur Überprüfung der Speicherintegrität
 description: iOS/tvOS-Integritätsprüfmechanismus
-source-git-commit: 444a81ad18afcb26dcf3ae8b41f4d02c465f4655
+exl-id: 5d7cdc46-3e51-4e14-9e30-d7f48bc87506
+source-git-commit: e8a9e53f8bb0a06379d90a91a57335d2897342b0
 workflow-type: tm+mt
-source-wordcount: '327'
+source-wordcount: '323'
 ht-degree: 0%
 
 ---
@@ -68,5 +69,5 @@ Der Enum IntegrityCheckType wird der Clientanwendung bereitgestellt und hat die 
 | Wert | Durchgeführte Prüfungen | Datenspeicherung gelöscht | Beschreibung | Empfohlener Anwendungsfall |
 |-----------------------|-----------------------------------------------------|-----------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | INTEGRITY_CHECK_NONE | Keines | Nie | Bei der Speicherinitialisierung werden keine Integritätsprüfungen durchgeführt | Wann die SDK-Flüsse erwartungsgemäß funktionieren |
-| INTEGRITY_CHECK_ALL | Speicheroperabilität <br/> Gültigkeit gespeicherter Werte | Bei Prüffehler | Alle verfügbaren Integritätsprüfungen werden bei der Speicherinitialisierung durchgeführt | Wenn eine Beschädigung des SDK-Speichers vermutet wird. <br/> Wenn eine Integritätsprüfung fehlschlägt, wird der Benutzer abgemeldet |
+| INTEGRITY_CHECK_ALL | Speicheroperabilität <br/> Gültigkeit gespeicherter Werte | Bei Prüffehler | Alle verfügbaren Integritätsprüfungen werden bei der Speicherinitialisierung durchgeführt | Wenn eine Beschädigung des SDK-Speichers vermutet wird. <br/> Wenn eine der Integritätsprüfungen fehlschlägt, wird der Benutzer abgemeldet. |
 | INTEGRITY_CHECK_CLEAR | Keines | Immer | Der Speicher wird bei der Speicherinitialisierung gelöscht | Wenn die SDK-Flüsse nicht wie erwartet abgeschlossen werden können |

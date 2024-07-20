@@ -4,7 +4,7 @@ description: Dynamische Client-Registrierungs-API
 exl-id: 06a76c71-bb19-4115-84bc-3d86ebcb60f3
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '930'
+source-wordcount: '904'
 ht-degree: 0%
 
 ---
@@ -19,8 +19,8 @@ ht-degree: 0%
 
 Derzeit gibt es zwei Möglichkeiten, wie Adobe Pass Authentication Anwendungen identifiziert und registriert:
 
-* Browser-basierte Clients sind über erlaubt registriert [Domain-Auflistung](/help/authentication/programmer-overview.md)
-* native Anwendungsclients wie iOS und Android-Anwendungen werden über den signierten Anfragemechanismus registriert.
+* Browser-basierte Clients werden über die zulässige [Domain-Auflistung](/help/authentication/programmer-overview.md) registriert.
+* native Anwendungs-Clients wie iOS- und Android-Anwendungen werden über den signierten Anforderungsmechanismus registriert.
 
 Adobe Pass Authentication schlägt einen neuen Mechanismus für die Registrierung von Anwendungen vor. Dieser Mechanismus wird in den folgenden Absätzen beschrieben.
 
@@ -28,11 +28,13 @@ Adobe Pass Authentication schlägt einen neuen Mechanismus für die Registrierun
 
 ### Technische Gründe {#reasons}
 
-Der Authentifizierungsmechanismus bei der Adobe Pass-Authentifizierung stützte sich auf Sitzungs-Cookies, jedoch aufgrund von [Benutzerdefinierte Registerkarten für Android Chrome](https://developer.chrome.com/multidevice/android/customtabs){target=_blank} and [Apple Safari View Controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}, kann dieses Ziel nicht mehr erreicht werden.
+Der Authentifizierungsmechanismus in der Adobe Pass-Authentifizierung stützte sich auf Sitzungs-Cookies. Aufgrund der [benutzerdefinierten Android Chrome-Registerkarten](https://developer.chrome.com/multidevice/android/customtabs){target=_blank} und des [Apple Safari View Controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank} kann dieses Ziel jedoch nicht mehr erreicht werden.
 
-Aufgrund dieser Einschränkungen führt Adobe einen neuen Registrierungsmechanismus für alle seine Kunden ein. Er basiert auf der OAuth 2.0 RFC und umfasst die folgenden Schritte:
+Aufgrund dieser Einschränkungen führt Adobe einen neuen Registrierungsmechanismus für alle seine Kunden ein. Er basiert auf der OAuth 2.0 RFC und besteht aus
+der folgenden Schritte:
 
-1. Abrufen der Softwareanweisung vom TVE-Dashboard
+1. Abrufen der Softwareanweisung von TVE
+Dashboard
 1. Abrufen von Client-Anmeldeinformationen
 1. Zugriffstoken abrufen
 
@@ -68,7 +70,7 @@ Nachdem Sie eine Softwareanweisung vom TVE-Dashboard abgerufen haben, müssen Si
 | X-Device-Info | Die Geräteinformationen, wie unter Übergeben von Geräte- und Verbindungsinformationen definiert | mandatory |
 | User-Agent | Der Benutzeragent | mandatory |
 
-**Reaktion**
+**Antwort**
 
 | Antwortheader |                  |           |
 |------------------|------------------|-----------|
@@ -80,8 +82,8 @@ Nachdem Sie eine Softwareanweisung vom TVE-Dashboard abgerufen haben, müssen Si
 | client_secret | Zeichenfolge | mandatory |
 | client_id_displayed_at | long | mandatory |
 | redirect_uris | Liste von Zeichenfolgen | mandatory |
-| grant_types | Liste von Zeichenfolgen<br/> **akzeptierter Wert**<br/> `client_credentials`: Wird von unsicheren Clients wie dem Android-SDK verwendet. | mandatory |
-| error | **zulässige Werte**<ul><li>invalid_request</li><li>invalid_redirect_uri</li><li>invalid_software_statement</li><li>unauthorised_software_statement</li></ul> | In einem Fehlerfluss obligatorisch |
+| grant_types | Liste der Zeichenfolgen<br/> **accept value**<br/> `client_credentials`: Wird von unsicheren Clients wie dem Android SDK verwendet. | mandatory |
+| error | **akzeptierte Werte**<ul><li>invalid_request</li><li>invalid_redirect_uri</li><li>invalid_software_statement</li><li>unauthorised_software_statement</li></ul> | In einem Fehlerfluss obligatorisch |
 
 
 #### Fehlerantwort {#error-response}
@@ -165,13 +167,13 @@ Nachdem Sie die eindeutige Client-Kennung (Client-ID und Client-Geheimnis) für 
 | path | `/o/client/token` |
 | method | POST |
 
-| **Anfrageparameter** | |
+| **Anforderungsparameter** | |
 | --- | --- |
-| `grant_type` | Wird im Client-Registrierungsprozess empfangen.<br/> **Akzeptierter Wert**<br/>`client_credentials`: Wird für unsichere Clients wie das Android-SDK verwendet. |
+| `grant_type` | Wird im Client-Registrierungsprozess empfangen.<br/> **Akzeptierter Wert**<br/>`client_credentials`: Wird für unsichere Clients wie das Android SDK verwendet. |
 | `client_id` | Client-Kennung, die im Client-Registrierungsprozess abgerufen wurde. |
 | `client_secret` | Client-Kennung, die im Client-Registrierungsprozess abgerufen wurde. |
 
-**Reaktion**
+**Antwort**
 
 | Antwortfelder | | |
 | --- | --- | --- |
@@ -232,7 +234,7 @@ Pragma: no-cache
 
 ## Ausführen von Authentifizierungsanfragen {#autheticationRequests}
 
-Verwenden Sie das Zugriffstoken, um Adobe Pass auszuführen [API-Aufrufe für Authentifizierung](/help/authentication/initiate-authentication.md). Dazu muss das Zugriffstoken der API-Anfrage auf eine der folgenden Arten hinzugefügt werden:
+Verwenden Sie das Zugriffstoken, um Adobe Pass [API-Aufrufe für die Authentifizierung](/help/authentication/initiate-authentication.md) durchzuführen. Dazu muss das Zugriffstoken der API-Anfrage auf eine der folgenden Arten hinzugefügt werden:
 
 * durch Hinzufügen eines neuen Abfrageparameters zur Anforderung. Dieser neue Parameter heißt **access_token**.
 
@@ -248,7 +250,7 @@ Im Falle eines Fehlers können die folgenden Fehlerantworten zurückgegeben werd
 
 ### Beispiele für Authentifizierungsanfragen:
 
-**Zugriffstoken als Anforderungsparameter senden:**
+**Senden des Zugriffs-Tokens als Anforderungsparameter:**
 
 ```HTTPS
 GET adobe-services/config?access_token=<access_token>&requestor_id=... HTTP/1.1
@@ -256,7 +258,7 @@ GET adobe-services/config?access_token=<access_token>&requestor_id=... HTTP/1.1
 Host: sp.auth.adobe.com
 ```
 
-**Zugriffstoken als HTTP-Header senden:**
+**Senden des Zugriffstokens als HTTP-Header:**
 
 ```HTTPS
 POST adobe-services/sessionDevice?device_id=platformDeviceId HTTP/1.1

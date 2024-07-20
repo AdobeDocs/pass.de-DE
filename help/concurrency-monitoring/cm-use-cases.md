@@ -1,13 +1,13 @@
 ---
 title: Anwendungsbeispiele
 description: Anwendungsfälle bei der Überwachung der Parallelität.
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 6cc30bb6-e985-4d9a-9f99-a7f04ae8deb7
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
 source-wordcount: '387'
 ht-degree: 0%
 
 ---
-
 
 # Nutzungsszenarios {#use-cases}
 
@@ -17,8 +17,8 @@ Um die Nutzung durch Abonnenten zu überwachen, ist ein zentralisierter Dienst e
 
 Die wichtigsten Anwendungsfälle, die von diesem zentralen Dienst unterstützt werden, sind:
 
-1. Sobald ein Abonnent mit der Wiedergabe eines Videos beginnt, kann die Anwendung **Initialisieren einer Streaming-Sitzung** und starten **Berichtsaktivität** Daten.
-1. Im selben zentralen Dienst erhält eine andere Instanz ***CM-Entscheidungen*** - Wenn die Anwendung eine oder mehrere Richtlinien im CM-Dienst registriert hat, antwortet der Dienst mit der Zugriffsentscheidung auf der Grundlage der aktuellen Aktivität.
+1. Sobald ein Abonnent mit der Wiedergabe eines Videos beginnt, kann die Anwendung **eine Streaming-Sitzung initialisieren** und **Daten zur Berichterstellung** starten.
+1. Im selben zentralen Dienst erhält eine andere Instanz ***CM-Entscheidungen*** - Wenn die Anwendung eine oder mehrere Richtlinien im CM-Dienst registriert hat, antwortet der Dienst mit der Zugriffsentscheidung, die auf der aktuellen Aktivität basiert.
 
 
 ## Sitzungserstellung {#create-session}

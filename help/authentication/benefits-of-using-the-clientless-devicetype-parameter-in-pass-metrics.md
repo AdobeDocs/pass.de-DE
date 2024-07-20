@@ -4,7 +4,7 @@ description: Vorteile der Verwendung des Parameters Clientless deviceType in Ado
 exl-id: a5004887-d5fa-468e-971b-10806519175b
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '349'
+source-wordcount: '351'
 ht-degree: 0%
 
 ---
@@ -19,45 +19,45 @@ ht-degree: 0%
 
 ## Kontext
 
-Obwohl optional, wird der Parameter `deviceType` aus der ClientLess-API wird, sofern vorhanden, in Adobe Pass-Authentifizierungsmetriken verwendet, die über verfügbar gemacht werden. [Überwachung des Berechtigungsdienstes](/help/authentication/entitlement-service-monitoring-overview.md).
+Obwohl optional, wird der Parameter &quot;`deviceType`&quot;aus der Client-losen API bei vorhandenen Adobe Pass-Authentifizierungsmetriken verwendet, die über die [Überwachung des Berechtigungsdienstes](/help/authentication/entitlement-service-monitoring-overview.md) verfügbar gemacht werden.
 
-Die Verbindung zwischen `deviceType` Parameter und **Vorteile** bei Adobe Pass-Authentifizierungsmetriken zunächst nicht angegeben wurde, besteht der Zweck dieser technischen Anmerkung darin, weitere Informationen zu diesen Metriken hinzuzufügen.
+Da die Verbindung zwischen dem Parameter `deviceType` und seinen **Vorteilen** bei den Adobe Pass-Authentifizierungsmetriken zunächst nicht angegeben wurde, besteht der Anwendungsbereich dieser Technote darin, weitere Informationen zu ihnen hinzuzufügen.
 
 ## Erklärung
 
-Die `deviceType` -Parameter war seit der ersten Version in der ClientLess-API vorhanden, aber die Auswirkungen auf die Adobe Pass-Authentifizierungsmetriken wurden in einer neueren Version hinzugefügt.
+Der Parameter `deviceType` war seit der ersten Version in der ClientLess-API vorhanden, seine Auswirkungen auf die Adobe Pass-Authentifizierungsmetriken wurden jedoch in einer neueren Version hinzugefügt.
 
 
 
 >[!IMPORTANT]
 >
->Wenn der Parameter `deviceType` korrekt eingestellt ist, weist es Folgendes auf **nutzen** in der Überwachung des Entitätsdienstes: Es bietet Metriken, die [aufgeschlüsselt nach Gerätetyp](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) bei Verwendung von ClientLess, sodass verschiedene Arten der Analyse für z. B. Roku, AppleTV, Xbox usw. durchgeführt werden können.
+>Wenn der Parameter `deviceType` richtig eingestellt ist, bietet er den folgenden **Vorteil** bei der Überwachung des Berechtigungsdienstes: Er bietet Metriken, die bei Verwendung von ClientLess nach Gerätetyp aufgeschlüsselt sind [, sodass für Roku, AppleTV, Xbox usw. unterschiedliche Analysetypen durchgeführt werden können.](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type)
 
 
-Weiterführende Informationen zur Berechtigungsdienst-Monitoring-API finden Sie im Abschnitt [Drilldown-Struktur,](/help/authentication/entitlement-service-monitoring-api.md#drill-down_tree) , das die [Dimensionen](/help/authentication/entitlement-service-monitoring-overview.md#esm_dimensions) (Ressourcen) verfügbar in ESM 2.0.
+Weitere Informationen zur Berechtigungsdienst-Monitoring-API finden Sie in der [Drilldown-Struktur, ](/help/authentication/entitlement-service-monitoring-api.md#drill-down_tree) , die die in ESM 2.0 verfügbaren [Dimensionen](/help/authentication/entitlement-service-monitoring-overview.md#esm_dimensions) (Ressourcen) veranschaulicht.
 
 >[!NOTE]
 >
->Der Inhalt dieser Technote wurde auch zum [Clientlose API](#clientless_device_type).
+>Der Inhalt dieser Technote wurde auch der [Client-losen API](#clientless_device_type) hinzugefügt.
 
 
 
 
 ## Implementierung
 
-Um die Adobe Pass-Authentifizierungsmetriken in vollem Umfang nutzen zu können, gibt es zwei Arten von [Clientlose APIs](#web_srvs_summary) die derzeit verwendet werden und die `deviceType` set:
+Um die Adobe Pass-Authentifizierungsmetriken vollständig nutzen zu können, werden derzeit zwei Typen von [clientlosen APIs](#web_srvs_summary) verwendet, für die der korrekte `deviceType` festgelegt werden muss:
 
-1. APIs mit `regcode` als erforderlichen Parameter verwenden und die `deviceType` -Parameter, der beim Erstellen der `regcode`mit dem folgenden API-Aufruf:
-   - [\&lt;reggie _fqdn=&quot;&quot;>/reggie/v1/{requestorId}/regcode](#reg_serv)
+1. APIs, die `regcode` als erforderlichen Parameter aufweisen und den `deviceType` -Parameter verwenden, der beim Erstellen des `regcode` festgelegt wurde, mit dem folgenden API-Aufruf:
+   - [\&lt;REGGIE\_FQDN\>/reggie/v1/{requestorId}/regcode](#reg_serv)
 
-1. APIs mit der `deviceType` als optionalen Parameter:
-   - [\&lt;sp _fqdn=&quot;&quot;>/api/v1/checkauthin](#check_authn_token)
+1. APIs, die den optionalen Parameter `deviceType` aufweisen:
+   - [\&lt;SP\_FQDN\>/api/v1/checkauthin](#check_authn_token)
    - [&lt;span class=&quot;s1&quot;>](#retrieve_authn_token)
-   - [\&lt;sp _fqdn=&quot;&quot;>/api/v1/authorize](#init_authz)
-   - [\&lt;sp _fqdn=&quot;&quot;>/api/v1/tokens/authz](#retrieve_authz_token)
-   - [\&lt;sp _fqdn=&quot;&quot;>/api/v1/tokens/media](#short_media)
-   - [\&lt;sp _fqdn=&quot;&quot;>/api/v1/mediatoken](#short_media)
-   - [\&lt;sp _fqdn=&quot;&quot;>/api/v1/preauthorize](#PreAuthZ_Resources)
-   - [\&lt;sp _fqdn=&quot;&quot;>/api/v1/logout](#init_logout)
+   - [\&lt;SP\_FQDN\>/api/v1/authorize](#init_authz)
+   - [\&lt;SP\_FQDN\>/api/v1/tokens/authz](#retrieve_authz_token)
+   - [\&lt;SP\_FQDN\>/api/v1/tokens/media](#short_media)
+   - [\&lt;SP\_FQDN\>/api/v1/mediatoken](#short_media)
+   - [\&lt;SP\_FQDN\>/api/v1/preauthorize](#PreAuthZ_Resources)
+   - [\&lt;SP\_FQDN\>/api/v1/logout](#init_logout)
 
-Wir empfehlen, die `deviceType` und übergeben Sie den richtigen Client-losen Gerätetyp für alle APIs.
+Wir empfehlen, den Parameter `deviceType` zu verwenden und den richtigen Client-losen Gerätetyp für alle APIs zu übergeben.

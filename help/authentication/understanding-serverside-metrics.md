@@ -4,7 +4,7 @@ description: Grundlegendes zu serverseitigen Metriken
 exl-id: 516884e9-6b0b-451a-b84a-6514f571aa44
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '2207'
+source-wordcount: '2232'
 ht-degree: 0%
 
 ---
@@ -24,22 +24,23 @@ In diesem Dokument werden die serverseitigen Metriken der Adobe Pass-Authentifiz
 
 Vom Server-seitigen Standpunkt der Adobe Pass-Authentifizierung werden die folgenden Ereignisse generiert:
 
-* **Im Authentifizierungsfluss generierte Ereignisse**(Eine tatsächliche Anmeldung mit dem MVPD)
+* **Im Authentifizierungsfluss generierte Ereignisse** (tatsächliche Anmeldung mit dem MVPD)
 
    * Benachrichtigung über AuthN-Versuch - Dies wird generiert, wenn der Benutzer an die MVPD-Anmeldeseite gesendet wird.
-   * Benachrichtigung über &quot;AuthN ausstehend&quot;- Wenn es dem Benutzer gelingt, sich mit seinem MVPD anzumelden, wird dies generiert, wenn der Benutzer zur Adobe Pass-Authentifizierung zurückgeleitet wird.
+   * Benachrichtigung über &quot;AuthN ausstehend&quot;- Wenn es dem Benutzer gelingt, sich mit seinem MVPD anzumelden, wird dies generiert, wenn der Benutzer        zurück zur Adobe Pass-Authentifizierung umgeleitet.
    * Benachrichtigung über AuthN Granted (AuthN gewährt): Diese wird generiert, wenn der Benutzer wieder auf der Website des Programmierers ist und das Authentifizierungstoken erfolgreich aus der Adobe Pass-Authentifizierung abgerufen hat.
-* **Autorisierungsfluss** (Nur Prüfung auf Autorisierung mit einem MVPD)\
+* **Autorisierungsfluss** (Nur Prüfung auf Autorisierung mit einer
+MVPD)\
   *Voraussetzung:* Ein gültiges AuthN-Token
    * Benachrichtigung über AuthZ-Versuch
    * Benachrichtigung über die Gewährung von AuthZ
-* **Erfolgreiche Play-Anfrage**\
+* **Anfrage zur erfolgreichen Wiedergabe**\
   *Voraussetzung:* Gültige AuthN- und AuthZ-Token
    * Benachrichtigung über einen Check mit Adobe Pass-Authentifizierung
    * Eine Wiedergabeanforderung erfordert sowohl eine erteilte Authentifizierung als auch eine erteilte Genehmigung
 
 
-Die Anzahl der Unique Users wird im Abschnitt [Unique Users](#unique-users) unten. Da die Antworten auf erteilte Authentifizierung und Autorisierung in der Regel zwischengespeichert werden, gelten in der Regel die folgenden Formeln:
+Die Anzahl der Unique Users wird im Abschnitt [Unique Users](#unique-users) unten ausführlich beschrieben. Da die Antworten auf erteilte Authentifizierung und Autorisierung in der Regel zwischengespeichert werden, gelten in der Regel die folgenden Formeln:
 
 * Anzahl der AuthN-Versuche \> Anzahl der gewährten AuthN
 * Anzahl der AuthZ-Versuche \> Anzahl der gewährten AuthZ
@@ -49,9 +50,10 @@ Die Anzahl der Unique Users wird im Abschnitt [Unique Users](#unique-users) unte
 
 ### Beispiel {#example}
 
-Das folgende Beispiel zeigt die serverseitigen Metriken für einen Monat für eine Marke:
+Das folgende Beispiel zeigt die serverseitigen Metriken für einen Monat für
+eine Marke:
 
-| Metrik | MVPD 1 | MVPD 2 | … | MVPD n | Ingesamt |
+| Metrik | MVPD 1 | MVPD 2 | ... | MVPD n | Ingesamt |
 | -------------------------- | ------ | ------ | - | ------ | ---------------------------------------------- |
 | Erfolgreiche Authentifizierungen | 1125 | 2892 |   | 2203 | SUM(MVP1+...MVPD n) |
 | Erfolgreiche Berechtigungen | 2527 | 5603 |   | 5904 | SUM(MVP1+...MVPD n) |
@@ -88,14 +90,15 @@ Nach Abschluss des Workflows werden die Authentifizierungs- und Autorisierungsto
 
 ### Wiederkehrender Benutzer - AuthZ- und AuthN-Token zwischengespeichert
 
-Für Benutzer, die gültige AuthZ- und AuthN-Token zwischengespeichert haben, werden die folgenden Schritte ausgeführt:
+Für Benutzer mit gültigen AuthZ- und AuthN-Token im Cache:
+-Schritte ausgeführt werden:
 
 
 ![](assets/ae-flow-tokens-cached-web.png)
 
 
 
-Dies wird beim Aufruf von automatisch ausgelöst `getAuthorization()`und umfasst nur Prüfungen mit Adobe Pass-Authentifizierung. Der MVPD ist an diesem Fluss nicht beteiligt.
+Dies wird beim Aufruf von `getAuthorization()` automatisch ausgelöst und umfasst nur Prüfungen mit Adobe Pass-Authentifizierung. Der MVPD ist an diesem Fluss nicht beteiligt.
 
 
 | Ausgelöste serverseitige Ereignisse | * Anfrage zur erfolgreichen Wiedergabe |
@@ -136,7 +139,7 @@ Dieses Ereignis tritt auf, wenn der Umleitungsprozess zur Adobe Pass-Authentifiz
 
 Der Benutzer ist ein bekannter Abonnent des MVPD, in der Regel mit einem Pay TV-Abonnement, manchmal aber nur mit Internetzugang. Eine erfolgreiche Authentifizierung kann entweder dadurch erfolgen, dass der Benutzer explizit gültige Anmeldeinformationen mit seinem MVPD eingegeben hat oder weil er zuvor gültige Anmeldeinformationen eingegeben und &quot;mich speichern&quot;aktiviert hatte (und die vorherige Sitzung noch nicht abgelaufen war).
 
-Der MVPD sendet daher eine positive Antwort auf die Authentifizierungsanforderung an Adobe Pass Authentication und die Adobe Pass-Authentifizierung erstellt eine *AuthN-Token*.
+Der MVPD sendet daher eine positive Antwort auf die Authentifizierungsanforderung an die Adobe Pass-Authentifizierung und die Adobe Pass-Authentifizierung erstellt ein *AuthN-Token*.
 
 * Die Authentifizierung wird normalerweise über einen langen Zeitraum (einen Monat oder länger) zwischengespeichert. Aus diesem Grund sind Authentifizierungsereignisse erst dann mehr vorhanden, wenn das Token abläuft und der Fluss erneut gestartet wird.
 * Wenn Sie von einer anderen Site/App über Single Sign-On eingehen, werden keine Authentifizierungsereignisse für den Trigger angezeigt.
@@ -149,11 +152,12 @@ Comcast weist einen anderen AuthN-Fluss auf als der Rest der MVPDs.
 
 Die folgenden Funktionen beschreiben die Unterschiede:
 
-* **Sitzungs-Cookie-Verhalten**: Dadurch werden alle Authentifizierungstoken entfernt, nachdem der Benutzer den Browser geschlossen hat. Diese Funktion ist nur im Internet verfügbar. Der Hauptzweck besteht darin sicherzustellen, dass Ihre Comcast-Sitzung nicht auf unsicheren/freigegebenen Computern beibehalten wird. Die Auswirkung besteht darin, dass es mehr Authentifizierungsversuche/genehmigte Flüsse als für den Rest der MVPDs geben wird.
+* **Sitzungs-Cookie-Verhalten**: Dies führt dazu, dass alle Authentifizierungstoken vollständig entfernt werden, nachdem der Benutzer den Browser geschlossen hat. Diese Funktion ist nur im Internet verfügbar. Der Hauptzweck besteht darin sicherzustellen, dass Ihre Comcast-Sitzung nicht auf unsicheren/freigegebenen Computern beibehalten wird. Die Auswirkung besteht darin, dass es mehr Authentifizierungsversuche/genehmigte Flüsse als für den Rest der MVPDs geben wird.
 
-* **AuthN pro requestorID**: Comcast lässt nicht zu, dass der AuthN-Status von einer Anfrage-ID zu einer anderen zwischengespeichert wird. Daher muss jede Website/App zu Comcast gehen, um ein Authentifizierungstoken zu erhalten. Abgesehen von den Überlegungen zum Benutzererlebnis wird wie oben gezeigt, dass mehr Authentifizierungsversuche/gewährte Ereignisse generiert werden.
+* **AuthN pro Anfragende-ID**: Der Comcast lässt nicht zu, dass der AuthN-Status von einer Anfragenkennung an eine andere zwischengespeichert wird. Daher muss jede Website/App zu Comcast gehen, um ein Authentifizierungstoken zu erhalten. Abgesehen von den Überlegungen zum Benutzererlebnis wird wie oben gezeigt, dass mehr Authentifizierungsversuche/gewährte Ereignisse generiert werden.
 
-* **Passive Authentifizierung**: Um das Benutzererlebnis zu verbessern, aber dennoch die AuthN-Funktion pro Anfrage-ID beizubehalten, erfolgt ein passiver Authentifizierungsfluss in einem ausgeblendeten iFrame. Der Benutzer sieht nichts, aber die Ereignisse werden weiterhin wie zuvor ausgelöst.
+* **Passive Authentifizierung**: Um das Benutzererlebnis zu verbessern, aber
+weiterhin die AuthN-Funktionalität pro Anfrage-ID beibehalten, wird ein passiver Authentifizierungsfluss in einem ausgeblendeten iFrame durchgeführt. Der Benutzer sieht nichts, aber die Ereignisse werden weiterhin wie zuvor ausgelöst.
 
 Wenn der Benutzer auf der Anmeldeseite Comcast auf &quot;Angaben speichern&quot;klickt, werden nachfolgende Besuche auf dieser Seite (in einem Zeitraum von 2 Wochen) nur eine kurze Umleitung ermöglichen. Andernfalls müssen sich Benutzer tatsächlich auf der Seite authentifizieren.
 
@@ -207,7 +211,7 @@ Ein Benutzer, der sowohl authentifiziert als auch autorisiert ist, darf geschüt
 
 Bei einer erfolgreichen Wiedergabeanforderung generiert die Adobe Pass-Authentifizierung ein kurzlebiges Medien-Token, das bestätigt, dass der Benutzer berechtigt ist, das angeforderte Video anzuzeigen. Der Programmierer verwendet dieses Media Token zur weiteren Validierung des potenziellen Betrachters. Media Tokens werden als erfolgreiche Wiedergabeanforderungen verfolgt.
 
-* Adobe Pass-Authentifizierung funktioniert *not* verfolgen, ob die Videowiedergabe nach der Generierung des Medien-Tokens tatsächlich begonnen hat. Wenn es beispielsweise eine Geo-Beschränkung für den Inhalt gibt, zählt die Transaktion weiterhin als erfolgreiche Wiedergabeanforderung, auch wenn der Stream nie tatsächlich gestartet wird.
+* Die Adobe Pass-Authentifizierung verfolgt *nicht*, ob die Videowiedergabe nach der Generierung des Medien-Tokens tatsächlich begonnen hat. Wenn es beispielsweise eine Geo-Beschränkung für den Inhalt gibt, zählt die Transaktion weiterhin als erfolgreiche Wiedergabeanforderung, auch wenn der Stream nie tatsächlich gestartet wird.
 * Da AuthN- und AuthZ-Token die MVPD-Antwort für einen bestimmten Zeitraum zwischenspeichern, ist das erfolgreiche Wiedergabeanforderungsereignis das häufigste Ereignis in den Metriken.
 
 ## Unique Users {#unique-users}
@@ -274,9 +278,10 @@ In einigen Fällen kann die Anzahl der Unique Users größer sein als die Anzahl
 
 ### Vergleich zwischen Client- und Server-seitigen Unique Users {#comparing-client-side-and-server-side-unique-users}
 
-Wenn der Benutzer-ID-Wert von `sendTrackingData()` wird clientseitig verwendet, um Unique Users zu zählen. Dann sollten die clientseitigen und serverseitigen Zahlen übereinstimmen.
+Wenn der Benutzer-ID-Wert von `sendTrackingData()` clientseitig verwendet wird, um Unique Users zu zählen, sollten die clientseitigen und serverseitigen Zahlen übereinstimmen.
 
-Wenn Unterschiede groß sind, sind in der Regel die folgenden Gründe für den Unterschied verantwortlich:
+Wenn es sich bei den Unterschieden um wesentliche Unterschiede handelt, sind in der Regel die folgenden Gründe für die
+difference:
 
 * Eindeutige Videowiedergabe im Vergleich zu allen Ereignissen. Wie bereits erwähnt, zählt die Adobe Pass-Authentifizierung Unique Users für alle Ereignisse außer AuthN-Versuchen. Das bedeutet, dass eine Erhöhung der Unique User-Anzahl immer noch ausgelöst wird, wenn sich der Benutzer nur authentifiziert (auf der Seite), aber kein Video anzeigt.
 

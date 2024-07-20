@@ -1,7 +1,8 @@
 ---
 title: Programmierer
 description: Erfahren Sie mehr über Programmierer und ihre Konfigurationen im TVE-Dashboard.
-source-git-commit: b81cc7498a8035f4c274ba25952dcd1dcd8d71f5
+exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
+source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
 workflow-type: tm+mt
 source-wordcount: '717'
 ht-degree: 0%
@@ -14,24 +15,24 @@ ht-degree: 0%
 >
 >Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle -Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
-Die **Programmierer** im TVE-Dashboard können Sie die Einstellungen für die [Programmierer](/help/authentication/glossary.md#programmer) mit Ihren Kontoberechtigungen verknüpft sind. Sie können auch [Hinzufügen eines neuen Programmierers](#add-new-programmer) gemäß Ihren Anforderungen.
+Im Abschnitt **Programmierer** des TVE-Dashboards können Sie Einstellungen für die mit Ihren Kontoberechtigungen verknüpften [Programmierer](/help/authentication/glossary.md#programmer) anzeigen und verwalten. Sie können entsprechend Ihren Anforderungen auch [einen neuen Programmierer](#add-new-programmer) hinzufügen.
 
-Die **Programmierer** im linken Bereich eine Liste vorhandener Programmierer mit den folgenden Details angezeigt:
+Auf der Registerkarte **Programmierer** im linken Bereich wird eine Liste der vorhandenen Programmierer mit den folgenden Details angezeigt:
 
 * **Programmierer-ID**: Eine Medienunternehmen-ID im System.
 * **Kanäle**: Die Anzahl der mit einem Programmierer verknüpften Kanäle.
 
-![Liste vorhandener Programmierer](assets/programmers-list.png)
+![Liste der vorhandenen Programmierer](assets/programmers-list.png)
 
-*Liste vorhandener Programmierer*
+*Liste der vorhandenen Programmierer*
 
-Geben Sie den Namen des Programmierers in die **Suche** oberhalb der Liste, um mehr über einen Programmierer zu erfahren.
+Geben Sie den Namen des Programmierers in die Leiste **Suchen** oberhalb der Liste ein, um mehr über einen Programmierer zu erfahren.
 
 ## Verwalten von Programmierkonfigurationen {#manage-programmer-conf}
 
 Führen Sie diese Schritte aus, um verschiedene Einstellungen eines bestimmten Programmierers zu verwalten.
 
-1. Wählen Sie die **Programmierer** im linken Bereich.
+1. Wählen Sie im linken Bereich die Registerkarte **Programmierer** aus.
 1. Wählen Sie einen Programmierer aus der Liste aus.
 1. Wählen Sie eine der folgenden Registerkarten aus, um die entsprechenden Einstellungen des ausgewählten Programmierers anzuzeigen und zu bearbeiten:
 
@@ -40,35 +41,35 @@ Führen Sie diese Schritte aus, um verschiedene Einstellungen eines bestimmten P
    * [Registrierte Anwendungen](#registered-applications)
    * [Benutzerdefinierte Schemata](#custom-schemes)
 
-   ![Programmiereinstellungen](assets/programmer-settings.png)
+   ![Programmierereinstellungen](assets/programmer-settings.png)
 
-   *Programmiereinstellungen*
+   *Programmierereinstellungen*
 
 >[!IMPORTANT]
 >
-> Ansicht [Änderungen überprüfen und pushen](/help/authentication/tve-dashboard-review-push-changes.md) Weitere Informationen zum Aktivieren der Konfigurationsänderungen.
+> Weitere Informationen zum Aktivieren der Konfigurationsänderungen finden Sie unter [Überprüfen und Pushen von Änderungen](/help/authentication/tve-dashboard-review-push-changes.md) .
 
 ### Kanäle {#channels}
 
-Auf dieser Registerkarte wird eine Liste von Kanälen angezeigt, die mit einem aktuellen Programmierer verknüpft sind. Wählen Sie einen bestimmten Kanal aus dieser Liste aus, um auf detaillierte Informationen im Abschnitt [Kanäle](/help/authentication/tve-dashboard-channels.md) Abschnitt.
+Auf dieser Registerkarte wird eine Liste von Kanälen angezeigt, die mit einem aktuellen Programmierer verknüpft sind. Wählen Sie einen bestimmten Kanal aus dieser Liste aus, um auf detaillierte Informationen im Abschnitt [Kanäle](/help/authentication/tve-dashboard-channels.md) zuzugreifen.
 
-Um einen neuen Kanal für den ausgewählten Programmierer hinzuzufügen, wählen Sie **Neuen Kanal hinzufügen** von der oberen rechten Ecke von **Verfügbare Kanäle** Abschnitt. Lernen [Hinzufügen eines neuen Kanals](/help/authentication/tve-dashboard-channels.md#add-new-channel).
+Um einen neuen Kanal für den ausgewählten Programmierer hinzuzufügen, wählen Sie **Neuen Kanal hinzufügen** aus der oberen rechten Ecke des Bereichs **Verfügbare Kanäle** aus. Erfahren Sie, wie Sie [einen neuen Kanal hinzufügen](/help/authentication/tve-dashboard-channels.md#add-new-channel).
 
-![Neuen Kanal hinzufügen](assets/programmers-channels.png)
+![Hinzufügen eines neuen Kanals](assets/programmers-channels.png)
 
-*Neuen Kanal hinzufügen*
+*Hinzufügen eines neuen Kanals*
 
 ### Zertifikate {#certificates}
 
-Auf dieser Registerkarte wird eine Liste der [verfügbare Zertifikate](#available-certificates) wird in den Verschlüsselungsabläufen für Benutzermetadaten verwendet. Es werden Details zu jedem Zertifikat angezeigt, das Folgendes enthält:
+Auf dieser Registerkarte wird eine Liste der [verfügbaren Zertifikate](#available-certificates) angezeigt, die in den Verschlüsselungsflüssen für Benutzermetadaten verwendet werden. Es werden Details zu jedem Zertifikat angezeigt, das Folgendes enthält:
 
-* Der Status (ob für **Anwendermetadaten-Verschlüsselung** Verwendung oder nicht)
+* Der Status (ob für die Verwendung der **Benutzer-Metadatenverschlüsselung** aktiviert ist oder nicht)
 * Seriennummer
 * Name der Organisation des Emittenten
 * Name der Betrefforganisation
 * Ausgegebener Zeitpunkt
 * Ablaufdatum
-* Ein Dropdown-Menü zum Verschlüsseln von Benutzermetadaten (Wenn Sie **Ja**, verschlüsselt das Zertifikat vertrauliche Benutzerinformationen, wie z. B. Postleitzahlenwerte).
+* Ein Dropdown-Menü zum Verschlüsseln von Benutzermetadaten (Wenn Sie &quot;**Ja**&quot;auswählen, verschlüsselt das Zertifikat vertrauliche Benutzerinformationen wie z. B. Postleitzahlenwerte).
 
 #### Verfügbare Zertifikate {#available-certificates}
 
@@ -83,62 +84,61 @@ Sie können die folgenden Änderungen an den verfügbaren Zertifikaten vornehmen
 
 Führen Sie die folgenden Schritte aus, um ein neues Zertifikat hinzuzufügen.
 
-1. Auswählen **Neues Zertifikat hinzufügen** oben rechts im **Verfügbare Zertifikate** Abschnitt.
+1. Wählen Sie oben rechts im Abschnitt **Verfügbare Zertifikate** die Option **Neues Zertifikat hinzufügen** aus.
 
    ![Neues Zertifikat hinzufügen](assets/programmer-add-new-certificate.png)
 
    *Neues Zertifikat hinzufügen*
 
-1. Fügen Sie den öffentlichen Schlüssel Ihres Zertifikats in den **Neues Zertifikat** Dialogfeld.
-1. Auswählen **Zertifikat hinzufügen**.
+1. Fügen Sie den öffentlichen Schlüssel Ihres Zertifikats in das Dialogfeld **Neues Zertifikat** ein.
+1. Wählen Sie **Zertifikat hinzufügen** aus.
 
-   Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. So verwenden Sie das neue Zertifikat, das im **Verfügbare Zertifikate** und fahren Sie mit dem [Änderungen überprüfen und pushen](/help/authentication/tve-dashboard-review-push-changes.md) Fluss.
+   Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. Um das neue Zertifikat zu verwenden, das im Abschnitt **Verfügbare Zertifikate** aufgeführt ist, fahren Sie mit dem Fluss [Überprüfung und Push-Änderungen](/help/authentication/tve-dashboard-review-push-changes.md) fort.
 
-1. Suchen Sie das neue Zertifikat in der Liste der **Verfügbare Zertifikate**.
+1. Suchen Sie das neue Zertifikat in der Liste der **Verfügbaren Zertifikate**.
 
    >[!IMPORTANT]
    >
    > Stellen Sie sicher, dass Ihre Systeme auf dem neuesten Stand sind und das neue Zertifikat verwenden können.
 
-1. Auswählen **Ja** von **Dient zum Verschlüsseln von Benutzermetadaten** Dropdown-Menü, um ein neues Zertifikat zu aktivieren.
+1. Wählen Sie im Dropdown-Menü **Verwendet zum Verschlüsseln von Benutzermetadaten** die Option **Ja** aus, um ein neues Zertifikat zu aktivieren.
 
 ##### Zertifikat löschen {#delete-certificate}
 
 Führen Sie die folgenden Schritte aus, um ein Zertifikat zu löschen.
 
-1. Bewegen Sie den Mauszeiger über das Zertifikat, das Sie aus der Liste der **Verfügbare Zertifikate**.
-1. Auswählen **Entfernen**.
+1. Bewegen Sie den Mauszeiger über das Zertifikat, das Sie aus der Liste der **Verfügbaren Zertifikate** löschen möchten.
+1. Wählen Sie **Entfernen** aus.
 
-   ![Das ausgewählte Zertifikat entfernen](assets/programmer-remove-certificate.png)
+   ![Entfernen Sie das ausgewählte Zertifikat](assets/programmer-remove-certificate.png)
 
-   *Das ausgewählte Zertifikat entfernen*
+   *Entfernen Sie das ausgewählte Zertifikat*
 
-1. Auswählen **Löschen** auf **Zertifikat löschen** Dialogfeld.
+1. Wählen Sie **Löschen** im Dialogfeld **Zertifikat löschen** aus.
 
-Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. Das Zertifikat wird aus dem **Verfügbare Zertifikate** Abschnitt nur nach [Änderungen überprüfen und pushen](/help/authentication/tve-dashboard-review-push-changes.md).
+Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. Das Zertifikat wird erst aus dem Abschnitt **Verfügbare Zertifikate** gelöscht, nachdem [Änderungen überprüft und gepusht haben](/help/authentication/tve-dashboard-review-push-changes.md).
 
 ### Registrierte Anwendungen {#registered-applications}
 
-Dieser Tab enthält eine Liste der Registrierungen für Anwendungen. Ansicht [Dynamisches Client-Registrierungs-Management](/help/authentication/dynamic-client-registration-management.md), um weitere Informationen zu erhalten.
+Dieser Tab enthält eine Liste der Registrierungen für Anwendungen. Weitere Informationen finden Sie unter [Dynamisches Client-Registrierungs-Management](/help/authentication/dynamic-client-registration-management.md) .
 
 ### Benutzerdefinierte Schemata {#custom-schemes}
 
-Auf dieser Registerkarte wird eine Liste benutzerdefinierter Schemata angezeigt. Ansicht [Registrierung der iOS/tvOS-Anwendung](/help/authentication/iostvos-application-registration.md) und [Dynamisches Client-Registrierungs-Management](/help/authentication/dynamic-client-registration-management.md), um weitere Informationen zu erhalten.
+Auf dieser Registerkarte wird eine Liste benutzerdefinierter Schemata angezeigt. Weitere Informationen finden Sie unter [iOS/tvOS-Anwendungsregistrierung](/help/authentication/iostvos-application-registration.md) und [Dynamisches Client-Registrierungsmanagement](/help/authentication/dynamic-client-registration-management.md) .
 
 ## Hinzufügen neuer Programmierer {#add-new-programmer}
 
 Führen Sie diese Schritte aus, um eine neue Programmierentität hinzuzufügen.
 
-1. Wählen Sie die **Programmierer** im linken Bereich.
-1. Auswählen **Hinzufügen neuer Programmierer** oben rechts im **Programmierer** Abschnitt.
+1. Wählen Sie im linken Bereich die Registerkarte **Programmierer** aus.
+1. Wählen Sie oben rechts im Abschnitt **Programmierer** die Option **Neuen Programmierer hinzufügen** aus.
 
    ![Hinzufügen eines neuen Programmierers](assets/add-new-programmer.png)
 
    *Hinzufügen eines neuen Programmierers*
 
-1. Geben Sie die Medienunternehmen-Kennung ein in **Programmierer-ID** im **Neuer Programmierer** Dialogfeld.
-1. Geben Sie einen kommerziellen Markennamen ein, der in der Konsole unter angezeigt werden soll **Anzeigename**.
-1. Auswählen **Hinzufügen von Programmierern**.
+1. Geben Sie die Medienunternehmen-ID in **Programmierer-ID** im Dialogfeld **Neuer Programmierer** ein.
+1. Geben Sie unter **Anzeigename** einen kommerziellen Markennamen ein, der in der Konsole angezeigt werden soll.
+1. Wählen Sie **Programmierer hinzufügen** aus.
 
-Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. So verwenden Sie den neuen Programmierer, der in der **Programmierer** und fahren Sie mit dem [Änderungen überprüfen und pushen](/help/authentication/tve-dashboard-review-push-changes.md) Fluss.
-
+Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. Um den im Abschnitt **Programmierer** aufgelisteten neuen Programmierer zu verwenden, fahren Sie mit dem Fluss [Überprüfung und Push-Änderungen](/help/authentication/tve-dashboard-review-push-changes.md) fort.

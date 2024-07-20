@@ -4,7 +4,7 @@ description: Vorabgenehmigung
 exl-id: 036b1a8e-f2dc-4e9a-9eeb-0787e40c00d9
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1518'
+source-wordcount: '1522'
 ht-degree: 0%
 
 ---
@@ -21,16 +21,16 @@ ht-degree: 0%
 
 Diese Funktion bietet eine einfache Autorisierungsprüfung für mehrere Ressourcen. Diese einfache Prüfung dient dazu, die Benutzeroberfläche zu dekorieren (z. B. um den Zugriffsstatus mit den Symbolen &quot;Sperren&quot;und &quot;Entsperren&quot;anzugeben). Die Vorabgenehmigung ist so einfach und effizient wie möglich, sodass ein einzelner API-Aufruf den Autorisierungsstatus für eine Liste von Ressourcen liefert. Beachten Sie, dass diese Funktion für die Autorisierung einer Ressource nicht maßgeblich ist.
 
-A `getAuthorization(resource)` oder `checkAuthorization(resource)` -Aufruf MUSS noch durchgeführt werden, bevor die Wiedergabe zugelassen wird.
+Ein `getAuthorization(resource)` - oder `checkAuthorization(resource)` -Aufruf MUSS weiterhin durchgeführt werden, bevor die Wiedergabe erlaubt wird.
 
 Die Preflight-Autorisierung bietet außerdem Unterstützung für einen anderen Anwendungsfall, bei dem der Programmierer eine Autorisierung für mehrere Ressourcen-IDs anfordern muss, um die Wiedergabe eines Elements von Medieninhalten zu ermöglichen. Der Programmierer kann eine erste Preflight-Prüfung der erforderlichen Ressourcen durchführen und kann je nach Antwort früh scheitern, wenn die Geschäftsbedingungen nicht erfüllt sind.
 
-Eine Liste der MVPDs, die die Vorabgenehmigung für den Flug unterstützen, finden Sie im [MVPD Preflight-Autorisierung](/help/authentication/mvpd-preflight-authz.md#preflight_support_list) Seite.
+Eine Liste der MVPDs, die die Preflight-Autorisierung unterstützen, finden Sie auf der Seite [MVPD Preflight Authorization](/help/authentication/mvpd-preflight-authz.md#preflight_support_list) .
 
 >[!NOTE]
 >
-> Bitte beachten Sie, dass die Nutzung dieser Funktion für MVPDs, die nicht über volle Unterstützung für die Preflight-Autorisierung verfügen, im Voraus mit Adobe &amp; MVPDs vereinbart werden muss. Die Verwendung der Vorabgenehmigung für diese MVPDs wird in das so genannte &quot;Worst Case&quot;-Szenario fallen [here](/help/authentication/mvpd-preflight-authz.md#intro) und kann zu Leistungsproblemen und einer langsamen Reaktionszeit führen. </br>
-> Beachten Sie außerdem, dass die Verwendung der Vorabgenehmigung mit **mehr als 5 Ressourcen müssen explizit durch Adobe genehmigt werden**.
+> Bitte beachten Sie, dass die Nutzung dieser Funktion für MVPDs, die nicht über volle Unterstützung für die Preflight-Autorisierung verfügen, im Voraus mit Adobe &amp; MVPDs vereinbart werden muss. Die Verwendung der Preflight-Autorisierung für diese MVPDs wird in das &quot;Worst-Case-Szenario&quot;, das [hier](/help/authentication/mvpd-preflight-authz.md#intro) beschrieben wird, fallen und kann zu Leistungsproblemen und langsamen Reaktionszeiten führen. </br>
+> Beachten Sie außerdem, dass die Verwendung der Preflight-Autorisierung mit **mehr als 5 Ressourcen explizit von Adobe** genehmigt werden muss.
 
 ## AccessEnabler Preflight-API {#AE_pre_api}
 
@@ -40,7 +40,7 @@ AccessEnabler stellt ein API-/Callback-Funktionspaar zur Implementierung der Pre
 
 Rufen Sie diese Funktion im AccessEnabler -Objekt auf, um den Autorisierungsstatus für eine Liste von Ressourcen anzufordern.
 
-Der Ressourcenparameter ist die Liste der Ressourcen, für die die Autorisierung überprüft werden soll. Jedes Element in der Liste sollte eine Zeichenfolge sein, die die Ressourcen-ID darstellt. Die Ressourcen-ID unterliegt den gleichen Einschränkungen wie die Ressourcen-ID in der `getAuthorization()` -Aufruf, d. h., es wird zwischen dem Programmierer und dem MVPD oder einem Medien-RSS-Fragment ein Wert vereinbart. Beachten Sie, dass die Adobe Pass-Authentifizierung keine Ressourcen in irgendeiner Weise verwaltet, mit Ausnahme einer dünnen Mediationsschicht, die Ressourcenformate je nach Unterstützung durch den MVPD transformieren kann.
+Der Ressourcenparameter ist die Liste der Ressourcen, für die die Autorisierung überprüft werden soll. Jedes Element in der Liste sollte eine Zeichenfolge sein, die die Ressourcen-ID darstellt. Die Ressourcen-ID unterliegt den gleichen Einschränkungen wie die Ressourcen-ID im `getAuthorization()` -Aufruf, d. h., es wird ein Wert vereinbart, der zwischen dem Programmierer und dem MVPD oder einem Medien-RSS-Fragment festgelegt wurde. Beachten Sie, dass die Adobe Pass-Authentifizierung keine Ressourcen in irgendeiner Weise verwaltet, mit Ausnahme einer dünnen Mediationsschicht, die Ressourcenformate je nach Unterstützung durch den MVPD transformieren kann.
 
 ### preauthorizedResources(Array:authorizedResources) {#preauthRes}
 
@@ -70,19 +70,19 @@ Dies ist eine Rückruffunktion, die in der oberen Ebene des Programmierers imple
 
 Der API-Aufruf versucht, eine zwischengespeicherte Liste der autorisierten Ressourcen für den aktuellen Benutzer im lokalen Speicher des Clients zu finden. Wenn keine zwischengespeicherte Liste vorhanden ist, wird ein HTTPS-Aufruf an die AdobePass-Server gesendet, um die Liste abzurufen.
 
-Der Caching-Mechanismus verbessert die Leistungszeiten bei nachfolgenden Aufrufen, indem der Netzwerkaufruf vollständig übersprungen wird. Außerdem kann die zwischengespeicherte Liste im Rahmen des Authentifizierungsprozesses vorab ausgefüllt werden.  (Informationen zum Einrichten dieses Szenarios finden Sie unter [Integration der Preflight-Autorisierung](/help/authentication/authz-usecase.md#preflight_authz_int) im Abschnitt &quot;Autorisierung&quot;des MVPD-Integrationsleitfadens).
+Der Caching-Mechanismus verbessert die Leistungszeiten bei nachfolgenden Aufrufen, indem der Netzwerkaufruf vollständig übersprungen wird. Außerdem kann die zwischengespeicherte Liste im Rahmen des Authentifizierungsprozesses vorab ausgefüllt werden.  (Informationen zum Einrichten dieses Szenarios finden Sie unter [Preflight-Autorisierungsintegration](/help/authentication/authz-usecase.md#preflight_authz_int) im Abschnitt &quot;Autorisierung&quot;des MVPD-Integrationsleitfadens).
 
-Darüber hinaus kann die zwischengespeicherte Liste von Ressourcen potenziell zur Optimierung des Autorisierungsflusses verwendet werden, sofern eine zwischengespeicherte Liste von Ressourcen vorhanden ist. `checkAuthorization()` kann es vor einem Netzwerkaufruf überprüfen. Wenn die Ressource nicht in der Liste der vorab autorisierten Ressourcen enthalten ist, kann die Prüfung fehlschlagen, ohne die Adobe Pass-Authentifizierungsserver aufrufen zu müssen.
+Darüber hinaus kann die zwischengespeicherte Liste von Ressourcen potenziell verwendet werden, um den Autorisierungsfluss zu optimieren. Wenn eine zwischengespeicherte Liste von Ressourcen vorhanden ist, kann `checkAuthorization()` sie vor einem Netzwerkaufruf überprüfen. Wenn die Ressource nicht in der Liste der vorab autorisierten Ressourcen enthalten ist, kann die Prüfung fehlschlagen, ohne die Adobe Pass-Authentifizierungsserver aufrufen zu müssen.
 
 
 ### Preflight mit ChannelID {#preflight_using_channelID}
 
 Ab der Adobe Pass-Authentifizierungsversion 2.4.1 funktioniert der Preflight-Fluss wie folgt:
 
-1. Während der Authentifizierung liest die Adobe Pass-Authentifizierung die `channelIID` -Element aus der SAML-Antwort des MVPD und setzt mithilfe dieses Werts die `authorizedResources` -Element im Authentifizierungstoken.
-1. Innerhalb des `checkPreauthorizedResources()` API-Funktion, Adobe Pass-Authentifizierung überprüft, ob die `authorizedResources` -Element festgelegt ist.
-1. Wenn die Variable `authorizedResources` -Element festgelegt ist, liest die Adobe Pass-Authentifizierung diesen Wert und führt eine Schnittmenge zwischen der Ressourcenliste aus der `authorizedResources` Element und Liste der von `checkPreauthorizedResources()` -Parameter.  Das Ergebnis dieser Schnittmenge ist die endgültige Liste der vorab autorisierten Ressourcen.
-1. Wenn die Variable `authorizedResources` nicht festgelegt ist, führen Sie den zuvor implementierten Fluss aus, in dem die Liste der Ressourcen, die von empfangen wurden `checkPreauthorizedResources()` wird an das PreAuthorizationServlet übergeben. Dieses Servlet führt die Autorisierungsaufrufe an die MVPD-Endpunkte aus und gibt die Liste der vorab autorisierten Ressourcen zurück.
+1. Während der Authentifizierung liest die Adobe Pass-Authentifizierung das Element `channelIID` aus der SAML-Antwort des MVPD und verwendet diesen Wert, um das Element `authorizedResources` im Authentifizierungstoken festzulegen.
+1. Innerhalb der API-Funktion `checkPreauthorizedResources()` prüft die Adobe Pass-Authentifizierung, ob das Element `authorizedResources` festgelegt ist.
+1. Wenn das Element `authorizedResources` festgelegt ist, liest die Adobe Pass-Authentifizierung diesen Wert und führt eine Schnittmenge zwischen der Ressourcenliste aus dem Element `authorizedResources` und der Liste der Ressourcen durch, die vom Parameter `checkPreauthorizedResources()` empfangen wurden.  Das Ergebnis dieser Schnittmenge ist die endgültige Liste der vorab autorisierten Ressourcen.
+1. Wenn das Element `authorizedResources` nicht festgelegt ist, führen Sie den zuvor implementierten Fluss aus, in dem die Liste der Ressourcen, die vom Parameter `checkPreauthorizedResources()` empfangen wurden, an das PreAuthorizationServlet übergeben wird. Dieses Servlet führt die Autorisierungsaufrufe an die MVPD-Endpunkte aus und gibt die Liste der vorab autorisierten Ressourcen zurück.
 
 ### Beispiel für Preflight mit ChannelID
 
@@ -108,7 +108,7 @@ Das folgende Beispiel zeigt ein Beispiel für eine Kanalverbindung. Beachten Sie
 ```
 
 
-Die `authorizedResources` -Element des Authentifizierungselements wie folgt angezeigt:
+Das Element `authorizedResources` aus dem Authentifizierungselement wird wie folgt angezeigt:
 
 ```JSON
     <authorizedResources>
@@ -129,14 +129,14 @@ Die `authorizedResources` -Element des Authentifizierungselements wie folgt ange
     </authorizedResources>
 ```
 
-Der Programmierer führt die `checkPreauthorizedResources()` API-Aufruf, der die folgende Parameterliste übergibt:</span>
+Der Programmierer führt den API-Aufruf `checkPreauthorizedResources()` aus und übergibt dabei die folgende Parameterliste:</span>
 
 - &quot;MSNBC&quot;
 - &quot;FBN&quot;
 - &quot;TruTV&quot;
 - &quot;fbc-fox&quot;
 
-Die aktuelle Preflight-Implementierung führt die Schnittmenge mit der Liste der Ressourcen aus der `authorizedResources` -Element und gibt diese Liste zurück:
+Die aktuelle Preflight-Implementierung führt die Schnittmenge mit der Liste der Ressourcen aus dem Element `authorizedResources` aus und gibt diese Liste zurück:
 
 - &quot;MSNBC&quot;
 - &quot;FBN&quot;
@@ -144,7 +144,7 @@ Die aktuelle Preflight-Implementierung führt die Schnittmenge mit der Liste der
 
 
 
-**Hinweis:** Beachten Sie bitte, dass bei der Schnittmenge nicht zwischen Groß- und Kleinschreibung unterschieden wird.
+**Hinweis:** Beachten Sie, dass bei der Schnittmenge nicht zwischen Groß- und Kleinschreibung unterschieden wird.
 
 
 
@@ -158,7 +158,7 @@ Dieser Aufruf wird automatisch vom AccessEnabler durchgeführt, wenn keine zwisc
 | Parameter | Typ | Erforderlich | Beschreibung |
 | --- | --- | --- | --- |
 | `authentication_token` | Zeichenfolge | JA | Das Authentifizierungstoken. |
-| `resource_id` | Zeichenfolge | JA | Eine einzelne Ressource. Dies kann mehrmals angegeben werden, einmal für jedes Element des Ressourcen-Arrays, das im `checkPreauthorizedResources()` API-Aufruf. |
+| `resource_id` | Zeichenfolge | JA | Eine einzelne Ressource. Dies kann mehrmals angegeben werden, einmal für jedes Element des Ressourcen-Arrays, das im `checkPreauthorizedResources()` -API-Aufruf bereitgestellt wird. |
 
 
 **Hinweis:** Die maximale Anzahl der angeforderten Ressourcen kann konfiguriert werden.
@@ -192,8 +192,10 @@ Die Antwort, die das Servlet preauthorize zurücksendet, hat das folgende Format
 Eine Liste der bereits autorisierten Ressourcen, die der AccessEnabler vom Service Provider erhält. Diese Liste von Ressourcen:
 
 - Wird zusammen mit den AuthN- und AuthZ-Token gespeichert
-- gültig, solange sich der Benutzer auf derselben Website befindet oder bis das AuthN-Token abläuft
-- Wird jedes Mal erneut abgerufen, wenn der Benutzer auf eine neue integrierte Website mit Adobe Pass-Authentifizierung gelangt
+- gültig, solange sich der Benutzer auf derselben Website befindet oder bis die
+AuthN-Token läuft ab
+- Wird jedes Mal erneut abgerufen, wenn der Benutzer auf eine neue Adobe Pass gelangt
+Authentifizierungswebsite
 
 Jeder Eintrag enthält die Ressourcen-ID, für die der Benutzer vorautorisiert ist.
 
@@ -211,17 +213,17 @@ Diese Liste heißt &quot;Cache für die Vorabautorisierung&quot;.
 
 #### Fluss {#flow}
 
-1. Die App/Site des Programmierers erstellt eine `checkPreauthorizedResources(resourceList)` aufrufen.
+1. Die App/Site des Programmierers führt einen `checkPreauthorizedResources(resourceList)` -Aufruf durch.
 1. AccessEnabler überprüft das Authentifizierungstoken für autorisierte Ressourcen:
-   1. Wenn das Authentifizierungstoken autorisierte Ressourcen enthält, ist diese Liste autoritär und es sollte kein Aufruf durchgeführt werden, um diese Informationen zu erhalten. Ressourcen aus resourceList werden in der Liste der autorisierten Ressourcen im Authentifizierungstoken gesucht und nur die gefundenen Ressourcen werden von der `preauthorizedResources()` Callback.
-   1. Wenn das Authentifizierungstoken KEINE autorisierten Ressourcen enthält - `resourceList` wird mit der Liste der Ressourcen im Cache für die Vorabautorisierung verglichen.
-      1. Wenn die Liste dieselben Ressourcen enthält, bedeutet dies, dass bereits ein Aufruf an den Server erfolgt ist und sich die Antwort bereits im Cache für die Vorabautorisierung befindet. Nur autorisierte Ressourcen werden von der `preauthorizedResources()` Callback.
-      1. Wenn die Liste NICHT dieselben Ressourcen enthält, muss der Client einen Aufruf an den Server durchführen, um den Autorisierungsstatus für die Ressourcen in resourceList zu erhalten. Die Antwort wird abgerufen und im Cache für die Vorabautorisierung gespeichert, wobei die alten Ressourcen vollständig ersetzt werden. Nur autorisierte Ressourcen werden von der `preauthorizedResources()` Callback.
+   1. Wenn das Authentifizierungstoken autorisierte Ressourcen enthält, ist diese Liste autoritär und es sollte kein Aufruf durchgeführt werden, um diese Informationen zu erhalten. Ressourcen aus resourceList werden in der Liste der autorisierten Ressourcen im Authentifizierungstoken gesucht und nur die gefundenen Ressourcen werden vom `preauthorizedResources()` -Rückruf zurückgegeben.
+   1. Wenn das Authentifizierungstoken NICHT autorisierte Ressourcen enthält - `resourceList` wird mit der Liste der Ressourcen im Cache für die Vorabautorisierung verglichen.
+      1. Wenn die Liste dieselben Ressourcen enthält, bedeutet dies, dass bereits ein Aufruf an den Server erfolgt ist und sich die Antwort bereits im Cache für die Vorabautorisierung befindet. Nur autorisierte Ressourcen werden vom Rückruf `preauthorizedResources()` zurückgegeben.
+      1. Wenn die Liste NICHT dieselben Ressourcen enthält, muss der Client einen Aufruf an den Server durchführen, um den Autorisierungsstatus für die Ressourcen in resourceList zu erhalten. Die Antwort wird abgerufen und im Cache für die Vorabautorisierung gespeichert, wobei die alten Ressourcen vollständig ersetzt werden. Nur autorisierte Ressourcen werden vom Rückruf `preauthorizedResources()` zurückgegeben.
 
 
 #### Listenabruf {#listRetrieve}
 
-Immer `checkPreauthorizedResources()` aufgerufen wird, wird die Liste der Ressourcen, die für die Autorisierung überprüft werden sollen, mit dem Cache für die Vorabautorisierung verglichen. Wenn die Liste denselben Satz von Ressourcen enthält, wird der Dienstleister nicht aufgerufen, da alle Ressourcen zum Auslösen der `preauthorizedResources()` -Rückruf befindet sich bereits im Cache.
+Bei jedem Aufruf von `checkPreauthorizedResources()` wird die Liste der Ressourcen, die auf Autorisierung überprüft werden sollen, mit dem Cache für die Vorabautorisierung verglichen. Wenn die Liste denselben Satz von Ressourcen enthält, wird der Service Provider nicht aufgerufen, da sich alle Ressourcen, die zum Auslösen des `preauthorizedResources()` -Rückrufs erforderlich sind, bereits im Cache befinden.
 
 
 #### logout() {#logout}
@@ -231,7 +233,7 @@ Der Cache für die Vorabautorisierung wird beim Abmelden geleert.
 
 ## Abhängigkeiten {#depends}
 
-Die Leistung der Preflight-API hängt von bestimmten MVPD-Implementierungen ab.  Informationen zu Implementierungsoptionen finden Sie unter [Integration der Preflight-Autorisierung](/help/authentication/authz-usecase.md#preflight_authz_int) im Abschnitt &quot;Autorisierung&quot;des MVPD-Integrationsleitfadens.
+Die Leistung der Preflight-API hängt von bestimmten MVPD-Implementierungen ab.  Informationen zu Implementierungsoptionen finden Sie unter [Preflight-Autorisierungsintegration](/help/authentication/authz-usecase.md#preflight_authz_int) im Abschnitt &quot;Autorisierung&quot;des MVPD-Integrationsleitfadens.
 
 
 ## Sicherheit {#security}
@@ -240,14 +242,14 @@ Die Client-APIs stehen allen Programmierern zur Verfügung.
 
 Bei der Implementierung wird HTTPS als Transport verwendet. Um jedoch einen leichteren Aufruf zu erhalten, werden keine zusätzlichen Sicherheitsmaßnahmen angewendet (keine Signierung, kein FAXS).
 
-**Achtung:** Verwenden Sie diese API NICHT auf eine maßgebliche Weise, um festzustellen, ob einem Benutzer Zugriff auf eine geschützte Ressource gewährt werden soll. Der Zweck dieser API ist die Benutzeroberflächen-Dekoration und / oder die Vorabkennzeichnung von Geschäftsentscheidungen. Die `getAuthorization()` und `checkAuthorization()` -Aufrufe sollten immer durchgeführt werden, bevor die Wiedergabe zugelassen wird.
+**Achtung:** Verwenden Sie diese API NICHT auf autoritäre Weise, um zu bestimmen, ob einem Benutzer Zugriff auf eine geschützte Ressource gewährt werden soll. Der Zweck dieser API ist die Benutzeroberflächen-Dekoration und / oder die Vorabkennzeichnung von Geschäftsentscheidungen. Die Aufrufe `getAuthorization()` und `checkAuthorization()` sollten immer durchgeführt werden, bevor die Wiedergabe zugelassen wird.
 
 
 ## Kompatibilität {#compat}
 
 Diese Funktion wird in allen Versionen von AccessEnabler unterstützt: AS, JS, AIR, iOS, Android, Xbox (im 2nd-Screen-AuthN-Fluss).
 
-Die Preflight-Autorisierung unterstützt keine Ressourcen, die CDATA-Abschnitte enthalten. Der Schwerpunkt des aktuellen Preflight-Systems liegt auf der Unterstützung der Filterung auf Kanalebene. Ressourcen mit CDATA-Abschnitten sind wahrscheinlich Ressourcen auf Asset-Ebene. Preflight unterstützt einfache `mrss` Ressourcen für die Vorautorisierung auf Kanalebene, sofern sie kein CDATA enthalten.
+Die Preflight-Autorisierung unterstützt keine Ressourcen, die CDATA-Abschnitte enthalten. Der Schwerpunkt des aktuellen Preflight-Systems liegt auf der Unterstützung der Filterung auf Kanalebene. Ressourcen mit CDATA-Abschnitten sind wahrscheinlich Ressourcen auf Asset-Ebene. Preflight unterstützt einfache `mrss` -Ressourcen für die Vorabautorisierung auf Kanalebene, sofern sie kein CDATA enthalten.
 
 ## Integration mit anderen Funktionen {#integ_w_other_features}
 

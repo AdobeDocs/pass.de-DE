@@ -17,13 +17,13 @@ ht-degree: 0%
 
 ## Problem {#issue}
 
-Der Benutzer durchläuft den Authentifizierungsfluss. Nachdem er seine Anmeldeinformationen mit seinem Provider erfolgreich eingegeben hat, wird er entweder zu einer Fehlerseite, einer Suchseite oder einer anderen benutzerdefinierten Seite zurückgeleitet, auf der er darüber informiert wird, dass `adobepass.ios.app` konnte nicht gefunden/gelöst werden.
+Der Benutzer durchläuft den Authentifizierungsfluss. Nachdem er seine Anmeldeinformationen erfolgreich bei seinem Provider eingegeben hat, wird er entweder zu einer Fehlerseite, einer Suchseite oder einer anderen benutzerdefinierten Seite zurückgeleitet, auf der er darüber informiert wird, dass `adobepass.ios.app` nicht gefunden/aufgelöst werden konnte.
 
 ## Erklärung {#explanation}
 
-IOS: `adobepass.ios.app` wird als endgültige Umleitungs-URL verwendet, um anzugeben, dass der AuthN-Fluss abgeschlossen ist. An dieser Stelle muss die App eine Anfrage an den AccessEnabler senden, um das AuthN-Token abzurufen und den AuthN-Fluss abzuschließen.
+In iOS wird `adobepass.ios.app` als endgültige Umleitungs-URL verwendet, um anzugeben, dass der AuthN-Fluss abgeschlossen ist. An dieser Stelle muss die App eine Anfrage an den AccessEnabler senden, um das AuthN-Token abzurufen und den AuthN-Fluss abzuschließen.
 
-Das Problem ist, dass `adobepass.ios.app` nicht vorhanden ist und eine Fehlermeldung in der `webView`. In älteren Versionen der iOS DemoApp wurde davon ausgegangen, dass dieser Fehler immer am Ende des AuthN-Flusses ausgelöst wird. Er wurde entsprechend eingerichtet (`indidFailLoadWithError`).
+Das Problem besteht darin, dass `adobepass.ios.app` nicht tatsächlich vorhanden ist und eine Fehlermeldung in der `webView` Trigger. In älteren Versionen der iOS DemoApp wurde davon ausgegangen, dass dieser Fehler immer am Ende des AuthN-Flusses ausgelöst wird. Er wurde so eingerichtet, dass er entsprechend verarbeitet wird (`indidFailLoadWithError`).
 
 **Hinweis:** Dieses Problem wurde in späteren Versionen der DemoApp behoben (im iOS SDK-Download enthalten).
 
@@ -36,7 +36,7 @@ In diesen Fällen ist die Antwort, die an die iOS-WebView zurückgesendet wird, 
 
 ## Lösung {#solution}
 
-Nehmen Sie NICHT die gleiche Annahme wie die DemoApp vor. Erfassen Sie stattdessen die Anfrage, bevor sie ausgeführt wird (in `shouldStartLoadWithRequest`) und behandeln Sie sie entsprechend.
+Nehmen Sie NICHT die gleiche Annahme wie die DemoApp vor. Erfassen Sie stattdessen die Anfrage, bevor sie ausgeführt wird (in `shouldStartLoadWithRequest`), und behandeln Sie sie entsprechend.
 
 Beispiel für das Abfangen der Anfrage vor der Ausführung:
 
@@ -60,6 +60,6 @@ return YES;
 
 Beachten Sie Folgendes:
 
-- NIE verwenden `adobepass.ios.app` direkt an eine beliebige Stelle im Code. Verwenden Sie stattdessen die Konstante . `ADOBEPASS_REDIRECT_URL`
-- Die `return NO;` -Anweisung verhindert das Laden der Seite
-- Stellen Sie sicher, dass die Variable `getAuthenticationToken` -Aufruf wird einmal und nur einmal in Ihrem Code aufgerufen. Mehrere Aufrufe an `getAuthenticationToken` führt zu nicht definierten Ergebnissen.
+- Verwenden Sie niemals `adobepass.ios.app` direkt an einer beliebigen Stelle im Code. Verwenden Sie stattdessen die Konstante `ADOBEPASS_REDIRECT_URL`
+- Die Anweisung `return NO;` verhindert, dass die Seite geladen wird.
+- Stellen Sie sicher, dass der `getAuthenticationToken` -Aufruf einmal und nur einmal in Ihrem Code aufgerufen wird. Mehrere Aufrufe von `getAuthenticationToken` führen zu nicht definierten Ergebnissen.

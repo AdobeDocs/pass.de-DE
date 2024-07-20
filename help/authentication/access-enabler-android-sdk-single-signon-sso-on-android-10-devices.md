@@ -4,7 +4,7 @@ description: Zugriff auf Enabler Android SDK Single Sign-On (SSO) in Android 10-
 exl-id: dedade15-c451-4757-b684-d3728e11dd87
 source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '374'
+source-wordcount: '383'
 ht-degree: 0%
 
 ---
@@ -17,23 +17,23 @@ ht-degree: 0%
 
 ## Übersicht
 
-Single Sign-On (SSO) zwischen authentifizierungsfähigen Apps von Adobe Pass ist auf Geräten mit Android OS über Access Enabler Android SDK verfügbar. Um Single Sign-On (SSO) auf Android-Geräten anzubieten, verwenden die Access Enabler Android SDK-Version 3.2.1 (neueste Version) und frühere Versionen eine freigegebene Datenbankdatei, die in einer Android-Speicherimplementierung gespeichert ist und auf die alle mit Adobe Pass Authentication-basierten Apps zugreifen können.
+Single Sign-On (SSO) zwischen authentifizierungsfähigen Apps von Adobe Pass ist auf Geräten mit Android OS über Access Enabler Android SDK verfügbar. Um Single Sign-On (SSO) auf Android-Geräten anzubieten, verwenden die Access Enabler Android SDK-Version 3.2.1 (neueste Version) und frühere Versionen eine freigegebene Datenbankdatei, die in einer Android-Speicherimplementierung gespeichert ist und von allen mit Adobe Pass Authentication verbundenen Apps aufgerufen werden kann.
 
-Google in der neuesten Version von Android 10 führte jedoch zu einigen Änderungen, &quot;um Benutzern mehr Kontrolle über ihre Dateien zu geben und die Datei-Unübersichtlichkeit zu beschränken, werden Apps mit Android 10 (API-Ebene 29) und höher standardmäßig über einen Umfang auf ein externes Speichergerät oder einen Speicherplatz verfügen. Solche Apps können nur ihr App-spezifisches Verzeichnis sehen `\[...\]`&quot;. Weitere Informationen zu diesen Änderungen am Speicher von Android 10 finden Sie unter [Daten- und Dateispeicherdokumentation für Android](https://developer.android.com/training/data-storage/files/external-scoped).
+Google in der neuesten Version von Android 10 führte jedoch zu einigen Änderungen, &quot;um Benutzern mehr Kontrolle über ihre Dateien zu geben und die Datei-Unübersichtlichkeit zu begrenzen. Apps, die auf Android 10 (API-Ebene 29) und höher abzielen, erhalten standardmäßig einen Scoped-Zugriff auf ein externes Speichergerät oder einen Scoped-Speicher. Solche Apps können nur das App-spezifische Verzeichnis `\[...\]` sehen. Weitere Informationen zu diesen Speicheränderungen in Android 10 finden Sie in der [Dokumentation zur Daten- und Dateispeicherung für Android](https://developer.android.com/training/data-storage/files/external-scoped).
 
-Als Ergebnis dieser Änderungen bietet die Single Sign-On (SSO) von Access Enabler Android-Version **3.2.1 SDK (neueste Version)** und frühere Versionen können auf Android 10-Geräten betroffen sein, wie im nächsten Abschnitt beschrieben.
+Aufgrund dieser Änderungen können sich die Single Sign-On (SSO), die von Access Enabler Android-Version **3.2.1 SDK (neueste Version)** angeboten wird, und frühere Versionen auf Android 10-Geräten auswirken, wie im nächsten Abschnitt erläutert.
 
-Siehe [Roku SSO-Übersicht](/help/authentication/roku-sso-overview.md).
+Siehe [Roku SSO Overview](/help/authentication/roku-sso-overview.md).
 
 ## Verhalten
 
-Abhängig von der **[!UICONTROL target SDK level]** oder die Verwendung **android:requestLegacyExternalStorage** manifest attribute the Single Sign-On (SSO) von Access Enabler Android-SDK Version 3.2.1 (neueste Version) und früheren Versionen werden sich derzeit wie folgt verhalten:
+Je nach **[!UICONTROL target SDK level]** Ihrer App oder der Verwendung des Manifestattributs **android:requestLegacyExternalStorage** verhält sich das Single Sign-On (SSO), das vom Access Enabler Android-SDK Version 3.2.1 (neueste Version) angeboten wird, wie folgt:
 
-- Ihre App-Ziele **Android 9 (API-Ebene 28)** oder niedriger **-\>** Single Sign-On (SSO) **wird funktionieren**
-- Ihre App-Ziele **Android 10** **(API-Ebene 29)** und **set** der Wert von **requestLegacyExternalStorage auf true** in der Manifestdatei Ihrer App **-\>** Single Sign-On (SSO) **wird funktionieren**
-- Ihre App-Ziele **Android 10** **(API-Ebene 29)** und **nicht festgelegt** der Wert von **requestLegacyExternalStorage auf true** in der Manifestdatei Ihrer App **-\>** Single Sign-On (SSO) **funktioniert nicht**
+- Ihre App zielt auf **Android 9 (API-Ebene 28)** oder niedrigere **-\>** Single-Sign-On (SSO) **ab**
+- Ihre App zielt auf **Android 10** **(API-Ebene 29)** ab und setzt **** den Wert von **requestLegacyExternalStorage in der Manifestdatei Ihrer App auf &quot;true**&quot;**-\>** Single Sign-On (SSO) **funktioniert**
+- Ihre App zielt auf **Android 10** **(API-Ebene 29)** ab und setzt **nicht** den Wert von **requestLegacyExternalStorage in der Manifestdatei Ihrer App auf &quot;true**&quot;**-\>** Single Sign-On (SSO) **funktioniert nicht**
 
 
 >[!TIP]
 >
-> Bevor das Adobe Pass Authentication Access Enabler Android SDK vollständig mit dem Scoped-Speicher kompatibel ist, können Sie sich vorübergehend vom Opt-out aus der Ziel-SDK-Ebene Ihrer App oder dem Manifestattribut requestLegacyExternalStorage ausschließen, wie in der öffentlichen Erklärung erläutert [Android-Dokumentation](https://developer.android.com/training/data-storage/files/external-scoped#opt-out-of-scoped-storage).
+> Bevor das Adobe Pass Authentication Access Enabler Android SDK vollständig mit dem Scoped Storage kompatibel ist, können Sie sich vorübergehend vom Opt-out aus der Ziel-SDK-Ebene Ihrer App oder dem Manifestattribut requestLegacyExternalStorage ausschließen, wie in der öffentlichen [Android-Dokumentation](https://developer.android.com/training/data-storage/files/external-scoped#opt-out-of-scoped-storage) erläutert.

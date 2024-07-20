@@ -4,7 +4,7 @@ description: Dynamisches Client-Registrierungs-Management
 exl-id: 2c3ebb0b-c814-4b9e-af57-ce1403651e9e
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1338'
+source-wordcount: '1321'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Übersicht {#overview}
 
-Mit der weit verbreiteten Annahme von [Benutzerdefinierte Registerkarten für Android Chrome](https://developer.chrome.com/multidevice/android/customtabs){target_blanck} und [Apple Safari-Controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target_blanck} In den Anwendungen unserer Kunden wird der Benutzerauthentifizierungsfluss in der Adobe Pass-Authentifizierung aktualisiert. Genauer gesagt, können wir das Ziel, den Status beizubehalten, nicht mehr erreichen, sodass der Benutzeragentenfluss bei der Authentifizierung eines MVPD-Abonnenten zwischen Umleitungen verfolgt werden kann. Zuvor wurde dies mithilfe von HTTP-Cookies durchgeführt. Diese Einschränkung ist der Treiber für die Migration aller APIs zu OAuth 2.0. [RFC 6749](https://tools.ietf.org/html/rfc6749){target_blanck}.
+Mit der weit verbreiteten Übernahme von [Android Chrome Custom Tabs](https://developer.chrome.com/multidevice/android/customtabs){target_blanck} und [Apple Safari View Controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target_blanck} in den Anwendungen unserer Kunden aktualisieren wir den Benutzerauthentifizierungsfluss in der Adobe Pass-Authentifizierung. Genauer gesagt, können wir das Ziel, den Status beizubehalten, nicht mehr erreichen, sodass der Benutzeragentenfluss bei der Authentifizierung eines MVPD-Abonnenten zwischen Umleitungen verfolgt werden kann. Zuvor wurde dies mithilfe von HTTP-Cookies durchgeführt. Diese Einschränkung ist der Treiber für die Migration aller APIs zu OAuth 2.0 [RFC6749](https://tools.ietf.org/html/rfc6749){target_blanck}.
 
 Mit diesem Update werden Adobe-Authentifizierungs-Clients zu OAuth 2.0-Clients und ein benutzerdefinierter OAuth 2.0-Autorisierungsserver wird bereitgestellt, um die Anforderungen des Adobe Pass Authentication Service zu erfüllen.
 
@@ -25,21 +25,21 @@ Damit die Client-Anwendungen die OAuth 2.0-Autorisierung verwenden können, muss
 
 Diese Metadaten werden als Softwareanweisung übermittelt, die eine &quot;software_id&quot;enthält, damit unser Autorisierungsserver verschiedene Instanzen einer Anwendung mit derselben Softwareanweisung korrelieren kann.
 
-A **Softwareanweisung** ist ein JSON Web Token (JWT), das Metadatenwerte über die Client-Software als Bundle durchführt. Wenn die Software dem Autorisierungsserver als Teil einer Anfrage zur Clientregistrierung präsentiert wird, muss sie digital signiert oder mit JSON Web Signature (JWS) als MACed signiert werden.
+Eine **Softwareanweisung** ist ein JSON-Web-Token (JWT), das Metadatenwerte über die Client-Software als Bundle durchsetzt. Wenn die Software dem Autorisierungsserver als Teil einer Anfrage zur Clientregistrierung präsentiert wird, muss sie digital signiert oder mit JSON Web Signature (JWS) als MACed signiert werden.
 
-Eine ausführlichere Erläuterung zu den Software-Anweisungen und ihrer Funktionsweise finden Sie in der offiziellen Dokumentation [RFC 7591](https://tools.ietf.org/html/rfc7591).
+Eine detailliertere Erklärung dazu, was Softwareanweisungen sind und wie sie funktionieren, finden Sie in der offiziellen Dokumentation [RFC7591](https://tools.ietf.org/html/rfc7591).
 
 Die Softwareanweisung sollte mit der Anwendung auf dem Gerät des Benutzers bereitgestellt werden.
 
 Vor dieser Aktualisierung gab es zwei Mechanismen, mit denen Anwendungen Aufrufe an die Adobe Pass-Authentifizierung durchführen konnten:
 
-* Browser-basierte Clients sind über erlaubt registriert [Domain-Auflistung](/help/authentication/programmer-overview.md#reg-and-init)
-* native Anwendungs-Clients wie iOS- und Android-Anwendungen werden über registriert **signierter Anforderer** Mechanismus
+* Browser-basierte Clients werden über die zulässige [Domain-Auflistung](/help/authentication/programmer-overview.md#reg-and-init) registriert.
+* native Anwendungs-Clients wie iOS- und Android-Anwendungen werden über den Mechanismus **signierter Anforderer** registriert
 
 
 Mit dem Mechanismus zur Autorisierung der Kundenregistrierung müssen Sie Ihre Anwendungen zum TVE-Dashboard hinzufügen.
 
-Damit ein Kunde mit der Implementierung des neuen Android-SDK und des kommenden iOS SDK beginnen kann, benötigt er eine Softwareanweisung. Eine Softwareanweisung identifiziert eine im TVE-Dashboard erstellte Anwendung.
+Damit ein Kunde mit der Implementierung des neuen Android SDK und des kommenden iOS SDK beginnen kann, benötigt er eine Softwareanweisung. Eine Softwareanweisung identifiziert eine im TVE-Dashboard erstellte Anwendung.
 
 Führen Sie die Schritte in den folgenden Abschnitten aus, um eine registrierte Anwendung im TVE-Dashboard zu erstellen.
 
@@ -47,13 +47,13 @@ Führen Sie die Schritte in den folgenden Abschnitten aus, um eine registrierte 
 
 Es gibt zwei Möglichkeiten, eine registrierte Anwendung im TVE-Dashboard zu erstellen:
 
-* [Programmierebene](#prog-level) - ermöglicht es Ihnen, eine registrierte Anwendung zu erstellen und sie mit einem oder allen Programmierer-Kanälen zu verknüpfen.
+* [Programmiererebene](#prog-level) - ermöglicht es Ihnen, eine registrierte Anwendung zu erstellen und sie mit einem oder allen Programmierer-Kanälen zu verknüpfen.
 
-* [Kanalebene](#channel-level) - ermöglicht die Erstellung einer registrierten Anwendung, die ausschließlich mit diesem Kanal verknüpft ist.
+* [Kanalebene](#channel-level) - Ermöglicht die Erstellung einer registrierten Anwendung, die ausschließlich diesem Kanal zugeordnet ist.
 
 ### Registrierte Anwendung auf Programmebene erstellen {#prog-level}
 
-Navigieren Sie zu **Programmierer** > **Registrierte Anwendungen** Registerkarte.
+Gehen Sie zur Registerkarte **Programmierer** > **Registrierte Anwendungen** .
 
 ![](assets/reg-app-progr-level.png)
 
@@ -61,15 +61,15 @@ Klicken Sie auf der Registerkarte Registrierte Anwendungen auf **Neue Anwendung 
 
 Wie in der Abbildung unten dargestellt, sollten Sie folgende Felder ausfüllen:
 
-* **Anwendungsname** - Name des Antrags
+* **Anwendungsname** - der Name der Anwendung
 
-* **Zugeordneter Kanal** - den Namen Ihres Kanals, t</span>mit dem dieser Antrag verknüpft ist. Die Standardeinstellung in der Dropdown-Maske ist **Alle Kanäle.** In der Benutzeroberfläche können Sie entweder einen Kanal oder alle Kanäle auswählen.
+* **Zugeordneter Kanal** - der Name Ihres Kanals, t</span>auf den diese Anwendung verweist. Die Standardeinstellung in der Dropdown-Maske ist &quot;**Alle Kanäle&quot;.** In der Benutzeroberfläche können Sie entweder einen Kanal oder alle Kanäle auswählen.
 
-* **Anwendungsversion** - Standardmäßig ist dies auf &quot;1.0.0&quot; gesetzt, wir empfehlen Ihnen jedoch dringend, es mit Ihrer eigenen Anwendungsversion zu ändern. Wenn Sie sich dazu entscheiden, die Version Ihrer Anwendung zu ändern, empfiehlt es sich, sie durch die Erstellung einer neuen registrierten Anwendung widerzuspiegeln.
+* **Anwendungsversion** - Standardmäßig ist dieser Wert auf &quot;1.0.0&quot;festgelegt. Wir empfehlen Ihnen jedoch dringend, ihn mit Ihrer eigenen Anwendungsversion zu ändern. Wenn Sie sich dazu entscheiden, die Version Ihrer Anwendung zu ändern, empfiehlt es sich, sie durch die Erstellung einer neuen registrierten Anwendung widerzuspiegeln.
 
 * **Anwendungsplattformen** - die Plattformen für die Anwendung, mit der verknüpft werden soll. Sie haben die Möglichkeit, alle oder mehrere Werte auszuwählen.
 
-* **Domänennamen** - die Domänen für die Anwendung, mit der verknüpft werden soll. Die Domänen in der Dropdown-Liste sind eine einheitliche Auswahl aller Domänen aus allen Ihren Kanälen. Sie können mehrere Domänen aus der Liste auswählen. Die Bedeutung der Domänen ist die Umleitungs-URLs [RFC 6749](https://tools.ietf.org/html/rfc6749). Bei der Client-Registrierung kann die Client-Anwendung anfordern, eine Umleitungs-URL für die Fertigstellung des Authentifizierungsflusses verwenden zu dürfen. Wenn eine Client-Anwendung eine bestimmte Umleitungs-URL anfordert, wird sie anhand der Domänen validiert, die in dieser registrierten Anwendung auf der Whitelist stehen und mit der Softwareanweisung verknüpft sind.
+* **Domänennamen** - die Domänen, mit denen die Anwendung verknüpft werden soll. Die Domänen in der Dropdown-Liste sind eine einheitliche Auswahl aller Domänen aus allen Ihren Kanälen. Sie können mehrere Domänen aus der Liste auswählen. Die Bedeutung der Domänen ist die Umleitungs-URLs [RFC6749](https://tools.ietf.org/html/rfc6749). Bei der Client-Registrierung kann die Client-Anwendung anfordern, eine Umleitungs-URL für die Fertigstellung des Authentifizierungsflusses verwenden zu dürfen. Wenn eine Client-Anwendung eine bestimmte Umleitungs-URL anfordert, wird sie anhand der Domänen validiert, die in dieser registrierten Anwendung auf der Whitelist stehen und mit der Softwareanweisung verknüpft sind.
 
 
 ![](assets/new-reg-app.png)
@@ -77,7 +77,7 @@ Wie in der Abbildung unten dargestellt, sollten Sie folgende Felder ausfüllen:
 
 Nachdem Sie die Felder mit den entsprechenden Werten ausgefüllt haben, müssen Sie auf &quot;Fertig&quot;klicken, damit die Anwendung in der Konfiguration gespeichert wird.
 
-Beachten Sie bitte, dass **keine Option zum Ändern einer bereits erstellten Anwendung**. Sollte festgestellt werden, dass etwas, das erstellt wurde, nicht mehr den Anforderungen entspricht, muss eine neue registrierte Anwendung erstellt und mit der Clientanwendung verwendet werden, deren Anforderungen sie erfüllt.
+Beachten Sie, dass es **keine Option gibt, eine bereits erstellte Anwendung zu ändern**. Sollte festgestellt werden, dass etwas, das erstellt wurde, nicht mehr den Anforderungen entspricht, muss eine neue registrierte Anwendung erstellt und mit der Clientanwendung verwendet werden, deren Anforderungen sie erfüllt.
 
 
 ### Neue Anwendung auf Kanalebene registrieren {#channel-level}
@@ -124,7 +124,7 @@ Der Dateiname wird eindeutig identifiziert, indem &quot;software_statement&quot;
 
 Bitte beachten Sie, dass für dieselbe registrierte Anwendung jedes Mal, wenn auf die Download-Schaltfläche geklickt wird, unterschiedliche Softwareanweisungen empfangen werden. Dies macht jedoch die zuvor erhaltenen Softwareanweisungen für diese Anwendung nicht ungültig. Dies geschieht, weil sie pro Aktionsanforderung vor Ort generiert werden.
 
-Es gibt eins **Beschränkung** bezüglich der Download-Aktion. Wenn eine Softwareanweisung durch Klicken auf die Schaltfläche &quot;Herunterladen&quot;kurz nach der Erstellung der registrierten Anwendung angefordert wird und diese noch nicht gespeichert wurde und die Konfigurations-JSON nicht synchronisiert wurde, wird die folgende Fehlermeldung am unteren Rand der Seite angezeigt.
+Es gibt eine **Einschränkung** bezüglich der Download-Aktion. Wenn eine Softwareanweisung durch Klicken auf die Schaltfläche &quot;Herunterladen&quot;kurz nach der Erstellung der registrierten Anwendung angefordert wird und diese noch nicht gespeichert wurde und die Konfigurations-JSON nicht synchronisiert wurde, wird die folgende Fehlermeldung am unteren Rand der Seite angezeigt.
 
 ![](assets/error-sw-statement-notready.png)
 
@@ -143,4 +143,4 @@ Weitere Informationen dazu, wie der Prozess &quot;Ende bis Ende&quot;funktionier
 
 ## Funktionsdemo {#tutorial}
 
-Bitte beachten Sie [dieses Webinar](https://my.adobeconnect.com/pzkp8ujrigg1/) bietet mehr Kontext zu den Funktionen und enthält eine Demo zur Verwaltung der Softwareanweisungen mithilfe des TVE-Dashboards und zum Testen der generierten Elemente mithilfe einer Demoanwendung, die von Adobe als Teil des Android-SDK bereitgestellt wird.
+Sehen Sie sich [dieses Webinar](https://my.adobeconnect.com/pzkp8ujrigg1/) an, in dem mehr Kontext zu den Funktionen gegeben wird und in dem eine Demo zur Verwaltung der Softwareanweisungen mithilfe des TVE-Dashboards sowie zum Testen der generierten Informationen mithilfe einer Demoanwendung beschrieben wird, die von Adobe als Teil des Android SDK bereitgestellt wird.

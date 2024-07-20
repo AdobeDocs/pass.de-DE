@@ -1,6 +1,6 @@
 ---
 title: Best Practices für Account IQ
-description: Informationen zu [!UICONTROL Account IQ] in Adobe Pass.
+description: Erfahren Sie mehr über [!UICONTROL Account IQ] in Adobe Pass.
 exl-id: 55901f5d-d9c1-4ee5-9349-afa28445b324
 source-git-commit: 60aeba449cae1c4dc510a23aaf1ba793a7a60db0
 workflow-type: tm+mt
@@ -11,11 +11,11 @@ ht-degree: 0%
 
 # Best Practices {#aiq-best-practices}
 
-[!UICONTROL Account IQ] ermöglicht es Ihnen, die Freigabe von Anmeldedaten zu identifizieren, den Umfang und die Wirkung zu messen, relevante Kohorten zu segmentieren und die Wirkung von zielgerichteten Aktionen zu verfolgen. Es bietet eine Vielzahl von Tools, Diagrammen und Berichten, die zum Verständnis und Verwalten von freigegebenen Konten verwendet werden und auf unterschiedliche Weise verwendet werden können. Jeder Streaming-Dienst nähert sich diesem Verhalten an und entwickelt Prozesse, die ihren individuellen Zielen entsprechen. Das Produkt ist so konzipiert, dass es diese Anforderungen flexibel erfüllt.  Es gibt jedoch einige Regeln für allgemeine Praktiken, die auf eine breite Palette von Szenarien angewendet werden können.
+Mit [!UICONTROL Account IQ] können Sie die Freigabe von Anmeldedaten identifizieren, den Umfang und die Wirkung messen, relevante Kohorten segmentieren und die Wirkung gezielter Aktionen verfolgen. Es bietet eine Vielzahl von Tools, Diagrammen und Berichten, die zum Verständnis und Verwalten von freigegebenen Konten verwendet werden und auf unterschiedliche Weise verwendet werden können. Jeder Streaming-Dienst nähert sich diesem Verhalten an und entwickelt Prozesse, die ihren individuellen Zielen entsprechen. Das Produkt ist so konzipiert, dass es diese Anforderungen flexibel erfüllt.  Es gibt jedoch einige Regeln für allgemeine Praktiken, die auf eine breite Palette von Szenarien angewendet werden können.
 
 ## Analysieren und Verstehen {#analyze-understand}
 
-[!UICONTROL Account IQ] Tools helfen dabei, Art und Umfang der Weitergabe von Anmeldedaten an Ihr Unternehmen zu verstehen, von den Diagrammen auf höchster Ebene, die den Prozentsatz der freigegebenen Konten anzeigen, bis hin zu den Exporten auf der niedrigsten Ebene, die die Merkmale einzelner Konten melden. Verwenden Sie diese Werkzeuge besonders zu Beginn, um die Daten zu untersuchen und ungewöhnliche oder interessante Kohorten oder Verhaltensmuster zu identifizieren - beispielsweise ein Hinweis auf ein hohes Maß an Freigabe. Anschließend können Segmente identifiziert werden, die eine bestimmte Chance oder ein bestimmtes Ziel darstellen.
+[!UICONTROL Account IQ] -Tools helfen Ihnen dabei, Art und Umfang der Weitergabe von Anmeldedaten für Ihr Unternehmen zu verstehen, von den Diagrammen auf höchster Ebene, die den Prozentsatz der freigegebenen Konten anzeigen, bis hin zu den Exporten auf der niedrigsten Ebene, die die Merkmale einzelner Konten melden. Verwenden Sie diese Werkzeuge besonders zu Beginn, um die Daten zu untersuchen und ungewöhnliche oder interessante Kohorten oder Verhaltensmuster zu identifizieren - beispielsweise ein Hinweis auf ein hohes Maß an Freigabe. Anschließend können Segmente identifiziert werden, die eine bestimmte Chance oder ein bestimmtes Ziel darstellen.
 
 So verstehen Sie Art und Auswirkung der Freigabe auf Ihr Unternehmen:
 

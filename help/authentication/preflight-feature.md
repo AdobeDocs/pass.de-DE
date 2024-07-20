@@ -4,7 +4,7 @@ description: Preflight-Funktion, Aktivierung, Fehlerbehebung oder Feststellung d
 exl-id: 9e4ec343-371f-4116-915f-191e5f42cb47
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '498'
 ht-degree: 0%
 
 ---
@@ -20,9 +20,9 @@ Die externe Schnittstelle für die PreAuthorization-API ist unverändert. In der
 
 Es gibt drei Möglichkeiten, die Preflight-Ressourcen zu berechnen:
 
-* **Verzweigung und Verbindungsmethode zum MVPD**: Dazu müssen Adobe mehrere Autorisierungsaufrufe an den MVPD tätigen (der Client muss jedoch noch einen Preflight-Aufruf durchführen).
-* **Kanalaufteilung**: Der MVPD stellt die Kanalverbindung für den angemeldeten Benutzer in der SAML-Authentifizierungsantwort bereit und Adobe gibt die darauf basierenden autorisierten Ressourcen zurück. Die SAML authN-Antwort im SAML-Tracker sollte diese Liste verfügbar machen.
-* **Mehrkanalautorisierung**: Die Client- und Adobe-Authentifizierung führen beide einen einzigen Aufruf an den MVPD für eine Reihe von Ressourcen durch.
+* **Verzweigung und Join-Methode zu MVPD**: Dazu gehört das Adobe, mehrere Autorisierungsaufrufe an den MVPD durchzuführen (der Client muss jedoch noch einen Preflight-Aufruf durchführen).
+* **Kanalaufteilung**: Das MVPD stellt die Kanalzeile für den angemeldeten Benutzer in der SAML-Authentifizierungsantwort bereit und Adobe gibt die darauf basierenden autorisierten Ressourcen zurück. Die SAML authN-Antwort im SAML-Tracker sollte diese Liste verfügbar machen.
+* **Multi-Channel-Autorisierung**: Die Client- und Adobe-Authentifizierung führen beide einen einzigen Aufruf an den MVPD durch, um eine Reihe von Ressourcen zu erhalten.
 
 Unabhängig vom MVPD führt die Client-Anwendung einen einzelnen Aufruf an den Preflight-Endpunkt (checkPreauthorizedResources-API) durch und übergibt eine Reihe von resourceIDs. Basierend auf einer der oben genannten Methoden, die von MVPD unterstützt werden, gibt Adobe dann die vorab autorisierten resourceIDs zurück.
 
@@ -36,6 +36,6 @@ Daher sollten Sie nach diesen Dingen suchen, wenn Sie Preflight für einen MVPD 
 * Wenn nur Abspaltung und Join unterstützt wird, muss der Programmierer gefragt werden, wie viele resourceIDs er im Preflight-Aufruf senden wird.
 * Der MVPD muss konsultiert werden und muss wissen, wie sich eine &quot;n&quot; Anzahl von Abspaltungs- und Join-Autorisierungsaufrufen auswirkt. Danach muss der Wert in config konfiguriert werden, wenn er größer als 5 ist.
 
-**Einschränkung**
+**Begrenzung**
 
 Bitte beachten Sie, dass wir keine resourceID aus dem Preflight-Aufruf für einige MVPDs wie AT&amp;T &amp; TWC erhalten, wenn eine der resourceIDs eine falsche ID oder eine nicht erkannte ID in der Liste der resourceIDs ist, die sie im Preflight-Aufruf senden, obwohl wir auch über gültige und autorisierte Ressourcen in dieser Liste verfügen.

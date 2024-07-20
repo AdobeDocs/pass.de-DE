@@ -11,11 +11,11 @@ ht-degree: 0%
 
 # [!UICONTROL General usage] Berichte {#general-usage-reports}
 
-[!UICONTROL Account IQ] Berichte sind grundlegende Analysetools, mit denen Sie Ihre Daten im Drilldown-Verfahren untersuchen und isolieren können [Kohorten](/help/accountiq/product-concepts.md#segmet-def), identifizieren Sie Anomalien und erstellen Sie ein Verständnis Ihrer Kontomerkmale.
+[!UICONTROL Account IQ] -Berichte sind grundlegende Analysetools, mit denen Sie Ihre Daten im Drilldown-Verfahren untersuchen können, um [Kohorten](/help/accountiq/product-concepts.md#segmet-def) zu isolieren, Anomalien zu identifizieren und ein Verständnis Ihrer Kontomerkmale zu gewinnen.
 
-[!UICONTROL General usage] Die Seite &quot;Berichte&quot;bietet Tools zum Erstellen von Untergruppenmetriken basierend auf der Anzahl der verwendeten Kontogeräte, erkannten IPs und den jeweiligen Postleitzahlen.
+Die Seite [!UICONTROL General usage] Berichte bietet Tools zum Erstellen von Untergruppenmetriken basierend auf der Anzahl der verwendeten Kontogeräte, erkannten IPs und den entsprechenden Postleitzahlen.
 
-Die Berichte basieren alle auf dem aktuellen Segment, das aus dem [Segmente und Zeitintervall](/help/accountiq/segments-timeinterval.md) Bedienfeld. Sie können Ihre Auswahl anpassen und weiter einschränken, indem Sie in der Variablen [Momentaufnahme Übersicht - Konten über Schwellenwerten](#snapshot-overview) Bedienfeld.
+Die Berichte basieren alle auf dem aktuellen Segment, das im Bedienfeld [Segmente und Zeitintervall](/help/accountiq/segments-timeinterval.md) ausgewählt wurde. Sie können Ihre Auswahl anpassen und sie weiter einschränken, indem Sie im Bedienfeld [Momentaufnahmen-Übersichtskonten über den Schwellenwerten](#snapshot-overview) die Schwellenwerte (Anzahl der Geräte, Anzahl der IP-Adressen und Anzahl der Postleitzahlen) angeben.
 
 ## Abspielanfragen und eindeutige Abonnenten {#playreq-uniquesubs}
 
@@ -26,7 +26,7 @@ Die Liniendiagramme hier geben Ihnen einen Überblick über die Änderungen im Z
 ![](assets/d2c-line-graph-gu.png)
 
 
-*Abspielanforderungen/Unique Subscribers für D2C-Dienste*
+*Anforderungen/Unique Subscribers für D2C-Dienste abspielen*
 
 +++
 
@@ -35,7 +35,7 @@ Die Liniendiagramme hier geben Ihnen einen Überblick über die Änderungen im Z
 ![](assets/progr-line-graph-gu.png)
 
 
-*Abspielen von Anforderungen/Unique Subscribers für Programmierer*
+*Anforderungen/Unique Subscribers für Programmierer abspielen*
 
 +++
 
@@ -49,19 +49,19 @@ Die Liniendiagramme hier geben Ihnen einen Überblick über die Änderungen im Z
 
 <br/>
 
-Die X-Achse stellt die Zeit basierend auf dem aktuellen Intervall dar und die Y-Achse stellt grundlegende Metriken zur Abonnentenaktivität während dieses Zeitraums dar. Mithilfe der Liniendiagramme können Sie die Aktivitäten der Abonnenten im aktuellen Segment visualisieren und vergleichen. Abhängig von der Version von Konto IQ umfassen die Metriken:
+Die X-Achse stellt die Zeit basierend auf dem aktuellen Intervall dar und die Y-Achse stellt grundlegende Metriken zur Abonnentenaktivität während dieses Zeitraums dar. Mithilfe der Liniendiagramme können Sie die Aktivitäten der Abonnenten im aktuellen Segment visualisieren und vergleichen. Je nach Account IQ-Version umfassen die Metriken Folgendes:
 
-* **AuthN OK**: Anzahl erfolgreicher Authentifizierungen. Mehr dazu [AuthN OK](/help/accountiq/product-concepts.md#authn-ok-def).
+* **AuthN OK**: Anzahl erfolgreicher Authentifizierungen. Lesen Sie mehr über [AuthN OK](/help/accountiq/product-concepts.md#authn-ok-def).
 
-* **AuthZ OK**: Anzahl erfolgreicher Berechtigungen. Mehr dazu [AuthZ OK](/help/accountiq/product-concepts.md#authz-ok-def).
+* **AuthZ OK**: Anzahl erfolgreicher Berechtigungen. Lesen Sie mehr über [AuthZ OK](/help/accountiq/product-concepts.md#authz-ok-def).
 
-* **Abspielanforderungen**: Anzahl der Wiedergabeanforderungen. Mehr dazu [Abspielanforderungen](/help/accountiq/product-concepts.md#play-requests-def).
+* **Anforderungen abspielen**: Anzahl der Wiedergabeanforderungen. Weitere Informationen zu [Wiedergabeanforderungen](/help/accountiq/product-concepts.md#play-requests-def).
 
-* **Unique Subscribers**: Anzahl erfolgreicher Unique Abonnenten. Mehr dazu [Unique Subscribers](/help/accountiq/product-concepts.md#unique-subscriber-def).
+* **Eindeutige Abonnenten**: Anzahl erfolgreicher Unique Abonnenten. Lesen Sie mehr über [Unique Subscribers](/help/accountiq/product-concepts.md#unique-subscriber-def).
 
 >[!NOTE]
 >
->Die Verfügbarkeit von Metriken hängt von der Version von Konto IQ ab.
+>Die Verfügbarkeit von Metriken hängt von der Version von Account IQ ab.
 
 ## Momentaufnahmen-Übersichtskonten oberhalb der Schwellenwerte {#snapshot-overview}
 
@@ -73,7 +73,7 @@ Passen Sie Ihre Analyse und Berichte mithilfe dieses zusätzlichen Filters an, u
 
 * Schwelle für Postleitzahlen
 
-Wenn Sie Schwellenwerte in [Konten Segmentbasiert auf ausgewählten Schwellenwerten](#account-segments-basedon-segments) -Bedienfeld anzeigen, sehen Sie den Effekt in:
+Wenn Sie Schwellenwerte im Bedienfeld [Konten Segment basierend auf ausgewählten Schwellenwerten](#account-segments-basedon-segments) aktualisieren, sehen Sie den Effekt in:
 
 * [Geräte pro Woche (oder Monat) pro Konto](#devices-week-account)
 
@@ -85,11 +85,11 @@ Wenn Sie Schwellenwerte in [Konten Segmentbasiert auf ausgewählten Schwellenwer
 
 >[!NOTE]
 >
->Jeder Schwellenwert ist auf den Standardwert 4 gesetzt. Auf der Seite &quot;Allgemeine Nutzung&quot;werden also Analysen für Abonnenten angezeigt, die mehr als vier Geräte verwenden und Inhalte von mehr als vier verschiedenen IP-Adressen verbrauchen. *und* mehr als vier verschiedene Postleitzahlen.
+>Jeder Schwellenwert ist auf den Standardwert 4 gesetzt. Auf der Seite &quot;Allgemeine Nutzung&quot;werden also Analysen für Abonnenten angezeigt, die mehr als vier Geräte verwenden und Inhalte von mehr als vier verschiedenen IP-Adressen, *und* mehr als vier verschiedenen Postleitzahlen verbrauchen.
 
 ### Konten segmentbasiert auf ausgewählten Schwellenwerten {#account-segments-basedon-segments}
 
-Die **Konten Segmentbasiert auf ausgewählten Schwellenwerten** bietet Optionen zum Festlegen von Schwellenwerten (zwischen 1 und 10) für die Anzahl der Geräte, die Anzahl der IPs und die Anzahl der Postleitzahlen.
+Das Bedienfeld **Konten - Segment basierend auf ausgewählten Schwellenwerten** bietet Ihnen Optionen zum Festlegen von Schwellenwerten (zwischen 1 und 10) für die Anzahl der Geräte, die Anzahl der IPs und die Anzahl der Postleitzahlen.
 
 Das Diagramm zeigt Ihnen Folgendes:
 
@@ -121,7 +121,7 @@ Der Donut bietet eine alternative Ansicht der Geräte, die von Konten im aktuell
 
 ## Standorte pro Woche (oder Monat) pro Konto {#locations-week-account}
 
-Ähnlich der Metrik für [Geräte pro Woche (oder Monat) pro Konto](#devices-week-account)können Sie mit der Metrik Standorte pro Woche (oder Monat) pro Konto die Nutzung des Abonnentenkontos von verschiedenen Standorten aus analysieren. Die X-Achse zeigt die Anzahl der Konten und die Anzahl der Standorte auf der y-Achse an.
+Ähnlich wie bei der Metrik für [Geräte pro Woche (oder Monat) pro Konto](#devices-week-account) können Sie mit der Metrik Standorte pro Woche (oder Monat) pro Konto die Nutzung des Abonnentenkontos von verschiedenen Standorten aus analysieren. Die X-Achse zeigt die Anzahl der Konten und die Anzahl der Standorte auf der y-Achse an.
 
 ![](assets/graph-loc-week-acc.png)
 
@@ -135,7 +135,7 @@ Nachdem Sie den Schwellenwert für die Anzahl der Standorte festgelegt haben, k�
 
 ## IPs pro Woche (oder Monat) pro Konto {#ip-week-account}
 
-Ähnlich der Metrik für **Anzahl der Standorte pro Woche und Konto**, die **Anzahl der IPs pro Woche und Konto** -Metrik können Sie die Änderungsmenge an der Streaming-Quelle für das aktuelle Segment auswerten.
+Ähnlich wie bei der Metrik für **Anzahl der Standorte pro Woche und Konto** können Sie mit der Metrik **Anzahl der IPs pro Woche und Konto** die Menge der Änderungen an der Streaming-Quelle für das aktuelle Segment auswerten.
 
 Die X-Achse zeigt die Anzahl der Konten und die Anzahl der IPs auf der y-Achse an.
 
@@ -151,13 +151,13 @@ Nachdem Sie ein Segment definiert und den Schwellenwert für die Anzahl der IPs 
 
 ## Ansicht &quot;Segment - Historie&quot;der Konten {#account-segment-historical-view}
 
-Mit dem Balkendiagramm für die Historische Ansicht können Sie die Nutzungsmetriken über verschiedene Zeitintervalle hinweg vergleichen. Außerdem werden die verschiedenen Nutzungsmetriken, wie z. B. [Geräte pro Woche (oder Monat) pro Konto](#devices-week-account), [Standorte pro Woche (oder Monat) pro Konto](#locations-week-account), und [IPs pro Woche (oder Monat) und Konto](#ip-week-account).
+Mit dem Balkendiagramm für die Historische Ansicht können Sie die Nutzungsmetriken über verschiedene Zeitintervalle hinweg vergleichen. Außerdem werden die verschiedenen Nutzungsmetriken kollektiv gezeichnet, z. B. [Geräte pro Woche (oder Monat) pro Konto](#devices-week-account), [Standorte pro Woche (oder Monat) pro Konto](#locations-week-account) und [IPs pro Woche (oder Monat) pro Konto](#ip-week-account).
 
 * Die X-Achse zeichnet das Zeitintervall auf und zeigt die Anzahl der Teilnehmerkonten, Geräte, Standorte und IPs auf der y-Achse an.
 
 * Die orangefarbenen Balken kennzeichnen Segmente in verschiedenen Zeitintervallen.
 
-* Das Liniendiagramm zeichnet die Änderungen in [Geräte pro Woche (oder Monat) pro Konto](#devices-week-account), [Standorte pro Woche (oder Monat) pro Konto](#locations-week-account), und [IPs pro Woche (oder Monat) und Konto](#ip-week-account) Werte über das Zeitintervall basierend auf dem Schwellenwert hinweg.
+* Das Liniendiagramm zeichnet die Änderungen in den Werten [Geräte pro Woche (oder Monat) pro Konto](#devices-week-account), [Standorte pro Woche (oder Monat) pro Konto](#locations-week-account) und [IPs pro Woche (oder Monat) pro Konto](#ip-week-account) im Zeitintervall basierend auf dem Schwellenwert auf.
 
 ![](assets/historical-view.png)
 
