@@ -2,7 +2,7 @@
 title: Anwendungsfälle für Programmierer
 description: Anwendungsfälle für Programmierer
 exl-id: 51ca7e4f-b0d8-4e35-8398-2efb4879de2a
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 189d0e5c83d1bc171c6ff3057f22dbf4055ea6b1
 workflow-type: tm+mt
 source-wordcount: '1654'
 ht-degree: 0%
@@ -131,11 +131,12 @@ Aktivieren Sie die TVE-Berechtigung für Spezialereignisse, bei denen es sich m�
 **Priorität** - Medium
 
 Aktivieren der Validierung des Medien-Tokens vor dem Freigeben des Video-Streams im Client-Player
-| Priorität  |                                                   Anwendungsfall                                                  |                                                                                                                                                              Beschreibung                                                                                                                                                             | Plattformen | MVPD-Hinweise |
-|—|—|—|—|—|—|
-| Hoch      | Federated Player für Programmierer - mit Autorisierung auf Seitenebene                                                 | Adobe Pass-Authentifizierungs-APIs werden in JavaScript auf der Seite ausgeführt und das Token wird an den Player übergeben. Token können auf verschiedene Weise an den Validierungsdienst übergeben werden:                                 Parameter für die Validierungsdienst-URL abrufen                    URL-Parameter, der in der Abfragezeichenfolge der Stream-URL übergeben wird                    Externe API                    FlashVars                           |           |            |
-| Medium    | Programmierer Federated Player - mit interner Player-Autorisierung                                            | Adobe Pass-Authentifizierungs-APIs werden im ActionScript auf der Player-SWF ausgeführt, sodass das Token vom Callback aus für den Player verfügbar ist.                                                                                                                                                                                         |           |            |
-| Hoch      | Syndizierter Player - Auf MVPD-Portal gehostet mit Seitenebenenautorisierung mit einem iFrame zum Aufnehmen des Players  | Ähnlich wie der Player mit Autorisierung auf Seitenebene, jedoch mit dem Player-Seiten-Wrapper iFramed in das MVPD-Portal. Die Authentifizierung muss separat im MVPD-Portal erfolgen.                                                                                                                                                    |           |                        |
+
+| Priorität | Anwendungsfall | Beschreibung | Plattformen | MVPD-Hinweise |
+|---------|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|----------|
+| Hoch | Federated Player für Programmierer - mit Autorisierung auf Seitenebene | Adobe Pass-Authentifizierungs-APIs werden in JavaScript auf der Seite ausgeführt und das Token wird an den Player übergeben. Token können auf verschiedene Weise an den Validierungsdienst übergeben werden:                                 Parameter für die Validierungsdienst-URL abrufen                    URL-Parameter, der in der Abfragezeichenfolge der Stream-URL übergeben wird                    Externe API                    FlashVars |           |            |
+| Medium | Programmierer Federated Player - mit interner Player-Autorisierung | Adobe Pass-Authentifizierungs-APIs werden im ActionScript auf der Player-SWF ausgeführt, sodass das Token vom Callback aus für den Player verfügbar ist. |           |            |
+| Hoch | Syndizierter Player - Auf MVPD-Portal gehostet mit Seitenebenenautorisierung mit einem iFrame zum Aufnehmen des Players | Ähnlich wie der Player mit Autorisierung auf Seitenebene, jedoch mit dem Player-Seiten-Wrapper iFramed in das MVPD-Portal. Die Authentifizierung muss separat im MVPD-Portal erfolgen. |           |                        |
 
 
 <!--
