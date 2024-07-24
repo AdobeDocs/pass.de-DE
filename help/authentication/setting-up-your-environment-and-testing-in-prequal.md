@@ -2,7 +2,7 @@
 title: Einrichten der Umgebung und Testen in der Pre-Qual-Phase
 description: Einrichten der Umgebung und Testen in der Pre-Qual-Phase
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 3a6a5633c728398a3847ee3e341e82aba915f0d9
 workflow-type: tm+mt
 source-wordcount: '477'
 ht-degree: 0%
@@ -68,7 +68,7 @@ In den Schritten 1 und 2 wird die Test Umgebung auf einer der Prüfmaschinen ein
 * Bearbeiten die *Datei c:\\windows\\System32\\drivers\\etc\\hosts* (unter Windows) bzw *. /etc/hosts* (unter Macintosh/Linux/Android) und fügen Sie Folgendes hinzu:
 
 * Spoof-Produktion Profil
-   * 52.13.71.11 http://entitlement.auth.adobe.com, http://sp.auth.adobe.com http://api.auth.adobe.com
+   * 52.13.71.11 entitlement.auth.adobe.com sp.auth.adobe.com api.auth.adobe.com
 
 **Spoofing in Android:** Um in Android zu spielen, müssen Sie einen Android-Emulator verwenden.
 
