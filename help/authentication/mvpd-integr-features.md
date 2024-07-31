@@ -2,7 +2,7 @@
 title: MVPD-Integrationsfunktionen
 description: MVPD-Integrationsfunktionen
 exl-id: fcd65940-9a86-49b2-9d52-9031fb763338
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: e4567dd870790d11b9c5904d635fc00bdd1a23d2
 workflow-type: tm+mt
 source-wordcount: '1733'
 ht-degree: 2%
@@ -84,8 +84,8 @@ Die Informationen in den Tabellen sollen den Integrationsprozess der Adobe Pass-
 | 3,3 | Inline-Kontoregistrierung | Der MVPD bietet die Möglichkeit, ein neues Konto inline zu Federated AuthN Flow zu erstellen. | A |                                                                                                                                                           |
 | 3,4 | Inline-Hilfe/Support | Der MVPD bietet eine Möglichkeit, während des Federated AuthN Flusses Hilfe zu leisten. | A |                                                                                                                                                           |
 | 3,5 | Modembasierte In-Home-Authentifizierung | Der MVPD authentifiziert ein Gerät automatisch, wenn es sich im lokalen Netzwerk eines registrierten Modells befindet (nur ISP MVPD). | B | Dies hat eine geringere Priorität, da es sich um eine Optimierung handelt, die von vielen noch nicht unterstützt werden kann, und einige Herausforderungen für die Betrugsbekämpfung und die elterliche Kontrolle mit sich bringt |
-Sie können jetzt den Markdown-Tabellencode direkt über das Dialogfeld Datei/Tabellendaten einfügen.. importieren.
 
+Sie können jetzt den Markdown-Tabellencode direkt über das Dialogfeld Datei/Tabellendaten einfügen.. importieren.
 
 
 ## 4. Analytics-Funktionen {#analytics-features}
