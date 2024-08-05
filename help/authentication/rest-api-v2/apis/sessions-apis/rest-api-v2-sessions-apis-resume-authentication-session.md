@@ -1,7 +1,7 @@
 ---
 title: Authentifizierungssitzung fortsetzen
 description: REST API V2 - Fortsetzen der Authentifizierungssitzung
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: 4afd8492c77fdceae3c2504ba392fbcfc0979b22
 workflow-type: tm+mt
 source-wordcount: '755'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # Authentifizierungssitzung fortsetzen {#resume-authentication-session}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
