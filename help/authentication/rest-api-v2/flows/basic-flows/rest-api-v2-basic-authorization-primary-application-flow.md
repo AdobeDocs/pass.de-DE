@@ -1,15 +1,19 @@
 ---
 title: Grundlegende Autorisierung - Primäre Anwendung - Fluss
 description: REST API V2 - Grundlegende Autorisierung - Primäre Anwendung - Fluss
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '566'
+source-wordcount: '592'
 ht-degree: 0%
 
 ---
 
 
 # Grundlegender Autorisierungsfluss innerhalb der Hauptanwendung {#basic-authorization-flow-performed-within-primary-application}
+
+>[!NOTE]
+>
+> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
 Mit dem **Autorisierungsfluss** innerhalb der Adobe Pass-Authentifizierungsberechtigungen kann die Streaming-Anwendung bestimmen, ob ein MVPD die Anfrage des Benutzers zum Streamen von Inhalten zulässt oder verweigert. Wenn die Entscheidung `Permit` lautet, enthält die Antwort ein Medien-Token. Der Adobe Pass-Server signiert das Medien-Token und ermöglicht es der Streaming-Anwendung, die Überprüfungsbibliothek für Medien-Token zu verwenden, um die Authentizität zu überprüfen, bevor der Stream veröffentlicht wird.
 

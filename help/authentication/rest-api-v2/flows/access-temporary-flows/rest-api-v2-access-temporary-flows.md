@@ -1,15 +1,19 @@
 ---
 title: Temporärer Zugriffsfluss
 description: REST API V2 - Fluss temporärer Zugriffsberechtigungen
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '3173'
+source-wordcount: '3199'
 ht-degree: 0%
 
 ---
 
 
 # Temporäre Zugriffsflüsse {#temporary-access-flows}
+
+>[!NOTE]
+>
+> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
 TempPass ermöglicht es Programmierern, temporären Zugriff auf ihren geschützten Inhalt zu gewähren, ohne Benutzer zu bitten, sich mit einem gültigen MVPD-Konto zu authentifizieren.
 

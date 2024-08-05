@@ -1,15 +1,19 @@
 ---
 title: Einfache Abmeldung - Primäre Anwendung - Fluss
 description: REST API V2 - Einfache Abmeldung - Primäre Anwendung - Fluss
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '911'
+source-wordcount: '937'
 ht-degree: 0%
 
 ---
 
 
 # Grundlegender Abmeldefluss innerhalb der primären Anwendung {#basic-logout-flow-performed-within-primary-application}
+
+>[!NOTE]
+>
+> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
 Der **Abmeldefluss** innerhalb der Adobe Pass-Authentifizierungsberechtigung ermöglicht der Streaming-Anwendung die Durchführung von zwei Hauptschritten:
 
