@@ -1,9 +1,9 @@
 ---
 title: Initiieren der Abmeldung für bestimmte mvpd
 description: REST API V2 - Initiierung der Abmeldung für bestimmte mvpd
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
 workflow-type: tm+mt
-source-wordcount: '900'
+source-wordcount: '911'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,11 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+
+>[!IMPORTANT]
+>
+> Die REST API V2-Implementierung wird durch die Dokumentation zum [Drosselungsmechanismus](/help/authentication/throttling-mechanism.md) begrenzt.
 
 ## Anfrage {#request}
 
