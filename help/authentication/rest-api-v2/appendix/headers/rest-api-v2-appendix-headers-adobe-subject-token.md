@@ -1,7 +1,7 @@
 ---
 title: Header - Adobe-Subject-Token
 description: REST API V2 - Header - Adobe-Subject-Token
-source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '156'
 ht-degree: 1%
@@ -21,7 +21,7 @@ Der Anforderungsheader <b>Adobe-Subject-Token</b> enthält die eindeutige Plattf
 
 Diese Kopfzeile ist für die Verwendung in SSO-fähigen Flüssen (Single Sign-on) vorgesehen, die die Platform Identity-Methode nutzen.
 
-Weitere Informationen zu den für Single Sign-on (SSO) aktivierten Flüssen, die die Platform Identity-Methode nutzen, finden Sie in der Dokumentation [Single Sign-on mit Platform-Identitätsflüssen](../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-platform-identity-flows.md) .
+Weitere Informationen zu den für Single Sign-on (SSO) aktivierten Flüssen, die die Platform Identity-Methode nutzen, finden Sie in der Dokumentation [Single Sign-on mit Platform-Identitätsflüssen](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md) .
 
 ## Syntax {#syntax}
 

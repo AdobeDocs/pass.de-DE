@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass-Authentifizierung
 user-guide-description: Die Adobe Pass-Authentifizierung ist eine Berechtigungslösung für TV Everywhere. Sie bietet ein modulares Framework, mit dem festgestellt werden kann, ob eine Person, die Zugriff auf eine Ressource anfordert, dazu berechtigt ist.
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
-source-wordcount: '1125'
+source-wordcount: '1137'
 ht-degree: 2%
 
 ---
@@ -54,6 +54,7 @@ ht-degree: 2%
          + [Kostenlose Vorschau für den temporären Pass und den temporären Weiterleitungs-Pass](free-preview-for-temp-pass-and-promotional-temp-pass.md)
    + REST API V2 {#rest-api-v2}
       + APIs {#rest-api-v2-apis}
+         + [REST API V2 - APIs - Übersicht](./rest-api-v2/apis/rest-api-v2-apis-overview.md)
          + Konfiguration {#rest-api-v2-configuration-apis}
             + [Konfiguration für bestimmte Dienstleister abrufen](./rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
          + Sitzungen {#rest-api-v2-sessions-apis}
@@ -62,8 +63,8 @@ ht-degree: 2%
             + [Abrufen einer Authentifizierungssitzung](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
          + Profile {#rest-api-v2-profiles-apis}
             + [Profile abrufen](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
-            + [Profil für bestimmte mvpd abrufen](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles-for-specific-mvpd.md)
-            + [Profil für bestimmten Code abrufen](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles-for-specific-code.md)
+            + [Profil für bestimmte mvpd abrufen](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
+            + [Profil für bestimmten Code abrufen](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
          + Entscheidungen {#rest-api-v2-decisions-apis}
             + [Abrufen von Autorisierungsentscheidungen mit einer bestimmten mvpd](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
             + [Abrufen von Vorautorisierungsentscheidungen mithilfe bestimmter mvpd](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
@@ -73,23 +74,24 @@ ht-degree: 2%
             + [Anfrage zur Partnerauthentifizierung abrufen](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
             + [Profil mithilfe der Antwort auf die Partnerauthentifizierung abrufen](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
       + Flüsse {#rest-api-v2-flows}
-         + Grundlegende Flüsse {#rest-api-v2-basic-flows}
-            + [Durchfluss von Standardprofilen innerhalb der primären Anwendung](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
-            + [Durchgang der einfachen Profile, der in der sekundären Anwendung ausgeführt wird](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
-            + [Grundlegender Authentifizierungsfluss innerhalb der primären Anwendung](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
-            + [Grundlegender Authentifizierungsfluss, der in der sekundären Anwendung ausgeführt wird](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
-            + [Grundlegender Autorisierungsfluss innerhalb der Hauptanwendung](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
-            + [Grundlegender Ablauf der Vorautorisierung innerhalb der Hauptanwendung](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
-            + [Grundlegender Abmeldefluss innerhalb der primären Anwendung](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-logout-primary-application-flow.md)
+         + [REST API V2 - Flüsse - Übersicht](./rest-api-v2/flows/rest-api-v2-flows-overview.md)
+         + Grundlegende Zugriffsflüsse {#rest-api-v2-basic-access-flows}
+            + [Durchfluss von Standardprofilen innerhalb der primären Anwendung](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
+            + [Durchgang der einfachen Profile, der in der sekundären Anwendung ausgeführt wird](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+            + [Grundlegender Authentifizierungsfluss innerhalb der primären Anwendung](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
+            + [Grundlegender Authentifizierungsfluss, der in der sekundären Anwendung ausgeführt wird](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
+            + [Grundlegender Autorisierungsfluss innerhalb der Hauptanwendung](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
+            + [Grundlegender Ablauf der Vorautorisierung innerhalb der Hauptanwendung](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
+            + [Grundlegender Abmeldefluss innerhalb der primären Anwendung](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-logout-primary-application-flow.md)
          + Beschädigte Zugriffsflüsse {#rest-api-v2-degraded-access-flows}
-            + [Verringerte Zugriffsflüsse](rest-api-v2/flows/access-degraded-flows/rest-api-v2-access-degraded-flows.md)
+            + [Verringerte Zugriffsflüsse](rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)
          + Temporärer Zugriffsfluss {#rest-api-v2-temporary-access-flows}
-            + [Temporäre Zugriffsflüsse](rest-api-v2/flows/access-temporary-flows/rest-api-v2-access-temporary-flows.md)
-         + Einmal-Anmeldungs-Fluss {#rest-api-v2-single-sign-on-flows}
-            + [Single Sign-on mit Partnerflüssen](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-partner-flows.md)
-            + [Single Sign-on mit Platform-Identitätsflüssen](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
-            + [Single Sign-on mit Service-Token-Flüssen](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-service-token-flows.md)
-            + [Einmaliger Abmeldefluss](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-logout-flow.md)
+            + [Temporäre Zugriffsflüsse](rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)
+         + Einmal-Anmeldungs-Zugriffsfluss {#rest-api-v2-single-sign-on-access-flows}
+            + [Single Sign-on mit Partnerflüssen](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)
+            + [Single Sign-on mit Platform-Identitätsflüssen](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
+            + [Single Sign-on mit Service-Token-Flüssen](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md)
+            + [Einmaliger Abmeldefluss](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-logout-flow.md)
       + Anhang {#rest-api-v2-appendix}
          + Kopfzeilen {#rest-api-v2-appendix-headers}
             + [Header - AD-Service-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)

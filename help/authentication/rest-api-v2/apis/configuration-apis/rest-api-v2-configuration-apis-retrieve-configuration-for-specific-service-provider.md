@@ -1,7 +1,7 @@
 ---
 title: Konfiguration für bestimmte Dienstleister abrufen
 description: REST API V2 - Konfiguration für bestimmte Dienstleister abrufen
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '521'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # Konfiguration für bestimmte Dienstleister abrufen {#retrieve-configuration-for-specific-service-provider}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 

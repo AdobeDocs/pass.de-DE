@@ -1,7 +1,7 @@
 ---
 title: Abrufen von Vorab-Autorisierungsentscheidungen mit einer bestimmten mvpd
 description: REST API V2 - Abrufen von Entscheidungen zur Vorabautorisierung mithilfe bestimmter mvpd
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '813'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Abrufen von Vorab-Autorisierungsentscheidungen mit einer bestimmten mvpd {#retrieve-preauthorization-decisions-using-specific-mvpd}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
@@ -115,7 +115,7 @@ ht-degree: 0%
       <td>
         Die Generierung der Single Sign-On-Payload für die Platform Identity-Methode wird in der Dokumentation zu <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> beschrieben.
         <br/><br/>
-        Weitere Informationen zu für Single Sign-on aktivierten Flüssen mit einer Plattformidentität finden Sie in der Dokumentation zu <a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-on mit Platform-Identitätsflüssen</a> .
+        Weitere Informationen zu für Single Sign-on aktivierten Flüssen mit einer Plattformidentität finden Sie in der Dokumentation zu <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-on mit Platform-Identitätsflüssen</a> .
       </td>
       <td>optional</td>
    </tr>
@@ -124,7 +124,7 @@ ht-degree: 0%
       <td>
         Die Generierung der Single Sign-On-Payload für die Service Token-Methode wird in der Dokumentation zu <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a> beschrieben.
         <br/><br/>
-        Weitere Informationen zu für die einmalige Anmeldung aktivierten Flüssen mit einem Dienst-Token finden Sie in der Dokumentation zum <a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-service-token-flows.md">Single Sign-on mit Service-Token-Flüssen</a> .
+        Weitere Informationen zu für die einmalige Anmeldung aktivierten Flüssen mit einem Dienst-Token finden Sie in der Dokumentation zum <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Single Sign-on mit Service-Token-Flüssen</a> .
       </td>
       <td>optional</td>
    </tr>
@@ -133,7 +133,7 @@ ht-degree: 0%
       <td>
         Die Generierung der Single Sign-On-Payload für die Partner-Methode wird in der Dokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> beschrieben.
         <br/><br/>
-        Weitere Informationen zu für Single Sign-on aktivierten Flüssen mit einem Partner finden Sie in der Dokumentation zu <a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-partner-flows.md">Single Sign-on mit Partner-Flüssen</a> .</td>
+        Weitere Informationen zu für Single Sign-on aktivierten Flüssen mit einem Partner finden Sie in der Dokumentation zu <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Single Sign-on mit Partner-Flüssen</a> .</td>
       <td>optional</td>
    </tr>
    <tr>

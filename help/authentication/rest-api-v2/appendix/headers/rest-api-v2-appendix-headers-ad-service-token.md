@@ -1,7 +1,7 @@
 ---
 title: Header - AD-Service-Token
 description: REST API V2 - Header - AD-Service-Token
-source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '252'
 ht-degree: 1%
@@ -21,7 +21,7 @@ Der Anforderungsheader <b>AD-Service-Token</b> enthält die eindeutige Benutzer-
 
 Diese Kopfzeile ist für die Verwendung in SSO-fähigen Flüssen (Single Sign-on) vorgesehen, die die Service Token-Methode nutzen.
 
-Weitere Informationen zu den für die einmalige Anmeldung (SSO) aktivierten Flüssen, die die Service-Token-Methode nutzen, finden Sie in der Dokumentation [Single Sign-on mit Service-Token-Flüssen](../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-service-token-flows.md) .
+Weitere Informationen zu den für die einmalige Anmeldung (SSO) aktivierten Flüssen, die die Service-Token-Methode nutzen, finden Sie in der Dokumentation [Single Sign-on mit Service-Token-Flüssen](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md) .
 
 ## Syntax {#syntax}
 

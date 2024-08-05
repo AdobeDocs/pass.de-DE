@@ -1,7 +1,7 @@
 ---
 title: Profil mithilfe der Antwort auf die Partnerauthentifizierung abrufen
 description: REST API V2 - Profil mit Antwort zur Partnerauthentifizierung abrufen
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '729'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # Profil mithilfe der Antwort auf die Partnerauthentifizierung abrufen {#retrieve-profile-using-partner-authentication-response}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
@@ -108,7 +108,7 @@ ht-degree: 1%
       <td>
         Die Generierung der Single Sign-On-Payload für die Partner-Methode wird in der Dokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> beschrieben.
         <br/><br/>
-        Weitere Informationen zu für Single Sign-on aktivierten Flüssen mit einem Partner finden Sie in der Dokumentation zu <a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-partner-flows.md">Single Sign-on mit Partner-Flüssen</a> .</td>
+        Weitere Informationen zu für Single Sign-on aktivierten Flüssen mit einem Partner finden Sie in der Dokumentation zu <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Single Sign-on mit Partner-Flüssen</a> .</td>
       <td>optional</td>
    </tr>
    <tr>
