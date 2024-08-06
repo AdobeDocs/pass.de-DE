@@ -1,7 +1,7 @@
 ---
 title: Grundlegende Authentifizierung - Primäre Anwendung - Fluss
 description: REST API V2 - Grundlegende Authentifizierung - Primäre Anwendung - Fluss
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
 source-wordcount: '894'
 ht-degree: 0%
@@ -91,6 +91,8 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierung
    >
    > * Die Parameter und Header _required_ müssen gültig sein.
    > * Die Integration zwischen dem bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
+   > 
+   > <br/>
    > 
    > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../enhanced-error-codes.md) entsprechen.
 

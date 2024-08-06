@@ -1,23 +1,23 @@
 ---
 title: Erstellen einer Authentifizierungssitzung
 description: REST API V2 - Erstellen einer Authentifizierungssitzung
-source-git-commit: cf479236cbd43d5e4585bf0eac18a12dbe4bc6c4
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '965'
+source-wordcount: '964'
 ht-degree: 0%
 
 ---
 
 
-# Erstellen einer Authentifizierungssitzung - Test {#create-authentication-session}
+# Erstellen einer Authentifizierungssitzung {#create-authentication-session}
 
 >[!IMPORTANT]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
 >[!IMPORTANT]
 >
->Die REST API V2-Implementierung wird durch die Dokumentation zum [Drosselungsmechanismus](/help/authentication/throttling-mechanism.md) begrenzt.
+> Die REST API V2-Implementierung wird durch die Dokumentation zum [Drosselungsmechanismus](/help/authentication/throttling-mechanism.md) begrenzt.
 
 ## Anfrage {#request}
 
@@ -247,18 +247,9 @@ ht-degree: 0%
                   <br/><br/>
                   Mögliche Werte sind:
                   <ul>
-                    <li><b>authentifizieren</b></li>
-                    <ul>
-                        <li>Das Streaming-Gerät oder ein anderes Gerät muss die bereitgestellte URL in einem Benutzeragenten öffnen.</li>
-                    </ul>
-                    <li><b>resume</b></li>
-                    <ul>
-                        <li>Das Streaming-Gerät oder ein anderes Gerät muss die fehlenden Parameter bereitstellen und die Authentifizierungssitzung mithilfe des Codes fortsetzen.</li>
-                    </ul>
-                    <li><b>Autorisieren</b></li>
-                    <ul>
-                        <li>Das Streaming-Gerät kann direkt mit Entscheidungsflüssen fortfahren.</li>
-                    </ul>
+                    <li><b>authentifizieren</b><br/>Das Streaming-Gerät oder ein anderes Gerät muss die bereitgestellte URL in einem Benutzeragenten öffnen.</li>
+                    <li><b>resume</b><br/>Das Streaming-Gerät oder ein anderes Gerät muss die fehlenden Parameter bereitstellen und die Authentifizierungssitzung mithilfe des Codes fortsetzen.</li>
+                    <li><b>Autorisieren</b><br/>Das Streaming-Gerät kann direkt mit Entscheidungsflüssen fortfahren.</li>
                   </ul>
                <td><i>erforderlich</i></td>
             </tr>
@@ -269,14 +260,8 @@ ht-degree: 0%
                   <br/><br/>
                   Mögliche Werte sind:
                   <ul>
-                    <li><b>interaktiv</b></li>
-                    <ul>
-                        <li>Der Fluss wird mit der Navigation zur angegebenen URL mithilfe eines Benutzeragenten fortgesetzt.</li>
-                    </ul>
-                    <li><b>direct</b></li>
-                    <ul>
-                        <li>Der Fluss wird mit einem direkten Aufruf an die angegebene URL fortgesetzt, wobei ein für die Client-Implementierung verfügbarer HTTP-Client verwendet wird.</li>
-                    </ul>
+                    <li><b>interaktiv</b><br/>Der Fluss wird mit einem Benutzeragenten fortgesetzt und führt zur bereitgestellten URL.</li>
+                    <li><b>direct</b><br/>Der Fluss wird mit einem direkten Aufruf der angegebenen URL fortgesetzt, wobei ein HTTP-Client verwendet wird, der für die Client-Implementierung verfügbar ist.</li>
                   </ul>
                <td><i>erforderlich</i></td>
             </tr>

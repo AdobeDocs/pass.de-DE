@@ -1,9 +1,9 @@
 ---
 title: Profile abrufen
 description: REST API V2 - Profile abrufen
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '824'
 ht-degree: 0%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 0%
 
 ## Anfrage {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">path</td>
@@ -38,9 +38,9 @@ ht-degree: 0%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Pfadparameter</th>
+      <th style="background-color: #EFF2F7;">Pfadparameter</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -48,9 +48,9 @@ ht-degree: 0%
       <td><i>erforderlich</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Kopfzeilen</th>
+      <th style="background-color: #EFF2F7;">Kopfzeilen</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisierung</td>
@@ -130,10 +130,10 @@ ht-degree: 0%
 
 ## Reaktion {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Code</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Text</th>
+      <th style="background-color: #EFF2F7;">Code</th>
+      <th style="background-color: #EFF2F7;">Text</th>
       <th style="background-color: #EFF2F7;">Beschreibung</th>
    </tr>
    <tr>
@@ -175,11 +175,11 @@ ht-degree: 0%
 
 ### Erfolg {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Kopfzeilen</th>
+      <th style="background-color: #EFF2F7;">Kopfzeilen</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
@@ -192,9 +192,9 @@ ht-degree: 0%
       <td><i>erforderlich</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">body</th>
+      <th style="background-color: #EFF2F7;">body</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">profiles</td>
@@ -202,11 +202,11 @@ ht-degree: 0%
         JSON mit einer Zuordnung von Schlüssel-/Wert-Paaren.
         <br/><br/>
         Das Schlüsselelement wird durch den folgenden Wert definiert:
-        <table>
+        <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Wert</th>
+               <th style="background-color: #EFF2F7;">Wert</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
@@ -215,11 +215,11 @@ ht-degree: 0%
             </tr>
          </table>
          Das value-Element wird durch die folgenden Attribute definiert:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Attribut</th>
+               <th style="background-color: #EFF2F7;">Attribut</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
@@ -237,32 +237,11 @@ ht-degree: 0%
                   Die Entität, der das Profil gehört.
                   <br/><br/>
                   Mögliche Werte sind:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Wert</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">mvpd<br/><br/>z. B. Spektrum, Kabel usw.</td>
-                        <td>
-                            Das Profil wurde wie folgt erstellt:
-                            <ul>
-                                <li>Grundlegende Authentifizierung</li>
-                                <li>Single Sign-on mit Plattformidentität</li>
-                                <li>Single Sign-on mit Service-Token</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">Apple</td>
-                        <td>
-                            Das Profil wurde wie folgt erstellt:
-                            <ul>
-                                <li>Single Sign-on mit Partner Apple</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>mvpd (z. B. Spektrum, Kabel usw.)</b><br/>Das Profil wurde erstellt durch: einfache Authentifizierung, Single Sign-on mit Plattformidentität oder Single Sign-on mit Service-Token.</li>
+                    <li><b>Apple</b><br/>Das Profil wurde erstellt durch: Single Sign-on mit Partner Apple.</li>
+                  </ul>
+               </td>
                <td><i>erforderlich</i></td>
             </tr>
             <tr>
@@ -271,48 +250,12 @@ ht-degree: 0%
                   Der Profiltyp.
                   <br/><br/>
                   Mögliche Werte sind:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Wert</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">regulär</td>
-                        <td>
-                            Das Profil wurde wie folgt erstellt:
-                            <ul>
-                                <li>Grundlegende Authentifizierung</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">appleSSO</td>
-                        <td>
-                            Das Profil wurde wie folgt erstellt:
-                            <ul>
-                                <li>Single Sign-on mit Partner Apple</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">platformSSO</td>
-                        <td>
-                            Das Profil wurde wie folgt erstellt:
-                            <ul>
-                                <li>Single Sign-on mit Plattformidentität</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">serviceTokenSSO</td>
-                        <td>
-                            Das Profil wurde wie folgt erstellt:
-                            <ul>
-                                <li>Single Sign-on mit Service-Token</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>normal</b><br/>Das Profil wurde als Ergebnis der einfachen Authentifizierung erstellt.</li>
+                    <li><b>appleSSO</b><br/>Das Profil wurde erstellt durch: Single Sign-on mit Partner Apple.</li>
+                    <li><b>platformSSO</b><br/>Das Profil wurde erstellt als Ergebnis von: Single Sign-on mit Plattformidentität.</li>
+                    <li><b>serviceTokenSSO</b><br/>Das Profil wurde als Ergebnis von: Single Sign-on mithilfe des Service-Tokens erstellt.</li>
+                  </ul>
                <td><i>erforderlich</i></td>
             </tr>
             <tr>
@@ -341,11 +284,11 @@ ht-degree: 0%
 
 ### Fehler {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Kopfzeilen</th>
+      <th style="background-color: #EFF2F7;">Kopfzeilen</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
@@ -358,9 +301,9 @@ ht-degree: 0%
       <td><i>erforderlich</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">body</th>
+      <th style="background-color: #EFF2F7;">body</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">error</td>

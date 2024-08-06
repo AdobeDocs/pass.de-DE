@@ -1,9 +1,9 @@
 ---
 title: Initiieren der Abmeldung für bestimmte mvpd
 description: REST API V2 - Initiierung der Abmeldung für bestimmte mvpd
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '911'
+source-wordcount: '909'
 ht-degree: 0%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 0%
 
 ## Anfrage {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">path</td>
@@ -38,9 +38,9 @@ ht-degree: 0%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Pfadparameter</th>
+      <th style="background-color: #EFF2F7;">Pfadparameter</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 0%
       <td><i>erforderlich</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Abfrageparameter</th>
+      <th style="background-color: #EFF2F7;">Abfrageparameter</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
@@ -67,9 +67,9 @@ ht-degree: 0%
       <td><i>erforderlich</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Kopfzeilen</th>
+      <th style="background-color: #EFF2F7;">Kopfzeilen</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisierung</td>
@@ -141,10 +141,10 @@ ht-degree: 0%
 
 ## Reaktion {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Code</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Text</th>
+      <th style="background-color: #EFF2F7;">Code</th>
+      <th style="background-color: #EFF2F7;">Text</th>
       <th style="background-color: #EFF2F7;">Beschreibung</th>
    </tr>
    <tr>
@@ -186,11 +186,11 @@ ht-degree: 0%
 
 ### Erfolg {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Kopfzeilen</th>
+      <th style="background-color: #EFF2F7;">Kopfzeilen</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
@@ -203,9 +203,9 @@ ht-degree: 0%
       <td><i>erforderlich</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">body</th>
+      <th style="background-color: #EFF2F7;">body</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">logouts</td>
@@ -213,11 +213,11 @@ ht-degree: 0%
          JSON mit einer Zuordnung von Schlüssel-/Wert-Paaren.
          <br/><br/>
          Das Schlüsselelement wird durch den folgenden Wert definiert:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Wert</th>
+               <th style="background-color: #EFF2F7;">Wert</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
@@ -225,11 +225,11 @@ ht-degree: 0%
                <td><i>erforderlich</i></td>
          </table>
          Das value-Element wird durch die folgenden Attribute definiert:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Attribut</th>
+               <th style="background-color: #EFF2F7;">Attribut</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
@@ -237,47 +237,11 @@ ht-degree: 0%
                   Die Aktion, die das Streaming-Gerät ausführen muss, um den Abmeldefluss abzuschließen.
                   <br/><br/>
                   Mögliche Werte sind:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Wert</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">Abmelden</td>
-                        <td>
-                            Das Streaming-Gerät muss die bereitgestellte URL in einem Benutzeragenten öffnen.
-                            <br/><br/>
-                            Diese Aktion gilt für die folgenden Szenarien:
-                            <ul>
-                                <li>MVPD mit einem Abmelde-Endpunkt abmelden</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">complete</td>
-                        <td>
-                            Das Streaming-Gerät muss keine nachfolgenden Aktionen durchführen.
-                            <br/><br/>
-                            Diese Aktion gilt für die folgenden Szenarien:
-                            <ul>\
-                                <li>MVPD ohne Abmelde-Endpunkt abmelden (Platzhalter-Abmeldefunktion)</li>
-                                <li>Abmelden während eingeschränktem Zugriff</li>
-                                <li>Melden Sie sich beim temporären Zugriff ab.</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">ungültig</td>
-                        <td>
-                            Das Streaming-Gerät muss keine nachfolgenden Aktionen durchführen.
-                            <br/><br/>
-                            Diese Aktion gilt für die folgenden Szenarien:
-                            <ul>
-                                <li>MVPD abmelden, wenn kein gültiges Profil gefunden wird</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>logout</b><br/>Das Streaming-Gerät muss die bereitgestellte URL in einem Benutzeragenten öffnen.<br/>Diese Aktion gilt für die folgenden Szenarien: Abmelden von MVPD mit einem Abmelde-Endpunkt.</li>
+                    <li><b>complete</b><br/>Das Streaming-Gerät muss keine nachfolgenden Aktionen durchführen.<br/>Diese Aktion gilt für die folgenden Szenarien: Abmelden von MVPD ohne Abmelde-Endpunkt (Platzhalterabmeldefunktion), Abmelden beim eingeschränkten Zugriff, Abmelden beim temporären Zugriff.</li>
+                    <li><b>invalid</b><br/>Das Streaming-Gerät muss keine nachfolgenden Aktionen durchführen.<br/>Diese Aktion gilt für die folgenden Szenarien: Melden Sie sich von MVPD ab, wenn kein gültiges Profil gefunden wird.</li>
+                  </ul>  
                <td><i>erforderlich</i></td>
             </tr>
             <tr>
@@ -286,31 +250,10 @@ ht-degree: 0%
                   Die Art der Interaktion, die das Streaming-Gerät ausführen muss, damit der Fluss mit der durch das Attribut "actionName"angegebenen Aktion fortgesetzt werden kann.
                   <br/><br/>
                   Mögliche Werte sind:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Wert</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">interaktiv</td>
-                        <td>
-                            Dieser Typ gilt für die folgenden Werte des Attributs "actionName":
-                            <ul>
-                                <li>Abmelden</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">Keine</td>
-                        <td>
-                            Dieser Typ gilt für die folgenden Werte des Attributs "actionName":
-                            <ul>
-                                <li>complete</li>
-                                <li>ungültig</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>interaktiv</b><br/>Dieser Typ gilt für die folgenden Werte des Attributs "actionName": <b>logout</b>.</li>
+                    <li><b>none</b><br/>Dieser Typ gilt für die folgenden Werte des Attributs "actionName": <b>complete</b>, <b>invalid</b>.</li>
+                  </ul>
                <td><i>erforderlich</i></td>
             </tr>
             <tr>
@@ -325,8 +268,8 @@ ht-degree: 0%
                   <br/><br/>
                   Dies ist für die folgenden Werte des Attributs "actionName"nicht vorhanden:
                   <ul>
-                    <li>complete</li>
-                    <li>ungültig</li>
+                    <li><b>complete</b></li>
+                    <li><b>ungültig</b></li>
                   </ul>
                </td>
                <td>optional</td>
@@ -338,11 +281,11 @@ ht-degree: 0%
 
 ### Fehler {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Kopfzeilen</th>
+      <th style="background-color: #EFF2F7;">Kopfzeilen</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
@@ -355,9 +298,9 @@ ht-degree: 0%
       <td><i>erforderlich</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">body</th>
+      <th style="background-color: #EFF2F7;">body</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">error</td>

@@ -1,9 +1,9 @@
 ---
 title: Abrufen von Vorab-Autorisierungsentscheidungen mit einer bestimmten mvpd
 description: REST API V2 - Abrufen von Entscheidungen zur Vorabautorisierung mithilfe bestimmter mvpd
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '813'
+source-wordcount: '816'
 ht-degree: 0%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 0%
 
 ## Anfrage {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">path</td>
@@ -38,9 +38,9 @@ ht-degree: 0%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Pfadparameter</th>
+      <th style="background-color: #EFF2F7;">Pfadparameter</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 0%
       <td><i>erforderlich</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Textparameter</th>
+      <th style="background-color: #EFF2F7;">Textparameter</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">resources</td>
@@ -63,9 +63,9 @@ ht-degree: 0%
       <td><i>erforderlich</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Kopfzeilen</th>
+      <th style="background-color: #EFF2F7;">Kopfzeilen</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisierung</td>
@@ -154,10 +154,10 @@ ht-degree: 0%
 
 ## Reaktion {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Code</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Text</th>
+      <th style="background-color: #EFF2F7;">Code</th>
+      <th style="background-color: #EFF2F7;">Text</th>
       <th style="background-color: #EFF2F7;">Beschreibung</th>
    </tr>
    <tr>
@@ -199,11 +199,11 @@ ht-degree: 0%
 
 ### Erfolg {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Kopfzeilen</th>
+      <th style="background-color: #EFF2F7;">Kopfzeilen</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
@@ -216,19 +216,19 @@ ht-degree: 0%
       <td><i>erforderlich</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">body</th>
+      <th style="background-color: #EFF2F7;">body</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Entscheidungen</td>
       <td>
          JSON, das eine Liste von Elementen enthält, wobei jedes Element die folgenden Attribute aufweist:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Attribut</th>
+               <th style="background-color: #EFF2F7;">Attribut</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                 <td style="background-color: #DEEBFF;">resource</td>
@@ -254,28 +254,14 @@ ht-degree: 0%
                <td style="background-color: #DEEBFF;">source</td>
                <td>
                   Informationen zur Entscheidungsquelle:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Wert</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">mvpd</td>
-                        <td>Die Entscheidung wird vom MVPD-Vorabgenehmigungs-Endpunkt erteilt.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">Abbau</td>
-                        <td>Die Entscheidung wird aufgrund des eingeschränkten Zugangs erteilt.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">temppass</td>
-                        <td>Die Entscheidung wird aufgrund des vorübergehenden Zugangs erlassen.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">Dummy</td>
-                        <td>Die Entscheidung wird aufgrund der Platzhaltervorautorisierungsfunktion erteilt.</td>
-                     </tr>
-                  </table>
+                  <br/><br/>
+                  Mögliche Werte sind:
+                  <ul>
+                    <li>Die Entscheidung <b>mvpd</b><br/>wird vom MVPD-Vorabautorisierungsendpunkt ausgegeben.</li>
+                    <li><b>Abbau</b><br/>Die Entscheidung wird aufgrund eines eingeschränkten Zugriffs erlassen.</li>
+                    <li><b>tempass</b><br/>Die Entscheidung wird als Ergebnis des temporären Zugriffs ausgegeben.</li>
+                    <li><b>Platzhalter</b><br/>Die Entscheidung wird aufgrund der Platzhaltervorautorisierungsfunktion ausgegeben.</li>
+                  </ul>
                <td><i>erforderlich</i></td>
             </tr>
             <tr>
@@ -290,11 +276,11 @@ ht-degree: 0%
 
 ### Fehler {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Kopfzeilen</th>
+      <th style="background-color: #EFF2F7;">Kopfzeilen</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
@@ -307,9 +293,9 @@ ht-degree: 0%
       <td><i>erforderlich</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">body</th>
+      <th style="background-color: #EFF2F7;">body</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">error</td>

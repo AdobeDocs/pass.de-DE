@@ -1,7 +1,7 @@
 ---
 title: Profil für bestimmten Code abrufen
 description: REST API V2 - Profil für bestimmten Code abrufen
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
 source-wordcount: '570'
 ht-degree: 1%
@@ -21,11 +21,11 @@ ht-degree: 1%
 
 ## Anfrage {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">path</td>
@@ -38,9 +38,9 @@ ht-degree: 1%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Pfadparameter</th>
+      <th style="background-color: #EFF2F7;">Pfadparameter</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 1%
       <td><i>erforderlich</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Kopfzeilen</th>
+      <th style="background-color: #EFF2F7;">Kopfzeilen</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisierung</td>
@@ -91,10 +91,10 @@ ht-degree: 1%
 
 ## Reaktion {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Code</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Text</th>
+      <th style="background-color: #EFF2F7;">Code</th>
+      <th style="background-color: #EFF2F7;">Text</th>
       <th style="background-color: #EFF2F7;">Beschreibung</th>
    </tr>
    <tr>
@@ -136,11 +136,11 @@ ht-degree: 1%
 
 ### Erfolg {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Kopfzeilen</th>
+      <th style="background-color: #EFF2F7;">Kopfzeilen</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
@@ -153,9 +153,9 @@ ht-degree: 1%
       <td><i>erforderlich</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">body</th>
+      <th style="background-color: #EFF2F7;">body</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">profiles</td>
@@ -163,11 +163,11 @@ ht-degree: 1%
         JSON mit einer Zuordnung von Schlüssel-/Wert-Paaren.
         <br/><br/>
         Das Schlüsselelement wird durch den folgenden Wert definiert:
-        <table>
+        <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Wert</th>
+               <th style="background-color: #EFF2F7;">Wert</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
@@ -176,11 +176,11 @@ ht-degree: 1%
             </tr>
          </table>
          Das value-Element wird durch die folgenden Attribute definiert:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Attribut</th>
+               <th style="background-color: #EFF2F7;">Attribut</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
@@ -198,31 +198,10 @@ ht-degree: 1%
                   Die Entität, der das Profil gehört.
                   <br/><br/>
                   Mögliche Werte sind:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Wert</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">mvpd<br/><br/>z. B. Spektrum, Kabel usw.</td>
-                        <td>
-                            Das Profil wurde wie folgt erstellt:
-                            <ul>
-                                <li>Grundlegende Authentifizierung</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">Adobe</td>
-                        <td>
-                            Das Profil wurde wie folgt erstellt:
-                            <ul>
-                                <li>Geringfügiger Zugriff</li>
-                                <li>Temporärer Zugriff</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>mvpd (z. B. Spektrum, Kabel usw.)</b><br/>Das Profil wurde durch folgende einfache Authentifizierung erstellt:</li>
+                    <li><b>Adobe</b><br/>Das Profil wurde erstellt durch: eingeschränkten Zugriff, temporären Zugriff.</li>
+                  </ul>
                <td><i>erforderlich</i></td>
             </tr>
             <tr>
@@ -231,39 +210,11 @@ ht-degree: 1%
                   Der Profiltyp.
                   <br/><br/>
                   Mögliche Werte sind:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Wert</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">regulär</td>
-                        <td>
-                            Das Profil wurde wie folgt erstellt:
-                            <ul>
-                                <li>Grundlegende Authentifizierung</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">abgebaut</td>
-                        <td>
-                            Das Profil wurde wie folgt erstellt:
-                            <ul>
-                                <li>Geringfügiger Zugriff</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">temporär</td>
-                        <td>
-                            Das Profil wurde wie folgt erstellt:
-                            <ul>
-                                <li>Temporärer Zugriff</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>normal</b><br/>Das Profil wurde als Ergebnis der einfachen Authentifizierung erstellt.</li>
+                    <li><b>degraded</b><br/>Das Profil wurde durch folgenden eingeschränkten Zugriff erstellt:</li>
+                    <li><b>temporär</b><br/>Das Profil wurde durch den temporären Zugriff erstellt.</li>
+                  </ul>
                <td><i>erforderlich</i></td>
             </tr>
             <tr>
@@ -292,11 +243,11 @@ ht-degree: 1%
 
 ### Fehler {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Kopfzeilen</th>
+      <th style="background-color: #EFF2F7;">Kopfzeilen</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
@@ -309,9 +260,9 @@ ht-degree: 1%
       <td><i>erforderlich</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">body</th>
+      <th style="background-color: #EFF2F7;">body</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">error</td>
