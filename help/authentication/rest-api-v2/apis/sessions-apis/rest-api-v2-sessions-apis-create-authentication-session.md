@@ -1,15 +1,15 @@
 ---
 title: Erstellen einer Authentifizierungssitzung
 description: REST API V2 - Erstellen einer Authentifizierungssitzung
-source-git-commit: 4afd8492c77fdceae3c2504ba392fbcfc0979b22
+source-git-commit: 9c04ec17c848d6734dc2ca2d6357ed5fb49341ec
 workflow-type: tm+mt
-source-wordcount: '966'
+source-wordcount: '967'
 ht-degree: 0%
 
 ---
 
 
-# Erstellen einer Authentifizierungssitzung {#create-authentication-session}
+# Erstellen einer Authentifizierungssitzung - Test {#create-authentication-session}
 
 >[!IMPORTANT]
 >
