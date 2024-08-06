@@ -1,9 +1,9 @@
 ---
 title: Erstellen einer Authentifizierungssitzung
 description: REST API V2 - Erstellen einer Authentifizierungssitzung
-source-git-commit: 9c04ec17c848d6734dc2ca2d6357ed5fb49341ec
+source-git-commit: cf479236cbd43d5e4585bf0eac18a12dbe4bc6c4
 workflow-type: tm+mt
-source-wordcount: '967'
+source-wordcount: '965'
 ht-degree: 0%
 
 ---
@@ -246,24 +246,20 @@ ht-degree: 0%
                   Die Aktion, die das Streaming-Gerät ausführen muss, um den Authentifizierungsfluss abzuschließen.
                   <br/><br/>
                   Mögliche Werte sind:
-                  <table style="table-layout:auto">
-                     <tr>
-                        <th style="background-color: #EFF2F7;">Wert</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">authentifizieren</td>
-                        <td>Das Streaming-Gerät oder ein anderes Gerät muss die bereitgestellte URL in einem Benutzeragenten öffnen.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">resume</td>
-                        <td>Das Streaming-Gerät oder ein anderes Gerät muss die fehlenden Parameter bereitstellen und die Authentifizierungssitzung mithilfe des Codes fortsetzen.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">Autorisieren</td>
-                        <td>Das Streaming-Gerät kann direkt mit Entscheidungsflüssen fortfahren.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>authentifizieren</b></li>
+                    <ul>
+                        <li>Das Streaming-Gerät oder ein anderes Gerät muss die bereitgestellte URL in einem Benutzeragenten öffnen.</li>
+                    </ul>
+                    <li><b>resume</b></li>
+                    <ul>
+                        <li>Das Streaming-Gerät oder ein anderes Gerät muss die fehlenden Parameter bereitstellen und die Authentifizierungssitzung mithilfe des Codes fortsetzen.</li>
+                    </ul>
+                    <li><b>Autorisieren</b></li>
+                    <ul>
+                        <li>Das Streaming-Gerät kann direkt mit Entscheidungsflüssen fortfahren.</li>
+                    </ul>
+                  </ul>
                <td><i>erforderlich</i></td>
             </tr>
             <tr>
@@ -272,20 +268,16 @@ ht-degree: 0%
                   Die Art der Interaktion, die das Streaming-Gerät ausführen muss, damit der Fluss mit der durch das Attribut "actionName"angegebenen Aktion fortgesetzt werden kann.
                   <br/><br/>
                   Mögliche Werte sind:
-                  <table style="table-layout:auto">
-                     <tr>
-                        <th style="background-color: #EFF2F7;">Wert</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">direct</td>
-                        <td>Der Fluss wird mit einem direkten Aufruf an die angegebene URL fortgesetzt, wobei ein für die Client-Implementierung verfügbarer HTTP-Client verwendet wird.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">interaktiv</td>
-                        <td>Der Fluss wird mit der Navigation zur angegebenen URL mithilfe eines Benutzeragenten fortgesetzt.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>interaktiv</b></li>
+                    <ul>
+                        <li>Der Fluss wird mit der Navigation zur angegebenen URL mithilfe eines Benutzeragenten fortgesetzt.</li>
+                    </ul>
+                    <li><b>direct</b></li>
+                    <ul>
+                        <li>Der Fluss wird mit einem direkten Aufruf an die angegebene URL fortgesetzt, wobei ein für die Client-Implementierung verfügbarer HTTP-Client verwendet wird.</li>
+                    </ul>
+                  </ul>
                <td><i>erforderlich</i></td>
             </tr>
             <tr>
