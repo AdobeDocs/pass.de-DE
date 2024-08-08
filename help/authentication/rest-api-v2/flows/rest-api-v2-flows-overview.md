@@ -1,15 +1,15 @@
 ---
 title: REST API V2 - Flüsse - Übersicht
 description: REST API V2 - Flüsse - Übersicht
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
-source-wordcount: '140'
+source-wordcount: '201'
 ht-degree: 0%
 
 ---
 
 
-# REST API V2-Flüsse - Überblick {#rest-api-v2-flows-overview}
+# REST API V2 - Flüsse - Übersicht {#rest-api-v2-flows-overview}
 
 >[!IMPORTANT]
 >
@@ -19,7 +19,17 @@ ht-degree: 0%
 >
 > Die REST API V2-Implementierung wird durch die Dokumentation zum [Drosselungsmechanismus](/help/authentication/throttling-mechanism.md) begrenzt.
 
-## Grundlegende Zugriffsflüsse {#rest-api-v2-flows-access-basic}
+## Möchten Sie unsere REST API V2 ausprobieren?
+
+Sie können jetzt die Adobe Pass Authentication REST API V2 über unsere produktspezifische Seite von der Website [Adobe Developer](https://developer.adobe.com/adobe-pass/) aus aufrufen.
+
+Unser spezielles Supportteam steht Ihnen auch bei Fragen und technischer Unterstützung zur Verfügung.
+
+## REST API V2 - Flüsse {#rest-api-v2-flows}
+
+Besuchen Sie zunächst unsere öffentliche Dokumentation für jeden unterstützten Fluss.
+
+### Grundlegende Zugriffsflüsse {#rest-api-v2-flows-access-basic}
 
 * [Durchfluss von Standardprofilen innerhalb der primären Anwendung](./basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [Durchgang der einfachen Profile, der in der sekundären Anwendung ausgeführt wird](./basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
@@ -29,15 +39,15 @@ ht-degree: 0%
 * [Grundlegender Ablauf der Vorautorisierung innerhalb der Hauptanwendung](./basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
 * [Grundlegender Abmeldefluss innerhalb der primären Anwendung](./basic-access-flows/rest-api-v2-basic-logout-primary-application-flow.md)
 
-## Beschädigte Zugriffsflüsse {#rest-api-v2-flows-access-degraded}
+### Beschädigte Zugriffsflüsse {#rest-api-v2-flows-access-degraded}
 
 * [Verringerte Zugriffsflüsse](./degraded-access-flows/rest-api-v2-access-degraded-flows.md)
 
-## Temporärer Zugriffsfluss {#rest-api-v2-flows-access-temporary}
+### Temporärer Zugriffsfluss {#rest-api-v2-flows-access-temporary}
 
 * [Temporäre Zugriffsflüsse](./temporary-access-flows/rest-api-v2-access-temporary-flows.md)
 
-## Einmal-Anmeldungs-Zugriffsflüsse {#rest-api-v2-flows-access-single-sign-on}
+### Einmal-Anmeldungs-Zugriffsflüsse {#rest-api-v2-flows-access-single-sign-on}
 
 * [Single Sign-on mit Partnerflüssen](./single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)
 * [Single Sign-on mit Platform-Identitätsflüssen](./single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)

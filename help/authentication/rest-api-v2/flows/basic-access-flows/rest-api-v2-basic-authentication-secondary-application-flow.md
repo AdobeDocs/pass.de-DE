@@ -1,9 +1,9 @@
 ---
 title: Grundlegende Authentifizierung - Sekundäre Anwendung - Fluss
 description: REST API V2 - Grundlegende Authentifizierung - Sekundäre Anwendung - Fluss
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
-source-wordcount: '1756'
+source-wordcount: '2000'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,46 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierung
 
    Wenn das Adobe Pass-Backend kein gültiges Profil angibt, zeigt die Streaming-Anwendung die `code` an, die zur Wiederaufnahme der Authentifizierungssitzung in einer sekundären Anwendung verwendet werden kann.
 
+1. **Authentifizierungscode validieren:** Die sekundäre Anwendung überprüft den Benutzer, der `code` angegeben hat, um sicherzustellen, dass die MVPD-Authentifizierung im Benutzeragenten fortgesetzt werden kann.
+
+   >[!IMPORTANT]
+   >
+   > Weitere Informationen finden Sie in der API-Dokumentation zum [Abrufen von Authentifizierungssitzungsinformationen](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) .
+   >
+   > * Alle _erforderlichen_ Parameter, wie `serviceProvider` und `code`
+   > * Alle _erforderlichen_ -Kopfzeilen, z. B. `Authorization`
+   > * Alle Parameter und Kopfzeilen von _optional_
+
+1. **Rückgabe von Informationen zur Authentifizierungssitzung:** Die Sitzungsendpunktantwort enthält die folgenden Daten:
+   * Das Attribut `existing` enthält die vorhandenen Parameter, die bereits bereitgestellt wurden.
+   * Das Attribut `missing` enthält die fehlenden Parameter, die zum Abschluss des Authentifizierungsflusses angegeben werden müssen.
+
+   >[!IMPORTANT]
+   >
+   > Weitere Informationen zu den in einer Sitzungsvalidierungsantwort bereitgestellten Informationen finden Sie in der API-Dokumentation zum [Abrufen von Authentifizierungssitzungsinformationen](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) .
+   >
+   > <br/>
+   >
+   > Der Sitzungsendpunkt validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
+   >
+   > * Die Parameter und Header _required_ müssen gültig sein.
+   >
+   > <br/>
+   >
+   > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../enhanced-error-codes.md) entsprechen.
+
+   >[!NOTE]
+   >
+   > Empfehlung: Die sekundäre Anwendung kann Benutzer darüber informieren, dass der verwendete `code` im Falle einer Fehlerantwort, die auf eine fehlende Authentifizierungssitzung hinweist, ungültig ist, und ihnen empfehlen, einen neuen Versuch zu unternehmen.
+
 1. **URL im Benutzeragenten öffnen:** Die sekundäre Anwendung öffnet einen Benutzeragenten, um den selbst berechneten `url` zu laden. Dadurch wird eine Anfrage an den Endpunkt Authentifizieren gesendet. Dieser Ablauf kann mehrere Umleitungen umfassen, die den Benutzer letztendlich zur MVPD-Anmeldeseite führen und gültige Anmeldeinformationen angeben.
+
+   >[!IMPORTANT]
+   >
+   > Weitere Informationen finden Sie in der Dokumentation zur API [Authentifizierung im Benutzeragenten durchführen](../../apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) .
+   >
+   > * Alle _erforderlichen_ Parameter, wie `serviceProvider` und `code`
+   > * Alle Parameter und Kopfzeilen von _optional_
 
 1. **Vollständige MVPD-Authentifizierung:** Wenn der Authentifizierungsfluss erfolgreich ist, speichert die Benutzeragenten-Interaktion ein reguläres Profil im Adobe Pass-Backend und erreicht die bereitgestellte `redirectUrl`.
 
@@ -231,6 +270,10 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierung
    > <br/>
    > 
    > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../enhanced-error-codes.md) entsprechen.
+
+   >[!NOTE]
+   >
+   > Empfehlung: Die sekundäre Anwendung kann Benutzer darüber informieren, dass der verwendete `code` im Falle einer Fehlerantwort, die auf eine fehlende Authentifizierungssitzung hinweist, ungültig ist, und ihnen empfehlen, einen erneuten Versuch mit einer neuen zu unternehmen.
 
 1. **Vorhandenes Profil angeben:** Die Sitzungsendpunktantwort enthält die folgenden Daten:
    * Das Attribut `actionName` ist auf &quot;Autorisieren&quot;festgelegt.
