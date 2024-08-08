@@ -1,7 +1,7 @@
 ---
 title: Grundlegende Authentifizierung - Sekundäre Anwendung - Fluss
 description: REST API V2 - Grundlegende Authentifizierung - Sekundäre Anwendung - Fluss
-source-git-commit: c849882286c88d16a5652717d381700287c53277
+source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
 workflow-type: tm+mt
 source-wordcount: '2000'
 ht-degree: 0%
@@ -139,7 +139,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierung
 
    >[!NOTE]
    >
-   > Empfehlung: Die sekundäre Anwendung kann Benutzer darüber informieren, dass der verwendete `code` im Falle einer Fehlerantwort, die auf eine fehlende Authentifizierungssitzung hinweist, ungültig ist, und ihnen empfehlen, einen neuen Versuch zu unternehmen.
+   > Empfehlung: Die sekundäre Anwendung kann Benutzer darüber informieren, dass der verwendete `code` im Falle einer Fehlerantwort, die auf eine fehlende Authentifizierungssitzung hinweist, ungültig ist, und ihnen empfehlen, einen erneuten Versuch mit einer neuen zu unternehmen.
 
 1. **URL im Benutzeragenten öffnen:** Die sekundäre Anwendung öffnet einen Benutzeragenten, um den selbst berechneten `url` zu laden. Dadurch wird eine Anfrage an den Endpunkt Authentifizieren gesendet. Dieser Ablauf kann mehrere Umleitungen umfassen, die den Benutzer letztendlich zur MVPD-Anmeldeseite führen und gültige Anmeldeinformationen angeben.
 
