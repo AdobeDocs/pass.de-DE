@@ -2,9 +2,9 @@
 title: Kanäle
 description: Erfahren Sie mehr über Kanäle und ihre verschiedenen Konfigurationen im TVE-Dashboard.
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1140'
+source-wordcount: '1124'
 ht-degree: 0%
 
 ---
@@ -206,11 +206,11 @@ Die ausgewählte Domäne ist nicht mehr verfügbar. Daher verliert die mit diese
 
 ### Registrierte Anwendungen {#registered-applications}
 
-Dieser Tab enthält eine Liste der Registrierungen für Anwendungen. Weitere Informationen finden Sie unter [Dynamisches Client-Registrierungs-Management](/help/authentication/dynamic-client-registration-management.md) .
+Dieser Tab enthält eine Liste der Registrierungen für Anwendungen.
 
 ### Benutzerdefinierte Schemata {#custom-schemes}
 
-Auf dieser Registerkarte wird eine Liste benutzerdefinierter Schemata angezeigt. Weitere Informationen finden Sie unter [iOS/tvOS-Anwendungsregistrierung](/help/authentication/iostvos-application-registration.md) und [Dynamisches Client-Registrierungsmanagement](/help/authentication/dynamic-client-registration-management.md) .
+Auf dieser Registerkarte wird eine Liste benutzerdefinierter Schemata angezeigt. Anzeigen der [Registrierung der iOS/tvOS-Anwendung](/help/authentication/iostvos-application-registration.md).
 
 ## Neuen Kanal hinzufügen {#add-new-channel}
 

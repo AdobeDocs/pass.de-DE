@@ -2,29 +2,28 @@
 title: Proxy-MVPD-Webdienst
 description: Proxy-MVPD-Webdienst
 exl-id: f75cbc4d-4132-4ce8-a81c-1561a69d1d3a
-source-git-commit: f8cef3c41fb7132204c4fa499301c3010f62ca14
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
 source-wordcount: '1003'
 ht-degree: 0%
 
 ---
 
+
 # Proxy-MVPD-Webdienst {#proxy-mvpd-wbservice}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
->Um den Proxy-MVPD-Webdienst verwenden zu können, müssen Sie:
->- Bitten Sie das Supportteam um eine Softwareanweisung für Ihre registrierte Anwendung
->- Abrufen eines Zugriffstokens basierend auf der [dynamischen Client-Registrierung](dynamic-client-registration.md)
-> 
+> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Um den Proxy-MVPD-Webdienst verwenden zu können, müssen Sie:
->- Bitten Sie das Supportteam um eine Softwareanweisung für Ihre registrierte Anwendung
->- Abrufen eines Zugriffstokens basierend auf der [dynamischen Client-Registrierung](dynamic-client-registration.md)
-> 
+> Bevor Sie den Proxy-MVPD-Webdienst verwenden, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
+>
+> * Rufen Sie die Client-Anmeldeinformationen ab, wie in der API-Dokumentation zum [Abrufen von Client-Anmeldeinformationen](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) beschrieben.
+> * Rufen Sie das Zugriffstoken ab, wie in der API-Dokumentation [Zugriffstoken abrufen](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) beschrieben.
+>
+> Weitere Informationen zum Erstellen einer registrierten Anwendung und Herunterladen der Softwareanweisung finden Sie in der Dokumentation zur [Übersicht über die dynamische Client-Registrierung](./dcr-api/dynamic-client-registration-overview.md) .
 
 ## Übersicht {#overview-proxy-mvpd-webserv}
 
@@ -232,7 +231,7 @@ Adobe hat das folgende akzeptierte Format für das Posten/Abrufen von proximiert
 
 Damit ein Antrag als gültig betrachtet werden kann, muss er folgende Regeln beachten:
 
-- Der Anforderungsheader muss das Sicherheits-Oauth2-Zugriffstoken aus [Dynamische Client-Registrierung](dynamic-client-registration.md) enthalten.
+- Der Anforderungsheader muss das Sicherheitstoken für den Zugriff auf Oauth2 enthalten, das Sie wie in der API-Dokumentation [Zugriffstoken abrufen](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) beschrieben erhalten haben.
 - Die Anfrage muss von einer bestimmten IP-Adresse stammen, die zugelassen wurde.
 - Die Anfrage muss über das SSL-Protokoll gesendet werden.
 

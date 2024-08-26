@@ -2,9 +2,9 @@
 title: Primetime TVE Dashboard-Benutzerhandbuch
 description: Primetime TVE Dashboard-Benutzerhandbuch
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: c6afb9b080ffe36344d7a3d658450e9be767be61
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '4377'
+source-wordcount: '5504'
 ht-degree: 0%
 
 ---
@@ -112,12 +112,11 @@ In diesem Abschnitt können Sie Einstellungen für verfügbare Kanäle anzeigen 
   Enthält die Liste der Integrationen mit verfügbaren MVPDs zusammen mit dem Status jeder Integration, die möglicherweise aktiviert ist oder nicht. Um zur Seite Integration zu navigieren, klicken Sie auf einen bestimmten Eintrag.
 * **Registrierte Anwendungen**
 
-  Enthält die Liste der Registrierungen von Anwendungen. Weitere Informationen finden Sie im Dokument [Dynamisches Client-Registrierungs-Management](/help/authentication/dynamic-client-registration-management.md) .
+  Enthält die Liste der Registrierungen von Anwendungen. Weitere Informationen finden Sie im Dokument [Dynamisches Client-Registrierungs-Management](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management) .
 
 * **Benutzerdefinierte Schemata**
 
-  Enthält die Liste der benutzerdefinierten Schemas. Weitere Informationen finden Sie unter [Registrierung der iOS/tvOS-Anwendung](/help/authentication/iostvos-application-registration.md) und [Verwaltung der dynamischen Client-Registrierung](/help/authentication/dynamic-client-registration-management.md)
-
+  Enthält die Liste der benutzerdefinierten Schemas. Weitere Informationen finden Sie unter [iOS/tvOS-Anwendungsregistrierung](/help/authentication/iostvos-application-registration.md) und [Dynamisches Client-Registrierungs-Management](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management) .
 
 #### Domänen hinzufügen/löschen {#add-delete-domains}
 
@@ -126,6 +125,50 @@ Um eine neue Domäne für den ausgewählten Kanal hinzuzufügen, müssen Sie unt
 ![Hinzufügen einer neuen Domäne zu einem ausgewählten Kanalabschnitt](assets/add-domain-to-channel-sec.png)
 
 *Abbildung: Registerkarte &quot;Domänen&quot;in Kanälen*
+
+#### Registrierte Anwendung auf Kanalebene erstellen {#create-registered-application-channel-level}
+
+Um eine registrierte Anwendung auf Kanalebene zu erstellen, navigieren Sie zum Menü &quot;Kanäle&quot;und wählen Sie die Anwendung aus, für die Sie eine Anwendung erstellen möchten. Klicken Sie dann nach dem Navigieren zur Registerkarte &quot;Registrierte Anwendungen&quot;auf die Schaltfläche &quot;Neue Anwendung hinzufügen&quot;.
+
+![](./assets/reg-new-app-channel-level.png)
+
+Wie in der Abbildung unten dargestellt, sollten Sie folgende Felder ausfüllen:
+
+* **Anwendungsname** - der Name der Anwendung
+
+* **Zugeordneter Kanal** - Wie unten gezeigt, unterscheidet sich dieser im Vergleich zu der auf Programmebene durchgeführten Aktion geringfügig von der Dropdown-Liste &quot;Zugewiesene Kanäle&quot;, die nicht aktiviert ist, sodass es keine Option gibt, die registrierte Anwendung an einen anderen als den aktuellen Kanal zu binden.
+
+* **Anwendungsversion** - Standardmäßig ist dieser Wert auf &quot;1.0.0&quot;festgelegt. Wir empfehlen Ihnen jedoch dringend, ihn mit Ihrer eigenen Anwendungsversion zu ändern. Wenn Sie sich dazu entscheiden, die Version Ihrer Anwendung zu ändern, empfiehlt es sich, sie durch die Erstellung einer neuen registrierten Anwendung widerzuspiegeln.
+
+* **Anwendungsplattformen** - die Plattformen für die Anwendung, mit der verknüpft werden soll. Sie haben die Möglichkeit, alle oder mehrere Werte auszuwählen.
+
+* **Domänennamen** - die Domänen, mit denen die Anwendung verknüpft werden soll. Die Domänen in der Dropdown-Liste sind eine einheitliche Auswahl aller Domänen aus allen Ihren Kanälen. Sie können mehrere Domänen aus der Liste auswählen. Die Bedeutung der Domänen ist die Umleitungs-URLs [RFC6749](https://tools.ietf.org/html/rfc6749). Bei der Client-Registrierung kann die Client-Anwendung anfordern, eine Umleitungs-URL für die Fertigstellung des Authentifizierungsflusses verwenden zu dürfen. Wenn eine Client-Anwendung eine bestimmte Umleitungs-URL anfordert, wird sie anhand der Domänen validiert, die in dieser registrierten Anwendung auf der Whitelist stehen und mit der Softwareanweisung verknüpft sind.
+
+![](./assets/new-reg-app-channel.png)
+
+Nachdem Sie die Felder mit den entsprechenden Werten ausgefüllt haben, müssen Sie auf &quot;Fertig&quot;klicken, damit die Anwendung in der Konfiguration gespeichert wird.
+
+Beachten Sie, dass es **keine Option gibt, eine bereits erstellte Anwendung zu ändern**. Sollte festgestellt werden, dass etwas, das erstellt wurde, die Anforderungen nicht mehr erfüllt, muss eine neue registrierte Anwendung erstellt und mit der Clientanwendung verwendet werden, deren Anforderungen sie erfüllt.
+
+##### Software-Anweisung herunterladen {#download-software-statement-channel-level}
+
+![](./assets/reg-app-list.png)
+
+Durch Klicken auf die Schaltfläche &quot;Herunterladen&quot;im Listeneintrag, für den eine Softwareanweisung benötigt wird, wird eine Textdatei generiert. Diese Datei enthält etwas Ähnliches wie die folgende Beispielausgabe.
+
+![](./assets/download-software-statement.png)
+
+Der Dateiname wird eindeutig identifiziert, indem &quot;software_statement&quot;vorangestellt und der aktuelle Zeitstempel hinzugefügt wird.
+
+Bitte beachten Sie, dass für dieselbe registrierte Anwendung jedes Mal, wenn auf die Download-Schaltfläche geklickt wird, unterschiedliche Softwareanweisungen empfangen werden. Dies macht jedoch die zuvor erhaltenen Softwareanweisungen für diese Anwendung nicht ungültig. Dies geschieht, weil sie pro Aktionsanforderung vor Ort generiert werden.
+
+Es gibt eine **Einschränkung** bezüglich der Download-Aktion. Wenn eine Softwareanweisung durch Klicken auf die Schaltfläche &quot;Herunterladen&quot;kurz nach der Erstellung der registrierten Anwendung angefordert wird und diese noch nicht gespeichert wurde und die Konfigurations-JSON nicht synchronisiert wurde, wird die folgende Fehlermeldung am unteren Rand der Seite angezeigt.
+
+![](./assets/error-sw-statement-notready.png)
+
+Dadurch wird ein HTTP 404 Not Found -Fehlercode umschlossen, der vom Core empfangen wurde, da die ID der registrierten Anwendung noch nicht propagiert wurde und der Kern keine Kenntnis davon hat.
+
+Die Lösung besteht darin, nach dem Erstellen der registrierten Anwendung höchstens 2 Minuten zu warten, bis die Konfiguration synchronisiert wird. Danach wird die Fehlermeldung nicht mehr empfangen und die Textdatei mit der Softwareanweisung kann heruntergeladen werden.
 
 ### Programmierer {#tve-db-programmers-section}
 
@@ -147,12 +190,57 @@ Dieser Abschnitt ermöglicht die Anzeige und Bearbeitung von Einstellungen für 
 
 * **Registrierte Anwendungen**
 
-  Enthält die Liste der Registrierungen von Anwendungen. Weitere Informationen finden Sie unter [Dynamisches Client-Registrierungs-Management](/help/authentication/dynamic-client-registration-management.md).
+  Enthält die Liste der Registrierungen von Anwendungen. Weitere Informationen finden Sie unter [Dynamisches Client-Registrierungs-Management](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 * **Benutzerdefinierte Schemata**
 
-  Enthält die Liste der benutzerdefinierten Schemas. Weitere Informationen finden Sie unter [Registrierung der iOS/tvOS-Anwendung](/help/authentication/iostvos-application-registration.md) und [Verwaltung der dynamischen Clientregistrierung](/help/authentication/dynamic-client-registration-management.md).
+  Enthält die Liste der benutzerdefinierten Schemas. Weitere Informationen finden Sie unter [Registrierung der iOS/tvOS-Anwendung](/help/authentication/iostvos-application-registration.md).
 
+#### Registrierte Anwendung auf Programmierebene erstellen {#create-registered-application-programmer-level}
+
+Gehen Sie zur Registerkarte **Programmierer** > **Registrierte Anwendungen** .
+
+![](./assets/reg-app-progr-level.png)
+
+Klicken Sie auf der Registerkarte Registrierte Anwendungen auf **Neue Anwendung hinzufügen**. Füllen Sie die erforderlichen Felder im neuen Fenster aus.
+
+Wie in der Abbildung unten dargestellt, sollten Sie folgende Felder ausfüllen:
+
+* **Anwendungsname** - der Name der Anwendung
+
+* **Zugeordneter Kanal** - der Name Ihres Kanals, t</span>auf den diese Anwendung verweist. Die Standardeinstellung in der Dropdown-Maske ist &quot;**Alle Kanäle&quot;.** In der Benutzeroberfläche können Sie entweder einen Kanal oder alle Kanäle auswählen.
+
+* **Anwendungsversion** - Standardmäßig ist dieser Wert auf &quot;1.0.0&quot;festgelegt. Wir empfehlen Ihnen jedoch dringend, ihn mit Ihrer eigenen Anwendungsversion zu ändern. Wenn Sie sich dazu entscheiden, die Version Ihrer Anwendung zu ändern, empfiehlt es sich, sie durch die Erstellung einer neuen registrierten Anwendung widerzuspiegeln.
+
+* **Anwendungsplattformen** - die Plattformen für die Anwendung, mit der verknüpft werden soll. Sie haben die Möglichkeit, alle oder mehrere Werte auszuwählen.
+
+* **Domänennamen** - die Domänen, mit denen die Anwendung verknüpft werden soll. Die Domänen in der Dropdown-Liste sind eine einheitliche Auswahl aller Domänen aus allen Ihren Kanälen. Sie können mehrere Domänen aus der Liste auswählen. Die Bedeutung der Domänen ist die Umleitungs-URLs [RFC6749](https://tools.ietf.org/html/rfc6749). Bei der Client-Registrierung kann die Client-Anwendung anfordern, eine Umleitungs-URL für die Fertigstellung des Authentifizierungsflusses verwenden zu dürfen. Wenn eine Client-Anwendung eine bestimmte Umleitungs-URL anfordert, wird sie anhand der Domänen validiert, die in dieser registrierten Anwendung auf der Whitelist stehen und mit der Softwareanweisung verknüpft sind.
+
+![](./assets/new-reg-app.png)
+
+Nachdem Sie die Felder mit den entsprechenden Werten ausgefüllt haben, müssen Sie auf &quot;Fertig&quot;klicken, damit die Anwendung in der Konfiguration gespeichert wird.
+
+Beachten Sie, dass es **keine Option gibt, eine bereits erstellte Anwendung zu ändern**. Sollte festgestellt werden, dass etwas, das erstellt wurde, die Anforderungen nicht mehr erfüllt, muss eine neue registrierte Anwendung erstellt und mit der Clientanwendung verwendet werden, deren Anforderungen sie erfüllt.
+
+##### Software-Anweisung herunterladen {#download-software-statement-programmer-level}
+
+![](./assets/reg-app-list.png)
+
+Durch Klicken auf die Schaltfläche &quot;Herunterladen&quot;im Listeneintrag, für den eine Softwareanweisung benötigt wird, wird eine Textdatei generiert. Diese Datei enthält etwas Ähnliches wie die folgende Beispielausgabe.
+
+![](./assets/download-software-statement.png)
+
+Der Dateiname wird eindeutig identifiziert, indem &quot;software_statement&quot;vorangestellt und der aktuelle Zeitstempel hinzugefügt wird.
+
+Bitte beachten Sie, dass für dieselbe registrierte Anwendung jedes Mal, wenn auf die Download-Schaltfläche geklickt wird, unterschiedliche Softwareanweisungen empfangen werden. Dies macht jedoch die zuvor erhaltenen Softwareanweisungen für diese Anwendung nicht ungültig. Dies geschieht, weil sie pro Aktionsanforderung vor Ort generiert werden.
+
+Es gibt eine **Einschränkung** bezüglich der Download-Aktion. Wenn eine Softwareanweisung durch Klicken auf die Schaltfläche &quot;Herunterladen&quot;kurz nach der Erstellung der registrierten Anwendung angefordert wird und diese noch nicht gespeichert wurde und die Konfigurations-JSON nicht synchronisiert wurde, wird die folgende Fehlermeldung am unteren Rand der Seite angezeigt.
+
+![](./assets/error-sw-statement-notready.png)
+
+Dadurch wird ein HTTP 404 Not Found -Fehlercode umschlossen, der vom Core empfangen wurde, da die ID der registrierten Anwendung noch nicht propagiert wurde und der Kern keine Kenntnis davon hat.
+
+Die Lösung besteht darin, nach dem Erstellen der registrierten Anwendung höchstens 2 Minuten zu warten, bis die Konfiguration synchronisiert wird. Danach wird die Fehlermeldung nicht mehr empfangen und die Textdatei mit der Softwareanweisung kann heruntergeladen werden.
 
 ### Integrationen {#tve-db-integrations-sec}
 

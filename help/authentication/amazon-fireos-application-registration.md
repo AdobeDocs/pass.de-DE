@@ -2,9 +2,9 @@
 title: Amazon FireOS-Anwendungsregistrierung
 description: Amazon FireOS-Anwendungsregistrierung
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '514'
+source-wordcount: '515'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 Ab Version 3.0 des FireOS AccessEnabler SDK ändern wir den Authentifizierungsmechanismus mit Adobe-Servern. Statt einen öffentlichen Schlüssel und ein geheimes System zum Signieren der Anforderer-ID zu verwenden, führen wir das Konzept einer Software Statement-Zeichenfolge ein, die verwendet werden kann, um ein Zugriffstoken zu erhalten, das später für alle Aufrufe verwendet wird, die das SDK an unsere Server sendet. Zusätzlich zu einer Software-Anweisung müssen Sie auch einen Deep-Link für Ihre Anwendung erstellen.
 
-Weitere Informationen finden Sie unter [Dynamische Client-Registrierung](/help/authentication/dynamic-client-registration.md)
+Weitere Informationen finden Sie unter [Übersicht über die dynamische Kundenregistrierung](./dcr-api/dynamic-client-registration-overview.md).
 
 ## Was ist eine Software-Anweisung? {#what}
 
@@ -55,7 +55,7 @@ Eine Software-Anweisung ist ein JWT-Token, das Informationen über Ihre Anwendun
 
    Eine Textdatei wird heruntergeladen. Verwenden Sie den Inhalt als Ihre Software-Anweisung.
 
-Weitere Informationen finden Sie unter [Dynamisches Client-Registrierungs-Management](/help/authentication/dynamic-client-registration-management.md)
+Weitere Informationen finden Sie unter [Dynamisches Client-Registrierungs-Management](./dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 ### Wenn Sie keinen Zugriff auf das Adobe TVE Dashboard haben:
 

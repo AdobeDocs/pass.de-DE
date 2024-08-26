@@ -2,9 +2,9 @@
 title: REST API-Cookbook (Client-to-Server)
 description: REST API-Cookbook-Client zu Server.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '870'
+source-wordcount: '868'
 ht-degree: 0%
 
 ---
@@ -50,7 +50,7 @@ Weitere im Fluss verwendete Begriffe werden im [Glossar](/help/authentication/gl
 
 ### Dynamische Kundenregistrierung (DCR)
 
-Adobe Pass verwendet DCR, um die Client-Kommunikation zwischen einer Programmieranwendung oder einem Server und den Adobe Pass-Diensten zu sichern. Der DCR-Fluss ist ein separater, abhängiger und erforderlicher Fluss und kann in der [dynamischen Client-Registrierung](/help/authentication/dynamic-client-registration.md) gefunden werden
+Adobe Pass verwendet DCR, um die Client-Kommunikation zwischen einer Programmieranwendung oder einem Server und den Adobe Pass-Diensten zu sichern. Der DCR-Ablauf ist separat und wird in der Dokumentation [Übersicht über die dynamische Kundenregistrierung](./dcr-api/dynamic-client-registration-overview.md) beschrieben.
 
 
 ### App-Flüsse für Streaming (intelligente Geräte)

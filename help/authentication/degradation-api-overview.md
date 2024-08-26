@@ -2,29 +2,28 @@
 title: Übersicht über die Abbau-API
 description: Übersicht über die Abbau-API
 exl-id: c7d6685b-a235-42eb-9c9c-0ffa1747f614
-source-git-commit: f918d7f9f7b2af5b4364421f6703211e413eafb4
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '427'
 ht-degree: 0%
 
 ---
 
+
 # Übersicht über die Abbau-API {#degradation-api-overview}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
->Um die Abbauungs-API verwenden zu können, müssen Sie:
->- Bitten Sie das Supportteam um eine Softwareanweisung für Ihre registrierte Anwendung
->- Abrufen eines Zugriffstokens basierend auf der [dynamischen Client-Registrierung](dynamic-client-registration.md)
-> 
+> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Um die Abbauungs-API verwenden zu können, müssen Sie:
->- Bitten Sie das Supportteam um eine Softwareanweisung für Ihre registrierte Anwendung
->- Abrufen eines Zugriffstokens basierend auf der [dynamischen Client-Registrierung](dynamic-client-registration.md)
-> 
+> Stellen Sie vor Verwendung der Abbauungs-API sicher, dass die folgenden Voraussetzungen erfüllt sind:
+>
+> * Rufen Sie die Client-Anmeldeinformationen ab, wie in der API-Dokumentation zum [Abrufen von Client-Anmeldeinformationen](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) beschrieben.
+> * Rufen Sie das Zugriffstoken ab, wie in der API-Dokumentation [Zugriffstoken abrufen](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) beschrieben.
+>
+> Weitere Informationen zum Erstellen einer registrierten Anwendung und Herunterladen der Softwareanweisung finden Sie in der Dokumentation zur [Übersicht über die dynamische Client-Registrierung](./dcr-api/dynamic-client-registration-overview.md) .
 
 ## Allgemeine Informationen {#general_info}
 
@@ -42,7 +41,7 @@ Notizen zur Verschlechterung:
 
 - Diese Funktion ist für die Verwendung mit der API zur Nutzungsüberwachung konzipiert, die Echtzeitinformationen über die Anzahl der Authentifizierungen und Berechtigungen pro MVPD, die durchschnittliche Autorisierungslatenz und andere Metriken bereitstellt, die für eine vollständige Übersicht über den Service erforderlich sind.
 - Diese Funktion lässt die Umgehung des Adobe Primetim-Authentifizierungsdienstes nicht zu. Wenn die Adobe Pass-Authentifizierung deaktiviert ist, gibt es keinen Mechanismus innerhalb des Dienstes, der verwendet werden kann, um Benutzern das Anzeigen von Inhalten zu ermöglichen. Die Sites oder Apps können jedoch allein die Adobe Pass-Authentifizierung umleiten.
-- Adobe wird derzeit nicht direkt die Verschlechterung des Triggers bewirken - die Entscheidung muss immer bei einem bestimmten Programmierer liegen, der mit MVPDs diesen Bedingungen zugestimmt hat. In Zukunft könnte die Adobe Pass-Authentifizierung proaktiv Abbauregeln auslösen, wenn mit MVPDs Vereinbarungen (SLA-Schutz) getroffen werden können.
+- Adobe wird derzeit nicht direkt die Verschlechterung des Triggers bewirken - die Entscheidung muss immer bei einem bestimmten Programmierer liegen, der mit MVPDs diesen Bedingungen zugestimmt hat. In Zukunft könnte die Adobe Pass-Authentifizierung proaktiv dazu beitragen, Abbauregeln auszulösen, wenn mit MVPDs Vereinbarungen (SLA-Schutz) getroffen werden können.
 
 <!--
 ## Related Information {#related}

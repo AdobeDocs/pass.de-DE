@@ -2,38 +2,43 @@
 title: Zurücksetzen des Vorübergangs
 description: Zurücksetzen des Vorübergangs
 exl-id: ab39e444-eab2-4338-8d09-352a1d5135b6
-source-git-commit: 28d432891b7d7855e83830f775164973e81241fc
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '439'
+source-wordcount: '478'
 ht-degree: 0%
 
 ---
 
+
 # Zurücksetzen des Vorübergangs {#reset-temp-pass}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+
+>[!IMPORTANT]
 >
->Um die API zum Zurücksetzen des Temp-Pass zu verwenden, müssen Sie Folgendes tun:
->- Bitten Sie das Supportteam um eine Softwareanweisung für Ihre registrierte Anwendung
->- Abrufen eines Zugriffstokens basierend auf der [dynamischen Client-Registrierung](dynamic-client-registration.md)
-> 
+> Stellen Sie vor Verwendung der API zum Zurücksetzen des Temp Pass sicher, dass die folgenden Voraussetzungen erfüllt sind:
+>
+> * Rufen Sie die Client-Anmeldeinformationen ab, wie in der API-Dokumentation zum [Abrufen von Client-Anmeldeinformationen](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) beschrieben.
+> * Rufen Sie das Zugriffstoken ab, wie in der API-Dokumentation [Zugriffstoken abrufen](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) beschrieben.
+>
+> Weitere Informationen zum Erstellen einer registrierten Anwendung und Herunterladen der Softwareanweisung finden Sie in der Dokumentation zur [Übersicht über die dynamische Client-Registrierung](./dcr-api/dynamic-client-registration-overview.md) .
 
 Damit **einen bestimmten Temp-Pass zurücksetzen**, stellt die Adobe Pass-Authentifizierung Programmierern eine Web-API für *public* bereit:
 
-- **Umgebung:** gibt den Server-Endpunkt Adobe Pay-TV Pass an, der den Netzwerkaufruf Temp Pass zurücksetzen erhält. Mögliche Werte: **Prequal** (*mgmt-prequal.auth.adobe.com*), **Release** (*mgmt.auth.adobe.com*) oder **Benutzerdefiniert** (für interne Adobe-Tests reserviert).
-- **OAuth2-Zugriffstoken:** Das OAuth2-Token ist erforderlich, um den Programmierer für die Adobe Pay-TV-Authentifizierung zu autorisieren. Ein solches Token kann von [Dynamic Client Registration](dynamic-client-registration.md) abgerufen werden.
-- **Temp Pass ID:** Die eindeutige ID für den MVPD für den Temp Pass, der zurückgesetzt werden soll.(Ein Programmierer kann mehrere MVPDs mit Temp Pass verwenden und einen bestimmten zurücksetzen.)
-- **Generischer Schlüssel:** einige temporäre Pass-MVPDs (d. h. [Promotional temp pass](promotional-temp-pass.md)).
+* **Umgebung:** gibt den Server-Endpunkt Adobe Pay-TV Pass an, der den Netzwerkaufruf Temp Pass zurücksetzen erhält. Mögliche Werte: **Prequal** (*mgmt* prequal.auth.adobe.com*), **Release** (*mgmt.auth.adobe.com*) oder **Benutzerdefiniert** (für interne Adobe-Tests reserviert).
+* **OAuth2-Zugriffstoken:** Das OAuth2-Token ist erforderlich, um den Programmierer für die Adobe Pay-TV-Authentifizierung zu autorisieren. Ein solches Token kann wie in der API-Dokumentation [Zugriffstoken abrufen](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) beschrieben abgerufen werden.
+* **Temp Pass ID:** Die eindeutige ID für den MVPD für den Temp Pass, der zurückgesetzt werden soll.(Ein Programmierer kann mehrere MVPDs mit Temp Pass verwenden und einen bestimmten zurücksetzen.)
+* **Generischer Schlüssel:** einige temporäre Pass-MVPDs (d. h. [Promotional temp pass](promotional-temp-pass.md)).
 
 Alle oben genannten Parameter (außer dem *generischen Schlüssel*) sind obligatorisch. Im Folgenden finden Sie ein Beispiel für Parameter und den zugehörigen Netzwerkaufruf (das Beispiel hat die Form eines *curl *command):
 
-- **Umgebung:** Release (*mgmt.auth.adobe.com*)
-- **OAuth2-Zugriffstoken:** &lt;access_token> von [Dynamische Client-Registrierung](dynamic-client-registration.md)
-- **Programmierer-ID:** REF
-- **Temp Pass ID:** TempPassREF
-- **Generischer Schlüssel:** null (kein Wert angegeben)
+* **Umgebung:** Release (*mgmt.auth.adobe.com*)
+* **OAuth2-Zugriffstoken:** &lt;access_token>, wie in der API-Dokumentation [Zugriffstoken abrufen](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) beschrieben
+* **Programmierer-ID:** REF
+* **Temp Pass ID:** TempPassREF
+* **Generischer Schlüssel:** null (kein Wert angegeben)
 
 ```curl
 curl -X DELETE -H "Authorization:Bearer <access_token_here>" "https://mgmt.auth.adobe.com/reset-tempass/v3/reset?device_id=f23804a37802993fdc8e28a7f244dfe088b6a9ea21457670728e6731fa639991&requestor_id=REF&mvpd_id=TempPassREF"
@@ -63,19 +68,19 @@ DELETE https://mgmt.auth.adobe.com/reset-tempass/v3/reset
 >[!NOTE]
 >Die obige URL ersetzt die vorherige Reset-API. Die alte Reset-API (v1) wird nicht mehr unterstützt.
 
-- **Protokoll:** HTTPS
-- **Host:**
-   - Release - mgmt.auth.adobe.com
-   - Prequal - mgmt-prequal.auth.adobe.com
-- **Pfad:** /reset-tempass/v3/reset
-- **Abfrageparameter:** `device_id=all&requestor_id=REQUESTOR_ID&mvpd_id=TEMPPASS_MVPD_ID`
-- **Header:** Authorization: Bearer &lt;access_token_here>
-- **Antwort:**
-   - Erfolg - HTTP 204
-   - Fehler:
-      - HTTP 400 für eine falsche Anforderung
-      - HTTP 401 , wenn der Zugriff verweigert wird. Der Client MUSS ein neues access_token anfordern.
-      - HTTP 403 , wenn die Client-ID keine Anfragen mehr ausführen darf. Es sollten neue Client-Anmeldeinformationen generiert werden.
+* **Protokoll:** HTTPS
+* **Host:**
+   * Release - mgmt.auth.adobe.com
+   * Prequal - mgmt-prequal.auth.adobe.com
+* **Pfad:** /reset-tempass/v3/reset
+* **Abfrageparameter:** `device_id=all&requestor_id=REQUESTOR_ID&mvpd_id=TEMPPASS_MVPD_ID`
+* **Header:** Authorization: Bearer &lt;access_token_here>
+* **Antwort:**
+   * Erfolg - HTTP 204
+   * Fehler:
+      * HTTP 400 für eine falsche Anforderung
+      * HTTP 401 , wenn der Zugriff verweigert wird. Der Client MUSS ein neues access_token anfordern.
+      * HTTP 403 , wenn die Client-ID keine Anfragen mehr ausführen darf. Es sollten neue Client-Anmeldeinformationen generiert werden.
 
 
 Beispiel:

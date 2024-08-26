@@ -2,12 +2,13 @@
 title: Registrierung von iOS/tvOS-Anwendungen
 description: Registrierung von iOS/tvOS-Anwendungen
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '608'
+source-wordcount: '609'
 ht-degree: 0%
 
 ---
+
 
 # Registrierung von iOS/tvOS-Anwendungen {#iostvos-application-registration}
 
@@ -19,7 +20,7 @@ ht-degree: 0%
 
 Ab Version 3.0 des iOS/tvOS AccessEnabler SDK ändern wir den Authentifizierungsmechanismus mit Adobe-Servern. Statt einen öffentlichen Schlüssel und ein geheimes System zum Signieren der Anforderer-ID zu verwenden, führen wir das Konzept einer Software-Anweisungszeichenfolge ein, mit der ein Zugriffstoken abgerufen werden kann, das später für alle Aufrufe verwendet wird, die das SDK an unsere Server sendet. Zusätzlich zu einer Softwareanweisung benötigen Sie auch ein benutzerdefiniertes URL-Schema für Ihre Anwendung.
 
-Weitere Informationen finden Sie unter [Dynamische Client-Registrierung](/help/authentication/dynamic-client-registration.md)
+Weitere Informationen finden Sie unter [Übersicht über die dynamische Client-Registrierung](./dcr-api/dynamic-client-registration-overview.md).
 
 ## Was ist eine Software-Anweisung? {#Soft_state}
 
@@ -40,7 +41,7 @@ Eine Software-Anweisung ist ein JWT-Token, das Informationen über Ihre Anwendun
 - Es sollte eine Liste mit allen registrierten Anwendungen angezeigt werden. Klicken Sie auf   `Download` in der Anwendung, die Sie gerade erstellt haben. Möglicherweise müssen Sie einige Minuten warten, bis Ihre Software-Anweisung für den Download bereit ist.
 - Eine Textdatei wird heruntergeladen. Verwenden Sie die Inhalte als Ihre Software-Anweisung.
 
-Weitere Informationen finden Sie unter [Dynamisches Client-Registrierungs-Management](/help/authentication/dynamic-client-registration-management.md).
+Weitere Informationen finden Sie unter [Dynamisches Client-Registrierungs-Management](./dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 ### Wenn Sie keinen Zugriff auf das Adobe TVE Dashboard haben:
 

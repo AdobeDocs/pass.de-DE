@@ -2,9 +2,9 @@
 title: Android-Anwendungsregistrierung
 description: Android-Anwendungsregistrierung
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '585'
+source-wordcount: '586'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 Ab Version 3.0 des Android AccessEnabler SDK ändern wir den Authentifizierungsmechanismus mit Adobe-Servern. Statt einen öffentlichen Schlüssel und ein geheimes System zum Signieren der Anforderer-ID zu verwenden, führen wir das Konzept einer Software Statement-Zeichenfolge ein, die verwendet werden kann, um ein Zugriffstoken zu erhalten, das später für alle Aufrufe verwendet wird, die das SDK an unsere Server sendet. Zusätzlich zu einer Software-Anweisung müssen Sie auch einen Deep-Link für Ihre Anwendung erstellen.
 
-Weitere Informationen finden Sie unter [Dynamische Client-Registrierung](/help/authentication/dynamic-client-registration.md)
+Weitere Informationen finden Sie unter [Übersicht über die dynamische Client-Registrierung](./dcr-api/dynamic-client-registration-overview.md).
 
 ## Was ist eine Software-Anweisung? {#what}
 
@@ -57,7 +57,7 @@ Hier finden Sie Möglichkeiten, eine Software-Anweisung zu erhalten.
 
    Eine Textdatei wird heruntergeladen. Verwenden Sie den Inhalt als Ihre Software-Anweisung.
 
-Weitere Informationen finden Sie unter [Dynamisches Client-Registrierungsmanagement](/help/authentication/dynamic-client-registration-management.md)
+Weitere Informationen finden Sie unter [Dynamisches Client-Registrierungs-Management](./dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 ### Wenn Sie keinen Zugriff auf das Adobe TVE Dashboard haben
 

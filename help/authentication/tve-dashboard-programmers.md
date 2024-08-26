@@ -2,9 +2,9 @@
 title: Programmierer
 description: Erfahren Sie mehr über Programmierer und ihre Konfigurationen im TVE-Dashboard.
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '717'
+source-wordcount: '701'
 ht-degree: 0%
 
 ---
@@ -120,11 +120,11 @@ Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert wer
 
 ### Registrierte Anwendungen {#registered-applications}
 
-Dieser Tab enthält eine Liste der Registrierungen für Anwendungen. Weitere Informationen finden Sie unter [Dynamisches Client-Registrierungs-Management](/help/authentication/dynamic-client-registration-management.md) .
+Dieser Tab enthält eine Liste der Registrierungen für Anwendungen.
 
 ### Benutzerdefinierte Schemata {#custom-schemes}
 
-Auf dieser Registerkarte wird eine Liste benutzerdefinierter Schemata angezeigt. Weitere Informationen finden Sie unter [iOS/tvOS-Anwendungsregistrierung](/help/authentication/iostvos-application-registration.md) und [Dynamisches Client-Registrierungsmanagement](/help/authentication/dynamic-client-registration-management.md) .
+Auf dieser Registerkarte wird eine Liste benutzerdefinierter Schemata angezeigt. Anzeigen der [Registrierung der iOS/tvOS-Anwendung](/help/authentication/iostvos-application-registration.md).
 
 ## Hinzufügen neuer Programmierer {#add-new-programmer}
 

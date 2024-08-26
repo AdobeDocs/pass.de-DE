@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass-Authentifizierung
 user-guide-description: Die Adobe Pass-Authentifizierung ist eine Berechtigungslösung für TV Everywhere. Sie bietet ein modulares Framework, mit dem festgestellt werden kann, ob eine Person, die Zugriff auf eine Ressource anfordert, dazu berechtigt ist.
-source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1142'
+source-wordcount: '1149'
 ht-degree: 2%
 
 ---
@@ -68,7 +68,7 @@ ht-degree: 2%
             + [Profil für bestimmten Code abrufen](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
          + Entscheidungen {#rest-api-v2-decisions-apis}
             + [Abrufen von Autorisierungsentscheidungen mit einer bestimmten mvpd](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
-            + [Abrufen von Vorautorisierungsentscheidungen mithilfe bestimmter mvpd](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
+            + [Abrufen von Vorab-Autorisierungsentscheidungen mit einer bestimmten mvpd](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
          + Abmelden {#rest-api-v2-logout-apis}
             + [Initiieren der Abmeldung für bestimmte mvpd](./rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
          + Single Sign-On für Partner {#rest-api-v2-partner-single-sign-on-apis}
@@ -95,12 +95,13 @@ ht-degree: 2%
             + [Einmaliger Abmeldefluss](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-logout-flow.md)
       + Anhang {#rest-api-v2-appendix}
          + Kopfzeilen {#rest-api-v2-appendix-headers}
+            + [Kopfzeile - Autorisierung](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)
+            + [Header - AP-Device-Identifier](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
+            + [Header - X-Device-Info](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
             + [Header - AD-Service-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
             + [Header - Adobe-Subject-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
-            + [Header - AP-Device-Identifier](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
             + [Header - AP-Partner-Framework-Status](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
             + [Header - AP-TempPass-Identity](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
-            + [Header - X-Device-Info](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
    + AccessEnabler SDK {#accessenabler-sdk}
       + JavaScript SDK {#javascriptsdk}
          + [Übersicht über das JavaScript SDK](javascript-sdk-overview.md)
@@ -120,7 +121,7 @@ ht-degree: 2%
                + [Migrationshandbuch für iOS/tvOS v3.x](iostvos-v3x-migration-guide.md)
             + [iOS/tvOS-Speicherintegritätsprüfungen](iostvos-sdk-storage-integrity-checks.md)
          + iOS/tvOS-API {#ios-tvos-api}
-            + [Preauthorize](preauthorize.md)
+            + [Vorautorisieren](preauthorize.md)
       + Android SDK {#androidsdk}
          + [Übersicht über das Android SDK](android-sdk-overview.md)
          + [Android SDK-Cookbook](android-sdk-cookbook.md)
@@ -175,7 +176,7 @@ ht-degree: 2%
    + Temporärer Ablauf {#temp-pass}
       + [Temporärer Übergang](temp-pass.md)
       + [vorübergehender Promotionsübergang](promotional-temp-pass.md)
-      + [Temporären Pass zurücksetzen](reset-temp-pass.md)
+      + [Zurücksetzen des Vorübergangs](reset-temp-pass.md)
    + Single Sign-On {#sso}
       + [Unterstützung für Single Sign-On](sso-support.md)
       + [SSO über passive Authentifizierung](sso-passive-authn.md)
@@ -188,10 +189,13 @@ ht-degree: 2%
    + Fehlerberichterstellung {#error-reportn}
       + [Fehlerberichte](error-reporting.md)
       + [Erweiterte Fehlercodes](enhanced-error-codes.md)
-   + Kundenregistrierung {#client-regn}
-      + [Dynamische Kundenregistrierung](dynamic-client-registration.md)
-      + [Dynamische Client-Registrierungs-API](dynamic-client-registration-api.md)
-      + [Dynamisches Client-Registrierungs-Management](dynamic-client-registration-management.md)
+   + Kundenregistrierung {#dcr-api}
+      + [Übersicht über die dynamische Kundenregistrierung](./dcr-api/dynamic-client-registration-overview.md)
+      + APIs {#dcr-api-apis}
+         + [Abrufen von Client-Anmeldeinformationen](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
+         + [Zugriffstoken abrufen](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+      + Flüsse {#dcr-api-flows}
+         + [Dynamischer Client-Registrierungsfluss](./dcr-api/flows/dynamic-client-registration-flow.md)
    + Abbaudienst {#degrn-service}
       + [Übersicht über die Abbau-API](degradation-api-overview.md)
    + Datenschutzbereitschaft {#privacy-readiness}
@@ -282,4 +286,3 @@ ht-degree: 2%
    + [Berichte](/help/authentication/tve-dashboard-reports.md)
    + [Änderungsprotokoll](/help/authentication/tve-dashboard-changes-log.md)
 + [Glossar](glossary.md)
-
