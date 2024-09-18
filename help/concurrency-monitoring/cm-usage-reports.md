@@ -2,9 +2,9 @@
 title: Berichte zur gleichzeitigen Überwachung der Nutzung
 description: Berichte zur gleichzeitigen Überwachung der Nutzung
 exl-id: 20220436-e748-4b22-8e7c-e074e0bfe242
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: 36da78fd66cfbc86e7bea7575c757fef536c0755
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '799'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Der Dienst **Gebrauchsberichte zur gleichzeitigen Überwachung** ist über eine 
 
 ## Voraussetzungen {#usage-rep-prerequisites}
 
-Um auf das Produkt &quot;Gebrauchsberichte zur Überwachung der Parallelität&quot;zugreifen zu können, muss sich ein Kunde zunächst an das Supportteam zur Überwachung der Parallelität [1} wenden und die erforderlichen Schritte ausführen, um Ihnen den Zugriff auf das API-Produkt zu ermöglichen.](mailto:tve-support@adobe.com)
+Um auf das Produkt &quot;Gebrauchsberichte zur Überwachung der Parallelität&quot;zugreifen zu können, muss sich ein Kunde zunächst an das Supportteam zur Überwachung der Parallelität [1} wenden und die erforderlichen Schritte ausführen, um Ihnen den Zugriff auf das API-Produkt zu ermöglichen. ](mailto:tve-support@adobe.com) Weitere Informationen zum [CMU API-Zugriff](/help/concurrency-monitoring/cmu-api-access.md).
 
 ## Allgemeine Berichtsmetriken und -aufschlüsselungen {#general-rep-metrics-breakdown}
 
@@ -54,12 +54,12 @@ Um auf das Produkt &quot;Gebrauchsberichte zur Überwachung der Parallelität&qu
 ### Verwendungsberichte Benutzer können die oben aufgeführten Metriken nach den folgenden Dimensionen filtern: {#dimensions-2-filter-metrics}
 
 | Dimension Name | Beschreibung |
-|:---|:---|
+|:---------------|:------------------------------------------------------------------------------------------------------------------|
 | year | Das vierstellige Jahr |
 | month | Der Monat des Jahres (1-12) |
 | day | Der Tag des Monats (1-31) |
 | hour | Die Stunde des Tages |
-| minute | Die Stunde |
+| minute | Die Minute der Stunde[^1] |
 | Applikation | Der Anwendungsname, der unter &quot;Parallelitätsüberwachung&quot;registriert ist und zum Verwalten von Sitzungen verwendet wird |
 | application-id | Die in der Parallelitätsüberwachung registrierte Anwendungs-ID, die zum Verwalten von Sitzungen verwendet wird |
 | channel | Die Kanalmetadaten, die während der Initialisierung der Sitzung gesendet wurden (als unbekannt markiert markiert, wenn keine Metadaten gesendet wurden) |
@@ -88,3 +88,9 @@ Dieser Bericht soll Ihnen vor allem helfen, die Auswirkungen der Festlegung eine
 | Parallelitätsstufe | Stellt eine eindeutige **Stream-Aktivität dar, die in der Sitzungsinitialisierungsphase** für einen Benutzer genehmigt wurde, um feststellen zu können, wie viele gleichzeitige Streams **von einem Benutzer geöffnet wurden, und um die Auswirkungen der Anwendung einer bestimmten Parallelitätsbegrenzung zu verstehen.** |
 | Aktivitätsebene | Stellt eine beliebige **Stream-Aktivität dar (unabhängig vom Status: gestartet, aktiv, gestoppt, abgelehnt)** für einen Benutzer, um feststellen zu können, wie viele gleichzeitige Streams von einem Benutzer geöffnet werden konnten, und um die Auswirkungen der Anwendung einer bestimmten Parallelitätsbegrenzung zu verstehen. |
 | mvpd | Der bei der Sitzungsverwaltung bereitgestellte MVPD |
+
+### Beispiele für Berichte
+
+Um eine optimale Datengenauigkeit zu erzielen, empfehlen wir die auf dieser Seite dargestellten Berichte [Beispiele für CMU-Berichte](/help/concurrency-monitoring/cm-usage-reports-examples.md)
+
+[^1]: Minuale Berichte sind standardmäßig nicht verfügbar. Wenden Sie sich an das Supportteam zur Überwachung der Parallelität [1}, um sie anzufordern.](mailto:tve-support@adobe.com)

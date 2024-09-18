@@ -4,9 +4,9 @@ feature: Concurrency Monitoring
 audience: end-user
 user-guide-title: Überwachung der Parallelität von Adobe Pass
 user-guide-description: Erfahren Sie, wie Sie Begrenzungen für die gleichzeitige Nutzung mehrerer Anwendungen definieren und durchsetzen.
-source-git-commit: 37ad9151d404d58b7d4df2c959f3f8fcaa5c011f
+source-git-commit: 452ac2ebe140497464869f7cf9d579ecaf4018af
 workflow-type: tm+mt
-source-wordcount: '166'
+source-wordcount: '171'
 ht-degree: 9%
 
 ---
@@ -25,6 +25,7 @@ ht-degree: 9%
 + [Eskalationsverfahren](cm-escalation-procedures.md)
 + Nutzung der Parallelitätsüberwachung {#cmu}
    + [Berichte zur gleichzeitigen Überwachung der Nutzung](cm-usage-reports.md)
+   + [Beispiele für die Überwachung der Verwendung von Berichten](cm-usage-reports-examples.md)
    + [Context Monitoring-Nutzungs-API](cmu-api.md)
    + [Zugriff auf die API zur Überwachung der gleichzeitigen Verwendung](cmu-api-access.md)
 + Version 1 API{#v1-api}
