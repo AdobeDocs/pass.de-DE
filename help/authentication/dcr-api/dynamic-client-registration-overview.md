@@ -1,13 +1,13 @@
 ---
 title: Überblick über die dynamische Kundenregistrierung
 description: Überblick über die dynamische Kundenregistrierung
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
+source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
 workflow-type: tm+mt
 source-wordcount: '840'
 ht-degree: 0%
 
 ---
-
 
 # Überblick über die dynamische Kundenregistrierung {#dynamic-client-registration-overview}
 
@@ -53,7 +53,7 @@ Weitere Informationen zur Verwaltung und Verwendung der dynamischen Kundenregist
 
 Der dynamische Prozess zur Verwaltung der Clientregistrierung ermöglicht es Clientanwendungen, die auf bestimmten Plattformen ausgeführt werden und Zugriff auf bestimmte Adobe Pass-Authentifizierungs-APIs benötigen, um sich über das [Adobe Pass TVE Dashboard](https://console.auth.adobe.com/) zu registrieren.
 
-Das Adobe Pass TVE-Dashboard ist ein Tool für Adobe Pass-Authentifizierungskunden (Programmierer) zur Verwaltung ihrer Konfiguration und Daten. Dieses Self-Service-Dashboard ermöglicht eine Reihe von Funktionen, die in der Dokumentation zum [Adobe Pass TVE Dashboard-Benutzerhandbuch](../tve-dashboard-user-guide.md) beschrieben sind.
+Das Adobe Pass TVE-Dashboard ist ein Tool für Adobe Pass-Authentifizierungskunden (Programmierer) zur Verwaltung ihrer Konfiguration und Daten. Dieses Self-Service-Dashboard ermöglicht eine Reihe von Funktionen, die in der Dokumentation zum [Adobe Pass TVE Dashboard-Benutzerhandbuch](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md) beschrieben sind.
 
 Falls Sie Zugriff auf das [Adobe Pass TVE Dashboard](https://console.auth.adobe.com/) haben, führen Sie die folgenden Schritte aus, um eine registrierte Anwendung zu erstellen und die Softwareanweisung herunterzuladen.
 
@@ -67,12 +67,12 @@ Es gibt zwei Möglichkeiten, eine registrierte Anwendung zu erstellen:
 
 * **Programmiererebene**
 
-  Der Registrierungsprozess auf Programmierebene ermöglicht die Erstellung einer registrierten Anwendung, die mit allen verfügbaren Kanälen oder einer ausgewählten Untergruppe von Kanälen verknüpft ist. Weitere Informationen finden Sie im Abschnitt [Registrierte Anwendung auf Programmebene erstellen](../tve-dashboard-user-guide.md#create-registered-application-programmer-level) in der Dokumentation zum [TVE Dashboard-Benutzerhandbuch](../tve-dashboard-user-guide.md) .
+  Der Registrierungsprozess auf Programmierebene ermöglicht die Erstellung einer registrierten Anwendung, die mit allen verfügbaren Kanälen oder einer ausgewählten Untergruppe von Kanälen verknüpft ist. Weitere Informationen finden Sie im Abschnitt [Registrierte Anwendung auf Programmebene erstellen](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#create-registered-application-programmer-level) in der Dokumentation zum [TVE Dashboard-Benutzerhandbuch](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md) .
 
 
 * **Kanalebene**
 
-  Mit der Registrierung auf Kanalebene können Sie eine registrierte Anwendung erstellen, die nur mit dem aktuell ausgewählten Kanal verknüpft ist. Weitere Informationen finden Sie im Abschnitt [Registrierte Anwendung auf Kanalebene erstellen](../tve-dashboard-user-guide.md#create-registered-application-channel-level) in der Dokumentation zum [TVE Dashboard-Benutzerhandbuch](../tve-dashboard-user-guide.md) .
+  Mit der Registrierung auf Kanalebene können Sie eine registrierte Anwendung erstellen, die nur mit dem aktuell ausgewählten Kanal verknüpft ist. Weitere Informationen finden Sie im Abschnitt [Registrierte Anwendung auf Kanalebene erstellen](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#create-registered-application-channel-level) in der Dokumentation zum [TVE Dashboard-Benutzerhandbuch](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md) .
 
 >[!IMPORTANT]
 >
@@ -92,11 +92,11 @@ Es gibt zwei Möglichkeiten, eine Softwareanweisung herunterzuladen, die auf der
 
 * **Programmiererebene**
 
-  Weitere Informationen finden Sie im Abschnitt [Software-Anweisung auf Programmebene herunterladen](../tve-dashboard-user-guide.md#download-software-statement-programmer-level) in der Dokumentation zum [TVE Dashboard-Benutzerhandbuch](../tve-dashboard-user-guide.md) .
+  Weitere Informationen finden Sie im Abschnitt [Software-Anweisung auf Programmebene herunterladen](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#download-software-statement-programmer-level) in der Dokumentation zum [TVE Dashboard-Benutzerhandbuch](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md) .
 
 * **Kanalebene**
 
-  Weitere Informationen finden Sie im Abschnitt [Herunterladen einer Softwareanweisung auf Kanalebene](../tve-dashboard-user-guide.md#download-software-statement-channel-level) in der Dokumentation zum [TVE Dashboard-Benutzerhandbuch](../tve-dashboard-user-guide.md) .
+  Weitere Informationen finden Sie im Abschnitt [Herunterladen einer Softwareanweisung auf Kanalebene](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#download-software-statement-channel-level) in der Dokumentation zum [TVE Dashboard-Benutzerhandbuch](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md) .
 
 Die Softwareanweisung ist ein JSON-Web-Token (`JWT`), das Informationen zu Ihrer Client-Anwendungs-Software als Bundle enthält. Wenn der API [Client-Anmeldeinformationen abrufen](./apis/dynamic-client-registration-apis-retrieve-client-credentials.md) angezeigt wird, wird die Softwareanweisung digital mit JSON Web Signature (`JWS`) signiert.
 
