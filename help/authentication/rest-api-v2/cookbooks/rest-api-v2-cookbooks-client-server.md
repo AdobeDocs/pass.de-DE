@@ -1,7 +1,7 @@
 ---
 title: REST API V2-Cookbook (Client-to-Server)
 description: REST API V2-Cookbook (Client-to-Server)
-source-git-commit: 837276ce85445da5c3877592b194e37adf35fa32
+source-git-commit: 709835276710ec4b92abec3e39aaecae99872e77
 workflow-type: tm+mt
 source-wordcount: '689'
 ht-degree: 0%
@@ -29,24 +29,24 @@ Um die Adobe Pass REST API V2 zu implementieren, müssen Sie die folgenden Schri
 
 Damit die Anwendung die Adobe Pass REST API V2 aufrufen kann, benötigt sie ein Zugriffstoken, das von der API-Sicherheitsschicht benötigt wird.
 
-Um das Zugriffstoken zu erhalten, muss die Anwendung die folgenden Schritte ausführen: [Dynamische Client-Registrierung](./dynamic-client-registration.md)
+Um das Zugriffstoken zu erhalten, muss die Anwendung die folgenden Schritte ausführen: [Dynamische Client-Registrierung](../../dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)
 
 ## B. Authentifizierungsphase {#authentication-phase}
 
 ### Schritt 2: Auf vorhandene authentifizierte Profile überprüfen {#step-2-check-for-existing-authenticated-profiles}
 
 Prüfungen der Streaming-Anwendung auf vorhandene authentifizierte Profile: <b>/api/v2/{serviceProvider}/profiles</b><br>
-([Abrufen authentifizierter Profile](./apis/profiles-apis/rest-api-v2-retrieve-authenticated-profiles.md))
+([Abrufen authentifizierter Profile](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md))
 
 * Wenn kein Profil gefunden wurde und die Streaming-Anwendung einen TempPass-Fluss implementiert
    * Befolgen Sie die Dokumentation zur Implementierung von [temporären Zugriffsflüssen](../flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md).
 * Wenn kein Profil gefunden wurde, implementiert die Streaming-Anwendung einen Authentifizierungsfluss
    * Streaming-Anwendung ruft die Liste der für serviceProvider verfügbaren MVPDs ab: <b>/api/v2/{serviceProvider}/configuration</b><br>
-([Liste der verfügbaren MVPDs abrufen](./apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md))
+([Liste der verfügbaren MVPDs abrufen](../apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md))
    * Die Streaming-Anwendung kann die Filterung der Liste der MVPDs implementieren und nur MVPDs anzeigen, die beim Ausblenden anderer MVPDs vorgesehen sind (TempPass, MVPDs testen, MVPDs in der Entwicklung usw.)
    * Anzeigenauswahl der Streaming-Anwendung, Benutzer wählt den MVPD aus
    * Streaming-Anwendung erstellt eine Sitzung: <b>/api/v2/{serviceProvider}/sessions</b><br>
-([Erstellen einer Authentifizierungssitzung](./apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md))<br>
+([Erstellen einer Authentifizierungssitzung](../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md))<br>
       * ein CODE und eine URL zurückgegeben, die für die Authentifizierung verwendet werden sollen
       * Wenn ein Profil gefunden wird, kann die Streaming-Anwendung zu <a href="#preauthorization-phase">C wechseln. Vorabautorisierungsphase </a> oder <a href="#authorization-phase">D. Autorisierungsphase </a>
 
@@ -64,9 +64,9 @@ Verwenden eines Browsers oder einer Web-basierten Second Screen-Anwendung:
 Die Streaming-Anwendung prüft, ob die Authentifizierung mit MVPD im Browser oder im zweiten Bildschirm abgeschlossen ist.
 
 * Es wird empfohlen, alle 15 Sekunden auf <b>/api/v2/{serviceProvider}/profiles/{mvpd}</b><br> abzurufen.
-([Abrufen authentifizierter Profile für bestimmte MVPD](.apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md))
+([Abrufen authentifizierter Profile für bestimmte MVPD](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md))
    * Wenn in der Streaming-Anwendung keine MVPD-Auswahl vorgenommen wird, da die MVPD-Auswahl in der Anwendung &quot;Second Screen&quot;angezeigt wird, sollte die Abfrage mit CODE <b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br> erfolgen
-([Abrufen authentifizierter Profile für bestimmten CODE](./apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md))
+([Abrufen authentifizierter Profile für bestimmten CODE](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md))
 * Der Abruf sollte 30 Minuten nicht überschreiten, falls 30 Minuten erreicht werden und die Streaming-Anwendung weiterhin aktiv ist, eine neue Sitzung initiiert und ein neuer CODE und eine neue URL zurückgegeben werden.
 * Wenn die Authentifizierung abgeschlossen ist, ist die Rückgabe 200 mit authentifiziertem Profil.
 * Die Streaming-Anwendung kann mit <a href="#preauthorization-phase">C fortfahren. Vorabautorisierungsphase </a> oder <a href="#authorization-phase">D. Autorisierungsphase </a>
@@ -80,7 +80,7 @@ Zugriff auf diese Ressourcen.
 
 * Schritt ist optional und wird ausgeführt, wenn die Anwendung die Ressourcen filtern möchte, die im authentifizierten Benutzerpaket nicht verfügbar sind
 * Aufruf an <b>/api/v2/{serviceProvider}/decision/preauthorize/{mvpd}</b><br>
-([Vorabautorisierungsentscheidung mit einem bestimmten MVPD abrufen](.apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md))
+([Vorabautorisierungsentscheidung mit einem bestimmten MVPD abrufen](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md))
 
 ## D. Genehmigungsphase {#authorization-phase}
 
@@ -90,7 +90,7 @@ Die Streaming-Anwendung bereitet die Wiedergabe eines Videos/Assets/einer Ressou
 
 * Schritt für jeden Start der Wiedergabe erforderlich
 * Rufen Sie <b>/api/v2/{serviceProvider}/decision/authorize/{mvpd}</b><br> auf.
-([Abrufen einer Autorisierungsentscheidung mit einem bestimmten MVPD](.apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md))
+([Abrufen einer Autorisierungsentscheidung mit einem bestimmten MVPD](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md))
    * decision = &#39;Permit&#39; , Streaming-Gerät startet Streaming
    * decision = &#39;Deny&#39;, das Streaming-Gerät informiert den Benutzer darüber, dass er keinen Zugriff auf dieses Video hat
 
@@ -101,5 +101,5 @@ Die Streaming-Anwendung bereitet die Wiedergabe eines Videos/Assets/einer Ressou
 Streaming-Gerät: Benutzer möchte sich vom MVPD abmelden
 
 * Rufen Sie <b>/api/v2/{serviceProvider}/logout/{mvpd}</b><br> auf.
-([Initiate logout for specific MVPD](.apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md))
+([Initiate logout for specific MVPD](../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md))
 * Wenn die Antwort actionType=&#39;interactive&#39; und url vorhanden ist, öffnen Sie die URL in einem Browser/Zweiten Bildschirm, um die Abmeldung mit MVPD abzuschließen.
