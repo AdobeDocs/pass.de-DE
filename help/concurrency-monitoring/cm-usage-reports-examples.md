@@ -1,9 +1,9 @@
 ---
 title: Beispiele für die Überwachung der Verwendung von Berichten
 description: Beispiele für die Überwachung der Verwendung von Berichten
-source-git-commit: 7adfa5c803d27ac63f4fde64cf86edfb6bfca9cd
+source-git-commit: ca9bfb964ad7e7437bbea4704bca4ac5105874f1
 workflow-type: tm+mt
-source-wordcount: '2387'
+source-wordcount: '2374'
 ht-degree: 0%
 
 ---
@@ -67,8 +67,6 @@ ht-degree: 0%
 | Aktivitätsstufenbericht | &quot;year&quot;, &quot;month&quot;, &quot;day&quot;, &quot;activity level&quot; | cmu/v2/year/month/day/activity-level | &quot;Aktivitätsebene&quot;, &quot;Benutzer&quot; |
 | Aktivitätsstufenbericht pro Mandant | &quot;year&quot;, &quot;month&quot;, &quot;day&quot;, &quot;activity level&quot;, &quot;tenant&quot; | cmu/v2/year/month/day/activity-level/tenant | &quot;Aktivitätsebene&quot;, &quot;Mandant&quot;, &quot;Benutzer&quot; |
 | Aktivitätsstufenbericht pro Mandanten-MVPD | &quot;year&quot;, &quot;month&quot;, &quot;day&quot;, &quot;activity level&quot;, &quot;tenant&quot;, &quot;mvpd&quot; | cmu/v2/year/month/day/activity-level/tenant/mvpd | &quot;activity-level&quot;, &quot;tenant&quot;, &quot;mvpd&quot;,&quot;users&quot; |
-
-*TODO:Überprüfen Sie mit BG, ob die Berichte zur Gleichzeitigkeit und Aktivitätsebene korrekt sind *
 
 ## Beispiele für stündliche Berichte {#hourly-reports-examples}
 
