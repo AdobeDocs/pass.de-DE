@@ -1,9 +1,9 @@
 ---
 title: Beispiele für die Überwachung der Verwendung von Berichten
 description: Beispiele für die Überwachung der Verwendung von Berichten
-source-git-commit: 1ee6ba156364b183e7b5271e38af2c34687fca65
+source-git-commit: 7adfa5c803d27ac63f4fde64cf86edfb6bfca9cd
 workflow-type: tm+mt
-source-wordcount: '2400'
+source-wordcount: '2387'
 ht-degree: 0%
 
 ---
@@ -37,8 +37,6 @@ ht-degree: 0%
 | Monatlicher Bericht auf Aktivitätsebene | &quot;year&quot;, &quot;month&quot;, &quot;activity level&quot; | cmu/v2/year/month/activity-level | &quot;Aktivitätsebene&quot;, &quot;Benutzer&quot; |
 | Monatlicher Aktivitätsstufenbericht pro Mandant | &quot;year&quot;, &quot;month&quot;, &quot;activity level&quot;, &quot;tenant&quot; | cmu/v2/year/month/activity-level/tenant | &quot;Aktivitätsebene&quot;, &quot;Mandant&quot;, &quot;Benutzer&quot; |
 | Monatlicher Bericht auf Aktivitätsebene pro Mandanten-MVPD | &quot;year&quot;, &quot;month&quot;, &quot;activity level&quot;, &quot;tenant&quot;, &quot;mvpd&quot; | cmu/v2/year/month/activity-level/tenant/mvpd | &quot;activity-level&quot;, &quot;tenant&quot;, &quot;mvpd&quot;,&quot;users&quot; |
-
-*TODO:Überprüfen Sie mit BG, ob die Berichte zur Gleichzeitigkeit und Aktivitätsebene korrekt sind *
 
 ## Beispiele für tägliche Berichte {#daily-reports-examples}
 
