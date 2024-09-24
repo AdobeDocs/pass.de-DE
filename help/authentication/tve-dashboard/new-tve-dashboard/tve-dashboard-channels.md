@@ -2,9 +2,9 @@
 title: Kanäle
 description: Erfahren Sie mehr über Kanäle und ihre verschiedenen Konfigurationen im TVE-Dashboard.
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: c29af84963b010ef9d2a2d318486aae8fffccecc
 workflow-type: tm+mt
-source-wordcount: '1115'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -211,7 +211,88 @@ Die ausgewählte Domäne ist nicht mehr verfügbar. Daher verliert die mit diese
 
 ### Registrierte Anwendungen {#registered-applications}
 
-Auf dieser Registerkarte wird eine Liste benutzerdefinierter Schemata angezeigt. Anzeigen der [Registrierung der iOS/tvOS-Anwendung](/help/authentication/iostvos-application-registration.md).
+Auf dieser Registerkarte wird eine Liste der registrierten Anwendungen angezeigt. Weitere Informationen zur Verwendung registrierter Anwendungen finden Sie in der Dokumentation [Übersicht zur dynamischen Client-Registrierung](../../dcr-api/dynamic-client-registration-overview.md) .
+
+Sie können die folgenden Aktionen für registrierte Anwendungen ausführen:
+
+* [Neue registrierte Anwendung hinzufügen](#add-registered-applications)
+* [Software-Anweisung herunterladen](#download-software-statement)
+
+#### Neue registrierte Anwendung hinzufügen {#add-registered-applications}
+
+Führen Sie diese Schritte aus, um eine neue registrierte Anwendung hinzuzufügen.
+
+1. Wählen Sie oben rechts im Abschnitt **Registrierte Anwendungen** die Option **Neue Anwendung hinzufügen** aus.
+
+   ![Neue Anwendung hinzufügen](../../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-application-button.png)
+
+   *Neue Anwendung hinzufügen*
+
+1. Wählen Sie **Plattformen** aus dem Dropdown-Menü im Dialogfeld **Neue Anwendung** aus.
+
+   >[!IMPORTANT]
+   >
+   > Es wird empfohlen, registrierte Anwendungen mit spezifischeren und eingeschränkteren Berechtigungen zu erstellen, um die Sicherheit zu erhöhen und den unbefugten Zugriff zu verhindern. Daher sollten Sie beim Erstellen registrierter Anwendungen engere Optionen für die zugewiesene `platforms` verwenden.
+
+1. Wählen Sie **Domänen** aus dem Dropdown-Menü aus.
+
+   >[!IMPORTANT]
+   >
+   > Bei der Client-Registrierung kann die Client-Anwendung anfordern, eine Umleitungs-URL für die Fertigstellung des Authentifizierungsflusses verwenden zu dürfen. Wenn eine Client-Anwendung eine bestimmte Umleitungs-URL verwendet, wird sie anhand des in dieser Auswahl ausgewählten `domains` validiert.
+
+1. Geben Sie den **Namen** der Anwendung ein.
+
+1. Geben Sie die **Version** der Anwendung ein.
+
+   >[!IMPORTANT]
+   >
+   > Es wird empfohlen, eine neue registrierte Anwendung für jede größere Aktualisierung Ihrer Clientanwendung zu erstellen, um deren Lebenszyklus und Nutzung zu verwalten. Erstellen Sie bei Bedarf ein Ticket über unser [Zendesk](https://adobeprimetime.zendesk.com) und bitten Sie Ihren technischen Kundenbetreuer (TAM), eine registrierte Anwendung zu widerrufen, um die Funktionalität einer bestimmten Client-Anwendungsversion zu blockieren.
+
+1. Wählen Sie den Wert **Typ** &quot;DIRECT&quot;aus dem Dropdown-Menü aus.
+
+1. Wählen Sie **Anwendung hinzufügen** aus.
+
+Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. Um die im Abschnitt **Registrierte Anwendungen** aufgelistete neue registrierte Anwendung zu verwenden, fahren Sie mit dem Fluss [Überprüfung und Push-Änderungen](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-review-push-changes.md) fort.
+
+#### Software-Anweisung herunterladen {#download-software-statement}
+
+Führen Sie diese Schritte aus, um eine Softwareanweisung herunterzuladen.
+
+1. Bewegen Sie den Mauszeiger über die registrierte Anwendung, die Sie die Softwareanweisung aus der Liste der **Registrierten Anwendungen** herunterladen möchten.
+
+1. Wählen Sie **Download** aus.
+
+   ![Herunterladen einer Softwareanweisung](../../assets/tve-dashboard/new-tve-dashboard/channels/channel-download-software-statement-button.png)
+
+   *Herunterladen einer Softwareanweisung*
+
+### Benutzerdefinierte Schemata {#custom-schemes}
+
+Auf dieser Registerkarte wird eine Liste benutzerdefinierter Schemata angezeigt. Weitere Informationen zur Verwendung benutzerdefinierter Schemas finden Sie in der [Registrierung der iOS/tvOS-Anwendung](/help/authentication/iostvos-application-registration.md).
+
+Sie können die folgenden Änderungen an benutzerdefinierten Schemata vornehmen:
+
+* [Neues benutzerdefiniertes Schema erstellen](#generate-custom-schemes)
+
+#### Neues benutzerdefiniertes Schema generieren {#generate-custom-schemes}
+
+Führen Sie diese Schritte aus, um ein neues benutzerdefiniertes Schema zu erstellen.
+
+1. Wählen Sie **Neues benutzerdefiniertes Schema generieren** aus.
+
+   ![Erstellen eines neuen benutzerdefinierten Schemas](../../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-custom-scheme-button.png)
+
+   *Erstellen eines neuen benutzerdefinierten Schemas*
+
+Eine neue Konfigurationsänderung wurde erstellt und kann jetzt aktualisiert werden. Um das neue benutzerdefinierte Schema zu verwenden, das im Abschnitt **Benutzerdefinierte Schemas** aufgeführt ist, fahren Sie mit dem Fluss [Überprüfung und Push-Änderungen](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-review-push-changes.md) fort.
+
+#### Vererbte benutzerdefinierte Schemata {#inherited-custom-schemes}
+
+Medienunternehmen definieren diese benutzerdefinierten Schemas auf ihrer eigenen Ebene. Alle mit demselben Medienunternehmen verknüpften Kanäle können diese benutzerdefinierten Schemas verwenden.
+
+![Vererbte benutzerdefinierte Schemas](../../assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-custom-schemes-panel-view.png)
+
+*Vererbte benutzerdefinierte Schemas*
 
 ## Neuen Kanal hinzufügen {#add-new-channel}
 
