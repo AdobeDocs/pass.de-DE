@@ -2,7 +2,7 @@
 title: Willkommen bei Adobe&reg; Pass Authentication!
 description: Willkommen bei Adobe&reg; Übersicht über die Pass-Authentifizierung
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
 source-wordcount: '331'
 ht-degree: 0%
@@ -26,8 +26,8 @@ Ihr Feedback ist stets willkommen!
 ## Beliebte Hilfe und häufig gestellte Fragen {#help-faqs}
 
 | **Vorgestellte Elemente** |
-|-|
-| <ul><li>[Single Sign-On für iOS](/help/authentication/apple-sso-overview.md)</li><li>[Weiterleitungs-Temp-Pass](/help/authentication/promotional-temp-pass.md)</li><li>[Hausbasierte Authentifizierung (HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[HBA-Infografik](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Adobe Pass TVE Dashboard-Benutzerhandbuch](/help/authentication/tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)</li></ul> |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <ul><li>[Single Sign-On für iOS](/help/authentication/apple-sso-overview.md)</li><li>[Weiterleitungs-Temp-Pass](/help/authentication/promotional-temp-pass.md)</li><li>[Hausbasierte Authentifizierung (HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[HBA-Infografik](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Adobe Pass TVE Dashboard-Benutzerhandbuch](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
 
 | **Für Programmierer** | **Für MVPDs** |
 |------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|

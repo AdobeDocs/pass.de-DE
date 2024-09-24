@@ -2,7 +2,7 @@
 title: Registrierung von iOS/tvOS-Anwendungen
 description: Registrierung von iOS/tvOS-Anwendungen
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 0%
@@ -32,7 +32,7 @@ Eine Software-Anweisung ist ein JWT-Token, das Informationen über Ihre Anwendun
 
 ### Wenn Sie Zugriff auf das Adobe TVE-Dashboard haben:
 
-- Öffnen Sie den Browser und navigieren Sie zu <https://console.auth.adobe.com>
+- Öffnen Sie den Browser und navigieren Sie zu <https://experience.adobe.com/#/pass/authentication>
 - Navigieren Sie zum Abschnitt `Channels` und wählen Sie Ihren Kanal aus.
 - Navigieren Sie zur Registerkarte `Registered Applications` .
 - Klicken Sie auf `Add new application`.
@@ -55,7 +55,7 @@ Nachdem Sie Ihre Software-Anweisung erhalten haben, müssen Sie sie als Parament
 
 ### Wenn Sie Zugriff auf das Adobe TVE-Dashboard haben:
 
-- Öffnen Sie den Browser und navigieren Sie zu <https://console.auth.adobe.com>
+- Öffnen Sie den Browser und navigieren Sie zu <https://experience.adobe.com/#/pass/authentication>
 - Navigieren Sie zum Abschnitt `Channels` und wählen Sie Ihren Kanal aus.
 - Navigieren Sie zur Registerkarte `Custom Schemes` .
 - Klicken Sie auf `Generate a new custom scheme`.

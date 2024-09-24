@@ -2,7 +2,7 @@
 title: Amazon FireOS-Anwendungsregistrierung
 description: Amazon FireOS-Anwendungsregistrierung
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
 source-wordcount: '515'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Eine Software-Anweisung ist ein JWT-Token, das Informationen über Ihre Anwendun
 
 ### Wenn Sie Zugriff auf das Adobe TVE-Dashboard haben:
 
-1. Öffnen Sie den Browser und navigieren Sie zu &quot;`https://console.auth.adobe.com`&quot;.
+1. Öffnen Sie den Browser und navigieren Sie zu &quot;`https://experience.adobe.com/#/pass/authentication`&quot;.
 
 1. Navigieren Sie zum Abschnitt **[!UICONTROL Channels]** und wählen Sie dann Ihren Kanal aus.
 

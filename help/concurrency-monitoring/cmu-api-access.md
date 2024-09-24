@@ -2,9 +2,9 @@
 title: Zugriff auf CMU-API
 description: Zugriff auf CMU-API
 exl-id: 8d216703-aabc-489e-93fe-d4d105616b1d
-source-git-commit: 52c0ffe75f6ac9fda3da39ff08b0dc4c5d5ca428
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '420'
 ht-degree: 0%
 
 ---
@@ -27,20 +27,22 @@ Führen Sie die Schritte in den folgenden Abschnitten aus, um Zugriff zu erhalte
 ## Schritte für Zugriffsverfahren {#access-procedure-steps}
 
 1. Sie benötigen eine registrierte Anwendung im Adobe Pass DCR-Server. Wenden Sie sich für diesen Schritt an unser [Supportteam](mailto:tve-support@adobe.com).
+
 2. Softwareanweisung abrufen
-   1. Wechseln Sie zu TVE Dashboard <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pre-Prod </a> oder <a href="https://console.auth.adobe.com/" target="_blank">PROD</a> .
-   2. Programmierer auswählen
-   3. Registerkarte &quot;Anwendungen&quot;
+   1. Navigieren Sie zu [Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication)
+   2. Select Programmer
+   3. Navigieren Sie zur Registerkarte *Registrierte Anwendungen* .
    4. Anwendung auswählen
-   5. Klicken Sie auf DownLoad-Softwareanweisung , um eine Datei ähnlich der unten aufgeführten zu erhalten.
+   5. Klicken Sie auf die Zeile der registrierten Anwendung, für die Sie eine Softwareanweisung abrufen möchten, und speichern Sie sie als Datei auf Ihrem lokalen Computer
       <figure>
-          <img src="assets/software_statement_1_download.png"
+          <img src="assets/programmer-download-software-statement-button.png"
                alt="Software-Anweisung herunterladen">
-       </figure>
+      </figure>
+
       <figure>
           <img src="assets/software_statement_2.png"
                alt="Beispiel für Software-Aussagen">
-       </figure>
+      </figure>
 
 3. Zugriffstoken abrufen
    1. Rufen Sie mithilfe der oben abgerufenen Softwareanweisung Client-Anmeldeinformationen ab und führen Sie den nachfolgenden Aufruf aus. Auf diese Weise wird ein client_id - client_secret -Paar abgerufen, das zum Abrufen des Zugriffstokens verwendet werden kann.
