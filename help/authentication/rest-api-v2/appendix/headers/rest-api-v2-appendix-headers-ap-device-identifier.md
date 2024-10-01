@@ -1,13 +1,13 @@
 ---
 title: Header - AP-Device-Identifier
 description: REST API V2 - Header - AP-Device Identifier
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 90a5882b-2e6d-4e67-994a-050465cac6c6
+source-git-commit: 8f4fb5d6cc8b45b300010438c56d4af2e8fc0a76
 workflow-type: tm+mt
-source-wordcount: '103'
+source-wordcount: '413'
 ht-degree: 0%
 
 ---
-
 
 # Header - AP-Device-Identifier {#header-ap-device-identifier}
 
@@ -50,7 +50,11 @@ Es gibt nur einen unterstützten Typ, wie unten dargestellt.
    </tr>
    <tr>
       <td>Fingerabdruck</td>
-      <td>Die Geräte-ID besteht aus einer undurchsichtigen Kennung und wird von der Clientanwendung erstellt.</td>
+      <td>
+            Die Gerätekennung besteht aus einer stabilen und eindeutigen Kennung, die von der Clientanwendung erstellt und verwaltet wird.
+            <br/>
+            Die Clientanwendung muss Wertänderungen verhindern, die durch Benutzeraktionen wie Deinstallation, Neuinstallation oder Aktualisierung der Anwendung verursacht werden.
+      </td>
    </tr>
 </table>
 
@@ -70,3 +74,63 @@ Der `Base64-encoded` -Wert der Geräte-ID.
 
 AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
 ```
+
+## Cookbooks {#cookbooks}
+
+>[!IMPORTANT]
+>
+> Die Dokumentationsressourcen werden zu Referenzzwecken bereitgestellt.
+>
+> Die Dokumentationsressourcen sind nicht vollständig und erfordern möglicherweise zusätzliche Änderungen, damit Sie in Ihrem Projekt arbeiten können.
+> 
+> Unabhängig von Ihrer eigentlichen Implementierung muss die Kopfzeile `AP-Device-Identifier` einen formatierten Wert enthalten, wie im Abschnitt [Direktiven](#directives) beschrieben.
+
+### Browser {#browsers}
+
+Um die Kopfzeile &quot;`AP-Device-Identifier`&quot;für Geräte zu erstellen, die in einem Browser ausgeführt werden, muss Ihre Clientanwendung eine stabile und eindeutige Kennung basierend auf verfügbaren Daten wie Browser-, Geräte- oder benutzerspezifischen Daten berechnen.
+
+_(*) Es wird empfohlen, eine Bibliothek oder einen Dienst zu integrieren, die bzw. der einen Fingerabdruckmechanismus für Browser oder Geräte bereitstellt._
+
+### Mobilgeräte {#mobile-devices}
+
+#### iOS und iPadOS {#ios-ipados}
+
+Um die Kopfzeile `AP-Device-Identifier` für Geräte zu erstellen, auf denen [iOS oder iPadOS](https://developer.apple.com/documentation/ios-ipados-release-notes) ausgeführt wird, lesen Sie die folgenden Dokumente:
+
+* Apple-Entwicklerdokumentation für [identifierForVendor](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor).
+
+_(*) Wir empfehlen, eine SHA-256-Hash-Funktion auf den vom Betriebssystem bereitgestellten Wert anzuwenden._
+
+#### Android {#android}
+
+Um die Kopfzeile `AP-Device-Identifier` für Geräte zu erstellen, auf denen [Android](https://developer.android.com/about/versions) ausgeführt wird, lesen Sie die folgenden Dokumente:
+
+* Android-Entwicklerdokumentation für [ANDROID_ID](https://developer.android.com/reference/android/provider/Settings.Secure#ANDROID_ID).
+
+_(*) Wir empfehlen, eine SHA-256-Hash-Funktion auf den vom Betriebssystem bereitgestellten Wert anzuwenden._
+
+### TV-vernetzte Geräte {#tv-connected-devices}
+
+#### tvOS {#tvos}
+
+Um die Kopfzeile `AP-Device-Identifier` für Geräte zu erstellen, auf denen [tvOS](https://developer.apple.com/documentation/tvos-release-notes) ausgeführt wird, lesen Sie die folgenden Dokumente:
+
+* Apple-Entwicklerdokumentation für [identifierForVendor](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor).
+
+_(*) Wir empfehlen, eine SHA-256-Hash-Funktion auf den vom Betriebssystem bereitgestellten Wert anzuwenden._
+
+#### Fire OS {#fireos}
+
+Um die Kopfzeile `AP-Device-Identifier` für Geräte zu erstellen, auf denen [Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html) ausgeführt wird, lesen Sie die folgenden Dokumente:
+
+* Android-Entwicklerdokumentation für [ANDROID_ID](https://developer.android.com/reference/android/provider/Settings.Secure#ANDROID_ID).
+
+_(*) Wir empfehlen, eine SHA-256-Hash-Funktion auf den vom Betriebssystem bereitgestellten Wert anzuwenden._
+
+#### Roku OS {#rokuos}
+
+Um die Kopfzeile `AP-Device-Identifier` für Geräte zu erstellen, auf denen [Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md) ausgeführt wird, lesen Sie die folgenden Dokumente:
+
+* Roku-Entwicklerdokumentation für [GetChannelClientId](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string).
+
+_(*) Wir empfehlen, eine SHA-256-Hash-Funktion auf den vom Betriebssystem bereitgestellten Wert anzuwenden._
