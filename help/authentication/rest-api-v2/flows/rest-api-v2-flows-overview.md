@@ -1,21 +1,21 @@
 ---
-title: REST API V2 - Flüsse - Übersicht
-description: REST API V2 - Flüsse - Übersicht
+title: REST API V2-Flüsse - Überblick
+description: REST API V2-Flüsse - Überblick
 exl-id: 84a9ac0f-c26a-4159-82a8-3a31bb31f529
-source-git-commit: 94fcb4e8c94330561596cd4006738c4f4d75e371
+source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
 workflow-type: tm+mt
-source-wordcount: '167'
+source-wordcount: '170'
 ht-degree: 0%
 
 ---
 
-# REST API V2 - Flüsse - Übersicht {#rest-api-v2-flows-overview}
+# REST API V2-Flüsse - Überblick {#rest-api-v2-flows-overview}
 
 >[!IMPORTANT]
 >
 > Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
-Um zu beginnen, besuchen Sie die öffentliche Dokumentation jedes Eintrags aus der folgenden Liste.
+Um zu beginnen, besuchen Sie die öffentliche Dokumentation der Flüsse, die in der folgenden Liste aufgeführt sind.
 
 ## Grundlegende Zugriffsflüsse {#rest-api-v2-flows-access-basic}
 
