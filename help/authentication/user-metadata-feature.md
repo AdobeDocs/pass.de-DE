@@ -2,9 +2,9 @@
 title: Funktion für Benutzermetadaten
 description: Funktion für Benutzermetadaten
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 8c5203aa4a897a5e119a9886afc64a1b1556ee4f
 workflow-type: tm+mt
-source-wordcount: '1644'
+source-wordcount: '1654'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Wichtige Punkte zu Benutzermetadaten:
 - Wird während der Authentifizierungs- und Autorisierungsflüsse an die Anwendung des Programmierers übergeben
 - Werte werden im Token gespeichert
 - Werte können normalisiert werden, wenn verschiedene MVPDs Daten in verschiedenen Formaten bereitstellen
-- Einige Parameter können mit dem Schlüssel des Programmierers verschlüsselt werden (z. B. Postleitzahl)
+- Einige Parameter können mit dem Schlüssel des Programmierers verschlüsselt werden (z. B. Postleitzahl). Informationen zur Generierung von Verschlüsselungszertifikaten finden Sie unter [Benutzer-Metadatenzertifikat für Verschlüsselung](./user-metadata-certificate.md) .
 - Spezifische Werte werden durch Adobe über eine Konfigurationsänderung bereitgestellt
 
 ## Abrufen von Benutzermetadaten {#obtaining}
