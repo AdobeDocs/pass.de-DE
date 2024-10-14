@@ -1,13 +1,13 @@
 ---
 title: Initiieren der Abmeldung für bestimmte mvpd
 description: REST API V2 - Initiierung der Abmeldung für bestimmte mvpd
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '913'
+source-wordcount: '915'
 ht-degree: 0%
 
 ---
-
 
 # Initiieren der Abmeldung für bestimmte mvpd {#initiate-logout-for-specific-mvpd}
 
@@ -303,8 +303,8 @@ ht-degree: 0%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">error</td>
-      <td>Der Fehler enthält zusätzliche Informationen, die der Dokumentation <a href="../../../enhanced-error-codes.md">Verbesserte Fehlercodes</a> entsprechen.</td>
+      <td style="background-color: #DEEBFF;"></td>
+      <td>Der Antworttext kann zusätzliche Fehlerinformationen bereitstellen, die der Dokumentation <a href="../../../enhanced-error-codes.md">Verbesserte Fehlercodes</a> entsprechen.</td>
       <td><i>erforderlich</i></td>
    </tr>
 </table>

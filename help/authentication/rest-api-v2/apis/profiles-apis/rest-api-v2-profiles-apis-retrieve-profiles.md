@@ -1,13 +1,13 @@
 ---
 title: Profile abrufen
 description: REST API V2 - Profile abrufen
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '829'
-ht-degree: 0%
+source-wordcount: '831'
+ht-degree: 1%
 
 ---
-
 
 # Profile abrufen {#retrieve-profiles}
 
@@ -306,8 +306,8 @@ ht-degree: 0%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">error</td>
-      <td>Der Fehler enthält zusätzliche Informationen, die der Dokumentation <a href="../../../enhanced-error-codes.md">Verbesserte Fehlercodes</a> entsprechen.</td>
+      <td style="background-color: #DEEBFF;"></td>
+      <td>Der Antworttext kann zusätzliche Fehlerinformationen bereitstellen, die der Dokumentation <a href="../../../enhanced-error-codes.md">Verbesserte Fehlercodes</a> entsprechen.</td>
       <td><i>erforderlich</i></td>
    </tr>
 </table>

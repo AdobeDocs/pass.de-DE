@@ -4,7 +4,7 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass-Authentifizierung
 user-guide-description: Die Adobe Pass-Authentifizierung ist eine Berechtigungslösung für TV Everywhere. Sie bietet ein modulares Framework, mit dem festgestellt werden kann, ob eine Person, die Zugriff auf eine Ressource anfordert, dazu berechtigt ist.
-source-git-commit: 8c5203aa4a897a5e119a9886afc64a1b1556ee4f
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
 source-wordcount: '1174'
 ht-degree: 2%
@@ -113,8 +113,8 @@ ht-degree: 2%
          + [JavaScript SDK-API-Referenz](javascript-sdk-api-reference.md)
          + Richtlinien {#js-sdk-guidelines}
             + [Anmeldung ohne Aktualisierung und Abmeldung](refreshless-login-and-logout.md)
-         + JavaScript API {#js-api}
-            + [Vorautorisieren](js-preauthorize.md)
+         + JavaScript API {#javascript-sdk-api}
+            + [Vorautorisieren](preauthorize-api-javascript-sdk.md)
       + iOS/tvOS-SDK {#ios-sdk}
          + [Übersicht über das iOS/tvOS-SDK](iostvos-sdk-overview.md)
          + [iOS/tvOS-SDK-Cookbook](iostvos-sdk-cookbook.md)
@@ -124,8 +124,8 @@ ht-degree: 2%
             + Migrationsrichtlinien {#migration-guidelines}
                + [Migrationshandbuch für iOS/tvOS v3.x](iostvos-v3x-migration-guide.md)
             + [iOS/tvOS-Speicherintegritätsprüfungen](iostvos-sdk-storage-integrity-checks.md)
-         + iOS/tvOS-API {#ios-tvos-api}
-            + [Vorautorisieren](preauthorize.md)
+         + iOS/tvOS-API {#ios-tvos-sdk-api}
+            + [Vorautorisieren](preauthorize-api-ios-tvos-sdk.md)
       + Android SDK {#androidsdk}
          + [Übersicht über das Android SDK](android-sdk-overview.md)
          + [Android SDK-Cookbook](android-sdk-cookbook.md)
@@ -133,8 +133,8 @@ ht-degree: 2%
          + Richtlinien {#androidguidelines}
             + [Android-Anwendungsregistrierung](android-application-registration.md)
             + [Android SDK mit dynamischer Client-Registrierung](android-sdk-with-dynamic-client-registration.md)
-         + Android-API{#androidapi}
-            + [Vorautorisieren](preauthorize-android.md)
+         + Android-API{#android-sdk-api}
+            + [Vorautorisieren](preauthorize-api-android-sdk.md)
       + Amazon FireOS-SDK {#fireossdk}
          + [Amazon FireOS SSO - Handbuch zum Programmstart](amazon-firetv-sso-programmer-kickoff-guide.md)
          + [Amazon FireOS SSO mit clientless API-Cookbook](amazon-fireos-sso-using-clientless-api-cookbook.md)

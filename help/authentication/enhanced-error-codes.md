@@ -2,193 +2,369 @@
 title: Verbesserte Fehlercodes
 description: Verbesserte Fehlercodes
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 87639ad93d8749ae7b1751cd13a099ccfc2636ac
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '2207'
+source-wordcount: '2593'
 ht-degree: 2%
 
 ---
 
 # Verbesserte Fehlercodes {#enhanced-error-codes}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 >Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
 
-## Übersicht {#overview}
+Verbesserte Fehlercodes stellen eine Adobe Pass-Authentifizierungsfunktion dar, die zusätzliche Fehlerinformationen für Client-Anwendungen bereitstellt, die in Folgendes integriert sind:
 
-In diesem Dokument werden die Liste der API-Fehlercodes und zusätzliche Fehlerinformationen beschrieben, die an die Anwendungen zurückgegeben werden.
+* Adobe Pass Authentication REST APIs:
+   * [REST API v1](./rest-api-overview.md)
+   * [REST API v2](./rest-api-v2/apis/rest-api-v2-apis-overview.md)
+* Adobe Pass Authentication SDKs Preauthorize API:
+   * [JavaScript SDK (Preauthorize API)](./preauthorize-api-javascript-sdk.md)
+   * [iOS/tvOS-SDK (Vorabautorisierungs-API)](./preauthorize-api-ios-tvos-sdk.md)
+   * [Android SDK (Preauthorize API)](./preauthorize-api-android-sdk.md)
 
-Um in der Programmeranwendung Enhanced Error Codes zu verwenden, muss eine Anfrage an das Supportteam gestellt werden, damit es mit einer Konfigurationsänderung aktiviert werden kann.
+  _(*) Die Vorabautorisierungs-API ist die einzige Adobe Pass Authentication SDK-API, die Unterstützung für erweiterte Fehlercodes bietet._
 
-## Umgang mit Antwortfehlern {#response-error-handling}
+>[!IMPORTANT]
+>
+> Anwendungen, die die Adobe Pass Authentication REST API v2 integrieren, profitieren standardmäßig von erweiterten Fehlercodes, ohne dass eine zusätzliche Konfiguration erforderlich ist.
+>
+> <br/>
+>
+> Anwendungen, die die Adobe Pass Authentication REST API v1 oder die Vorabautorisierungs-API der SDKs integrieren, können nur dann von den erweiterten Fehlercodes profitieren, wenn die Funktion explizit aktiviert ist.
+>
+> <br/>
+>
+> Um diese Funktion explizit zu aktivieren, erstellen Sie ein Ticket über unseren [Zendesk](https://adobeprimetime.zendesk.com) und bitten Sie Ihren technischen Kundenbetreuer (TAM) um Hilfe.
 
-In den meisten Szenarien enthält die Adobe Pass-Authentifizierungs-API zusätzliche Fehlerinformationen im Antworttext, um **einen aussagekräftigen Kontext** zu bieten, warum ein bestimmter Fehler aufgetreten ist, und/oder mögliche Lösungen zur automatischen Behebung des Problems.  *In bestimmten Fällen, bei denen es sich um Authentifizierungs- oder Abmeldevorgänge handelt, geben die Adobe Pass-Authentifizierungsdienste möglicherweise eine HTML-Antwort oder einen leeren Text zurück. Weitere Informationen finden Sie in der API-Dokumentation.*
+## Darstellung {#enhanced-error-codes-representation}
 
-Während bestimmte Fehlertypen automatisch verarbeitet werden können (z. B. eine Autorisierungsanfrage im Fall einer Netzwerk-Zeitüberschreitung erneut auszuführen oder eine erneute Authentifizierung des Benutzers zu verlangen, wenn seine Sitzung abgelaufen ist), erfordern andere Typen möglicherweise Konfigurationsänderungen oder die Interaktion des Kundenbetreuungsteams. Es ist wichtig, dass Programmierer in solchen Fällen vollständige Fehlerinformationen erfassen und bereitstellen.
+Verbesserte Fehlercodes können je nach integrierter Adobe Pass-Authentifizierungs-API und dem verwendeten Header-Wert &quot;Accept&quot;(d. h. `application/json` oder `application/xml`) im Format `JSON` oder `XML` dargestellt werden:
 
-Die Adobe Pass Authentication API gibt HTTP-Status-Codes im Bereich 400-500 zurück, um Fehler oder Fehler anzuzeigen. Jeder HTTP-Status-Code hat bestimmte Auswirkungen:
+| Adobe Pass Authentication API | JSON | XML |
+|-------------------------------|---------|---------|
+| REST API v1 | &amp;check; | &amp;check; |
+| REST API v2 | &amp;check; |         |
+| Vorabautorisierungs-API für SDKs | &amp;check; |         |
 
-- Die 4xx-Fehlercodes implizieren, dass der Fehler vom Client generiert wird und der Client zusätzliche Schritte ausführen muss, um ihn zu beheben (z. B. Abrufen eines Zugriffstokens, bevor geschützte APIs aufgerufen werden, oder Bereitstellung erforderlicher Parameter)
+>[!IMPORTANT]
+>
+> Die Adobe Pass-Authentifizierung kann Clientanwendungen in zwei Formularen mit erweiterten Fehlercodes kommunizieren:
+>
+> <br/>
+>
+> * **Fehlerinformationen der obersten Ebene**: In diesem Fall befindet sich das Objekt ***&quot;error&quot;*** auf der obersten Ebene, daher kann der Antworttext nur das Objekt ***&quot;error&quot;*** enthalten.
+> * **Fehlerinformationen auf Elementebene**: In diesem Fall befindet sich das Objekt ***&quot;error&quot;*** auf Elementebene. Daher kann der Antworttext ein Objekt vom Typ ***&quot;error&quot;*** für alle Elemente enthalten, bei denen während der Wartung ein Fehler aufgetreten ist.
+>
+> <br/>
+>
+> Überprüfen Sie die öffentliche Dokumentation für jede integrierte Adobe Pass-Authentifizierungs-API, um die Darstellungsspezifikationen für erweiterte Fehlercodes zu ermitteln.
 
-- Die 5xx-Fehlercodes implizieren, dass der Fehler vom Server erzeugt wird und dass der Server zusätzliche Arbeit zur Behebung des Problems benötigt.
+Sehen Sie sich die folgenden HTTP-Antworten an, die Beispiele für erweiterte Fehlercodes enthalten, die als `JSON` oder `XML` dargestellt werden.
 
-Die zusätzlichen Fehlerinformationen sind im Feld &quot;Fehler&quot;im Antworttext enthalten.
+>[!BEGINTABS]
 
-<table>
-<thead>
-  <tr>
-    <th>Name</th>
-    <th>Typ</th>
-    <th>Beispiel</th>
-    <th>Beschreibung</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>error</td>
-    <td><i>Objekt</i></td>
-    <td><strong>JSON</strong>
-    <br>
-    <code>{<br>&nbsp;&nbsp;&nbsp;&nbsp;"status" : 403,<br>&nbsp;&nbsp;&nbsp;&nbsp;"code" : "network_connection_failure",<br>&nbsp;&nbsp;&nbsp;&nbsp;"message" : "Unable to contact your TV provider<br>&nbsp;&nbsp;&nbsp;&nbsp;services",<br>&nbsp;&nbsp;&nbsp;&nbsp;"helpUrl" : "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",<br>&nbsp;&nbsp;&nbsp;&nbsp;"trace" : "12f6fef9-d2e0-422b-a9d7-60d799abe353",<br>&nbsp;&nbsp;&nbsp;&nbsp;"action" : "retry"<br>}
-    </code>
-    <p>
-    <p>
-    <strong>XML</strong>
-    <br>
-    <code>&lt;error&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;status&gt;403&lt;/status&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;code&gt;network_connection_failure&lt;/code&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;message&gt;Unable to contact your TV provider services&lt;/message&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;helpUrl&gt;https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html&lt;/helpUrl&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;trace>12f6fef9-d2e0-422b-a9d7-60d799abe353&lt;/trace&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;action>retry&lt;/action&gt;<br>&lt;/error&gt;
-    </code>
-    </td>
-    <td>Bezieht sich auf Sammlungs- oder Fehlerobjekte, die beim Versuch erfasst wurden, die Anfrage abzuschließen.</td>
-  </tr>
-</tbody>
-</table>
+>[!TAB REST API v1 - Fehlerinformationen der obersten Ebene (JSON)]
 
-</br>
-
-Adobe Pass-APIs, die mehrere Elemente verarbeiten (API für die Vorabautorisierung usw.), können mithilfe von Fehlerinformationen auf Elementebene anzeigen, ob die Verarbeitung für ein bestimmtes Element fehlgeschlagen ist und für andere Elemente erfolgreich war. In diesem Fall befindet sich das Objekt ***&quot;error&quot;*** auf der Elementebene und der Antworttext kann mehrere Objekte vom Typ ***&quot;errors&quot;*** enthalten. Weitere Informationen finden Sie in der API-Dokumentation.
-
-</br>
-
-**Beispiel mit Teilerfolg und Fehler auf Elementebene**
-
-```json
+```JSON
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+        
 {
-   "resources" : [
-        {
-            "id" : "TestStream1",
-            "authorized" : true
-        },
-        {
-            "id" : "TestStream2",
-            "authorized" : false,
-            "error" : {
- 
-               "status" : 403,
-               "code" : "network_connection_failure",
-               "message" : "Unable to contact your TV provider services",
-               "details" : "",
-               "helpUrl" : "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
-               "trace" : "8bcb17f9-b172-47d2-86d9-3eb146eba85e",
-               "action" : "retry"
-            }
- 
-        }
-    ]
+  "action": "none",
+  "status": 400,
+  "code": "invalid_requestor",
+  "message": "The requestor parameter is missing or invalid.",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+  "trace": "8bcb17f9-b172-47d2-86d9-3eb146eba85e"
 }
 ```
 
-</br>
+>[!TAB REST API v1 - Fehlerinformationen der obersten Ebene (XML)]
 
-Jedes Fehlerobjekt verfügt über die folgenden Parameter:
+```XML
+HTTP/1.1 400 Bad Request
+Content-Type: application/xml
+
+<error>
+  <action>none</action>
+  <status>400</status>
+  <code>invalid_requestor</code>
+  <message>The requestor parameter is missing or invalid.</message>
+  <helpUrl>https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html</helpUrl>
+  <trace>8bcb17f9-b172-47d2-86d9-3eb146eba85e</trace>
+</error>
+```
+
+>[!TAB REST API v1 - Fehlerinformationen auf Elementebene (JSON)]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "resources": [
+    {
+      "id": "TestStream1",
+      "authorized": true
+    },
+    {
+      "id": "TestStream2",
+      "authorized": false,
+      "error": {
+        "action": "retry",
+        "status": 403,
+        "code": "network_connection_failure",
+        "message": "Unable to contact your TV provider services",
+        "details": "Your subscription package does not include the \"Live\" channel",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+        "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
+      }
+    }
+  ]
+}
+```
+
+>[!TAB REST API v2 - Fehlerinformationen der obersten Ebene (JSON)]
+
+```JSON
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "action": "none",
+  "status": 400,
+  "code": "invalid_parameter_service_provider",
+  "message": "The service provider parameter value is missing or invalid.",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+  "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
+}
+```
+
+>[!TAB REST API v2 - Fehlerinformationen auf Elementebene (JSON)]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "decisions": [
+    {
+      "resource": "REF30",
+      "serviceProvider": "REF30",
+      "mvpd": "Cablevision",
+      "source": "mvpd",
+      "authorized": true,
+      "token": {
+        "issuedAt": 1697094207324,
+        "notBefore": 1697094207324,
+        "notAfter": 1697094802367,
+        "serializedToken": "PHNpZ25hdHVyZUluZm8..."
+      }
+    },
+    {
+      "resource": "REF40",
+      "serviceProvider": "REF40",
+      "mvpd": "Cablevision",
+      "source": "mvpd",
+      "authorized": false,
+      "error" : {
+        "action": "retry",
+        "status": 403,
+        "code": "network_connection_failure",
+        "message": "Unable to contact your TV provider services",
+        "details": "Your subscription package does not include the \"Live\" channel",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+        "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
+      }
+    }
+  ]
+}
+```
+
+>[!ENDTABS]
+
+Verbesserte Fehlercodes beinhalten die folgenden `JSON` -Felder oder `XML` -Attribute:
 
 | Name | Typ | Beispiel | Beschränkt | Beschreibung |
-|---|---|----|:---:|---|
-| *status* | *integer* | *403* | &amp;check; | Der Antwort-HTTP-Statuscode, wie in RFC 7231 (<https://tools.ietf.org/html/rfc7231#section-6>) dokumentiert <ul><li>400 Ungültige Anfrage</li><li>401 Nicht autorisiert</li><li>403 Verboten</li><li>404 Nicht gefunden</li><li>405 Methode nicht zulässig</li><li>409 Konflikt</li><li>410 Stück</li><li>412 Vorbedingung fehlgeschlagen</li><li>429 Zu viele Anfragen</li><li>500 Interval server error</li><li>503 Dienst nicht verfügbar</li></ul> |
-| *code* | *string* | *network_connection_failure* | &amp;check; | Der standardmäßige Adobe Pass-Authentifizierungsfehlercode. Die vollständige Liste der Fehler-Codes finden Sie unten. |
-| *message* | *string* | *Der Dienst Ihres Fernsehanbieters kann nicht kontaktiert werden* | | Vom Menschen lesbare Nachricht, die dem Endbenutzer angezeigt werden kann. |
-| *details* | *string* | *Ihr Abonnement-Paket enthält nicht den Kanal &quot;Live&quot;* | | In einigen Fällen wird eine detaillierte Meldung von den MVPD-Autorisierungsendpunkten oder vom Programmierer durch Abbauregeln bereitgestellt. <p> Beachten Sie, dass dieses Feld möglicherweise nicht in den Fehlerfeldern vorhanden ist, wenn von den Partnerdiensten keine benutzerdefinierte Nachricht empfangen wurde. |
-| *helpUrl* | *url* | &quot;`http://`&quot; | | Eine URL, die Links zu weiteren Informationen über den Grund dieses Fehlers und mögliche Lösungen enthält. <p>Der URI stellt eine absolute URL dar und sollte nicht aus dem Fehlercode abgeleitet werden. Je nach Fehlerkontext kann eine andere URL angegeben werden. Beispielsweise liefert derselbe &quot;bad_request&quot;-Fehlercode verschiedene URLs für Authentifizierungs- und Autorisierungsdienste. |
-| *trace* | *string* | *12f6fef9-d2e0-422b-a9d7-60d799abe353* | | Eine eindeutige Kennung für diese Antwort, die verwendet werden kann, wenn der Support kontaktiert wird, um bestimmte Probleme in komplexeren Szenarien zu identifizieren. |
-| *action* | *string* | *retry* | &amp;check; | Empfohlene Maßnahmen zur Behebung der Situation: <ul><li> *none* - Leider gibt es keine vordefinierten Maßnahmen, um dieses Problem zu beheben. Dies könnte auf einen falschen Aufruf der öffentlichen API hindeuten</li><li>*configuration* - Eine Konfigurationsänderung ist über das TVE-Dashboard oder durch Kontaktaufnahme mit dem Support erforderlich. </li><li>*application-registration* - Die Anwendung muss sich selbst registrieren. </li><li>*Authentifizierung* - Der Benutzer muss sich authentifizieren oder erneut authentifizieren. </li><li>*Autorisierung* - Der Benutzer muss die Autorisierung für die jeweilige Ressource erhalten. </li><li>*Abbau* - Es sollte eine Form des Abbaus angewendet werden. </li><li>*retry* - Ein erneuter Versuch der Anfrage kann das Problem lösen</li><li>*retry-after* - Ein erneuter Versuch nach dem angegebenen Zeitraum kann das Problem lösen.</li></ul> |
+|-----------|-----------|---------------------------------------------------------------------------------------------------------------------|:----------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *action* | *string* | *retry* | &amp;check; | Die Adobe Pass-Authentifizierung empfahl eine Aktion, die die in diesem Dokument beschriebene Situation beheben könnte. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Aktion](#enhanced-error-codes-action) . |
+| *status* | *integer* | *403* | &amp;check; | Der HTTP-Antwortstatuscode gemäß der Definition im Dokument [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6). <br/><br/> Weitere Informationen finden Sie im Abschnitt [Status](#enhanced-error-codes-status) . |
+| *code* | *string* | *network_connection_failure* | &amp;check; | Der eindeutige Adobe Pass-Authentifizierungscode, der mit dem Fehler verknüpft ist, wie in diesem Dokument definiert. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Code](#enhanced-error-codes-code) . |
+| *message* | *string* | *Der Dienst Ihres Fernsehanbieters kann nicht kontaktiert werden* |            | Die für Menschen lesbare Nachricht, die dem Endbenutzer in einigen Fällen angezeigt werden könnte. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Reaktionsverwaltung](#enhanced-error-codes-response-handling) . |
+| *details* | *string* | *Ihr Abonnement-Paket enthält nicht den Kanal &quot;Live&quot;* |            | Die detaillierte Meldung, die in einigen Fällen von einem Dienstleistungspartner bereitgestellt werden könnte, <br/><br/> Dieses Feld ist möglicherweise nicht vorhanden, falls der Dienstleistungspartner keine benutzerdefinierte Nachricht bereitstellt. |
+| *helpUrl* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html* |            | Die öffentliche Dokumentations-URL zur Adobe Pass-Authentifizierung , die weitere Informationen darüber enthält, warum dieser Fehler aufgetreten ist, und mögliche Lösungen. <br/><br/> Dieses Feld enthält eine absolute URL und sollte nicht aus dem Fehlercode abgeleitet werden. Je nach Fehlerkontext kann eine andere URL angegeben werden. |
+| *trace* | *string* | *12f6fef9-d2e0-422b-a9d7-60d799abe353* |            | Die eindeutige Kennung für die Antwort, die verwendet werden kann, wenn der Adobe Pass Authentication Support kontaktiert wird, um bestimmte Probleme zu beheben. |
 
-</br>
+>[!IMPORTANT]
+>
+> Die Spalte **Eingeschränkt** gibt an, ob das entsprechende Feld einen Wert aus einem endlichen Satz enthält, während unbeschränkte Felder beliebige Daten enthalten können.
+>
+> <br/>
+>
+> Zukünftige Aktualisierungen dieses Dokuments könnten den endlichen Sätzen Werte hinzufügen, vorhandene jedoch nicht entfernen oder ändern.
 
-**Notizen:**
+### Aktion {#enhanced-error-codes-representation-action}
 
-- ***Eingeschränkt*** Spalte *gibt an, ob der entsprechende Feldwert einen endlichen Satz darstellt* (z. B. vorhandene HTTP-Statuscodes für das Feld &quot;*status*&quot;). Zukünftige Aktualisierungen dieser Spezifikation könnten Werte zur eingeschränkten Liste hinzufügen, vorhandene Werte werden jedoch nicht entfernt oder geändert. Unbeschränkte Felder können in der Regel beliebige Daten enthalten, es gibt jedoch Einschränkungen, um eine angemessene Größe sicherzustellen.
+Verbesserte Fehlercodes enthalten ein Feld &quot;Aktion&quot;, das eine empfohlene Aktion zur Behebung der Situation bereitstellt.
 
-- Jede Adobe-Antwort enthält eine &quot;Adobe-Request-Id&quot;, die die Client-Anfrage über unsere HTTP-Dienste hinweg identifiziert. Das Feld &quot;**trace**&quot; ergänzt dies und sollte zusammen gemeldet werden.
+Zu den möglichen Werten für das Feld &quot;Aktion&quot;gehören:
 
-## HTTP-Status-Codes und Fehlercodes {#http-status-codes-and-error-codes}
+| Aktion | Beschreibung | Kategorie |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|
+| Keine | Es gibt keine vordefinierte Aktion, um dieses Problem zu beheben. In einigen Fällen kann dies jedoch auf einen falschen Aufruf der API hindeuten. | Korrigieren Sie den Anforderungskontext. |
+| Konfiguration | Die Clientanwendung erfordert eine Konfigurationsänderung, die meistens über das Adobe Pass TVE Dashboard durchgeführt wird. | Korrigieren Sie den Integrationskonfigurationskontext. |
+| application-registration | Die Clientanwendung erfordert eine erneute Registrierung. | Korrigieren Sie den Client-Anwendungskontext. |
+| Authentifizierung | Die Clientanwendung erfordert die Authentifizierung oder erneute Authentifizierung des Benutzers. | Korrigieren Sie den Client-Anwendungskontext. |
+| Autorisierung | Die Client-Anwendung erfordert eine Autorisierung für die angegebene Ressource. | Korrigieren Sie den Client-Anwendungskontext. |
+| Wiederholen | Die Client-Anwendung muss die Anfrage erneut versuchen. | Korrigieren Sie den Anforderungskontext. |
 
-Die Inkonsistenzen zwischen verschiedenen Fehlercodes und den zugehörigen HTTP-Status-Codes sind auf die Abwärtskompatibilitätsanforderungen mit älteren SDKs und Anwendungen ( für
-Beispiel: *unknown\_application* gibt 400 Bad Request zurück, während *unknown\_software\_statement* 401 Unauthorized ergibt. Die Behebung dieser Inkonsistenzen wird in künftigen Ausführungen angestrebt.
+_(*) Bei einigen Fehlern können mehrere Aktionen mögliche Lösungen sein, aber das Feld &quot;Aktion&quot;zeigt die Aktion an, bei der die höchste Wahrscheinlichkeit besteht, den Fehler zu beheben._
 
-## Aktionen und Fehlercodes {#actions-and-error-codes}
+### Status {#enhanced-error-codes-representation-status}
 
-Für die meisten Fehler-Codes können mehrere Aktionen als Pfade zur Behebung des vorliegenden Problems geeignet sein, oder sogar mehrere Aktionen können erforderlich sein, um sie automatisch zu beheben. Wir haben uns dafür entschieden, die Person mit der höchsten Wahrscheinlichkeit anzugeben, den Fehler zu beheben. Die **Aktionen** können in drei Kategorien unterteilt werden:
+Verbesserte Fehlercodes enthalten ein Feld &quot;status&quot;, das den mit dem Fehler verknüpften HTTP-Status-Code angibt.
 
-1. , die versuchen, den Anforderungskontext zu beheben (Wiederholen, Wiederholen)
-1. , die versuchen, den Benutzerkontext in der Anwendung zu beheben
-(Registrierung, Authentifizierung, Autorisierung)
-1. , die versuchen, den Integrationskontext zwischen einer Anwendung zu beheben
-und einen Identitäts-Provider (Konfiguration, Abbau)
+Zu den möglichen Werten für das Feld &quot;Status&quot;gehören:
 
-Für die erste Kategorie (Wiederholen und Wiederholen) reicht es möglicherweise aus, dieselbe Anfrage einfach erneut auszuführen, um das Problem zu lösen. Im Fall von APIs, die mehrere Elemente verarbeiten, sollte die Anwendung die Anfrage wiederholen und nur die Elemente mit der Aktion &quot;Wiederholen&quot;oder &quot;Wiederholen nach&quot;einschließen. Für die Aktion &quot;*retry-after*&quot; gibt die Kopfzeile &quot;<u>Retry-After</u>&quot; an, wie viele Sekunden die Anwendung warten soll, bevor die Anfrage wiederholt wird.
+| Code | Reason-Wortgruppe |
+|------|-----------------------|
+| 400 | Ungültige Anfrage |
+| 401 | Unerlaubt |
+| 403 | Verboten |
+| 404 | Nicht gefunden |
+| 405 | Methode nicht zulässig |
+| 410 | Gone |
+| 412 | Vorbedingung fehlgeschlagen |
+| 500 | Interner Server-Fehler |
 
-Bei der zweiten und dritten Kategorie hängt die tatsächliche Aktionsimplementierung in hohem Maße von den Anwendungsfunktionen ab. Beispielsweise kann &quot;*Abbau*&quot;entweder als &quot;Umschalten auf 15 Minuten temporärer Durchgänge implementiert werden, um Benutzern die Wiedergabe des Inhalts zu ermöglichen&quot;oder als &quot;automatisches Tool zur Anwendung von AUTHN-ALL oder AUTHZ-ALL-Abbau für die Integration mit dem angegebenen MVPD&quot;implementiert werden. Ähnlich wie bei einer &quot;*Authentifizierung*&quot;-Aktion kann auf einem Tablet eine passive Authentifizierung (Back-Channel-Authentifizierung) und auf vernetzten TV-Geräten ein Vollbild-Authentifizierungsfluss Trigger werden. Deshalb haben wir uns dafür entschieden, vollständige URLs mit Schema und allen Parametern bereitzustellen.
+Verbesserte Fehlercodes mit einem 4.x-Status werden normalerweise angezeigt, wenn der Fehler vom Client erzeugt wird, und meistens bedeutet dies, dass der Client zusätzliche Arbeit benötigt, um ihn zu beheben.
 
-## Fehlercodes {#error-codes}
+Verbesserte Fehlercodes mit einem 5xx-Status werden normalerweise angezeigt, wenn der Fehler vom Server erzeugt wird, und meistens bedeutet dies, dass der Server zusätzliche Arbeit benötigt, um ihn zu beheben.
 
-In der folgenden Tabelle sind die möglichen Fehlercodes, die zugehörigen Nachrichten und möglichen Aktionen aufgeführt.
+>[!IMPORTANT]
+>
+> In einigen Fällen unterscheidet sich der HTTP-Antwortstatus-Code vom &quot;Status&quot;-Feld für den erweiterten Fehlercode, insbesondere bei der Interaktion mit einer Adobe Pass-Authentifizierungs-API, die erweiterte Fehlercodes als Fehlerinformationen auf Elementebene übermittelt.
 
-| Aktion | Fehler-Code | HTTP-Statuscode | Beschreibung |
-|---|---|---|---|
-| **none** | *authorization_denied_by_mvpd* | 403 | Der MVPD hat eine &quot;Ablehnen&quot;-Entscheidung zurückgegeben, wenn er eine Autorisierung für die angegebene Ressource anfordert. |
-|  | *authorization_denied_by_parental_control* | 403 | Der MVPD hat die Entscheidung &quot;Ablehnen&quot;zurückgegeben, da die elterlichen Kontrolleinstellungen für die angegebene Ressource festgelegt wurden. |
-|  | *authorization_denied_by_programmer* | 403 | Die vom Programmierer angewendete Abbauregel erzwingt eine &quot;Ablehnen&quot;-Entscheidung für den aktuellen Benutzer. |
-|  | *bad_request* | 400 | Die API-Anfrage ist ungültig oder falsch gebildet. Lesen Sie die API-Dokumentation , um die Anforderungsanforderungen zu ermitteln. |
-|  | *individualization_service_unavailable* | 503 | Die Anfrage schlug fehl, da der Individualisierungsdienst nicht verfügbar war. |
-|  | *internal_error* | 500 | Die Anfrage schlug aufgrund eines internen Server-Fehlers fehl. |
-|  | *invalid_client_time* | 400 | Der Client-Computer Datum/Uhrzeit/Zeitzone ist nicht korrekt eingestellt. Dies führt wahrscheinlich zu Authentifizierungs-/Autorisierungsfehlern. |
-|  | *invalid_custom_scheme* | 400 | Das in der Anwendungsregistrierung verwendete benutzerdefinierte Schema wird nicht erkannt. Prüfen Sie die Konfiguration des TVE-Dashboards auf die korrekten benutzerdefinierten Schemawerte. |
-|  | *invalid_domain* | 400 | Der Anfragende verwendet eine ungültige Domäne. Alle Domänen, die von einer bestimmten Anforderer-ID verwendet werden, müssen von Adobe auf die Whitelist gesetzt werden. |
-|  | *invalid_header* | 400 | Die Anfrage schlug fehl, da sie eine ungültige Kopfzeile enthielt. Lesen Sie die API-Dokumentation, um festzustellen, welche Kopfzeilen für Ihre Anfrage gültig sind und ob Einschränkungen für ihren Wert bestehen. |
-|  | *invalid_http_method* | 405 | Die mit der Anfrage verknüpfte HTTP-Methode wird nicht unterstützt. Lesen Sie die API-Dokumentation , um die unterstützten HTTP-Methoden für Ihre Anfrage zu ermitteln. |
-|  | *invalid_parameter_value* | 400 | Die Anfrage schlug fehl, da sie einen ungültigen Parameter- oder Parameterwert enthielt. Lesen Sie die API-Dokumentation, um festzustellen, welche Parameter für Ihre Anfrage gültig sind und ob Einschränkungen für deren Wert bestehen. |
-|  | *invalid_resource_value* | 400 | Die Anfrage schlug fehl, weil eine ungültige oder fehlerhafte Ressource verwendet wurde. Lesen Sie die API-Dokumentation , um festzustellen, wie komplexe Ressourcen für Ihre Anfrage kodiert werden müssen und ob Einschränkungen hinsichtlich Wert und/oder Größe bestehen. |
-|  | *invalid_registration_code* | 404 | Der angegebene Registrierungs-Code ist nicht mehr gültig oder abgelaufen. |
-|  | *invalid_service_configuration* | 500 | Die Anfrage schlug aufgrund einer falschen Dienstkonfiguration fehl. |
-|  | *missing_authentication_header* | 400 | Die Anfrage schlug fehl, da sie nicht den erforderlichen Authentifizierungs-Header für die jeweilige API enthält. |
-|  | *missing_resource_mapping* | 400 | Für die angegebene Ressource gibt es keine entsprechende Zuordnung. Wenden Sie sich an den Support, um die erforderliche Zuordnung zu korrigieren. |
-|  | *preauthorization_denied_by_mvpd* | 403 | Der MVPD hat eine &quot;Ablehnen&quot;-Entscheidung zurückgegeben, wenn er eine Vorabautorisierung für die angegebene Ressource beantragt. |
-|  | *preauthorization_denied_by_programmer* | 403 | Die vom Programmierer angewendeten Abbauregeln erzwingen eine &quot;Ablehnen&quot;-Entscheidung für den aktuellen Benutzer. |
-|  | *registration_code_service_unavailable* | 503 | Die Anfrage schlug fehl, da der Registrierungscode-Dienst nicht verfügbar ist. |
-|  | *service_unavailable* | 503 | Die Anfrage schlug fehl, weil der Authentifizierungs- oder Autorisierungsdienst nicht verfügbar ist. |
-|  | *access_token_unavailable* | 400 | Die Anfrage schlug aufgrund eines unerwarteten Fehlers beim Abrufen des Zugriffstokens fehl. In der TVE-Dashboard-Konfiguration finden Sie verfügbare Softwareanweisungen und registrierte benutzerdefinierte Schemata. |
-|  | *unsupported_client_version* | 400 | Diese Version des Adobe Pass Authentication SDK ist zu alt und wird nicht mehr unterstützt. In der API-Dokumentation finden Sie die Schritte, die für die Aktualisierung auf die neueste Version erforderlich sind. |
-| **configuration** | *network_required_ssl* | 403 | Es gibt ein SSL-Verbindungsproblem für den Ziel-Partner-Service. Wenden Sie sich an das Supportteam. |
-|  | *too_many_resources* | 403 | Die Autorisierungs- oder Vorabautorisierungsanfrage schlug fehl, da zu viele Ressourcen abgefragt wurden. Wenden Sie sich an das Supportteam, um die Autorisierungs- und Vorautorisierungsbeschränkungen ordnungsgemäß zu konfigurieren. |
-|  | *unknown_programmierer* | 400 | Der Programmierer oder Dienstleister wird nicht erkannt. Registrieren Sie den angegebenen Programmierer über das TVE-Dashboard. |
-|  | *unknown_application* | 400 | Die Anwendung wird nicht erkannt. Registrieren Sie die angegebene Anwendung über das TVE-Dashboard. |
-|  | *unknown_integration* | 400 | Die Integration zwischen dem angegebenen Programmierer und Identitätsanbieter existiert nicht. Verwenden Sie das TVE-Dashboard , um die erforderliche Integration zu erstellen. |
-|  | *unknown_software_statement* | 401 | Die mit dem Zugriffstoken verknüpfte Softwareanweisung wird nicht erkannt. Wenden Sie sich an das Support-Team, um den Status der Software-Anweisung zu klären. |
-| **application-registration** | *access_token_expied* | 401 | Das Zugriffstoken ist abgelaufen. Das Programm sollte das Zugriffstoken aktualisieren, wie in der API-Dokumentation angegeben. |
-|  | *invalid_access_token_signature* | 401 | Die Unterschrift des Zugriffstokens ist nicht mehr gültig. Das Programm sollte das Zugriffstoken aktualisieren, wie in der API-Dokumentation angegeben. |
-|  | *invalid_client_id* | 401 | Die zugehörige Client-Kennung wird nicht erkannt. Die Anwendung sollte den in der API-Dokumentation angegebenen Registrierungsprozess für Anwendungen befolgen. |
-| **authentication** | *authentication_session_expied* | 410 | Die aktuelle Authentifizierungssitzung ist abgelaufen. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
-|  | *authentication_session_missing* | 401 | Die mit dieser Anfrage verknüpfte Authentifizierungssitzung konnte nicht abgerufen werden. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
-|  | *authentication_session_invalidated* | 401 | Die Authentifizierungssitzung wurde vom Identitäts-Provider ungültig gemacht. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
-|  | *authentication_session_emitter_mismatch* | 400 | Die Autorisierungsanfrage schlug fehl, weil der angegebene MVPD für den Autorisierungsfluss sich von dem unterscheidet, der die Authentifizierungssitzung ausgestellt hat. Der Benutzer muss sich erneut mit dem gewünschten MVPD authentifizieren, um fortfahren zu können. |
-|  | *authorization_denied_by_hba_policies* | 403 | Der MVPD hat aufgrund von Home-basierten Authentifizierungsrichtlinien eine &quot;Ablehnen&quot;-Entscheidung zurückgegeben. Die aktuelle Authentifizierung wurde mithilfe eines Home-based Authentication Flow (HBA) abgerufen, aber das Gerät ist nicht mehr zu Hause, wenn die Autorisierung für die angegebene Ressource angefordert wird. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
-|  | *identity_not_acknowledged_by_mvpd* | 403 | Die Autorisierungsanfrage schlug fehl, weil die Benutzeridentität vom MVPD nicht erkannt wurde. |
-| **Autorisierung** | *authorization_expi}* | 410 | Die vorherige Autorisierung für die angegebene Ressource ist abgelaufen. Der Benutzer muss eine neue Autorisierung einholen, um fortfahren zu können. |
-|  | *authorization_not_found* | 404 | Für die angegebene Ressource wurde keine Autorisierung gefunden. Der Benutzer muss eine neue Autorisierung einholen, um fortfahren zu können. |
-|  | *device_identifier_mismatch* | 403 | Die angegebene Geräte-ID stimmt nicht mit der Identifizierung des Autorisierungsgeräts überein. Der Benutzer muss eine neue Autorisierung einholen, um fortfahren zu können. |
-| **retry** | *network_connection_failure* | 403 | Es ist ein Verbindungsfehler mit dem zugehörigen Partnerdienst aufgetreten. Ein erneuter Versuch mit der Anfrage kann das Problem lösen. |
-|  | *network_connection_timeout* | 403 | Es gab einen Verbindungstimeout mit dem zugehörigen Partnerdienst. Ein erneuter Versuch mit der Anfrage kann das Problem lösen. |
-|  | *network_received_error* | 403 | Beim Abrufen der Antwort vom zugehörigen Partnerdienst trat ein Lesefehler auf. Ein erneuter Versuch mit der Anfrage kann das Problem lösen. |
-|  | *maximum_execution_time_exceeded* | 403 | Die Anfrage wurde in der maximal zulässigen Zeit nicht abgeschlossen. Ein erneuter Versuch mit der Anfrage kann das Problem lösen. |
-| **retry-after** | *too_many_requests* | 429 | Es wurden zu viele Anfragen innerhalb eines bestimmten Intervalls gesendet. Die Anwendung kann die Anfrage nach dem vorgeschlagenen Zeitraum erneut versuchen. |
-|  | *user_rate_limit_exceeded* | 429 | Es wurden zu viele Anfragen von einem bestimmten Benutzer innerhalb eines bestimmten Zeitraums ausgegeben. Die Anwendung kann die Anfrage nach dem vorgeschlagenen Zeitraum erneut versuchen. |
+### Code {#enhanced-error-codes-representation-code}
+
+Verbesserte Fehlercodes enthalten ein Feld &quot;code&quot;, das eine eindeutige Adobe Pass-Authentifizierungskennung bereitstellt, die mit dem Fehler verknüpft ist.
+
+Die möglichen Werte für das Feld &quot;code&quot;werden [unter ](#enhanced-error-codes-list) in zwei Listen auf der Grundlage der integrierten Adobe Pass-Authentifizierungs-API aggregiert.
+
+## Listen {#enhanced-error-codes-lists}
+
+### REST API v1 {#enhanced-error-codes-lists-rest-api-v1}
+
+In der folgenden Tabelle sind mögliche erweiterte Fehlercodes aufgeführt, auf die eine Clientanwendung bei der Integration mit der Adobe Pass Authentication REST API v1 stoßen kann.
+
+| Aktion | Code | Status | Nachricht |
+|--------------------|---------------------------------------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **none** | *invalid_requestor* | 400 | Der Anforderungsparameter fehlt oder ist ungültig. |
+|                    | *invalid_device_info* | 400 | Die Geräteinformationen fehlen oder sind ungültig. |
+|                    | *invalid_device_id* | 400 | Die Geräte-ID fehlt oder ist ungültig. |
+|                    | *missing_resource* | 400.412 | Der Ressourcenparameter fehlt. |
+|                    | *malformed_authz_request* | 400.412 | Die Autorisierungsanfrage ist null oder ungültig. |
+|                    | *preauthorization_denied_by_mvpd* | 403 | Der MVPD hat eine &quot;Ablehnen&quot;-Entscheidung zurückgegeben, wenn er eine Vorabautorisierung für die angegebene Ressource beantragt. |
+|                    | *authorization_denied_by_mvpd* | 403 | Der MVPD hat eine &quot;Ablehnen&quot;-Entscheidung zurückgegeben, wenn er eine Autorisierung für die angegebene Ressource anfordert. |
+|                    | *authorization_denied_by_parental_control* | 403 | Der MVPD hat die Entscheidung &quot;Ablehnen&quot;zurückgegeben, da die elterlichen Kontrolleinstellungen für die angegebene Ressource festgelegt wurden. |
+|                    | *internal_error* | 400, 405, 500 | Die Anfrage schlug aufgrund eines internen Server-Fehlers fehl. |
+| **configuration** | *unknown_integration* | 400.412 | Die Integration zwischen dem angegebenen Programmierer und Identitätsanbieter existiert nicht. Verwenden Sie das TVE-Dashboard , um die erforderliche Integration zu erstellen. |
+|                    | *too_many_resources* | 403 | Die Autorisierungs- oder Vorabautorisierungsanfrage schlug fehl, da zu viele Ressourcen abgefragt wurden. Wenden Sie sich an das Supportteam, um die Autorisierungs- und Vorautorisierungsbeschränkungen ordnungsgemäß zu konfigurieren. |
+| **authentication** | *authentication_session_emitter_mismatch* | 400 | Die Autorisierungsanfrage schlug fehl, weil der angegebene MVPD für den Autorisierungsfluss sich von dem unterscheidet, der die Authentifizierungssitzung ausgestellt hat. Der Benutzer muss sich erneut mit dem gewünschten MVPD authentifizieren, um fortfahren zu können. |
+|                    | *authorization_denied_by_hba_policies* | 403 | Der MVPD hat aufgrund von Home-basierten Authentifizierungsrichtlinien eine &quot;Ablehnen&quot;-Entscheidung zurückgegeben. Die aktuelle Authentifizierung wurde mithilfe eines Home-based Authentication Flow (HBA) abgerufen, aber das Gerät ist nicht mehr zu Hause, wenn die Autorisierung für die angegebene Ressource angefordert wird. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
+|                    | *authorization_denied_by_session_invalidated* | 403 | Die Authentifizierungssitzung wurde vom Identitäts-Provider ungültig gemacht. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
+|                    | *identity_not_acknowledged_by_mvpd* | 403 | Die Autorisierungsanfrage schlug fehl, weil die Benutzeridentität vom MVPD nicht erkannt wurde. |
+|                    | *authentication_session_invalidated* | 403 | Die Authentifizierungssitzung wurde vom Identitäts-Provider ungültig gemacht. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
+|                    | *authentication_session_missing* | 403, 412 | Die mit dieser Anfrage verknüpfte Authentifizierungssitzung konnte nicht abgerufen werden. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
+|                    | *authentication_session_expied* | 403, 412 | Die aktuelle Authentifizierungssitzung ist abgelaufen. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
+|                    | *preauthorization_authentication_session_missing* | 412 | Die mit dieser Anfrage verknüpfte Authentifizierungssitzung konnte nicht abgerufen werden. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
+|                    | *preauthorization_authentication_session_expied* | 412 | Die aktuelle Authentifizierungssitzung ist abgelaufen. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
+| **Autorisierung** | *authorization_not_found* | 403.404 | Für die angegebene Ressource wurde keine Autorisierung gefunden. Der Benutzer muss eine neue Autorisierung einholen, um fortfahren zu können. |
+|                    | *authorization_expi}* | 410 | Die vorherige Autorisierung für die angegebene Ressource ist abgelaufen. Der Benutzer muss eine neue Autorisierung einholen, um fortfahren zu können. |
+| **retry** | *network_received_error* | 403 | Beim Abrufen der Antwort vom zugehörigen Partnerdienst trat ein Lesefehler auf. Ein erneuter Versuch mit der Anfrage kann das Problem lösen. |
+|                    | *network_connection_timeout* | 403 | Es gab einen Verbindungstimeout mit dem zugehörigen Partnerdienst. Ein erneuter Versuch mit der Anfrage kann das Problem lösen. |
+|                    | *maximum_execution_time_exceeded* | 403 | Die Anfrage wurde in der maximal zulässigen Zeit nicht abgeschlossen. Ein erneuter Versuch mit der Anfrage kann das Problem lösen. |
+
+### Vorabautorisierungs-API für SDKs {#enhanced-error-codes-lists-sdks-preauthorize-api}
+
+Im vorherigen Abschnitt [finden Sie mögliche erweiterte Fehlercodes, auf die eine Client-Anwendung stoßen kann, wenn sie in die Adobe Pass Authentication SDKs Preauthorize API integriert ist.](#enhanced-error-codes-list-rest-api-v1)
+
+### REST API v2 {#enhanced-error-codes-lists-rest-api-v2}
+
+In der folgenden Tabelle sind mögliche erweiterte Fehlercodes aufgeführt, auf die eine Client-Anwendung bei der Integration mit der Adobe Pass Authentication REST API v2 stoßen kann.
+
+| Aktion | Code | Status | Nachricht |
+|------------------------------|--------------------------------------------------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **none** | *invalid_parameter_service_provider* | 400 | Der Parameterwert des Dienstanbieters fehlt oder ist ungültig. |
+|                              | *invalid_parameter_mvpd* | 400 | Der Parameterwert mvpd fehlt oder ist ungültig. |
+|                              | *invalid_parameter_code* | 400 | Der Code-Parameterwert fehlt oder ist ungültig. |
+|                              | *invalid_parameter_resources* | 400 | Der Umleitungs-URL-Parameterwert fehlt oder ist ungültig. |
+|                              | *invalid_parameter_redirect_url* | 400 | Der Ressourcenparameterwert fehlt oder ist ungültig. |
+|                              | *invalid_parameter_partner* | 400 | Der Partnerparameterwert fehlt oder ist ungültig. |
+|                              | *invalid_parameter_saml_response* | 400 | Der SAML-Antwortparameterwert fehlt oder ist ungültig. |
+|                              | *invalid_header_device_info* | 400 | Der Header-Wert für Geräteinformationen fehlt oder ist ungültig. |
+|                              | *invalid_header_device_identifier* | 400 | Der Kopfzeilenwert der Gerätekennung fehlt oder ist ungültig. |
+|                              | *invalid_header_identity_for_temporarily_access* | 400 | Die Identität für den Wert des temporären Kopfzeilen für den Zugriff fehlt oder ist ungültig. |
+|                              | *invalid_header_pfs_permission_access_not_present* | 400 | Der Wert für den Berechtigungszugriffstatus aus der Statuskopfzeile des Partner-Frameworks ist nicht vorhanden. |
+|                              | *invalid_header_pfs_permission_access_not_defined* | 400 | Der Wert für den Berechtigungszugriffstatus aus der Statuskopfzeile des Partner-Frameworks wird nicht bestimmt. |
+|                              | *invalid_header_pfs_permission_access_not_assigned* | 400 | Der Wert für den Berechtigungszugriffstatus aus der Statuskopfzeile des Partner-Frameworks wird nicht gewährt. |
+|                              | *invalid_header_pfs_provider_id_not_defined* | 400 | Der Anbieter-ID-Wert aus der Statuskopfzeile des Partner-Frameworks ist keiner bekannten mvpd zugeordnet. |
+|                              | *invalid_header_pfs_provider_id_mismatch* | 400 | Der Anbieter-ID-Wert aus der Statuskopfzeile des Partner-Frameworks stimmt nicht mit der als Parameter gesendeten mvpd überein. |
+|                              | *invalid_integration* | 400 | Die Integration zwischen dem angegebenen Dienstleister und mvpd existiert nicht oder ist deaktiviert. |
+|                              | *invalid_authentication_session* | 400 | Die mit dieser Anfrage verknüpfte Authentifizierungssitzung fehlt oder ist ungültig. |
+|                              | *preauthorization_denied_by_mvpd* | 403 | Der MVPD hat eine &quot;Ablehnen&quot;-Entscheidung zurückgegeben, wenn er eine Vorabautorisierung für die angegebene Ressource beantragt. |
+|                              | *authorization_denied_by_mvpd* | 403 | Der MVPD hat eine &quot;Ablehnen&quot;-Entscheidung zurückgegeben, wenn er eine Autorisierung für die angegebene Ressource anfordert. |
+|                              | *authorization_denied_by_parental_control* | 403 | Der MVPD hat die Entscheidung &quot;Ablehnen&quot;zurückgegeben, da die elterlichen Kontrolleinstellungen für die angegebene Ressource festgelegt wurden. |
+|                              | *authorization_denied_by_degradation_rule* | 403 | Für die Integration zwischen dem angegebenen Dienstleister und mvpd wird eine Abbauregel angewendet, die die Autorisierung für die angeforderten Ressourcen verweigert. |
+|                              | *internal_server_error* | 500 | Die Anfrage schlug aufgrund eines internen Server-Fehlers fehl. |
+| **configuration** | *too_many_resources* | 403 | Die Autorisierungs- oder Vorabautorisierungsanfrage schlug fehl, da zu viele Ressourcen abgefragt wurden. Wenden Sie sich an das Supportteam, um die Autorisierungs- und Vorautorisierungsbeschränkungen ordnungsgemäß zu konfigurieren. |
+|                              | *invalid_configuration_user_metadata_certificate* | 500 | Die Konfiguration des Benutzermetadaten-Zertifikats fehlt oder ist ungültig. |
+|                              | *invalid_configuration_temporarily_access* | 500 | Die Konfiguration für den temporären Zugriff ist ungültig. |
+|                              | *invalid_configuration_platform* | 500 | Die Plattformkonfiguration fehlt oder ist für die Integration ungültig. |
+|                              | *invalid_configuration_platform_id* | 500 | Die Konfiguration der Plattform-ID fehlt oder ist ungültig. |
+|                              | *invalid_configuration_platform_trait* | 500 | Die Konfiguration der Plattformeigenschaften fehlt oder ist ungültig. |
+|                              | *invalid_configuration_platform_category_trait* | 500 | Die Konfiguration der Eigenschaften der Plattformkategorie fehlt oder ist ungültig. |
+|                              | *invalid_configuration_platform_services* | 500 | Die Konfiguration der Plattformdienste fehlt oder ist für die Integration ungültig. |
+|                              | *invalid_configuration_mvpd_platform* | 500 | Die mvpd-Plattformkonfiguration fehlt oder ist für mvpd und die Plattform ungültig. |
+|                              | *invalid_configuration_mvpd_platform_boarding_status* | 500 | Die Konfiguration des MVPD-Plattformboarding-Status fehlt oder ist für mvpd und die Plattform ungültig. |
+|                              | *invalid_configuration_mvpd_platform_profile_exchange* | 500 | Die Konfiguration des Profilaustauschs für die mvpd-Plattform fehlt oder ist für mvpd und die Plattform ungültig. |
+| **application-registration** | *invalid_access_token_service_provider* | 401 | Das Zugriffstoken ist aufgrund eines ungültigen Dienstanbieters ungültig. |
+|                              | *invalid_access_token_client_application* | 401 | Das Zugriffstoken ist aufgrund einer ungültigen Clientanwendung ungültig. |
+| **authentication** | *authenticated_profile_missing* | 403 | Das mit dieser Anfrage verknüpfte authentifizierte Profil fehlt. |
+|                              | *authenticated_profile_expied* | 403 | Das mit dieser Anfrage verknüpfte authentifizierte Profil ist abgelaufen. |
+|                              | *authenticated_profile_invalidated* | 403 | Das mit dieser Anfrage verknüpfte authentifizierte Profil wurde ungültig gemacht. |
+|                              | *temporärer_Zugriff_Dauer_Limit_überschritten* | 403 | Die zeitweilige Zugriffsdauer wurde überschritten. |
+|                              | *temporärer_Zugriff_Ressourcen_Limit_überschritten* | 403 | Die zeitweilige Beschränkung für Zugriffsressourcen wurde überschritten. |
+|                              | *authorization_denied_by_hba_policies* | 403 | Der MVPD hat aufgrund von Home-basierten Authentifizierungsrichtlinien eine &quot;Ablehnen&quot;-Entscheidung zurückgegeben. Die aktuelle Authentifizierung wurde über einen Home-basierten Authentifizierungsfluss abgerufen, aber das Gerät ist nicht mehr zu Hause, wenn die Autorisierung für die angegebene Ressource angefordert wird. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
+|                              | *authorization_denied_by_session_invalidated* | 403 | Die Authentifizierungssitzung wurde vom Identitäts-Provider ungültig gemacht. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
+|                              | *identity_not_acknowledged_by_mvpd* | 403 | Die Autorisierungsanfrage schlug fehl, weil die Benutzeridentität vom MVPD nicht erkannt wurde. |
+| **retry** | *network_received_error* | 403 | Beim Abrufen der Antwort vom zugehörigen Partnerdienst trat ein Lesefehler auf. Ein erneuter Versuch mit der Anfrage kann das Problem lösen. |
+|                              | *network_connection_timeout* | 403 | Es gab einen Verbindungstimeout mit dem zugehörigen Partnerdienst. Ein erneuter Versuch mit der Anfrage kann das Problem lösen. |
+|                              | *maximum_execution_time_exceeded* | 403 | Die Anfrage wurde in der maximal zulässigen Zeit nicht abgeschlossen. Ein erneuter Versuch mit der Anfrage kann das Problem lösen. |
+
+## Reaktionsverwaltung {#enhanced-error-codes-response-handling}
+
+>[!IMPORTANT]
+>
+> Es gibt erweiterte Fehlercodes, die automatisch im Clientanwendungs-Code verarbeitet werden können, z. B. einen erneuten Versuch mit einer Autorisierungsanfrage im Fall einer Netzwerk-Zeitüberschreitung oder eine erneute Authentifizierung des Benutzers erfordern, wenn seine Sitzung abgelaufen ist. Für andere Typen sind jedoch möglicherweise Konfigurationsänderungen oder die Interaktion des Adobe Pass Authentication-Kundendienstteams erforderlich.
+>
+> <br/>
+>
+> Daher ist es wichtig, beim Erstellen eines Tickets über unsere [Zendesk](https://adobeprimetime.zendesk.com) vollständige Fehlerinformationen zu sammeln und bereitzustellen, um sicherzustellen, dass die erforderlichen Änderungen vorgenommen werden, bevor die neue Anwendung oder neue Funktion gestartet wird.
+
+Zusammenfassend sollten Sie beim Umgang mit Antworten, die erweiterte Fehlercodes enthalten, Folgendes beachten:
+
+1. **Überprüfen Sie beide Statuswerte**: Überprüfen Sie immer den HTTP-Antwortstatus-Code und das Feld &quot;Status&quot;des erweiterten Fehlercodes. Sie unterscheiden sich möglicherweise und bieten wertvolle Informationen.
+
+1. **Fehlerinformationen auf oberster Ebene und Fehlerinformationen auf Elementebene**: Behandeln Sie Fehlerinformationen auf oberster Ebene und auf Elementebene unabhängig von der Art und Weise, wie sie kommuniziert werden, und stellen Sie sicher, dass Sie beide Formen der Übermittlung von erweiterten Fehlercodes handhaben können.
+
+1. **Logik wiederholen**: Stellen Sie bei Fehlern, für die ein erneuter Versuch erforderlich ist, sicher, dass erneute Versuche mit exponentiellem Backoff durchgeführt werden, um zu verhindern, dass der Server überlastet wird. Außerdem sollten Sie bei Adobe Pass-Authentifizierungs-APIs, die mehrere Elemente gleichzeitig verarbeiten (z. B. Vorabautorisierungs-API), in die wiederholte Anfrage nur die Elemente einschließen, die mit &quot;Wiederholen&quot;markiert sind, und nicht die gesamte Liste.
+
+1. **Konfigurationsänderungen**: Stellen Sie bei Fehlern, die Konfigurationsänderungen erfordern, sicher, dass die erforderlichen Änderungen vorgenommen werden, bevor Sie die neue Anwendung oder Funktion starten.
+
+1. **Authentifizierung und Autorisierung**: Bei Fehlern im Zusammenhang mit Authentifizierung und Autorisierung müssen Sie den Benutzer auffordern, sich bei Bedarf erneut zu authentifizieren oder eine neue Autorisierung einzuholen.
+
+1. **Benutzer-Feedback**: Optional können Sie die für Menschen lesbaren Felder &quot;Meldung&quot;und (potenziellen) &quot;Details&quot;verwenden, um den Benutzer über das Problem zu informieren. Die &quot;Details&quot;-Textnachricht kann von den MVPD-Vorabautorisierungs- oder Autorisierungsendpunkten oder vom Programmierer bei Anwendung der Abbauregeln weitergeleitet werden.

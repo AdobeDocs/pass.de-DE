@@ -1,13 +1,13 @@
 ---
 title: Profil für bestimmte mvpd abrufen
 description: REST API V2 - Profil für bestimmte mvpd abrufen
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: ed1abc33-c279-4465-b5a0-b4e5b892076e
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '972'
+source-wordcount: '974'
 ht-degree: 0%
 
 ---
-
 
 # Profil für bestimmte mvpd abrufen {#retrieve-profile-for-specific-mvpd}
 
@@ -318,8 +318,8 @@ ht-degree: 0%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">error</td>
-      <td>Der Fehler enthält zusätzliche Informationen, die der Dokumentation <a href="../../../enhanced-error-codes.md">Verbesserte Fehlercodes</a> entsprechen.</td>
+      <td style="background-color: #DEEBFF;"></td>
+      <td>Der Antworttext kann zusätzliche Fehlerinformationen bereitstellen, die der Dokumentation <a href="../../../enhanced-error-codes.md">Verbesserte Fehlercodes</a> entsprechen.</td>
       <td><i>erforderlich</i></td>
    </tr>
 </table>

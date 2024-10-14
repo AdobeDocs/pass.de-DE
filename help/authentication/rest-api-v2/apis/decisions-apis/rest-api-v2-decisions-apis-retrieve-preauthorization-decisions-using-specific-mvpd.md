@@ -1,13 +1,13 @@
 ---
 title: Abrufen von Vorab-Autorisierungsentscheidungen mit einer bestimmten mvpd
 description: REST API V2 - Abrufen von Entscheidungen zur Vorabautorisierung mithilfe bestimmter mvpd
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: 8647e4fb-00b6-45cd-b81b-d00618b2e08b
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '821'
-ht-degree: 0%
+source-wordcount: '823'
+ht-degree: 1%
 
 ---
-
 
 # Abrufen von Vorab-Autorisierungsentscheidungen mit einer bestimmten mvpd {#retrieve-preauthorization-decisions-using-specific-mvpd}
 
@@ -298,8 +298,8 @@ ht-degree: 0%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">error</td>
-      <td>Der Fehler enthält zusätzliche Informationen, die der Dokumentation <a href="../../../enhanced-error-codes.md">Verbesserte Fehlercodes</a> entsprechen.</td>
+      <td style="background-color: #DEEBFF;"></td>
+      <td>Der Antworttext kann zusätzliche Fehlerinformationen bereitstellen, die der Dokumentation <a href="../../../enhanced-error-codes.md">Verbesserte Fehlercodes</a> entsprechen.</td>
       <td><i>erforderlich</i></td>
    </tr>
 </table>

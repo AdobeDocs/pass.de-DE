@@ -1,13 +1,13 @@
 ---
 title: Abrufen einer Authentifizierungssitzung mit Code
 description: REST API V2 - Abrufen einer Authentifizierungssitzung mit Code
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '406'
-ht-degree: 1%
+source-wordcount: '408'
+ht-degree: 2%
 
 ---
-
 
 # Abrufen einer Authentifizierungssitzung mit Code {#retrieve-authentication-session-using-code}
 
@@ -188,8 +188,8 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">error</td>
-      <td>Der Fehler enthält zusätzliche Informationen, die der Dokumentation <a href="../../../enhanced-error-codes.md">Verbesserte Fehlercodes</a> entsprechen.</td>
+      <td style="background-color: #DEEBFF;"></td>
+      <td>Der Antworttext kann zusätzliche Fehlerinformationen bereitstellen, die der Dokumentation <a href="../../../enhanced-error-codes.md">Verbesserte Fehlercodes</a> entsprechen.</td>
       <td><i>erforderlich</i></td>
    </tr>
 </table>
