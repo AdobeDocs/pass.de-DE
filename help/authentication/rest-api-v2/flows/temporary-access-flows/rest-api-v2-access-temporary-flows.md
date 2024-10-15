@@ -1,13 +1,13 @@
 ---
 title: Temporärer Zugriffsfluss
 description: REST API V2 - Fluss temporärer Zugriffsberechtigungen
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
+source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
 workflow-type: tm+mt
-source-wordcount: '3210'
+source-wordcount: '3215'
 ht-degree: 0%
 
 ---
-
 
 # Temporäre Zugriffsflüsse {#temporary-access-flows}
 
@@ -369,7 +369,7 @@ Bevor Autorisierungsentscheidungen abgerufen werden, wenn grundlegende oder Werb
 > <br/>
 > 
 > * Es muss eine gültige Konfigurationseinstellung für einfachen oder Werbe-TempPass geben, der auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
-> * Die für den einfachen oder Werbe-TempPass konfigurierte TTL (Time-To-Live) ist abgelaufen.
+> * Die für die Basis- oder Werbeaktion konfigurierte TTL (Time-To-Live) Die zeitliche Beschränkung für den temporären Zugriff wurde überschritten.
 
 ### Workflow {#workflow-retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
 
