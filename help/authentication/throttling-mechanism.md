@@ -2,9 +2,9 @@
 title: Drosselmechanismus
 description: Erfahren Sie mehr über den in der Adobe Pass-Authentifizierung verwendeten Drosselmechanismus. Einen Überblick über diesen Mechanismus finden Sie auf dieser Seite.
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
-source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
+source-git-commit: 83998257b25465c109cac56ae753291d1572696c
 workflow-type: tm+mt
-source-wordcount: '987'
+source-wordcount: '1141'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Weitere Informationen zum Übergeben der X-Forwarded-For-Kopfzeile [finden Sie h
 
 ### Tatsächliche Einschränkungen und Endpunkte
 
-Derzeit erlaubt das Standardlimit maximal 1 Anfrage pro Sekunde, mit einem anfänglichen Berst von 3 Anforderungen (einmalige Berücksichtigung der ersten Interaktion des identifizierten Clients, wodurch die Initialisierung erfolgreich abgeschlossen werden kann). Dies sollte sich nicht auf reguläre Geschäftsfälle für alle unsere Kunden auswirken.
+Derzeit erlaubt das Standardlimit maximal 1 Anfrage pro Sekunde mit einem anfänglichen Burst von 10 Anfragen (einmalige Berücksichtigung der ersten Interaktion des identifizierten Clients, was eine erfolgreiche Initialisierung ermöglichen sollte). Dies sollte sich nicht auf reguläre Geschäftsfälle für alle unsere Kunden auswirken.
 
 Der Drosselmechanismus wird für die folgenden Endpunkte aktiviert:
 
@@ -67,6 +67,7 @@ Der Drosselmechanismus wird für die folgenden Endpunkte aktiviert:
 - /api/v1/authenticate/
 - /api/v1/.+/profile-requests/.+
 - /api/v1/identities
+- /adobe-services/config/
 - /reggie/v1/.+/regcode
 - /reggie/v1/.+/regcode/.+
 
@@ -144,13 +145,21 @@ Kunden, die eine benutzerdefinierte Implementierung (einschließlich Server-zu-S
 ## Szenario für Einschränkungen
 
 | Zeit seit der ersten Anfrage | Erhalt der Antwort | Erklärung |
-|--------------------------|-----------------------------------|----------------------------------------------------------------------------------------------------------|
+|--------------------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------|
 | Second 0 | Aufruf erhält Erfolgsstatus-Code | 1 vom Limit aus verbrauchte Aufrufe |
 | Second 0.3 | Aufruf erhält Erfolgsstatus-Code | 1 vom Limit aus verbrauchte Anrufe und 1 als &quot;Berst&quot;markierte Anrufe |
 | Second 0.6 | Aufruf erhält Erfolgsstatus-Code | 1 vom Limit verbrauchte Aufrufe und 2 als &quot;Berst&quot;markierte Aufrufe |
 | Zweiter 0,9 | Aufruf erhält Erfolgsstatus-Code | 1 vom Limit aus verbrauchte Anrufe und 3 als &quot;Berst&quot;markierte Anrufe |
 | Zweiter 1.2 | Aufruf erhält Erfolgsstatus-Code | 2 vom Limit aus verbrauchte Anrufe und 3 als &quot;Berst&quot;markierte Anrufe |
-| Zweiter 1.4 | Aufruf erhält 429 Status-Code | 2 aus der Begrenzung verbrauchte Anrufe und 3 als platziert markierte Anrufe und 1 Anruf erhält &quot;429 Zu viele Anfragen&quot; |
-| Zweiter 1.6 | Aufruf erhält 429 Status-Code | 2 aus der Begrenzung verbrauchte Anrufe und 3 als platziert markierte Anrufe und 2 Anrufe erhalten &quot;429 Zu viele Anfragen&quot; |
-| Zweiter 1.8 | Aufruf erhält 429 Status-Code | 2 aus der Begrenzung verbrauchte Anrufe und 3 als platziert markierte Anrufe und 3 Anrufe erhalten &quot;429 Zu viele Anfragen&quot;. |
-| 2.1 | Aufruf erhält Erfolgsstatus-Code | 3 von der Begrenzung verbrauchte Anrufe und 3 als platziert markierte Anrufe und 3 Anrufe erhalten &quot;429 Zu viele Anfragen&quot; |
+| Zweites 1.3 | Aufruf erhält Erfolgsstatus-Code | 2 vom Limit aus verbrauchte Anrufe und 4 als &quot;Berst&quot;markierte Anrufe |
+| Zweiter 1.4 | Aufruf erhält Erfolgsstatus-Code | 2 vom Limit aus verbrauchte Anrufe und 5 als platziert markierte Anrufe |
+| Zweiter 1.5 | Aufruf erhält Erfolgsstatus-Code | 2 vom Limit aus verbrauchte Anrufe und 6 als &quot;Berst&quot;markierte Anrufe |
+| Zweiter 1.6 | Aufruf erhält Erfolgsstatus-Code | 2 vom Limit aus verbrauchte Anrufe und 7 als &quot;Berst&quot;markierte Anrufe |
+| Zweiter 1.7 | Aufruf erhält Erfolgsstatus-Code | 2 vom Limit aus verbrauchte Anrufe und 8 als &quot;Berst&quot;markierte Anrufe |
+| Zweiter 1.8 | Aufruf erhält Erfolgsstatus-Code | 2 vom Limit aus verbrauchte Anrufe und 9 als &quot;Berst&quot;markierte Anrufe |
+| 2.1 | Aufruf erhält Erfolgsstatus-Code | 3 vom Limit verbrauchte Anrufe und 9 als &quot;Berst&quot;markierte Anrufe |
+| 2.2 | Aufruf erhält Erfolgsstatus-Code | 3 vom Limit verbrauchte Aufrufe und 10 als &quot;Berst&quot;markierte Aufrufe |
+| 2.4 | Aufruf erhält 429 Status-Code | 3 von der Begrenzung verbrauchte Anrufe und 10 als abgestürzt gekennzeichnete Anrufe und 1 Anruf erhält &quot;429 Zu viele Anfragen&quot; |
+| 2.6 | Aufruf erhält 429 Status-Code | 3 von der Begrenzung verbrauchte Anrufe und 10 als platziert markierte Anrufe und 2 Anrufe erhalten &quot;429 Zu viele Anfragen&quot; |
+| 2.8 | Aufruf erhält 429 Status-Code | 3 von der Begrenzung verbrauchte Anrufe und 10 als platziert markierte Anrufe und 3 Anrufe erhalten &quot;429 Zu viele Anfragen&quot; |
+| Zweites 3.1 | Aufruf erhält Erfolgsstatus-Code | 4 Anrufe, die von der Begrenzung aus verbraucht werden, 10 Anrufe, die als &quot;Berst&quot;gekennzeichnet sind, und 3 Anrufe erhalten &quot;429 Zu viele Anfragen&quot; |
