@@ -1,9 +1,9 @@
 ---
 title: REST API V2-Cookbook (Client-to-Server)
 description: REST API V2-Cookbook (Client-to-Server)
-source-git-commit: 709835276710ec4b92abec3e39aaecae99872e77
+source-git-commit: 0d6693d51887c9e794401e984f3a4075be091ee5
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '695'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## Schritte zur Implementierung der REST API V2 in clientseitigen Anwendungen {#steps-to-implement-the-rest-api-v2-in-client-side-applications}
 
-Um die Adobe Pass REST API V2 zu implementieren, müssen Sie die folgenden Schritte in mehrere Phasen unterteilen.
+Um die Adobe Pass REST API V2 zu implementieren, müssen Sie die folgenden Schritte ausführen, die in Phasen unterteilt sind.
 
 ## A. Registrierungsphase {#registration-phase}
 
@@ -38,13 +38,13 @@ Um das Zugriffstoken zu erhalten, muss die Anwendung die folgenden Schritte ausf
 Prüfungen der Streaming-Anwendung auf vorhandene authentifizierte Profile: <b>/api/v2/{serviceProvider}/profiles</b><br>
 ([Abrufen authentifizierter Profile](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md))
 
-* Wenn kein Profil gefunden wurde und die Streaming-Anwendung einen TempPass-Fluss implementiert
+* Wenn kein Profil gefunden wird und die Streaming-Anwendung einen TempPass-Fluss implementiert
    * Befolgen Sie die Dokumentation zur Implementierung von [temporären Zugriffsflüssen](../flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md).
-* Wenn kein Profil gefunden wurde, implementiert die Streaming-Anwendung einen Authentifizierungsfluss
-   * Streaming-Anwendung ruft die Liste der für serviceProvider verfügbaren MVPDs ab: <b>/api/v2/{serviceProvider}/configuration</b><br>
+* Wenn kein Profil gefunden wird und die Streaming-Anwendung einen Authentifizierungsfluss implementiert
+   * Die Streaming-Anwendung ruft die Liste der für serviceProvider verfügbaren MVPDs ab: <b>/api/v2/{serviceProvider}/configuration</b><br>
 ([Liste der verfügbaren MVPDs abrufen](../apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md))
    * Die Streaming-Anwendung kann die Filterung der Liste der MVPDs implementieren und nur MVPDs anzeigen, die beim Ausblenden anderer MVPDs vorgesehen sind (TempPass, MVPDs testen, MVPDs in der Entwicklung usw.)
-   * Anzeigenauswahl der Streaming-Anwendung, Benutzer wählt den MVPD aus
+   * Streaming-Anwendung zeigt Auswahl an, Benutzer wählt das MVPD aus
    * Streaming-Anwendung erstellt eine Sitzung: <b>/api/v2/{serviceProvider}/sessions</b><br>
 ([Erstellen einer Authentifizierungssitzung](../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md))<br>
       * ein CODE und eine URL zurückgegeben, die für die Authentifizierung verwendet werden sollen
@@ -54,8 +54,8 @@ Prüfungen der Streaming-Anwendung auf vorhandene authentifizierte Profile: <b>/
 
 Verwenden eines Browsers oder einer Web-basierten Second Screen-Anwendung:
 
-* Option 1. Die Streaming-Anwendung kann einen Browser oder eine Webansicht öffnen, die zu authentifizierende URL laden und der Benutzer landet auf der MVPD-Anmeldeseite, auf der die Anmeldeinformationen gesendet werden müssen
-   * Benutzer eingeben Login/Passwort, endgültige Umleitung anzeigen Erfolgsseite
+* Option 1. Die Streaming-Anwendung kann einen Browser oder eine Webansicht öffnen, die URL zur Authentifizierung laden und der Benutzer landet auf der MVPD-Anmeldeseite, auf der die Anmeldeinformationen gesendet werden müssen
+   * Benutzer gibt Anmeldung/Kennwort ein, die endgültige Umleitung zeigt eine Erfolgsseite an
 * Option 2. Streaming-Anwendung kann einen Browser nicht öffnen und nur den CODE anzeigen. <b>Es muss eine separate Webanwendung entwickelt werden </b>, um den Benutzer aufzufordern, CODE einzugeben, URL zu erstellen und zu öffnen: <b>/api/v2/authenticate/{serviceProvider}/{CODE}</b>
    * Benutzer eingeben Login/Passwort, endgültige Umleitung anzeigen Erfolgsseite
 
