@@ -2,9 +2,9 @@
 title: API zur Überwachung von Entitätsdiensten
 description: API zur Überwachung von Entitätsdiensten
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 8fa1e63619f4e22794d701a218c77649f73d9f60
 workflow-type: tm+mt
-source-wordcount: '2070'
+source-wordcount: '2027'
 ht-degree: 0%
 
 ---
@@ -36,13 +36,13 @@ Die ESM-API bietet eine hierarchische Ansicht der zugrunde liegenden OLAP-Cubes.
 
 Die REST-API stellt die verfügbaren Daten innerhalb eines in der Anfrage angegebenen Zeitintervalls bereit (wobei auf die Standardwerte zurückgegriffen wird, wenn keine Werte angegeben sind). Dies hängt vom Dimensionspfad, den bereitgestellten Filtern und ausgewählten Metriken ab. Der Zeitraum wird nicht für Berichte angewendet, die keine Zeitdimensionen enthalten (Jahr, Monat, Tag, Stunde, Minute, Sekunde).
 
-Der Stammpfad der Endpunkt-URL gibt die aggregierten Gesamtmetriken innerhalb eines einzelnen Datensatzes zusammen mit den Links zu den verfügbaren Drilldown-Optionen zurück. Die API-Version wird als nachstehendes Segment des Endpunkt-URI-Pfads zugeordnet. Beispiel: `https://mgmt.auth.adobe.com/*v2*` bedeutet, dass die Clients auf WOLAP Version 2 zugreifen.
+Der Stammpfad der Endpunkt-URL gibt die aggregierten Gesamtmetriken innerhalb eines einzelnen Datensatzes zusammen mit den Links zu den verfügbaren Drilldown-Optionen zurück. Die API-Version wird als nachstehendes Segment des Endpunkt-URI-Pfads zugeordnet. Beispiel: `https://mgmt.auth.adobe.com/esm/v3` bedeutet, dass die Clients auf WOLAP Version 3 zugreifen.
 
 Die verfügbaren URL-Pfade können über die in der Antwort enthaltenen Links gefunden werden. Gültige URL-Pfade werden gespeichert, um einen Pfad innerhalb der zugrunde liegenden Drilldown-Struktur zuzuordnen, der aggregierte (vorab erstellte) Metriken enthält. Ein Pfad im Formular `/dimension1/dimension2/dimension3` spiegelt eine Voraggregation dieser drei Dimensionen wider (entspricht einer SQL `clause GROUP` BY `dimension1`, `dimension2`, `dimension3`). Wenn eine solche Voraggregation nicht vorhanden ist und das System sie nicht sofort berechnen kann, gibt die API eine Antwort &quot;404 Not Found&quot;zurück.
 
 ## Drilldown-Struktur {#drill-down-tree}
 
-Die folgenden Drilldown-Bäume veranschaulichen die in ESM 2.0 verfügbaren Dimensionen (Ressourcen) für [Programmierer](#progr-dimensions) und [MVPDs](#mvpd-dimensions).
+Die folgenden Drilldown-Bäume veranschaulichen die in ESM 3.0 verfügbaren Dimensionen (Ressourcen) für [Programmierer](#progr-dimensions) und [MVPDs](#mvpd-dimensions).
 
 
 ### Dimensionen für Programmierer {#progr-dimensions}
@@ -63,13 +63,13 @@ Die folgenden Drilldown-Bäume veranschaulichen die in ESM 2.0 verfügbaren Dime
 
 ![](assets/esm-mvpd-dimensions.png)
 
-Ein GET zum API-Endpunkt `https://mgmt.auth.adobe.com/v2` gibt eine Darstellung zurück, die Folgendes enthält:
+Ein GET zum API-Endpunkt `https://mgmt.auth.adobe.com/esm/v3` gibt eine Darstellung zurück, die Folgendes enthält:
 
 * Links zu den verfügbaren Root-Drilldown-Pfaden:
 
-   * `<link rel="drill-down" href="/v2/dimensionA"/>`
+   * `<link rel="drill-down" href="/v3/dimensionA"/>`
 
-   * `<link rel="drill-down" href="/v2/dimensionB"/>`
+   * `<link rel="drill-down" href="/v3/dimensionB"/>`
 
 * Eine Zusammenfassung (aggregierte Werte) für alle Metriken (standardmäßig
 -Intervall, da keine Abfragezeichenfolgenparameter angegeben sind, siehe unten).
@@ -119,8 +119,8 @@ Die folgenden Abfragezeichenfolgenparameter haben reservierte Bedeutungen für d
 ### ESM API-reservierte Abfragezeichenfolgenparameter
 
 | Parameter | Optional | Beschreibung | Standardwert | Beispiel |
-| --- | ---- | --- | ---- | --- |
-| access_token | Ja | Wenn der IMS OAuth-Schutz aktiviert ist, kann das IMS-Token entweder als standardmäßiges Authorization-Bearer-Token oder als Abfragezeichenfolgenparameter übergeben werden. | Keines | access_token=XXXXXX |
+| --- | ---- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ---- | --- |
+| access_token | Ja | Das DCR-Token kann als standardmäßiges Autorisierungs-Trägertoken übergeben werden. | Keines | access_token=XXXXXX |
 | dimension-name | Ja | Jeder Dimensionsname - entweder im aktuellen URL-Pfad oder in einem gültigen Unterpfad enthalten; der Wert wird als gleich Filter behandelt. Wenn kein Wert angegeben wird, erzwingt dies, dass die angegebene Dimension in die Ausgabe aufgenommen wird, auch wenn sie nicht enthalten ist oder an den aktuellen Pfad angrenzt | Keines | someDimension=someValue&amp;someOtherDimension |
 | end | Ja | Endzeit für den Bericht in Millisekunden | Aktuelle Zeit des Servers | end=2012-07-30 |
 | format | Ja | Wird für die Inhaltsverhandlung verwendet (mit demselben Effekt, aber geringerer Priorität als der Pfad &quot;Erweiterung&quot;- siehe unten). | Keine: Bei der Inhaltsverhandlung werden die anderen Strategien getestet | format=json |
@@ -128,8 +128,7 @@ Die folgenden Abfragezeichenfolgenparameter haben reservierte Bedeutungen für d
 | Metriken | Ja | Kommagetrennte Liste der zurückzugebenden Metriknamen. Diese sollte zum Filtern einer Untergruppe der verfügbaren Metriken (um die Payload-Größe zu reduzieren) und auch zum Erzwingen der API verwendet werden, eine Projektion zurückzugeben, die die angeforderten Metriken enthält (und nicht die standardmäßige optimale Projektion). | Alle für die aktuelle Projektion verfügbaren Metriken werden zurückgegeben, falls dieser Parameter nicht angegeben wird. | metrics=m1,m2 |
 | start | Ja | Startzeit für den Bericht als ISO8601; der Server füllt den verbleibenden Teil aus, wenn nur ein Präfix angegeben wird: Beispielsweise führt start=2012 zu start=2012-01-01:00:00:00. | Vom Server in der Selbstverknüpfung gemeldet; der Server versucht, basierend auf der ausgewählten Zeitgranularität angemessene Standardwerte bereitzustellen. | start=2012-07-15 |
 
-Die einzige verfügbare HTTP-Methode ist derzeit GET. Unterstützung für OPTIONS /
-HEAD-Methoden können in zukünftigen Versionen bereitgestellt werden.
+Die einzige verfügbare HTTP-Methode ist derzeit GET.
 
 ## ESM-API-Statuscodes {#esm-api-status-codes}
 
@@ -156,7 +155,7 @@ Die Daten sind in den folgenden Formaten verfügbar:
 
 Die folgenden Strategien für die Inhaltsverhandlung können von Kunden verwendet werden (der Vorrang wird durch die Position in der Liste gegeben - das erste Mal):
 
-1. Eine &quot;Dateierweiterung&quot;, die an das letzte Segment des URL-Pfads angehängt wird, z. B. `/esm/v2/media-company/year/month/day.xml`. Wenn die URL eine Abfragezeichenfolge enthält, muss die Erweiterung vor dem Fragezeichen stehen: `/esm/v2/media-company/year/month/day.csv?mvpd= SomeMVPD`
+1. Eine &quot;Dateierweiterung&quot;, die an das letzte Segment des URL-Pfads angehängt wird, z. B. `/esm/v3/media-company/year/month/day.xml`. Wenn die URL eine Abfragezeichenfolge enthält, muss die Erweiterung vor dem Fragezeichen stehen: `/esm/v3/media-company/year/month/day.csv?mvpd= SomeMVPD`
 1. Ein Formatabfragezeichenfolgenparameter, z. B. `/esm/report?format=json`
 1. Die standardmäßige HTTP-Accept-Kopfzeile, z. B. `Accept: application/xml`
 
@@ -205,13 +204,13 @@ Der Ressourcenlink (das &quot;self&quot;-rel in JSON und das &quot;href&quot;-Re
 
 Beispiel (vorausgesetzt, wir haben eine einzelne Metrik namens `clients` und es gibt eine Voraggregation für `year/month/day/...`):
 
-* https://mgmt.auth.adobe.com/esm/v2/year/month.xml
+* https://mgmt.auth.adobe.com/esm/v3/year/month.xml
 
 ```XML
-   <resource href="/esm/v2/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21">
+   <resource href="/esm/v3/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21">
    <links>
-   <link rel="roll-up" href="/esm/v2/year"/>
-   <link rel="drill-down" href="/esm/v2/year/month/day"/>
+   <link rel="roll-up" href="/esm/v3/year"/>
+   <link rel="drill-down" href="/esm/v3/year/month/day"/>
    </links>
    <report>
    <record month="6" year="2012" clients="205"/>
@@ -220,19 +219,19 @@ Beispiel (vorausgesetzt, wir haben eine einzelne Metrik namens `clients` und es 
    </resource>
 ```
 
-* https://mgmt.auth.adobe.com/esm/v2/year/month.json
+* https://mgmt.auth.adobe.com/esm/v3/year/month.json
 
   ```JSON
       {
         "_links" : {
           "self" : {
-            "href" : "/esm/v2/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21"
+            "href" : "/esm/v3/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21"
           },
           "roll-up" : {
-            "href" : "/esm/v2/year"
+            "href" : "/esm/v3/year"
           },
           "drill-down" : {
-            "href" : "/esm/v2/year/month/day"
+            "href" : "/esm/v3/year/month/day"
           }
         },
         "report" : [ {
@@ -260,7 +259,7 @@ Die CSV-Datei enthält eine Kopfzeile und dann die Berichtsdaten als nachfolgend
 Die Reihenfolge der Felder in der Kopfzeile entspricht der Sortierreihenfolge der Tabellendaten.
 
 
-Beispiel: https://mgmt.auth.adobe.com/v2/year/month.csv erstellt eine Datei mit dem Namen `report__2012-07-20_2012-08-20_1000.csv` mit folgendem Inhalt:
+Beispiel: https://mgmt.auth.adobe.com/esm/v3/year/month.csv erstellt eine Datei mit dem Namen `report__2012-07-20_2012-08-20_1000.csv` mit folgendem Inhalt:
 
 
 | Jahr | Monat | Kunden |
@@ -273,8 +272,6 @@ Beispiel: https://mgmt.auth.adobe.com/v2/year/month.csv erstellt eine Datei mit 
 Die erfolgreichen HTTP-Antworten enthalten einen `Last-Modified` -Header, der den Zeitpunkt angibt, zu dem der Bericht im Textkörper zuletzt aktualisiert wurde. Das Fehlen einer Kopfzeile vom Typ Letzte Änderung zeigt an, dass die Berichtsdaten in Echtzeit berechnet werden.
 
 Normalerweise werden grobkörnige Daten weniger häufig aktualisiert als fein abgestufte Daten (z. B. Minuswerte oder Stundenwerte), die aktueller als die täglichen Werte sein können, insbesondere für Metriken, die nicht anhand kleinerer Granularitäten berechnet werden können (z. B. eindeutige Werte).
-
-Zukünftige Versionen von ESM können es Kunden ermöglichen, bedingte GETs auszuführen, indem sie die standardmäßige &quot;If-Modified-Since&quot;-Kopfzeile bereitstellen.
 
 ## GZIP-Komprimierung {#gzip-compression}
 
