@@ -2,9 +2,9 @@
 title: Zurücksetzen des Vorübergangs
 description: Zurücksetzen des Vorübergangs
 exl-id: ab39e444-eab2-4338-8d09-352a1d5135b6
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 32060798501abe2bf7314474d55cf844efb3f7b1
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '336'
 ht-degree: 0%
 
 ---
@@ -25,59 +25,22 @@ ht-degree: 0%
 >
 > Weitere Informationen zum Erstellen einer registrierten Anwendung und Herunterladen der Softwareanweisung finden Sie in der Dokumentation zur [Übersicht über die dynamische Client-Registrierung](./dcr-api/dynamic-client-registration-overview.md) .
 
-Damit **einen bestimmten Temp-Pass zurücksetzen**, stellt die Adobe Pass-Authentifizierung Programmierern eine Web-API für *public* bereit:
-
-* **Umgebung:** gibt den Server-Endpunkt Adobe Pay-TV Pass an, der den Netzwerkaufruf Temp Pass zurücksetzen erhält. Mögliche Werte: **Prequal** (*mgmt* prequal.auth.adobe.com*), **Release** (*mgmt.auth.adobe.com*) oder **Benutzerdefiniert** (für interne Adobe-Tests reserviert).
-* **OAuth2-Zugriffstoken:** Das OAuth2-Token ist erforderlich, um den Programmierer für die Adobe Pay-TV-Authentifizierung zu autorisieren. Ein solches Token kann wie in der API-Dokumentation [Zugriffstoken abrufen](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) beschrieben abgerufen werden.
-* **Temp Pass ID:** Die eindeutige ID für den MVPD für den Temp Pass, der zurückgesetzt werden soll.(Ein Programmierer kann mehrere MVPDs mit Temp Pass verwenden und einen bestimmten zurücksetzen.)
-* **Generischer Schlüssel:** einige temporäre Pass-MVPDs (d. h. [Promotional temp pass](promotional-temp-pass.md)).
-
-Alle oben genannten Parameter (außer dem *generischen Schlüssel*) sind obligatorisch. Im Folgenden finden Sie ein Beispiel für Parameter und den zugehörigen Netzwerkaufruf (das Beispiel hat die Form eines *curl *command):
-
-* **Umgebung:** Release (*mgmt.auth.adobe.com*)
-* **OAuth2-Zugriffstoken:** &lt;access_token>, wie in der API-Dokumentation [Zugriffstoken abrufen](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) beschrieben
-* **Programmierer-ID:** REF
-* **Temp Pass ID:** TempPassREF
-* **Generischer Schlüssel:** null (kein Wert angegeben)
-
-```curl
-curl -X DELETE -H "Authorization:Bearer <access_token_here>" "https://mgmt.auth.adobe.com/reset-tempass/v3/reset?device_id=f23804a37802993fdc8e28a7f244dfe088b6a9ea21457670728e6731fa639991&requestor_id=REF&mvpd_id=TempPassREF"
-```
-
-Es wird eine DELETE-HTTP-Anfrage an den Endpunkt **/reset** gesendet, wobei das *OAuth2 Access Token* im Autorisierungs-Header und die *Geräte-ID*, die *Anforderer-ID* und die *Temp Pass ID (MVPD ID)* als Parameter übergeben werden.
-
-Wenn der Programmierer einen Wert für den *generischen Schlüssel* bereitstellt, wird ein weiterer HTTP-Aufruf ausgeführt (diesmal an den Endpunkt **/reset/generic** ), wobei der *generische Schlüssel* innerhalb des Anforderungsparameters *key* übergeben wird.
-
-Setzen Sie beispielsweise den generischen Schlüssel *1} auf einen E-Mail-Adressen-Hash (für
-Temp Pass-MVPDs, die diese Art von Funktionalität unterstützen) liefern die
-nach HTTP-Aufruf (die E-Mail ist `user@domain.com` SHA-256)
-hash ist `f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7`):*
-
-```curl
-curl -X DELETE -H "Authorization:Bearer <access_token_here>"
-"https://mgmt.auth.adobe.com/reset-tempass/v3/reset/generic?key=f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7&requestor_id=REF&mvpd_id=TempPassREF"
-```
-
-
-Damit **einen bestimmten Temp-Pass für alle Geräte zurücksetzen**, stellt die Adobe Pass-Authentifizierung Programmierern eine Web-API für *public* bereit:
+Damit **einen bestimmten Temp-Pass für ein Gerät oder alle Geräte zurücksetzen**, stellt die Adobe Pass-Authentifizierung Programmierern eine Web-API für *public* bereit:
 
 ```url
 DELETE https://mgmt.auth.adobe.com/reset-tempass/v3/reset
 ```
-
->[!NOTE]
->Die obige URL ersetzt die vorherige Reset-API. Die alte Reset-API (v1) wird nicht mehr unterstützt.
 
 * **Protokoll:** HTTPS
 * **Host:**
    * Release - mgmt.auth.adobe.com
    * Prequal - mgmt-prequal.auth.adobe.com
 * **Pfad:** /reset-tempass/v3/reset
-* **Abfrageparameter:** `device_id=all&requestor_id=REQUESTOR_ID&mvpd_id=TEMPPASS_MVPD_ID`
+* **Abfrageparameter:** device_id(wenn kein Wert angegeben wird, ist standardmäßig &quot;all&quot;), requestor_id (erforderlich), mvpd_id (erforderlich), appId, deviceUser, environment
 * **Header:** Authorization: Bearer &lt;access_token_here>
 * **Antwort:**
    * Erfolg - HTTP 204
-   * Fehler:
+   * Fehler:xw
       * HTTP 400 für eine falsche Anforderung
       * HTTP 401 , wenn der Zugriff verweigert wird. Der Client MUSS ein neues access_token anfordern.
       * HTTP 403 , wenn die Client-ID keine Anfragen mehr ausführen darf. Es sollten neue Client-Anmeldeinformationen generiert werden.
@@ -87,4 +50,35 @@ Beispiel:
 
 ```curl
 $ curl -H "Authorization: Bearer <access_token_here>" -X DELETE -v "https://mgmt.auth.adobe.com/reset-tempass/v3/reset?device_id=all&requestor_id=AdobeBEAST&mvpd_id=TempPass"
+```
+
+Um den flexiblen Temp-Pass für einen generischen Schlüssel oder alle Schlüssel zurücksetzen zu können, stellt die Adobe Pass-Authentifizierung Programmierern eine Web-API für *public* bereit:****
+
+```url
+DELETE https://mgmt.auth.adobe.com/reset-tempass/v3/reset/generic
+```
+
+* **Protokoll:** HTTPS
+* **Host:**
+   * Release - mgmt.auth.adobe.com
+   * Prequal - mgmt-prequal.auth.adobe.com
+* **Pfad:** /reset-tempass/v3/reset/generic
+* **Abfrageparameter:** key (wenn kein Wert angegeben wird, ist standardmäßig all), requestor_id (erforderlich), mvpd_id (erforderlich), environment
+* **Header:** Authorization: Bearer &lt;access_token_here>
+* **Antwort:**
+   * Erfolg - HTTP 204
+   * Fehler:
+      * HTTP 400 für eine falsche Anforderung
+      * HTTP 401 , wenn der Zugriff verweigert wird. Der Client MUSS ein neues access_token anfordern.
+      * HTTP 403 , wenn die Client-ID keine Anfragen mehr ausführen darf. Es sollten neue Client-Anmeldeinformationen generiert werden.
+
+
+Setzen Sie beispielsweise den generischen Schlüssel *1} auf einen E-Mail-Adressen-Hash (für
+Temp Pass-MVPDs, die diese Art von Funktionalität unterstützen) liefern die
+nach HTTP-Aufruf (die E-Mail ist `user@domain.com` SHA-256)
+hash ist `f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7`):*
+
+```curl
+curl -X DELETE -H "Authorization:Bearer <access_token_here>"
+"https://mgmt.auth.adobe.com/reset-tempass/v3/reset/generic?key=f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7&requestor_id=REF&mvpd_id=TempPassREF"
 ```
