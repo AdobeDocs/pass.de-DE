@@ -1,13 +1,13 @@
 ---
 title: Grundlegende Authentifizierung - Sekundäre Anwendung - Fluss
 description: REST API V2 - Grundlegende Authentifizierung - Sekundäre Anwendung - Fluss
-source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
+exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '2000'
 ht-degree: 0%
 
 ---
-
 
 # Grundlegender Authentifizierungsfluss, der in der sekundären Anwendung ausgeführt wird {#basic-authentication-flow-performed-within-secondary-application}
 
@@ -137,7 +137,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierung
    >
    > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../enhanced-error-codes.md) entsprechen.
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Empfehlung: Die sekundäre Anwendung kann Benutzer darüber informieren, dass der verwendete `code` im Falle einer Fehlerantwort, die auf eine fehlende Authentifizierungssitzung hinweist, ungültig ist, und ihnen empfehlen, einen erneuten Versuch mit einer neuen zu unternehmen.
 
@@ -162,7 +162,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierung
    > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization`, `AP-Device-Identifier`
    > * Alle Parameter und Kopfzeilen von _optional_
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Empfehlung: Die Streaming-Anwendung kann mithilfe von `code` einen Abruffegel implementieren, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
 
@@ -271,7 +271,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierung
    > 
    > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../enhanced-error-codes.md) entsprechen.
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Empfehlung: Die sekundäre Anwendung kann Benutzer darüber informieren, dass der verwendete `code` im Falle einer Fehlerantwort, die auf eine fehlende Authentifizierungssitzung hinweist, ungültig ist, und ihnen empfehlen, einen erneuten Versuch mit einer neuen zu unternehmen.
 
@@ -300,7 +300,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierung
    > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization`, `AP-Device-Identifier`
    > * Alle Parameter und Kopfzeilen von _optional_
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Empfehlung: Die Streaming-Anwendung kann mithilfe von `code` einen Abruffegel implementieren, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
 

@@ -1,13 +1,13 @@
 ---
 title: Grundlegende Authentifizierung - Primäre Anwendung - Fluss
 description: REST API V2 - Grundlegende Authentifizierung - Primäre Anwendung - Fluss
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '894'
 ht-degree: 0%
 
 ---
-
 
 # Grundlegender Authentifizierungsfluss innerhalb der primären Anwendung {#basic-authentication-flow-performed-within-primary-application}
 
@@ -121,7 +121,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierung
    > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization`, `AP-Device-Identifier`
    > * Alle Parameter und Kopfzeilen von _optional_
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Empfehlung: Die Streaming-Anwendung kann warten, bis der Benutzeragent den bereitgestellten &quot;`redirectUrl`&quot;erreicht, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
 

@@ -1,13 +1,13 @@
 ---
 title: Single Sign-On - Service-Token - Flüsse
 description: REST API V2 - Single Sign-On - Service Token - Flows
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '1848'
 ht-degree: 0%
 
 ---
-
 
 # Single Sign-on mit Service-Token-Flüssen{#single-sign-on-service-token-full-flows}
 
@@ -120,7 +120,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
    > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization`, `AP-Device-Identifier`
    > * Alle Parameter und Kopfzeilen von _optional_
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Empfehlung: Die Streaming-Anwendung kann warten, bis der Benutzeragent den bereitgestellten &quot;`redirectUrl`&quot;erreicht, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
 

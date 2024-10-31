@@ -2,9 +2,9 @@
 title: REST API-Cookbook (Client-to-Server)
 description: REST API-Cookbook-Client zu Server.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '876'
 ht-degree: 0%
 
 ---
@@ -130,12 +130,18 @@ Benutzer.
 
 1. Senden Sie den Benutzer zurück an Ihre Smart-Device-App, um den Autorisierungsfluss abzuschließen.
 
-## Platform SSO {#platform-sso}
+## Single Sign-On für Partner {#partner-sso}
 
-Einige Plattformen bieten spezielle Unterstützung für Single Sign-On (SSO). Implementierungsdetails finden Sie für jede Plattform:
+Einige Geräte bieten spezielle Unterstützung für Partner Single Sign-On (SSO):
 
-* [APPLE SSO](/help/authentication/apple-sso-cookbook-rest-api.md)
-* AMAZON SSO
+* [APPLE SSO](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-rest-api-v1.md)
+
+## Single-Sign-On für Platform {#platform-sso}
+
+Einige Geräte bieten spezielle Unterstützung für Platform Single Sign-On (SSO):
+
+* [AMAZON SSO](./single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
+* [Roku SSO](./single-sign-on/platform-single-sign-on/roku-single-sign-on/roku-sso-overview.md)
 
 ## TempPass und Promotional TempPass für REST-API {#temppass}
 

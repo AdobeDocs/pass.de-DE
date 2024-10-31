@@ -2,7 +2,7 @@
 title: Temporärer Zugriffsfluss
 description: REST API V2 - Fluss temporärer Zugriffsberechtigungen
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '3215'
 ht-degree: 0%
@@ -349,7 +349,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss zu implemen
 
 1. **Entscheidungsdetails verarbeiten `Deny`:** Die Streaming-Anwendung verarbeitet die Fehlerinformationen aus der Antwort und kann sie verwenden, um optional eine bestimmte Meldung auf der Benutzeroberfläche anzuzeigen.
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Empfehlung: Die Streaming-Anwendung kann Benutzer darüber informieren, dass die maximale Ressourcenanzahl überschritten wurde, und ihnen empfehlen, einen einfachen Authentifizierungsfluss mit einem regulären MVPD zu initiieren, um die Wiedergabe fortzusetzen.
 
@@ -429,7 +429,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss zu implemen
 
 1. **Entscheidungsdetails verarbeiten `Deny`:** Die Streaming-Anwendung verarbeitet die Fehlerinformationen aus der Antwort und kann sie verwenden, um optional eine bestimmte Meldung auf der Benutzeroberfläche anzuzeigen.
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Empfehlung: Die Streaming-Anwendung kann Benutzer darüber informieren, dass der temporäre Zugriff abgelaufen ist, und ihnen empfehlen, einen einfachen Authentifizierungsfluss mit einem regulären MVPD zu initiieren, um die Wiedergabe fortzusetzen.
 

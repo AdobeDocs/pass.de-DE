@@ -1,13 +1,13 @@
 ---
 title: Single Sign-On - Platform Identity - Flows
 description: REST API V2 - Single Sign-On - Platform Identity - Flows
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '1830'
 ht-degree: 0%
 
 ---
-
 
 # Single Sign-on mit Platform-Identitätsflüssen {#single-sign-on-platform-identity-full-flows}
 
@@ -117,7 +117,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
    > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization`, `AP-Device-Identifier`
    > * Alle Parameter und Kopfzeilen von _optional_
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Empfehlung: Die Streaming-Anwendung kann warten, bis der Benutzeragent den bereitgestellten &quot;`redirectUrl`&quot;erreicht, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
 

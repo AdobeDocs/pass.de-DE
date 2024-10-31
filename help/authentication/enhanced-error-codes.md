@@ -2,7 +2,7 @@
 title: Verbesserte Fehlercodes
 description: Verbesserte Fehlercodes
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '2593'
 ht-degree: 2%
@@ -301,8 +301,8 @@ In der folgenden Tabelle sind mögliche erweiterte Fehlercodes aufgeführt, auf 
 | **none** | *invalid_parameter_service_provider* | 400 | Der Parameterwert des Dienstanbieters fehlt oder ist ungültig. |
 |                              | *invalid_parameter_mvpd* | 400 | Der Parameterwert mvpd fehlt oder ist ungültig. |
 |                              | *invalid_parameter_code* | 400 | Der Code-Parameterwert fehlt oder ist ungültig. |
-|                              | *invalid_parameter_resources* | 400 | Der Umleitungs-URL-Parameterwert fehlt oder ist ungültig. |
-|                              | *invalid_parameter_redirect_url* | 400 | Der Ressourcenparameterwert fehlt oder ist ungültig. |
+|                              | *invalid_parameter_resources* | 400 | Der Ressourcenparameterwert fehlt oder ist ungültig. |
+|                              | *invalid_parameter_redirect_url* | 400 | Der Umleitungs-URL-Parameterwert fehlt oder ist ungültig. |
 |                              | *invalid_parameter_partner* | 400 | Der Partnerparameterwert fehlt oder ist ungültig. |
 |                              | *invalid_parameter_saml_response* | 400 | Der SAML-Antwortparameterwert fehlt oder ist ungültig. |
 |                              | *invalid_header_device_info* | 400 | Der Header-Wert für Geräteinformationen fehlt oder ist ungültig. |

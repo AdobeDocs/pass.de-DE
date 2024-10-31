@@ -1,13 +1,13 @@
 ---
 title: Single Sign-On - Partner - Fluss
 description: REST API V2 - Single Sign-On - Partner - Flüsse
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '1317'
+source-wordcount: '1444'
 ht-degree: 0%
 
 ---
-
 
 # Single Sign-on mit Partnerflüssen {#single-sign-on-partner-flows}
 
@@ -18,6 +18,18 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > Die REST API V2-Implementierung wird durch die Dokumentation zum [Drosselungsmechanismus](/help/authentication/throttling-mechanism.md) begrenzt.
+
+Die Partner -Methode ermöglicht es mehreren Anwendungen, eine Partner-Framework-Status-Payload zu verwenden, um Single Sign-On (SSO) auf Geräteebene bei der Verwendung von Adobe Pass-Diensten zu erreichen.
+
+Die Anwendungen sind für das Abrufen der Statusnutzlast des Partner-Frameworks mithilfe von Partner-spezifischen Frameworks oder Bibliotheken außerhalb von Adobe Pass-Systemen verantwortlich.
+
+Die Anwendungen sind dafür verantwortlich, diese Partner-Framework-Status-Payload als Teil der `AP-Partner-Framework-Status` -Kopfzeile für alle Anforderungen einzubeziehen, die sie angeben.
+
+Weitere Informationen zum Header `AP-Partner-Framework-Status` finden Sie in der Dokumentation [AP-Partner-Framework-Status](../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md) .
+
+Die Adobe Pass Authentication REST API V2 unterstützt Single Sign-On (SSO) für Endbenutzer von Clientanwendungen, die auf iOS, iPadOS oder tvOS ausgeführt werden.
+
+Weitere Informationen zum Single Sign-on (SSO) für die Apple-Plattform finden Sie in der Dokumentation zum [Apple SSO Cookbook (REST API V2)](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-rest-api-v2.md) .
 
 ## Anfrage zur Partnerauthentifizierung abrufen {#retrieve-partner-authentication-request}
 
@@ -61,7 +73,7 @@ Führen Sie die angegebenen Schritte aus, um die Partnerauthentifizierungsanford
    > Weitere Informationen finden Sie in der API-Dokumentation zur [Abrufen der Partner-Authentifizierungsanforderung](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md) .
    >
    > * Alle _erforderlichen_ Parameter, wie `serviceProvider` und `partner`
-   > * Alle _erforderlichen_ Header wie `Authorization`, `AP-Device-Identifier` und `AP-Partner-Framework-Status`
+   > * Alle _erforderlichen_ Header wie `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` und `AP-Partner-Framework-Status`
    > * Alle _optionalen_ -Kopfzeilen und -Parameter
    >
    > <br/>
@@ -175,7 +187,7 @@ Führen Sie die angegebenen Schritte aus, um den Abruffluss des Profils mithilfe
    > Weitere Informationen finden Sie in der API-Dokumentation zum [Abrufen des Profils mithilfe der Antwort zur Partnerauthentifizierung](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) .
    >
    > * Alle _erforderlichen_ Parameter, wie `serviceProvider`, `partner` und `SAMLResponse`
-   > * Alle _erforderlichen_ Header, wie `Authorization`, `AP-Device-Identifier` und `AP-Partner-Framework-Status`
+   > * Alle _erforderlichen_ Header, wie `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` und `AP-Partner-Framework-Status`
    > * Alle _optionalen_ -Kopfzeilen und -Parameter
    >
    > <br/>
