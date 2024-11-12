@@ -1,13 +1,13 @@
 ---
 title: REST API V2-Cookbook (Client-to-Server)
 description: REST API V2-Cookbook (Client-to-Server)
-source-git-commit: e1e1835d0d523377c48b39170919f7120cc3ef90
+exl-id: 6a5a89d2-ea54-4f9c-9505-e575ced4301c
+source-git-commit: 563e0b17de3be9290a661242355b4835b8c386e1
 workflow-type: tm+mt
-source-wordcount: '695'
+source-wordcount: '699'
 ht-degree: 0%
 
 ---
-
 
 # REST API V2-Cookbook (Client-to-Server) {#rest-api-v2-cookbook-clientserver}
 
@@ -29,7 +29,7 @@ Um die Adobe Pass REST API V2 zu implementieren, müssen Sie die folgenden Schri
 
 Damit die Anwendung die Adobe Pass REST API V2 aufrufen kann, benötigt sie ein Zugriffstoken, das von der API-Sicherheitsschicht benötigt wird.
 
-Um das Zugriffstoken zu erhalten, muss die Anwendung die folgenden Schritte ausführen: [Dynamische Client-Registrierung](../../dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+Um das Zugriffs-Token zu erhalten, muss die Anwendung die in der Dokumentation [Dynamische Client-Registrierung](../../dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) beschriebenen Schritte ausführen.
 
 ## B. Authentifizierungsphase {#authentication-phase}
 
@@ -54,10 +54,10 @@ Prüfungen der Streaming-Anwendung auf vorhandene authentifizierte Profile: <b>/
 
 Verwenden eines Browsers oder einer Web-basierten Second Screen-Anwendung:
 
-* Option 1. Die Streaming-Anwendung kann einen Browser oder eine Webansicht öffnen, die URL zur Authentifizierung laden und der Benutzer landet auf der MVPD-Anmeldeseite, auf der die Anmeldeinformationen gesendet werden müssen
-   * Benutzer gibt Anmeldung/Kennwort ein, die endgültige Umleitung zeigt eine Erfolgsseite an
-* Option 2. Streaming-Anwendung kann einen Browser nicht öffnen und nur den CODE anzeigen. <b>Es muss eine separate Webanwendung entwickelt werden </b>, um den Benutzer aufzufordern, CODE einzugeben, URL zu erstellen und zu öffnen: <b>/api/v2/authenticate/{serviceProvider}/{CODE}</b>
-   * Benutzer eingeben Login/Passwort, endgültige Umleitung anzeigen Erfolgsseite
+* Option 1. Die Streaming-Anwendung kann einen Browser oder eine Webansicht öffnen, die zu authentifizierende URL laden und der Benutzer landet auf der MVPD-Anmeldeseite, auf der die Anmeldeinformationen gesendet werden müssen
+   * Benutzer gibt Anmeldung/Kennwort ein, endgültige Umleitung zeigt eine Erfolgsseite an
+* Option 2. Streaming-Anwendung kann einen Browser nicht öffnen und nur den CODE anzeigen. <b>Eine separate Webanwendung </b> muss entwickelt werden, um den Benutzer aufzufordern, CODE einzugeben, URL zu erstellen und zu öffnen: <b>/api/v2/authenticate/{serviceProvider}/{CODE}</b>
+   * Benutzer gibt Anmeldung/Kennwort ein, endgültige Umleitung zeigt eine Erfolgsseite an
 
 ### Schritt 4: Auf authentifizierte Profile überprüfen {#step-4-check-for-authenticated-profiles}
 
@@ -78,7 +78,7 @@ Die Streaming-Anwendung prüft, ob die Authentifizierung mit MVPD im Browser ode
 Die Streaming-Anwendung bereitet sich darauf vor, die für den authentifizierten Benutzer verfügbaren Videos anzuzeigen, und hat die Möglichkeit, die
 Zugriff auf diese Ressourcen.
 
-* Schritt ist optional und wird ausgeführt, wenn die Anwendung die Ressourcen filtern möchte, die im authentifizierten Benutzerpaket nicht verfügbar sind
+* Schritt ist optional und wird ausgeführt, wenn die Anwendung die Ressourcen herausfiltern möchte, die im authentifizierten Benutzerpaket nicht verfügbar sind
 * Aufruf an <b>/api/v2/{serviceProvider}/decision/preauthorize/{mvpd}</b><br>
 ([Vorabautorisierungsentscheidung mit einem bestimmten MVPD abrufen](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md))
 
@@ -91,14 +91,14 @@ Die Streaming-Anwendung bereitet die Wiedergabe eines Videos/Assets/einer Ressou
 * Schritt für jeden Start der Wiedergabe erforderlich
 * Rufen Sie <b>/api/v2/{serviceProvider}/decision/authorize/{mvpd}</b><br> auf.
 ([Abrufen einer Autorisierungsentscheidung mit einem bestimmten MVPD](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md))
-   * decision = &#39;Permit&#39; , Streaming-Gerät startet Streaming
+   * decision = &#39;Permit&#39;, Streaming-Gerät startet Streaming
    * decision = &#39;Deny&#39;, das Streaming-Gerät informiert den Benutzer darüber, dass er keinen Zugriff auf dieses Video hat
 
 ## E. Abmeldephase {#logout-phase}
 
 ### Schritt 7: Abmelden {#step-7-logout}
 
-Streaming-Gerät: Benutzer möchte sich vom MVPD abmelden
+Streaming-Gerät: Benutzer möchte sich aus dem MVPD abmelden
 
 * Rufen Sie <b>/api/v2/{serviceProvider}/logout/{mvpd}</b><br> auf.
 ([Initiate logout for specific MVPD](../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md))
