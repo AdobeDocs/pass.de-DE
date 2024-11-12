@@ -2,9 +2,9 @@
 title: Verbesserte Fehlercodes
 description: Verbesserte Fehlercodes
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+source-git-commit: ce9659074bfa3fac3ea62a70a6da470f15bad3fe
 workflow-type: tm+mt
-source-wordcount: '2593'
+source-wordcount: '2606'
 ht-degree: 2%
 
 ---
@@ -313,6 +313,7 @@ In der folgenden Tabelle sind mögliche erweiterte Fehlercodes aufgeführt, auf 
 |                              | *invalid_header_pfs_permission_access_not_assigned* | 400 | Der Wert für den Berechtigungszugriffstatus aus der Statuskopfzeile des Partner-Frameworks wird nicht gewährt. |
 |                              | *invalid_header_pfs_provider_id_not_defined* | 400 | Der Anbieter-ID-Wert aus der Statuskopfzeile des Partner-Frameworks ist keiner bekannten mvpd zugeordnet. |
 |                              | *invalid_header_pfs_provider_id_mismatch* | 400 | Der Anbieter-ID-Wert aus der Statuskopfzeile des Partner-Frameworks stimmt nicht mit der als Parameter gesendeten mvpd überein. |
+|                              | *invalid_header_pfs_provider_info_expied* | 400 | Die Anbieterinformationen aus der Statuskopfzeile des Partner-Frameworks sind abgelaufen. |
 |                              | *invalid_integration* | 400 | Die Integration zwischen dem angegebenen Dienstleister und mvpd existiert nicht oder ist deaktiviert. |
 |                              | *invalid_authentication_session* | 400 | Die mit dieser Anfrage verknüpfte Authentifizierungssitzung fehlt oder ist ungültig. |
 |                              | *preauthorization_denied_by_mvpd* | 403 | Der MVPD hat eine &quot;Ablehnen&quot;-Entscheidung zurückgegeben, wenn er eine Vorabautorisierung für die angegebene Ressource beantragt. |
