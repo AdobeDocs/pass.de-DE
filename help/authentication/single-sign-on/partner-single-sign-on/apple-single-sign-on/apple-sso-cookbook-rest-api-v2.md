@@ -1,9 +1,10 @@
 ---
 title: Apple SSO-Cookbook (REST API V2)
 description: Apple SSO-Cookbook (REST API V2)
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
+source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
 workflow-type: tm+mt
-source-wordcount: '3402'
+source-wordcount: '3410'
 ht-degree: 0%
 
 ---
@@ -16,11 +17,11 @@ ht-degree: 0%
 
 Die Adobe Pass Authentication REST API V2 unterstützt Single Sign-On (SSO) für Endbenutzer von Clientanwendungen, die auf iOS, iPadOS oder tvOS ausgeführt werden.
 
-Dieses Dokument dient als Erweiterung der vorhandenen REST API V2-Dokumentation, in der beschrieben wird, wie Sie [Single Sign-on mithilfe von Partnerflüssen implementieren](/help/authentication/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md).
+Dieses Dokument dient als Erweiterung der vorhandenen [REST API V2 Overview](/help/authentication/rest-api-v2/rest-api-v2-overview.md) -Ansicht auf hoher Ebene und des Dokuments, in dem die Implementierung von [Single Sign-on mithilfe von Partnerflüssen](/help/authentication/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md) beschrieben wird.
 
-## Apple-Single Sign-On mit Partnerflüssen {#apple-sso-cookbook-rest-api-v2-cookbook}
+## Apple-Single Sign-On mit Partnerflüssen {#cookbook}
 
-### Voraussetzungen {#apple-sso-cookbook-rest-api-v2-prerequisites}
+### Voraussetzungen {#prerequisites}
 
 Bevor Sie mit der Apple-Single-Sign-On mit Partnerflüssen fortfahren, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
@@ -40,7 +41,7 @@ Bevor Sie mit der Apple-Single-Sign-On mit Partnerflüssen fortfahren, stellen S
 >
 > * Die Streaming-Anwendung hat die [Onboarding-Voraussetzungen](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-overview.md#apple-sso-prerequisites-programmer) erfüllt, die für einen Programmierer gelten und zur Aktivierung des Single Sign-On-Benutzererlebnisses für Apple erforderlich sind.
 
-### Workflow {#apple-sso-cookbook-rest-api-v2-workflow}
+### Workflow {#workflow}
 
 Führen Sie die angegebenen Schritte aus, um das Apple-Single-Sign-On mithilfe von Partnerflüssen zu implementieren, wie im folgenden Diagramm dargestellt.
 
