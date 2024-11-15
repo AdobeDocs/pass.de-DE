@@ -1,9 +1,10 @@
 ---
 title: REST API V2-Glossar
 description: REST API V2-Glossar
-source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
+exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
+source-git-commit: 1370554c66116a357970fb05c046608e261f0ed3
 workflow-type: tm+mt
-source-wordcount: '1872'
+source-wordcount: '1964'
 ht-degree: 0%
 
 ---
@@ -34,6 +35,8 @@ Der Authentifizierungscode ist ein Adobe Pass-Authentifizierungskonzept, das ein
 
 Der Authentifizierungscode kann sowohl von einer [Primären (Programmierer-)Anwendung](#primary-application) als auch von einer [Sekundären (Programmierer-)Anwendung](#secondary-application) verwendet werden, um den [Authentifizierungsprozess](#authentication) abzuschließen, Informationen zur [Authentifizierungssitzung](#session) abzurufen oder auf den Benutzer [profile](#profile) zuzugreifen.
 
+Synonym mit dem ehemaligen Begriff verwendet Registrierungscode.
+
 #### Authentifizierungssitzung {#session}
 
 Die Authentifizierungssitzung ist ein Adobe Pass-Authentifizierungskonzept, das Informationen über den Authentifizierungsprozess des Benutzers speichert, der von einer [Programmierer](#programmer) -Anwendung gestartet (oder fortgesetzt) wurde, und durch einen [Authentifizierungscode](#code) eindeutig identifiziert wird.
@@ -45,6 +48,10 @@ Die Authentifizierungssitzung kann auch die Anwendung [Programmierer](#programme
 Bei der Autorisierung handelt es sich um einen Prozess, der Benutzern den Zugriff auf geschützte Inhalte ([resource](#resource)) aus einem [Programmer](#programmer) -Katalog auf Grundlage des im Besitz befindlichen [MVPD](#mvpd) -Abonnements ermöglicht, nachdem die Benutzerrechte mit dem [MVPD](#mvpd) validiert wurden.
 
 ### C {#c}
+
+#### Client-Anmeldedaten {#client-credentials}
+
+Die Client-Anmeldeinformationen sind ein Satz eindeutiger Werte, die während des Prozesses [Dynamische Client-Registrierung (DCR)](#dcr) generiert werden und zum Abrufen eines [Zugriffstokens](#access-token) verwendet werden sollen.
 
 #### Konfiguration {#configuration}
 
@@ -114,6 +121,8 @@ Das Medien-Token ist ein Token, das von der Adobe Pass-Authentifizierung aufgrun
 
 Das Medien-Token wird an den [Programmierer](#programmer) übergeben, der es dann validiert, um die Sicherheit des Zugriffs für diese [Ressource](#resource) sicherzustellen.
 
+Synonym mit dem früheren Begriff verwendet kurze Autorisierungstoken.
+
 #### Media Token Verifier {#media-token-verifier}
 
 Der Media Token Verifier ist eine von der Adobe Pass-Authentifizierung verteilte Bibliothek, die für die Überprüfung der Authentizität eines [Medien-Tokens](#media-token) verantwortlich ist.
@@ -138,7 +147,15 @@ Der Partner wird durch einen eindeutigen Wert (z. B. &quot;Apfel&quot;) identifi
 
 #### Vorabgenehmigung {#preauthorization}
 
-Die Vorabautorisierung ist ein Prozess, der es einem Benutzer ermöglicht, die Liste der [Ressourcen](#resource) aus einem [Programmierer](#programmer) -Katalog in der Vorschau anzuzeigen, auf den er zugreifen kann, nachdem die Benutzerrechte mit dem [MVPD](#mvpd) validiert wurden.
+Die Vorabautorisierung ist ein Prozess, der es einem Benutzer ermöglicht, eine Untergruppe von [Ressourcen](#resource) aus einem [Programmer](#programmer)-Katalog in der Vorschau anzuzeigen, auf den er zugreifen kann, nachdem er die Benutzerrechte mit dem [MVPD](#mvpd) überprüft hat.
+
+Synonym mit [Preflight](#preflight).
+
+#### Preflight {#preflight}
+
+Der Preflight-Vorgang ist ein Prozess, der es einem Benutzer ermöglicht, eine Untergruppe von [Ressourcen](#resource) aus einem [Programmer](#programmer)-Katalog in der Vorschau anzuzeigen, auf den er zugreifen kann, nachdem er die Benutzerrechte mit dem [MVPD](#mvpd) überprüft hat.
+
+Synonym mit [Vorautorisierung](#preauthorization).
 
 #### Primäre (Programmierer-)Anwendung {#primary-application}
 
@@ -147,6 +164,8 @@ Die primäre Anwendung bezieht sich auf eine [Programmierer](#programmer) -Anwen
 #### Profil {#profile}
 
 Das Profil ist ein Adobe Pass-Authentifizierungskonzept, das Informationen über das Beginndatum und das Enddatum der Authentifizierung des Benutzers, die Metadaten des [Benutzers](#user-metadata) sowie weitere Felder speichert, die die Methode zum Abrufen der Authentifizierung angeben (z. B. &quot;normal&quot;, &quot;beschädigt&quot;, &quot;temporär&quot;, &quot;Single Sign-on&quot; usw.).
+
+Synonym mit dem früher verwendeten Authentifizierungstoken.
 
 #### Programmierer {#programmer}
 
@@ -270,7 +289,7 @@ Der Benutzeragent bezieht sich auf einen Browser oder eine ähnliche (plattforms
 
 #### Benutzermetadaten {#user-metadata}
 
-Die Benutzermetadaten beziehen sich auf benutzerspezifische Attribute (z. B. Postleitzahlen, elterliche Bewertungen, Benutzer-IDs usw.) die von [MVPD](#mvpd) verwaltet und von der Adobe Pass-Authentifizierung als Teil eines [Profils](#profile) bereitgestellt werden.
+Die Benutzermetadaten beziehen sich auf benutzerspezifische Attribute (z. B. Postleitzahlen, elterliche Bewertungen, Benutzer-IDs usw.), die von der [MVPD](#mvpd) verwaltet und von der Adobe Pass-Authentifizierung als Teil eines [Profils](#profile) bereitgestellt werden.
 
 Weitere Informationen finden Sie in der Dokumentation zu [Benutzermetadaten](/help/authentication/user-metadata-feature.md) .
 

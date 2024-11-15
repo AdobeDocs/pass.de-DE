@@ -2,7 +2,7 @@
 title: TVE Dashboard-Integrationen
 description: Erfahren Sie mehr über die Integrationen zwischen Ihren Kanälen und MVPDs und über die Verwaltung von Integrationen.
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: 1370554c66116a357970fb05c046608e261f0ed3
 workflow-type: tm+mt
 source-wordcount: '2093'
 ht-degree: 0%
@@ -328,7 +328,7 @@ Gehen Sie wie folgt vor, um eine neue Integration mit einem neuen MVPD in Ihrem 
 Eine neue Integration wird erst erstellt, nachdem [Änderungen überprüft und gepusht hat](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 
-## Integration deaktivieren {#disable-integratgion}
+## Integration deaktivieren {#disable-integration}
 
 Gehen Sie wie folgt vor, um eine Integration zu deaktivieren:
 

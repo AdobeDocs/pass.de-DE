@@ -2,9 +2,9 @@
 title: REST API V2 - Überblick
 description: REST API V2 - Überblick
 exl-id: a5595193-82c4-4033-bd98-596b4908b401
-source-git-commit: f2bbcaf979080bbde8e4de52b069454042959437
+source-git-commit: 1370554c66116a357970fb05c046608e261f0ed3
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '496'
 ht-degree: 0%
 
 ---
@@ -73,9 +73,12 @@ Alle künftigen Entwicklungen werden jedoch auf der REST-API V2 basieren. Wir em
 
 Besuchen Sie zunächst unsere öffentliche Dokumentation:
 
-- [Glossar](rest-api-v2-glossary.md)
+- [Glossar](./rest-api-v2-glossary.md)
+- [FAQs](./rest-api-v2-faqs.md)
 - [APIs](./apis/rest-api-v2-apis-overview.md)
 - [Flüsse](./flows/rest-api-v2-flows-overview.md)
+- Cookbooks
+- Anhang
 - [Mindestsystemanforderungen](/help/authentication/minimum-system-requirements.md)
 
 Unser spezielles Supportteam steht Ihnen auch bei Fragen und technischer Unterstützung zur Verfügung.
