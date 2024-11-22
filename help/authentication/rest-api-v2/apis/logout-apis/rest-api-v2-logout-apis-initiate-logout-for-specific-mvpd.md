@@ -2,9 +2,9 @@
 title: Initiieren der Abmeldung für bestimmte mvpd
 description: REST API V2 - Initiierung der Abmeldung für bestimmte mvpd
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
+source-git-commit: dbf68d75962e3e34f0c569c409f8c98ae6b9e036
 workflow-type: tm+mt
-source-wordcount: '941'
+source-wordcount: '1006'
 ht-degree: 0%
 
 ---
@@ -239,6 +239,7 @@ ht-degree: 0%
                   Mögliche Werte sind:
                   <ul>
                     <li><b>logout</b><br/>Das Streaming-Gerät muss die bereitgestellte URL in einem Benutzeragenten öffnen.<br/>Diese Aktion gilt für die folgenden Szenarien: Abmelden von MVPD mit einem Abmelde-Endpunkt.</li>
+                    <li><b>partner_logout</b><br/>Das Streaming-Gerät muss den Benutzer darüber informieren, dass er sich auch von der Partner- (System-)Ebene abmelden muss.<br/>Diese Aktion gilt für die folgenden Szenarien: Melden Sie sich von MVPD ab, wenn der Profiltyp "appleSSO"ist.</li>
                     <li><b>complete</b><br/>Das Streaming-Gerät muss keine nachfolgenden Aktionen durchführen.<br/>Diese Aktion gilt für die folgenden Szenarien: Abmelden von MVPD ohne Abmelde-Endpunkt (Platzhalterabmeldefunktion), Abmelden beim eingeschränkten Zugriff, Abmelden beim temporären Zugriff.</li>
                     <li><b>invalid</b><br/>Das Streaming-Gerät muss keine nachfolgenden Aktionen durchführen.<br/>Diese Aktion gilt für die folgenden Szenarien: Melden Sie sich von MVPD ab, wenn kein gültiges Profil gefunden wird.</li>
                   </ul>  
@@ -252,6 +253,7 @@ ht-degree: 0%
                   Mögliche Werte sind:
                   <ul>
                     <li><b>interaktiv</b><br/>Dieser Typ gilt für die folgenden Werte des Attributs "actionName": <b>logout</b>.</li>
+                    <li><b>partner_interactive</b><br/>Dieser Typ gilt für die folgenden Werte des Attributs "actionName": <b>partner_logout</b>.</li>
                     <li><b>none</b><br/>Dieser Typ gilt für die folgenden Werte des Attributs "actionName": <b>complete</b>, <b>invalid</b>.</li>
                   </ul>
                <td><i>erforderlich</i></td>
@@ -476,7 +478,43 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Initiierung der Abmeldung für bestimmte MVPD während der Abbauphase
+### 5. Initiieren Sie die Abmeldung für bestimmte mvpd, einschließlich der Profile, die über Single Sign-on mit Partner (Apple) abgerufen wurden.
+
+>[!BEGINTABS]
+
+>[!TAB Anfrage]
+
+```HTTPS
+GET /api/v2/REF30/logout/Cablevision?redirectUrl=https%3A%2F%2Fadobe.com HTTP/1.1
+
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
+```
+
+>[!TAB Antwort]
+
+```HTTPS
+HTTP/1.1 200 OK
+
+Content-Type: application/json;charset=UTF-8
+
+{
+   "logouts": {
+      "Cablevision": {
+         "actionName": "partner_logout",
+         "actionType": "partner_interactive",
+         "mvpd": "Cablevision"
+      }
+   }
+}
+```
+
+>[!ENDTABS]
+
+### 6. Initiierung der Abmeldung für bestimmte MVPD während der Abbauphase
 
 >[!BEGINTABS]
 
@@ -512,7 +550,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 6. Initiieren der Abmeldung für Basis- oder Promotionsvorlagen mit TempPass (nicht erforderlich)
+### 7. Initiieren der Abmeldung für einfachen oder Werbe-TempPass (nicht erforderlich)
 
 >[!BEGINTABS]
 

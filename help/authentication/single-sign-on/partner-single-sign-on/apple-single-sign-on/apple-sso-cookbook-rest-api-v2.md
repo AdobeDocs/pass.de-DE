@@ -2,9 +2,9 @@
 title: Apple SSO-Cookbook (REST API V2)
 description: Apple SSO-Cookbook (REST API V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
+source-git-commit: dbf68d75962e3e34f0c569c409f8c98ae6b9e036
 workflow-type: tm+mt
-source-wordcount: '3410'
+source-wordcount: '3442'
 ht-degree: 0%
 
 ---
@@ -508,7 +508,10 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single-Sign-On mithilfe v
    > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization`, `AP-Device-Identifier`
    > * Alle Parameter und Kopfzeilen von _optional_
 
-1. **Geben Sie die nächste Aktion an:** Die Adobe Pass Logout-Endpunktantwort enthält die erforderlichen Daten, um die Streaming-Anwendung zur nächsten Aktion zu leiten.
+1. **Geben Sie die nächste Aktion an:** Die Antwort des Adobe Pass Logout-Endpunkts enthält die erforderlichen Daten, um die Streaming-Anwendung in Bezug auf die nächste Aktion zu leiten:
+   * Das Attribut `url` fehlt, da der Benutzer mit der Partnerebene (System) interagieren muss, um den Abmeldefluss abzuschließen.
+   * Das Attribut `actionName` ist auf &quot;partner_logout&quot;festgelegt.
+   * Das Attribut `actionType` ist auf &quot;partner_interactive&quot;festgelegt.
 
    >[!IMPORTANT]
    >
