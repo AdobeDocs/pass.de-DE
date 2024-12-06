@@ -1,0 +1,84 @@
+---
+title: Amazon fireTV SSO - Leitfaden zum Programmstart
+description: Amazon fireTV SSO - Leitfaden zum Programmstart
+exl-id: cf9ba614-57ad-46c3-b154-34204b38742d
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+workflow-type: tm+mt
+source-wordcount: '782'
+ht-degree: 0%
+
+---
+
+# Amazon fireTV SSO - Leitfaden zum Programmstart {#amazon-firetv-sso---programmer-kick-off-guide}
+
+>[!NOTE]
+>
+>Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+
+</br>
+
+## Einführung {#intro}
+
+In diesem Dokument werden die Informationen beschrieben, die zum Integrieren des fireTV SDK **der neuen Adobe Pass-Authentifizierung in Ihre fireTV-Anwendung erforderlich sind.** Dieses neue SDK nutzt die Integration auf Betriebssystemebene auf der BrandTV-Plattform von Amazon und bietet so Unterstützung für **Single-Sign-On**. Um Single Sign-On zu nutzen, ist von Ihrer Seite ein wenig Aufwand erforderlich, um Ihre Anwendung von der Client-losen API in das neue fireTV-SDK zu migrieren. Es gibt einige Änderungen in den Authentifizierungsflüssen, die nachfolgend beschrieben werden.
+
+## Integration auf hoher Ebene in Architektur und Betriebssysteme {#high}
+
+Um Single-Sign-On zwischen TV-Programmen überall auf der Amazon-BrandTV-Plattform zu erreichen und um das Gesamterlebnis auf dieser Plattform zu verbessern, haben wir beschlossen, unser Core-SDK auf der Ebene von fireTV OS zu integrieren. Programmierer müssen mit einer von Adobe bereitgestellten Stub-Bibliothek kompilieren. Die tatsächliche Funktionalität wird von der Adobe-Bibliothek bereitgestellt, die im BrandTV-Betriebssystem von Amazon vorhanden ist.
+
+Solange Amazon nicht über einen &quot;fireTV&quot;-Simulator verfügt, der unsere Bibliothek auf Betriebssystemebene integriert, wäre die Entwicklung nur mit echten &quot;fireTV&quot;-Geräten möglich.
+
+## Vorteile {#bene}
+
+* Single-Sign-On zwischen allen Adobe-TV-Anwendungen auf der Amazon-BrandTV-Plattform mit allen integrierten MVPDs.
+* Möglichkeit, von HBA (mit unterstützten MVPDs) zu profitieren.
+* Möglichkeit, das neueste fireTV-SDK zu verwenden, ohne dass Ihre Anwendungen jedes Mal aktualisiert werden müssen, wenn eine neue SDK-Version veröffentlicht wird.
+* Alle TVE-Apps profitieren von der Verwendung der freigegebenen Systembibliothek, da keine lokale Kopie der AccessEnabler-Bibliothek erforderlich ist. Dadurch wird auch sichergestellt, dass alle Anwendungen dieselbe SDK-Version verwenden.
+* Authentifizierung mit einem Bildschirm - kein Registrierungs-Code und Workflows mit dem zweiten Bildschirm erforderlich.
+
+## Migration von einer clientless API-basierten App zu einer App, die auf dem TV SDK basiert {#migra1}
+
+Für die Migration von der ClientLess-API zum fireTV-SDK müssen Sie die Codebase entfernen, die mit der ClientLess-API verknüpft ist, und das neue fireTV-SDK integrieren.
+
+Im Vergleich zur clientless-API-basierten App ist beim neuen fireTV-SDK die Authentifizierung beim ersten Bildschirm nicht mehr erforderlich, da eine zweite Bildschirmanauthentifizierung nicht mehr erforderlich ist.
+
+Dazu müssen Programmierer einen MVPD-Picker in ihre Apps einfügen, damit Benutzer ihren TV-Anbieter direkt auf dem fireTV-Gerät auswählen können. Bei Auswahl des MVPD wird dem Benutzer die MVPD-Anmeldeseite auf dem Gerät fireTV angezeigt.
+
+Wireframes der Benutzerflüsse, die die regulären, HBA- und SSO-Szenarien bei fireTV beschreiben, finden Sie unter [Amazon Fire TV - MVVPD Sign-in User Flow](https://xd.adobe.com/view/9058288e-4b67-43a1-9d5b-5f76ede6c51e/).
+
+## Migration von einer Android SDK-basierten App zu einer App, die auf dem SDK basiert {#migra2}
+
+Dieses neue fireTV-SDK ähnelt unserem bestehenden Android-SDK und die aktuelle Dokumentation zur **Integration unseres Android SDK** <!--http://tve.helpdocsonline.com/android-technical-overview--> kann verwendet werden, bis die fireTV-SDK-Dokumente vorliegen. Wenn Sie bereits über Android-Anwendungen verfügen, die unser Android-SDK verwenden, sollte die Integration des fireTV-SDK in Ihre fireTV-Anwendung unkompliziert sein.
+
+Verglichen mit dem bestehenden Android SDK wird der Authentifizierungsprozess beim fireTV-SDK einfacher zu entwickeln sein, da die Aufgaben zur Verwaltung/Präsentation der MVPD-Anmeldeseite und zum Abrufen des AuthN-Tokens intern von der AccessEnabler-Bibliothek ausgeführt werden.
+
+## FAQs {#faq}
+
+1. Wie funktioniert die **SSO**?
+
+   * SSO arbeitet für alle Programmer-Anwendungen mit Adobe Pass-Authentifizierung, die das neue fireTV-SDK auf demselben Amazon-Feuerfernsehgerät verwenden
+   * SSO zwischen Programmer-Apps, die in der clientlosen REST-API implementiert sind, und Apps, die im fireTV-SDK implementiert sind **wird NICHT unterstützt**
+
+1. Wie hoch ist die MVPD-Abdeckung der fireTV SSO?
+
+   * **Alle durch Adobe Pass-Authentifizierung integrierten MVPDs** werden technisch gesehen von SSO unterstützt, die vom fireTV-SDK unterstützt werden.
+
+1. Welche anderen **Workflow-Änderungen** sollten Programmierer nicht nur mit dem neuen SDK vornehmen?
+
+   * Programmierer müssen einen MVPD-Picker für die BrandTV-Plattform implementieren.
+
+1. Wird die Authentifizierung **TTLs** geändert?
+
+   * Es gibt keine Verhaltensänderung in Bezug auf Authentifizierungs-TTLs.
+   * Das erste gültige Authentifizierungstoken wird für die Durchführung der einmaligen Anmeldung verwendet. In diesem Fall verwenden alle anderen Anwendungen, die über SSO authentifiziert werden, dieselbe TTL, bis sie abläuft. Wenn Sie also von einer Anwendung zur anderen navigieren, teilt die zweite Anwendung die TTL der ersten authentifizierten Anwendung.
+
+1. Wie funktioniert die **Abbau-API**?
+
+   * Für die Abbau-API sind keine Änderungen erforderlich. Das Benutzererlebnis entspricht dem auf Android-Geräten.
+
+1. Wie sind **TempPass**-Flüsse betroffen?
+
+   * TempPass-Flüsse sind einzelne Bildschirme und verhalten sich wie auf anderen nativen Geräten.
+
+1. Funktionieren andere Adobe-Funktionen wie bisher?
+
+   * Alle Adobe Pass-Authentifizierungsfunktionen funktionieren auf fireTV wie auf Android-Geräten.

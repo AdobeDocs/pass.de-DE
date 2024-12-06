@@ -2,7 +2,7 @@
 title: Standard-Metadatenattribute
 description: Standard-Metadatenattribute
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '1053'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Die API zur Überwachung der Parallelität zwingt die Clients dazu, die folgende
 |-------------|---------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | applicationId | 75b4-431b-adb2-eb6b9e546013 | Autorisierungs-Header | Zendesk-Ticket bei der Integration |
 | mvpdName | Sample_MVPD | URI-Pfad | Adobe Pass-Authentifizierung vom config-Endpunkt, wenn der Benutzer den MVPD auswählt |
-| accountId | 12345 | URI-Pfad | Adobe Pass-Authentifizierung UpstreamUserID-Metadaten nach der Benutzeranmeldung [User Metadata UpstreamUserID - Adobe Pass Authentication](/help/authentication/user-metadata-feature.md) |
+| accountId | 12345 | URI-Pfad | Adobe Pass-Authentifizierung UpstreamUserID-Metadaten nach der Benutzeranmeldung [User Metadata UpstreamUserID - Adobe Pass Authentication](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md) |
 
 
 ## Metadatenattribute {#metadata-attr}
