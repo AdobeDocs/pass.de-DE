@@ -2,73 +2,73 @@
 title: Registrierung von iOS/tvOS-Anwendungen
 description: Registrierung von iOS/tvOS-Anwendungen
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '609'
+source-wordcount: '610'
 ht-degree: 0%
 
 ---
 
 
-# Registrierung von iOS/tvOS-Anwendungen {#iostvos-application-registration}
+# (Veraltete) Registrierung von iOS/tvOS-Anwendungen {#iostvos-application-registration}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 ## Einführung {#Intro}
 
-Ab Version 3.0 des iOS/tvOS AccessEnabler SDK ändern wir den Authentifizierungsmechanismus mit Adobe-Servern. Statt einen öffentlichen Schlüssel und ein geheimes System zum Signieren der Anforderer-ID zu verwenden, führen wir das Konzept einer Software-Anweisungszeichenfolge ein, mit der ein Zugriffstoken abgerufen werden kann, das später für alle Aufrufe verwendet wird, die das SDK an unsere Server sendet. Zusätzlich zu einer Softwareanweisung benötigen Sie auch ein benutzerdefiniertes URL-Schema für Ihre Anwendung.
+Ab Version 3.0 der iOS/tvOS AccessEnabler SDK ändern wir den Authentifizierungsmechanismus mit Adobe-Servern. Anstatt ein öffentliches Schlüssel- und Geheimsystem zum Signieren der RequestorID zu verwenden, führen wir das Konzept einer Software-Anweisungszeichenfolge ein, mit der ein Zugriffstoken abgerufen werden kann, das später für alle Aufrufe verwendet wird, die SDK an unsere Server sendet. Zusätzlich zu einer Software-Anweisung benötigen Sie auch ein benutzerdefiniertes URL-Schema für Ihre Anwendung.
 
 Weitere Informationen finden Sie unter [Übersicht über die dynamische Client-Registrierung](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Was ist eine Software-Anweisung? {#Soft_state}
 
-Eine Software-Anweisung ist ein JWT-Token, das Informationen über Ihre Anwendung enthält. Jede Applikation sollte über eine eindeutige Softwareanweisung verfügen, die von unseren Servern verwendet wird, um die Applikation im Adobe-System zu identifizieren. Die Software-Anweisung muss übergeben werden, wenn Sie das AccessEnabler SDK initialisieren. Sie wird zur Registrierung der Anwendung bei Adobe verwendet. Nach der Registrierung erhält das SDK eine Client-ID und ein Client-Geheimnis, die zum Abrufen eines Zugriffstokens verwendet werden. Jeder Aufruf, den das SDK an unsere Server sendet, erfordert ein gültiges Zugriffstoken. Das SDK ist für die Registrierung der Anwendung, den Abruf und die Aktualisierung des Zugriffstokens zuständig.
+Ein Software-Statement ist ein JWT-Token, das Informationen über Ihr Programm enthält. Jede Anwendung sollte über eine eindeutige Software-Anweisung verfügen, die von unseren Servern verwendet wird, um die Anwendung im Adobe-System zu identifizieren. Die Software-Anweisung muss bei der Initialisierung des AccessEnabler SDK übergeben werden und wird zur Registrierung der Anwendung beim Adobe verwendet. Bei der Registrierung erhält die SDK eine Client-ID und ein Client-Geheimnis, die zum Abrufen eines Zugriffs-Tokens verwendet werden. Jeder Aufruf, den SDK an unsere Server sendet, erfordert ein gültiges Zugriffstoken. Die SDK ist für die Registrierung der Anwendung, den Abruf und die Aktualisierung des Zugriffstokens verantwortlich.
 
-**Hinweis:** Eine Software-Anweisung ist App-spezifisch und dieselbe Software-Anweisung kann nicht für mehrere Anwendungen verwendet werden. Bitte beachten Sie, dass Softwareanweisungen auf Programmebene ebenfalls dem gleichen folgen, d.h. sie können nur für einzelne Anwendungen verwendet werden - ob für einzelne Kanäle oder für mehrere Kanäle. Diese Einschränkung gilt auch für benutzerdefinierte Schemata.
+**Hinweis:** Eine Software-Anweisung ist anwendungsspezifisch und dieselbe Software-Anweisung kann nicht für mehr als eine Anwendung verwendet werden. Bitte beachten Sie, dass die Anweisungen auf Programmierebene auch das gleiche befolgen, d.h. sie können nur für eine Anwendung verwendet werden - egal ob Einkanal oder Mehrkanal. Diese Einschränkung gilt auch für benutzerdefinierte Schemata.
 
-## Wie erhalte ich eine Software-Anweisung? {#obtain}
+## Wie erhalte ich ein Software-Statement? {#obtain}
 
-### Wenn Sie Zugriff auf das Adobe TVE-Dashboard haben:
+### Wenn Sie Zugriff auf das Adobe-Dashboard haben:
 
-- Öffnen Sie den Browser und navigieren Sie zu <https://experience.adobe.com/#/pass/authentication>
-- Navigieren Sie zum Abschnitt `Channels` und wählen Sie Ihren Kanal aus.
+- Öffnen Sie Ihren Browser und navigieren Sie zu <https://experience.adobe.com/#/pass/authentication>
+- Navigieren Sie zu `Channels` Abschnitt und wählen Sie Ihren Kanal aus.
 - Navigieren Sie zur Registerkarte `Registered Applications` .
 - Klicken Sie auf `Add new application`.
-- Geben Sie einen Namen und eine Version für Ihre Anwendung an und wählen Sie die   Plattformen, auf denen sie verfügbar sein wird. In unserem Fall iOS/tvOS.
-- Übertragen Sie Ihre Änderungen auf den Server und navigieren Sie dann zurück zur Registerkarte Registrierte Anwendungen Ihres Kanals .
-- Es sollte eine Liste mit allen registrierten Anwendungen angezeigt werden. Klicken Sie auf   `Download` in der Anwendung, die Sie gerade erstellt haben. Möglicherweise müssen Sie einige Minuten warten, bis Ihre Software-Anweisung für den Download bereit ist.
-- Eine Textdatei wird heruntergeladen. Verwenden Sie die Inhalte als Ihre Software-Anweisung.
+- Geben Sie einen Namen und eine Version für Ihr Programm ein und wählen Sie   Plattformen, auf denen es verfügbar sein wird. iOS/tvOS in unserem Fall.
+- Übertragen Sie Ihre Änderungen auf den Server und navigieren Sie dann zurück zur Registerkarte Registrierte Anwendungen Ihres Kanals.
+- Es sollte eine Liste mit allen registrierten Anwendungen angezeigt werden. Klicken Sie auf die Schaltfläche   `Download` Schaltfläche in der soeben erstellten Anwendung. Möglicherweise müssen Sie einige Minuten warten, bevor Ihre Software-Erklärung zum Download bereit ist.
+- Eine Textdatei wird heruntergeladen. Verwenden Sie den Inhalt als Software-Erklärung.
 
-Weitere Informationen finden Sie unter [Dynamisches Client-Registrierungs-Management](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
+Weitere Informationen finden Sie unter [Verwaltung der dynamischen Client-Registrierung](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
-### Wenn Sie keinen Zugriff auf das Adobe TVE Dashboard haben:
+### Wenn Sie keinen Zugriff auf das TVE-Dashboard von Adobe haben:
 
-Senden Sie ein Ticket an <tve-support@adobe.com>. Bitte fügen Sie alle notwendigen Informationen wie Kanal, Anwendungsname, Version und Plattformen hinzu und jemand aus unserem Supportteam wird eine Softwareanweisung für Sie erstellen.
+Senden Sie ein Ticket an <tve-support@adobe.com>. Bitte geben Sie alle notwendigen Informationen wie Kanal, Anwendungsname, Version und Plattformen an. Jemand aus unserem Supportteam wird ein Software-Statement für Sie erstellen.
 
 ## Wie wird die Software-Anweisung verwendet? {#use}
 
-Nachdem Sie Ihre Software-Anweisung erhalten haben, müssen Sie sie als Paramenter im Access Enabler-Konstruktor übergeben. Wir empfehlen, die Software-Anweisung an einem Remote-Standort zu hosten. Auf diese Weise können Sie die Software-Anweisung einfach widerrufen und ändern, ohne eine neue Version Ihrer Anwendung veröffentlichen zu müssen.
+Nachdem Sie Ihre Software-Anweisung erhalten haben, müssen Sie sie als Parameter im Access Enabler-Konstruktor übergeben. Wir empfehlen, die Software-Erklärung an einem Remote-Standort zu hosten. Auf diese Weise können Sie die Software-Erklärung einfach widerrufen und ändern, ohne eine neue Version Ihres Programms freizugeben.
 
-## Erstellen eines benutzerdefinierten URL-Schemas für Ihre Anwendung {#generating}
+## Erstellen eines benutzerdefinierten URL-Schemas für Ihr Programm {#generating}
 
-### Wenn Sie Zugriff auf das Adobe TVE-Dashboard haben:
+### Wenn Sie Zugriff auf das Adobe-Dashboard haben:
 
-- Öffnen Sie den Browser und navigieren Sie zu <https://experience.adobe.com/#/pass/authentication>
-- Navigieren Sie zum Abschnitt `Channels` und wählen Sie Ihren Kanal aus.
+- Öffnen Sie Ihren Browser und navigieren Sie zu <https://experience.adobe.com/#/pass/authentication>
+- Navigieren Sie zu `Channels` Abschnitt und wählen Sie Ihren Kanal aus.
 - Navigieren Sie zur Registerkarte `Custom Schemes` .
 - Klicken Sie auf `Generate a new custom scheme`.
-- Für Ihre Anwendung wird ein neues benutzerdefiniertes Schema generiert. Beispiel: `adbe.1JqxQsYhQOCIrwPjaooY8w://`
+- Für Ihr Programm wird ein neues benutzerdefiniertes Schema generiert. Beispiel: `adbe.1JqxQsYhQOCIrwPjaooY8w://`
 - Übertragen Sie Ihre Änderungen auf den Server.
 
-### Wenn Sie keinen Zugriff auf das Adobe TVE Dashboard haben:
+### Wenn Sie keinen Zugriff auf das TVE-Dashboard von Adobe haben:
 
-Senden Sie ein Ticket an <tve-support@adobe.com>. Bitte geben Sie die Kanal-ID an und jemand aus unserem Support-Team wird ein benutzerdefiniertes Schema für Sie erstellen.
+Senden Sie ein Ticket an <tve-support@adobe.com>. Bitte geben Sie die Kanal-ID an. Ein Mitarbeiter unseres Supportteams wird ein benutzerdefiniertes Schema für Sie erstellen.
 
 ## Verwendung des benutzerdefinierten Schemas {#use_custom}
 
-Fügen Sie in der Datei `info.plist` Ihrer Anwendung den folgenden Code hinzu:
+Fügen Sie in der `info.plist`-Datei Ihrer Anwendung den folgenden Code hinzu:
 
 ```plist
     <key>CFBundleURLTypes</key>

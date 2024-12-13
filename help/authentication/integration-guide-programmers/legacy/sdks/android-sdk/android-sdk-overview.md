@@ -1,84 +1,84 @@
 ---
-title: Übersicht über das Android SDK
-description: Übersicht über das Android SDK
+title: Übersicht über Android SDK
+description: Übersicht über Android SDK
 exl-id: a1d98325-32a1-4881-8635-9a3c38169422
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '2731'
+source-wordcount: '2732'
 ht-degree: 0%
 
 ---
 
-# Übersicht über das Android SDK {#android-sdk-overview}
+# Übersicht über (ältere) Android SDK {#android-sdk-overview}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 ## Einführung {#intro}
 
-Android AccessEnabler ist eine Java Android-Bibliothek, mit der mobile Apps die Adobe Pass-Authentifizierung für die Berechtigungsdienste von TV Anywhere verwenden können. Eine Android-Implementierung besteht aus der AccessEnabler-Schnittstelle, die die Berechtigungs-API definiert, und einem EntitlementDelegate-Protokoll, das die Rückrufe beschreibt, die die Bibliotheks-Trigger ausführen. Die Schnittstelle wird zusammen mit dem Protokoll unter einem gemeinsamen Namen genannt: die AccessEnabler Android-Bibliothek.
+Android AccessEnabler ist eine Java Android-Bibliothek, mit der Mobile Apps die Adobe Pass-Authentifizierung für die Berechtigungsdienste von TV Everywhere verwenden können. Eine Android-Implementierung besteht aus der AccessEnabler-Schnittstelle, die die Berechtigungs-API definiert, und einem EntitlementDelegate-Protokoll, das die Callbacks beschreibt, die die Bibliothek Trigger. Die Schnittstelle und das Protokoll werden unter einem gemeinsamen Namen genannt: der AccessEnabler Android Library.
 
 ## Android-Anforderungen {#reqs}
 
-Aktuelle technische Anforderungen in Bezug auf die Android-Plattform und die Adobe Pass-Authentifizierung finden Sie unter [Anforderungen an Plattform/Gerät/Tool](#android) oder in den Versionshinweisen zum Android SDK-Download.
+Aktuelle technische Anforderungen an die Android-Plattform und die Adobe Pass-Authentifizierung finden Sie unter [Plattform-/Geräte-/Tool-](#android)) oder in den Versionshinweisen zum Android SDK-Download.
 
 ## Grundlegendes zu nativen Client-Workflows {#native_client_workflows}
 
-Native Client-Workflows sind in der Regel mit denen von browserbasierten Adobe Pass-Authentifizierungs-Clients identisch oder sehr ähnlich. Es gibt jedoch einige Ausnahmen, wie unten beschrieben.
+Native Client-Workflows sind in der Regel mit denen browserbasierter Adobe Pass-Authentifizierungs-Clients identisch oder ihnen sehr ähnlich. Es gibt jedoch einige Ausnahmen, wie unten beschrieben.
 
-- [Nachinitialisierungs-Workflow](#post-init)
-- [Allgemeiner Workflow für die anfängliche Authentifizierung](#generic)
-- [Workflow abmelden](#logout)
+- [Workflow nach der Initialisierung](#post-init)
+- [Allgemeiner anfänglicher Authentifizierungs-Workflow](#generic)
+- [Abmelde-Workflow](#logout)
 
-### Nachinitialisierungs-Workflow {#post-init}
+### Workflow nach der Initialisierung {#post-init}
 
-Bei allen vom AccessEnabler unterstützten Berechtigungs-Workflows wird davon ausgegangen, dass Sie zuvor [`setRequestor()`](#setRequestor) aufgerufen haben, um Ihre Identität zu ermitteln. Sie führen diesen Aufruf aus, um Ihre Anforderer-ID nur einmal bereitzustellen, normalerweise während der Initialisierungs-/Setup-Phase Ihrer Anwendung.
-
-
-Bei den nativen Clients (z. B. Android) haben Sie nach dem ersten Aufruf von [`setRequestor()`](#setRequestor) die Wahl, wie Sie vorgehen sollen:
-
-- Sie können sofort mit Berechtigungsaufrufen beginnen und diese bei Bedarf still in die Warteschlange stellen.
-
-- Alternativ können Sie eine Bestätigung des Erfolgs/Fehlschlagens von [`setRequestor()`](#setRequestor) erhalten, indem Sie den Rückruf setRequestorComplete() implementieren.
-
-- Oder machen Sie beides.
-
-Sie können entscheiden, ob Sie auf die Benachrichtigung über den Erfolg von [`setRequestor()`](#setRequestor) warten oder sich auf den Warteschlangenmechanismus von AccessEnabler verlassen möchten. Da alle nachfolgenden Autorisierungs- und Authentifizierungsanfragen die Anforderungs-ID und die zugehörigen Konfigurationsinformationen benötigen, blockiert die [`setRequestor()`](#setRequestor) -Methode effektiv alle Authentifizierungs- und Autorisierungs-API-Aufrufe, bis die Initialisierung abgeschlossen ist.
-
-### Allgemeiner Workflow für die anfängliche Authentifizierung {#generic}
-
-Dieser Workflow dient der Anmeldung eines Benutzers mit seinem MVPD.  Nach erfolgreicher Anmeldung gibt der Backend-Server dem Benutzer ein Authentifizierungstoken aus. Während die Authentifizierung in der Regel im Rahmen des Autorisierungsprozesses erfolgt, wird im Folgenden beschrieben, wie die Authentifizierung isoliert funktioniert, und es sind keine Autorisierungsschritte enthalten.
-
-Beachten Sie, dass sich der folgende native Client-Workflow vom typischen browserbasierten Authentifizierungs-Workflow unterscheidet, die Schritte 1 bis 5 jedoch für native Clients und browserbasierte Clients gleich sind:
-
-1. Ihre Seite oder Ihr Player initiiert den Authentifizierungs-Workflow mit einem Aufruf von [getAuthentication()](#getAuthN) , der nach einem gültigen zwischengespeicherten Authentifizierungstoken sucht. Diese Methode weist einen optionalen Parameter `redirectURL` auf. Wenn Sie keinen Wert für `redirectURL` angeben, wird der Benutzer nach einer erfolgreichen Authentifizierung an die URL zurückgegeben, von der aus die Authentifizierung initialisiert wurde.
-1. Der AccessEnabler bestimmt den aktuellen Authentifizierungsstatus. Wenn der Benutzer derzeit authentifiziert ist, ruft AccessEnabler Ihre `setAuthenticationStatus()` -Rückruffunktion auf und übergibt einen Authentifizierungsstatus, der auf Erfolg hinweist (Schritt 7 unten).
-1. Wenn der Benutzer nicht authentifiziert ist, setzt der AccessEnabler den Authentifizierungsfluss fort, indem er bestimmt, ob der letzte Authentifizierungsversuch des Benutzers mit einem bestimmten MVPD erfolgreich war. Wenn eine MVPD-ID zwischengespeichert wird UND das `canAuthenticate`-Flag wahr ist ODER ein MVPD mit [`setSelectedProvider()`](#setSelectedProvider) ausgewählt wurde, wird der Benutzer nicht mit dem MVPD-Auswahldialogfeld aufgefordert. Der Authentifizierungsfluss wird mit dem zwischengespeicherten Wert des MVPD fortgesetzt (d. h. mit dem MVPD, der bei der letzten erfolgreichen Authentifizierung verwendet wurde). Ein Netzwerkaufruf erfolgt an den Backend-Server und der Benutzer wird zur MVPD-Anmeldeseite weitergeleitet (Schritt 6 unten).
-1. Wenn keine MVPD-ID zwischengespeichert wird UND kein MVPD mit [`setSelectedProvider()`](#setSelectedProvider) ausgewählt wurde ODER das Flag `canAuthenticate` auf &quot;false&quot;gesetzt ist, wird der Rückruf [`displayProviderDialog()`](#displayProviderDialog) aufgerufen. Dieser Rückruf leitet Ihre Seite oder Ihren Player an, um die Benutzeroberfläche zu erstellen, über die der Benutzer eine Liste mit MVPDs zur Auswahl hat. Es wird ein Array von MVPD-Objekten bereitgestellt, die die erforderlichen Informationen zum Erstellen des MVPD-Selektors enthalten. Jedes MVPD-Objekt beschreibt eine MVPD-Entität und enthält Informationen wie die Kennung des MVPD (z. B. XFINITY, AT\&amp;T usw.) und die URL, unter der das MVPD-Logo zu finden ist.
-1. Sobald ein bestimmter MVPD ausgewählt ist, muss Ihre Seite oder Ihr Player den AccessEnabler über die Auswahl des Benutzers informieren. Bei Nicht-Flash-Clients informieren Sie den AccessEnabler über die Benutzerauswahl, sobald der Benutzer den gewünschten MVPD auswählt, über einen Aufruf der [`setSelectedProvider()`](#setSelectedProvider) -Methode. Flash-Clients senden stattdessen eine freigegebene `MVPDEvent` vom Typ &quot;`mvpdSelection`&quot;, wobei der ausgewählte Provider übergeben wird.
-1. Wenn für Android-Anwendungen com.android.chrome verfügbar ist, wird die Authentifizierungs-URL in benutzerdefinierte Chrome-Registerkarten geladen.
-1. Über benutzerdefinierte Chrome-Registerkarten gelangt der Benutzer auf die Anmeldeseite des MVPD und gibt seine Anmeldeinformationen ein. Beachten Sie, dass während dieser Übertragung mehrere Umleitungsvorgänge auftreten.
-1. Wenn benutzerdefinierte Chrome-Registerkarten erkennen, dass eine URL mit dem Schema (adobepass://) und dem Deep-Link aus der Ressource &quot;redirect\_uri&quot;(d. h. adobepass://com.adobepass ) übereinstimmt, ruft der AccessEnabler das tatsächliche Authentifizierungstoken von den Backend-Servern ab. Beachten Sie, dass die endgültigen Umleitungs-URLs ungültig sind und nicht für benutzerdefinierte Chrome-Registerkarten zum Laden vorgesehen sind. Sie dürfen vom SDK nur als Signal interpretiert werden, dass der Authentifizierungsvorgang abgeschlossen ist.
-1. Der AccessEnabler informiert Ihre Anwendung darüber, dass der Authentifizierungsvorgang abgeschlossen ist. Der AccessEnabler ruft den Rückruf [`setAuthenticationStatus()`](#setAuthNStatus) mit dem Status-Code 1 auf und zeigt den Erfolg an. Wenn bei der Ausführung dieser Schritte ein Fehler auftritt, wird der Rückruf [`setAuthenticationStatus()`](#setAuthNStatus) mit dem Statuscode 0 und einem entsprechenden Fehlercode ausgelöst, der auf einen Authentifizierungsfehler hinweist.
-
-### Workflow abmelden {#logout}
-
-Bei nativen Clients werden Logouts ähnlich wie der oben beschriebene Authentifizierungsprozess verarbeitet. Auf diese Weise öffnen AccessEnabler benutzerdefinierte Chrome-Registerkarten und laden die URL des Abmelde-Endpunkts auf den Backend-Server.
+Bei allen vom AccessEnabler unterstützten Berechtigungs-Workflows wird davon ausgegangen, dass Sie [`setRequestor()`](#setRequestor) zuvor aufgerufen haben, um Ihre Identität festzulegen. Sie führen diesen Aufruf aus, um Ihre Anforderer-ID nur einmal anzugeben, normalerweise während der Initialisierungs-/Einrichtungsphase Ihrer Anwendung.
 
 
+Bei den nativen Clients (z. B. Android) haben Sie nach Ihrem ersten Aufruf an [`setRequestor()`](#setRequestor) die Wahl, wie Sie fortfahren möchten:
 
-**Hinweis:** Durch Abmelden von einer Programmierer-/MVPD-Sitzung wird die
-den zugrunde liegenden Speicher für diesen spezifischen MVPD, einschließlich des gesamten
-andere Programmierer-Authentifizierungstoken, die über SSO abgerufen werden
-das Gerät. Token, die für andere MVPDs oder nicht über SSO erhalten werden, werden nicht
+- Sie können sofort mit Berechtigungsaufrufen beginnen und bei Bedarf zulassen, dass sie ohne Nachfrage in die Warteschlange gestellt werden.
+
+- Sie können auch eine Bestätigung über den Erfolg/Misserfolg von [`setRequestor()`](#setRequestor) erhalten, indem Sie den Callback setRequestorComplete() implementieren.
+
+- Oder beides.
+
+Es liegt an Ihnen zu entscheiden, ob Sie auf die Benachrichtigung über den Erfolg von [`setRequestor()`](#setRequestor) warten oder sich auf den Call Queue-Mechanismus von AccessEnabler verlassen sollen. Da alle nachfolgenden Autorisierungs- und Authentifizierungsanfragen die Anforderer-ID und die zugehörigen Konfigurationsinformationen benötigen, blockiert die [`setRequestor()`](#setRequestor)-Methode effektiv alle Authentifizierungs- und Autorisierungs-API-Aufrufe, bis die Initialisierung abgeschlossen ist.
+
+### Allgemeiner anfänglicher Authentifizierungs-Workflow {#generic}
+
+Dieser Workflow dient der Anmeldung von Benutzenden mit ihrer MVPD.  Nach erfolgreicher Anmeldung gibt der Backend-Server dem Benutzer ein Authentifizierungstoken aus. Während die Authentifizierung in der Regel als Teil des Autorisierungsprozesses erfolgt, wird im Folgenden beschrieben, wie die Authentifizierung isoliert funktionieren kann und keine Autorisierungsschritte enthält.
+
+Beachten Sie, dass sich der folgende native Client-Workflow zwar vom typischen browserbasierten Authentifizierungs-Workflow unterscheidet, die Schritte 1 bis 5 jedoch für native Clients und browserbasierte Clients identisch sind:
+
+1. Ihre Seite oder Ihr Player initiiert den Authentifizierungs-Workflow mit einem Aufruf von [getAuthentication()](#getAuthN), der auf ein gültiges zwischengespeichertes Authentifizierungstoken prüft. Diese Methode verfügt über einen optionalen `redirectURL`. Wenn Sie keinen Wert für `redirectURL` angeben, wird der Benutzer nach einer erfolgreichen Authentifizierung an die URL zurückgegeben, von der die Authentifizierung initialisiert wurde.
+1. AccessEnabler bestimmt den aktuellen Authentifizierungsstatus. Wenn der Benutzer derzeit authentifiziert ist, ruft AccessEnabler Ihre `setAuthenticationStatus()` Callback-Funktion auf und übergibt einen Authentifizierungsstatus, der auf Erfolg hinweist (Schritt 7 unten).
+1. Wenn der Benutzer nicht authentifiziert ist, setzt AccessEnabler den Authentifizierungsfluss fort, indem festgestellt wird, ob der letzte Authentifizierungsversuch des Benutzers mit einer bestimmten MVPD erfolgreich war. Wenn eine MVPD-ID zwischengespeichert wird UND das `canAuthenticate`-Flag „true“ lautet ODER eine MVPD mithilfe von [`setSelectedProvider()`](#setSelectedProvider) ausgewählt wurde, wird der/die Benutzende nicht über das MVPD-Auswahldialogfeld aufgefordert. Der Authentifizierungsfluss verwendet weiterhin den zwischengespeicherten Wert der MVPD (d. h. dieselbe MVPD, die bei der letzten erfolgreichen Authentifizierung verwendet wurde). Ein Netzwerkaufruf erfolgt an den Backend-Server und der Anwender wird zur Anmeldeseite von MVPD weitergeleitet (Schritt 6 unten).
+1. Wenn keine MVPD-ID zwischengespeichert ist UND keine MVPD mithilfe von [`setSelectedProvider()`](#setSelectedProvider) ausgewählt wurde ODER das `canAuthenticate`-Flag auf „false“ gesetzt ist, wird der [`displayProviderDialog()`](#displayProviderDialog)-Callback aufgerufen. Dieser Rückruf leitet Ihre Seite oder Ihren Player zur Erstellung der Benutzeroberfläche an, die dem Benutzer eine Liste von MVPDs zur Auswahl bietet. Es wird ein Array von MVPD-Objekten bereitgestellt, das die erforderlichen Informationen zum Erstellen des MVPD-Selektors enthält. Jedes MVPD-Objekt beschreibt eine MVPD-Entität und enthält Informationen wie die ID der MVPD (z. B. XFINITY, AT\&amp;T usw.) und die URL, unter der sich das MVPD-Logo befindet.
+1. Nachdem eine bestimmte MVPD ausgewählt wurde, muss Ihre Seite oder Ihr Player den AccessEnabler über die Auswahl des Benutzers informieren. Bei Nicht-Flash-Clients informieren Sie den AccessEnabler über die Benutzerauswahl, sobald der Anwender die gewünschte MVPD auswählt, über einen Aufruf der [`setSelectedProvider()`](#setSelectedProvider). Flash-Clients senden stattdessen einen freigegebenen `MVPDEvent` vom Typ &quot;`mvpdSelection`&quot; und übergeben den ausgewählten Provider.
+1. Bei Android-Programmen wird die Authentifizierungs-URL auf den benutzerdefinierten Registerkarten von Chrome geladen, wenn com.android.chrome verfügbar ist.
+1. Über benutzerdefinierte Chrome-Registerkarten gelangt der Benutzer auf die Anmeldeseite von MVPD und gibt seine Anmeldeinformationen ein. Beachten Sie, dass während dieser Übertragung mehrere Umleitungsvorgänge stattfinden.
+1. Wenn benutzerdefinierte Registerkarten in Chrome erkennen, dass eine URL mit dem Schema (adobepass://) und dem Deep-Link von der Ressource „redirect\_uri“ (d. h. adobepass://com.adobepass ) übereinstimmt, ruft AccessEnabler das eigentliche Authentifizierungstoken von den Backend-Servern ab. Beachten Sie, dass die endgültigen Umleitungs-URLs ungültig sind und nicht dazu gedacht sind, dass benutzerdefinierte Chrome-Registerkarten sie tatsächlich laden. Sie dürfen von der SDK nur als Signal interpretiert werden, dass der Authentifizierungsfluss abgeschlossen ist.
+1. AccessEnabler informiert Ihre Anwendung darüber, dass der Authentifizierungsfluss abgeschlossen ist. Der AccessEnabler ruft den [`setAuthenticationStatus()`](#setAuthNStatus)-Callback mit dem Status-Code 1 auf und zeigt damit an, dass er erfolgreich war. Wenn während der Ausführung dieser Schritte ein Fehler auftritt, wird der [`setAuthenticationStatus()`](#setAuthNStatus)-Callback mit dem Status-Code 0 zusammen mit einem entsprechenden Fehler-Code ausgelöst, was auf einen Authentifizierungsfehler hinweist.
+
+### Abmelde-Workflow {#logout}
+
+Für native Clients werden Logouts ähnlich wie beim oben beschriebenen Authentifizierungsprozess gehandhabt. Nach diesem Muster öffnet AccessEnabler benutzerdefinierte Chrome-Registerkarten und lädt die URL des Abmeldeendpunkts auf den Backend-Server.
+
+
+
+**Hinweis:** Abmelden von einer Programmierer-/MVPD-Sitzung wird gelöscht
+Der zugrunde liegende Speicher für diese spezifische MVPD, einschließlich aller
+andere Programmierer-Authentifizierungstoken, die über SSO unter abgerufen wurden
+Dieses Gerät. Token, die für andere MVPDs oder nicht über SSO erhalten wurden, werden nicht
 gelöscht werden.
 
 
 ## Token {#tokens}
 
 - [Definitionen und Verwendung](#definitions)
-- [Caching-Richtlinien](#caching)
+- [Richtlinien für das Zwischenspeichern](#caching)
 - [Persistenz](#persistence)
 - [Format](#format)
 - [Gerätebindung](#device_binding)
@@ -87,108 +87,108 @@ gelöscht werden.
 
 ### Definitionen und Verwendung {#definitions}
 
-Die Berechtigungslösung für die Adobe Pass-Authentifizierung umfasst die Generierung bestimmter Datenteile (Token), die die Adobe Pass-Authentifizierung nach erfolgreichem Abschluss der Authentifizierungs- und Autorisierungsarbeitsabläufe generiert. Diese Token werden lokal auf dem Android-Gerät des Clients gespeichert.
+Die Lösung für die Berechtigung für die Adobe Pass-Authentifizierung umfasst die Generierung bestimmter Datenelemente (Token), die von der Adobe Pass-Authentifizierung nach erfolgreichem Abschluss der Authentifizierungs- und Autorisierungs-Workflows generiert werden. Diese Token werden lokal auf dem Android-Gerät des Clients gespeichert.
 
-Token haben eine begrenzte Lebensdauer. Nach Ablauf der Gültigkeit müssen Token erneut ausgestellt werden, indem die Authentifizierungs- und/oder Autorisierungs-Workflows neu gestartet werden.
+Token haben eine begrenzte Lebensdauer. Nach Ablauf müssen Token durch die erneute Initiierung der Authentifizierungs- und/oder Autorisierungs-Workflows erneut ausgestellt werden.
 
-Während der Berechtigungs-Workflows werden drei Typen von Token ausgegeben:
+Es gibt drei Arten von Token, die während der Berechtigungs-Workflows ausgegeben werden:
 
-- **Authentifizierungstoken** - Das Endergebnis des Workflows zur Benutzerauthentifizierung ist eine Authentifizierungs-GUID, die der AccessEnabler verwenden kann, um Autorisierungsabfragen im Namen des Benutzers durchzuführen. Diese Authentifizierungs-GUID weist einen zugehörigen TTL-Wert (Time-to-Live) auf, der sich von der Authentifizierungssitzung des Benutzers selbst unterscheiden kann. Die Adobe Pass-Authentifizierung generiert ein Authentifizierungstoken, indem sie die Authentifizierungs-GUID an das Gerät bindet, das die Authentifizierungsanfragen initiiert.
-- **Autorisierungstoken** - Gewährt Zugriff auf eine bestimmte geschützte Ressource, die durch eine eindeutige `resourceID` identifiziert wird. Es handelt sich dabei um eine von der autorisierenden Partei erteilte Ermächtigung zusammen mit dem Original `resourceID`. Diese Informationen sind an das Gerät gebunden, das die Anfrage initiiert.
-- **Kurzlebige Medien-Token** - AccessEnabler gewährt Zugriff auf die Hosting-Anwendung für eine bestimmte Ressource, indem ein kurzlebiges Medien-Token zurückgegeben wird. Dieses Token wird basierend auf dem Autorisierungstoken generiert, das zuvor für diese bestimmte Ressource erworben wurde. Außerdem ist dieses Token nicht an das Gerät gebunden und die zugehörige Lebensdauer ist deutlich kürzer (Standard: 5 Minuten).
+- **Authentifizierungstoken** - Das Endergebnis des Benutzerauthentifizierungs-Workflows ist eine Authentifizierungs-GUID, mit der AccessEnabler Autorisierungsabfragen im Namen des Benutzers durchführen kann. Diese Authentifizierungs-GUID hat einen zugehörigen TTL-Wert (Time-to-Live), der sich von der Authentifizierungssitzung des Benutzers selbst unterscheiden kann. Die Adobe Pass-Authentifizierung generiert ein Authentifizierungstoken, indem sie die Authentifizierungs-GUID an das Gerät bindet, das die Authentifizierungsanfragen initiiert.
+- **Autorisierungs-Token** - Gewährt Zugriff auf eine bestimmte geschützte Ressource, die durch eine eindeutige `resourceID` identifiziert wird. Sie besteht aus einer von der genehmigenden Partei zusammen mit dem ursprünglichen `resourceID` ausgestellten Genehmigung. Diese Informationen sind an das Gerät gebunden, das die Anfrage initiiert.
+- **Kurzlebiges Medien-Token** - AccessEnabler gewährt durch Rückgabe eines kurzlebigen Medien-Tokens Zugriff auf die Hosting-Anwendung für eine bestimmte Ressource. Dieses Token wird basierend auf dem Autorisierungs-Token generiert, das zuvor für diese bestimmte Ressource abgerufen wurde. Außerdem ist dieses Token nicht an das Gerät gebunden und die zugehörige Lebensdauer ist erheblich kürzer (Standard: 5 Minuten).
 
-Nach erfolgreicher Authentifizierung und Autorisierung stellt die Adobe Pass-Authentifizierung Authentifizierungs-, Autorisierungs- und kurzlebige Medien-Token aus. Diese Token sollten auf dem Gerät des Benutzers zwischengespeichert und für die Dauer der zugehörigen Lebensdauer verwendet werden.
+Nach erfolgreicher Authentifizierung und Autorisierung gibt die Adobe Pass-Authentifizierung Authentifizierungs-, Autorisierungs- und kurzlebige Medien-Token aus. Diese Token sollten auf dem Gerät des Benutzers zwischengespeichert und für die Dauer der zugehörigen Lebensdauer verwendet werden.
 
 
 
-### Caching-Richtlinien {#caching}
+### Richtlinien für das Zwischenspeichern {#caching}
 
 - Authentifizierungstoken
-- Autorisierungstoken
+- Autorisierungs-Token
 - Medien-Token
 
 
 #### Authentifizierungstoken
 
-- **AccessEnabler 1.6 und älter** - Die Art und Weise, wie Authentifizierungstoken auf dem Gerät zwischengespeichert werden, hängt von der &quot;**Authentifizierung pro Anforderer&quot;** -Markierung ab, die mit dem aktuellen MVPD verknüpft ist:
+- **AccessEnabler 1.6 und älter** - Die Art und Weise, wie Authentifizierungstoken auf dem Gerät zwischengespeichert werden, hängt von der Markierung &quot;**Authentifizierung pro Anforderer“** ab, die mit der aktuellen MVPD verknüpft ist:
 
 
-1. Wenn die Funktion &quot;Authentifizierung pro Anforderer&quot;auf *disabled* gesetzt ist, wird ein einzelnes Authentifizierungstoken lokal auf der globalen Zwischenablage gespeichert. Dieses Token wird für alle Anwendungen freigegeben, die in das aktuelle MVPD integriert sind.
-1. Wenn die Funktion &quot;Authentifizierung pro Anforderer&quot;auf *enabled* gesetzt ist, wird ein Token explizit mit dem Programmierer verknüpft, der den Authentifizierungsfluss durchgeführt hat (das Token wird nicht in der globalen Zwischenablage, sondern in einer privaten Datei gespeichert, die nur für die Anwendung dieses Programmierers sichtbar ist). Genauer gesagt wird Single Sign-On (SSO) zwischen verschiedenen Anwendungen deaktiviert. Der Benutzer muss den Authentifizierungsfluss beim Wechsel zu einer neuen App explizit durchführen (vorausgesetzt, der Programmierer der zweiten App ist mit dem aktuellen MVPD integriert und für diesen Programmierer ist kein Authentifizierungstoken im lokalen Cache vorhanden).
+1. Wenn die Funktion „Authentifizierung pro Anfordernder *&quot; deaktiviert*, wird ein einzelnes Authentifizierungstoken lokal in der globalen Zwischenablage gespeichert. Dieses Token wird von allen Anwendungen gemeinsam genutzt, die in die aktuelle MVPD integriert sind.
+1. Wenn die Funktion „Authentifizierung pro Anfordernder“ *aktiviert* ist, wird ein Token explizit mit dem Programmierer verknüpft, der den Authentifizierungsfluss durchgeführt hat (das Token wird nicht in der globalen Zwischenablage gespeichert, sondern in einer privaten Datei, die nur für die Anwendung dieses Programmierers sichtbar ist). Insbesondere wird Single Sign-On (SSO) zwischen verschiedenen Anwendungen deaktiviert; der Benutzer muss den Authentifizierungsfluss explizit ausführen, wenn er zu einer neuen Anwendung wechselt (vorausgesetzt, der Programmierer der zweiten Anwendung ist mit der aktuellen MVPD integriert und dass für diesen Programmierer im lokalen Cache kein Authentifizierungstoken vorhanden ist).
 
-   **Hinweis:** AEM 1.6 Google GSON Tech Hinweis: [So lösen Sie DSGVO-Abhängigkeiten auf](https://tve.zendesk.com/entries/22902516-Android-AccessEnabler-1-6-How-to-resolve-Gson-dependencies)
+   **Hinweis:** AE 1.6 Google GSON Technische Anmerkung: [So lösen Sie Gson-Abhängigkeiten auf](https://tve.zendesk.com/entries/22902516-Android-AccessEnabler-1-6-How-to-resolve-Gson-dependencies)
 
-- **AccessEnabler 1.7** - Mit diesem SDK wird eine neue Methode der Tokenspeicherung eingeführt, die mehrere Programmer-MVPD-Buckets und damit mehrere Authentifizierungstoken ermöglicht. Ab AEM 1.7 wird dasselbe Speicherlayout sowohl für das Szenario &quot;Authentifizierung pro Anforderer&quot;als auch für den normalen Authentifizierungsfluss verwendet. Der einzige Unterschied zwischen den beiden besteht in der Art und Weise, wie die Authentifizierung durchgeführt wird: &quot;Authentifizierung pro Anforderer&quot;enthält eine neue Verbesserung (passive Authentifizierung), die es dem AccessEnabler ermöglicht, eine Back-Channel-Authentifizierung durchzuführen, basierend auf dem Vorhandensein eines Authentifizierungstokens im Speicher (für einen anderen Programmierer). Der Benutzer muss sich nur einmal authentifizieren. Diese Sitzung wird verwendet, um Authentifizierungstoken in nachfolgenden Apps zu erhalten. Dieser Backchannel-Fluss erfolgt während des [`setRequestor()`](#setRequestor) -Aufrufs und ist größtenteils für den Programmierer transparent. Es gibt jedoch eine wichtige Anforderung: Der Programmierer MUSS [`setRequestor()`](#setRequestor) aus dem Haupt-UI-Thread und aus einer Aktivität aufrufen.
+- **AccessEnabler 1.7** - Diese SDK führt eine neue Methode zur Token-Speicherung ein, die mehrere Programmer-MVPD-Buckets und daher mehrere Authentifizierungstoken ermöglicht. Ab AE 1.7 wird dasselbe Speicher-Layout sowohl für das Szenario „Authentifizierung pro Anforderer“ als auch für den normalen Authentifizierungsfluss verwendet. Der einzige Unterschied zwischen den beiden besteht in der Art und Weise, wie die Authentifizierung durchgeführt wird: „Authentifizierung per Requestor“ enthält eine neue Verbesserung (passive Authentifizierung), die es dem AccessEnabler ermöglicht, eine Back-Channel-Authentifizierung durchzuführen, basierend auf der Existenz eines Authentifizierungstokens im Speicher (für einen anderen Programmierer). Der Benutzer muss sich nur einmal authentifizieren und diese Sitzung wird verwendet, um Authentifizierungs-Token in nachfolgenden Apps zu erhalten. Dieser Rückkanal-Fluss erfolgt während des [`setRequestor()`](#setRequestor)-Aufrufs und ist für den Programmierer größtenteils transparent. Es gibt jedoch eine wichtige Anforderung: Der Programmierer MUSS [`setRequestor()`](#setRequestor) aus dem Haupt-UI-Thread und aus einer Aktivität heraus aufrufen.
 
 
-#### Autorisierungstoken
+#### Autorisierungs-Token
 
-Jederzeit wird nur ein ONE-Autorisierungstoken pro Ressource vom AccessEnabler zwischengespeichert. Es können mehrere Autorisierungstoken zwischengespeichert werden, sie sind jedoch mit verschiedenen Ressourcen verknüpft. Wenn ein neues Autorisierungstoken ausgegeben wird und bereits ein altes für dieselbe Ressource existiert, überschreibt das neue Token den vorhandenen zwischengespeicherten Wert.
+Es wird immer nur EIN Autorisierungs-Token pro Ressource vom AccessEnabler zwischengespeichert. Es können mehrere Autorisierungs-Token zwischengespeichert werden, sie sind jedoch mit verschiedenen Ressourcen verknüpft. Wenn ein neues Autorisierungs-Token ausgegeben wird und bereits ein altes für dieselbe Ressource vorhanden ist, überschreibt das neue Token den vorhandenen zwischengespeicherten Wert.
 
 
 
 #### Medien-Token
 
-Das Token für kurzlebige Medien sollte überhaupt NICHT zwischengespeichert werden. Das Medien-Token sollte jedes Mal, wenn eine Autorisierungs-API aufgerufen wird, vom Server abgerufen werden, da es auf die einmalige Verwendung beschränkt ist.
+Das kurzlebige Medien-Token sollte ÜBERHAUPT NICHT zwischengespeichert werden. Das Medien-Token sollte jedes Mal vom Server abgerufen werden, wenn eine Autorisierungs-API aufgerufen wird, da es auf die einmalige Verwendung beschränkt ist.
 
 
 
 ### Persistenz {#persistence}
 
-Token müssen in aufeinander folgenden Ausführungen derselben Anwendung persistent sein. Das bedeutet, dass nach dem Erwerb der Authentifizierungs- und Autorisierungstoken und dem Schließen der Anwendung durch den Benutzer dieselben Token für die Anwendung verfügbar sind, wenn der Benutzer die Anwendung erneut öffnet. Darüber hinaus ist es wünschenswert, dass diese Token über mehrere Anwendungen hinweg persistent sind. Anders ausgedrückt: Wenn ein Benutzer eine Anwendung verwendet, um sich bei einem bestimmten Identitätsanbieter anzumelden (um Authentifizierungs- und Autorisierungstoken erfolgreich zu erhalten), können dieselben Token über eine andere Anwendung verwendet werden. Der Benutzer wird bei der Anmeldung über denselben Identitätsanbieter nicht mehr zur Eingabe von Anmeldeinformationen aufgefordert.
+Token müssen über mehrere aufeinander folgende Ausführungen desselben Programms hinweg persistent sein. Das bedeutet, dass nach dem Abrufen der Authentifizierungs- und Autorisierungs-Token und dem Schließen der Anwendung durch den Benutzer dieselben Token für die Anwendung verfügbar sind, wenn der Benutzer die Anwendung erneut öffnet. Darüber hinaus ist es wünschenswert, dass diese Token über mehrere Anwendungen hinweg persistent sind. Mit anderen Worten: Wenn ein Benutzer eine Anwendung verwendet, um sich bei einem bestimmten Identitätsanbieter anzumelden (und Authentifizierungs- und Autorisierungs-Token erfolgreich erhalten hat), können dieselben Token über eine andere Anwendung verwendet werden, und der Benutzer wird bei der Anmeldung über denselben Identitätsanbieter nicht mehr zur Eingabe von Anmeldeinformationen aufgefordert.
 
 
 
-Dieser nahtlose Authentifizierungs-/Autorisierungs-Workflow macht die Adobe Pass-Authentifizierungslösung zu einer echten TV-Überall-Implementierung. Aus rein technischer Sicht umgeht die Android AccessEnabler-Bibliothek die Probleme der anwendungsübergreifenden Datenfreigabe, indem sie die Token-Daten in einer Datenbankdatei speichert, die sich im externen Speicher befindet. Diese freigegebenen Ressourcen auf Systemebene bieten die wichtigsten Komponenten, die die Implementierung des gewünschten Anwendungsfalls für beständige Token ermöglichen:
+Diese Art von nahtlosem Authentifizierungs-/Autorisierungs-Workflow macht die Adobe Pass-Authentifizierungslösung zu einer echten TV-Everywhere-Implementierung. Aus rein technischer Sicht umgeht die Android AccessEnabler-Bibliothek die Probleme der programmübergreifenden Datenfreigabe, indem die Token-Daten in einer Datenbankdatei gespeichert werden, die sich auf einem externen Speicher befindet. Diese freigegebenen Ressourcen auf Systemebene bieten die wichtigsten Bestandteile, die die Implementierung des gewünschten Anwendungsfalls für persistente Token ermöglichen:
 
-- Unterstützung für strukturierten Speicher - Der Speicher des Adobe Pass-Authentifizierungstokens ist nicht nur eine einfache lineare Pufferspeicherstruktur. Es bietet einen wörterbuchähnlichen Speichermechanismus, der eine Datenindizierung basierend auf benutzerdefinierten Schlüsselwerten ermöglicht.
-- Unterstützung der Datenpersistenz mithilfe des zugrunde liegenden Dateisystems - Der Inhalt der Datenbankdatei wird standardmäßig beibehalten und die Daten werden im externen Speicher des Geräts gespeichert.
+- Unterstützung für strukturierten Speicher - Der Adobe Pass-Authentifizierungstoken-Speicher ist nicht nur eine einfache, lineare, pufferähnliche Speicherstruktur. Es bietet einen wörterbuchähnlichen Speichermechanismus, der die Indizierung von Daten auf der Grundlage benutzerdefinierter Schlüsselwerte ermöglicht.
+- Unterstützung der Datenpersistenz mit dem zugrunde liegenden Dateisystem - Der Inhalt der Datenbankdatei wird standardmäßig beibehalten und die Daten werden im externen Speicher des Geräts gespeichert.
 
 
 
-Sobald ein bestimmtes Token im Token-Cache platziert wurde, wird seine Gültigkeit von der AccessEnabler-Bibliothek zu unterschiedlichen Zeitpunkten überprüft.  Ein gültiges Token wird wie folgt definiert:
+Sobald ein bestimmtes Token im Token-Cache platziert ist, wird seine Gültigkeit von der AccessEnabler-Bibliothek zu verschiedenen Zeiten überprüft.  Ein gültiges Token wird wie folgt definiert:
 
 - Die TTL des Tokens ist nicht abgelaufen
-- Der Aussteller des Tokens ist in der Liste der zugelassenen Identitätsanbieter enthalten
+- Der Aussteller des Tokens ist in der Liste der zulässigen Identitätsanbieter enthalten
 
 
 
-Ab AccessEnabler 1.7 kann der Token-Speicher mehrere Programmer-MVPD-Kombinationen unterstützen, die auf einer mehrstufigen verschachtelten Kartenstruktur basieren, die mehrere Authentifizierungstoken enthalten kann. Dieser neue Speicher wirkt sich in keiner Weise auf die öffentliche AccessEnabler-API aus und erfordert keine Änderungen auf der Seite des Programmierers. Im Folgenden finden Sie ein Beispiel, das diese neuere Funktion veranschaulicht:
+Ab AccessEnabler 1.7 kann der Token-Speicher mehrere Programmer-MVPD-Kombinationen unterstützen, wobei eine mehrstufige verschachtelte Zuordnungsstruktur verwendet wird, die mehrere Authentifizierungstoken enthalten kann. Dieser neue Speicher hat keinerlei Auswirkungen auf die öffentliche AccessEnabler-API und erfordert keine Änderungen seitens des Programmierers. Im Folgenden finden Sie ein Beispiel für diese neuere Funktion:
 
 1. Öffnen Sie App1 (entwickelt von Programmer1).
-1. Authentifizieren Sie sich mit MVPD1 (integriert in Programmer1).
+1. Authentifizierung mit MVPD1 (in Programmer1 integriert).
 1. Aussetzen/Schließen Sie die aktuelle Anwendung und öffnen Sie App2 (entwickelt von Programmer2).
 1. Nehmen wir an, dass Programmer2 nicht in MVPD2 integriert ist. Daher wird der Benutzer NICHT in App2 authentifiziert.
-1. Authentifizieren Sie sich mit MVPD2 (das mit Programmer2 integriert ist) in App2.
+1. Authentifizierung bei MVPD2 (das mit Programmer2 integriert ist) in App2.
 1. Wechseln Sie zurück zu App1. Der Benutzer wird weiterhin mit Programmer1 authentifiziert.
 
-In älteren Versionen von AccessEnabler würde Schritt 6 den Benutzer als nicht authentifiziert rendern, da der Token-Speicher zuvor nur ein Authentifizierungstoken unterstützte.
+In älteren Versionen von AccessEnabler wurde der Benutzer in Schritt 6 als nicht authentifiziert gerendert, da der Token-Speicher zuvor nur ein Authentifizierungstoken unterstützt hatte.
 
 
-**HINWEIS:** Durch Abmelden von einer Programmer-/MVPD-Sitzung wird der zugrunde liegende Speicher gelöscht, einschließlich aller anderen Programmierer-Authentifizierungstoken auf dem Gerät mit SSO. Token, die für andere MVPDs oder nicht über SSO erhalten wurden, werden nicht gelöscht. Durch Abbruch des Authentifizierungsflusses (Aufrufen von [`setSelectedProvider(null)`](#setSelectedProvider)) wird der zugrunde liegende Speicher NICHT gelöscht, sondern nur der aktuelle Programmierer/MVPD-Authentifizierungsversuch (durch Löschen des MVPD für den aktuellen Programmierer).
+**HINWEIS** Wenn Sie sich von einer Programmierer-/MVPD-Sitzung abmelden, wird der zugrunde liegende Speicher gelöscht, einschließlich aller anderen Programmierer-Authentifizierungstoken auf dem Gerät mit SSO. Token, die für andere MVPDs oder nicht über SSO erhalten wurden, werden nicht gelöscht. Das Abbrechen des Authentifizierungsflusses (Aufrufen von [`setSelectedProvider(null)`](#setSelectedProvider)) löscht NICHT den zugrunde liegenden Speicher, sondern wirkt sich nur auf den aktuellen Authentifizierungsversuch von Programmierer/MVPD aus (durch Löschen der MVPD für den aktuellen Programmierer).
 
 
-Eine weitere speicherbezogene Funktion, die in AccessEnabler 1.7 enthalten ist, ermöglicht den Import von Authentifizierungstoken aus älteren Speicherbereichen. Dieser &quot;Token Importer&quot;trägt dazu bei, die Kompatibilität zwischen aufeinander folgenden AccessEnabler-Versionen zu erreichen, wodurch der SSO-Status auch bei Aktualisierung der Speicherversion beibehalten wird.
+Eine weitere speicherbezogene Funktion, die in AccessEnabler 1.7 enthalten ist, ermöglicht den Import von Authentifizierungs-Token aus älteren Speicherbereichen. Dieser „Token-Importer“ trägt dazu bei, die Kompatibilität zwischen aufeinander folgenden AccessEnabler-Versionen zu erreichen, wobei der SSO-Status auch bei einem Upgrade der Speicherversion erhalten bleibt.
 
-Das Importtool wird während des [`setRequestor()`](#setRequestor)-Flusses ausgeführt und in den folgenden beiden Szenarien ausgeführt (vorausgesetzt, im aktuellen Speicher ist kein gültiges Authentifizierungstoken für den aktuellen Programmierer vorhanden):
+Das Import-Tool wird während des [`setRequestor()`](#setRequestor) ausgeführt und läuft in den folgenden beiden Szenarien (unter der Annahme, dass im aktuellen Speicher kein gültiges Authentifizierungstoken für den aktuellen Programmierer vorhanden ist):
 
 - Die erste Installation einer 1.7-App, die von einem bestimmten Programmierer entwickelt wurde
-- Pfad zu einem zukünftigen AccessEnabler aktualisieren, der einen neuen Speicher verwendet
+- Upgrade-Pfad auf einen zukünftigen Access Enabler, der einen neuen Speicher verwendet
 
-Der Importvorgang ist für den Programmierer transparent und erfordert keine Codeänderungen in der Clientanwendung.
+Der Importvorgang ist für den Programmierer transparent und erfordert keine Codeänderung in der Client-Anwendung.
 
 
 
 ### Format {#format}
 
 - [Authentifizierungstoken](#authn_token)
-- [Autorisierungstoken](#authz_token)
-- [Short Media Token](#short_media_token)
+- [Autorisierungs-Token](#authz_token)
+- [Kurzes Medien-Token](#short_media_token)
 - [Gerätebindung](#device_binding)
 
 #### Authentifizierungstoken {#authn_token}
 
-Die folgende Liste zeigt das Format des Authentifizierungstokens:
+In der folgenden Liste ist das Format des Authentifizierungstokens aufgeführt:
 
 ```XML
     <signatureInfo>base64(...)<signatureInfo>
@@ -207,9 +207,9 @@ Die folgende Liste zeigt das Format des Authentifizierungstokens:
 ```
 
 
-#### Autorisierungstoken {#authz_token}
+#### Autorisierungs-Token {#authz_token}
 
-Die folgende Liste zeigt das Format des Autorisierungstokens:
+In der folgenden Liste ist das Format des Autorisierungs-Tokens aufgeführt:
 
 ```XML
     <signatureInfo>base64(...)<signatureInfo>
@@ -227,9 +227,9 @@ Die folgende Liste zeigt das Format des Autorisierungstokens:
 ```
 
 
-#### Short Media Token {#short_media_token}
+#### Kurzes Medien-Token {#short_media_token}
 
-Die folgende Liste zeigt das Format des Short-Media-Tokens.  Dieses Token wird der Anwendung des Programmierers zur Verfügung gestellt.  Er wird am Ende eines erfolgreichen Berechtigungsprozesses an die Anwendung des Programmierers übergeben:
+In der folgenden Liste wird das Format des Kurzwahltokens angezeigt.  Dieses Token wird für die Anwendung des Programmierers verfügbar gemacht.  Sie wird am Ende eines erfolgreichen Berechtigungsprozesses an das Programm des Programmierers übergeben:
 
 ```XML
     <signatureInfo>signature<signatureInfo>
@@ -247,15 +247,15 @@ Die folgende Liste zeigt das Format des Short-Media-Tokens.  Dieses Token wird d
 
 #### Gerätebindung {#device_binding}
 
-Beachten Sie in den oben aufgeführten XML-Listen das Tag `simpleTokenFingerprint`. Der Zweck dieses Tags besteht darin, native ID-Individualisierungsinformationen für Geräte zu speichern. Die AccessEnabler-Bibliothek kann diese Individualisierungsinformationen abrufen und den Adobe Pass-Authentifizierungsdiensten während der Berechtigungsaufrufe zur Verfügung stellen. Der Dienst verwendet diese Informationen und bettet sie in die tatsächlichen Token ein, wodurch die Token effektiv an ein bestimmtes Gerät gebunden werden. Das Endziel besteht darin, die Token geräteübergreifend nicht übertragbar zu machen.
+Beachten Sie in den obigen XML-Auflistungen das Tag mit dem Titel `simpleTokenFingerprint`. Der Zweck dieses Tags ist es, native Geräte-ID-Individualisierungsinformationen zu enthalten. Die AccessEnabler-Bibliothek kann diese Personalisierungsinformationen abrufen und während der Berechtigungsaufrufe für die Adobe Pass-Authentifizierungsdienste verfügbar machen. Der Service verwendet diese Informationen und bettet sie in die tatsächlichen Token ein, wodurch die Token effektiv an ein bestimmtes Gerät gebunden werden. Das Endziel besteht darin, die Token nicht geräteübergreifend übertragbar zu machen.
 
 
 
-Notieren Sie sich in den oben aufgeführten XML-Listen das Tag simpleTokenFingerprint. Der Zweck dieses Tags besteht darin, native ID-Individualisierungsinformationen für Geräte zu speichern. Die AccessEnabler-Bibliothek kann diese Individualisierungsinformationen abrufen und den Adobe Pass-Authentifizierungsdiensten während der Berechtigungsaufrufe zur Verfügung stellen. Der Dienst verwendet diese Informationen und bettet sie in die tatsächlichen Token ein, wodurch die Token effektiv an ein bestimmtes Gerät gebunden werden. Das Endziel besteht darin, die Token geräteübergreifend nicht übertragbar zu machen.
+Beachten Sie in den obigen XML-Listen das Tag „simpleTokenFingerprint“. Der Zweck dieses Tags ist es, native Geräte-ID-Individualisierungsinformationen zu enthalten. Die AccessEnabler-Bibliothek kann diese Personalisierungsinformationen abrufen und während der Berechtigungsaufrufe für die Adobe Pass-Authentifizierungsdienste verfügbar machen. Der Service verwendet diese Informationen und bettet sie in die tatsächlichen Token ein, wodurch die Token effektiv an ein bestimmtes Gerät gebunden werden. Das Endziel besteht darin, die Token nicht geräteübergreifend übertragbar zu machen.
 
 
 
-Da dies offensichtlich eine sicherheitsrelevante Funktion ist, ist diese Information von Natur aus &quot;sensibel&quot; aus sicherheitspolitischer Sicht. Daher müssen diese Informationen sowohl vor Manipulation als auch vor Abhören geschützt werden. Das Abhörproblem wird gelöst, indem die Authentifizierungs-/Autorisierungsanfragen über das HTTPS-Protokoll gesendet werden. Der Manipulationsschutz wird durch digitale Signatur der Identifizierungsinformationen des Geräts erreicht. Die AccessEnabler-Bibliothek berechnet eine Geräte-ID aus den vom Gerät bereitgestellten Informationen und sendet dann die Geräte-ID &quot;in the clear&quot;als Anfrageparameter an die Adobe Pass-Authentifizierungsserver.  Die Adobe Pass-Authentifizierungsserver signieren die Geräte-ID digital mit dem privaten Adobe-Schlüssel und fügen sie dem Authentifizierungstoken hinzu, das an den AccessEnabler zurückgegeben wird. Daher ist die Geräte-ID mit dem Authentifizierungstoken verknüpft.  Während des Autorisierungsflusses sendet der AccessEnabler erneut die Geräte-ID in der -Datei zusammen mit dem Authentifizierungstoken.  Wenn der Validierungsprozess fehlschlägt, schlagen die Authentifizierungs-/Autorisierungs-Workflows automatisch fehl.  Die Adobe Pass-Authentifizierungsserver wenden den privaten Schlüssel auf die Geräte-ID an und vergleichen ihn mit dem Wert im Authentifizierungstoken.  Wenn sie nicht übereinstimmen, schlägt dieser Berechtigungsfluss fehl.
+Da es sich hierbei offensichtlich um eine sicherheitsbezogene Funktion handelt, sind diese Informationen aus Sicherheitssicht von Natur aus „sensibel“. Daher müssen diese Informationen sowohl vor Manipulationen als auch vor Abhörmaßnahmen geschützt werden. Das Problem des Abhörens wird gelöst, indem die Authentifizierungs-/Autorisierungsanfragen über das HTTPS-Protokoll gesendet werden. Der Manipulationsschutz wird durch eine digitale Signatur der Geräterkennungsinformationen gehandhabt. Die AccessEnabler-Bibliothek berechnet eine Geräte-ID aus den vom Gerät bereitgestellten Informationen und sendet dann die Geräte-ID „im Klartext“ als Abfrageparameter an die Adobe Pass-Authentifizierungsserver.  Die Adobe Pass-Authentifizierungsserver signieren die Geräte-ID digital mit dem privaten Adobe-Schlüssel und fügen sie dem Authentifizierungstoken hinzu, das an AccessEnabler zurückgegeben wird. Daher ist die Geräte-ID an das Authentifizierungs-Token gebunden.  Während des Autorisierungsflusses sendet der AccessEnabler die Geräte-ID erneut als gelöscht zusammen mit dem Authentifizierungstoken.  Ein Fehlschlagen des Validierungsprozesses führt automatisch zum Fehlschlagen der Authentifizierungs-/Autorisierungs-Workflows.  Die Adobe Pass-Authentifizierungsserver wenden den privaten Schlüssel auf die Geräte-ID an und vergleichen ihn mit dem Wert im Authentifizierungs-Token.  Wenn sie nicht übereinstimmen, schlägt dieser Berechtigungsfluss fehl.
 
 
 <!--

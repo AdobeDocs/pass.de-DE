@@ -1,23 +1,23 @@
 ---
-title: Abrufen einer Liste vorab autorisierter Ressourcen von der Second Screen Web App
-description: Abrufen einer Liste vorab autorisierter Ressourcen von der Second Screen Web App
+title: Abrufen der Liste der vorab autorisierten Ressourcen durch die Web-App im zweiten Bildschirm
+description: Abrufen der Liste der vorab autorisierten Ressourcen durch die Web-App im zweiten Bildschirm
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '254'
+source-wordcount: '255'
 ht-degree: 0%
 
 ---
 
-# Abrufen einer Liste vorab autorisierter Ressourcen von der Second Screen Web App {#retrieve-list-of-preauthorized-resources-by-second-screen-web-app}
+# (Legacy) Liste der vorab autorisierten Ressourcen durch Web-App auf dem zweiten Bildschirm abrufen {#retrieve-list-of-preauthorized-resources-by-second-screen-web-app}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch den [Drosselmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) begrenzt
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -35,22 +35,22 @@ ht-degree: 0%
 
 ## Beschreibung {#description}
 
-Anfrage an die Adobe Pass-Authentifizierung zum Abrufen der Liste der bereits autorisierten Ressourcen.
+Eine Anfrage an die Adobe Pass-Authentifizierung zum Abrufen der Liste der vorab autorisierten Ressourcen.
 
-Es gibt zwei Gruppen von APIs: einen Satz für die Streaming-App oder den Programmierer-Dienst und einen Satz für die Second Screen Web App. Auf dieser Seite wird die API für die AuthN-App beschrieben.
+Es gibt zwei Sätze von APIs: einen Satz für die Streaming-App oder den Programmierer-Service und einen Satz für die Web-App des zweiten Bildschirms. Auf dieser Seite wird die API für die AuthN-App beschrieben.
 
 
-| Endpunkt | </br>von aufgerufen | Eingabe   </br>Parameter | HTTP </br>Methode | Reaktion | HTTP </br>Antwort |
+| Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/preauthorize/{Registrierungscode} | AuthN-Modul | 1. Registrierungs-Code </br>    (Pfadkomponente)</br>2.  Antragsteller (erforderlich)</br>3.  Ressourcenliste (erforderlich) | GET | XML oder JSON, die einzelne Entscheidungen vor der Autorisierung oder Fehlerdetails enthalten. Siehe Beispiele unten. | 200 - Erfolg</br></br>400 - Ungültige Anfrage</br></br>401 - Nicht autorisiert</br></br>405 - Methode nicht zulässig </br></br>412 - Vorbedingung fehlgeschlagen</br></br>500 - Interner Server-Fehler |
+| &lt;SP_FQDN>/api/v1/preauthorize/{registration code} | AuthN-Modul | 1. Registrierungs-Code </br>    (Pfadkomponente)</br>2.  Antragsteller (obligatorisch)</br>3.  Ressourcenliste (obligatorisch) | GET | XML oder JSON mit einzelnen Entscheidungen vor der Autorisierung oder Fehlerdetails. Siehe Beispiele unten. | 200 - </br></br>400 - Fehlerhafte Anfrage</br></br>401 - Nicht autorisiert</br></br>405 - Methode nicht zulässig </br></br>412 - Voraussetzung fehlgeschlagen</br></br>500 - Interner Server-Fehler |
 
 
 
 | Eingabeparameter | Beschreibung |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Registrierungscode | Der vom Benutzer am Anfang des Authentifizierungsflusses angegebene Registrierungscode-Wert. |
-| Anfragender | Die Programmer-Anfrage-ID, für die dieser Vorgang gültig ist. |
-| Ressourcenliste | Eine Zeichenfolge, die eine kommagetrennte Liste von resourceIds enthält, die den Inhalt identifiziert, auf den ein Benutzer zugreifen kann, und die von MVPD-Autorisierungsendpunkten erkannt wird. |
+| Registrierungs-Code | Der Wert des Registrierungs-Codes, der vom Benutzer zu Beginn des Authentifizierungsflusses angegeben wurde. |
+| Antragsteller | Die RequestorId des Programmierers, für den dieser Vorgang gültig ist. |
+| Ressourcenliste | Eine Zeichenfolge, die eine kommagetrennte Liste von resourceIds enthält, die den Inhalt identifiziert, auf den ein Benutzer zugreifen kann und der von MVPD-Autorisierungsendpunkten erkannt wird. |
 
 
 ### Beispielantwort {#sample-response}

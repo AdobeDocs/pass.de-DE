@@ -2,22 +2,22 @@
 title: MVPD-Liste bereitstellen
 description: MVPD-Liste bereitstellen
 exl-id: db2d8f19-d0b9-4195-bf0b-f9de0d96062b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '233'
 ht-degree: 2%
 
 ---
 
-# MVPD-Liste bereitstellen {#provide-mvpd-list}
+# (Legacy) MVPD-Liste bereitstellen {#provide-mvpd-list}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch den [Drosselmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) begrenzt
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -35,30 +35,30 @@ ht-degree: 2%
 
 ## Beschreibung {#description}
 
-Gibt eine Liste der konfigurierten MVPDs für den Anfragenden zurück.
+Gibt die Liste der konfigurierten MVPDs für den Anforderer aus.
 
-| Endpunkt | </br>von aufgerufen | Eingabe   </br>Parameter | HTTP </br>Methode | Reaktion | HTTP </br>Antwort |
+| Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Beispiel:</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Adobe Pass-Authentifizierung | 1. Antragsteller</br>    (Pfadkomponente)</br>_2.  deviceType (nicht mehr unterstützt)_ | GET | XML oder JSON mit einer Liste von MVPDs. | 200 |
+| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Beispiel:</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Adobe Pass-Authentifizierung | 1. Antragsteller</br>    (Pfadkomponente)</br>_2.  deviceType (veraltet)_ | GET | XML oder JSON mit einer Liste von MVPDs. | 200 |
 
 {style="table-layout:auto"}
 
 
 | Eingabeparameter | Beschreibung |
 | --------------- | ------------------------------------------------------------- |
-| Anfragender | Die Programmer-Anfrage-ID, für die dieser Vorgang gültig ist. |
+| Antragsteller | Die RequestorId des Programmierers, für den dieser Vorgang gültig ist. |
 | *deviceType* | Gerätetyp. |
 
 {style="table-layout:auto"}
 
 ### Beispielantwort {#sample-response}
 
-Wie vorhandene MVPD XML-Antwort auf /config Servlet
+Wie bestehende MVPD XML-Antwort auf das Servlet /config
 
-Hinweis: Alle MVPDs, die für die Verwendung von Platform SSO konfiguriert sind, verfügen über die folgenden zusätzlichen Eigenschaften innerhalb des entsprechenden Knotens (JSON/XML):
+Hinweis: Alle MVPDs, die für die Verwendung von Platform SSO konfiguriert sind, haben die folgenden zusätzlichen Eigenschaften in ihrem entsprechenden Knoten (JSON/XML):
 
-* **enablePlatformServices (boolean):**-Markierung, die angibt, ob dieser MVPD über Platform SSO integriert ist
-* **boardingStatus (string):** -Markierung, die angibt, ob der MVPD Platform SSO (SUPPORTED) vollständig unterstützt oder ob der MVPD nur in der Plattformauswahl (PICKER) angezeigt wird
-* **displayInPlatformPicker (boolean):** , sollte dieser MVPD in der Plattformauswahl angezeigt werden
-* **platformMappingId (Zeichenfolge):** die Kennung dieses MVPD, wie von der Plattform bekannt
-* **requiredMetadataFields (String-Array):** die Metadatenfelder des Benutzers, die bei einer erfolgreichen Anmeldung verfügbar sein sollen
+* **enablePlatformServices (Boolesch):** Flag, das angibt, ob diese MVPD über Platform-SSO integriert ist
+* **boardingStatus (Zeichenfolge):** Flag, das angibt, ob MVPD Platform SSO vollständig unterstützt (UNTERSTÜTZT) oder ob die MVPD nur in der Plattformauswahl (Auswahl) angezeigt wird
+* **displayInPlatformPicker (Boolescher Wert):** sollte diese MVPD in der Plattformauswahl angezeigt werden
+* **platformMappingId (Zeichenfolge):** die Kennung dieser MVPD, die von der Plattform als „Platform“ bezeichnet wird
+* **requiredMetadataFields (Zeichenfolgen-Array):** Die Benutzer-Metadatenfelder, die bei einer erfolgreichen Anmeldung verfügbar sein sollen

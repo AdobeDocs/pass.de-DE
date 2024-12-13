@@ -1,25 +1,25 @@
 ---
-title: Registrierungsseite
-description: Registrierungsseite
+title: Anmeldeseite
+description: Anmeldeseite
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '494'
 ht-degree: 0%
 
 ---
 
-# Registrierungsseite {#registration-page}
+# (Veraltete) Registrierungsseite {#registration-page}
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch den [Drosselmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) begrenzt
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 &lt;REGGIE_FQDN>:
 
@@ -35,26 +35,26 @@ ht-degree: 0%
 
 ## Beschreibung {#create-reg-code-svc}
 
-Gibt zufällig generierten Registrierungscode und Anmeldeseiten-URI zurück.
+Gibt den zufällig generierten Registrierungs-Code und den Anmeldeseiten-URI zurück.
 
-| Endpunkt | <br>von aufgerufen | Eingabe   <br>Parameter | HTTP <br>Methode | Reaktion | HTTP <br>Antwort |
+| Endpunkt | Called <br>by | Eingabe   <br>Parameter | HTTP <br>Methode | Antwort | HTTP <br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Beispiel:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Streaming-App<br>oder<br>Programmierer-Dienst | 1. Anforderer <br>    (Pfadkomponente)<br>2.  deviceId (Hash)   <br>    (Obligatorisch)<br>3.  device_info/X-Device-Info (erforderlich)<br>4.  mvpd (optional)<br>5.  ttl (optional)<br> | POST | XML oder JSON, die einen Registrierungs-Code und Informationen oder Fehlerdetails enthalten, falls diese nicht erfolgreich sind. Siehe Beispiele unten. | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Beispiel:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Streaming-App<br>oder<br>Programmierer-Service | 1. <br>    (Pfadkomponente)<br>2.  deviceId (gehasht)   <br>    (mandatory)<br>3.  device_info/X-device-info (obligatorisch)<br>4.  mvpd (optional)<br>5.  TTL (optional)<br> | POST | XML oder JSON mit einem Registrierungs-Code und Informationen oder Fehlerdetails, falls nicht erfolgreich. Siehe Beispiele unten. | 201 |
 
 {style="table-layout:auto"}
 
 | Eingabeparameter | Typ | Beschreibung |
 | --- |------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Autorisierung | Header <br> Wert: Bearer &lt;access_token> | DCR-Zugriffstoken |
-| Accept | Header <br> Value: application/json | angeben, welchen Inhaltstyp der Client verstehen sollte |
-| Anfragender | Abfrageparameter | Die Programmer-Anfrage-ID, für die dieser Vorgang gültig ist. |
+| Autorisierung | Header-<br>: Bearer &lt;access_token> | DCR-Zugriffstoken |
+| Akzeptieren | Header-<br>: application/json | Geben Sie an, welchen Inhaltstyp der Client verstehen soll |
+| Antragsteller | Abfrageparameter | Die RequestorId des Programmierers, für den dieser Vorgang gültig ist. |
 | deviceId | Abfrageparameter | Die Geräte-ID-Bytes. |
-| device_info/<br>X-Device-Info | device_info: body <br> X-Device-Info: Header | Informationen zum Streaming-Gerät.<br>**Hinweis**: Dieser Parameter kann als URL-Parameter an device_info übergeben werden. Aufgrund der potenziellen Größe dieses Parameters und der Längenbeschränkungen einer GET-URL sollte er jedoch als X-Device-Info in der HTTP-Kopfzeile übergeben werden. <br>Weitere Informationen finden Sie unter [Übergeben von Geräte- und Verbindungsinformationen](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md). |
+| device_info/<br>X-device-info | device_info: Hauptteil <br> X-Device-info: Header | Informationen zu Streaming-Geräten.<br>**Hinweis**: Dies kann als URL-Parameter an device_info übergeben werden, sollte jedoch aufgrund der potenziellen Größe dieses Parameters und der Längenbeschränkungen für eine GET-URL als X-Device-Info im HTTP-Header übergeben werden. <br>Vollständige Details finden Sie unter [Übergeben von Geräte- und Verbindungsinformationen](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
 | mvpd | Abfrageparameter | Die MVPD-ID, für die dieser Vorgang gültig ist. |
-| ttl | Abfrageparameter | Wie lange dieser Regcode in Sekunden leben soll.<br>**Hinweis**: Der maximal zulässige Wert für ttl beträgt 36.000 Sekunden (10 Stunden). Höhere Werte führen zu einer 400-HTTP-Antwort (ungültige Anfrage). Wenn `ttl` leer ist, setzt die Adobe Pass-Authentifizierung den Standardwert von 30 Minuten. |
-| _deviceType_ | Abfrageparameter | Veraltet, sollte nicht verwendet werden. |
-| _deviceUser_ | Abfrageparameter | Veraltet, sollte nicht verwendet werden. |
-| _appId_ | Abfrageparameter | Veraltet, sollte nicht verwendet werden. |
+| TTL | Abfrageparameter | Wie lange diese Regcode-Zeit in Sekunden dauern soll.<br>**Hinweis**: Der maximal zulässige Wert für ttl beträgt 36000 Sekunden (10 Stunden). Höhere Werte führen zu einer 400-HTTP-Antwort (fehlerhafte Anfrage). Wenn `ttl` leer gelassen wird, legt die Adobe Pass-Authentifizierung den Standardwert von 30 Minuten fest. |
+| _deviceType_ | Abfrageparameter | Veraltet, sollte nicht mehr verwendet werden. |
+| _deviceUser_ | Abfrageparameter | Veraltet, sollte nicht mehr verwendet werden. |
+| _appId_ | Abfrageparameter | Veraltet, sollte nicht mehr verwendet werden. |
 
 {style="table-layout:auto"}
 
@@ -62,7 +62,7 @@ Gibt zufällig generierten Registrierungscode und Anmeldeseiten-URI zurück.
 >
 >**IP-Adresse des Streaming-Geräts**
 ><br>
->Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts implizit mit diesem Aufruf gesendet.  Bei Server-zu-Server-Implementierungen, bei denen der Aufruf von **regcode** als Programmiererdienst und nicht als Streaming-Gerät erfolgt, ist der folgende Header erforderlich, um die IP-Adresse des Streaming-Geräts zu übergeben:
+>Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts mit diesem Aufruf implizit gesendet.  Bei Server-zu-Server-Implementierungen, bei denen der **regcode**-Aufruf vom Programmierdienst und nicht vom Streaming-Gerät erfolgt, ist der folgende Header erforderlich, um die IP-Adresse des Streaming-Geräts zu übergeben:
 >
 >
 >```
@@ -71,7 +71,7 @@ Gibt zufällig generierten Registrierungscode und Anmeldeseiten-URI zurück.
 >
 >wobei `<streaming\_device\_ip>` die öffentliche IP-Adresse des Streaming-Geräts ist.
 ><br><br>
->Beispiel :<br>
+>Beispiel : <br>
 >
 >```
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20
@@ -82,7 +82,7 @@ Gibt zufällig generierten Registrierungscode und Anmeldeseiten-URI zurück.
 ### Antwort-JSON
 
 
-#### JSON-BEISPIELE FÜR Registrierungscode
+#### JSON-BEISPIELE für Registrierungs-Code
 
 ```JSON
 {
@@ -111,17 +111,17 @@ Gibt zufällig generierten Registrierungscode und Anmeldeseiten-URI zurück.
 
 | Elementname | Beschreibung |
 |-----------------------------------|------------------------------------------------------------------------------------------------------------------|
-| id | Vom Registrierungs-Code-Dienst generierte UUID |
-| code | Registrierungs-Code, der vom Registrierungs-Code-Dienst generiert wird |
-| Anfragender | Anforderer-ID |
-| mvpd | Mvpd ID |
-| generiert | Zeitstempel der Erstellung des Registrierungs-Codes (in Millisekunden seit dem 1. Januar 1970 GMT) |
-| expires | Zeitstempel, wenn der Registrierungs-Code abläuft (in Millisekunden seit dem 1. Januar 1970 GMT) |
-| deviceId | Base64 Eindeutige Geräte-ID |
+| ID | Vom Registrierungs-Code-Service generierte UUID |
+| Code | Vom Registrierungs-Code-Service generierter Registrierungs-Code |
+| Antragsteller | Antragsteller-ID |
+| mvpd | MVPD-ID |
+| Erzeugt | Zeitstempel der Erstellung des Registrierungs-Codes (in Millisekunden seit dem 1. Januar 1970 GMT) |
+| Expires | Zeitstempel, wann der Registrierungscode abläuft (in Millisekunden seit dem 1. Januar 1970 GMT) |
+| deviceId | Eindeutige Base64-Geräte-ID |
 | info:deviceId | Base64-Gerätetyp |
-| info:deviceInfo | Base64 Normalisierte Geräteinformationen basierend auf Informationen, die von User-Agent, X-Device-Info oder device_info empfangen werden |
-| info:userAgent | Benutzeragent, der von der Anwendung gesendet wird |
-| info:originalUserAgent | Benutzeragent, der von der Anwendung gesendet wird |
+| info:deviceInfo | Base64 Normalisierte Geräteinformationen basieren auf Informationen, die von Benutzeragenten, X-Device-Info oder device_info empfangen wurden |
+| info:userAgent | Von der Anwendung gesendeter Benutzeragent |
+| info:originalUserAgent | Von der Anwendung gesendeter Benutzeragent |
 | info:authorizationType | OAUTH2 für Aufrufe mit DCR |
 | info:sourceApplicationInformation | Anwendungsinformationen wie im DCR konfiguriert |
 
@@ -130,7 +130,7 @@ Gibt zufällig generierten Registrierungscode und Anmeldeseiten-URI zurück.
 
 <br>
 
-### Beispiel für JSON-Fehlermeldung (#error-sample-response)
+### Beispiel für eine JSON-Fehlermeldung (#error-sample-response)
 
 ```JSON
 {

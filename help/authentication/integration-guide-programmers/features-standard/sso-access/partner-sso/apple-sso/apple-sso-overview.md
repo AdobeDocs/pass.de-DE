@@ -1,128 +1,128 @@
 ---
-title: Überblick über Apple SSO
-description: Überblick über Apple SSO
+title: Apple SSO - Übersicht
+description: Apple SSO - Übersicht
 exl-id: 7cf47d01-a35a-4c85-b562-e5ebb6945693
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1256'
+source-wordcount: '1260'
 ht-degree: 0%
 
 ---
 
-# Überblick über Apple SSO {#apple-sso-overview}
+# Apple SSO - Übersicht {#apple-sso-overview}
 
 >[!IMPORTANT]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Apple bietet Benutzern die Möglichkeit, sich auf Geräteebene bei ihrem TV-Anbieterkonto anzumelden, sodass eine Authentifizierung nicht für jede App erforderlich ist.
+Apple bietet Benutzenden die Möglichkeit, sich auf der Systemebene des Geräts bei ihrem TV-Anbieterkonto anzumelden, sodass sie sich nicht mehr App für App authentifizieren müssen.
 
-Adobe Pass-Authentifizierung arbeitet mit Apple zusammen, um das Single-Sign-On (SSO)-Benutzererlebnis im TV-System für iPhone, iPad und Apple TV-Eigentümer zu erstellen.
+Die Adobe Pass-Authentifizierung ist eine Partnerschaft mit Apple eingegangen, um das Partner Single Sign-On (SSO)-Benutzererlebnis im TV Everywhere-Ökosystem für TV-Besitzer von iPhone, iPad und Apple zu schaffen.
 
-Um von der Single Sign-On (SSO)-Benutzererfahrung auf einem Apple-Gerät zu profitieren, müssen im Folgenden eine Liste der Voraussetzungen aufgeführt werden, die erfüllt sein müssen.
+Um das Single Sign-On (SSO)-Benutzererlebnis auf einem Apple-Gerät nutzen zu können, müssen Sie eine Liste der folgenden Voraussetzungen erfüllen.
 
-Das Endergebnis sollte ein Erlebnis gemäß den folgenden Benutzerflüssen erzeugen. Wir empfehlen Ihnen, sich vor Beginn der Entwicklung Ihrer Anwendung an Sie zu wenden:
+Das Endergebnis sollte ein Erlebnis schaffen, das den folgenden Benutzerabläufen entspricht. Wir empfehlen Ihnen, es zu konsultieren, bevor Sie mit der Entwicklung Ihrer Anwendung beginnen:
 
 * Single Sign-On (SSO) [Benutzerflüsse für iPhone- und iPad](https://tve.zendesk.com/hc/article_attachments/205624966/User_flows_AppleSSO_iOS_v2.pdf)-Geräte.
 * Single Sign-On (SSO) [Benutzerflüsse für Apple TV](https://tve.zendesk.com/hc/article_attachments/206669126/User_flows_tvOS.pdf)-Geräte.
 
 ## Voraussetzungen {#apple-sso-prerequisites}
 
-Die Onboarding-Voraussetzungen können für eine oder mehrere am TVE-Geschäft beteiligte Entitäten gelten, z. B. Programmierer, MVPDs, Adobe Pass-Authentifizierung oder Apple.
+Die Voraussetzungen für das Onboarding können für eine oder mehrere Entitäten gelten, die am TVE-Geschäft beteiligt sind, z. B. Programmierer, MVPDs, Adobe Pass-Authentifizierung oder Apple.
 
 ### Programmierer {#apple-sso-prerequisites-programmer}
 
-Um das Single Sign-On (SSO)-Benutzererlebnis nutzen zu können, muss ein Programmierer:
+Um von dem Single Sign-On (SSO)-Benutzererlebnis zu profitieren, muss ein Programmierer:
 
-* Wenden Sie sich an Apple, um das [Video-Abonnentenkonto-Framework](https://developer.apple.com/documentation/videosubscriberaccount) als Teil Ihrer Apple-Team-ID zu aktivieren, und konfigurieren Sie die [Single-Sign-On-Berechtigung für Videoponnenten](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_video-subscriber-single-sign-on) als Teil Ihres Apple-Entwicklerkontos.
+* Wenden Sie sich an Apple, um das [Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) als Teil Ihrer Apple Team ID zu aktivieren, und konfigurieren Sie die [Berechtigung für Videoabonnenten-Single-Sign-On](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_video-subscriber-single-sign-on) als Teil Ihres Apple-Entwicklerkontos.
 
-   * Verwenden Sie Xcode Version 8 oder höher und iOS/tvOS Version 10 oder höher.
+   * Verwenden Sie Xcode ab Version 8 und iOS/tvOS ab Version 10.
 
-* Aktivieren Sie Single Sign-On (SSO) für jede gewünschte Integration und Plattform (iOS/tvOS) über das [Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication), indem Sie die Eigenschaft `Enable Single Sign On` auf `Yes` festlegen.
+* Aktivieren Sie Single Sign-On (SSO) für jede gewünschte Integration und Plattform (iOS/tvOS) über das [Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication) indem Sie die `Enable Single Sign On` Eigenschaft auf `Yes` setzen.
 
-| Adobe zur Aktivierung der einmaligen Anmeldung | Apple **integriert (unterstützt)** MVPDs | Apple **Picker** MVPDs | Apple **Nicht integriert (nicht unterstützt)** MVPDs |
+| Adobe Single Sign-On aktivieren | Apple **Onboarded (Supported)** MVPDs | Apple **Picker** MVPDs | Apple **Nicht integriert (nicht unterstützt)** MVPDs |
 |-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| Ja (aktiviert) | Die Authentifizierungs- und Abmeldevorgänge umfassen sowohl Apple- als auch Adobe Pass-Authentifizierungslösungen, während alle anderen Datenflüsse (Autorisierung, Vorabautorisierung, Metadaten usw.) ausschließlich von der Adobe Pass-Authentifizierung bereitgestellt werden. | Die Authentifizierungs- und Abmeldevorgänge werden auf die regulären Flüsse zurückgreifen, die ausschließlich von der Adobe Pass-Authentifizierung bereitgestellt werden. | Die Authentifizierungs- und Abmeldevorgänge werden auf die regulären Flüsse zurückgreifen, die ausschließlich von der Adobe Pass-Authentifizierung bereitgestellt werden. |
-| Nein (deaktiviert) | Die Authentifizierungs- und Abmeldevorgänge werden auf die regulären Flüsse zurückgreifen, die ausschließlich von der Adobe Pass-Authentifizierung bereitgestellt werden. | Die Authentifizierungs- und Abmeldevorgänge werden auf die regulären Flüsse zurückgreifen, die ausschließlich von der Adobe Pass-Authentifizierung bereitgestellt werden. | Die Authentifizierungs- und Abmeldevorgänge werden auf die regulären Flüsse zurückgreifen, die ausschließlich von der Adobe Pass-Authentifizierung bereitgestellt werden. |
+| Ja (aktiviert) | Die Authentifizierungs- und Abmeldevorgänge umfassen sowohl Apple- als auch Adobe Pass-Authentifizierungslösungen, während alle anderen Vorgänge (Autorisierung, Vorautorisierung, Metadaten usw.) ausschließlich von der Adobe Pass-Authentifizierung abgewickelt werden. | Die Authentifizierungs- und Abmeldeflüsse werden auf die regulären Flüsse zurückgesetzt, die ausschließlich von der Adobe Pass-Authentifizierung bedient werden. | Die Authentifizierungs- und Abmeldeflüsse werden auf die regulären Flüsse zurückgesetzt, die ausschließlich von der Adobe Pass-Authentifizierung bedient werden. |
+| Nein (deaktiviert) | Die Authentifizierungs- und Abmeldeflüsse werden auf die regulären Flüsse zurückgesetzt, die ausschließlich von der Adobe Pass-Authentifizierung bedient werden. | Die Authentifizierungs- und Abmeldeflüsse werden auf die regulären Flüsse zurückgesetzt, die ausschließlich von der Adobe Pass-Authentifizierung bedient werden. | Die Authentifizierungs- und Abmeldeflüsse werden auf die regulären Flüsse zurückgesetzt, die ausschließlich von der Adobe Pass-Authentifizierung bedient werden. |
 
-* Integrieren Sie die SSO-Benutzerflüsse (Single Sign-On) mithilfe einer der folgenden Lösungen, die von der Adobe Pass-Authentifizierung für Endbenutzer von Clientanwendungen angeboten werden, die auf iOS, iPadOS oder tvOS ausgeführt werden.
+* Integrieren Sie die Single Sign-On (SSO)-Benutzerflüsse mit einer der folgenden Lösungen, die die Adobe Pass-Authentifizierung für Endbenutzer von Client-Anwendungen bietet, die auf iOS, iPadOS oder tvOS ausgeführt werden.
 
-   * Die Adobe Pass Authentication REST API V2 unterstützt Single Sign-On (SSO) für Partner.
+   * Die Adobe Pass-Authentifizierungs-REST-API v2 unterstützt das Partner Single Sign-On (SSO).
 
-     Weitere Informationen finden Sie in der Dokumentation zum [Apple SSO Cookbook (REST API V2)](apple-sso-cookbook-rest-api-v2.md) .
+     Weitere Informationen finden Sie in der Dokumentation zum [Apple SSO Cookbook (REST API V2](apple-sso-cookbook-rest-api-v2.md).
 
-   * Die Adobe Pass Authentication REST API V1 unterstützt Single Sign-On (SSO) für Partner.
+   * Die alte Adobe Pass-Authentifizierungs-REST-API v1 unterstützt das Partner Single Sign-On (SSO).
 
-     Weitere Informationen finden Sie in der Dokumentation zum [Apple SSO Cookbook (REST API V1)](apple-sso-cookbook-rest-api-v1.md) .
+     Weitere Informationen finden Sie in der Dokumentation zum [ (Legacy) Apple SSO Cookbook (REST API V1](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md).
 
-   * Das Adobe Pass Authentication AccessEnabler iOS/tvOS SDK unterstützt Single Sign-On (SSO) für Partner.
+   * Die alte Adobe Pass Authentication Access Enabler iOS/tvOS SDK unterstützt das Partner Single Sign-On (SSO).
 
-     Weitere Informationen finden Sie in der Dokumentation zum [Apple SSO Cookbook (iOS/tvOS SDK)](apple-sso-cookbook-iostvos-sdk.md) .
+     Weitere Informationen finden Sie in der Dokumentation [(Legacy) Apple SSO Cookbook (iOS/tvOS SDK](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md) .
 
 ### MVPD {#apple-sso-prerequisites-mvpd}
 
-Um das Single Sign-On (SSO)-Benutzererlebnis nutzen zu können, muss ein MVPD:
+Um von dem Single Sign-On (SSO)-Benutzererlebnis zu profitieren, muss eine MVPD folgende Voraussetzungen erfüllen:
 
-* Wenden Sie sich an Apple, um den Onboarding-Prozess auf Apple-Seite zu starten.
+* Wenden Sie sich an Apple, um den Onboarding-Prozess für Apple einzuleiten.
 
-   * Fordern Sie die technische Dokumentation zur Integration und Entwicklung einer JavaScript TVML-Anwendung an, die das Anmeldeformular für den Benutzer handhaben kann.
+   * Fragen Sie die technische Dokumentation an, wie eine JavaScript-TVML-Anwendung integriert und entwickelt werden kann, die mit dem Benutzeranmeldeformular umgehen kann.
 
-* Wenden Sie sich an die Adobe Pass-Authentifizierung , um den Onboarding-Prozess auf der Adobe zu starten.
+* Kontaktieren Sie die Adobe Pass-Authentifizierung, um den Onboarding-Prozess auf der Adobe-Seite zu starten.
 
-   * Geben Sie den Zeichenfolgenwert an, der die vom Apple während des Onboarding-Prozesses zugewiesene TV-Anbieterkennung darstellt.
+   * Geben Sie den Zeichenfolgenwert an, der die Kennung des TV-Anbieters darstellt, die von Apple während des Onboarding-Prozesses zugewiesen wurde.
 
 ## FAQs {#FAQ}
 
-* Falls etwas mit dem Apple SSO-Workflow fehlschlägt, kann die Anwendung mit dem Adobe Pass Authentication AccessEnabler iOS/tvOS SDK die Möglichkeit haben, zum regulären Authentifizierungsfluss zurückzukehren?
+* Kann die Anwendung, die den Adobe Pass Authentication AccessEnabler iOS/tvOS SDK verwendet, auf den regulären Authentifizierungsfluss zurückgreifen, falls beim Apple SSO-Workflow Probleme auftreten?
 
-  Dies ist möglich, erfordert jedoch eine Konfigurationsänderung, die über das [Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication) vorgenommen wird, um das **Single Sign-On aktivieren** auf **NO** für die gewünschte Integration und Plattform (iOS/tvOS) festzulegen. Beachten Sie, dass die Clientanwendung die Konfigurationsänderung erst bestätigt, nachdem die API [setRequestor](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setReqV3) aufgerufen wurde.
-
-
-* Wird die Anwendung wissen, wann eine Authentifizierung aufgrund eines Anmeldevorgangs über die Apple SSO erfolgt ist?
-
-  Diese Informationen sind als Teil des Benutzer-Metadatenschlüssels verfügbar: *tokenSource*, der den Zeichenfolgenwert zurückgeben sollte: &quot;Apple&quot;.
+  Dies ist möglich, erfordert jedoch eine Konfigurationsänderung über das [Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication), um das **Single Sign-On aktivieren** auf **NEIN** für die gewünschte Integration und Plattform (iOS/tvOS) festzulegen. Beachten Sie, dass die Client-Anwendung die Konfigurationsänderung nur nach dem Aufruf der API [setRequestor](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setReqV3) bestätigt.
 
 
-* Wird die Anwendung wissen, wann eine Authentifizierung aufgrund eines Anmeldevorgangs über Apple SSO in einer anderen Anwendung erfolgte?
+* Weiß die Anwendung, wann eine Authentifizierung als Ergebnis einer Anmeldung über Apple SSO stattgefunden hat?
+
+  Diese Informationen sind als Teil des Benutzer-Metadatenschlüssels verfügbar: *tokenSource*, der in diesem Fall den Zeichenfolgenwert &quot;Apple&quot; zurückgeben sollte.
+
+
+* Weiß die Anwendung, wann eine Authentifizierung als Ergebnis einer Anmeldung über Apple SSO bei einer anderen Anwendung stattgefunden hat?
 
   Diese Informationen sind nicht verfügbar.
 
 
-* Was passiert, wenn sich ein Benutzer anmeldet, indem er den Abschnitt &quot;*`Settings -> TV Provider`*&quot;unter iOS/iPadOS oder &quot;*`Settings -> Accounts -> TV Provider`*&quot;unter tvOS mit einem MVPD aufruft, der nicht in die Anwendung integriert ist?
+* Was passiert, wenn sich ein Benutzer mit einem MVPD, der nicht in die Anwendung integriert ist, beim *`Settings -> TV Provider`* auf iOS/iPadOS oder *`Settings -> Accounts -> TV Provider`* auf tvOS anmeldet?
 
-  Wenn der Benutzer die Anwendung startet, wird der Benutzer nicht über den Apple SSO-Workflow authentifiziert. Daher müsste die Anwendung auf den normalen Authentifizierungsfluss zurückgreifen und eine eigene MVPD-Auswahl vorlegen.
-
-
-* Was passiert, wenn sich ein Benutzer mit einem MVPD anmeldet, bei dem für die iOS/tvOS-Plattform das Feld *`Settings -> TV Provider`* unter iOS/iPadOS oder *`Settings -> Accounts -> TV Provider`* unter tvOS mit einem MVPD verwendet wird, für das das Feld **Single Sign On aktivieren** auf **NO** über das [Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication) eingestellt ist?
-
-  Wenn der Benutzer die Anwendung startet, wird der Benutzer nicht über den Apple SSO-Workflow authentifiziert. Daher müsste die Anwendung auf den normalen Authentifizierungsfluss zurückgreifen und eine eigene MVPD-Auswahl vorlegen.
+  Wenn der Benutzer die Anwendung startet, wird der Benutzer nicht über den Apple SSO-Workflow authentifiziert. Daher muss die Anwendung auf den regulären Authentifizierungsfluss zurückgreifen und eine eigene MVPD-Auswahl vorlegen.
 
 
-* Was passiert, wenn ein Benutzer über ein MVPD verfügt, das nicht von Apple integriert (nicht unterstützt) wird, aber im Apple-Picker vorhanden ist?
+* Was passiert, wenn sich ein(e) Benutzende(r) anmeldet, indem er/sie den Abschnitt *`Settings -> TV Provider`* auf iOS/iPadOS oder *`Settings -> Accounts -> TV Provider`* auf tvOS mit einem MVPD verwendet, bei dem **Single Sign On aktivieren** auf **NEIN** über das [Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication) für iOS/tvOS eingestellt ist?
 
-  Wenn der Benutzer die Anwendung startet, wählt der Benutzer das MVPD nur über den Apple SSO-Workflow aus, ohne den Authentifizierungsfluss abzuschließen. Daher muss die Anwendung auf den normalen Authentifizierungsfluss zurückgreifen, könnte jedoch den bereits ausgewählten MVPD verwenden.
-
-
-* Was passiert, wenn ein Benutzer über einen MVPD verfügt, der nicht von Apple integriert (nicht unterstützt) wird?
-
-  Wenn der Benutzer die Anwendung startet, wählt er über den Apple SSO-Workflow die Option &quot;Andere TV-Anbieter&quot;aus. Daher müsste die Anwendung auf den normalen Authentifizierungsfluss zurückgreifen und eine eigene MVPD-Auswahl vorlegen.
+  Wenn der Benutzer die Anwendung startet, wird der Benutzer nicht über den Apple SSO-Workflow authentifiziert. Daher muss die Anwendung auf den regulären Authentifizierungsfluss zurückgreifen und eine eigene MVPD-Auswahl vorlegen.
 
 
-* Was passiert, wenn ein Benutzer über einen MVPD verfügt, der über das [Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication) beschädigt wird?
+* Was passiert, wenn ein Benutzer über eine MVPD verfügt, die nicht von Apple integriert (nicht unterstützt) wird, aber in der Apple-Auswahl vorhanden ist?
 
-  Wenn der Benutzer die Anwendung startet, wird der Benutzer über den Abbaumechanismus und nicht über den Apple SSO-Workflow authentifiziert. Das Erlebnis sollte für den Benutzer nahtlos sein, während die Anwendung über den Warncode *N010* informiert wird, falls sie das Adobe Pass Authentication AccessEnabler iOS/tvOS SDK verwendet.
-
-
-* Ändert sich die MVPD-Benutzer-ID zwischen Apple SSO- und Nicht-Apple SSO-Authentifizierungsflüssen?
-
-  Es wird erwartet, dass sich die Benutzer-ID nicht ändert, aber für jeden ausgewählten Anbieter überprüft werden muss.
+  Wenn der/die Benutzende die Anwendung startet, wählt er/sie die MVPD nur über den Apple-SSO-Workflow aus, ohne den Authentifizierungsfluss abzuschließen. Daher muss die Anwendung auf den regulären Authentifizierungsfluss zurückgreifen, kann jedoch die bereits ausgewählte MVPD verwenden.
 
 
-* Werden die Authentifizierungs-TTLs geändert?
+* Was passiert, wenn ein Benutzer über eine MVPD verfügt, die nicht von Apple integriert (nicht unterstützt) wird?
 
-  Adobe Pass Authentication wird weiterhin die TTLs respektieren, die von den Programmierern für ihre Integration in jedes MVPD benötigt werden. Beim Navigieren von einer Programmiereranwendung zu einer anderen Programmeranwendung über Apple SSO weist die zweite Anwendung die TTL der entsprechenden Programmierer x MVPD-Integration auf (sie gibt die TTL der ersten authentifizierten Anwendung nicht weiter)
+  Wenn der Benutzer die Anwendung startet, wählt er die Auswahloption „Andere TV-Anbieter“ über den Apple SSO-Workflow aus. Daher muss die Anwendung auf den regulären Authentifizierungsfluss zurückgreifen und eine eigene MVPD-Auswahl vorlegen.
 
-|                                      | Adobe Pass Authentication TTL abgelaufen | Adobe Pass Authentication TTL valid |
+
+* Was passiert, wenn eine Benutzerin oder ein Benutzer über eine MVPD verfügt, die über das [Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication) heruntergestuft ist?
+
+  Wenn die Benutzerin oder der Benutzer die Anwendung startet, wird die Benutzerin oder der Benutzer über den Abbaumechanismus und nicht über den Apple SSO-Workflow authentifiziert. Das Erlebnis sollte für den Anwender nahtlos sein, während die Anwendung über den *N010*-Warncode informiert wird, falls sie den Adobe Pass Authentication AccessEnabler iOS/tvOS SDK verwendet.
+
+
+* Ändert sich die MVPD-Benutzer-ID zwischen Apple SSO und Nicht-Apple-SSO-Authentifizierungsflüssen?
+
+  Es wird erwartet, dass sich die Benutzer-ID nicht ändert, sie muss jedoch für jeden ausgewählten Anbieter überprüft werden.
+
+
+* Werden sich die Authentifizierungs-TTLs ändern?
+
+  Die Adobe Pass-Authentifizierung berücksichtigt weiterhin die TTLs, die von den Programmierern für ihre Integration in jede MVPD benötigt werden. Wenn Sie von einer Programmieranwendung zu einer anderen Programmieranwendung über Apple SSO navigieren, verfügt die zweite Anwendung über die TTL der zugehörigen Programmierer x MVPD-Integration (sie gibt nicht die TTL der ersten Anwendung frei, die sich authentifiziert)
+
+|                                      | Adobe Pass-Authentifizierungs-TTL abgelaufen | Adobe Pass-Authentifizierungs-TTL gültig |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| **Apple-Geräte-Token-TTL abgelaufen** | Benutzer ist NICHT authentifiziert (MVPD-Auswahl sollte angezeigt werden) | Der Benutzer ist authentifiziert und die TTL ist die verbleibende Zeit seines Adobe Pass-Authentifizierungstokens/-Profils. |
-| **Apples Geräte-Token TTL valid** | Der Benutzer ist still authentifiziert und erhält ein weiteres Adobe Pass-Authentifizierungstoken/-profil mit der im TVE-Dashboard angegebenen TTL | Der Benutzer ist authentifiziert und die TTL ist die verbleibende Zeit seines Adobe Pass-Authentifizierungstokens/-Profils. |
+| **TTL des Apple-Geräte-Tokens abgelaufen** | Benutzer ist NICHT authentifiziert (MVPD-Auswahl sollte angezeigt werden) | Der Benutzer wird authentifiziert und die TTL ist die verbleibende Zeit seines Adobe Pass-Authentifizierungstokens/-profils |
+| Die TTL für das Geräte-Token von **Apple ist gültig** | Der Benutzer wird im Hintergrund authentifiziert und erhält ein weiteres Adobe Pass-Authentifizierungstoken/-profil mit der im TVE-Dashboard angegebenen TTL | Der Benutzer wird authentifiziert und die TTL ist die verbleibende Zeit seines Adobe Pass-Authentifizierungstokens/-profils |

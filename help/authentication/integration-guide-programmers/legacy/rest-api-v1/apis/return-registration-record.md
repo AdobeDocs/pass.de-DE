@@ -1,23 +1,23 @@
 ---
-title: Registrierungsdatensatz
-description: Registrierungsdatensatz
+title: Registrierungseintrag zurückgeben
+description: Registrierungseintrag zurückgeben
 exl-id: 7b9e63a2-59b6-4123-a19b-ee1f021219ea
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '253'
 ht-degree: 2%
 
 ---
 
-# Registrierungsdatensatz {#return-registration-record}
+# (Legacy) Registrierungseintrag zurückgeben {#return-registration-record}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch den [Drosselmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) begrenzt
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -36,16 +36,16 @@ ht-degree: 2%
 
 ## Beschreibung {#description}
 
-Gibt den Registrierungs-Code-Datensatz mit der Registrierungs-Code-UUID, dem Registrierungs-Code und der Hash-Geräte-ID zurück.
+Gibt einen Registrierungs-Code-Eintrag mit Registrierungs-Code-UUID, Registrierungs-Code und Hash-Geräte-ID zurück.
 
 
 
 
 
 
-| Endpunkt | </br>von aufgerufen | Eingabe   </br>Parameter | HTTP </br>Methode | Reaktion | HTTP </br>Antwort |
+| Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Beispiel:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestId/regcode/TJJCFK?format=xml | Streaming-App</br></br>oder</br></br>Programmierer-Dienst | 1. Anforderer </br>    (Pfadkomponente)</br>2.  Registrierungs-Code </br>    (Pfadkomponente) | GET | XML oder JSON, die einen Registrierungs-Code und Informationen enthalten. Siehe Schema und Beispiel unten. | 200 |
+| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Beispiel:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestId/regcode/TJJCFK?format=xml | Streaming-App</br></br>oder</br></br>Programmierer-Service | 1. </br>    (Pfadkomponente)</br>2.  Registrierungs-Code </br>    (Pfadkomponente) | GET | XML oder JSON mit Registrierungs-Code und Informationen. Siehe Schema und Beispiel unten. | 200 |
 
 {style="table-layout:auto"}
 
@@ -54,13 +54,13 @@ Gibt den Registrierungs-Code-Datensatz mit der Registrierungs-Code-UUID, dem Reg
 
 | Eingabeparameter | Beschreibung |
 | --- | --- |
-| Anfragender | Die Programmer-Anfrage-ID, für die dieser Vorgang gültig ist. |
-| Registrierungscode | Der Registrierungscode-Wert, der auf dem Streaming-Gerät angezeigt wird (in den Authentifizierungsfluss einzugeben). |
+| Antragsteller | Die RequestorId des Programmierers, für den dieser Vorgang gültig ist. |
+| Registrierungs-Code | Der Registrierungs-Code-Wert, der auf dem Streaming-Gerät angezeigt wird (der in den Authentifizierungsfluss eingegeben werden soll). |
 
 
 
 
-## Antwort-XML-Schema {#response-xml-schema}
+## XML-Antwortschema {#response-xml-schema}
 
 ### Registrierungs-Code XSD
 
@@ -98,18 +98,18 @@ Gibt den Registrierungs-Code-Datensatz mit der Registrierungs-Code-UUID, dem Reg
 
 | Elementname | Beschreibung |
 | --- | --- |
-| id | Vom Registrierungs-Code-Dienst generierte UUID |
-| code | Registrierungs-Code, der vom Registrierungs-Code-Dienst generiert wird |
-| Anfragender | Anforderer-ID |
+| ID | Vom Registrierungs-Code-Service generierte UUID |
+| Code | Vom Registrierungs-Code-Service generierter Registrierungs-Code |
+| Antragsteller | Antragsteller-ID |
 | mvpd | MVPD ID |
-| generiert | Zeitstempel der Erstellung des Registrierungs-Codes (in Millisekunden seit dem 1. Januar 1970 GMT) |
-| expires | Zeitstempel, wenn der Registrierungscode abläuft (in Millisekunden seit dem 1. Januar 1970 GMT) |
+| Erzeugt | Zeitstempel der Erstellung des Registrierungs-Codes (in Millisekunden seit dem 1. Januar 1970 GMT) |
+| Expires | Zeitstempel, wann der Registrierungscode abläuft (in Millisekunden seit dem 1. Januar 1970 GMT) |
 | deviceId | Eindeutige Geräte-ID (oder XSTS-Token) |
 | deviceType | Gerätetyp |
-| deviceUser | Benutzer, der beim Gerät angemeldet ist |
+| deviceUser | Benutzer hat sich beim Gerät angemeldet |
 | appId | Anwendungs-ID |
 | appVersion | Anwendungsversion |
-| registrationURL | URL zur Anmelde-Webanwendung, die dem Endbenutzer angezeigt werden soll |
+| registrationURL | URL zur Anmelde-Web-App, die dem Endbenutzer angezeigt werden soll |
 
 {style="table-layout:auto"}
 

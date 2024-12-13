@@ -2,22 +2,22 @@
 title: Benutzermetadaten
 description: Benutzermetadaten
 exl-id: 3d7b6429-972f-4ccb-80fd-a99870a02f65
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '496'
 ht-degree: 0%
 
 ---
 
-# Benutzermetadaten {#user-metadata}
+# (Veraltete) Benutzermetadaten {#user-metadata}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch den [Drosselmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) begrenzt
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -35,33 +35,33 @@ ht-degree: 0%
 
 ## Beschreibung {#description}
 
-Abrufen von Metadaten, die MVPD über den authentifizierten Benutzer freigegeben hat.
+Rufen Sie Metadaten ab, die MVPD über den authentifizierten Benutzer freigegeben hat.
 
 
-| Endpunkt | </br>von aufgerufen | Eingabe   </br>Parameter | HTTP </br>Methode | Reaktion | HTTP </br>Antwort |
+| Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| `<SP_FQDN>`/api/v1/tokens/usermetadata | Streaming-App</br></br>oder</br></br>Programmierer-Dienst | 1. Antragsteller</br>2.  deviceId (erforderlich)</br>3.  device_info/X-Device-Info (erforderlich)</br>4.  deviceType</br>5.  deviceUser (nicht mehr unterstützt)</br>6.  appId (nicht mehr unterstützt) | GET | XML oder JSON, die Benutzermetadaten oder Fehlerdetails enthalten, falls dies nicht erfolgreich war. | 200 - Erfolg<p>404 - Keine Metadaten gefunden<p>412 - Ungültiges AuthN-Token (z. B. abgelaufenes Token) |
+| `<SP_FQDN>`/api/v1/tokens/usermetadata | Streaming-App</br></br>oder</br></br>Programmierer-Service | 1. Antragsteller</br>2.  deviceId (obligatorisch)</br>3.  device_info/X-device-info (obligatorisch)</br>4.  deviceType</br>5.  deviceUser (veraltet)</br>6.  appId (veraltet) | GET | XML oder JSON mit Benutzermetadaten oder Fehlerdetails, falls nicht erfolgreich. | 200 - Erfolg<p>404 - Keine Metadaten gefunden<p>412 - Ungültiges AuthN-Token (z. B. abgelaufenes Token) |
 
 
 | Eingabeparameter | Beschreibung |
 |------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Anfragender | Die Programmer-Anfrage-ID, für die dieser Vorgang gültig ist. |
+| Antragsteller | Die RequestorId des Programmierers, für den dieser Vorgang gültig ist. |
 | deviceId | Die Geräte-ID-Bytes. |
-| device_info/<p>X-Device-Info | Informationen zum Streaming-Gerät.</br></br> **Hinweis:** Dies kann als URL-Parameter an device_info übergeben werden. Aufgrund der potenziellen Größe dieses Parameters und der Längenbeschränkungen einer GET-URL sollte dieser jedoch als X-Device-Info in der HTTP-Kopfzeile übergeben werden. </br></br> Weitere Informationen finden Sie unter [Übergeben von Geräte- und Verbindungsinformationen](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md). |
-| _deviceType_ | Der Gerätetyp (z. B. Roku, PC).</br></br> Wenn dieser Parameter korrekt festgelegt ist, bietet ESM Metriken an, die bei Verwendung von ClientLess [nach Gerätetyp aufgeschlüsselt sind](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#progr-filter-metrics), sodass für Roku, AppleTV, Xbox usw. unterschiedliche Analysetypen durchgeführt werden können.</br></br> Siehe [Vorteile der Verwendung des Parameters für Client-lose Gerätetypen in Pass-Metriken](/help/authentication/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md) </br></br> **Hinweis:** Der `device_info` ersetzt diesen Parameter. |
-| _deviceUser_ | Die Benutzer-ID des Geräts.</br></br> **Hinweis:** Wenn verwendet, sollte `deviceUser` dieselben Werte wie in der Anforderung [Registrierungscode erstellen](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) aufweisen. |
-| _appId_ | Die Anwendungs-ID/der Name. </br></br> **Hinweis:** Der `device_info` ersetzt diesen Parameter. Bei Verwendung von sollte `appId` dieselben Werte wie in der Anfrage [Registrierungscode erstellen](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) aufweisen. |
+| device_info/<p>x-device-info | Informationen zu Streaming-Geräten.</br></br> **Hinweis:** Dies kann als URL-Parameter an device_info übergeben werden, sollte jedoch aufgrund der potenziellen Größe dieses Parameters und der Längenbeschränkungen für eine GET-URL als X-Device-Info im HTTP-Header übergeben werden. </br></br> Details finden Sie unter [Übergeben von Geräte- und Verbindungsinformationen](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
+| _deviceType_ | Der Gerätetyp (z. B. Roku, PC).</br></br> Wenn dieser Parameter richtig festgelegt ist, bietet ESM Metriken an, die [nach Gerätetyp aufgeschlüsselt) ](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#progr-filter-metrics) Verwendung von Clientless sind, sodass verschiedene Arten der Analyse für z. B. Roku, AppleTV, Xbox usw. durchgeführt werden können.</br></br> Siehe [Vorteile der Verwendung von Client-losen Gerätetypparametern in Kennzahlen für ](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br> **Hinweis:** Der `device_info` ersetzt diesen Parameter. |
+| _deviceUser_ | Die Geräte-Benutzerkennung.</br></br> **Hinweis:** Wenn verwendet, sollten `deviceUser` dieselben Werte wie in der Anfrage [Registrierungs-Code erstellen](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) haben. |
+| _appId_ | Die Anwendungs-ID/-name. </br></br> **Hinweis:** Der `device_info` ersetzt diesen Parameter. Wenn verwendet, sollten `appId` dieselben Werte wie in der Anfrage [Registrierungs-Code erstellen](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) haben. |
 
 >[!NOTE]
 > 
->Benutzer-Metadateninformationen sollten nach Abschluss des Authentifizierungsflusses verfügbar sein, können jedoch je nach MVPD und Metadatentyp über den Autorisierungsfluss aktualisiert werden.
+>Informationen zu Benutzermetadaten sollten nach Abschluss des Authentifizierungsflusses verfügbar sein, können jedoch je nach MVPD und Metadatentyp im Autorisierungsfluss aktualisiert werden.
 
 
 
 
 ## Beispielantwort {#sample-response}
 
-Nach einem erfolgreichen Aufruf antwortet der Server mit einem XML- (Standard-) oder JSON-Objekt mit einer Struktur, die der unten dargestellten ähnelt:
+Nach einem erfolgreichen Aufruf antwortet der Server mit einem XML- (Standard) oder JSON-Objekt mit einer ähnlichen Struktur wie der unten gezeigten:
 
 
 ```JSON
@@ -82,13 +82,13 @@ Nach einem erfolgreichen Aufruf antwortet der Server mit einem XML- (Standard-) 
     }
 ```
 
-Im Stammverzeichnis des Objekts befinden sich drei Knoten:
+Im Stammverzeichnis des -Objekts befinden sich drei Knoten:
 
-* *updated*: Gibt einen UNIX-Zeitstempel an, der das letzte Mal angibt, dass die Metadaten aktualisiert wurden. Diese Eigenschaft wird beim Generieren der Metadaten während der Authentifizierungsphase zunächst vom Server festgelegt. Nachfolgende Aufrufe (nachdem die Metadaten aktualisiert wurden) führen zu einem inkrementierten Zeitstempel.
+* *Aktualisiert*: Gibt einen UNIX-Zeitstempel an, der das letzte Mal darstellt, dass die Metadaten aktualisiert wurden. Diese Eigenschaft wird zunächst vom Server beim Generieren der Metadaten während der Authentifizierungsphase festgelegt. Nachfolgende Aufrufe (nachdem die Metadaten aktualisiert wurden) führen zu einem inkrementellen Zeitstempel.
 * *data*: enthält die tatsächlichen Metadatenwerte.
-* *verschlüsselt*: Ein Array, das die verschlüsselten Eigenschaften auflistet. Um einen bestimmten Metadatenwert zu entschlüsseln, muss der Programmierer eine Base64-Dekodierung für die Metadaten durchführen und dann eine RSA-Entschlüsselung auf den resultierenden Wert anwenden. Dabei muss er den eigenen privaten Schlüssel verwenden (Adobe verschlüsselt die Metadaten auf dem Server mithilfe des öffentlichen Zertifikats des Programmierers).
+* *Encrypted*: Ein Array, das die verschlüsselten Eigenschaften auflistet. Um einen bestimmten Metadatenwert zu entschlüsseln, muss der Programmierer eine Base64-Decodierung der Metadaten durchführen und dann eine RSA-Entschlüsselung auf den resultierenden Wert anwenden, indem er seinen eigenen privaten Schlüssel verwendet (Adobe verschlüsselt die Metadaten auf dem Server mithilfe des öffentlichen Zertifikats des Programmierers).
 
-Im Fall eines Fehlers gibt der Server ein XML- oder JSON-Objekt zurück, das eine detaillierte Fehlermeldung angibt.
+Im Falle eines Fehlers gibt der Server ein XML- oder JSON-Objekt zurück, das eine detaillierte Fehlermeldung angibt.
 
 Weitere Informationen finden Sie unter [Benutzermetadaten](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md).
 

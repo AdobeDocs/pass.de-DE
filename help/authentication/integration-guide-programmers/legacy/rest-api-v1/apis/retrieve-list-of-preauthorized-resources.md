@@ -1,23 +1,23 @@
 ---
-title: Abrufen einer Liste vorab autorisierter Ressourcen
-description: Abrufen einer Liste vorab autorisierter Ressourcen
+title: Liste der vorab autorisierten Ressourcen abrufen
+description: Liste der vorab autorisierten Ressourcen abrufen
 exl-id: 3821378c-bab5-4dc9-abd7-328df4b60cc3
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '369'
+source-wordcount: '370'
 ht-degree: 0%
 
 ---
 
-# Abrufen einer Liste vorab autorisierter Ressourcen {#retrieve-list-of-preauthorized-resources}
+# (Legacy) Liste der vorab autorisierten Ressourcen abrufen {#retrieve-list-of-preauthorized-resources}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch den [Drosselmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) begrenzt
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -35,25 +35,25 @@ ht-degree: 0%
 
 ## Beschreibung {#description}
 
-Anfrage an die Adobe Pass-Authentifizierung zum Abrufen der Liste der bereits autorisierten Ressourcen.
+Eine Anfrage an die Adobe Pass-Authentifizierung zum Abrufen der Liste der vorab autorisierten Ressourcen.
 
-Es gibt zwei Gruppen von APIs: einen Satz für die Streaming-App oder den Programmierer-Dienst und einen Satz für die Second Screen Web App. Auf dieser Seite wird die API für die Streaming-App oder den Programmiererdienst beschrieben.
+Es gibt zwei Sätze von APIs: einen Satz für die Streaming-App oder den Programmierer-Service und einen Satz für die Web-App des zweiten Bildschirms. Auf dieser Seite wird die API für die Streaming-App oder den Programmierer-Service beschrieben.
 
 
-| Endpunkt | </br>von aufgerufen | Eingabe   </br>Parameter | HTTP </br>Methode | Reaktion | HTTP </br>Antwort |
+| Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/preauthorize | Streaming-App</br></br>oder</br></br>Programmierer-Dienst | 1. Antragsteller (erforderlich)</br>2.  deviceId (erforderlich)</br>3.  Ressourcenliste (erforderlich)</br>4.  device_info/X-Device-Info (erforderlich)</br>5.  _deviceType_</br> 6.  _deviceUser_ (Veraltet)</br>7.  _appId_ (veraltet) | GET | XML oder JSON, die einzelne Entscheidungen vor der Autorisierung oder Fehlerdetails enthalten. Siehe Beispiele unten. | 200 - Erfolg</br></br>400 - Ungültige Anfrage</br></br>401 - Nicht autorisiert</br></br>405 - Methode nicht zulässig </br></br>412 - Vorbedingung fehlgeschlagen</br></br>500 - Interner Server-Fehler |
+| &lt;SP_FQDN>/api/v1/preauthorize | Streaming-App</br></br>oder</br></br>Programmierer-Service | 1. Antragsteller (obligatorisch)</br>2.  deviceId (obligatorisch)</br>3.  Ressourcenliste (obligatorisch)</br>4.  device_info/X-device-info (obligatorisch)</br>5.  _deviceType_</br> 6.  _deviceUser_ (veraltet)</br>7.  _appId_ (veraltet) | GET | XML oder JSON mit einzelnen Entscheidungen vor der Autorisierung oder Fehlerdetails. Siehe Beispiele unten. | 200 - </br></br>400 - Fehlerhafte Anfrage</br></br>401 - Nicht autorisiert</br></br>405 - Methode nicht zulässig </br></br>412 - Voraussetzung fehlgeschlagen</br></br>500 - Interner Server-Fehler |
 
 
 | Eingabeparameter | Beschreibung |
 | --- | --- |
-| Anfragender | Die Programmer-Anfrage-ID, für die dieser Vorgang gültig ist. |
+| Antragsteller | Die RequestorId des Programmierers, für den dieser Vorgang gültig ist. |
 | deviceId | Die Geräte-ID-Bytes. |
-| Ressourcenliste | Eine Zeichenfolge, die eine kommagetrennte Liste von resourceIds enthält, die den Inhalt identifiziert, auf den ein Benutzer zugreifen kann, und die von MVPD-Autorisierungsendpunkten erkannt wird. |
-| device_info/</br></br>X-Device-Info | Informationen zum Streaming-Gerät.</br></br>**Hinweis**: Dieser Parameter kann als URL-Parameter an device_info übergeben werden. Aufgrund der potenziellen Größe dieses Parameters und der Längenbeschränkungen einer GET-URL sollte er jedoch als X-Device-Info in der HTTP-Kopfzeile übergeben werden. </br></br>Weitere Informationen finden Sie unter [Übergeben von Geräte- und Verbindungsinformationen](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md). |
-| _deviceType_ | Der Gerätetyp (z. B. Roku, PC).</br></br>Wenn dieser Parameter korrekt festgelegt ist, bietet ESM Metriken an, die bei Verwendung von ClientLess [nach Gerätetyp aufgeschlüsselt sind](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type), sodass verschiedene Analysetypen durchgeführt werden können, z. B. Roku, AppleTV und Xbox.</br></br>Siehe, [Vorteile der Verwendung des Parameters für Client-lose Gerätetypen in Pass-Metriken ](/help/authentication/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Hinweis**: Der `device_info` ersetzt diesen Parameter. |
-| _deviceUser_ | Die Benutzer-ID des Geräts. |
-| _appId_ | Die Anwendungs-ID/der Name. </br></br>**Hinweis**: Der Parameter device_info ersetzt diesen. |
+| Ressourcenliste | Eine Zeichenfolge, die eine kommagetrennte Liste von resourceIds enthält, die den Inhalt identifiziert, auf den ein Benutzer zugreifen kann und der von MVPD-Autorisierungsendpunkten erkannt wird. |
+| device_info/</br></br>X-device-info | Informationen zu Streaming-Geräten.</br></br>**Hinweis**: Dies kann als URL-Parameter an device_info übergeben werden, sollte jedoch aufgrund der potenziellen Größe dieses Parameters und der Längenbeschränkungen für eine GET-URL als X-Device-Info im HTTP-Header übergeben werden. </br></br>Vollständige Details finden Sie unter [Übergeben von Geräte- und Verbindungsinformationen](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
+| _deviceType_ | Der Gerätetyp (z. B. Roku, PC).</br></br>Wenn dieser Parameter richtig festgelegt ist, bietet ESM Metriken an, die [nach Gerätetyp aufgeschlüsselt) ](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) Verwendung von Clientless sind, sodass verschiedene Arten der Analyse durchgeführt werden können, z. B. Roku, AppleTV und Xbox.</br></br>Siehe [Vorteile der Verwendung von Client-losen Gerätetypparametern in Kennzahlen ](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Hinweis**: Der `device_info` ersetzt diesen Parameter. |
+| _deviceUser_ | Die Geräte-Benutzerkennung. |
+| _appId_ | Die Anwendungs-ID/-name. </br></br>**Hinweis**: device_info ersetzt diesen Parameter. |
 
 
 

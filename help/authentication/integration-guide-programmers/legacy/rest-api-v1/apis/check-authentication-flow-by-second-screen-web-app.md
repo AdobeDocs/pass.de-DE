@@ -1,23 +1,23 @@
 ---
-title: Überprüfen des Authentifizierungsflusses nach Second Screen Web App
-description: Überprüfen des Authentifizierungsflusses nach Second Screen Web App
+title: Überprüfen des Authentifizierungsflusses durch die Web-App auf dem zweiten Bildschirm
+description: Überprüfen des Authentifizierungsflusses durch die Web-App auf dem zweiten Bildschirm
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '211'
+source-wordcount: '212'
 ht-degree: 0%
 
 ---
 
-# Überprüfen des Authentifizierungsflusses nach Second Screen Web App {#check-authentication-flow-by-second-screen-web-app}
+# (Legacy) Überprüfen des Authentifizierungsflusses durch die Web-App auf dem zweiten Bildschirm {#check-authentication-flow-by-second-screen-web-app}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch den [Drosselmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) begrenzt
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -35,22 +35,22 @@ ht-degree: 0%
 
 ## Beschreibung {#description}
 
-Diese API sollte von der zweiten Bildschirmanmelde-Webanwendung verwendet werden, um zu bestätigen, dass die Adobe Pass-Authentifizierung die erfolgreiche Anmeldung von MVPD bestätigt hat. Es wird empfohlen, diese API aufzurufen, bevor dem Endbenutzer eine Erfolgsmeldung angezeigt wird, die ihn anweist, mit der Gerätekonsole fortzufahren und die Workflows fortzusetzen.
+Diese API sollte von der Web-Anwendung für die Anmeldung am zweiten Bildschirm verwendet werden, um zu bestätigen, dass die Adobe Pass-Authentifizierung die erfolgreiche Anmeldung von MVPD bestätigt hat. Es wird empfohlen, diese API aufzurufen, bevor dem Endbenutzer eine Erfolgsmeldung angezeigt wird, die ihn anweist, mit der Gerätekonsole fortzufahren, um mit den Workflows fortzufahren.
 
 
-| Endpunkt | </br>von aufgerufen | Eingabe   </br>Parameter | HTTP </br>Methode | Reaktion | HTTP </br>Antwort |
+| Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{Registrierungscode} | Webanwendung anmelden | 1. Registrierungs-Code </br>    (Pfadkomponente)</br>2.  requestor </br>    (Obligatorisch) | GET | XML oder JSON mit Fehlerdetails, falls nicht erfolgreich. | 200 - Erfolg   </br>403 - Verboten |
+| SP_FQDN/api/v1/checkauthn/{registration code} | Web-App anmelden | 1. Registrierungs-Code </br>    (Pfadkomponente)</br>2.  Antragsteller-</br>    (Obligatorisch) | GET | XML oder JSON mit Fehlerdetails, wenn nicht erfolgreich. | 200 - Erfolg   </br>403 - Verboten |
 
 </br>
 
 | Eingabeparameter | Beschreibung |
 | ----------------- | --------------------------------------------------------------------------------------------- |
-| Registrierungscode | Der vom Benutzer am Anfang des Authentifizierungsflusses angegebene Registrierungscode-Wert. |
-| Anfragender | Die Programmer-Anfrage-ID, für die dieser Vorgang gültig ist. |
+| Registrierungs-Code | Der Wert des Registrierungs-Codes, der vom Benutzer zu Beginn des Authentifizierungsflusses angegeben wurde. |
+| Antragsteller | Die RequestorId des Programmierers, für den dieser Vorgang gültig ist. |
 
 
-### Beispielantwort (im Fall eines Fehlers) {#response}
+### Beispielantwort (im Fehlerfall) {#response}
 
 ```JSON
     {

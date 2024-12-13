@@ -1,33 +1,33 @@
 ---
-title: iOS/tvOS API-Vorabautorisierung
-description: iOS/tvOS API-Vorabautorisierung
+title: iOS/tvOS-API - Vorabautorisierung
+description: iOS/tvOS-API - Vorabautorisierung
 exl-id: 79c596a4-0e38-4b6c-bb85-f97c6af45ed8
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '392'
 ht-degree: 0%
 
 ---
 
-# Vorautorisieren {#preauthorize}
+# (Legacy) Autorisieren vorab {#preauthorize}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Die Vorabautorisierungs-API kann verwendet werden, um eine Vorabautorisierungsentscheidung für eine oder mehrere Ressourcen zu erhalten. Auf diese Weise kann die Anwendung Benutzeroberflächenhinweise und/oder Inhaltsfilterung implementieren.
-
->[!IMPORTANT]
->
->Die Autorisierungs-API **muss** verwendet werden, bevor dem Benutzer Zugriff auf die angegebenen Ressourcen gewährt wird.
-
-Wenn das Ergebnis der API-Antwort vorautorisieren eine oder mehrere Ressourcen mit einer verweigerten Vorautorisierungsentscheidung enthält, können für jede betroffene Ressource zusätzliche Fehlerinformationen **(siehe unten)** hinzugefügt werden.
+Die Vorabautorisierungs-API kann verwendet werden, um eine Vorabautorisierungsentscheidung für eine oder mehrere Ressourcen zu erhalten. Auf diese Weise kann die Anwendung Benutzeroberflächen-Hinweise und/oder Inhaltsfilter implementieren.
 
 >[!IMPORTANT]
 >
->Die erweiterte Fehlerberichterstellungsfunktion, die zusätzliche Fehlerinformationen für Entscheidungen über verweigerte Vorabautorisierung hinzufügt, ist auf Anfrage verfügbar, da sie auf der Konfigurationsseite für die Adobe Pass-Authentifizierung aktiviert werden muss.
+>Die Autorisierungs-**(muss** verwendet werden, bevor der Benutzer Zugriff auf die angegebenen Ressourcen erhält.
 
-Falls die Anfrage der Vorabautorisierungs-API aufgrund eines Adobe Pass Authentication SDK-Fehlers nicht bedient werden konnte oder falls ein Adobe Pass Authentication Services-Fehler auftritt, werden zusätzliche Fehlerinformationen (unabhängig von der obigen Konfiguration) angezeigt und keine Ressourcen als Teil des Antwortergebnisses der Vorabautorisierungs-API einbezogen.
+Wenn das Ergebnis der Vorabautorisierungs-API eine oder mehrere Ressourcen mit einer abgelehnten Vorabautorisierungsentscheidung enthält, können **für jede betroffene Ressource zusätzliche Fehlerinformationen** werden (siehe unten).
+
+>[!IMPORTANT]
+>
+>Die erweiterte Fehlerberichterstellungsfunktion fügt zusätzliche Fehlerinformationen für Entscheidungen über verweigerte Vorabautorisierung hinzu, ist auf Anfrage verfügbar, da sie in der Adobe Pass-Authentifizierungskonfiguration aktiviert werden muss.
+
+Falls die Anfrage zur Vorabautorisierung der API aufgrund eines Fehlers in der Adobe Pass-Authentifizierungs-SDK nicht verarbeitet werden konnte oder falls ein Fehler in den Adobe Pass-Authentifizierungs-Services auftritt, werden zusätzliche Fehlerinformationen (unabhängig von der obigen Konfiguration) und keine Ressourcen als Teil des Ergebnisses der Vorabautorisierungs-API aufgenommen.
 
 </br>
 
@@ -38,9 +38,9 @@ Falls die Anfrage der Vorabautorisierungs-API aufgrund eines Adobe Pass Authenti
 
 **Parameter:**
 
-- PreauthorizeRequest: Das Anfrageobjekt, das zum Übergeben des API-Anfrageinhalts verwendet wird.
-- AccessEnablerCallback: Das Callback-Objekt, das verwendet wird, um die API-Antwort zurückzugeben;
-- PreauthorizeResponse: Das Antwortobjekt, das zum Zurückgeben des API-Antwortinhalts verwendet wird;
+- PreauthorizeRequest: Das Anfrageobjekt, das zum Übergeben des Inhalts der API-Anfrage verwendet wird.
+- AccessEnablerCallback: Das Callback-Objekt, das zum Zurückgeben der API-Antwort verwendet wird.
+- PreauthorizeResponse: Das Antwortobjekt, das zum Zurückgeben des Inhalts der API-Antwort verwendet wird;
 
 
 </br>
@@ -165,15 +165,15 @@ In diesem Abschnitt wird die JSON-Struktur einiger möglicher PreauthorizeRespon
 
 >[!IMPORTANT]
 >
->Die in den folgenden Beispielen dargestellten JSONs sind nur über die in diesem Dokument dargestellten Modellklassen verfügbar. Sie können nicht anders als über öffentliche Methoden auf die Eigenschaften solcher JSONs zugreifen.
+>Auf die in den folgenden Beispielen dargestellten JSONs kann nur über die in diesem Dokument vorgestellten Modellklassen zugegriffen werden. Der Zugriff auf die Eigenschaften solcher JSONs ist nur über öffentliche Methoden möglich.
 
 >[!IMPORTANT]
 >
->Die Liste möglicher zusätzlicher Fehler, die über das Medium der erweiterten Fehlerberichterstellungsfunktion abgerufen werden, ist in [Erweiterte Fehlerberichte](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) beschrieben.
+>Die Liste möglicher zusätzlicher Fehler, die über die erweiterte Fehlerberichterstattungsfunktion abgerufen werden, ist unter [Erweiterte Fehlerberichterstattung“ ](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md).
 
 #### Erfolgreich
 
-Bei allen beantragten Ressourcen wird eine positive Vorabgenehmigung erteilt.
+Für alle angefragten Ressourcen liegt eine positive Vorautorisierungsentscheidung vor
 
 ```JSON
     {
@@ -195,7 +195,7 @@ Bei allen beantragten Ressourcen wird eine positive Vorabgenehmigung erteilt.
 ```
 
 
-Für eine oder mehrere Ressourcen wurde die Vorautorisierungsentscheidung verweigert und die erweiterte Fehlerberichterstellungsfunktion in der Adobe Pass-Authentifizierungskonfiguration ist nicht aktiviert.
+Mindestens einer Ressource wird eine Entscheidung zur Vorabautorisierung verweigert, und die erweiterte Fehlerberichterstellungsfunktion ist in der Adobe Pass-Authentifizierungskonfiguration nicht aktiviert
 
 ```JSON
     {
@@ -218,7 +218,7 @@ Für eine oder mehrere Ressourcen wurde die Vorautorisierungsentscheidung verwei
 ```
 
 
-Für eine oder mehrere Ressourcen ist in der Adobe Pass-Authentifizierungskonfiguration eine verweigerte Vorabautorisierungsentscheidung und eine erweiterte Fehlerberichterstellungsfunktion aktiviert
+Einer oder mehreren Ressourcen wird eine Entscheidung zur Vorabautorisierung verweigert, und die erweiterte Fehlerberichterstellungsfunktion ist in der Adobe Pass-Authentifizierungskonfiguration aktiviert
 
 ```JSON
     {
@@ -253,7 +253,7 @@ Für eine oder mehrere Ressourcen ist in der Adobe Pass-Authentifizierungskonfig
 
 
 
-Adobe Pass-Authentifizierungsdienste schlagen beim Warten der API-Anfrage zur Vorabautorisierung einen Fehler auf
+Adobe Pass-Authentifizierungsdienste haben beim Verarbeiten der Vorabautorisierungs-API-Anfrage einen Fehler erhalten
 
 ```JSON
     {
@@ -271,9 +271,9 @@ Adobe Pass-Authentifizierungsdienste schlagen beim Warten der API-Anfrage zur Vo
 ```
 
 
-#### Fehler
+#### Fehlschlag
 
-Adobe Pass Authentication SDK löst einen Fehler aus, während die API-Anfrage zur Vorabautorisierung verarbeitet wird
+Adobe Pass-Authentifizierungs-SDK meldet einen Fehler bei der Bearbeitung der Vorabautorisierungs-API-Anfrage
 
 ```JSON
     {
@@ -377,7 +377,7 @@ Adobe Pass Authentication SDK löst einen Fehler aus, während die API-Anfrage z
 
 <br>
 
-## **Klassenentscheidung** {#decision}
+## **klassenspezifische Entscheidung** {#decision}
 
 ```
     ///

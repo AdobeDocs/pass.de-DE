@@ -1,23 +1,23 @@
 ---
-title: Plattform-SSO-Token für ein Adobe-Token austauschen
-description: Plattform-SSO-Token für ein Adobe-Token austauschen
+title: Ersetzen eines Platform SSO-Tokens durch ein Adobe-Token
+description: Ersetzen eines Platform SSO-Tokens durch ein Adobe-Token
 exl-id: 5ab60268-8f97-4755-8281-be45e812ed7f
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '228'
+source-wordcount: '229'
 ht-degree: 0%
 
 ---
 
-# Plattform-SSO-Token für ein Adobe-Token austauschen {#exchange-a-platform-sso-token-for-an-adobe-token}
+# (Legacy) Ersetzen eines Platform SSO-Tokens durch ein Adobe-Token {#exchange-a-platform-sso-token-for-an-adobe-token}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch den [Drosselmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) begrenzt
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -35,19 +35,19 @@ ht-degree: 0%
 
 ## Beschreibung {#description}
 
-Ermöglicht den &quot;Austausch&quot;eines Platform SSO-Profils durch ein Adobe-Token.
+Ermöglicht den „Austausch“ eines Platform SSO-Profils gegen ein Adobe-Token.
 
-| Endpunkt | </br>von aufgerufen | Eingabe   </br>Parameter | HTTP </br>Methode | Reaktion | HTTP </br>Antwort |
+| Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/tokens/authn | Streaming-App</br></br>oder</br></br>Programmierer-Dienst | 1. Antragsteller (erforderlich)</br>    </br>2.  deviceId (Obligatorisch)</br>    </br>3.  mvpd (erforderlich)</br>    </br>4.  deviceType (Obligatorisch)</br>    </br>5.  SAMLResponse (erforderlich)</br>    </br>6.  deviceUser (nicht mehr unterstützt)</br>    </br>7.  appId (nicht mehr unterstützt) | POST | Die erfolgreiche Antwort lautet &quot;No Content&quot;(Kein Inhalt) 204 und gibt an, dass das Token erfolgreich erstellt wurde und für die Authoring-Flüsse verwendet werden kann. | 204 - Kein Inhalt   </br>400 - Ungültige Anfrage |
+| &lt;SP_FQDN>/api/v1/tokens/authn | Streaming-App</br></br>oder</br></br>Programmierer-Service | 1. Antragsteller (obligatorisch)</br>    </br>2.  deviceId (obligatorisch)</br>    </br>3.  MVPD (obligatorisch)</br>    </br>4.  deviceType (Obligatorisch)</br>    </br>5.  SAMLReantwort (obligatorisch)</br>    </br>6.  deviceUser (veraltet)</br>    </br>7.  appId (veraltet) | POST | Die erfolgreiche Antwort lautet 204 Kein Inhalt. Dies bedeutet, dass das Token erfolgreich erstellt wurde und für die Autorisierungsflüsse verwendet werden kann. | 204 - Kein Inhalt   </br>400 - Fehlerhafte Anfrage |
 
 
 | Eingabeparameter | Beschreibung |
 | --- | --- |
-| Anfragender | Die Programmer-Anfrage-ID, für die dieser Vorgang gültig ist. |
+| Antragsteller | Die RequestorId des Programmierers, für den dieser Vorgang gültig ist. |
 | deviceId | Die Geräte-ID-Bytes. |
 | mvpd | Die MVPD-ID, für die dieser Vorgang gültig ist. |
-| deviceType | Die Apple-Plattform, für die wir versuchen, eine Profilanfrage zu erhalten.  Entweder **iOS** oder **tvOS**. |
-| SAMLResponse | Das von Platform SSO zurückgegebene tatsächliche Profil. |
-| _deviceUser_ | Die Benutzer-ID des Geräts. |
-| _appId_ | Die Anwendungs-ID/der Name. |
+| deviceType | Die Apple-Plattform, für die wir eine Profilanfrage abrufen möchten.  Entweder **iOS** oder **tvOS**. |
+| SAMLResponse | Das tatsächliche Profil, wie von Platform SSO zurückgegeben. |
+| _deviceUser_ | Die Geräte-Benutzerkennung. |
+| _appId_ | Die Anwendungs-ID/-name. |

@@ -2,27 +2,27 @@
 title: Android vorautorisieren
 description: Android vorautorisieren
 exl-id: b5337595-135f-4981-a578-2da432f125d6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '195'
+source-wordcount: '196'
 ht-degree: 0%
 
 ---
 
-# Vorautorisieren {#preuthorize-android}
+# (Legacy) Autorisieren vorab {#preuthorize-android}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 </br>
 
 
-Die API-Methode zur Vorabautorisierung muss von Anwendungen verwendet werden, um eine Vorabgenehmigung für eine oder mehrere Ressourcen zu erhalten. Die API-Anfrage zur Vorabautorisierung sollte für UI-Hinweise und/oder Inhaltsfilterung verwendet werden. Vor der Gewährung des Zugriffs auf die angegebenen Ressourcen muss eine tatsächliche Autorisierungs-API-Anfrage gestellt werden.
+Die Methode der Vorabautorisierungs-API muss von Anwendungen verwendet werden, um eine Vorabautorisierungsentscheidung für eine oder mehrere Ressourcen zu erhalten. Die Anfrage zur Vorabautorisierung der API sollte für Benutzeroberflächen-Hinweise und/oder die Inhaltsfilterung verwendet werden. Es muss eine Autorisierungs-API-Anfrage gestellt werden, bevor dem Benutzer Zugriff auf die angegebenen Ressourcen gewährt wird.
 
 
 
-Im Fall eines unerwarteten Fehlers (z. B. Netzwerkproblem, nicht verfügbarer MVPD-Autorisierungsendpunkt usw.), der bei der Verarbeitung einer API-Anfrage zur Vorabautorisierung durch die Adobe Pass-Authentifizierungsdienste auftritt, werden eine oder mehrere separate Fehlerinformationen für die betroffenen Ressourcen als Teil des Antwortergebnisses zur Vorabautorisierung der API eingefügt.
+Im Falle eines unerwarteten Fehlers (z. B. Netzwerkproblem, nicht verfügbarer MVPD-Autorisierungsendpunkt usw.), der auftritt, wenn eine Vorabautorisierungs-API-Anfrage von den Adobe Pass-Authentifizierungs-Services verarbeitet wird, werden eine oder mehrere separate Fehlerinformationen für die betroffenen Ressourcen als Teil des Ergebnisses der Vorabautorisierungs-APIs eingefügt.
 
 
 ## `public void preauthorize(PreauthorizeRequest request, AccessEnablerCallback<PreauthorizeResponse> callback);`
@@ -34,9 +34,9 @@ Im Fall eines unerwarteten Fehlers (z. B. Netzwerkproblem, nicht verfügbarer MV
 
 **Parameter:**
 
-- *PreauthorizeRequest*: Builder-Objekt, das zur Definition der Anforderung verwendet wird
-- AccessEnablerCallback : Rückruf, der zum Zurückgeben der API-Antwort verwendet wird
-- PreauthorizeResponse : Objekt, das zur Ausgabe der API verwendet wird
+- *PreauthorizeRequest*: Builder-Objekt, das zum Definieren der Anfrage verwendet wird
+- AccessEnablerCallback : Callback, mit dem die API-Antwort zurückgegeben wird
+- PreauthorizeResponse : Objekt, das zur Rückgabe der API verwendet wird
 Antwortinhalt
 
 
@@ -63,7 +63,7 @@ Antwortinhalt
     ///
 ```
 
-**public Builder setResources(List\&lt;String\> resources)**
+**public builder setResources(List\&lt;String\> resources)**
 
 ```
     ///
@@ -85,8 +85,8 @@ Antwortinhalt
 ```
 
 
-**public Builder disableFeatures(Set\&lt;PreauthorizeRequest.Feature\>
-features)**
+**public builder disableFeatures(set\&lt;PreauthorizeRequest.Feature\>
+Funktionen)**
 
 ```
     ///
@@ -142,7 +142,7 @@ features)**
 
 
 
-### class PreauthorizeResponse {#preauthorizeresponse}
+### PreauthorizeResponse-Klasse {#preauthorizeresponse}
 
 ```java
     ///
@@ -227,7 +227,7 @@ features)**
 
 </br>
 
->**Klassenentscheidung** {#decision}
+>**class Decision** {#decision}
 
 ```
     ///

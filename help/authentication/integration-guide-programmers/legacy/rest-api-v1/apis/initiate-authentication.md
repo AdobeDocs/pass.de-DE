@@ -1,23 +1,23 @@
 ---
-title: Authentifizierung initiieren
-description: Authentifizierung initiieren
+title: Authentifizierung starten
+description: Authentifizierung starten
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '291'
+source-wordcount: '292'
 ht-degree: 0%
 
 ---
 
-# Authentifizierung initiieren {#initiate-authentication}
+# (Legacy) Authentifizierung starten {#initiate-authentication}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch den [Drosselmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) begrenzt
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -36,24 +36,24 @@ ht-degree: 0%
 
 ## Beschreibung {#description}
 
-Initiiert den Authentifizierungsprozess durch Information über ein MVPD-Auswahlereignis. Erstellt einen Datensatz in der Adobe Pass-Authentifizierungsdatenbank, der abgestimmt wird, wenn eine erfolgreiche Antwort vom MVPD empfangen wird.
+Startet den Authentifizierungsprozess durch Benachrichtigung über ein MVPD-Auswahlereignis. Erstellt einen Datensatz in der Adobe Pass-Authentifizierungsdatenbank, der abgeglichen wird, wenn eine erfolgreiche Antwort von der MVPD empfangen wird.
 
 
 
-| Endpunkt | </br>von aufgerufen | Eingabe   </br>Parameter | HTTP </br>Methode | Reaktion | HTTP </br>Antwort |
+| Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/authenticate | AuthN-Modul | 1. requestor_id (erforderlich)</br>2.  mso_id (erforderlich)</br>3.  reg_code (erforderlich)</br>4.  domain_name (erforderlich)</br>5.  noflash=true - </br>    (Obligatorischer, Restparameter)</br>6.  no_iframe=true (Obligatorisch, Restparameter)</br>7.  zusätzliche Parameter (optional)</br>8.  redirect_url (erforderlich) | GET | Die Anmelde-Webanwendung wird zur MVPD-Anmeldeseite weitergeleitet. | 302 für vollständige Umleitungsimplementierungen |
+| &lt;SP_FQDN>/api/v1/Authenticate | AuthN-Modul | 1. request_id (obligatorisch)</br>2.  mso_id (obligatorisch)</br>3.  reg_code (obligatorisch)</br>4.  domain_name (obligatorisch)</br>5.  noflash=true - </br>    (Obligatorisch, Restparameter)</br>6.  no_iframe=true (obligatorisch, Restparameter)</br>7.  Zusätzliche Parameter (optional)</br>8.  redirect_url (obligatorisch) | GET | Die Anmelde-Web-App wird zur Anmeldeseite von MVPD weitergeleitet. | 302 für vollständige Umleitungsimplementierungen |
 
 {style="table-layout:auto"}
 
 
 | Eingabeparameter | Beschreibung |
 | --- | --- |
-| requestor_id | Der Programmierer-Anforderer, für den dieser Vorgang gültig ist. |
+| Requestor_id | Der Anforderer des Programmierers, für den dieser Vorgang gültig ist. |
 | mso_id | Die MVPD-ID, für die dieser Vorgang gültig ist. |
-| reg_code | Der vom Reggie-Dienst generierte Registrierungscode. |
-| domain_name | Die Ursprungsdomäne. |
-| redirect_url | Die Umleitungs-URL der Webapp-Anmeldung nach Abschluss der Authentifizierung. |
+| reg_code | Der vom Reggie-Service generierte Registrierungs-Code. |
+| domain_name | Die Ursprungs-Domain. |
+| redirect_url | Die Anmelde-Web-App-Umleitungs-URL nach Abschluss der Authentifizierung. |
 
 {style="table-layout:auto"}
 
@@ -61,7 +61,7 @@ Initiiert den Authentifizierungsprozess durch Information über ein MVPD-Auswahl
 
 >[!IMPORTANT]
 > 
->**Wichtig: Erforderliche Parameter -** Unabhängig von der clientseitigen Implementierung sind alle oben genannten Parameter obligatorisch.
+>**Wichtig: Obligatorische Parameter -** Unabhängig von der Client-seitigen Implementierung sind alle oben genannten Parameter obligatorisch.
 >
 >
 >Beispiel:
@@ -79,9 +79,9 @@ Initiiert den Authentifizierungsprozess durch Information über ein MVPD-Auswahl
 > 
 >**Wichtig: Optionale Parameter**
 >
->Der Aufruf kann auch optionale Parameter enthalten, die andere Funktionen wie:
+>Der Aufruf kann auch optionale Parameter enthalten, die andere Funktionen ermöglichen, z. B.:
 >
-> * generic\_data - ermöglicht die Verwendung von [Promotional TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)
+> * generic\_data - Aktiviert die Verwendung von [Werbe-TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)
 >
 >```JSON
 >Example:
@@ -89,12 +89,12 @@ Initiiert den Authentifizierungsprozess durch Information über ein MVPD-Auswahl
 >```
 
 
-### **Notizen** {#notes}
+### **Hinweise** {#notes}
 
-* Der Wert des Parameters `domain_name` muss auf einen der bei der Adobe Pass-Authentifizierung registrierten Domänennamen festgelegt werden. Weitere Informationen finden Sie unter [Registrierung und Initialisierung](/help/authentication/kickstart/programmer-overview.md).
+* Der Wert des `domain_name` muss auf einen der Domain-Namen festgelegt sein, die bei der Adobe Pass-Authentifizierung registriert sind. Weitere Informationen finden Sie unter [ und Initialisierung ](/help/authentication/kickstart/programmer-overview.md).
 
-* [Vermeiden Sie die Verwendung von &quot;&amp;&#39;reg\_code&quot;in /authenticate request (Tech Note)](/help/authentication/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
+* [Vermeiden Sie die Verwendung von &#39;&amp;&#39;reg\_code in der /Authenticate-Anfrage (Technische Anmerkung).](/help/authentication/integration-guide-programmers/legacy/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
 
-* Der Parameter `redirect_url` muss der letzte in der Reihenfolge sein.
+* Der `redirect_url` muss der letzte Parameter in der richtigen Reihenfolge sein
 
-* Der Wert des Parameters `redirect_url` muss URL-kodiert sein
+* Der Wert des `redirect_url` muss URL-kodiert sein
