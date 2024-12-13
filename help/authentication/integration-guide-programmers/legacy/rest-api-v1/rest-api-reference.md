@@ -2,9 +2,9 @@
 title: REST-API-Referenz
 description: REST-API-Referenz
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: 3e69473bdb9818416e67b03e6c35d24dc3e0f991
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '647'
+source-wordcount: '669'
 ht-degree: 2%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 2%
 >[!NOTE]
 >
 >Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
+
+>[!IMPORTANT]
+>
+> Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
 
 ## Drosselmechanismus
 

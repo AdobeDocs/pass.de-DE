@@ -2,9 +2,9 @@
 title: iOS-Authentifizierungsfehler - adobepass.ios.app kann nicht gefunden werden
 description: iOS-Authentifizierungsfehler - adobepass.ios.app kann nicht gefunden werden
 exl-id: cd97c6fb-f0fa-45c2-82c1-f28aa6b2fd12
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '365'
+source-wordcount: '387'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
+
+>[!IMPORTANT]
+>
+> Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
 
 ## Problem {#issue}
 

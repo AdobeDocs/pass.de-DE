@@ -2,9 +2,9 @@
 title: Testen von Authentifizierungs- und Autorisierungsflüssen mithilfe der Test-Site der Adobe-API
 description: Testen von Authentifizierungs- und Autorisierungsflüssen mithilfe der Test-Site der Adobe-API
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '312'
+source-wordcount: '334'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
+
+>[!IMPORTANT]
+>
+> Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
 
 Um die AuthN- und AuthZ-Flüsse zu testen, haben wir eine **API-Test-Site** vorbereitet, die Ihnen zur Verfügung steht. Unser Support-Team stellt Ihnen gerne Anmeldeinformationen zur Verfügung. Sie können uns unter **support@tve.zendesk.com** kontaktieren.
 

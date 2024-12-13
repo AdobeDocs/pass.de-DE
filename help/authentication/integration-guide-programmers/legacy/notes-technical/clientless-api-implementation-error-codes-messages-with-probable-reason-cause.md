@@ -2,9 +2,9 @@
 title: Clientlose API-Implementierung – Fehler Codes/Nachrichten mit wahrscheinlichem Grund/Ursache
 description: Clientlose API-Implementierung – Fehler Codes/Nachrichten mit wahrscheinlichem Grund/Ursache
 exl-id: 616e35fc-9b72-422b-9a05-e6248bd52490
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '205'
+source-wordcount: '227'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Die Inhalte auf dieser Seite werden nur zu Informationszwecken zur Verfügung gestellt. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe Systems erforderlich. Eine unbefugte Nutzung ist nicht zulässig.
+
+>[!IMPORTANT]
+>
+> Stellen Sie sicher, dass Sie über die neuesten Adobe Pass Authentication Produktankündigungen und Stilllegungszeitpläne auf dem Laufenden bleiben, die in der [Seite &quot;Produktankündigungen](/help/authentication/product-announcements.md) &quot; zusammengefasst sind.
 
 </br>
 
@@ -33,9 +37,9 @@ ht-degree: 0%
 1. Möglicherweise treten domänenübergreifende Scripting Probleme auf
 1. Korrektes Spoofing sollte in die Datei /etc/hosts eingefügt werden
 
-## Fehler: 400 Ungültige Anfrage
+## Fehler: 400 fehlerhafte Anfrage
 
-### Ursachen:
+### Bewirkt:
 
 1. Falsch formatierte URL für POST/GET
 1. SAMLAssertionParserException – Die verschlüsselte SAML-Assertion konnte bei Adobe Systems nicht entschlüsselt werden
@@ -53,7 +57,7 @@ ht-degree: 0%
 
 1. Benutzername und Kennwort stimmen nicht überein
 2. Anmeldung wurde möglicherweise deaktiviert
-3. Überprüfen, ob die Anmeldung für Produktion oder Staging vorgesehen ist
+3. Überprüfen Sie, ob die Log-in für die Produktion oder das Staging bestimmt ist
 
 
 <!--

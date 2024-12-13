@@ -2,26 +2,20 @@
 title: Willkommen bei Adobe&reg; Pass Authentication!
 description: Willkommen bei Adobe&reg; Pass Authentication Overview
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '331'
+source-wordcount: '296'
 ht-degree: 0%
 
 ---
 
 # Willkommen bei der Authentifizierung für Adobe® Pass {#pt-auth-overview}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
+> Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
 
 Die Adobe Pass-Authentifizierung ist eine Berechtigungslösung für TV Everywhere. Sie bietet ein modulares Framework, mit dem festgestellt werden kann, ob eine Person, die Zugriff auf eine Ressource anfordert, dazu berechtigt ist. Um an der Adobe Pass-Authentifizierungsberechtigungslösung teilzunehmen, integrieren Inhaltsanbieter (Programmierer) und Pay-TV-Anbieter (MVPDs) ihre Berechtigungssysteme in die Adobe Pass-Authentifizierungs-Workflows. Auf dieser Dokumentations-Website finden Sie Details zum Integrationsprozess sowie Tipps für bestehende Partner.
-
-Ihr Feedback ist immer sehr willkommen!
-
->[!NOTE]
->
->Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 ## Beliebte Hilfe und FAQs {#help-faqs}
 
@@ -39,13 +33,11 @@ Ihr Feedback ist immer sehr willkommen!
 
 >[!IMPORTANT]
 >
->Wenn Sie keine Antwort finden können, [**Sie uns eine E-Mail**](mailto:tve-support@adobe.com).
+> Wenn Sie keine Antwort finden können, [**Sie uns eine E-Mail**](mailto:tve-support@adobe.com).
 >
->[E-Mail an unser Support](mailto:tve-support@adobe.com)Team senden, ist auch der erste Schritt bei Problemen oder Berichten über Vorfälle.
+> [E-Mail an unser Support](mailto:tve-support@adobe.com)Team senden, ist auch der erste Schritt bei Problemen oder Berichten über Vorfälle.
 >
->Wenn Sie ein [SCHWEREGRAD 1 LIVE](/help/authentication/kickstart/escalation-procedures.md)-Problem haben und uns eine E-Mail gesendet haben und 30 Minuten ohne Antwort verstrichen sind, finden Sie im Dokument [Eskalationsverfahren](/help/authentication/kickstart/escalation-procedures.md) weitere Informationen zu den anzurufenden Telefonnummern.
->
-
+> Wenn Sie ein [SCHWEREGRAD 1 LIVE](/help/authentication/kickstart/escalation-procedures.md)-Problem haben und uns eine E-Mail gesendet haben und 30 Minuten ohne Antwort verstrichen sind, lesen Sie das Dokument [Eskalationsverfahren](/help/authentication/kickstart/escalation-procedures.md) für Telefonnummern.
 
 ## So finden Sie, was Sie benötigen {#how-to-search}
 

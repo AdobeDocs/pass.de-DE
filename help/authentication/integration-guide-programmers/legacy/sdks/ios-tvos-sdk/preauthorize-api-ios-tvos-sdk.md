@@ -2,9 +2,9 @@
 title: iOS/tvOS-API - Vorabautorisierung
 description: iOS/tvOS-API - Vorabautorisierung
 exl-id: 79c596a4-0e38-4b6c-bb85-f97c6af45ed8
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '392'
+source-wordcount: '414'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
+
+>[!IMPORTANT]
+>
+> Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
 
 Die Vorabautorisierungs-API kann verwendet werden, um eine Vorabautorisierungsentscheidung für eine oder mehrere Ressourcen zu erhalten. Auf diese Weise kann die Anwendung Benutzeroberflächen-Hinweise und/oder Inhaltsfilter implementieren.
 
