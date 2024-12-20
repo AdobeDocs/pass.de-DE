@@ -1,6 +1,6 @@
 ---
-title: Einschränken der gleichzeitigen Nutzung mit mehreren Anwendungen, die verschiedenen Eigentümern gehören
-description: Beschränkung der gleichzeitigen Nutzung mit mehreren Anwendungen, die verschiedenen Eigentümern gehören
+title: gleichzeitige Nutzung mehrerer Programme verschiedener Eigentümer einschränken
+description: Beschränken der gleichzeitigen Nutzung mehrerer Anwendungen, die verschiedenen Eigentümern gehören
 exl-id: c358befc-36d6-4f55-92cc-4d02064c65fb
 source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
@@ -9,12 +9,12 @@ ht-degree: 1%
 
 ---
 
-# Beschränkung der gleichzeitigen Nutzung mit mehreren Anwendungen, die verschiedenen Eigentümern gehören {#restr-concurr-usage}
+# Beschränken der gleichzeitigen Nutzung mehrerer Anwendungen, die verschiedenen Eigentümern gehören {#restr-concurr-usage}
 
 
-## Anwendungsfallbeschreibung
+## Beschreibung des Anwendungsfalls
 
-MVPD M verfügt über eine iPhone-Anwendung, eine iPad-Anwendung und eine Website. Es muss auf Wunsch von Programmierer P in die Adobe Concurrency Monitoring (CM) integriert werden. Der Programmierer P hat in CM eine Reihe von Richtlinien mit Regeln definiert, die die gleichzeitige Nutzung einschränken. CM entscheidet anhand der definierten Richtlinien und Regeln, welche Streams abgespielt werden dürfen. Das bedeutet, dass CM während der Wiedergabe selbst dann entscheiden kann, ob ein Stream gestartet und wiedergegeben werden darf.
+MVPD M verfügt über eine iPhone-Anwendung, eine iPad-Anwendung und eine Website. Es muss auf Anfrage von Programmierer P mit Adobe Concurrency Monitoring (CM) integriert werden. Der Programmierer P hat in CM eine Reihe von Richtlinien mit Regeln definiert, die die gleichzeitige Verwendung einschränken. CM entscheidet anhand der definierten Richtlinien und Regeln, welche Streams abgespielt werden dürfen. Dies bedeutet, dass CM während der Wiedergabe entscheiden kann, einen Stream zu stoppen, selbst wenn er gestartet und wiedergegeben werden darf.
 
 
 
@@ -27,33 +27,33 @@ MVPD M verfügt über eine iPhone-Anwendung, eine iPad-Anwendung und eine Websit
 
 Zur Integration mit CM muss ein Zendesk-Ticket (https://adobeprimetime.zendesk.com) erstellt und die folgenden Informationen angegeben werden:
 
-1. Name des Unternehmens
-1. die Anwendungen, die Sie in CM integrieren möchten. Für jede Anwendung müssen Sie Folgendes angeben:
+1. Der Name der Firma
+1. die Anwendungen, die Sie mit CM integrieren möchten. Für jedes Programm müssen Sie Folgendes angeben:
    - Anwendungsname
    - Anwendungsplattform
-1. Drittanbieter, der die Integration angefordert hat (falls zutreffend)
+1. Der Dritte, der die Integration angefordert hat (falls zutreffend)
 
 
-Nach Erstellung des Tickets werden die folgenden Informationen zur Verwendung freigegeben:
+Nach der Erstellung des Tickets werden die folgenden Informationen zur Verwendung freigegeben:
 
-| type | description | Beispielwert | Standardwert |
+| Typ | Beschreibung | Beispielwert | Standardwert |
 | --- | --- | --- | --- |
-| Endpunkt | Endpunkt für die Adobe-Überwachung von Parallelität | http://streams.adobeprimetime.com/v1/ | http://streams.adobeprimetime.com/v1/ |
-| applicationId | iPhone-App-ID | iphone54-75b4-431b-adb2-eb6b9e546013 | - |
-| applicationId | iPad-App-ID | ipad5d54-75b4-431b-adb2-eb6b9e546013 | - |
-| applicationId | Website-App-ID | website4-75b4-431b-adb2-eb6b9e546013 | - |
-| Intervall für Heartbeats | Intervall in Sekunden zum Senden von Heartbeat-Aufrufen an die Adobe-Überwachung der Parallelität | 60 | 60 |
-| Intervall für Stream-Compliance | Intervall in Sekunden zur Überprüfung der Stream-Konformität mit der Adobe-Überwachung der Parallelität | 180 | 180 |
+| Endpunkt | der Endpunkt für das Adobe-Parallelitätsmonitoring | http://streams.adobeprimetime.com/v1/ | http://streams.adobeprimetime.com/v1/ |
+| applicationId | iPhone-App-ID | iPhone54-75b4-431b-adb2-eb6b9e546013 | - |
+| applicationId | iPad-App-ID | iPad5d54-75b4-431b-adb2-eb6b9e546013 | - |
+| applicationId | App-ID der Website | website4-75b4-431b-adb2-eb6b9e546013 | - |
+| Intervall für Heartbeats | Intervall in Sekunden, um Heartbeat-Aufrufe an die Adobe-Parallelitätsüberwachung zu senden | 60 | 60 |
+| Intervall für Stream-Compliance | Intervall in Sekunden, um die Stream-Konformität mit der Adobe-Parallelitätsüberwachung zu überprüfen | 180 | 180 |
 
 
 ## Implementierungsrichtlinien
 
-Die folgenden Elemente MÜSSEN in der/den Anwendung(en) verpackt werden:
+Die folgenden Elemente MÜSSEN in den Anwendungen verpackt sein:
 
 1. Endpunkt
 1. Anwendungs-ID
 1. Intervall für Heartbeats
-1. Überprüfungsintervall
+1. Zeitspanne für die Überprüfung der Einhaltung
 
 <!---
 ## Workflows

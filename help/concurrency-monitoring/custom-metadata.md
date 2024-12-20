@@ -1,6 +1,6 @@
 ---
-title: Benutzerspezifische Metadaten
-description: Benutzerspezifische Metadaten
+title: Benutzerdefinierte Metadaten
+description: Benutzerdefinierte Metadaten
 exl-id: 0cfd1158-8c6c-47c2-b838-5490ff4bf0ce
 source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
@@ -9,15 +9,15 @@ ht-degree: 0%
 
 ---
 
-# Benutzerspezifische Metadaten {#cm}
+# Benutzerdefinierte Metadaten {#cm}
 
 >[!NOTE]
 >
-> Diese Seite wird nicht mehr unterstützt, da sie für die vorherige API-Version gilt, die nicht mehr für neue Integrationen empfohlen wird
+> Diese Seite ist veraltet, da sie für die vorherige Version der API gilt, die für neue Integrationen nicht mehr empfohlen wird
 
-Der Dienst ermöglicht es Kunden, sowohl bei Abfragen als auch bei der Entscheidungsfindung sowohl Standard- als auch benutzerdefinierte Felder zu verwenden. Die Standardfelder sind immer für jeden Stream verfügbar (da sie entweder für die Stream-Erstellung erforderlich sind oder vom Server generiert werden):
+Der Service ermöglicht es Kunden, sowohl standardmäßige als auch benutzerdefinierte Felder in Abfragen und bei der Entscheidungsfindung zu verwenden. Die Standardfelder sind immer für jeden Stream verfügbar (da sie entweder für die Stream-Erstellung erforderlich oder vom Server generiert werden):
 
-* Applikation
+* Anwendung
 * mvpd
 * accountId
 * streamId
@@ -25,23 +25,23 @@ Der Dienst ermöglicht es Kunden, sowohl bei Abfragen als auch bei der Entscheid
 * Initiator
 
 
-Die benutzerdefinierten Felder sind alle Schlüssel/Wert-Paare, die bei der Stream-Initialisierung als Form- oder Abfragezeichenfolgenparameter übergeben werden. Sowohl die Standard- als auch die benutzerdefinierten Felder können dann in den folgenden Szenarien verwendet werden (Einzelheiten dazu finden Sie in der eigentlichen Dokumentation für die beteiligten API-Ressourcen unten):
+Die benutzerdefinierten Felder sind alle Schlüssel/Wert-Paare, die bei der Stream-Initialisierung als Formular- oder Abfragezeichenfolgenparameter übergeben werden. Sowohl die standardmäßigen als auch die benutzerdefinierten Felder können dann in den folgenden Szenarien verwendet werden (Einzelheiten finden Sie in der entsprechenden Dokumentation für die betroffenen API-Ressourcen weiter unten):
 
-* Anfordern zusätzlicher Felder (über den Abfragezeichenfolgenparameter fields) beim Abrufen der Stream-Liste für ein Konto (die Ressource /streams )
-* Aufschlüsseln der Kontoaktivität durch Angabe der zu gruppierenden Dimensionen (die Ressource /activity )
-* Serverseitige Richtlinien basierend auf Feldwerten oder Kardinalitäten definieren (die Beispiele verwenden Pseudo-SQL nur zur besseren Übersichtlichkeit):
-* Konfigurieren Sie eine Richtlinie, die nur auf bestimmte Feldwerte angewendet werden soll (z. B. eine dedizierte iOS-Richtlinie: WHERE osType IS &#39;iOS&#39;).
-* Begrenzen Sie die Anzahl der eindeutigen Werte für ein bestimmtes Feld (z. B. nicht mehr als X verschiedene Geräte: HAVING DISTINCT COUNT(deviceId) >= 2)
-* Begrenzen Sie die Anzahl der aktiven Streams pro Feldwert (z. B. maximal X aktive Streams für einen einzelnen Gerätetyp: GROUP BY deviceType HAVING COUNT(streamId) >= 3)
+* Beim Abrufen der Stream-Liste für ein Konto (die Ressource /streams) werden zusätzliche Felder (über den Abfragezeichenfolgenparameter fields) angefordert.
+* Aufschlüsselung der Kontoaktivität durch Angabe der zu gruppierenden Dimensionen (Ressource /activity)
+* Definieren von Server-seitigen Richtlinien basierend auf Feldwerten oder Kardinalitäten (in den Beispielen wird nur aus Gründen der Klarheit Pseudo-SQL verwendet):
+* Konfigurieren Sie eine Richtlinie, die nur auf bestimmte Feldwerte angewendet werden soll (z. B. eine dedizierte iOS-Richtlinie: WO osType &quot;iOS&quot; IST).
+* Anzahl der eindeutigen Werte für ein bestimmtes Feld begrenzen (z. B. nicht mehr als X verschiedene Geräte: HAVING DISTINCT COUNT(deviceId) >= 2)
+* Anzahl der aktiven Streams pro Feldwert begrenzen (z. B. nicht mehr als X aktive Streams für einen einzelnen Gerätetyp: GROUP BY deviceType HAVING COUNT(streamId) >= 3)
 
 
-Je nach gesendeten Schlüsseln/Werten können unterschiedliche Regeln festgelegt werden. Dies könnte in etwa so aussehen:
+Basierend auf diesen gesendeten Schlüsseln/Werten können verschiedene Regeln festgelegt werden. Dies könnte in etwa so aussehen:
 
-1. Der Kunde entscheidet, dass er die Parametergruppe senden möchte, die die Werte &quot;SPORTS&quot; und &quot;KIDS&quot; enthält.
-1. Anschließend muss die App dies tun:
-   * Bei Sportkanälen sendet die App bei der Stream-Initialisierung ***type=SPORTS*** als Abfrageparameter
-   * Bei Kanälen mit kinderbezogenem Inhalt sendet die App bei der Stream-Initialisierung ***type=KIDS*** als Abfrageparameter
-1. Anschließend könnte eine Richtlinie wie die folgende definiert werden:
+1. Der Kunde entscheidet, dass er die Parametergruppe senden möchte, die die Werte „SPORTS“ und „KIDS“ hat.
+1. Dann müsste die App Folgendes tun:
+   * Bei Sportkanälen würde die App bei Stream-Initialisierung ***type=SPORTS*** als Abfrageparameter senden
+   * Bei Kanälen mit kinderbezogenem Inhalt würde die App bei der Stream-Initialisierung ***type=KIDS*** als Abfrageparameter senden
+1. Dann könnte eine Richtlinie wie die folgende definiert werden:
    * `GROUP by type HAVING COUNT(streamID) < 4) IF type=KIDS`
    * `GROUP by type HAVING COUNT(streamID) < 2) IF type=SPORTS`
-1. Das würde im Grunde bedeuten, dass ein Benutzer beim Ansehen von Sport nicht auf mehr als einem Gerät darauf zugreifen kann. Wenn der Benutzer jedoch Inhalte von Kindern ansieht, ist die Anzeige auf maximal 3 Geräten erlaubt.
+1. Dies würde im Grunde bedeuten, dass ein Benutzer, der Sport ansieht, dies nicht auf mehr als einem Gerät tun kann. Wenn der Benutzer jedoch Inhalte für Kinder ansieht, ist das Anzeigen auf maximal drei Geräten erlaubt.

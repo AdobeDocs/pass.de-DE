@@ -13,29 +13,29 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 ## Übersicht {#mvpd-authn-overview}
 
-Die tatsächliche Dienstanbieterrolle (SP) wird von einem Programmierer übernommen, aber die Adobe Pass-Authentifizierung dient als SP-Proxy für diesen Programmierer. Durch die Verwendung der Adobe Pass-Authentifizierung als Vermittler können sowohl MVPDs als auch Programmierer vermeiden, ihre Berechtigungsprozesse von Fall zu Fall anpassen zu müssen.
+Die eigentliche Dienstanbieterrolle (SP) wird von einem Programmierer verwaltet, aber die Adobe Pass-Authentifizierung dient als SP-Proxy für diesen Programmierer. Durch die Verwendung der Adobe Pass-Authentifizierung als Vermittler können sowohl MVPDs als auch Programmierer vermeiden, ihre Berechtigungsprozesse von Fall zu Fall anpassen zu müssen.
 
-Die folgenden Schritte zeigen die Ereignisabfolge mithilfe der Adobe Pass-Authentifizierung, wenn ein Programmierer die Authentifizierung von einem MVPD anfordert, der SAML unterstützt. Beachten Sie, dass die Komponente Adobe Pass Authentication Access Enabler auf dem Client des Benutzers/Abonnenten aktiv ist. Von dort aus erleichtert der Access Enabler alle Schritte des Authentifizierungsflusses.
+Die folgenden Schritte zeigen die Ereignissequenz unter Verwendung der Adobe Pass-Authentifizierung, wenn ein Programmierer die Authentifizierung von einer MVPD anfordert, die SAML unterstützt. Beachten Sie, dass die Adobe Pass Authentication Access Enabler-Komponente auf dem Client des Benutzers/Abonnenten aktiv ist. Von dort aus erleichtert der Access Enabler alle Schritte des Authentifizierungsflusses.
 
-1. Wenn der Benutzer den Zugriff auf geschützte Inhalte anfordert, initiiert der Access Enabler die Authentifizierung (AuthN) im Namen des Programmierers (SP).
-1. Die App des SP präsentiert dem Benutzer einen &quot;MVPD Picker&quot;zum Abrufen seines Pay TV-Anbieters (MVPD). Anschließend leitet der SP den Browser des Benutzers an den Identitäts-Provider-Dienst (IdP) des ausgewählten MVPD weiter.  Dies ist &quot;**Vom Programmierer initiierte Anmeldung**&quot;.  Der MVPD sendet die Antwort des IdP an den Adobe SAML Assertion Consumer Service, wo er verarbeitet wird.
-1. Schließlich leitet der Access Enabler den Browser zurück zur SP-Site und informiert die SP über den Status (Erfolg/Fehler) der AuthN-Anfrage.
+1. Wenn der Benutzer Zugriff auf geschützte Inhalte anfordert, initiiert Access Enabler die Authentifizierung (AuthN) im Namen des Programmierers (SP).
+1. Die App des Serviceprozessors stellt dem Benutzer eine &quot;MVPD-Auswahl“ zur Verfügung, um seinen Pay-TV-Anbieter (MVPD) zu erhalten. Der SP leitet den Browser des Benutzers dann zum ausgewählten Identity Provider-Dienst (IdP) von MVPD weiter.  Dies ist &quot;**Programmer-Initiated Login**.  Der MVPD sendet die Antwort des IdP an den Adobe SAML Assertion Consumer Service, wo er verarbeitet wird.
+1. Schließlich leitet der Access Enabler den Browser zurück zur SP-Site, um den SP über den Status (Erfolg/Fehler) der Authentifizierungsanfrage zu informieren.
 
-## Die Authentifizierungsanforderung {#authn-req}
+## Die Authentifizierungsanfrage {#authn-req}
 
-Wie in den obigen Schritten beschrieben, muss ein MVPD während des AuthN-Flusses sowohl eine SAML-basierte AuthN-Anfrage akzeptieren als auch eine SAML-AuthN-Antwort senden.
+Wie in den obigen Schritten erläutert, muss eine MVPD während des AuthN-Flusses sowohl eine SAML-basierte AuthN-Anfrage akzeptieren als auch eine SAML-AuthN-Antwort senden.
 
-Die Spezifizierung für die Authentifizierungs- und Autorisierungsschnittstelle für den Online Content Access (OLCA)](https://www.cablelabs.com/specifications/search?query=&amp;category=&amp;subcat=&amp;doctype=&amp;content=false&amp;archives=false){target=_blanck} enthält eine standardmäßige AuthN-Anfrage und -Antwort. [ Während für die Adobe Pass-Authentifizierung keine MVPDs erforderlich sind, um ihre Berechtigungsnachrichten auf diesem Standard zu basieren, kann die Überprüfung der Spezifikation Einblicke in die Schlüsselattribute bieten, die für eine AuthN-Transaktion erforderlich sind.
+Die [Online Content Access (OLCA) Authentication and Authorization Interface Specification](https://www.cablelabs.com/specifications/search?query=&amp;category=&amp;subcat=&amp;doctype=&amp;content=false&amp;archives=false){target=_blanck} enthält eine standardmäßige AuthN-Anfrage und -Antwort. Während bei der Adobe Pass-Authentifizierung keine MVPDs ihre Berechtigungsnachrichten auf diesem Standard basieren müssen, kann die Überprüfung der Spezifikation Einblicke in die wichtigsten Attribute bieten, die für eine Authentifizierungstransaktion erforderlich sind.
 
 >[!NOTE]
 >
->Die AuthN-Anfrage, die ein MVPD mit Adobe Pass-Authentifizierung erhält, enthält keine digitale Signatur. Im folgenden Beispiel wird jedoch aus Gründen der Kürze keine Signatur angezeigt. Ein Beispiel für eine digitale Signatur finden Sie im Beispiel in [der Authentifizierungsantwort](#authn-response) in den folgenden Abschnitten.
+>Die AuthN-Anfrage, die eine MVPD mit Adobe Pass-Authentifizierung erhält, enthält eine digitale Signatur. Im folgenden Beispiel wird jedoch aus Gründen der Kürze keine Signatur angezeigt. Ein Beispiel für eine digitale Signatur finden Sie im Beispiel in [Authentifizierungsantwort](#authn-response) in den folgenden Abschnitten.
 
-Beispielhafte SAML-Authentifizierungsanforderung:
+Beispiel einer SAML-Authentifizierungsanfrage:
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -61,32 +61,32 @@ Beispielhafte SAML-Authentifizierungsanforderung:
 </samlp:AuthnRequest> 
 ```
 
-In der folgenden Tabelle werden die Attribute und Tags erläutert, die in einer Authentifizierungsanfrage enthalten sein müssen, mit den erwarteten Standardwerten.
+In der folgenden Tabelle werden die Attribute und Tags erläutert, die in einer Authentifizierungsanfrage mit den erwarteten Standardwerten enthalten sein müssen.
 
-**SAML-Authentifizierungsanfragedetails**
+**Details zur SAML-Authentifizierungsanfrage**
 
-| samlp:AuthnRequest | &lt;AuthnRequest>, ausgestellt vom Service Provider an Identity Provider. |
+| sample:AuthRequest | &lt;AuthRequest> , ausgestellt vom Dienstleister für den Identitätsanbieter. |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AssertionConsumerServiceURL | Dies ist der Adobe-Endpunkt, der in der nachfolgenden Antwort verwendet werden soll. Standardwert: **http://sp.auth.adobe.com/sp/saml/SAMLAssertionConsumer** |
-| Ziel | Ein URI-Verweis, der die Adresse angibt, an die diese Anfrage gesendet wurde. Dies ist nützlich, um die böswillige Weiterleitung von Anfragen an unbeabsichtigte Empfänger zu verhindern, ein Schutz, der für einige Protokollbindungen erforderlich ist. Wenn sie vorhanden ist, MUSS der tatsächliche Empfänger überprüfen, ob der URI-Verweis den Ort angibt, an dem die Nachricht empfangen wurde. Ist dies nicht der Fall, MUSS die Anfrage verworfen werden. Einige Protokollbindungen erfordern möglicherweise die Verwendung dieses Attributs. |
-| ForceAuthn | Wenn das ForceAuthn-Attribut den Wert &quot;true&quot;aufweist, muss der Identitäts-Provider diese Identität neu festlegen, anstatt sich auf eine vorhandene Sitzung mit dem Prinzipal zu verlassen. |
-| ID | Eine Kennung für die Anfrage. Weitere Informationen finden Sie in Abschnitt 1.3.4 von [SAML core 2.0-os](http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf){target=_blank} . |
-| IsPassive | Ein boolescher Wert. Bei &quot;true&quot;dürfen der Identitäts-Provider und der Benutzeragent selbst NICHT die Benutzerschnittstelle vom Anfragenden aus sichtbar übernehmen und auf merkliche Weise mit dem Moderator interagieren. Wenn kein Wert angegeben wird, ist der Standardwert &quot;false&quot;. |
-| IssueInstant | Der Zeitpunkt des Problems der Antwort. Der Zeitwert wird in UTC kodiert, wie in Abschnitt 1.3.3 von [SAML core 2.0-os](http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf){target=_blank} beschrieben. |
-| ProtocolBinding | Ein URI-Verweis, der eine SAML-Protokollbindung angibt, die bei der Rückgabe der &lt;Antwort>-Nachricht verwendet werden soll. Weitere Informationen zu den für sie definierten Protokollbindungen und URI-Referenzen finden Sie unter [SAMLBind] . Standardwert: urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST |
+| AssertionConsumerServiceURL | Dies ist der Adobe-Endpunkt, der in nachfolgenden Antworten verwendet werden soll. Standardwert: **http://sp.auth.adobe.com/sp/saml/SAMLAssertionConsumer** |
+| Ziel | Eine URI-Referenz, die die Adresse angibt, an die diese Anfrage gesendet wurde. Dies ist nützlich, um die böswillige Weiterleitung von Anfragen an unbeabsichtigte Empfängerinnen und Empfänger zu verhindern, ein Schutz, der für einige Protokollbindungen erforderlich ist. Wenn sie vorhanden ist, MUSS der tatsächliche Empfänger überprüfen, ob die URI-Referenz den Ort identifiziert, an dem die Nachricht empfangen wurde. Ist dies nicht der Fall, MUSS die Anfrage verworfen werden. Einige Protokollbindungen erfordern möglicherweise die Verwendung dieses Attributs. |
+| Auth erzwingen | Das ForceAuth-Attribut, falls mit dem Wert „true“ vorhanden, verpflichtet den Identitätsanbieter, diese Identität neu einzurichten, anstatt sich auf eine vorhandene Sitzung zu verlassen, die er möglicherweise mit dem Prinzipal hat. |
+| ID | Eine Kennung für die Anfrage. Siehe [SAML core 2.0-os](http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf){target=_blank} Abschnitt 1.3.4 für Details. |
+| IsPassive | Ein boolescher Wert. Wenn „true“, DÜRFEN der Identitätsanbieter und der Benutzeragent selbst DIE BENUTZEROBERFLÄCHE NICHT SICHTBAR VOM ANFRAGENDEN ÜBERNEHMEN UND MIT DEM PRÄSENTATOR MERKLICH INTERAGIEREN. Wenn kein Wert angegeben wird, ist der Standardwert „false“. |
+| Problem-Instant | Der Zeitpunkt der Ausgabe der Antwort. Der Zeitwert wird in UTC codiert, wie in [SAML Core 2.0-os](http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf){target=_blank} Abschnitt 1.3.3 beschrieben. |
+| protocolBinding | Eine URI-Referenz, die eine SAML-Protokollbindung identifiziert, die beim Zurückgeben der Nachricht &lt;Response> verwendet werden soll. Weitere Informationen [ Protokollbindungen und URI]Verweise, die für sie definiert wurden, finden Sie unter „SAMLBind“. Standardwert : urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST |
 | Version | Die Version dieser Anfrage. |
-| saml:Issuer | Identifiziert die Entität, die die Antwortnachricht generiert hat. (Weitere Informationen zu diesem Element finden Sie unter SAML Core 2.0-os Abschnitt 2.2.5) |
-| ds:Signature | Eine XML-Signatur, die die Integrität des Ausstellers der Zusicherung schützt und authentifiziert, wie in Abschnitt 5 in SAML Core 2.0-os beschrieben. |
-| samlp:NameIDPolicy | Gibt Einschränkungen für die Namenskennung an, die zur Darstellung des angeforderten Betreffs verwendet werden soll. |
-| AllowCreate | Ein boolescher Wert, der angibt, ob der Identitäts-Provider im Zuge der Erfüllung der Anfrage eine neue Kennung erstellen darf, die den Prinzipal darstellt. Standard: true |
-| Format | Gibt den URI-Verweis an, der einem Namenskennungsformat entspricht Standard: urn:oasis:names:tc:SAML:2.0:nameid-format:transient Adobe empfiehlt: urn:oasis:names:tc:SAML:2.0:nameid-format:persistent |
-| SPNameQualifier | Gibt optional an, dass die Kennung des Assertionsbetreibers im Namespace eines anderen Dienstleisters als dem Anforderer zurückgegeben (oder erstellt) wird. Standard: http://saml.sp.adobe.adobe.com |
+| saml:Issuer | Identifiziert die Entität, die die Antwortnachricht generiert hat. (Weitere Informationen zu diesem Element finden Sie unter SAML core 2.0-os Abschnitt 2.2.5) |
+| ds:signature | Eine XML-Signatur, die die Integrität von schützt und den Aussteller der Assertion authentifiziert, wie in Abschnitt 5 in SAML core 2.0-os beschrieben |
+| sample:NameIDPolicy | Gibt Einschränkungen für die Namenskennung an, die zur Darstellung des angeforderten Subjekts verwendet werden soll. |
+| allowCreate | Ein boolescher Wert, der angibt, ob der Identitätsanbieter bei der Ausführung der Anfrage einen neuen Bezeichner für den Prinzipal erstellen darf. Standard: true |
+| Format | Gibt den URI-Verweis an, der einem Namenskennungsformat entspricht. Standard: urn:oasis:names:tc:SAML:2.0:nameid-format:transient Adobe empfiehlt: urn:oasis:names:tc:SAML:2.0:nameid-format:persistent |
+| SPNameQualifier | Gibt optional an, dass die Kennung des Assertionssubjekts im Namespace eines anderen Dienstleisters als dem Anforderer zurückgegeben (oder erstellt) werden soll. Standard : http://saml.sp.adobe.adobe.com |
 
 ## Die Authentifizierungsantwort {#authn-response}
 
-Nachdem der MVPD die Authentifizierungsanforderung empfangen und verarbeitet hat, muss er jetzt eine Authentifizierungsantwort senden.
+Nachdem MVPD die Authentifizierungsanfrage empfangen und verarbeitet hat, muss es jetzt eine Authentifizierungsantwort senden.
 
-**Beispiel-SAML-Authentifizierungsantwort**
+**Beispiel einer SAML-Authentifizierungsantwort**
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -168,7 +168,7 @@ Nachdem der MVPD die Authentifizierungsanforderung empfangen und verarbeitet hat
 ```
 
 
-Im obigen Beispiel erwartet das Adobe SP, die Benutzer-ID aus der Subject/NameId abzurufen. Das Adobe SP kann so konfiguriert werden, dass die Benutzer-ID von einem benutzerdefinierten Attribut abgerufen wird. Die Antwort sollte ein Element wie das folgende enthalten:
+Im obigen Beispiel erwartet der Adobe-SP, die Benutzer-ID aus dem Betreff/der Name-ID abzurufen. Der Adobe-SP kann so konfiguriert werden, dass die Benutzer-ID aus einem benutzerdefinierten Attribut abgerufen wird. Die Antwort sollte ein Element wie das folgende enthalten:
 
 ```XML
 <saml:AttributeStatement>
@@ -180,48 +180,48 @@ Im obigen Beispiel erwartet das Adobe SP, die Benutzer-ID aus der Subject/NameId
 </saml:AttributeStatement>
 ```
 
-**SAML-Authentifizierungsreaktionsdetails**
+**Details zur SAML-Authentifizierungsantwort**
 
-| samlp:Response | Von der Adobe Pass-Authentifizierung empfangene Antwort. |
+| sample:Response | Antwort von Adobe Pass-Authentifizierung empfangen. |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Ziel | Ein URI-Verweis, der die Adresse angibt, an die diese Anfrage gesendet wurde. Dies ist nützlich, um die böswillige Weiterleitung von Anfragen an unbeabsichtigte Empfänger zu verhindern, ein Schutz, der für einige Protokollbindungen erforderlich ist. Wenn sie vorhanden ist, MUSS der tatsächliche Empfänger überprüfen, ob der URI-Verweis den Ort angibt, an dem die Nachricht empfangen wurde. Ist dies nicht der Fall, MUSS die Anfrage verworfen werden. Einige Protokollbindungen erfordern möglicherweise die Verwendung dieses Attributs. |
-| ID | Eine Kennung für die Anfrage. Sie weist den Typ xs:ID auf und MUSS die in Abschnitt 1.3.4 von [SAML core 2.0-os](http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf){target=_blank} angegebenen Anforderungen erfüllen, um die Eindeutigkeit des Bezeichners zu gewährleisten. Die Werte des ID-Attributs in einer Anfrage und des InResponseTo-Attributs in der entsprechenden Antwort MÜSSEN übereinstimmen. |
-| InResponseTo | Die ID einer SAML-Protokollmeldung, anhand derer eine Testentität die Zusicherung darstellen kann. Der Wert muss mit dem Wert im ID-Attribut übereinstimmen, das in der Authentifizierungsanfrage gesendet wird. Siehe SAML Core 2.0-os . |
-| IssueInstant | Der Zeitpunkt, zu dem die Anfrage ausgestellt wurde. |
+| Ziel | Eine URI-Referenz, die die Adresse angibt, an die diese Anfrage gesendet wurde. Dies ist nützlich, um die böswillige Weiterleitung von Anfragen an unbeabsichtigte Empfängerinnen und Empfänger zu verhindern, ein Schutz, der für einige Protokollbindungen erforderlich ist. Wenn sie vorhanden ist, MUSS der tatsächliche Empfänger überprüfen, ob die URI-Referenz den Ort identifiziert, an dem die Nachricht empfangen wurde. Ist dies nicht der Fall, MUSS die Anfrage verworfen werden. Einige Protokollbindungen erfordern möglicherweise die Verwendung dieses Attributs. |
+| ID | Eine Kennung für die Anfrage. Sie weist den Typ xs:ID auf und MUSS die in Abschnitt 1.3.4 von [SAML core 2.0-os) angegebenen ](http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf){target=_blank} erfüllen, um die Eindeutigkeit der Kennung sicherzustellen. Die Werte des ID-Attributs in einer Anfrage und des InResponseTo-Attributs in der entsprechenden Antwort MÜSSEN übereinstimmen. |
+| Antwort an | Die ID einer SAML-Protokollmeldung, als Antwort auf die eine bescheinigende Entität die Bestätigung präsentieren kann. Der Wert muss mit dem Wert im ID-Attribut übereinstimmen, das in der Authentifizierungsanfrage gesendet wurde. Siehe SAML Core 2.0-os |
+| Problem-Instant | Der Zeitpunkt der Anfrage. |
 | Version | Die Version der Anfrage. |
-| saml:Issuer | Identifiziert die Entität, die die Anforderungsnachricht generiert hat. (Weitere Informationen zu diesem Element finden Sie in Abschnitt 2.2.5. SAML core 2.0-os ) |
-| samlp:status | Ein Code, der den Status der entsprechenden Anfrage darstellt. |
-| samlp:StatusCode | Ein Code, der den Status der auf die entsprechende Anfrage hin durchgeführten Aktivität darstellt. |
+| saml:Issuer | Identifiziert die Entität, die die Anforderungsnachricht generiert hat. (Weitere Informationen zu diesem Element siehe Abschnitt 2.2.5. SAML Core 2.0-os ) |
+| sample:Status | Ein Code, der den Status der entsprechenden Anfrage darstellt. |
+| sample:StatusCode | Ein Code, der den Status der als Reaktion auf die entsprechende Anfrage ausgeführten Aktivität darstellt. |
 | saml:Assertion | Dieser Typ gibt die grundlegenden Informationen an, die für alle Assertionen gelten. |
-| ID | Die Kennung für diese Assertion. |
-| Version | Die Version dieser Assertion. |
-| IssueInstant | Der Zeitpunkt, zu dem die Anfrage ausgestellt wurde. |
-| ds:Signature | Eine XML-Signatur, die die Integrität des Ausstellers der Zusicherung schützt und authentifiziert, wie in Abschnitt 5 in SAML Core 2.0-os beschrieben. |
-| ds:SignedInfo | Die Struktur von SignedInfo umfasst den Canonicalisierungsalgorithmus, einen Signaturalgorithmus und eine oder mehrere Verweise. Das Element SignedInfo kann ein optionales ID-Attribut enthalten, das es ermöglicht, von anderen Signaturen und Objekten darauf verwiesen zu werden. Siehe Syntax und Verarbeitung von XML-Signaturen . |
-| ds:CanonicalizationMethod | CanonicalizationMethod ist ein erforderliches Element, das den Canonicalisierungsalgorithmus angibt, der auf das SignedInfo -Element angewendet wird, bevor Signaturberechnungen durchgeführt werden. Siehe Syntax und Verarbeitung von XML-Signaturen . |
-| ds:SignatureMethod | SignatureMethod ist ein erforderliches Element, das den Algorithmus für die Erstellung und Validierung von Signaturen angibt. Dieser Algorithmus identifiziert alle kryptografischen Funktionen, die am Signaturvorgang beteiligt sind (z. B. Hashing, Algorithmen für öffentliche Schlüssel, MACs, Padding usw.) Siehe Syntax und Verarbeitung von XML-Signaturen . |
-| ds:Reference | Referenz ist ein Element, das ein oder mehrere Male auftreten kann. Sie gibt einen Digest-Algorithmus und einen Digest-Wert sowie optional eine Kennung des zu signierenden Objekts, den Typ des Objekts und/oder eine Liste von Transformationen an, die vor der Digest angewendet werden sollen. Siehe Syntax und Verarbeitung von XML-Signaturen . |
-| ds:Transforms | Das optionale Element Transformationen enthält eine geordnete Liste von Transformationselementen. Diese beschreiben, wie der Unterzeichner das verarbeitete Datenobjekt erhalten hat. Die Ausgabe jeder Transform dient als Eingabe für die nächste Transformation. Die Eingabe in die erste Transform ist das Ergebnis der Dereferenzierung des URI-Attributs des Referenz-Elements. Die Ausgabe aus der letzten Transform ist die Eingabe für den DigestMethod-Algorithmus. Siehe Syntax und Verarbeitung von XML-Signaturen . |
-| ds:DigestMethod | DigestMethod ist ein erforderliches Element, das den Digest-Algorithmus identifiziert, der auf das signierte Objekt angewendet werden soll. Siehe Syntax und Verarbeitung von XML-Signaturen . |
-| ds:DigestValue | DigestValue ist ein Element, das den kodierten Wert des Digest enthält. Der Digest wird immer mit base64 kodiert. Siehe Syntax und Verarbeitung von XML-Signaturen . |
-| ds:SignatureValue | Das Element SignatureValue enthält den tatsächlichen Wert der digitalen Signatur. Es wird immer mit base64 kodiert. Siehe Syntax und Verarbeitung von XML-Signaturen . |
-| ds:KeyInfo | KeyInfo ist ein optionales Element, mit dem der/die Empfänger den für die Validierung der Signatur erforderlichen Schlüssel abrufen kann. Siehe Syntax und Verarbeitung von XML-Signaturen . |
-| ds:X509Data | Ein X509Data -Element in KeyInfo enthält eine oder mehrere Kennungen von Schlüsseln oder X509-Zertifikaten. Siehe Syntax und Verarbeitung von XML-Signaturen . |
-| ds: X509Certificate | Das X509Certificate-Element, das ein base64-kodiertes [X509v3]-Zertifikat enthält |
+| ID | Die Kennung für diese Bestätigung. |
+| Version | Die Version dieser Bestätigung. |
+| Problem-Instant | Der Zeitpunkt der Anfrage. |
+| ds:signature | Eine XML-Signatur, die die Integrität von schützt und den Aussteller der Assertion authentifiziert, wie in Abschnitt 5 in SAML core 2.0-os beschrieben |
+| ds:SignedInfo | Die Struktur von SignedInfo umfasst den Kanonisierungsalgorithmus, einen Signaturalgorithmus und einen oder mehrere Verweise. Das SignedInfo-Element kann ein optionales ID-Attribut enthalten, mit dem es von anderen Signaturen und Objekten referenziert werden kann. Siehe Syntax und Verarbeitung von XML-Signaturen |
+| ds:CanonicalizationMethod | CanonicalizationMethod ist ein erforderliches Element, das den Kanonisierungsalgorithmus angibt, der auf das SignedInfo-Element vor der Durchführung von Signaturberechnungen angewendet wird. Siehe Syntax und Verarbeitung von XML-Signaturen |
+| ds:SignatureMethod | SignatureMethod ist ein erforderliches Element, das den für die Signaturgenerierung und -validierung verwendeten Algorithmus angibt. Dieser Algorithmus identifiziert alle kryptografischen Funktionen, die am Signaturvorgang beteiligt sind (z. B. Hashing, Algorithmen für öffentliche Schlüssel, MACs, Padding usw.) Siehe Syntax und Verarbeitung von XML-Signaturen |
+| ds:reference | Referenz ist ein Element, das ein- oder mehrmals auftreten kann. Er gibt einen Digest-Algorithmus und einen Digest-Wert an, optional eine Kennung des signierten Objekts, den Typ des Objekts und/oder eine Liste der Transformationen, die vor dem Digest angewendet werden sollen. Siehe Syntax und Verarbeitung von XML-Signaturen |
+| ds:transforms | Das optionale Transformationselement enthält eine geordnete Liste von Transformationselementen. Diese beschreiben, wie der Unterzeichner das verwertete Datenobjekt abgerufen hat. Die Ausgabe jeder Transformation dient als Eingabe für die nächste Transformation. Die Eingabe für die erste Transform ist das Ergebnis der Dereferenzierung des URI-Attributs des Referenzelements. Die Ausgabe der letzten Transformation ist die Eingabe für den DigestMethod-Algorithmus. Siehe Syntax und Verarbeitung von XML-Signaturen |
+| ds:DigestMethod | DigestMethod ist ein erforderliches Element, das den Digest-Algorithmus identifiziert, der auf das signierte Objekt angewendet werden soll. Siehe Syntax und Verarbeitung von XML-Signaturen |
+| ds:DigestValue | DigestValue ist ein Element, das den kodierten Wert des Digest enthält. Der Auszug wird immer mit base64 kodiert. Siehe Syntax und Verarbeitung von XML-Signaturen |
+| ds:signatureValue | Das SignatureValue-Element enthält den tatsächlichen Wert der digitalen Signatur. Es wird immer mit base64 codiert. Siehe Syntax und Verarbeitung von XML-Signaturen |
+| ds:KeyInfo | KeyInfo ist ein optionales Element, mit dem der/die Empfänger den Schlüssel erhalten kann/können, der zum Überprüfen der Signatur erforderlich ist. Siehe Syntax und Verarbeitung von XML-Signaturen |
+| ds:x509data | Ein X509Datenelement in KeyInfo enthält einen oder mehrere Kennungen von Schlüsseln oder X509-Zertifikaten. Siehe Syntax und Verarbeitung von XML-Signaturen |
+| ds: X509certificate | Das X509Certificate-Element, das ein base64-kodiertes [X509v3]-Zertifikat enthält |
 | saml:Subject | Der Betreff der Anweisung(en) in der Assertion. |
-| saml:NameID | Das Element &lt;NameID> hat den Typ NameIDType (siehe Abschnitt 2.2.2 in SAML Core 2.0-os) und wird in verschiedenen SAML-Assertionskonstrukten wie den Elementen &lt;Subject> und &lt;SubjectConfirmation> sowie in verschiedenen Protokollnachrichten verwendet. |
-| Format | Ein URI-Verweis, der die Classification der String-basierten Identifizierungsinformationen darstellt. |
-| SPNameQualifier | Qualifiziert außerdem einen Namen mit dem Namen eines Dienstleisters oder der Zugehörigkeit eines Anbieters. Dieses Attribut bietet eine zusätzliche Möglichkeit, Namen auf der Grundlage der vertrauenden Partei(en) zu verknüpfen. |
-| saml:SubjectConfirmation | Informationen, die die Bestätigung des Betreffs ermöglichen. Wenn mehr als eine Betreffbestätigung angegeben wird, reicht die Zufriedenheit eines Betreffs aus, um den Betreff zur Anwendung der Bestätigung zu bestätigen. |
-| saml:SubjectConfirmationData | Zusätzliche Bestätigungsinformationen, die von einer bestimmten Bestätigungsmethode verwendet werden. Der typische Inhalt dieses Elements kann beispielsweise ein <!--<ds:KeyInfo>--> -Element sein, wie in der XML-Signatursyntax- und Verarbeitungsspezifikation definiert |
-| NotOnOrAfter | Ein Zeitpunkt, zu dem das Thema nicht mehr bestätigt werden kann. |
-| Empfänger | Ein URI, der die Entität oder den Speicherort angibt, für die eine Testentität die Zusicherung darstellen kann. Beispielsweise kann dieses Attribut darauf hinweisen, dass die Zusicherung an einen bestimmten Netzwerkendpunkt gesendet werden muss, um zu verhindern, dass ein Vermittler sie an einen anderen Ort weiterleitet. |
-| saml:Conditions | Das Element &lt;Bedingung> dient als Erweiterungspunkt für neue Bedingungen. |
-| NotBefore | Das NotBefore -Attribut gibt den Zeitpunkt an, zu dem das Gültigkeitsintervall beginnt. |
-| saml:AudienceRestriction | Das Element &lt;AudienceRestriction> gibt an, dass die Zusicherung an eine oder mehrere spezifische Zielgruppen gerichtet ist, die durch &lt;Audience>-Elemente identifiziert werden. |
-| saml:Audience | Ein URI-Verweis, der eine gewünschte Zielgruppe angibt. |
-| saml:AuthnStatement | Eine Authentifizierungsanweisung. |
-| AuthnInstant | Gibt den Zeitpunkt an, zu dem die Authentifizierung durchgeführt wurde. |
-| SessionIndex | Gibt den Index einer bestimmten Sitzung zwischen dem vom Betreff identifizierten Prinzipal und der Authentifizierungsstelle an. |
-| saml:AuthnContext | Der Kontext, der von der Authentifizierungsstelle bis zum Authentifizierungs-Ereignis verwendet wird, einschließlich des Authentifizierungs-Ereignisses, das diese Anweisung liefert. |
-| saml:AuthnContextClassRef | Ein URI-Verweis, der eine Authentifizierungskontextklasse angibt, die die nachfolgende Authentifizierungskontextdeklaration beschreibt. |
+| saml:NameID | Das Element &lt;NameID> ist vom Typ NameIDType (siehe Abschnitt 2.2.2 in SAML core 2.0-os) und wird in verschiedenen SAML-Assertionskonstrukten wie den Elementen &lt;Subject> und &lt;SubjectConfirmation> sowie in verschiedenen Protokollmeldungen verwendet. |
+| Format | Eine URI-Referenz, die die Klassifizierung von zeichenfolgenbasierten Kennungsinformationen darstellt. |
+| SPNameQualifier | Qualifiziert einen Namen mit dem Namen eines Dienstleisters oder einer Zugehörigkeit von Dienstleistern weiter. Dieses Attribut bietet eine zusätzliche Möglichkeit, Namen auf der Grundlage der vertrauenden Seite oder der vertrauenden Parteien zu verbinden. |
+| saml:SubjectConfirmation | Informationen, die eine Bestätigung des Subjekts ermöglichen. Wird mehr als eine Bestätigung des Prüfungsteilnehmers gegeben, so genügt die Erfüllung einer der Bestätigungen, um den Prüfungsteilnehmer zum Zwecke der Anwendung der Bestätigung zu bestätigen. |
+| saml:SubjectConfirmationData | Zusätzliche Bestätigungsinformationen, die von einer bestimmten Bestätigungsmethode zu verwenden sind. Der typische Inhalt dieses Elements kann beispielsweise ein <!--<ds:KeyInfo>--> sein, wie in der XML-Signatursyntax und der Verarbeitungsspezifikation definiert |
+| NOT ON ODER AFTER | Ein Zeitpunkt, zu dem das Subjekt nicht mehr bestätigt werden kann. |
+| Empfängerin oder Empfänger | Ein URI, der die Entität oder den Speicherort angibt, an die bzw. dem eine bescheinigende Entität die Assertion präsentieren kann. Beispielsweise könnte dieses Attribut angeben, dass die Bestätigung an einen bestimmten Netzwerkendpunkt gesendet werden muss, um zu verhindern, dass ein Intermediär sie an einen anderen Ort umleitet. |
+| saml:conditions | Das Element &lt;condition> dient als Erweiterungspunkt für neue Bedingungen. |
+| Nicht vor | Das NotBefore-Attribut gibt den Zeitpunkt an, zu dem das Gültigkeitsintervall beginnt. |
+| saml:AudienceRestriction | Das Element &lt;AudienceRestriction> gibt an, dass die Assertion an eine oder mehrere bestimmte Zielgruppen gerichtet ist, die durch &lt;Audience>-Elemente identifiziert werden. |
+| saml:Audience | Eine URI-Referenz, die eine vorgesehene Zielgruppe identifiziert. |
+| saml:AuthAnweisung | Eine Authentifizierungsanweisung. |
+| AuthInstant | Gibt den Zeitpunkt an, zu dem die Authentifizierung stattgefunden hat. |
+| SessionIndex | Gibt den Index einer bestimmten Sitzung zwischen dem vom Subjekt identifizierten Prinzipal und der authentifizierenden Behörde an. |
+| saml:AuthContext | Der Kontext, der von der authentifizierenden Behörde bis einschließlich des Authentifizierungsereignisses verwendet wird, das zu dieser Anweisung geführt hat. |
+| saml:AuthContextClassRef | Ein URI-Verweis, der eine Authentifizierungskontextklasse identifiziert, die die folgende Authentifizierungskontextdeklaration beschreibt. |

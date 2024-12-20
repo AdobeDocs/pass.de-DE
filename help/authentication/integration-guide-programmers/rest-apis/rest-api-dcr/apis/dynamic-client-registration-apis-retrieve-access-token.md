@@ -13,11 +13,11 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 >[!IMPORTANT]
 >
-> Die Implementierung der Dynamic Client Registration API wird durch die Dokumentation zum [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) begrenzt.
+> Die Implementierung der dynamischen Client-Registrierungs-API ist an die Dokumentation [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) gebunden.
 
 ## Anfrage {#request}
 
@@ -28,46 +28,46 @@ ht-degree: 0%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">path</td>
+      <td style="background-color: #DEEBFF;">Pfad</td>
       <td>/o/client/token</td>
       <td></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">method</td>
+      <td style="background-color: #DEEBFF;">Methode</td>
       <td>POST</td>
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">Textparameter</th>
+      <th style="background-color: #EFF2F7;">Hauptteilparameter</th>
       <th style="background-color: #EFF2F7;"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">client_id</td>
       <td>
-            Die Client-Anwendungs-ID-Zeichenfolge.
+            Die Zeichenfolge der Client-Anwendungskennung.
             <br/><br/>
-            Weitere Informationen zum Abrufen der Client-ID-Zeichenfolge finden Sie in der API-Dokumentation zum <a href="dynamic-client-registration-apis-retrieve-client-credentials.md">Abrufen von Client-Anmeldeinformationen</a> .
+            Weitere Informationen zum Abrufen der Client-Kennungszeichenfolge finden Sie in der API<a href="dynamic-client-registration-apis-retrieve-client-credentials.md">Dokumentation zum Abrufen von Client</a>Anmeldeinformationen.
       </td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">client_secret</td>
       <td>
-            Die geheime Zeichenfolge der Clientanwendung.
+            Die geheime Zeichenfolge des Client-Programms.
             <br/><br/>
-            Weitere Informationen zum Abrufen der Client-geheimen Zeichenfolge finden Sie in der API-Dokumentation zum <a href="dynamic-client-registration-apis-retrieve-client-credentials.md">Abrufen von Client-Anmeldeinformationen</a> .
+            Weitere Informationen zum Abrufen der Client-Geheimnis-Zeichenfolge finden Sie in der API<a href="dynamic-client-registration-apis-retrieve-client-credentials.md">Dokumentation zum Abrufen von Client</a>Anmeldeinformationen.
       </td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">grant_type</td>
       <td>
-            Die Zeichenfolge vom Typ "grant"(z. B. "client_credentials"), die die Client-Anwendung für den Client-Token-Endpunkt verwenden kann.
+            Die Zeichenfolge vom Gewährungstyp (z. B. „client_credentials„), die die Client-Anwendung für den Client-Token-Endpunkt verwenden kann.
             <br/><br/>
-            Weitere Informationen zum Abrufen der Zeichenfolge vom Typ "grant"finden Sie in der API-Dokumentation zum <a href="dynamic-client-registration-apis-retrieve-client-credentials.md">Abrufen von Client-Anmeldeinformationen</a> .
+            Weitere Informationen zum Abrufen der Zeichenfolge vom Gewährungstyp finden Sie in der API<a href="dynamic-client-registration-apis-retrieve-client-credentials.md">Dokumentation zum Abrufen von Client</a>Anmeldeinformationen.
       </td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">Kopfzeilen</th>
@@ -75,44 +75,44 @@ ht-degree: 0%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Content-Type</td>
+      <td style="background-color: #DEEBFF;">content-type</td>
       <td>
          Der akzeptierte Medientyp für die gesendeten Ressourcen.
          <br/><br/>
-         Es muss application/x-www-form-urlencoded sein.
+         Es muss application/x-www-form-urlencoded lauten.
       </td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">X-Device-Info</td>
+      <td style="background-color: #DEEBFF;">x-device-info</td>
       <td>
-         Die Erstellung der Payload der Geräteinformationen wird in der Dokumentation <a href="../../rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> beschrieben.
+         Die Erzeugung der Payload mit Geräteinformationen wird in der Dokumentation <a href="../../rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> beschrieben.
          <br/><br/>
-         Es wird dringend empfohlen, sie immer zu verwenden, wenn die Geräteplattform der Anwendung die explizite Bereitstellung gültiger Werte zulässt.
+         Es wird dringend empfohlen, sie immer dann zu verwenden, wenn die Geräteplattform der Anwendung die explizite Bereitstellung gültiger Werte zulässt.
          <br/><br/>
-         Wenn dies bereitgestellt wird, führt das Adobe Pass-Authentifizierungs-Backend explizit Werte mit extrahierten Werten zusammen (standardmäßig).
+         Wenn angegeben, führt das Backend für die Adobe Pass-Authentifizierung explizit eingestellte Werte mit extrahierten Werten implizit zusammen (standardmäßig).
          <br/><br/>
-         Wenn kein Wert angegeben wird, verwendet das Backend für die Adobe Pass-Authentifizierung implizit extrahierte Werte (standardmäßig).
+         Wenn keine Angabe gemacht wird, verwendet das Backend für die Adobe Pass-Authentifizierung implizit die extrahierten Werte (standardmäßig).
       </td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Accept</td>
+      <td style="background-color: #DEEBFF;">Akzeptieren</td>
       <td>
-         Der Medientyp, der von der Clientanwendung akzeptiert wird.
+         Der von der Client-Anwendung akzeptierte Medientyp.
          <br/><br/>
          Wenn angegeben, muss es application/json sein.
       </td>
-      <td>optional</td>
+      <td>fakultativ</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">User-Agent</td>
-      <td>Der Benutzeragent der Clientanwendung.</td>
-      <td>optional</td>
+      <td style="background-color: #DEEBFF;">user-agent</td>
+      <td>Der Benutzeragent der Client-Anwendung.</td>
+      <td>fakultativ</td>
    </tr>
 </table>
 
-## Reaktion {#response}
+## Antwort {#response}
 
 ### Erfolg {#success}
 
@@ -125,15 +125,15 @@ ht-degree: 0%
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
       <td>201</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Content-Type</td>
+      <td style="background-color: #DEEBFF;">content-type</td>
       <td>application/json</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">body</th>
+      <th style="background-color: #EFF2F7;">Textkörper</th>
       <th style="background-color: #EFF2F7"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
@@ -148,33 +148,33 @@ ht-degree: 0%
                <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">id</td>
-               <td>Die undurchsichtige Kennung, die zur Verfolgung der Benutzeraktivität verwendet werden kann.</td>
-               <td><i>erforderlich</i></td>
+               <td style="background-color: #DEEBFF;">ID</td>
+               <td>Die opake Kennung, die zum Tracking von Benutzeraktivitäten verwendet werden kann.</td>
+               <td><i>required</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">access_token</td>
-               <td>Der Zugriffstoken-Wert, den die Client-Anwendung für die Autorisierungskopfzeile verwenden muss.</td>
-               <td><i>erforderlich</i></td>
+               <td>Der Wert des Zugriffstokens, den die Client-Anwendung für die Autorisierungs-Kopfzeile verwenden muss.</td>
+               <td><i>required</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">created_at</td>
-               <td>Der Zeitpunkt, zu dem das Zugriffstoken ausgestellt wurde.</td>
-               <td><i>erforderlich</i></td>
+               <td>Der Zeitpunkt, zu dem das Zugriffstoken ausgegeben wurde.</td>
+               <td><i>required</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">expires_in</td>
                <td>Die Zeit in Sekunden, bis das Zugriffstoken abläuft.</td>
-               <td><i>erforderlich</i></td>
+               <td><i>required</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">token_type</td>
-               <td>Der Tokentyp (z. B. "bearer").</td>
-               <td><i>erforderlich</i></td>
+               <td>Der Tokentyp (z. B. „Bearer„).</td>
+               <td><i>required</i></td>
             </tr>
          </table>
       </td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
 </table>
 
 ### Fehler {#error}
@@ -188,22 +188,22 @@ ht-degree: 0%
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
       <td>400</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Content-Type</td>
+      <td style="background-color: #DEEBFF;">content-type</td>
       <td>application/json</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">body</th>
+      <th style="background-color: #EFF2F7;">Textkörper</th>
       <th style="background-color: #EFF2F7;"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">error</td>
+      <td style="background-color: #DEEBFF;">Fehler</td>
       <td>
-        Mögliche Werte sind:
+        Die möglichen Werte sind:
         <table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">Wert</th>
@@ -211,34 +211,34 @@ ht-degree: 0%
                <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">invalid_request</td>
+               <td style="background-color: #DEEBFF;">Invalid_request</td>
                <td>
                     Die Anfrage ist aus einem der folgenden Gründe ungültig:
                     <ul>
-                        <li>Bei der Anfrage fehlt ein erforderlicher Parameter.</li>
-                        <li>Die Anfrage enthält einen nicht unterstützten Parameterwert (außer Grant-Typ).</li>
-                        <li>Die Anfrage wiederholt einen -Parameter.</li>
-                        <li>Die Anfrage umfasst mehrere Anmeldeinformationen.</li>
-                        <li>Die Anfrage nutzt mehr als einen Mechanismus zur Authentifizierung des Clients.</li>
+                        <li>In der Anfrage fehlt ein erforderlicher Parameter.</li>
+                        <li>Die Anfrage enthält einen nicht unterstützten Parameterwert (außer Gewährungstyp).</li>
+                        <li>Die Anfrage wiederholt einen Parameter.</li>
+                        <li>Die Anfrage enthält mehrere Anmeldeinformationen.</li>
+                        <li>Die Anfrage verwendet mehr als einen Mechanismus zur Authentifizierung des Clients.</li>
                         <li>Die Anfrage ist fehlerhaft.</li>
                     </ul>
                </td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">invalid_client</td>
-               <td>Die Client-Anmeldeinformationen sind ungültig. Der Client muss neue Client-Anmeldeinformationen abrufen und es erneut versuchen. Weitere Informationen finden Sie in der API-Dokumentation zum <a href="dynamic-client-registration-apis-retrieve-client-credentials.md">Abrufen von Client-Anmeldeinformationen</a> .</td>
+               <td>Die Client-Anmeldeinformationen sind ungültig. Der Client muss neue Client-Anmeldeinformationen abrufen und es erneut versuchen. Weitere Informationen finden Sie in der API<a href="dynamic-client-registration-apis-retrieve-client-credentials.md">Dokumentation zum Abrufen von </a>.</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">unauthorized_client</td>
-               <td>Der verwendete Grant-Typ ist ungültig.</td>
+               <td>Der verwendete Gewährungstyp ist ungültig.</td>
             </tr>
          </table>
       </td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
 </table>
 
-## Stichproben {#samples}
+## Beispiele {#samples}
 
 ### Zugriffstoken abrufen {#samples-retrieve-access-token}
 

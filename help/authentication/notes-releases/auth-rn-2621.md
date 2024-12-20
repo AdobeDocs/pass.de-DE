@@ -13,9 +13,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme in dieser Version beschrieben:
+Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme dieser Version beschrieben:
 
 ## Server-seitige und Web-Clients {#server-side-web-clients-2621}
 
@@ -25,8 +25,8 @@ Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme in di
 ### Build-Nummer {#build-number-2621}
 
 Adobe Pass-Authentifizierung: adobe-pass-**2.62.1**
-Releasedatum: **08/02/2022 - 08/04/2022**
+Veröffentlichungsdatum: **08/02/2022 - 08/04/2022**
 
 ### Neue Funktionen {#new-features-2621}
 
-Diese Version setzt die internen Architekturverbesserungen fort.
+Diese Version setzt die internen architektonischen Verbesserungen fort.

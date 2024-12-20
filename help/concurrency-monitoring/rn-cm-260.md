@@ -1,6 +1,6 @@
 ---
-title: Versionshinweise zur Überwachung der Parallelität mit Adobe Pass 2.6.0
-description: Versionshinweise zur Überwachung der Parallelität mit Adobe Pass 2.6.0
+title: Versionshinweise zur gleichzeitigen Überwachung von Adobe Pass 2.6.0
+description: Versionshinweise zur gleichzeitigen Überwachung von Adobe Pass 2.6.0
 exl-id: f24980e3-ffe8-4b5e-8adc-ae443baed40f
 source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
@@ -9,29 +9,29 @@ ht-degree: 0%
 
 ---
 
-# Versionshinweise zur Überwachung der Parallelität mit Adobe Pass 2.6.0 {#cm-260}
+# Versionshinweise zur gleichzeitigen Überwachung von Adobe Pass 2.6.0 {#cm-260}
 
 
-Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme in dieser Version beschrieben:
+Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme dieser Version beschrieben:
 
 
 
-## Releasedatum: 10.11.2016
+## Veröffentlichungsdatum: 11/10/2016
 
 
 
 ## Neue Funktionen
 
-Diese Version bietet die Möglichkeit, vorhandene Streams zu beenden, um den Start des aktuellen Streams zu ermöglichen (auch Abbruch-Stream genannt).
+Diese Version bietet die Möglichkeit, vorhandene Streams zu beenden, damit der aktuelle Stream gestartet werden kann (auch als Kill-Stream bezeichnet).
 
 
 
 **Remote-Terminierung**
 
-* Bei einer 409-Konfliktantwort enthält jede Sitzung, die im Feld &quot;Konflikte&quot;der Beratung aufgeführt ist, das Attribut &quot;termincode&quot;.
-* Der Benutzer kann mit der Liste der in Konflikt stehenden Sitzungen aufgefordert werden und die(n) zum Abbrechen auswählen können
-* Remote-Sitzungen können nur durch Übergabe eines Anfrage-Headers &quot;X-Terminate&quot;(mit den ausgewählten Terminierungscodes als Werten) innerhalb eines Sitzungsinit-Versuchs beendet werden.
-* Für die Antwort &quot;Vorbei 410 - Vorbei&quot;wurde ein neuer Typ von &quot;Beratung&quot;definiert, um die Sitzung anzugeben, bei der die aktuelle Sitzung beendet wurde.
+* Bei einer 409-Konflikt-Antwort trägt jede Sitzung, die im Feld „Konflikte“ des Ratschlags aufgeführt ist, das Attribut „terminationCode“.
+* Der/die Benutzende kann mit der Liste der widersprüchlichen Sitzungen aufgefordert werden und die zu löschenden auswählen
+* Remote-Sitzungen können nur beendet werden, indem ein X-Terminate-Anfrage-Header (mit den ausgewählten Terminations-Codes als Werte) innerhalb eines Sitzungsinitialisierungsversuchs übergeben wird.
+* Für die Antwort „410 Gone“ wurde ein neuer Typ von „Hinweis“ definiert, um anzugeben, welche Sitzung die aktuelle beendet hat.
 
 
 Weitere Informationen finden Sie in der aktualisierten Dokumentation .
@@ -40,14 +40,14 @@ Weitere Informationen finden Sie in der aktualisierten Dokumentation .
 
 >[!NOTE]
 >
->Die Sitzungsdefinition, die für die Auflistung aktiver Sitzungen verwendet wird, wurde aktualisiert und enthält nun den Anwendungsnamen und den Gerätenamen (anstelle der Anwendungs-ID).
+>Die Sitzungsdefinition, die für die Auflistung aktiver Sitzungen verwendet wird, wurde aktualisiert, um den Anwendungs- und Gerätenamen (anstelle der Anwendungs-ID) einzuschließen.
 
 
 
 
-## Fehlerkorrekturen {#bug-fixes}
+## Fehlerbehebungen {#bug-fixes}
 
-Duplizierte Header in der Serverantwort wurden entfernt (die Korrektur betrifft sowohl CORS-Header als auch Datum eins).
+Doppelte Kopfzeilen in der Server-Antwort wurden entfernt (die Fehlerbehebung betrifft sowohl CORS-Kopfzeilen als auch die Datumskopfzeile).
 
 
 

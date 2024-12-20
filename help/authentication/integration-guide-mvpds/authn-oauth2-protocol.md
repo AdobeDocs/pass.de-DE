@@ -13,61 +13,61 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 ## Übersicht {#overview}
 
-Obwohl SAML immer noch das Hauptprotokoll ist, das für die Authentifizierung von US-MVPDs und Unternehmen im Allgemeinen verwendet wird, gibt es einen klaren Trend zum Übergang zu OAuth 2.0 als Primärauthentifizierungsprotokoll. Das OAuth 2.0-Protokoll (https://tools.ietf.org/html/rfc6749) wurde hauptsächlich für Konsumentensites entwickelt und schnell von Internetgiganten wie Facebook, Google und Twitter übernommen.
+Obwohl SAML immer noch das Hauptprotokoll für die Authentifizierung von US-amerikanischen MVPDs und Unternehmen im Allgemeinen ist, gibt es einen klaren Trend hin zu OAuth 2.0 als primärem Authentifizierungsprotokoll. Das OAuth 2.0-Protokoll (https://tools.ietf.org/html/rfc6749) wurde hauptsächlich für Verbraucherwebsites entwickelt und schnell von Internetriesen wie Facebook, Google und Twitter übernommen.
 
-OAuth 2.0 ist äußerst erfolgreich, was Unternehmen dazu veranlasst hat, ihre Infrastruktur langsam zu modernisieren, um sie zu unterstützen.
-
-
-
-## Vorteile des Übergangs zu OAuth 2.0 {#adv-oauth2}
-
-Auf hoher Ebene bietet das OAuth 2.0-Protokoll die gleiche Funktionalität wie das SAML-Protokoll, aber es gibt einige wichtige Unterschiede.
-
-Einer davon ist, dass der Fluss des Aktualisierungs-Tokens als Möglichkeit verwendet werden kann, die Authentifizierung hinter den Kulissen zu aktualisieren. Dadurch kann der IdP (in diesem Fall die MVPDs) die Kontrolle behalten und gleichzeitig eine gute Benutzererfahrung ermöglichen, da der Benutzer sich aus Sicherheitsgründen nicht mehr oft anmelden muss.
-
-Das Protokoll bietet außerdem mehr Flexibilität in Bezug auf die Daten, die verfügbar gemacht werden, da ein Dienstleister jetzt die Token verwenden kann, um auf andere APIs zuzugreifen und zusätzliche Informationen zu erhalten. Dies führt wiederum zu einem &quot;chattier&quot;-Protokoll für TVE-Anwendungsfälle, ermöglicht jedoch die für komplexe Workflows erforderliche Flexibilität.
+OAuth 2.0 ist äußerst erfolgreich. Dies hat Unternehmen dazu veranlasst, ihre Infrastruktur langsam zu aktualisieren, um sie zu unterstützen.
 
 
 
+## Vorteile des Wechsels zu OAuth 2.0 {#adv-oauth2}
+
+Auf allgemeiner Ebene bietet das OAuth 2.0-Protokoll dieselben Funktionen wie das SAML-Protokoll, es gibt jedoch einige wichtige Unterschiede.
+
+Eine davon ist die Tatsache, dass der Fluss von Aktualisierungstoken als Möglichkeit verwendet werden kann, die Authentifizierung hinter den Kulissen zu aktualisieren. Dadurch kann der IdP (in diesem Fall die MVPDs) die Kontrolle behalten und gleichzeitig ein gutes Benutzererlebnis bieten, da sich der Benutzer aufgrund von Sicherheitsbedenken nicht mehr oft anmelden muss.
+
+Das Protokoll bietet außerdem mehr Flexibilität in Bezug auf die Daten, die verfügbar gemacht werden, da ein Dienstleister jetzt die Token verwenden kann, um auf andere APIs zuzugreifen und zusätzliche Informationen zu erhalten. Dies wiederum führt zu einem „Chattier“-Protokoll für TVE-Anwendungsfälle, ermöglicht jedoch die Flexibilität, die für komplexe Workflows erforderlich ist.
 
 
-## Anforderungen für den Wechsel zu OAuth 2.0 {#oauth-req}
 
-Um die Authentifizierung mit OAuth 2.0 zu unterstützen, muss ein MVPD die folgenden Voraussetzungen erfüllen:
 
-Zuallererst muss der MVPD sicherstellen, dass er den Fluss [Autorisierungscode Grant](https://oauthlib.readthedocs.io/en/latest/oauth2/grants/authcode.html) unterstützt.
 
-Nach Bestätigung, dass der Fluss unterstützt wird, muss uns der MVPD die folgenden Informationen zur Verfügung stellen:
+## Voraussetzungen für den Wechsel zu OAuth 2.0 {#oauth-req}
 
-* Authentifizierungsendpunkt
-   * Der Endpunkt stellt den Autorisierungscode bereit, der später im Austausch für das Aktualisierungs- und Zugriffstoken verwendet wird.
-* der /token-Endpunkt
-   * Dadurch werden das Aktualisierungs-Token und das Zugriffstoken bereitgestellt
-   * Das Aktualisierungs-Token muss stabil sein (es darf sich nicht bei jeder Anforderung eines neuen Zugriffstokens ändern
-   * MVPD muss für jedes Aktualisierungstoken mehrere aktive Zugriffstoken zulassen
-   * dieser Endpunkt tauscht auch ein Aktualisierungs-Token gegen ein Zugriffstoken
-* benötigen wir einen **Endpunkt für das Benutzerprofil**
-   * Dieser Endpunkt stellt die userID bereit, die für ein Konto eindeutig sein muss und keine personenbezogenen Informationen enthalten sollte.
-* den Endpunkt **/logout** (optional)
-   * Die Adobe Pass-Authentifizierung leitet zu diesem Endpunkt weiter, stellt dem MVPD einen Weiterleitungs-URI bereit. An diesem Endpunkt kann das MVPD die Cookies auf dem Clientcomputer löschen oder eine beliebige Logik für die Abmeldung anwenden.
-* Es wird dringend empfohlen, die Unterstützung autorisierter Clients zu nutzen (Client-Apps, die keine Benutzerautorisierungsseite Trigger haben)
-* Außerdem benötigen wir:
-   * **clientID** und **client secret** für die Integrationskonfigurationen
-   * **Time to Live** (TTL)-Werte für das Aktualisierungs-Token und das Zugriffstoken
-   * Wir können dem MVPD einen Autorisierungs-Callback- und Abmelde-Callback-URI bereitstellen. Bei Bedarf können wir MVPDs auch eine Liste von IPs zur Verfügung stellen, die in Ihren Firewall-Einstellungen auf die Whitelist gesetzt werden sollen.
+Um die Authentifizierung mit OAuth 2.0 zu unterstützen, muss eine MVPD die folgenden Voraussetzungen erfüllen:
+
+Zuallererst muss die MVPD sicherstellen, dass sie den [Authorization Code Grant](https://oauthlib.readthedocs.io/en/latest/oauth2/grants/authcode.html) unterstützt.
+
+Nachdem der MVPD bestätigt hat, dass er den Fluss unterstützt, muss er uns die folgenden Informationen zur Verfügung stellen:
+
+* Der Authentifizierungsendpunkt
+   * Der Endpunkt gibt den Autorisierungs-Code an, der später im Austausch für das Aktualisierungs- und Zugriffstoken verwendet wird
+* Der Endpunkt /token
+   * Dadurch werden das Aktualisierungstoken und das Zugriffstoken bereitgestellt
+   * Das Aktualisierungstoken muss stabil sein (es darf sich nicht jedes Mal ändern, wenn wir ein neues Zugriffstoken anfordern)
+   * Der MVPD muss für jedes Aktualisierungstoken mehrere aktive Zugriffstoken zulassen
+   * Dieser Endpunkt tauscht auch ein Aktualisierungs-Token gegen ein Zugriffs-Token aus
+* Wir benötigen einen **Endpunkt für „user-profile“**
+   * Dieser Endpunkt gibt die Benutzer-ID an, die für ein Konto eindeutig sein muss und keine persönlich identifizierbaren Informationen enthalten sollte
+* Der Endpunkt **/Logout** (optional)
+   * Die Adobe Pass-Authentifizierung leitet zu diesem Endpunkt um und stellt dem MVPD einen Redirect-Back-URI bereit. An diesem Endpunkt kann der MVPD die Cookies auf dem Client-Computer löschen oder eine beliebige Logik zum Abmelden anwenden
+* Es wird dringend empfohlen, Unterstützung für autorisierte Clients zu haben (Client-Apps, die keine Benutzerautorisierungsseite Trigger haben)
+* Wir benötigen außerdem:
+   * **clientID** und **client secret** für die Integrationskonfigurationen aus
+   * **Time to Live** (TTL)-Werte für das Aktualisierungs-Token und Zugriffs-Token
+   * Wir können der MVPD einen Autorisierungs-Callback und einen Abmelde-Callback-URI bereitstellen. Bei Bedarf können wir auch MVPDs mit einer Liste von IPs zur Verfügung stellen, die in Ihren Firewall-Einstellungen auf die Whitelist gesetzt werden.
 
 
 ## Authentifizierungsfluss {#authn-flow}
 
-Im Authentifizierungsfluss kommuniziert die Adobe Pass-Authentifizierung mit dem MVPD über das in der Konfiguration ausgewählte Protokoll. Der OAuth 2.0-Fluss ist im folgenden Bild dargestellt:
+Im Authentifizierungsfluss kommuniziert die Adobe Pass-Authentifizierung mit der MVPD über das in der Konfiguration ausgewählte Protokoll. Der OAuth 2.0-Fluss wird in der folgenden Abbildung dargestellt:
 
 
 
-![Diagramm zum Anzeigen des Authentifizierungsflusses bei der Adobe-Authentifizierung, die mit dem MVPD über das in der Konfiguration ausgewählte Protokoll kommuniziert.](../assets/authn-flow.png)
+![Diagramm zum Anzeigen des Authentifizierungsflusses in der Adobe-Authentifizierung, die mit der MVPD über das in der Konfiguration ausgewählte Protokoll kommuniziert.](../assets/authn-flow.png)
 
 **Abbildung 1: OAuth 2.0-Authentifizierungsfluss**
 
@@ -77,37 +77,37 @@ Im Authentifizierungsfluss kommuniziert die Adobe Pass-Authentifizierung mit dem
 
 Kurz gesagt, der Authentifizierungsfluss für MVPDs, die das OAuth 2.0-Protokoll unterstützen, folgt diesen Schritten:
 
-1. Der Endbenutzer navigiert zur Site des Programmierers und wählt aus, sich mit seinen MVPD-Anmeldeinformationen anzumelden
-1. Der auf der Seite des Programmierers installierte AccessEnabler sendet eine Authentifizierungsanforderung in Form einer HTTP-Anfrage an den Adobe Pass-Authentifizierungsendpunkt, den der Adobe Pass-Authentifizierungsendpunkt an den MVPD-Autorisierungsendpunkt weiterleitet.
+1. Der Endbenutzer navigiert zur Website des Programmierers und meldet sich mit seinen MVPD-Anmeldeinformationen an
+1. Der auf der Programmiererseite installierte AccessEnabler sendet eine Authentifizierungsanfrage in Form einer HTTP-Anfrage an den Adobe Pass-Authentifizierungsendpunkt, den der Adobe Pass-Authentifizierungsendpunkt an den MVPD-Autorisierungsendpunkt weiterleitet.
 1. Der MVPD-Autorisierungsendpunkt sendet einen Autorisierungscode an den Adobe Pass-Authentifizierungsendpunkt
-1. Die Adobe Pass-Authentifizierung verwendet den erhaltenen Autorisierungscode, um ein Aktualisierungs-Token und ein Zugriffstoken vom Token-Endpunkt des MVPD anzufordern.
-1. Ein Aufruf zum Abrufen von Benutzerinformationen und Metadaten kann an den Endpunkt des Benutzerprofils gesendet werden, falls die Benutzerinformationen nicht im Token enthalten sind
-1. Das Authentifizierungstoken wird an den Endbenutzer übergeben, der jetzt erfolgreich auf der Programmierer-Site surfen kann.
+1. Die Adobe Pass-Authentifizierung verwendet den empfangenen Autorisierungs-Code, um ein Aktualisierungstoken und ein Zugriffstoken vom Token-Endpunkt von MVPD anzufordern
+1. Ein Aufruf zum Abrufen von Benutzerinformationen und Metadaten kann an den Benutzerprofil-Endpunkt gesendet werden, falls die Benutzerinformationen nicht im Token enthalten sind
+1. Das Authentifizierungs-Token wird an den Endbenutzer übergeben, der jetzt erfolgreich die Programmierer-Site durchsuchen kann
 
    >[!NOTE]
    >
-   >Das Aktualisierungs-Token wird verwendet, um ein neues Zugriffstoken zu erhalten, nachdem das aktuelle Zugriffstoken ungültig wird oder abläuft.
+   >Das Aktualisierungs-Token wird verwendet, um ein neues Zugriffs-Token abzurufen, nachdem das aktuelle Zugriffs-Token ungültig wird oder abläuft.
 
 
 >[!IMPORTANT]
 >
->Das Aktualisierungs-Token darf sich nicht ändern, wenn es in ein Zugriffstoken getauscht wird.
+>Das Aktualisierungs-Token darf sich nicht ändern, wenn es gegen ein Zugriffs-Token eingetauscht wird.
 
-Diese Einschränkung beruht auf den Client-Flüssen, die es dem Server nicht erlauben, den AuthNToken zu aktualisieren, der für das OAuth 2.0-Protokoll auch das Aktualisierungstoken enthält.
+Diese Einschränkung resultiert aus Client-Flüssen, die es dem Server nicht erlauben, das AuthNToken zu aktualisieren, das für das OAuth 2.0-Protokoll auch das Aktualisierungstoken enthält.
 
-Ein typischer Autorisierungsfluss führt einen Austausch des im AuthNToken gespeicherten Aktualisierungstokens durch, um ein Zugriffstoken zu erhalten, das anschließend zum Ausführen des Autorisierungsaufrufs im Namen des Benutzers verwendet wird, der sich zuvor authentifiziert hat. Wenn der Autorisierungsserver (der MVPD) das Aktualisierungstoken ändern und das alte ungültig machen sollte, können wir das gültige AuthNToken nicht aktualisieren. Aus diesem Grund müssen MVPDs stabile Aktualisierungstoken unterstützen, um OAuth 2.0-Integrationen für sie einrichten zu können.
+Ein typischer Autorisierungsfluss führt einen Austausch des im AuthNToken gespeicherten Aktualisierungs-Tokens gegen ein Zugriffs-Token durch, das anschließend verwendet wird, um den Autorisierungsaufruf im Namen des Benutzers auszuführen, der ursprünglich authentifiziert wurde. Wenn der Autorisierungs-Server (die MVPD) das Aktualisierungs-Token ändern und das alte ungültig machen sollte, können wir das gültige AuthNToken nicht aktualisieren. Aus diesem Grund müssen MVPDs stabile Aktualisierungstoken unterstützen, um OAuth 2.0-Integrationen für sie einrichten zu können.
 
 
 ## Migration von SAML zu OAuth 2.0 {#saml-auth2-migr}
 
-Die Migration von Integrationen von SAML auf OAuth 2.0 wird von Adobe und dem MVPD durchgeführt. Es sind keine technischen Änderungen auf der Seite des Programmierers erforderlich, obwohl der Programmierer das Co-Branding auf der MVPD-Anmeldeseite überprüfen/testen möchte. Aus Sicht des MVPD sind die Endpunkte und andere Informationen erforderlich, die in Oauth 2.0-Anforderungen angefordert werden.
+Die Migration von Integrationen von SAML zu OAuth 2.0 erfolgt durch Adobe und MVPD. Auf der Seite des Programmierers sind keine technischen Änderungen erforderlich, obwohl der Programmierer das Co-Branding auf der Anmeldeseite von MVPD überprüfen/testen sollte. Aus Sicht von MVPD sind die Endpunkte und andere Informationen, die in OAuth 2.0-Anforderungen angefordert werden, erforderlich.
 
-Damit **SSO** beibehalten wird, werden Benutzer, die bereits über SAML ein Authentifizierungstoken erhalten haben, weiterhin als authentifiziert betrachtet und ihre Anforderungen werden über die alte SAML-Integration weitergeleitet.
+Um **SSO** beizubehalten, werden Benutzer, die bereits über ein über SAML erhaltenes Authentifizierungstoken verfügen, weiterhin als authentifiziert betrachtet und ihre Anfragen werden über die alte SAML-Integration weitergeleitet.
 
 Aus technischer Sicht:
 
-1. Adobe ermöglicht eine OAuth 2.0-Integration zwischen dem Programmierer und dem MVPD, OHNE die SAML-Integration zu löschen.
-1. Nach der Aktivierung verwenden alle neuen Benutzer die OAuth 2.0-Flüsse.
-1. Bereits authentifizierte Benutzer, die bereits über ein lokales AuthN-Token verfügen, das die SAML-Betreff-ID enthält, werden von Adobe automatisch über die SAML-Integration weitergeleitet.
-1. Für die Benutzer in Schritt 3 behandelt Adobe sie nach Ablauf des von SAML generierten AuthN-Tokens als neue Benutzer und verhält sich wie die Benutzer in Schritt 2.
-1. Adobe überprüft Nutzungsmuster, um festzustellen, wann die SAML-Integration sicher deaktiviert werden kann.
+1. Adobe ermöglicht eine OAuth 2.0-Integration zwischen dem Programmierer und MVPD, OHNE die SAML-Integration zu löschen.
+1. Nach der Aktivierung verwenden alle neuen Benutzer OAuth 2.0-Flüsse.
+1. Bereits authentifizierte Benutzer, die bereits über ein lokales AuthN-Token verfügen, das die SAML-Subjekt-ID enthält, werden automatisch von Adobe über die SAML-Integration weitergeleitet.
+1. Für Benutzende in Schritt 3 behandelt Adobe sie nach Ablauf ihres mit SAML generierten AuthN-Tokens als neue Benutzende und verhält sich wie die Benutzenden in Schritt 2.
+1. Adobe überprüft Nutzungsmuster, um den Zeitpunkt zu bestimmen, zu dem die SAML-Integration sicher deaktiviert werden kann.

@@ -1,6 +1,6 @@
 ---
-title: Datenschutzanfrage stellen
-description: Datenschutzanfrage stellen
+title: So stellen Sie eine Datenschutzanfrage
+description: So stellen Sie eine Datenschutzanfrage
 exl-id: abb21306-98d6-4899-914a-bdfa85cbd204
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -9,22 +9,22 @@ ht-degree: 0%
 
 ---
 
-# Datenschutzanfrage stellen {#howto-make-privacy-request}
+# So stellen Sie eine Datenschutzanfrage {#howto-make-privacy-request}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 ## Kennungen und Namespaces {#identifier-namespace}
 
 Beim Senden einer Zugriffs- oder Löschanfrage muss die Kundenanwendung die folgenden Kennungen enthalten:
 
-* **mvpdID** - Eindeutige Kennung des MVPD.
-* **userID** - Identifiziert eindeutig den Benutzer der App eines Programmierers, stammt jedoch aus dem MVPD. Weitere Informationen finden Sie unter Grundlegendes zu Benutzer-IDs in der Programmübersicht.
-* **IMSOrgID** - die Organisations-ID des Adobe Experience Cloud Identity Management-Dienstes, die den Kunden in der Adobe Experience Cloud eindeutig identifiziert
+* **mvpdID** - Eindeutige Kennung der MVPD.
+* **userID** - Identifiziert den Benutzer der App eines Programmierers eindeutig, stammt jedoch vom MVPD. Siehe Grundlegendes zu Benutzer-IDs in der Übersicht zu Programmierern .
+* **IMSOrgID** - die Organisations-ID des Adobe Experience Cloud Identity Management-Service, die den Kunden in der Adobe Experience Cloud eindeutig identifiziert
 
 
-Sehen Sie sich das folgende Muster an:
+Bitte das folgende Beispiel überprüfen:
 
 ```JSON
 "userIDs": [{
@@ -36,9 +36,9 @@ Sehen Sie sich das folgende Muster an:
 
 >[!IMPORTANT]
 >
->Benutzer müssen authentifiziert werden, damit sie Datenschutzanfragen für die Adobe Pass-Authentifizierung generieren können. Andernfalls müssen Programmierer andere Möglichkeiten finden, die MVPD-Benutzer-ID zu extrahieren.
+>Benutzerinnen und Benutzer müssen authentifiziert sein, um Datenschutzanfragen für die Adobe Pass-Authentifizierung generieren zu können. Andernfalls müssen Programmierer andere Möglichkeiten finden, die MVPD-Benutzer-ID zu extrahieren.
 
-## Anforderungstypen {#req-type}
+## Anfragetypen {#req-type}
 
 Die Adobe Pass-Authentifizierung unterstützt Zugriffs- und Löschanfragen.
 
@@ -46,13 +46,13 @@ Die Adobe Pass-Authentifizierung unterstützt Zugriffs- und Löschanfragen.
 
 Für eine Zugriffsanfrage:
 
-stellen wir eine JSON-Datei bereit, die eine Zusammenfassung der Gesamtanzahl der Authentifizierungs- und Autorisierungsanfragen enthält, die für diese betroffene Person erstellt wurden.
-alle diese Ereignisse werden nach Kunde gefiltert.
+Wir stellen eine JSON-Datei zurück, die eine Zusammenfassung der Gesamtzahl der für diese betroffene Person erstellten Authentifizierungs- und Autorisierungsanfragen enthält.
+Alle diese Ereignisse werden nach Kunde gefiltert.
 
 
-**Anforderungsbeispiel**
+**Beispiel anfordern**
 
-Sie müssen eine JSON-Datei mit den Adobe Pass-Authentifizierungskennungen hochladen, für die Sie die Datenzugriffsanfrage senden. In diesem Beispiel erfahren Sie, wie eine gut geformte JSON aussieht:
+Sie müssen eine JSON mit den Adobe Pass-Authentifizierungs-IDs hochladen, für die Sie die Datenzugriffsanfrage senden. Um zu sehen, wie ein wohlgeformtes JSON aussieht, sehen Sie sich dieses Beispiel an:
 
 ```JSON
 {
@@ -78,7 +78,7 @@ Sie müssen eine JSON-Datei mit den Adobe Pass-Authentifizierungskennungen hochl
 }
 ```
 
-**Antwort-Beispiel**
+**Beispiel für eine Antwort**
 
 ```JSON
 {
@@ -132,9 +132,9 @@ Sie müssen eine JSON-Datei mit den Adobe Pass-Authentifizierungskennungen hochl
 
 ### Löschen {#delete-req}
 
-Sie müssen eine JSON-Datei mit den Adobe Pass-Authentifizierungskennungen hochladen, für die Sie die Datenlöschanfrage senden. In diesem Beispiel erfahren Sie, wie eine gut geformte JSON aussieht:
+Sie müssen eine JSON mit den Adobe Pass-Authentifizierungs-IDs hochladen, für die Sie die Datenlöschanfrage senden. Um zu sehen, wie ein wohlgeformtes JSON aussieht, sehen Sie sich dieses Beispiel an:
 
-**Anforderungsbeispiel**
+**Beispiel anfordern**
 
 ```JSON
 {
@@ -160,12 +160,12 @@ Sie müssen eine JSON-Datei mit den Adobe Pass-Authentifizierungskennungen hochl
 }
 ```
 
-**Antwort-Beispiel**
+**Beispiel für eine Antwort**
 
 Für eine Löschanfrage:
 
-* Wir teilen nur eine Quittung, dass die Daten entfernt wurden, und keine aggregierte Datei mit allen entfernten Daten.
-* Der in der Antwort enthaltene Empfang enthält eine Zusammenfassung der Gesamtzahl der Authentifizierungs- und Autorisierungstoken, die für diese betroffene Person gefunden wurden.
+* Wir geben nur eine Quittung weiter, aus der hervorgeht, dass die Daten entfernt wurden, keine aggregierte Datei mit allen entfernten Daten.
+* die in der Antwort enthaltene Empfangsbestätigung eine Zusammenfassung der Gesamtzahl der für diese betroffene Person gefundenen Authentifizierungs- und Autorisierungs-Token enthält.
 
 ```JSON
 {
@@ -217,43 +217,43 @@ Für eine Löschanfrage:
 }
 ```
 
-## Trigger einer Anforderung {#trigger-req}
+## Trigger einer Anfrage {#trigger-req}
 
-Kunden haben zwei Möglichkeiten, Datenschutzanfragen an Adobe zu senden:
+Es gibt zwei Möglichkeiten für Kundinnen und Kunden, Datenschutzanfragen an Adobe zu senden:
 
-* **manuell** - durch Verwendung der [Privacy Service-Benutzeroberfläche](#privacy-service-ui)
-* **automatisch** - durch Verwendung der [Privacy Service-API](#privacy-service-api)
+* **manuell** - über die [Privacy Service-Benutzeroberfläche](#privacy-service-ui)
+* **automatisch** - mithilfe der [Privacy Service-API](#privacy-service-api)
 
-### Über die Privacy Service-Benutzeroberfläche {#privacy-service-ui}
+### Durch Verwendung der Privacy Service-Benutzeroberfläche {#privacy-service-ui}
 
-Ein [vollständiges Tutorial](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) zum Zugriff auf und zur Verwendung der Privacy Service-Benutzeroberfläche ist online über Adobe I/O-Services verfügbar. Darüber hinaus können Kunden über diesen Link auf die Bibliothek mit Videos und Artikeln zu Datenschutzbestimmungen zugreifen. Klicken Sie auf das Menü Adobe Experience Cloud und DSGVO . Dadurch werden eine Reihe von Videos geöffnet. In &quot;Anleitung zur DSGVO-Benutzeroberfläche&quot;wird erläutert, wie sie verwendet werden kann.
+Ein [vollständiges Tutorial](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) zum Zugriff auf und zur Verwendung der Privacy Service-Benutzeroberfläche ist online über Adobe I/O-Services verfügbar. Darüber hinaus können Kundinnen und Kunden diesen Link verwenden, um auf eine Bibliothek mit Videos und Artikeln zu Datenschutzbestimmungen zuzugreifen. Klicken Sie auf das Menü Adobe Experience Cloud und DSGVO . Dadurch werden eine Reihe von Videos geöffnet. Im Abschnitt „Anleitung zur DSGVO-Benutzeroberfläche“ wird erläutert, wie Sie sie verwenden.
 
-In der Benutzeroberfläche müssen Kunden ihre eigene IMSOrgID und eine JSON mit Details zu DSGVO-Anfragen für jedes Produkt laden.
+In der -Benutzeroberfläche müssen Kundinnen und Kunden ihre eigene IMSOrgID und eine JSON mit DSGVO-Anfragen für jedes Produkt laden.
 
 ### Durch Verwendung der Privacy Service-API {#privacy-service-api}
 
-Adobe Experience Platform Privacy Service bietet eine gemeinsame, zentralisierte Erleichterung von Zugriffs-/Löschanfragen und Opt-out-Anfragen für personenbezogene Daten.
+Adobe Experience Platform Privacy Service bietet eine gemeinsame, zentralisierte Vereinfachung von Zugriffs-/Löschanfragen und Opt-out-Kaufanfragen für private Daten.
 
-Die **Privacy Service API-Dokumentation** beschreibt ausführlich, wie ein Adobe-Kunde mit der Adobe-API integriert werden kann.
+In der **Privacy Service-API** Dokumentation wird ausführlich beschrieben, wie ein Adobe-Kunde die Integration mit der Adobe-API durchführen kann.
 
-**Visualisieren von API-Aufrufen mit Postman (einer kostenlosen Drittanbietersoftware):**
+**Visualisieren von API-Aufrufen mit Postman (einer kostenlosen Software von Drittanbietern):**
 
-* [Privacy Service-API Postman-Sammlung auf GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
-* [Videoleitfaden zum Erstellen der Postman-Umgebung](https://video.tv.adobe.com/v/28832)
+* [Privacy Service-API-Postman-Sammlung auf GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
+* [Videoanleitung zum Erstellen der Postman-Umgebung](https://video.tv.adobe.com/v/28832)
 * [Schritte zum Importieren von Umgebungen und Sammlungen in Postman](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
 
 **API-Pfade:**
 
-* PLATFORM Gateway URL: `https://platform.adobe.io/`
+* PLATFORM-Gateway-URL: `https://platform.adobe.io/`
 * Basispfad für diese API: `/data/core/privacy/jobs`
-* Beispiel eines vollständigen Pfads: `https://platform.adobe.io/data/core/privacy/jobs/ping`
+* Beispiel für einen vollständigen Pfad: `https://platform.adobe.io/data/core/privacy/jobs/ping`
 
 
 **Erforderliche Kopfzeilen:**
 
-* Alle Aufrufe erfordern die Header `Authorization`, `x-gw-ims-org-id` und `x-api-key`. Weitere Informationen zum Abrufen dieser Werte finden Sie im **Authentifizierungs-Tutorial**.
-* Alle Anfragen mit einer Payload im Anfragetext (wie POST-, PUT- und PATCH-Aufrufe) müssen die Kopfzeile `Content-Type` mit dem Wert `application/json` enthalten.
+* Für alle Aufrufe sind die Kopfzeilen `Authorization`, `x-gw-ims-org-id` und `x-api-key` erforderlich. Weitere Informationen zum Abrufen dieser Werte finden Sie im **Authentifizierungs-Tutorial**.
+* Alle Anfragen mit einer Payload im Anfragetext (z. B. POST-, PUT- und PATCH-Aufrufe) müssen die `Content-Type` mit dem Wert `application/json` enthalten.
 
 <!--
 

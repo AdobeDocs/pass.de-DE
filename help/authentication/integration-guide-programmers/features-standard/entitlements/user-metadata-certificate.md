@@ -13,25 +13,25 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Für die Integration von verschlüsselten Benutzermetadaten mit der Adobe Pass-Authentifizierung benötigen Sie ein privates/öffentliches Schlüsselpaar.
+Für die Integration der Adobe Pass-Authentifizierung mit verschlüsselten Benutzermetadaten benötigen Sie ein Schlüsselpaar aus privatem/öffentlichem Schlüssel.
 
-In diesem Dokument wird ein Prozess zum Generieren von Zertifikaten mit öffentlichem Schlüssel zur Verwendung in der Adobe Pass-Authentifizierung beschrieben. Der hier beschriebene Prozess nutzt das OpenSSL-Toolkit.
+In diesem Dokument wird ein Prozess zum Generieren von Zertifikaten mit öffentlichem Schlüssel für die Verwendung in der Adobe Pass-Authentifizierung beschrieben. Der hier beschriebene Prozess nutzt das OpenSSL Toolkit.
 
-## Schrittweise Anleitung zum Prozess der Zertifikatgenerierung (#generation)
+## Anleitung zur Zertifikatgenerierung (#generation)
 
 1. Laden Sie das OpenSSL-Toolkit herunter und installieren Sie es (http://www.openssl.org).
 
-1. Generieren einer Certificate Signing Request (CSR):
+1. Certificate Signing Request (CSR) generieren:
 
-   * Generieren Sie ein Schlüsselpaar.  Öffnen Sie ein Befehlsfenster/Terminal-Fenster und führen Sie den folgenden Befehl aus:
+   * Erzeugen Sie ein Schlüsselpaar.  Öffnen Sie ein Befehlsfenster / Terminal-Fenster und führen Sie den folgenden Befehl aus:
 
      ```bash
      openssl genrsa -des3 -out mycompany-license.key 2048
      ```
 
-   * Generieren Sie die CSR. Führen Sie in der Befehlszeile Folgendes aus:
+   * CSR generieren. Führen Sie in der Befehlszeile Folgendes aus:
 
      ```bash
      openssl req -new -key mycompany-license.key -out mycompany-license.csr -batch
@@ -55,13 +55,13 @@ In diesem Dokument wird ein Prozess zum Generieren von Zertifikaten mit öffentl
      -----END CERTIFICATE REQUEST-----
      ```
 
-1. Senden Sie die CSR an eine Zertifizierungsstelle (z. B. Verisign).
+1. Senden Sie die CSR an eine Zertifizierungsstelle (CA) (z. B. Verisign).
 
 1. Die Zertifizierungsstelle sendet Ihnen das Zertifikat im .p7b-Format (PKCS#7, Cryptographic Message Syntax Standard)
 
-1. Stellen Sie das .p7b-Zertifikat bereit. Konvertieren Sie die Datei PKCS#7 (.p7b) mithilfe Ihres privaten Schlüssels in eine PKCS#12-Datei (PFX-Datei, Personal Information Exchange Syntax Standard) und generieren Sie die PEM-Datei (verkettete Zertifikatcontainer-Datei):
+1. Stellen Sie das .p7b-Zertifikat bereit. Konvertieren Sie die PKCS#7-Datei (.p7b) mithilfe Ihres privaten Schlüssels in eine PKCS#12-Datei (PFX-Datei, Personal Information Exchange Syntax Standard) und generieren Sie die PEM-Datei (verkettete Zertifikatcontainerdatei):
 
-   * Konvertieren Sie die Datei PKCS#7 in eine temporäre PEM-Datei. Führen Sie in der Befehlszeile Folgendes aus:
+   * Konvertieren Sie die PKCS#7-Datei in eine temporäre PEM-Datei. Führen Sie in der Befehlszeile Folgendes aus:
 
      ```
      openssl pkcs7 -in mycompany-license.p7b -inform DER -out mycompany-license-temp.pem -outform PEM -print_certs
@@ -79,8 +79,8 @@ In diesem Dokument wird ein Prozess zum Generieren von Zertifikaten mit öffentl
      openssl x509 -in mycompany-license-temp.pem -inform PEM -out mycompany-license.pem -outform PEM
      ```
 
-1. Senden Sie die endgültige PEM-Datei an Adobe, damit sie konfiguriert werden kann.
+1. Senden Sie die endgültige PEM-Datei zur Konfiguration an Adobe.
 
-   * Die Person, die letztendlich die PEM-Datei erhalten muss, ist der Adobe-Aktivierungstechniker, der Ihrer Integration/Validierung zugewiesen ist. Wenn Sie nicht direkt mit dieser Person arbeiten, können Sie von Ihrem Adobe-Support-Mitarbeiter erfahren, an wen Sie die Datei senden können.
-   * Adobe unterstützt sowohl ein primäres als auch ein Backup-Zertifikat. Wenn Ihr primäres Zertifikat auf irgendeine Weise kompromittiert wird, können Sie es widerrufen und zum sekundären Zertifikat wechseln, um die Anforderungs-ID in Ihrer App zu signieren. Dadurch wird ein reibungsloser Übergang zwischen den Zertifikaten in der Produktion gewährleistet und die Auswirkungen auf die Kunden werden minimal sein.
-   * Sobald Adobe die PEM-Datei erhält, fügen Authentifizierungstechniker sie Ihrer Konfiguration serverseitig hinzu und bestätigen den Empfang der Datei.
+   * Die Person, die die PEM-Datei schließlich erhalten muss, ist der Adobe-Aktivierungstechniker, der Ihrer Integration/Validierung zugewiesen ist. Wenn Sie nicht direkt mit dieser Person arbeiten, können Sie über Ihren Adobe-Support-Mitarbeiter herausfinden, an wen Sie die Datei senden sollen.
+   * Adobe unterstützt sowohl ein Primärzertifikat als auch ein Sicherungszertifikat. Wenn Ihr Primärzertifikat in irgendeiner Weise kompromittiert wird, können Sie es widerrufen und zum sekundären Zertifikat wechseln, um die Anforderer-ID in Ihrer App zu signieren. Dies gewährleistet einen reibungslosen Übergang zwischen Zertifikaten in der Produktion bei minimaler Auswirkung auf den Kunden.
+   * Sobald Adobe die PEM-Datei erhält, fügt der Authentifizierungs-Engineer sie Server-seitig zu Ihrer Konfiguration hinzu und bestätigt den Empfang der Datei.

@@ -1,6 +1,6 @@
 ---
-title: Header - X-Device-Info
-description: REST API V2 - Header - X-Device-Info
+title: Kopfzeile - x-device-info
+description: REST API v2 - Kopfzeile - x-device-info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -9,15 +9,15 @@ ht-degree: 2%
 
 ---
 
-# Header - X-Device-Info {#header-x-device-info}
+# Kopfzeile - x-device-info {#header-x-device-info}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 ## Übersicht {#overview}
 
-Der Anforderungsheader <b>X-Device-Info</b> enthält die Client-Informationen (Gerät, Verbindung und Anwendung), die sich auf das eigentliche Streaming-Gerät beziehen.
+Der <b>X-Device-Info</b>-Anfrage-Header enthält die Client-Informationen (Gerät, Verbindung und Anwendung), die sich auf das eigentliche Streaming-Gerät beziehen.
 
 ## Syntax {#syntax}
 
@@ -27,7 +27,7 @@ Der Anforderungsheader <b>X-Device-Info</b> enthält die Client-Informationen (G
    </tr>
    <tr>
       <td>Kopfzeilentyp</td>
-      <td>Anforderungs-Header</td>
+      <td>Anfrage-Header</td>
    </tr>
    <tr>
       <td>Standard</td>
@@ -35,18 +35,18 @@ Der Anforderungsheader <b>X-Device-Info</b> enthält die Client-Informationen (G
    </tr>
 </table>
 
-## Richtlinien {#directives}
+## Anweisungen {#directives}
 
 <b>&lt;device_information></b>
 
-Der `Base64-encoded` -Wert des JSON-Elements, das mindestens die Attribute enthält, die für die folgende Tabelle als erforderlich markiert sind.
+Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, die in der folgenden Tabelle als erforderlich markiert sind.
 
 <table>
     <tr>
         <th style="background-color: #EFF2F7; width: 15%;">Präsenz</th>
         <th style="background-color: #EFF2F7; width: 15%;">Schlüssel</th>
         <th style="background-color: #EFF2F7;">Beschreibung</th>    
-        <th style="background-color: #EFF2F7; width: 15%;">Beschränkt</th>
+        <th style="background-color: #EFF2F7; width: 15%;">eingeschränkt</th>
         <th style="background-color: #EFF2F7;">Mögliche Werte</th>
     </tr>
     <tr>
@@ -55,39 +55,39 @@ Der `Base64-encoded` -Wert des JSON-Elements, das mindestens die Attribute enth�
         <td>Der primäre Hardwaretyp des Geräts.</td>
         <td>&amp;check;</td>
         <td>
-            Die Werte sind begrenzt:
+            Die Werte sind eingeschränkt:
             <ul>
                 <li>Kamera</li>
                 <li>DataCollectionTerminal</li>
                 <li>Desktop</li>
                 <li>EmbeddedNetworkModule</li>
-                <li>eReader</li>
-                <li>GamesConsole</li>
+                <li>Lesegerät</li>
+                <li>Spielekonsole</li>
                 <li>GeolocationTracker</li>
                 <li>Brille</li>
                 <li>MediaPlayer</li>
-                <li>MobilePhone</li>
-                <li>PaymentTerminal</li>
-                <li>PluginModem</li>
+                <li>Mobiltelefon</li>
+                <li>Zahlungsterminal</li>
+                <li>Plug-inModem</li>
                 <li>SetTopBox</li>
                 <li>TV</li>
-                <li>Tablette</li>
-                <li>WirelessHotspot</li>
-                <li>Wristwatch</li>
-                <li>unbekannt</li>
+                <li>Tablet</li>
+                <li>Wireless-Hotspot</li>
+                <li>Armbanduhr</li>
+                <li>Unbekannt</li>
             </ul>
         </td>
     </tr>
     <tr>
-        <td><i>erforderlich</i></td>
-        <td>model</td>
+        <td><i>required</i></td>
+        <td>Modell</td>
         <td>Der Modellname des Geräts.</td>
         <td></td>
         <td>z. B. iPhone, SM-G930V, AppleTV usw.</td>
     </tr>
     <tr>
-        <td><i>erforderlich</i></td>
-        <td>version</td>
+        <td><i>required</i></td>
+        <td>Version</td>
         <td>Die Version des Geräts.</td>
         <td></td>
         <td>z. B. 2.0.1 usw.</td>
@@ -95,24 +95,24 @@ Der `Base64-encoded` -Wert des JSON-Elements, das mindestens die Attribute enth�
     <tr>
         <td></td>
         <td>Hersteller</td>
-        <td>Das Herstellungsunternehmen/die Organisation des Geräts.</td>
+        <td>Die Produktionsfirma/-organisation des Geräts.</td>
         <td></td>
         <td>z. B. Samsung, LG, ZTE, Huawei, Motorola, Apple usw.</td>
     </tr>
     <tr>
         <td></td>
-        <td>Anbieter</td>
+        <td>Lieferant</td>
         <td>Die verkaufende Firma/Organisation des Geräts.</td>
         <td></td>
         <td>z. B. Apple, Samsung, LG, Google usw.</td>
     </tr>
     <tr>
-        <td><i>erforderlich</i></td>
+        <td><i>required</i></td>
         <td>osName</td>
-        <td>Der Betriebssystemname des Geräts.</td>
+        <td>Der Name des Betriebssystems (OS) des Geräts.</td>
         <td>&amp;check;</td>
         <td>
-            Die Werte sind begrenzt:
+            Die Werte sind eingeschränkt:
             <ul>
                 <li>Android</li>
                 <li>CHROME OS</li>
@@ -130,11 +130,11 @@ Der `Base64-encoded` -Wert des JSON-Elements, das mindestens die Attribute enth�
     </tr>
     <tr>
         <td></td>
-        <td>osFamily</td>
-        <td>Der Gruppenname des Betriebssystems (Betriebssystem) des Geräts.</td>
+        <td>Betriebssystemfamilie</td>
+        <td>Der Gruppenname des Betriebssystems (OS) des Geräts.</td>
         <td>&amp;check;</td>
         <td>
-            Die Werte sind begrenzt:
+            Die Werte sind eingeschränkt:
             <ul>
                 <li>Android</li>
                 <li>BSD</li>
@@ -153,11 +153,11 @@ Der `Base64-encoded` -Wert des JSON-Elements, das mindestens die Attribute enth�
     </tr>
     <tr>
         <td></td>
-        <td>osVendor</td>
-        <td>Der Betriebssystemanbieter des Geräts.</td>
+        <td>Betriebssystemanbieter</td>
+        <td>Der Anbieter des Betriebssystems (OS) des Geräts.</td>
         <td>&amp;check;</td>
         <td>
-            Die Werte sind begrenzt:
+            Die Werte sind eingeschränkt:
             <ul>
                 <li>Amazon</li>
                 <li>Apple</li>
@@ -175,9 +175,9 @@ Der `Base64-encoded` -Wert des JSON-Elements, das mindestens die Attribute enth�
         </td>
     </tr>
     <tr>
-        <td><i>erforderlich</i></td>
+        <td><i>required</i></td>
         <td>osVersion</td>
-        <td>Betriebssystemversion des Geräts.</td>
+        <td>Die Betriebssystemversion des Geräts.</td>
         <td></td>
         <td>z. B. 10.2, 9.0.1 usw.</td>
     </tr>
@@ -187,27 +187,27 @@ Der `Base64-encoded` -Wert des JSON-Elements, das mindestens die Attribute enth�
         <td>Der Name des Browsers.</td>
         <td>&amp;check;</td>
         <td>
-            Die Werte sind begrenzt:
+            Die Werte sind eingeschränkt:
             <ul>
                 <li>Android-Browser</li>
                 <li>Chrome</li>
                 <li>Edge</li>
                 <li>Firefox</li>
                 <li>Internet Explorer</li>
-                <li>Opera</li>
+                <li>Oper</li>
                 <li>Safari</li>
-                <li>SeaMonkey</li>
-                <li>Symbian-Browser</li>
+                <li>Salinenkrebs</li>
+                <li>Symbian Browser</li>
             </ul>
         </td>
     </tr>
     <tr>
         <td></td>
         <td>browserVendor</td>
-        <td>Das Bauunternehmen/die Organisation des Browsers.</td>
+        <td>Die Firma/Organisation, die den Browser erstellt.</td>
         <td>&amp;check;</td>
         <td>
-            Die Werte sind begrenzt:
+            Die Werte sind eingeschränkt:
             <ul>
                 <li>Amazon</li>
                 <li>Apple</li>
@@ -228,14 +228,14 @@ Der `Base64-encoded` -Wert des JSON-Elements, das mindestens die Attribute enth�
         <td>browserVersion</td>
         <td>Die Browser-Version des Geräts.</td>
         <td></td>
-        <td>Beispiel: 60.0.3112</td>
+        <td>z. B. 60.0.3112</td>
     </tr>
     <tr>
         <td></td>
         <td>userAgent</td>
         <td>Der Benutzeragent des Geräts.</td>
         <td></td>
-        <td>Beispiel: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, wie Gecko) Version/10.0.3 Safari/602.4.8</td>
+        <td>z. B. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, wie Gecko) Version/10.0.3 Safari/602.4.8</td>
     </tr>
     <tr>
         <td></td>
@@ -254,33 +254,33 @@ Der `Base64-encoded` -Wert des JSON-Elements, das mindestens die Attribute enth�
     <tr>
         <td></td>
         <td>displayPpi</td>
-        <td>Die physische Bildschirmpixeldichte des Geräts.</td>
+        <td>Die physische Pixeldichte des Bildschirms des Geräts.</td>
         <td></td>
         <td>Beispiel: 294</td>
     </tr>
     <tr>
         <td></td>
         <td>diagonalScreenSize</td>
-        <td>Die physische Bildschirmdiagonale des Geräts in Zoll.</td>
+        <td>Die Bildschirmdiagonale des Geräts in Zoll.</td>
         <td></td>
-        <td>Beispiel: 5.5, 10.1</td>
+        <td>z. B. 5.5, 10.1</td>
     </tr>
     <tr>
         <td></td>
-        <td>connectionIp</td>
-        <td>Die zum Senden von HTTP-Anfragen verwendete IP des Geräts.</td>
+        <td>connectionIP</td>
+        <td>Die IP des Geräts, die zum Senden von HTTP-Anfragen verwendet wird.</td>
         <td></td>
-        <td>Beispiel: 8.8.4.4</td>
+        <td>z. B. 8.8.4.4</td>
     </tr>
     <tr>
         <td></td>
         <td>connectionPort</td>
-        <td>Der Anschluss des Geräts, der zum Senden von HTTP-Anfragen verwendet wird.</td>
+        <td>Der Port des Geräts, der zum Senden von HTTP-Anfragen verwendet wird.</td>
         <td></td>
-        <td>Beispiel: 53124</td>
+        <td>z. B. 53124</td>
     </tr>
     <tr>
-        <td><i>erforderlich</i></td>
+        <td><i>required</i></td>
         <td>connectionType</td>
         <td>Der Netzwerkverbindungstyp.</td>
         <td></td>
@@ -292,10 +292,10 @@ Der `Base64-encoded` -Wert des JSON-Elements, das mindestens die Attribute enth�
         <td>Der Sicherheitsstatus der Netzwerkverbindung.</td>
         <td>&amp;check;</td>
         <td>
-            Die Werte sind begrenzt:
+            Die Werte sind eingeschränkt:
             <ul>
-                <li>true - im Falle eines sicheren Netzwerks</li>
-                <li>false - im Falle eines öffentlichen Hotspots</li>
+                <li>true - bei einem sicheren Netzwerk</li>
+                <li>false : Im Fall eines öffentlichen Hotspots</li>
             </ul>
         </td>
     </tr>
@@ -335,27 +335,27 @@ X-Device-Info: ewogICJwcmltYXJ5SGFyZHdhcmVUeXBlIiA6ICJNb2JpbGVQaG9uZSIsCiAgIm1vZ
 
 >[!IMPORTANT]
 > 
-> Die Code-Snippets und Dokumentationsressourcen werden zu Verweiszwecken bereitgestellt.
+> Die Code-Snippets und Dokumentationsressourcen werden zu Referenzierungszwecken bereitgestellt.
 > 
-> Die Codefragmente sind nicht vollständig und erfordern möglicherweise zusätzliche Änderungen, um in Ihrem Projekt zu funktionieren.
+> Die Codeausschnitte sind nicht vollständig und erfordern möglicherweise zusätzliche Änderungen, um in Ihrem Projekt zu funktionieren.
 >
-> Unabhängig von Ihrer eigentlichen Implementierung muss die Kopfzeile `X-Device-Info` einen Wert enthalten, der wie im Abschnitt [Direktiven](#directives) beschrieben formatiert ist.
+> Unabhängig von Ihrer tatsächlichen Implementierung muss die `X-Device-Info`-Kopfzeile einen Wert enthalten, der wie im Abschnitt [Anweisungen](#directives) beschrieben formatiert ist.
 
 ### Browser {#browsers}
 
-Bei Clientanwendungen, die in einem Browser ausgeführt werden, kann der Header `X-Device-Info` weggelassen werden, da der Browser automatisch einen minimalen Satz erforderlicher Informationen in der Kopfzeile `User-Agent` sendet.
+Bei Client-Anwendungen, die in einem Browser ausgeführt werden, kann die `X-Device-Info`-Kopfzeile weggelassen werden, da der Browser automatisch einen minimalen Satz der erforderlichen Informationen in der `User-Agent`-Kopfzeile sendet.
 
-Sie können die Kopfzeile `X-Device-Info` weiterhin verwenden, um zusätzliche Informationen über das Gerät, die Verbindung und die Anwendung bereitzustellen, falls Ihre Client-Anwendung eine Bibliothek oder einen Dienst integriert, die bzw. der einen Geräteidentifizierungsmechanismus bereitstellt.
+Sie können den `X-Device-Info`-Header weiterhin verwenden, um zusätzliche Informationen über das Gerät, die Verbindung und das Programm bereitzustellen, falls Ihre Client-Anwendung eine Bibliothek oder einen Service integriert, die bzw. der einen Mechanismus zur Geräteerkennung bereitstellt.
 
 ### Mobilgeräte {#mobile-devices}
 
 #### iOS und iPadOS {#ios-ipados}
 
-Um die Kopfzeile `X-Device-Info` für Geräte zu erstellen, auf denen [iOS oder iPadOS](https://developer.apple.com/documentation/ios-ipados-release-notes) ausgeführt wird, sehen Sie sich die folgenden Dokumente und den folgenden Codeausschnitt an:
+Um den `X-Device-Info`-Header für Geräte zu erstellen, auf denen [iOS oder iPadOS](https://developer.apple.com/documentation/ios-ipados-release-notes) ausgeführt wird, können Sie die folgenden Dokumente und das folgende Codefragment lesen:
 
 * Apple-Entwicklerdokumentation für [UIDevice](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice).
 * Apple-Entwicklerdokumentation für [Erreichbarkeit](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html).
-* Linux-Handbuch für [uname](https://man7.org/linux/man-pages/man2/uname.2.html).
+* Linux-Dokumentation für [uname](https://man7.org/linux/man-pages/man2/uname.2.html).
 
 ```C
 + (NSString *)computeClientInformation {        
@@ -423,20 +423,20 @@ Um die Kopfzeile `X-Device-Info` für Geräte zu erstellen, auf denen [iOS oder 
 }
 ```
 
-Die Geräteinformationen können wie folgt konstruiert werden:
+Die Geräteinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |---------------|------------------------|-----------------|
-| model | uname.machine | iPhone |
-| Anbieter | fest codiert | Apple |
-| Hersteller | fest codiert | Apple |
-| version | uname.machine | 8,1 |
+| Modell | uname.machine | iPhone |
+| Lieferant | hartcodiert | Apple |
+| Hersteller | hartcodiert | Apple |
+| Version | uname.machine | 8,1 |
 | displayWidth | UIScreen.mainScreen | 320 |
 | displayHeight | UIScreen.mainScreen | 568 |
 | osName | UIDevice.systemName | iOS |
 | osVersion | UIDevice.systemVersion | 10,2 |
 
-Die Verbindungsinformationen können wie folgt erstellt werden:
+Die Verbindungsinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |------------------|------------------------------------------|-----------------|
@@ -444,17 +444,17 @@ Die Verbindungsinformationen können wie folgt erstellt werden:
 | connectionSecure |                                          |                 |
 
 
-Die Anwendungsinformationen können wie folgt erstellt werden:
+Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |---------------|-----------|-----------------|
-| applicationId | fest codiert | REF 30 |
+| applicationId | hartcodiert | REF30 |
 
 #### Android {#android}
 
-Um die Kopfzeile `X-Device-Info` für Geräte zu erstellen, auf denen [Android](https://developer.android.com/about/versions) ausgeführt wird, verweisen Sie möglicherweise auf die folgenden Dokumente und das folgende Codefragment:
+Um den `X-Device-Info`-Header für Geräte zu erstellen, auf denen [Android](https://developer.android.com/about/versions) ausgeführt wird, können Sie die folgenden Dokumente und das folgende Codefragment lesen:
 
-* Android-Entwicklerdokumentation für die Klasse [Build](https://developer.android.com/reference/android/os/Build.html) .
+* Android-Entwicklerdokumentation für [Build](https://developer.android.com/reference/android/os/Build.html)-Klasse.
 
 ```JAVA
 private JSONObject computeClientInformation() {
@@ -529,41 +529,41 @@ private JSONObject computeClientInformation() {
 }
 ```
 
-Die Geräteinformationen können wie folgt konstruiert werden:
+Die Geräteinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |---------------|-----------------------------|-----------------|
-| model | Build.MODEL | GT-I9505 |
-| Anbieter | Build.BRAND | Samsung |
+| Modell | Build.MODEL | GT-I9505 |
+| Lieferant | Build.BRAND | Samsung |
 | Hersteller | Build.MANUFACTURER | Samsung |
-| version | Build.DEVICE | jflte |
+| Version | Build.DEVICE | Kehllappen |
 | displayWidth | DisplayMetrics.widthPixels | 600 |
 | displayHeight | DisplayMetrics.heightPixels | 800 |
-| osName | fest codiert | Android |
+| osName | hartcodiert | Android |
 | osVersion | Build.VERSION.RELEASE | 5,0,1 |
 
-Die Verbindungsinformationen können wie folgt erstellt werden:
+Die Verbindungsinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | connectionType | `<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>` `getSystemService(Context.CONNECTIVITY_SERVICE).getActiveNetworkInfo().getType()` | `"WIFI","BLUETOOTH","MOBILE","ETHERNET","VPN","DUMMY","MOBILE_DUN","WIMAX","notAccessible"` |
 | connectionSecure |                                                                                                                                                               |                                                                                             |
 
-Die Anwendungsinformationen können wie folgt erstellt werden:
+Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |---------------|-----------|-----------------|
-| applicationId | fest codiert | REF 30 |
+| applicationId | hartcodiert | REF30 |
 
-### TV-vernetzte Geräte {#tv-connected-devices}
+### TV-Geräte angeschlossen {#tv-connected-devices}
 
 #### tvOS {#tvos}
 
-Um die Kopfzeile `X-Device-Info` für Geräte zu erstellen, auf denen [tvOS](https://developer.apple.com/documentation/tvos-release-notes) ausgeführt wird, verweisen Sie möglicherweise auf die folgenden Dokumente und das folgende Codefragment:
+Um den `X-Device-Info`-Header für Geräte zu erstellen, auf denen [tvOS](https://developer.apple.com/documentation/tvos-release-notes) ausgeführt wird, lesen Sie die folgenden Dokumente und das folgende Codefragment:
 
 * Apple-Entwicklerdokumentation für [UIDevice](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice).
 * Apple-Entwicklerdokumentation für [Erreichbarkeit](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html).
-* Linux-Handbuch für [uname](https://man7.org/linux/man-pages/man2/uname.2.html).
+* Linux-Dokumentation für [uname](https://man7.org/linux/man-pages/man2/uname.2.html).
 
 ```C
 + (NSString *)computeClientInformation {        
@@ -631,93 +631,93 @@ Um die Kopfzeile `X-Device-Info` für Geräte zu erstellen, auf denen [tvOS](htt
 }
 ```
 
-Die Geräteinformationen können wie folgt konstruiert werden:
+Die Geräteinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |---------------|------------------------|-----------------|
-| model | uname.machine | AppleTV |
-| Anbieter | fest codiert | Apple |
-| Hersteller | fest codiert | Apple |
-| version | uname.machine | 8,1 |
+| Modell | uname.machine | AppleTV |
+| Lieferant | hartcodiert | Apple |
+| Hersteller | hartcodiert | Apple |
+| Version | uname.machine | 8,1 |
 | displayWidth | UIScreen.mainScreen | 1920 |
 | displayHeight | UIScreen.mainScreen | 1080 |
 | osName | UIDevice.systemName | tvOS |
 | osVersion | UIDevice.systemVersion | 10,2 |
 
-Die Verbindungsinformationen können wie folgt erstellt werden:
+Die Verbindungsinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |------------------|------------------------------------------|-----------------|
 | connectionType | [Erreichbarkeit currentReachabilityStatus] |                 |
 | connectionSecure |                                          |                 |
 
-Die Anwendungsinformationen können wie folgt erstellt werden:
+Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |---------------|-----------|-----------------|
-| applicationId | fest codiert | REF 30 |
+| applicationId | hartcodiert | REF30 |
 
-#### Fire OS {#fireos}
+#### Betriebssystem auslösen {#fireos}
 
-Um die Kopfzeile `X-Device-Info` für Geräte zu erstellen, auf denen [Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html) ausgeführt wird, lesen Sie die folgenden Dokumente:
+Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [ „Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html) ausgeführt wird, finden Sie in den folgenden Dokumenten:
 
-* Android-Entwicklerdokumentation für die Klasse [Build](https://developer.android.com/reference/android/os/Build.html) .
-* Amazon-Entwicklerdokumentation für [Identifizieren von Fire TV-Geräten](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html).
+* Android-Entwicklerdokumentation für [Build](https://developer.android.com/reference/android/os/Build.html)-Klasse.
+* Amazon-Entwicklerdokumentation für [Identifizieren von Fire-TV-](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html))
 
-Die Geräteinformationen können wie folgt konstruiert werden:
+Die Geräteinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |---------------|-----------------------------|-----------------|
-| model | Build.MODEL | AFTM |
-| Anbieter | Build.BRAND | Amazon |
+| Modell | Build.MODEL | AFTM |
+| Lieferant | Build.BRAND | Amazon |
 | Hersteller | Build.MANUFACTURER | Amazon |
-| version | Build.DEVICE | Montoya |
+| Version | Build.DEVICE | Montoya |
 | displayWidth | DisplayMetrics.widthPixels |                 |
 | displayHeight | DisplayMetrics.heightPixels |                 |
-| osName | fest codiert | Android |
+| osName | hartcodiert | Android |
 | osVersion | Build.VERSION.RELEASE | 5.1.1 |
 
-Die Verbindungsinformationen können wie folgt erstellt werden:
+Die Verbindungsinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |------------------|--------|-----------------|
 | connectionType |        |                 |
 | connectionSecure |        |                 |
 
-Die Anwendungsinformationen können wie folgt erstellt werden:
+Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |---------------|-----------|-----------------|
-| applicationId | fest codiert | REF 30 |
+| applicationId | hartcodiert | REF30 |
 
 #### Roku OS {#rokuos}
 
-Um die Kopfzeile `X-Device-Info` für Geräte zu erstellen, auf denen [Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md) ausgeführt wird, lesen Sie die folgenden Dokumente:
+Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [ (Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md) ausgeführt wird, finden Sie in den folgenden Dokumenten:
 
 * Roku-Entwicklerdokumentation für [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md).
 
-Die Geräteinformationen können wie folgt konstruiert werden:
+Die Geräteinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |---------------|--------------------------------------------|-----------------|
-| model | fest codiert | &quot;Roku&quot; |
-| Anbieter | ifDeviceInfo.GetModelDetails().VendorName | &quot;Sharp&quot;, &quot;Roku&quot; |
-| Hersteller | ifDeviceInfo.GetModelDetails().VendorName | &quot;Sharp&quot;, &quot;Roku&quot; |
-| version | ifDeviceInfo.GetModelDetails().ModelNumber | &quot;5303X&quot; |
+| Modell | hartcodiert | „Roku“ |
+| Lieferant | ifDeviceInfo.GetModelDetails().VendorName | „Scharf“, „Roku“ |
+| Hersteller | ifDeviceInfo.GetModelDetails().VendorName | „Scharf“, „Roku“ |
+| Version | ifDeviceInfo.GetModelDetails().ModelNumber | „5303X“ |
 | displayWidth | ifDeviceInfo.GetDisplaySize().w | 1920 |
 | displayHeight | ifDeviceInfo.GetDisplaySize().h | 1080 |
-| osName | fest codiert | &quot;Roku&quot; |
+| osName | hartcodiert | „Roku“ |
 | osVersion | ifDeviceInfo.getVersion() |                 |
 
-Die Verbindungsinformationen können wie folgt erstellt werden:
+Die Verbindungsinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |-------------------|------------------------------------|---------------------------------------|
-| connectionType | ifDeviceInfo.GetConnectionType() | &quot;WifiConnection&quot;, &quot;WiredConnection&quot; |
-| connectionSecure | fest codiert | true , wenn die Verbindung verkabelt ist |
+| connectionType | ifDeviceInfo.GetConnectionType() | „WifiConnection“, „WiredConnection“ |
+| connectionSecure | hartcodiert | Wahr, wenn die Verbindung verkabelt ist |
 
-Die Anwendungsinformationen können wie folgt erstellt werden:
+Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |---------------|-----------|-----------------|
-| applicationId | fest codiert | REF 30 |
+| applicationId | hartcodiert | REF30 |

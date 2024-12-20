@@ -1,6 +1,6 @@
 ---
 title: Änderungsprotokoll
-description: Erfahren Sie, wie ein Administrator die Konfigurationsänderungen im TVE-Dashboard überwachen kann.
+description: Wissen, wie ein Administrator die Konfigurationsänderungen im TVE-Dashboard überwachen kann.
 exl-id: 9b53a61b-679f-491e-90f3-5d827e21b32c
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -13,16 +13,16 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle -Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Nutzung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Im Abschnitt **Änderungsprotokoll** des TVE-Dashboards können Sie die Konfigurationsänderungen anzeigen, die über das TVE-Dashboard an die Adobe Pass-Authentifizierungsumgebung gesendet werden. Sie können auch zwei verschiedene Konfigurationsänderungen vergleichen.
+Im **Änderungsprotokoll** des TVE-Dashboards können Sie die Konfigurationsänderungen anzeigen, die über das TVE-Dashboard an die Adobe Pass-Authentifizierungsumgebung gesendet werden. Sie können auch zwei verschiedene Konfigurationsänderungen vergleichen.
 
-Auf der Registerkarte **Änderungsprotokoll** im linken Bereich wird eine Liste aller Konfigurationsänderungen angezeigt, die über ein bestimmtes Konto des TVE-Dashboards vorgenommen wurden. Diese Liste von Änderungen enthält die folgenden Details:
+Die **Änderungsprotokoll** im linken Bereich zeigt eine Liste aller Konfigurationsänderungen an, die über ein bestimmtes Konto des TVE-Dashboards vorgenommen wurden. Diese Liste der Änderungen enthält die folgenden Details:
 
-* **Beschreibung ändern**: Eine kurze Beschreibung des Umfangs der Konfigurationsänderung.
-* **Pushed by**: Eine E-Mail-ID des Benutzers, der für die Änderung verantwortlich ist.
-* **Push-Datum**: Das Datum der Konfigurationsänderung.
-* **Push status**: Gibt an, ob der Push-Vorgang erfolgreich, ausstehend oder fehlgeschlagen war.
+* **Änderungsbeschreibung**: Eine kurze Beschreibung des Umfangs der Konfigurationsänderung.
+* **Push von**: Eine E-Mail-ID des Benutzers, der für die Änderung verantwortlich ist.
+* **Push-**: Das Datum der Konfigurationsänderung.
+* **Push-Status**: Gibt an, ob der Push-Vorgang erfolgreich, ausstehend oder fehlgeschlagen war.
 
 ## Änderungen vergleichen {#compare-changes}
 
@@ -34,19 +34,19 @@ Gehen Sie wie folgt vor, um Änderungen zu vergleichen:
 
    *Konfigurationsänderungen vergleichen*
 
-1. Wählen Sie oben rechts im Bildschirm **Vergleichen** aus.
+1. Klicken **oben** auf „Vergleichen“.
 
-   Im Abschnitt **Konfigurationsänderungen** werden der Entitätstyp, die Entitäts-ID, die Eigenschaft und der Status des Änderungsvorgangs für jede Änderung angezeigt.
+   Im **Konfigurationsänderungen** werden der Entitätstyp, die Entitäts-ID, die Eigenschaft und der Status des Änderungsvorgangs für jede Änderung angezeigt.
 
 1. Bewegen Sie den Mauszeiger über die Konfigurationsänderung, die Sie anzeigen möchten.
 
-1. Wählen Sie **Ansicht** aus, um auf die geänderten Werte zuzugreifen.
+1. Klicken Sie **Anzeigen**, um auf die geänderten Werte zuzugreifen.
 
    ![Konfigurationsänderungen anzeigen](../assets/tve-dashboard/new-tve-dashboard/review/review-changes-view-button.png)
 
    *Konfigurationsänderungen anzeigen*
 
-Im Folgenden finden Sie ein Beispiel für eine Änderung, die in der ausgewählten Konfiguration vorgenommen wurde. Sie können den Unterschied zwischen den alten und neuen Werten innerhalb der Änderung anzeigen.
+Im Folgenden finden Sie ein Beispiel für eine Änderung, die an der ausgewählten Konfiguration vorgenommen wurde. Sie können den Unterschied zwischen den alten und neuen Werten innerhalb der Änderung anzeigen.
 
 ![Alter und neuer Wert](../assets/tve-dashboard/new-tve-dashboard/review/review-change-modal-view.png)
 

@@ -1,6 +1,6 @@
 ---
-title: Header - AD-Service-Token
-description: REST API V2 - Header - AD-Service-Token
+title: Kopfzeile - AD-Service-Token
+description: REST API v2 - Kopfzeile - AD-Service-Token
 exl-id: 856f76fc-cde6-4b3f-81f7-deaa0df015dc
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -9,19 +9,19 @@ ht-degree: 1%
 
 ---
 
-# Header - AD-Service-Token {#header-ad-service-token}
+# Kopfzeile - AD-Service-Token {#header-ad-service-token}
 
 >[!NOTE]
 >
-> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 ## Übersicht {#overview}
 
-Der Anforderungsheader <b>AD-Service-Token</b> enthält die eindeutige Benutzer-ID als `JWS`, die von einem Identitätsdienst erhalten wurde, der außerhalb von Adobe Pass-Authentifizierungssystemen ausgeführt wird.
+Der <b>AD-Service-Token</b>-Anforderungsheader enthält die eindeutige Benutzerkennung, die von einem Identity Service abgerufen `JWS`, der außerhalb von Adobe Pass-Authentifizierungssystemen ausgeführt wird.
 
-Diese Kopfzeile ist für die Verwendung in SSO-fähigen Flüssen (Single Sign-on) vorgesehen, die die Service Token-Methode nutzen.
+Dieser Header ist für die Verwendung in SSO-fähigen Flüssen (Single Sign-On) vorgesehen, die die Service-Token-Methode verwenden.
 
-Weitere Informationen zu den für die einmalige Anmeldung (SSO) aktivierten Flüssen, die die Service-Token-Methode nutzen, finden Sie in der Dokumentation [Single Sign-on mit Service-Token-Flüssen](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md) .
+Weitere Informationen zu den für Single Sign-on (SSO) aktivierten Flüssen, die die Service-Token-Methode verwenden, finden Sie in der Dokumentation [Single Sign-on using Service Token Flows](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
 
 ## Syntax {#syntax}
 
@@ -31,7 +31,7 @@ Weitere Informationen zu den für die einmalige Anmeldung (SSO) aktivierten Flü
    </tr>
    <tr>
       <td>Kopfzeilentyp</td>
-      <td>Anforderungs-Header</td>
+      <td>Anfrage-Header</td>
    </tr>
    <tr>
       <td>Standard</td>
@@ -39,13 +39,13 @@ Weitere Informationen zu den für die einmalige Anmeldung (SSO) aktivierten Flü
    </tr>
 </table>
 
-## Richtlinien {#directives}
+## Anweisungen {#directives}
 
 <b>unique_user_identifier</b>
 
-Die JSON-Websignatur (`JWS`), ein signiertes JSON-Web-Token (`JWT`) mit Informationen zur eindeutigen Benutzerkennung.
+Die JSON-Web-Signatur (`JWS`), ein signiertes JSON-Web-Token (`JWT`), das Informationen zur eindeutigen Benutzerkennung enthält.
 
-Der `JWT` weist die folgenden Attribute auf:
+Die `JWT` weist die folgenden Attribute auf:
 
 <table>
    <tr>
@@ -53,32 +53,32 @@ Der `JWT` weist die folgenden Attribute auf:
       <th style="background-color: #EFF2F7;">Beschreibung</th>
    </tr>
    <tr>
-      <td>is</td>
-      <td>Die eindeutige Kennung, die mit der Entität verknüpft ist, die der Anwendung einen externen Identitätsdienst anbietet, um Single Sign-on (SSO) zu erreichen.</td>
+      <td>ISS</td>
+      <td>Die eindeutige Kennung, die mit der Entität verknüpft ist, die der Anwendung einen externen Identity Service für Single Sign-on (SSO) anbietet.</td>
    </tr>
    <tr>
-      <td>sub</td>
-      <td>Die eindeutige Kennung für den Benutzer, die vom externen Identitätsdienst zurückgegeben wird.</td>
+      <td>Untergruppe</td>
+      <td>Die eindeutige Kennung für den Benutzer, die vom externen Identity Service zurückgegeben wird.</td>
    </tr>
    <tr>
-      <td>aud</td>
-      <td>Die Zielgruppe, die "Adobe"sein sollte.</td>
+      <td>Hilfsmittel</td>
+      <td>Die Zielgruppe, die "Adobe" lauten sollte.</td>
    </tr>
    <tr>
-      <td>iat</td>
-      <td>Die zum Zeitstempel für das aktuelle JWT herausgegeben.</td>
+      <td>IAT</td>
+      <td>Der zum Zeitstempel für das aktuelle JWT ausgestellte .</td>
    </tr>
    <tr>
-      <td>exp</td>
+      <td>Exp</td>
       <td>Der Ablaufzeitstempel für das aktuelle JWT.</td>
    </tr>
 </table>
 
-Der `JWT` muss mit dem `SHA256withRSA`-Algorithmus signiert werden.
+Die `JWT` muss mit `SHA256withRSA` Algorithmus signiert werden.
 
-Der `JWT` muss mit einem privaten Schlüssel signiert werden, der Teil eines privaten RSA-Schlüssels ist - eines öffentlichen Schlüssels, der vom externen Identitätsdienst verwaltet wird.
+Die `JWT` muss mit einem privaten Schlüssel signiert werden, der Teil eines Paares von privatem RSA-Schlüssel ist - einem öffentlichen Schlüssel, der vom externen Identity Service verwaltet wird.
 
-Der öffentliche Schlüssel dieses Paares muss an die Adobe Pass-Authentifizierung übergeben werden, um `JWT` Token erkennen zu können, die mit dem oben genannten privaten Schlüssel signiert wurden.
+Der öffentliche Schlüssel dieses Paares muss an die Adobe Pass-Authentifizierung übergeben werden, um `JWT` Token erkennen zu können, die mit dem oben genannten privaten Schlüssel signiert sind.
 
 ## Beispiele {#examples}
 

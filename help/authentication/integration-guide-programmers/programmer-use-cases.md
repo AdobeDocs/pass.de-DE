@@ -13,130 +13,130 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 ## Übersicht {#overview}
 
-In diesem Dokument werden die Anwendungsfälle für die Programmintegration zusammengefasst, die von der Adobe Pass-Authentifizierung unterstützt werden. Sie können diese Seite vor dem Beginn eines Integrationsprojekts überprüfen, um zu sehen, welche Funktionen derzeit unterstützt werden.
+In diesem Dokument werden die Anwendungsfälle der Programmierer-Integration zusammengefasst, die von der Adobe Pass-Authentifizierung unterstützt werden. Sie können diese Seite überprüfen, bevor Sie ein Integrationsprojekt starten, um zu sehen, welche Funktionen derzeit unterstützt werden.
 
 ## Anwendungsbeispiele {#use-cases}
 
 
-### Grundlegende Integration: Federated Authentication and Authorization für ein einzelnes Kanal-Netzwerk {#basic-integration}
+### Einfache Integration: Federated Authentication and Authorization for a Single Channel Network {#basic-integration}
 
 **Priorität** - Hoch
 
-**Aufschlüsselung** - TVE-App mit Einzelprogrammierermarke mit 1 Kanalnetzwerk, das innerhalb des Erlebnisses gehostet wird
+**Aufschlüsselung** - TVE-App mit einem Programmierer und gehostetem 1-Kanal-Netzwerk im Erlebnis
 
-Dadurch können Programmierer in ihrer eigenen TVE-App* Premium-Inhalte mit einer Federated-Berechtigungsprüfung an den MVPD anbieten. Die Anforderer-ID sollte an der Marke der Anwendung ausgerichtet werden, die den Inhalt für den Viewer bereitstellt. In diesem Szenario besteht eine 1:1-Beziehung zwischen der Adobe Pass-Authentifizierungsanfrage-ID und der Ressourcen-ID, die für die Berechtigung verifiziert wird.
+Dadurch können Programmierer Premium-Inhalte in ihrer eigenen markenspezifischen TVE-App* mit einer Federated-Berechtigungsprüfung für die MVPD anbieten. Die Anforderer-ID sollte so ausgerichtet sein, dass sie mit der Marke des Programms, das den Inhalt bereitstellt, zum Viewer übereinstimmt. In diesem Szenario besteht eine 1:1-Beziehung zwischen der Anforderer-ID der Adobe Pass-Authentifizierung und der Ressourcen-ID, die auf Berechtigung überprüft wird.
 
 >[!NOTE]
 >
->Die TVE-App wird in diesem Dokument verwendet, um kollektiv auf die verschiedenen Anwendungstypen (Web-Apps, mobile Apps usw.) zu verweisen, die von der Adobe Pass-Authentifizierung unterstützt werden. Die Spalte Plattformen unten kann Details zu unterstützten Plattformen für bestimmte Anwendungsfälle enthalten.
+>Die TVE-App wird in diesem Dokument verwendet, um kollektiv auf die verschiedenen Arten von Anwendungen (Web-Apps, Mobile Apps usw.) zu verweisen, die von der Adobe Pass-Authentifizierung unterstützt werden. Die nachstehende Spalte Plattformen enthält möglicherweise Details zu unterstützten Plattformen für bestimmte Anwendungsfälle.
 
 #### Spezifische Anwendungsfälle (häufig bei den meisten Integrationen) {#sp-use-cases-basic-int}
 
 | Priorität | Anwendungsfall | Beschreibung | Plattformen | MVPD-Hinweise |
 |:--------:|:-----------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------:|:-----------------------------------------:|
-| Hoch | MVPD Discovery von der Programmierer-TVE-App | Der Benutzer startet in der TVE-App des Programmierers und wird aufgefordert, seinen MVPD-Provider auszuwählen. | Web (SWF/JS)                    Mobil (iOS/Android)                   Clientlose API (für 2. Bildschirm) |                                           |
-| Hoch | Federated Authentication from the Programmer TVE App | Der Benutzer startet in der TVE-App des Programmierers und nach Auswahl seines MVPD-Anbieters wechselt der Benutzer zur eigenen Anmeldeseite des MVPD, um seine Anmeldeinformationen einzugeben. | Web (SWF/JS)                    Mobil (iOS/Android) |                                           |
-| Hoch | Autorisierung von der Programmierer-TVE-App | Nachdem der Benutzer authentifiziert wurde, kann die TVE-App des Programmierers Back-Channel-Autorisierungsanfragen an den MVPD senden, um die Berechtigung des Benutzers zu überprüfen. Normalerweise wird dabei nur geprüft, ob sich das Channel-Netzwerk im Benutzer-MVPD-Abonnement-Paket befindet.                                  In diesem Fall stimmen die Anforderer-ID und die Ressourcen-ID mit 1:1 überein. | Alle Plattformen |                                           |
-| Medium | Abmelden von der Programmierungs-TVE-App | Ermöglicht dem Benutzer das Abmelden und Löschen der Adobe Pass-Authentifizierungs-AuthN/AuthZ-Token. In vielen Fällen meldet dies auch den Benutzer aus dem MVPD ab. MVPDs variieren jedoch in der Frage, ob dies unterstützt wird. Es werden immer die Adobe Pass-Authentifizierungssitzung und Token gelöscht. | Alle Plattformen außer XBox Native | Mehrere MVPDs unterstützen dies nicht. |
-| Hoch | Single-Sign-On über Sites und Apps hinweg | Ermöglicht dem Benutzer, die Anmeldesitzung über Sites und Apps hinweg freizugeben, ohne sich erneut anmelden zu müssen. | Alle Plattformen außer ClientLess API | Erfordert mindestens SDK 1.7 für einige MVPDs. |
+| Hoch | MVPD Discovery vom Programmierer TVE App | Der Benutzer startet mit der markenspezifischen TVE-App des Programmierers und wird aufgefordert, seinen MVPD-Anbieter auszuwählen. | Web (SWF/JS)                    Mobile (iOS/Android)                   Client-lose API (für den 2. Bildschirm) |                                           |
+| Hoch | Federated Authentication From the Programmer TVE App | Der/die Benutzende startet in der gebrandeten TVE-App des/r Programmierenden und nach der Auswahl des/r MVPD-Anbieters/in wird zur MVPD-Anmeldeseite gewechselt, um seine/ihre Anmeldeinformationen einzugeben. | Web (SWF/JS)                    Mobile (iOS/Android) |                                           |
+| Hoch | Autorisierung durch Programmierer TVE App | Nachdem der Benutzer authentifiziert wurde, kann die TVE-App des Programmierers Backchannel-Autorisierungsanfragen an den MVPD senden, um die Berechtigung des Benutzers zu überprüfen. Normalerweise wird nur überprüft, ob das Kanalnetzwerk im MVPD-Abonnementpaket für Benutzer enthalten ist.                                  In diesem Fall stimmen die Anforderer-ID und die Ressourcen-ID 1:1 überein. | Alle Plattformen |                                           |
+| Medium | Abmelden von der Programmierer-TVE-App | Ermöglicht dem Benutzer das Abmelden und Löschen der Adobe Pass-Authentifizierungs-AuthN/AuthZ-Token. In vielen Fällen wird der Benutzer dadurch auch von der MVPD abgemeldet. MVPDs unterscheiden sich jedoch in der Frage, ob dies unterstützt wird. Die Adobe Pass-Authentifizierungssitzung und die Token werden immer gelöscht. | Alle Plattformen außer XBox Native | Mehrere MVPDs unterstützen dies nicht. |
+| Hoch | Single Sign-on für Sites und Apps | Ermöglicht es dem Benutzer, die Anmeldesitzung über Sites und Apps hinweg zu teilen, ohne sich erneut anmelden zu müssen. | Alle Plattformen außer der Client-losen API | Für einige MVPDs ist mindestens SDK 1.7 erforderlich. |
 
-### Einzelne TVE-App, die mehrere Kanalnetzwerke hostet {#single-app-multi-channel}
+### Einzelne TV-App, die mehrere Kanalnetze hostet {#single-app-multi-channel}
 
-**Priorität** - Hoch
+**PRIORITÄT** HOCH
 
-Ermöglicht dem Programmierer das Aggregieren mehrerer Inhaltskanäle auf demselben Markenziel für die Betrachter.
+Ermöglicht es dem Programmierer, mehrere Kanalnetze mit Inhalten für seine Betrachter im selben Markenziel zu aggregieren.
 
 #### Spezifische Anwendungsfälle {#sp-use-cases-singl-tve-app}
 
 | Priorität | Anwendungsfall | Beschreibung | Plattformen | MVPD-Hinweise |
 |--------|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Hoch | Unique Channel-Autorisierung | Der Benutzer kann Inhalte aus mehreren Kanalnetzwerken innerhalb derselben TVE-App ansehen. Der Programmierer kann Autorisierungsaufrufe durchführen, die für jedes Kanalnetzwerk spezifisch sind, um die Berechtigung des Benutzers zu bestätigen. | Alle Plattformen | Alle MVPDs unterstützen dies jetzt in irgendeiner Form. |
-| Niedrig | Preflight-Autorisierungsabfrage | Dadurch kann der Programmierer in einem einzelnen API-Aufruf überprüfen, welche Kanäle der Benutzer in seinem Paket hat. Dies geschieht vor tatsächlichen AuthZ-Aufrufen, um Inhalte aus der Benutzeroberfläche zu filtern, auf die der Benutzer keinen Zugriff hat. |               | Die meisten MVPDs stellen diese Daten noch nicht als Benutzerattribute zur Verfügung. Daher führt Adobe AuthZ-Aufrufe durch, um sie zu erhalten. Außerdem sind die meisten MVPDs auf jeweils fünf begrenzt, da sie nicht mehrere Kanäle in einem einzelnen Aufruf unterstützen.                             Es ist sehr wichtig zu überprüfen, wie viele Kanäle der Programmierer benötigt, um den Preflight-Check durchzuführen. Unabhängig von der Nummer müssen wir überprüfen, ob sie mit den MVPDs in Ordnung ist. Die meisten MVPDs unterstützen derzeit nicht mehr als 5 Kanäle (3. Quartal 2013). |
+| Hoch | Einzelkanalautorisierung | Der Benutzer kann Inhalte aus mehreren Kanalnetzwerken innerhalb derselben TV-App ansehen. Der Programmierer kann für jedes Kanalnetz spezifische Autorisierungsaufrufe ausführen, um die Berechtigung der Benutzer zu bestätigen. | Alle Plattformen | Alle MVPDs unterstützen dies nun in irgendeiner Form. |
+| niedrig | Autorisierungsabfrage vor einem Flug | Dadurch kann der Programmierer in einem einzigen API-Aufruf überprüfen, welche Kanäle der Benutzer im Paket hat. Dies geschieht vor den eigentlichen AuthZ-Aufrufen, um Inhalte aus der Benutzeroberfläche zu filtern, auf die der Benutzer keinen Zugriff hat. |               | Die meisten MVPDs machen diese Daten noch nicht als Benutzerattribute verfügbar, sodass Adobe tatsächlich AuthZ-Aufrufe durchführt, um sie zu erhalten. Außerdem sind die meisten MVPDs auf jeweils 5 beschränkt, da sie nicht mehrere Kanäle in einem einzigen Aufruf unterstützen.                             Es ist sehr wichtig zu überprüfen, wie viele Kanäle der Programmierer benötigt, um Preflight zu überprüfen. Unabhängig von der Nummer müssen wir überprüfen, ob es mit den MVPDs in Ordnung ist. Die meisten MVPDs unterstützen derzeit nicht mehr als 5 Kanäle (3. Quartal 2013). |
 
 ### Autorisierung auf Asset-Ebene {#asset-level-authz}
 
-**Priorität** - niedrig
+**Priorität** - Niedrig
 
-**Aufschlüsselung** - Weitergeben einer Asset-Kennung bei Genehmigungsanfrage
+**Aufschlüsselung** - Übergeben einer Asset-Kennung auf der Autorisierungsanfrage
 
 **Plattformen** - Alle Plattformen
 
 #### Spezifische Anwendungsfälle {#sp-use-cases-asset-lvl-authz}
 
-Ermöglicht dem MVPD, bei jedem AuthZ-Aufruf Analysen auf Asset-Ebene zu erhalten. Dies hat den Nachteil, dass der Adobe Pass Authentication AuthZ-Cache negiert wird.
+Ermöglicht MVPD, bei jedem AuthZ-Aufruf eine Analyse auf Asset-Ebene abzurufen. Dies hat den Nachteil, dass der AuthZ-Cache der Adobe Pass-Authentifizierung negiert wird.
 
 | Priorität | Anwendungsfall | Beschreibung | Plattformen | MVPD-Hinweise |
 |--------|-------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|-------------|--------------------------------------|
-| Niedrig | Weitergeben einer Asset-ID in einer Autorisierungsanforderung | Ermöglicht dem MVPD, bei jedem AuthZ-Aufruf Analysen auf Asset-Ebene zu erhalten.  Hat den Nachteil, dass der Adobe Pass Authentication AuthZ-Cache negiert wird. | Alle Plattformen | Nur ein MVPD unterstützt dies derzeit. |
+| niedrig | Übergeben einer Asset-Kennung auf Autorisierungsanfrage | Ermöglicht MVPD, bei jedem AuthZ-Aufruf eine Analyse auf Asset-Ebene abzurufen.  Dies hat den Nachteil, dass der AuthZ-Cache der Adobe Pass-Authentifizierung negiert wird. | Alle Plattformen | Dies wird derzeit nur von einer MVPD unterstützt. |
 
 
 
 
-### Elternkontrollen {#parental-controls}
+### Kindersicherung {#parental-controls}
 
-**Priorität** - niedrig
+**Priorität** - Niedrig
 
-Aktiviert die Anwendung von MVPD-Benutzerkontobeschränkungen auf die TVE-App des Programmierers.
+Ermöglicht die Anwendung von MVPD-Benutzerkontobeschränkungen auf die TVE-App des Programmierers.
 
 | Priorität | Anwendungsfall | Beschreibung | Plattformen | MVPD-Hinweise |
 |--------|-----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|-----------------------------------|
-| Niedrig | Filtern von Inhalten anhand von Benutzerattributen | Ermöglicht dem Programmierer, die zulässige Maximalbewertung für einen Benutzer zu überprüfen, bevor die Liste der verfügbaren Inhalte für den Benutzer gerendert wird. | Web (Flash/JS)                    Mobil (iOS/Android) | Funktioniert derzeit nur mit einem MVPD. |
-| Niedrig | Übergeben von Inhaltsbewertungen in der AuthZ-Anfrage | Ermöglicht es dem Programmierer, die spezifische Bewertung des Inhalts, den der Benutzer im Rahmen der AuthZ-Anfrage ansehen möchte, an den MVPD zu übergeben.                             Bezieht sich auf Nr. 3, da sich Bewertungen normalerweise auf der Asset-Ebene befinden. | Alle Plattformen | Funktioniert derzeit nur mit einem MVPD. |
+| niedrig | Filtern von Inhalt anhand von Benutzerattributen | Ermöglicht es dem Programmierer, die für einen Benutzer maximal zulässige Bewertung zu überprüfen, bevor er die Liste der verfügbaren Inhalte für den Benutzer rendert. | Web (Flash/JS)                    Mobile (iOS/Android) | Funktioniert derzeit nur mit einer MVPD. |
+| niedrig | Übergeben von Inhaltsbewertungen in der AuthZ-Anfrage | Ermöglicht es dem Programmierer, die spezifische Bewertung der Inhalte, die er im Rahmen der AuthZ-Anfrage ansehen möchte, an MVPD zu übergeben                             Mit #3 verbunden, da Ratings normalerweise auf Asset-Ebene erstellt werden. | Alle Plattformen | Funktioniert derzeit nur mit einer MVPD. |
 
-#### Anpassung der MVPD-Integration pro Programmierer-Marke {#mvpd-int-cust-prog-brand}
+#### Anpassung der MVPD-Integration nach Programmierermarke {#mvpd-int-cust-prog-brand}
 
 **Priorität** - Medium
 
-Aktiviert das benutzerdefinierte Erlebnis während AuthN oder für AuthZ-Fehlermeldungen.
+Aktiviert benutzerdefiniertes Erlebnis während der AuthZ oder für AuthZ-Fehlermeldungen.
 
 | Priorität | Anwendungsfall | Beschreibung | Plattformen | MVPD-Hinweise |
 |--------|------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|-----------------------------------------|
-| Medium | Übergeben Sie die Service Provider-ID in der AuthN-Anfrage. | Aktivieren Sie spezifisches Branding auf der für den Dienstleister spezifischen MVPD-Anmeldeseite. Aktivieren Sie außerdem die automatische Auswahl der Standardeinstellung, die der Zielgruppe wie Spanisch für Univision entspricht. | Alle Plattformen | Variiert nach MVPD. Einige unterstützen dies nicht. |
-| Medium | Benutzerdefinierte Fehlermeldungen bei AuthZ-Antwort | Aktiviert programmgesteuerte oder markenspezifische Fehlermeldungen aus dem MVPD, die eine bestimmte Nachricht für den Upsell mit einem Link enthalten können, der das Paket aktualisiert. | Web, Android, iOS | Variiert nach MVPD. Einige unterstützen dies nicht. |
+| Medium | Übergeben Sie die Kennung des Dienstleisters in der Authentifizierungsanfrage. | Aktivieren Sie das spezifische Branding auf der für den Dienstleister spezifischen MVPD-Anmeldeseite. Aktivieren Sie außerdem die automatische Auswahl der Standardeinstellung, die mit der Zielgruppe übereinstimmt, z. B. Spanisch für Univision . | Alle Plattformen | Variiert je nach MVPD. Einige unterstützen dies nicht. |
+| Medium | Benutzerdefinierte Fehlermeldungen in der AuthZ-Antwort | Aktiviert Programmierer- oder markenspezifische Fehlermeldungen von MVPD, die eine bestimmte Upsell-Nachricht mit einem Link enthalten können, der das Paket aktualisiert. | Web, Android, iOS | Variiert je nach MVPD. Einige unterstützen dies nicht. |
 
 
 ### Anwendungsfälle für verbundene Geräte {#connected-devices}
 
 | Priorität | Anwendungsfall | Beschreibung | Plattformen | MVPD-Hinweise |
 |--------|-------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Medium | XBox LiveID SSO über Apps und Konsolen hinweg | Ermöglicht dem Benutzer, die AuthN-Sitzung zwischen Apps und zwischen verschiedenen Spielkonsolen freizugeben, die mit seinem LiveID-Konto verknüpft sind. | Natives XBox-SDK | Die meisten MVPDs mögen dies nicht, da das typische Modell darin besteht, das Token an das Gerät zu binden - nicht an den Benutzer.                             Wir empfehlen diesen Ansatz nicht mehr, wenn möglich. |
-| Hoch | Verbundenes Gerät mit Token, die an die appID auf dem Gerät gebunden sind | Ermöglicht dem Programmierer, die MVPD-Berechtigung im Token an die appID auf dem Gerät zu binden, an das sie ausgegeben wurde. | Clientlose API | Dadurch wird das Connected Device enger an der standardmäßigen Implementierung für Token für die Übermittlung angepasst.                             Eine geräteweite ID muss weiterhin verbessert werden. |
+| Medium | XBox LiveID SSO in Apps und Konsolen | Ermöglicht es dem Benutzer, die AuthN-Sitzung zwischen Apps und zwischen verschiedenen Spielekonsolen zu teilen - verknüpft mit seinem LiveID-Konto. | Native XBox-SDK | Die meisten MVPDs mögen dies nicht, da das typische Modell darin besteht, das Token an das Gerät und nicht an den Benutzer zu binden.                             Wir empfehlen diesen Ansatz nicht mehr, wenn überhaupt möglich. |
+| Hoch | Verbundenes Gerät mit Token, die an die App-ID auf dem Gerät gebunden sind | Ermöglicht es dem Programmierer, die MVPD-Berechtigung im Token an die appID des Geräts zu binden, für das sie ausgegeben wurde. | Clientless-API | Dadurch wird das verbundene Gerät enger an der standardmäßigen Pass-Implementierung für Token ausgerichtet.                             Muss dennoch verbessert werden, um eine geräteweite ID zu sein. |
 
 ### Gerätespezifische AuthN-TTL-Länge {#authn-ttl-length}
 
-Aktivieren Sie die TVE-Berechtigung für Spezialereignisse, bei denen es sich möglicherweise nicht um Ressourcen handelt, die sich in der MVPD-Berechtigungsdatenbank wie normale Kanäle befinden.
+Aktivieren Sie die TVE-Berechtigung für besondere Ereignisse, bei denen es sich möglicherweise nicht um Ressourcen handelt, die sich wie normale Kanäle in der MVPD-Berechtigungsdatenbank befinden.
 
 | Priorität | Anwendungsfall | Beschreibung | Plattformen | MVPD-Hinweise |
 |--------|------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|--------------------------------------------------------------------------------------------------------------------------|
-| Hoch | Festlegen verschiedener TTL-Werte pro Plattform | Ermöglicht es dem Programmierer, eine andere TTL-Länge für Web-, Mobile- und vernetzte Geräte festzulegen. Derzeit unterstützt die Adobe Pass-Authentifizierung die Möglichkeit, drei separate TTL-Werte zu verwenden:                                Web (Flash)                    Mobil/HTML5                    Clientless - Connected Devices |           | Einige MVPDs legen die TTL dynamisch fest. Adobe kann diese dynamischen Einstellungen bei Bedarf mithilfe der Konfigurationseinstellungen überschreiben. |
+| Hoch | Festlegen verschiedener TTL-Werte pro Plattform | Ermöglicht es dem Programmierer, eine andere TTL-Länge für Web-, mobile und verbundene Geräte festzulegen. Derzeit unterstützt die Adobe Pass-Authentifizierung die Möglichkeit von drei separaten TTL-Werten:                                Web (Flash)                    Mobil/HTML5                    Clientlos - verbundene Geräte |           | Einige MVPDs legen die TTL dynamisch fest. Adobe kann diese dynamischen Einstellungen bei Bedarf mithilfe der Konfigurationseinstellungen überschreiben. |
 
 ### Spezielle ereignisbasierte Anwendungen {#special-event}
 
-**Priorität** - niedrig
+**Priorität** - Niedrig
 
-Aktivieren Sie die TVE-Berechtigung für Spezialereignisse, bei denen es sich möglicherweise nicht um Ressourcen handelt, die sich in der MVPD-Berechtigungsdatenbank wie normale Kanäle befinden.
+Aktivieren Sie die TVE-Berechtigung für besondere Ereignisse, bei denen es sich möglicherweise nicht um Ressourcen handelt, die sich wie normale Kanäle in der MVPD-Berechtigungsdatenbank befinden.
 
 | Priorität | Anwendungsfall | Beschreibung | Plattformen | MVPD-Hinweise |
 |--------|---------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|------------------------------------------|
-| Niedrig | Mehrere Kanäle als Proxy für ein Ereignis | Dies geschah für die Olympischen Spiele, bei denen der Abonnent zwei verschiedene Kanäle in seinem Paket brauchte, um Zugang zu erhalten. In diesem Fall erstellte die Adobe Pass-Authentifizierung eine neue resourceID und ließ alle MVPDs die Zuordnung zu den spezifischen Kanälen auf ihrem Ende durchführen.  Das funktionierte gut mit genügend fortgeschrittenem Hinweis. Dies war wichtig, da die meisten MVPDs nicht mehrere Ressourcenaufrufe unterstützen. | Alle Plattformen | Unterstützt von allen MVPDs mit entsprechender Benachrichtigung. |
-| Niedrig | Spezielle Anwendung für neue Ereignisse unter Verwendung vorhandener Kanalressourcen | Das wurde für den Madness-Märchen gemacht. Der Inhaltsanbieter hat eine neue App mit einer neuen Anforderer-ID erstellt. Alle MVPDs, die benötigt werden, um Unterstützung für die neue requestorID in ihrem System hinzuzufügen. Die resourceIDs waren normale Kanäle.  Einige MVPDs mussten die Kanäle auch unter der neuen Anfrage als gültig zuordnen, sodass für diese Fälle mehr Zeit benötigt wurde. | Alle Plattformen | Unterstützt von allen MVPDs mit entsprechender Benachrichtigung. |
-| Niedrig | Vorhandene requestorID, resourceID | Dies wurde für das Masters Golf Wochenende Turnier getan. Es war nur ein kleines Ereignis für ein paar Tage, und die Master hatten ihre eigene mobile App, die den Inhalt anzeigte. Der Programmierer plante, für den Adobe Pass-Authentifizierungs-Traffic zu bezahlen und nutzte einfach seine standardmäßige requestorID und resourceID. Der einzige Trick war, dass der Programmierer ein mobiles Cert für die Signierung von requestorID mit den Masters teilen ließ, und dass dies zu ihrer Konfiguration als Backup-Cert für dieses Wochenende hinzugefügt wurde. | Alle Plattformen | Keine Auswirkungen für MVPDs |
+| niedrig | Mehrere Kanäle als Proxy für ein Ereignis | Dies geschah bei den Olympischen Spielen, wo die Teilnehmer zwei verschiedene Kanäle in ihrem Paket brauchten, um Zugang zu haben. In diesem Fall hat die Adobe Pass-Authentifizierung eine neue resourceID erstellt und alle MVPDs die Zuordnung zu den spezifischen Kanälen auf ihrer Seite durchführen lassen.  Das funktionierte gut und rechtzeitig. Dies war wichtig, da die meisten MVPDs mehrere Ressourcenaufrufe nicht unterstützen. | Alle Plattformen | Unterstützt von allen MVPDs mit der richtigen Ankündigung. |
+| niedrig | Spezielle neue Ereignisanwendung unter Verwendung vorhandener Kanalressourcen | Das war für den März-Wahnsinn. Der Content Provider hat eine neue App mit einer neuen RequestorID erstellt. Alle MVPDs müssen Unterstützung für die neue RequestorID in ihrem System hinzufügen. Die Ressourcen-IDs waren normale Kanäle.  Einige MVPDs mussten auch die Kanäle unter dem neuen Antragsteller als gültig zuordnen, sodass für diese Fälle mehr Zeit benötigt wurde. | Alle Plattformen | Unterstützt von allen MVPDs mit der richtigen Ankündigung. |
+| niedrig | Vorhandene RequestorID, resourceID | Dies geschah für das Masters Golf Wochenendturnier. Es war nur ein kleines Ereignis für ein paar Tage, und die Meister hatten ihre eigene mobile App, die in Ordnung war, um den Inhalt anzuzeigen. Der Programmierer plante, für den Adobe Pass-Authentifizierungs-Traffic zu bezahlen und einfach seine standardmäßige RequestorID und resourceID zu verwenden. Der einzige Trick bestand darin, dass der Programmierer ein mobiles Zertifikat für die RequestorID-Signatur mit den Mastern teilt und dieses zu seiner Konfiguration als Backup-Zertifikat für dieses Wochenende hinzufügt. | Alle Plattformen | Keine Auswirkungen auf MVPDs |
 
-### Integration von Inhaltsservern {#content-server-integration}
+### Content Server-Integration {#content-server-integration}
 
-**Priorität** - Medium
+**priority**- Medium
 
-Aktivieren der Validierung des Medien-Tokens vor dem Freigeben des Video-Streams im Client-Player
+Aktivierung der Medien-Token-Validierung vor Freigabe des Video-Streams für den Client-Player.
 
 | Priorität | Anwendungsfall | Beschreibung | Plattformen | MVPD-Hinweise |
 |---------|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|----------|
-| Hoch | Federated Player für Programmierer - mit Autorisierung auf Seitenebene | Adobe Pass-Authentifizierungs-APIs werden in JavaScript auf der Seite ausgeführt und das Token wird an den Player übergeben. Token können auf verschiedene Weise an den Validierungsdienst übergeben werden:                                 Parameter für die Validierungsdienst-URL abrufen                    URL-Parameter, der in der Abfragezeichenfolge der Stream-URL übergeben wird                    Externe API                    FlashVars |           |            |
-| Medium | Programmierer Federated Player - mit interner Player-Autorisierung | Adobe Pass-Authentifizierungs-APIs werden im ActionScript auf der Player-SWF ausgeführt, sodass das Token vom Callback aus für den Player verfügbar ist. |           |            |
-| Hoch | Syndizierter Player - Auf MVPD-Portal gehostet mit Seitenebenenautorisierung mit einem iFrame zum Aufnehmen des Players | Ähnlich wie der Player mit Autorisierung auf Seitenebene, jedoch mit dem Player-Seiten-Wrapper iFramed in das MVPD-Portal. Die Authentifizierung muss separat im MVPD-Portal erfolgen. |           |                        |
+| Hoch | Programmer Federated Player - mit Autorisierung auf Seitenebene | Adobe Pass-Authentifizierungs-APIs werden in JavaScript auf der Seite ausgeführt und das Token wird an den Player übergeben. Token können auf verschiedene Weise an den Validierungs-Service übergeben werden:                                 Parameter zur Validierungs-Service-URL abrufen                    In der Abfragezeichenfolge der Stream-URL übergebener URL-Parameter                    Externe API-Schnittstelle                    FlashVars |           |            |
+| Medium | Programmer Federated Player - mit interner Player-Autorisierung | Adobe Pass-Authentifizierungs-APIs werden im ActionScript auf der Player-SWF ausgeführt, sodass das Token für den Player über den Callback verfügbar ist. |           |            |
+| Hoch | Syndicated Player - wird im MVPD Portal gehostet und auf Seitenebene autorisiert. Verwendet wird ein iFrame, um den Player einzuschließen | Ähnlich wie der Player mit Autorisierung auf Seitenebene, aber mit dem Player Page Wrapper iFramed in das MVPD-Portal. Die Authentifizierung muss separat im MVPD-Portal erfolgen. |           |                        |
 
 
 <!--

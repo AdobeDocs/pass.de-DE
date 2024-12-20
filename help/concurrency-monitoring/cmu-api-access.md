@@ -1,6 +1,6 @@
 ---
-title: Zugriff auf CMU-API
-description: Zugriff auf CMU-API
+title: CMU-API-Zugriff
+description: CMU-API-Zugriff
 exl-id: 8d216703-aabc-489e-93fe-d4d105616b1d
 source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
@@ -9,63 +9,63 @@ ht-degree: 0%
 
 ---
 
-# Zugriff auf die API zur Überwachung der gleichzeitigen Verwendung {#cmu-api-usage-access}
+# API-Zugriff zur Überwachung der gleichzeitigen Nutzung {#cmu-api-usage-access}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig. Wenden Sie sich bei Fragen zur Verfügbarkeit an Ihren Adobe-Support-Mitarbeiter.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig. Bei Fragen zur Verfügbarkeit wenden Sie sich an Ihren Adobe-Support.
 
-## Übersicht über Zugriffsverfahren {#api-access-procedure-overview}
+## Übersicht über das Zugriffsverfahren {#api-access-procedure-overview}
 
-Wir haben den Zugriff auf CMU-Berichte aktualisiert, um mit dem Dynamic Client Registration Protocol von OAuth 2.0 kompatibel zu sein. Ein benutzerdefinierter OAuth 2.0-Autorisierungsserver wird bereitgestellt, um die Anforderungen der Anwendung zur Überwachung der Parallelität zu erfüllen. \
-Damit die Client-Anwendungen die OAuth 2.0-Autorisierung verwenden können, muss sich der Server dynamisch registrieren, um bestimmte Informationen (Client-Anmeldeinformationen) zu erhalten und damit mit ihnen interagieren zu können. Im Rahmen des Registrierungsprozesses muss der Client eine Reihe integrierter Metadaten für den Client-Registrierungs-Endpunkt bereitstellen.
-Diese Metadaten werden als Softwareanweisung übermittelt, die eine &quot;software_id&quot;enthält, damit unser Autorisierungsserver verschiedene Instanzen einer Anwendung mit derselben Softwareanweisung korrelieren kann.
-Eine Softwareanweisung ist ein JSON Web Token (JWT), das Metadatenwerte über die Client-Software als Bundle durchsetzt. Wenn die Software dem Autorisierungsserver als Teil einer Anfrage zur Clientregistrierung präsentiert wird, muss sie digital signiert oder mit JSON Web Signature (JWS) als MACed signiert werden. \
-Eine detailliertere Erklärung dazu, was Softwareanweisungen sind und wie sie funktionieren, finden Sie in der offiziellen Dokumentation <a href="https://datatracker.ietf.org/doc/html/rfc7591" target="_blank">[RFC7591]</a>.
-Führen Sie die Schritte in den folgenden Abschnitten aus, um Zugriff zu erhalten.
+Wir haben den Zugriff auf CMU-Berichte aktualisiert, damit er mit dem dynamischen Client-Registrierungsprotokoll von OAuth 2.0 kompatibel ist. Ein benutzerdefinierter OAuth 2.0-Autorisierungs-Server wird bereitgestellt, um die Anforderungen der Anwendung zur Parallelitätsüberwachung zu erfüllen. \
+Damit die Client-Anwendungen die OAuth 2.0-Autorisierung nutzen können, muss sich der Server dynamisch registrieren, um bestimmte Informationen (Client-Anmeldeinformationen) zu erhalten, damit er damit interagieren kann. Im Rahmen des Registrierungsprozesses muss der Client dem Client-Registrierungsendpunkt einen Satz integrierter Metadaten vorlegen.
+Diese Metadaten werden als Software-Anweisung übermittelt, die eine „software_id“ enthält, damit unser Autorisierungs-Server verschiedene Instanzen einer Anwendung mit derselben Software-Anweisung korrelieren kann.
+Eine Software-Anweisung ist ein JSON Web Token (JWT), das Metadatenwerte über die Client-Software als Bundle angibt. Wenn die Anweisung im Rahmen einer Client-Registrierungsanfrage an den Autorisierungs-Server gesendet wird, muss sie mit JSON Web Signature (JWS) digital signiert oder mit einem Mac versehen werden. \
+Eine detailliertere Erläuterung der Software-Aussagen und ihrer Funktionsweise finden Sie in der offiziellen Dokumentation <a href="https://datatracker.ietf.org/doc/html/rfc7591" target="_blank">[RFC7591]</a>.
+Gehen Sie wie in den folgenden Abschnitten beschrieben vor, um Zugriff zu erhalten.
 
-## Schritte für Zugriffsverfahren {#access-procedure-steps}
+## Schritte des Zugriffsprozesses {#access-procedure-steps}
 
-1. Sie benötigen eine registrierte Anwendung im Adobe Pass DCR-Server. Wenden Sie sich für diesen Schritt an unser [Supportteam](mailto:tve-support@adobe.com).
+1. Eine registrierte Anwendung muss sich auf dem Adobe Pass DCR-Server befinden. Wenden Sie sich für diesen Schritt an unser [Support-Team](mailto:tve-support@adobe.com).
 
-2. Softwareanweisung abrufen
-   1. Navigieren Sie zu [Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication)
-   2. Select Programmer
-   3. Navigieren Sie zur Registerkarte *Registrierte Anwendungen* .
+2. Abrufen der Software-Anweisung
+   1. Zum [Adobe Pass TVE-Dashboard](https://experience.adobe.com/#/pass/authentication)
+   2. Programmierer auswählen
+   3. Wechseln Sie zur *Registered Applications* Registerkarte
    4. Anwendung auswählen
-   5. Klicken Sie auf die Zeile der registrierten Anwendung, für die Sie eine Softwareanweisung abrufen möchten, und speichern Sie sie als Datei auf Ihrem lokalen Computer
+   5. Klicken Sie in der registrierten Anwendungszeile, für die Sie eine Software-Anweisung abrufen möchten, auf Download und speichern Sie sie als Datei auf Ihrem lokalen Computer
       <figure>
           <img src="assets/programmer-download-software-statement-button.png"
-               alt="Software-Anweisung herunterladen">
+               alt="SOFTWAREANWEISUNG HERUNTERLADEN">
       </figure>
 
       <figure>
           <img src="assets/software_statement_2.png"
-               alt="Beispiel für Software-Aussagen">
+               alt="Software-Anweisungsbeispiel">
       </figure>
 
 3. Zugriffstoken abrufen
-   1. Rufen Sie mithilfe der oben abgerufenen Softwareanweisung Client-Anmeldeinformationen ab und führen Sie den nachfolgenden Aufruf aus. Auf diese Weise wird ein client_id - client_secret -Paar abgerufen, das zum Abrufen des Zugriffstokens verwendet werden kann.
+   1. Rufen Sie die Anmeldeinformationen des Clients mithilfe der oben abgerufenen Software-Anweisung ab und führen Sie den folgenden Aufruf aus. Auf diese Weise wird ein client_id - client_secret-Paar abgerufen, das zum Abrufen des Zugriffstokens verwendet werden kann.
       *Dieser Schritt sollte nicht jedes Mal ausgeführt werden. Dies sollte nur dann erneut erfolgen, wenn die Anmeldeinformationen ablaufen.*
       <figure>
           <img src="assets/dcr_request_1_get_client_credentials.png"
-               alt="Abrufen von Client-Anmeldeinformationen">
+               alt="Client-Anmeldedaten abrufen">
        </figure>
 
-   2. Rufen Sie mithilfe des nachfolgenden Aufrufs das Zugriffstoken ab. Verwenden Sie dieses Zugriffstoken, um eine beliebige CMU-API aufzurufen, bis das Token abläuft.
-      *Dieser Schritt sollte nur ausgeführt werden, wenn das letzte generierte Token abgelaufen ist.*
+   2. Rufen Sie das Zugriffs-Token mithilfe des folgenden Aufrufs ab. Verwenden Sie dieses Zugriffstoken, um eine beliebige CMU-API aufzurufen, bis das Token abläuft.
+      *Dieser Schritt sollte nur ausgeführt werden, wenn das zuletzt generierte Token abgelaufen ist.*
       <figure>
           <img src="assets/dcr_get_access_token_call.png"
                alt="Zugriffstoken abrufen">
        </figure>
 
-4. Rufen Sie die CMU-API auf - siehe dazu gehörige Informationen unten.
+4. Aufrufen der CMU-API - siehe zugehörige Informationen unten.
    <figure>
           <img src="assets/call_cmu_reports_sample.png"
                alt="CMU-API aufrufen">
        </figure>
 
-## Verwandte Informationen {#related-information}
+## Ergänzende Informationen {#related-information}
 
-* [CMU-Übersicht](/help/concurrency-monitoring/cm-usage-reports.md)
+* [Übersicht über die Kapitalmarktunion](/help/concurrency-monitoring/cm-usage-reports.md)
 * [CMU-API](/help/concurrency-monitoring/cmu-api.md)

@@ -13,27 +13,27 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 ## Einführung {#mvpd-preflight-authz-intro}
 
-&quot;Preflight authorization&quot; ist eine einfache Autorisierungsüberprüfung für mehrere Ressourcen. Programmierer verwenden sie hauptsächlich zum Dekorieren ihrer Benutzeroberflächen (z. B. zur Angabe des Zugriffstatus mit Schloss- und Entsperrungssymbolen).
+„PreFlight-Autorisierung“ ist eine einfache Autorisierungsprüfung für mehrere Ressourcen. Programmierer verwenden sie hauptsächlich zum Dekorieren ihrer Benutzeroberflächen (z. B. zum Anzeigen des Zugriffsstatus mit Sperren- und Entsperren-Symbolen).
 
-Die Adobe Pass-Authentifizierung kann die Preflight-Autorisierung derzeit auf zwei Arten für MVPDs unterstützen, entweder über AuthN-Antwortattribute oder über eine mehrkanalige AuthZ-Anfrage.  In den folgenden Szenarien werden die Kosten/Nutzen der verschiedenen Methoden beschrieben, mit denen Sie die Vorabgenehmigung implementieren können:
+Die Adobe Pass-Authentifizierung kann die PreFlight-Autorisierung für MVPDs derzeit auf zwei Arten unterstützen, entweder über AuthN-Antwortattribute oder über eine mehrkanalige AuthZ-Anfrage.  In den folgenden Szenarien werden die Kosten/Nutzen der verschiedenen Möglichkeiten beschrieben, wie Sie die Vorabautorisierung implementieren können:
 
-* **Best Case Scenario** - Das MVPD stellt die Liste der vorab autorisierten Ressourcen während der Autorisierungsphase (Multi-Channel AuthZ) bereit.
-* **Schlimmstes Szenario** - Wenn ein MVPD keine Autorisierung mehrerer Ressourcen unterstützt, führt der Adobe Pass-Authentifizierungsserver für jede Ressource in der Ressourcenliste einen Autorisierungsaufruf an den MVPD durch. Dieses Szenario wirkt sich (proportional zur Anzahl der Ressourcen) auf die Reaktionszeit für die Vorabgenehmigung aus. Dies kann die Auslastung auf beiden Adobe- und MVPD-Servern erhöhen und zu Leistungsproblemen führen. Außerdem werden Autorisierungsanfragen/Antwortereignisse generiert, ohne dass eine Wiedergabe tatsächlich erforderlich ist.
-* **Veraltet** - Der MVPD stellt die Liste der vorab autorisierten Ressourcen während der Authentifizierungsphase bereit, sodass keine Netzwerkaufrufe erforderlich sind, nicht einmal die Preflight-Anfrage, da die Liste auf dem Client zwischengespeichert wird.
+* **Best-Case**-Szenario: MVPD stellt die Liste der vorab autorisierten Ressourcen während der Autorisierungsphase bereit (Multi-Channel-AuthZ).
+* **Worst-Case-**: Wenn eine MVPD keine Autorisierung für mehrere Ressourcen unterstützt, führt der Adobe Pass-Authentifizierungsserver für jede Ressource in der Ressourcenliste einen Autorisierungsaufruf an die MVPD durch. Dieses Szenario wirkt sich (proportional zur Anzahl der Ressourcen) auf die Antwortzeit für die Autorisierungsanfrage vor dem Flug aus. Dies kann die Auslastung der Adobe- und MVPD-Server erhöhen und zu Leistungsproblemen führen. Außerdem werden damit Autorisierungsanfragen/Antworten-Ereignisse generiert, ohne dass ein Abspielen tatsächlich erforderlich ist.
+* **Veraltet** - MVPD stellt die Liste der vorab autorisierten Ressourcen während der Authentifizierungsphase bereit, sodass keine Netzwerkaufrufe erforderlich sind, auch nicht die Preflight-Anfrage, da die Liste auf dem Client zwischengespeichert wird.
 
-Während MVPDs keine Preflight-Autorisierung unterstützen müssen, werden in den folgenden Abschnitten einige Vorabgenehmigungsverfahren beschrieben, die von der Adobe Pass-Authentifizierung unterstützt werden können, bevor auf das oben genannte Worst-Case-Szenario zurückgegriffen wird.
+Während MVPDs keine PreFlight-Autorisierung unterstützen müssen, werden in den folgenden Abschnitten einige PreFlight-Autorisierungsmethoden beschrieben, die die Adobe Pass-Authentifizierung unterstützen kann, bevor auf das obige Worst-Case-Szenario zurückgegriffen wird.
 
-## Preflight in AuthN {#preflight-authn}
+## PreFlight in AuthN {#preflight-authn}
 
-Dieses Preflight-Szenario ist OLCA-kompatibel (Cableabs). In Abschnitt 7.5.2 der Spezifikation für die Authentifizierungs- und Autorisierungsschnittstelle 1.0 mit dem Titel &quot;Attribute Statement Within Authentication Assertion&quot;wird beschrieben, wie eine SAML-Authentifizierungsantwort eine Liste vorab autorisierter Ressourcen enthalten kann. Wenn ein IdP dies unterstützt, kann der Adobe Pass-Authentifizierungsserver zum Zeitpunkt der Authentifizierung die vorausgefüllte Ressourcenliste generieren und sie zusammen mit dem Authentifizierungstoken auf dem Client zwischenspeichern. Diese Methode erzielt auch das beste Fallszenario. Wenn der Programmierer checkPreauthorizedResources() aufruft, werden keine Netzwerkaufrufe durchgeführt, da sich alles bereits auf dem Client befindet.
+Dieses Preflight-Szenario ist OLCA-kompatibel (Kabel). In Abschnitt 7.5.2 der Spezifikation von Authentication and Authorization Interface 1.0 mit dem Titel „Attribute Statement Within Authentication Assertion“ wird beschrieben, wie eine SAML-Authentifizierungsantwort eine Liste vorautorisierter Ressourcen enthalten kann. Wenn ein IdP dies unterstützt, kann der Adobe Pass-Authentifizierungsserver die Liste der im Voraus ausgewählten Ressourcen zur Authentifizierungszeit generieren und sie zusammen mit dem Authentifizierungstoken auf dem Client zwischenspeichern. Mit dieser Methode wird auch das Szenario des besten Falls erzielt, und beim Aufrufen von checkPreauthorizedResources() durch den Programmierer werden keine Netzwerkaufrufe ausgeführt, da sich bereits alles auf dem Client befindet.
 
 ### Benutzerdefinierte Ressourcenliste in SAML-Attributanweisung {#custom-res-saml-attr}
 
-Die SAML-Authentifizierungsantwort des IdP muss eine AttributeStatement mit Ressourcennamen enthalten, die von AdobePass autorisiert werden sollen.  Einige MVPDs bieten dies im folgenden Format:
+Die SAML-Authentifizierungsantwort des IdP muss eine AttributeStatement enthalten, die Ressourcennamen enthält, die AdobePass autorisieren sollte.  Einige MVPDs bieten dies im folgenden Format:
 
 ```XML
 <saml:AttributeStatement>
@@ -44,19 +44,19 @@ Die SAML-Authentifizierungsantwort des IdP muss eine AttributeStatement mit Ress
 </saml:AttributeStatement>
 ```
 
-Das obige Beispiel enthält eine Liste mit zwei vorab autorisierten Ressourcen: &quot;MMOD&quot;und &quot;Olympic2012&quot;.
+Das obige Beispiel enthält eine Liste mit zwei vorab autorisierten Ressourcen: „MMOD“ und „Olympic2012“.
 
-Dadurch wird das beste Fallszenario erreicht, und es werden keine Netzwerkaufrufe durchgeführt, wenn der Programmierer checkPreauthorizedResources() aufruft, da alles bereits auf dem Client ist.
+Dadurch wird effektiv das Szenario des besten Falls erreicht, und beim Aufrufen von checkPreauthorizedResources() durch den Programmierer werden keine Netzwerkaufrufe ausgeführt, da sich bereits alles auf dem Client befindet.
 
-## Mehrkanal-Preflight in AuthZ {#preflight-multich-authz}
+## Multi-Channel Preflight in AuthZ {#preflight-multich-authz}
 
-Diese Preflight-Implementierung ist auch OLCA-kompatibel (Cablelabs).  In der Spezifikation für die Authentifizierungs- und Autorisierungsschnittstelle 1.0 (Abschnitte 7.5.3 und 7.5.4) werden Methoden beschrieben, mit denen Autorisierungsinformationen von einem MVPD entweder über SAML-Zusicherungen oder XACML angefordert werden. Dies ist die empfohlene Methode zur Abfrage des Autorisierungsstatus für MVPDs, die dies im Rahmen des Authentifizierungsflusses nicht unterstützen. Adobe Pass Authentication sendet einen einzigen Netzwerkaufruf an den MVPD, um die Liste der autorisierten Ressourcen abzurufen.
+Diese Preflight-Implementierung ist auch mit OLCA (CableLabs) kompatibel.  In der Spezifikation der Authentifizierungs- und Autorisierungsschnittstelle 1.0 (Abschnitte 7.5.3 und 7.5.4) werden Methoden zum Anfordern von Autorisierungsinformationen von einem MVPD mithilfe von SAML-Assertionen oder XACML beschrieben. Dies ist die empfohlene Methode, um den Autorisierungsstatus für MVPDs abzufragen, die dies nicht als Teil des Authentifizierungsflusses unterstützen. Die Adobe Pass-Authentifizierung führt einen einzigen Netzwerkaufruf an die MVPD aus, um die Liste der autorisierten Ressourcen abzurufen.
 
 
-Die Adobe Pass-Authentifizierung erhält die Liste der Ressourcen von der Anwendung des Programmierers. Die MVPD-Integration der Adobe Pass-Authentifizierung kann dann einen AuthZ-Aufruf ausführen, der alle diese Ressourcen enthält, dann die Antwort analysieren und die verschiedenen Entscheidungen über Genehmigungen/Ablehnungen extrahieren.  Der Fluss für das Preflight-Szenario mit einem mehrkanaligen AuthZ-Szenario funktioniert wie folgt:
+Die Adobe Pass-Authentifizierung erhält die Liste der Ressourcen vom Programm des Programmierers. Die MVPD-Integration der Adobe Pass-Authentifizierung kann dann einen AuthZ-Aufruf mit allen diesen Ressourcen durchführen, die Antwort analysieren und die mehreren Entscheidungen über die Genehmigung/Ablehnung extrahieren.  Der Fluss für das Preflight-mit-Multi-Channel-AuthZ-Szenario funktioniert wie folgt:
 
-1. Die App des Programmierers sendet eine kommagetrennte Liste von Ressourcen über die Preflight-Client-API, z. B. &quot;TestChannel1,TestChannel2,TestChannel3&quot;.
-1. Der MVPD Preflight AuthZ-Anfrageaufruf enthält die verschiedenen Ressourcen und weist die folgende Struktur auf:
+1. Die -App des Programmierers sendet über die Preflight-Client-API eine kommagetrennte Liste von Ressourcen, z. B.: „TestChannel1,TestChannel2,TestChannel3“.
+1. Der MVPD Preflight AuthZ-Anforderungsaufruf enthält die mehreren Ressourcen und weist die folgende Struktur auf:
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?><soap11:Envelope xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/"> 
@@ -115,19 +115,19 @@ Die Adobe Pass-Authentifizierung erhält die Liste der Ressourcen von der Anwend
 
 ## Benutzerdefinierte Autorisierung für mehrere Ressourcen {#custom-authz}
 
-Einige MVPDs verfügen über Autorisierungsendpunkte, die die Autorisierung mehrerer Ressourcen in einer Anfrage unterstützen, aber nicht unter das in Multi-Channel-AuthZ beschriebene Szenario fallen. Diese spezifischen MVPDs erfordern benutzerdefinierte Arbeit.
+Einige MVPDs haben Autorisierungsendpunkte, die die Autorisierung für mehrere Ressourcen in einer Anfrage unterstützen, aber sie fallen nicht unter das in Multi-Channel-AuthZ beschriebene Szenario. Diese spezifischen MVPDs erfordern benutzerdefinierte Arbeit.
 
-Adobe kann auch die Autorisierung mehrerer Kanäle ohne Änderungen an der bestehenden Implementierung unterstützen.  Dieser Ansatz muss zwischen der Adobe und dem technischen MVPD-Team überprüft werden, um sicherzustellen, dass er erwartungsgemäß funktioniert.
+Adobe kann auch die Autorisierung über mehrere Kanäle unterstützen, ohne die bestehende Implementierung zu ändern.  Dieser Ansatz muss zwischen Adobe und dem technischen Team von MVPD überprüft werden, um sicherzustellen, dass er wie erwartet funktioniert.
 
 ## MVPDs, die die Preflight-Autorisierung unterstützen {#mvpds-supp-preflight-authz}
 
-In der folgenden Tabelle sind die MVPDs aufgeführt, die die Preflight-Autorisierung unterstützen, zusammen mit dem von ihnen unterstützten Preflight-Typ und bekannten Einschränkungen:
+In der folgenden Tabelle sind die MVPDs aufgeführt, die die Preflight-Autorisierung unterstützen, zusammen mit dem Typ des von ihnen unterstützten Preflight und bekannten Einschränkungen:
 
-| Preflight-Ansatz | MVPD | Hinweise |
+| Vorfluganflug | MVPD | Notizen |
 |:-------------------------------:|:--------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------:|
-| Multi-Channel-AuthZ | Comcast AT&amp;T Proxy Clearleap Charter_Direct Proxy GLDS Rogers Verizon OSN Bell Sasktel Optimum AlticeOne |                                                                    |
-| Kanalverbindung in Benutzermetadaten | Sudenlink HTC | Alle direkten Synacor-Integrationen können diesen Ansatz ebenfalls unterstützen. |
-| Verzweigung und Beitritt | Alle anderen, oben nicht aufgeführten | Standardmäßig ist die maximale Anzahl der aktivierten Ressourcen = 5. |
+| Multi-Channel-Authentifizierung | Comcast AT&amp;T Proxy ClearLeap Charter_Direct Proxy GLDS Rogers Verizon OSN Bell Sasktel Optimum AlticeOne |                                                                    |
+| Kanalaufstellung in Benutzermetadaten | SuddenLink HTC | Alle Synacor Direct-Integrationen können diesen Ansatz ebenfalls unterstützen. |
+| Verzweigung und Verbindung | Alle anderen nicht oben aufgeführt | Die standardmäßige maximale Anzahl von überprüften Ressourcen = 5. |
 
 <!--
 ![RelatedInformation]

@@ -1,6 +1,6 @@
 ---
-title: Nutzungsmuster
-description: Zeigen Sie das Verhalten der Kontofreigabe für verschiedene Benutzertypologien an.
+title: Verwendungsmuster
+description: Zeigen Sie das Verhalten bei der Kontofreigabe für verschiedene Benutzertypologien an.
 exl-id: 2faa7e75-b3a1-491b-bb7d-bd3a149cbe79
 source-git-commit: cfcaa00ab05c99a64bcb0edfe5af60845a6769a9
 workflow-type: tm+mt
@@ -9,88 +9,88 @@ ht-degree: 0%
 
 ---
 
-# Nutzungsmuster {#usage-patterns}
+# Verwendungsmuster {#usage-patterns}
 
-Account IQ klassifiziert Benutzer von Abonnentenkonten in verschiedene Kategorien hinsichtlich ihres sozialen Verhaltens, wie z. B. Reisende oder Pendler, große Familien und Community-Freigabe. Auf der Seite **Nutzungsmuster** werden mehrere verschiedene Analysen und Berichte für diese Benutzertypologien angezeigt. In den Berichten zur Verteilung der Nutzungsmuster **wird beispielsweise das Nutzungsverhalten für das aktuelle Segment mit dem für alle Konten verglichen.**
+Account IQ klassifiziert Benutzer von Abonnentenkonten in verschiedene Kategorien hinsichtlich ihres sozialen Verhaltens, z. B. „Reisender“ oder „Pendler“, „große Familien“ und „Community-Freigabe“. Auf **Seite „Nutzungsmuster** werden mehrere verschiedene Analysen und Berichte für diese Benutzertypologien angezeigt. Beispielsweise wird in **Verteilungsberichten über Nutzungsmuster** das Nutzungsverhalten für das aktuelle Segment mit dem aller Ihrer Konten verglichen.
 
-Wie die anderen Seiten in der App basieren die Analyse und Berichte hier auf dem aktuellen Segment, das im [Segmentbereich](/help/accountiq/segments-timeinterval.md) definiert wurde.
+Wie die anderen Seiten in der App basieren die Analysen und Berichte hier auf dem aktuellen Segment, das im [Segmentbereich“ definiert ](/help/accountiq/segments-timeinterval.md).
 
 ## Verteilung der Nutzungsmuster {#usage-pattern-dis}
 
-Das Diagramm der Cluster-Leiste zeigt die Anzahl und den Prozentsatz der Abonnenten für jedes soziale Verhalten oder Nutzungsmuster.
+Das Cluster-Balkendiagramm zeigt die Anzahl und den Prozentsatz der Abonnenten für jedes Social-Media-Verhalten oder Nutzungsmuster an.
 
-+++D2C-Dienste: Nutzungsmuster Verteilung-Benutzer im Segment
++++D2C-Services: Nutzungsmuster-Verteilung-Benutzer im Segment
 
-Das unten stehende Cluster-Balkendiagramm vergleicht die Verteilung des Nutzungsmusters des aktuellen Segments mit einem Segment, das alle Ihre Konten enthält.
+Im folgenden Cluster-Balkendiagramm wird die Verteilung des Nutzungsmusters des aktuellen Segments mit einem Segment verglichen, das alle Ihre Konten enthält.
 
 ![](assets/d2c-segment-users-industry.png)
 
-*Nutzungsmuster Verteilung-Benutzer im Segment*
+*Nutzungsmuster distribution-users in segment*
 
 +++
 
-+++TV Überall: Nutzungsmuster Verteilung-Benutzer im Segment im Vergleich zur Branche
++++TV Everywhere: Nutzungsmuster - Verteilung - Benutzer im Segment vs. Industrie
 
-Neben dem Vergleich der einzelnen Nutzungsmuster im aktuellen Segment mit der gesamten Branche werden sie auch mit einem Segment verglichen, das alle Ihre Konten enthält.
+Zusätzlich zum Vergleich der einzelnen Nutzungsmuster im aktuellen Segment mit der gesamten Branche werden sie auch mit einem Segment verglichen, das alle Ihre Konten enthält.
 
 ![](assets/segment-users-industry.png)
 
-*Nutzungsmuster Verteilung - Benutzer im Segment vs. Branche*
+*Nutzungsmuster-Verteilung - Benutzer im Segment vs. Branche*
 
 +++
 
-## Verteilung der Nutzungsmuster im Segment {#usage-pattern-dis-segment}
+## Verteilung der Nutzungsmuster in Segment {#usage-pattern-dis-segment}
 
-Das Bedienfeld **[!UICONTROL Usage patterns distribution in segment]** enthält die folgenden Informationen für jedes Benutzermuster:
+Im Bedienfeld **[!UICONTROL Usage patterns distribution in segment]** werden für jedes Benutzermuster die folgenden Informationen tabellarisch angezeigt:
 
 * Teilungswahrscheinlichkeitsbereich, in den die einzelnen Konten fallen.
 * Anzahl und Prozentsatz der Konten in diesem Muster.
-* Gesamt- und Prozentsatz der Nutzung durch Abonnenten in dieser Kategorie in Bezug auf Wiedergabeanforderungen.
+* Gesamt- und Prozentanteil der Nutzung durch Abonnenten in dieser Kategorie in Bezug auf Wiedergabeanfragen.
 
 ![](assets/usage-pattern-segmentwise.png)
 
-*Verteilung der Nutzungsmuster im Segment*
+*Nutzungsmuster in der Segmentverteilung*
 
-Beispiel: In der obigen Visualisierung:
+In der obigen Visualisierung gilt beispielsweise Folgendes:
 
-* Ein regulärer Benutzer (ein bis wenige Personen mit einer begrenzten Anzahl von Geräten an nur einem Ort) im definierten Segment verfügt über die Wahrscheinlichkeit der Kontofreigabe zwischen 5 und 13 %.
+* Ein regulärer Benutzer (ein bis wenige Personen mit einer begrenzten Anzahl von Geräten an nur einem Standort) im definierten Segment hat eine Account-Sharing-Wahrscheinlichkeit zwischen 5 und 13 %.
 
-* 70,2 % (376 615) der gesamten Teilnehmerkonten (536 640) sind normale Nutzer.
+* 70,2 % (376.615) aller Abonnentenkonten (536.640) sind reguläre Nutzer.
 
-* 44,5 % (2.896.346) der gesamten Wiedergabeanforderungen (6.512.593) werden von regulären Benutzern durchgeführt.
+* 44,5 % (2.896.346) der gesamten Abspielanfragen (6.512.593) werden von regulären Benutzern gestellt.
 
 ## Verteilung der Nutzungsmuster für Videokategorien {#usage-pattern-dis-video-categories}
 
-++ + D2C-Dienste: Verteilung des Nutzungsmusters für Regionen
++++D2C-Services: Verteilung von Nutzungsmustern für Regionen
 
-Die Tabelle **[!UICONTROL Usage pattern distribution]** bietet einen Vergleich der Nutzungsmuster für [Videokategorien](product-concepts.md##video-category-def) im aktuellen Segment.
+Die **[!UICONTROL Usage pattern distribution]** Tabelle bietet einen Vergleich der Nutzungsmuster in [Videokategorien](product-concepts.md##video-category-def) im aktuellen Segment.
 
 ![](assets/d2c-usage-patterns-regions.png)
 
-*Verteilung der Nutzungsmuster für Regionen*
+*Nutzungsmuster für Regionen*
 
 >[!NOTE]
 >
->Die im vorherigen Bild angezeigte Videokategorie, z. B. **Regionen**, ist nur ein Beispiel. Wenn Sie sich bei Account IQ anmelden, zeigt der Titel die spezifischen Videokategorien Ihres Unternehmens an.
+>Die im vorherigen Bild angezeigte Videokategorie, z. B **„Regionen** ist nur ein Beispiel. Wenn Sie sich bei Account IQ anmelden, zeigt die Bezeichnung die spezifischen Videokategorien Ihres Unternehmens an.
 
 +++
 
-+++Programmer: Verteilung des Nutzungsmusters für MVPDs
++++Programmierer: Usage Pattern Distribution for MVPDs
 
-Die Tabelle **[!UICONTROL Usage pattern distribution]** bietet einen Vergleich der Verteilung des Nutzungsmusters für die MVPDs im aktuellen Segment.
+Die **[!UICONTROL Usage pattern distribution]** Tabelle bietet einen Vergleich der Verteilung der Nutzungsmuster für die MVPDs im aktuellen Segment.
 
 ![](assets/usage-patterns-mvpdwise.png)
 
-*Verteilung der Nutzungsmuster für Programmierer*
+*Verwendungsmuster für Programmierer*
 
 +++
 
-+++MVPD: Verteilung des Nutzungsmusters für Programmierer
++++MVPD: Verteilung von Nutzungsmustern für Programmierer
 
-Die Tabelle **[!UICONTROL Usage pattern distribution]** bietet einen Vergleich der Verteilung des Nutzungsmusters für die Programmierer oder Kanäle im aktuellen Segment.
+Die **[!UICONTROL Usage pattern distribution]** Tabelle bietet einen Vergleich der Verteilung von Nutzungsmustern für die Programmierer oder Kanäle im aktuellen Segment.
 
 ![](assets/usage-patterns-programmerwise.png)
 
-*Verteilung der Nutzungsmuster für MVPDs*
+*Nutzungsmuster für MVPDs*
 
 +++

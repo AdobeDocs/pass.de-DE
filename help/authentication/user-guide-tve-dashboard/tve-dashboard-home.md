@@ -13,38 +13,38 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle -Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Nutzung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Der Abschnitt **Dashboard** im linken Bereich dient als Startseite des Adobe Pass Authentication TVE-Dashboards.
+Der **Dashboard** im linken Bereich dient als Startseite des TVE-Dashboards zur Adobe Pass-Authentifizierung.
 
-Auf der Startseite stehen zwei Abschnitte zur Verfügung:
+Auf der Homepage stehen zwei Bereiche zur Verfügung:
 
-* [Willkommensbildschirm](#welcome-screen)
+* [Begrüßungsbildschirm](#welcome-screen)
 * [Konfigurationsstatus](#configuration-status)
 
-## Willkommensbildschirm {#welcome}
+## Begrüßungsbildschirm {#welcome}
 
-In diesem Abschnitt können Sie direkt von der Willkommensnachricht aus auf die öffentliche Dokumentation zugreifen und eine Momentaufnahme Ihrer aktuellen Konfigurationen anzeigen.
+In diesem Abschnitt können Sie direkt über die Begrüßungsnachricht auf die öffentliche Dokumentation zugreifen und einen Schnappschuss Ihrer aktuellen Konfigurationen anzeigen.
 
-* **Aktive Integrationen**: Die Anzahl der aktiven Integrationen in der aktuellen Umgebung. Wählen Sie **Mehr im Integrationsabschnitt anzeigen** aus, um auf detaillierte Informationen im Abschnitt [Integrationen](tve-dashboard-integrations.md) zuzugreifen.
-* **Aktive Kanäle**: Die Anzahl der aktiven Kanäle in der aktuellen Umgebung. Wählen Sie &quot;**Mehr in Kanälen anzeigen&quot;im Abschnitt &quot;**&quot;, um auf detaillierte Informationen im Abschnitt &quot;[Kanäle](tve-dashboard-channels.md)&quot;zuzugreifen.
-* **Datenbankaktualisierungen**: Die Anzahl der Konfigurationsänderungen, die an der aktuellen Umgebung vorgenommen wurden. Wählen Sie **Mehr im Abschnitt Änderungsprotokoll anzeigen** aus, um auf detaillierte Informationen im Abschnitt [Änderungsprotokoll](tve-dashboard-changes-log.md) zuzugreifen.
-* **ESM-Dashboard**: Behalten Sie das bevorstehende ESM-Dashboard im Auge und bieten Sie detaillierte Metriken zur Eigenschaftsnutzung in der aktuellen Umgebung an. Diese Funktion wird in zukünftigen Updates verfügbar sein.
+* **Aktive**: Die Anzahl der aktiven Integrationen in der aktuellen Umgebung. Wählen Sie **Weitere Informationen im Abschnitt Integration anzeigen**, um auf detaillierte Informationen im Abschnitt [Integrationen](tve-dashboard-integrations.md) zuzugreifen.
+* **Aktive**: Die Anzahl der aktiven Kanäle in der aktuellen Umgebung. Wählen Sie **Weitere Informationen im Abschnitt Kanäle anzeigen** aus, um auf detaillierte Informationen im Abschnitt [Kanäle](tve-dashboard-channels.md) zuzugreifen.
+* **Datenbankaktualisierungen**: Die Anzahl der Konfigurationsänderungen, die an der aktuellen Umgebung vorgenommen wurden. Wählen Sie **Weitere Informationen im Abschnitt Änderungsprotokoll anzeigen**, um auf detaillierte Informationen im Abschnitt [Änderungsprotokoll“ ](tve-dashboard-changes-log.md).
+* **ESM-Dashboard**: Sehen Sie im Auge nach dem kommenden ESM-Dashboard, das detaillierte Metriken zur Eigenschaftsnutzung in der aktuellen Umgebung bietet. Diese Funktion wird in zukünftigen Updates verfügbar sein.
 
-![Willkommensbildschirm](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-welcome-panel-view.png)
+![Begrüßungsbildschirm](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-welcome-panel-view.png)
 
-*Willkommensbildschirm*
+*Begrüßungsbildschirm*
 
 ## Konfigurationsstatus {#conf-status}
 
-In diesem Abschnitt werden die 10 neuesten Konfigurationsänderungen vorgestellt, die Folgendes enthalten:
+In diesem Abschnitt werden die 10 jüngsten Konfigurationsänderungen vorgestellt, darunter:
 
 * **Änderungsbeschreibung**: Eine kurze Beschreibung der vom Benutzer ausgewählten Änderung.
-* **Pushed by**: Das Konto, das für die Änderung verantwortlich ist.
-* **Push-Datum**: Das Datum, an dem die Änderung vorgenommen wurde.
+* **Push von**: Das für die Änderung verantwortliche Konto.
+* **Push-**: Das Datum, an dem die Änderung vorgenommen wurde.
 
 ![Konfigurationsstatus eines Änderungsprotokolls](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-configuration-status-panel-view.png)
 
 *Konfigurationsstatus eines Änderungsprotokolls*
 
-Um die vollständige Liste der Änderungen anzuzeigen, wählen Sie rechts unten **Mehr im Änderungsprotokoll anzeigen** aus, um den Abschnitt [Änderungsprotokoll](tve-dashboard-changes-log.md) anzuzeigen.
+Um die vollständige Liste der Änderungen anzuzeigen, wählen Sie **Weitere Informationen im Änderungsprotokoll anzeigen** unten rechts aus, um den Abschnitt [Änderungsprotokoll“ ](tve-dashboard-changes-log.md).

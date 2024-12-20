@@ -1,6 +1,6 @@
 ---
-title: Profil mithilfe der Antwort auf die Partnerauthentifizierung abrufen
-description: REST API V2 - Profil mit Antwort zur Partnerauthentifizierung abrufen
+title: Abrufen des Profils mit der Antwort der Partnerauthentifizierung
+description: REST API V2 - Profil mit Antwort der Partnerauthentifizierung abrufen
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -9,15 +9,15 @@ ht-degree: 1%
 
 ---
 
-# Profil mithilfe der Antwort auf die Partnerauthentifizierung abrufen {#retrieve-profile-using-partner-authentication-response}
+# Abrufen des Profils mit der Antwort der Partnerauthentifizierung {#retrieve-profile-using-partner-authentication-response}
 
 >[!IMPORTANT]
 >
-> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 >[!IMPORTANT]
 >
-> Die REST API V2-Implementierung wird durch die Dokumentation zum [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) begrenzt.
+> Die REST-API-V2-Implementierung ist an die Dokumentation [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) gebunden.
 
 ## Anfrage {#request}
 
@@ -28,12 +28,12 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">path</td>
+      <td style="background-color: #DEEBFF;">Pfad</td>
       <td>/api/v2/{serviceProvider}/profiles/sso/{partner}</td>
       <td></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">method</td>
+      <td style="background-color: #DEEBFF;">Methode</td>
       <td>POST</td>
       <td></td>
    </tr>
@@ -44,16 +44,16 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
-      <td>Die interne eindeutige Kennung, die dem Service Provider während des Onboarding-Prozesses zugeordnet ist.</td>
-      <td><i>erforderlich</i></td>
+      <td>Die interne eindeutige Kennung, die dem Dienstleister während des Onboarding-Prozesses zugeordnet ist.</td>
+      <td><i>required</i></td>
    </tr>
     <tr>
-      <td style="background-color: #DEEBFF;">Partner</td>
-      <td>Der Name des Partners (z. B. Apple), der das Single Sign-on-Framework bereitstellt, das in Adobe Pass-Authentifizierungsflüsse integriert ist.</td>
-      <td><i>erforderlich</i></td>
+      <td style="background-color: #DEEBFF;">Kamerad</td>
+      <td>Der Name des Partners (z. B. Apple), der das in den Adobe Pass-Authentifizierungsflüssen integrierte Single-Sign-On-Framework bereitstellt.</td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">Textparameter</th>
+      <th style="background-color: #EFF2F7;">Hauptteilparameter</th>
       <th style="background-color: #EFF2F7;"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
@@ -62,9 +62,9 @@ ht-degree: 1%
       <td>
         Die Antwort zur Partnerauthentifizierung, die die erforderlichen Benutzermetadaten zum Erstellen und Speichern eines Partnerprofils enthält.
         <br/><br/>
-        Der Wert muss Base64-kodiert und anschließend URL-kodiert sein.
+        Der Wert muss Base64-kodiert und danach URL-kodiert sein.
       </td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">Kopfzeilen</th>
@@ -73,72 +73,72 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisierung</td>
-      <td>Die Erstellung der Payload des Trägertokens wird in der Kopfzeilendokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">Autorisierung</a> beschrieben.</td>
-      <td><i>erforderlich</i></td>
+      <td>Die Generierung der Bearer-Token-Payload wird in der Dokumentation zur <a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">-Kopfzeile </a>.</td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Content-Type</td>
+      <td style="background-color: #DEEBFF;">content-type</td>
       <td>
          Der akzeptierte Medientyp für die gesendeten Ressourcen.
          <br/><br/>
-         Es muss application/x-www-form-urlencoded sein.
+         Es muss application/x-www-form-urlencoded lauten.
       </td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">AP-Device-Identifier</td>
-      <td>Die Generierung der Payload der Gerätekennung wird in der Kopfzeilendokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a> beschrieben.</td>
-      <td><i>erforderlich</i></td>
+      <td style="background-color: #DEEBFF;">ap-device-identifier</td>
+      <td>Die Erstellung der Payload der Gerätekennung wird in der Header-Dokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a> beschrieben.</td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">X-Device-Info</td>
+      <td style="background-color: #DEEBFF;">x-device-info</td>
       <td>
-         Die Erstellung der Payload der Geräteinformationen wird in der Kopfzeilendokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> beschrieben.
+         Die Erzeugung der Payload mit Geräteinformationen wird in der Header-Dokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> beschrieben.
          <br/><br/>
-         Es wird dringend empfohlen, sie immer zu verwenden, wenn die Geräteplattform der Anwendung die explizite Bereitstellung gültiger Werte zulässt.
+         Es wird dringend empfohlen, sie immer dann zu verwenden, wenn die Geräteplattform der Anwendung die explizite Bereitstellung gültiger Werte zulässt.
          <br/><br/>
-         Wenn dies bereitgestellt wird, führt das Adobe Pass-Authentifizierungs-Backend explizit Werte mit extrahierten Werten zusammen (standardmäßig).
+         Wenn angegeben, führt das Backend für die Adobe Pass-Authentifizierung explizit eingestellte Werte mit extrahierten Werten implizit zusammen (standardmäßig).
          <br/><br/>
-         Wenn kein Wert angegeben wird, verwendet das Backend für die Adobe Pass-Authentifizierung implizit extrahierte Werte (standardmäßig).
+         Wenn keine Angabe gemacht wird, verwendet das Backend für die Adobe Pass-Authentifizierung implizit die extrahierten Werte (standardmäßig).
       </td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
+      <td style="background-color: #DEEBFF;">ap-partner-framework-status</td>
       <td>
-        Die Generierung der Single Sign-On-Payload für die Partner-Methode wird in der Kopfzeilendokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> beschrieben.
+        Die Erstellung der Single Sign-On-Payload für die Partner-Methode wird in der Header-Dokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> beschrieben.
         <br/><br/>
-        Weitere Informationen zu für Single Sign-on aktivierten Flüssen mit einem Partner finden Sie in der Dokumentation zu <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Single Sign-on mit Partner-Flüssen</a> .</td>
-      <td>optional</td>
+        Weitere Informationen zu Flüssen, für die Single Sign-on unter Verwendung eines Partners aktiviert ist, finden Sie in der <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Single Sign-on unter Verwendung von Partnerflüssen</a> Dokumentation.</td>
+      <td>fakultativ</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
          Die IP-Adresse des Streaming-Geräts.
          <br/><br/>
-         Es wird dringend empfohlen, ihn immer für Server-zu-Server-Implementierungen zu verwenden, insbesondere wenn der Aufruf vom Programmierer-Dienst und nicht vom Streaming-Gerät erfolgt.
+         Es wird dringend empfohlen, sie immer für Server-zu-Server-Implementierungen zu verwenden, insbesondere wenn der Aufruf vom Programmierdienst und nicht vom Streaming-Gerät erfolgt.
          <br/><br/>
          Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts implizit gesendet.
       </td>
-      <td>optional</td>
+      <td>fakultativ</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Accept</td>
+      <td style="background-color: #DEEBFF;">Akzeptieren</td>
       <td>
-         Der Medientyp, der von der Clientanwendung akzeptiert wird.
+         Der von der Client-Anwendung akzeptierte Medientyp.
          <br/><br/>
          Wenn angegeben, muss es application/json sein.
       </td>
-      <td>optional</td>
+      <td>fakultativ</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">User-Agent</td>
-      <td>Der Benutzeragent der Clientanwendung.</td>
-      <td>optional</td>
+      <td style="background-color: #DEEBFF;">user-agent</td>
+      <td>Der Benutzeragent der Client-Anwendung.</td>
+      <td>fakultativ</td>
    </tr>
 </table>
 
-## Reaktion {#response}
+## Antwort {#response}
 
 <table style="table-layout:auto">
    <tr>
@@ -155,30 +155,30 @@ ht-degree: 1%
    </tr>
    <tr>
       <td>400</td>
-      <td>Ungültige Anfrage</td>
+      <td>Fehlerhafte Anfrage</td>
       <td>
-        Die Anfrage ist ungültig, der Client muss die Anfrage korrigieren und es erneut versuchen. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Verbesserte Fehlercodes</a> entsprechen.
+        Die Anfrage ist ungültig. Der Client muss die Anfrage korrigieren und es erneut versuchen. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.
       </td>
    </tr>
    <tr>
       <td>401</td>
-      <td>Unerlaubt</td>
+      <td>Nicht autorisiert</td>
       <td>
-        Das Zugriffstoken ist ungültig. Der Client muss ein neues Zugriffstoken abrufen und es erneut versuchen. Weitere Informationen finden Sie in der Dokumentation zur <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Übersicht über die dynamische Client-Registrierung</a> .
+        Das Zugriffstoken ist ungültig. Der Client muss ein neues Zugriffstoken abrufen und es erneut versuchen. Weitere Informationen finden Sie in der Dokumentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Übersicht über die Dynamic Client-Registrierung</a> .
       </td>
    </tr>
    <tr>
       <td>405</td>
       <td>Methode nicht zulässig</td>
       <td>
-        Die HTTP-Methode ist ungültig. Der Client muss eine HTTP-Methode verwenden, die für die angeforderte Ressource zulässig ist, und es erneut versuchen. Weitere Informationen finden Sie im Abschnitt <a href="#request">Anfrage</a> .
+        Die HTTP-Methode ist ungültig. Der Client muss eine HTTP-Methode verwenden, die für die angeforderte Ressource zulässig ist, und erneut versuchen. Weitere Informationen finden Sie im Abschnitt <a href="#request">Anfrage</a>.
       </td>
    </tr>
    <tr>
       <td>500</td>
       <td>Interner Server-Fehler</td>
       <td>
-        Auf der Serverseite ist ein Problem aufgetreten. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Verbesserte Fehlercodes</a> entsprechen.
+        Auf der Serverseite ist ein Problem aufgetreten. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.
       </td>
    </tr>
 </table>
@@ -194,20 +194,20 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
       <td>201</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Content-Type</td>
+      <td style="background-color: #DEEBFF;">content-type</td>
       <td>application/json</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">body</th>
+      <th style="background-color: #EFF2F7;">Textkörper</th>
       <th style="background-color: #EFF2F7"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">profiles</td>
+      <td style="background-color: #DEEBFF;">Profile</td>
       <td>
          JSON mit einer Zuordnung von Schlüssel-/Wert-Paaren.
          <br/><br/>
@@ -220,8 +220,8 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
-               <td>Die interne eindeutige Kennung, die dem Identitäts-Provider während des Onboarding-Prozesses zugeordnet ist.</td>
-               <td><i>erforderlich</i></td>
+               <td>Die interne eindeutige Kennung, die dem Identitätsanbieter während des Onboarding-Prozesses zugeordnet ist.</td>
+               <td><i>required</i></td>
             </tr>
          </table>
          Das value-Element wird durch die folgenden Attribute definiert:
@@ -233,60 +233,60 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>Der Zeitstempel, vor dem das Profil nicht gültig ist.</td>
-               <td><i>erforderlich</i></td>
+               <td>Der Zeitstempel, vor dem das Profil ungültig ist.</td>
+               <td><i>required</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>Der Zeitstempel, nach dem das Profil nicht gültig ist.</td>
-               <td><i>erforderlich</i></td>
+               <td>Der Zeitstempel, nach dem das Profil ungültig ist.</td>
+               <td><i>required</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">Emittent</td>
+               <td style="background-color: #DEEBFF;">Aussteller</td>
                <td>
                   Die Entität, der das Profil gehört.
                   <br/><br/>
-                  Mögliche Werte sind:
+                  Die möglichen Werte sind:
                   <ul>
-                    <li><b>Apple</b><br/>Das Profil wurde erstellt durch: Single Sign-on mit Partner Apple.</li>
+                    <li><b>Apple</b><br/>Das Profil wurde erstellt aus: Single Sign-on mit Partner-Apple.</li>
                   </ul>
                </td>
-               <td><i>erforderlich</i></td>
+               <td><i>required</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">type</td>
+               <td style="background-color: #DEEBFF;">Typ</td>
                <td>
                   Der Profiltyp.
                   <br/><br/>
-                  Mögliche Werte sind:
+                  Die möglichen Werte sind:
                   <ul>
-                    <li><b>appleSSO</b><br/>Das Profil wurde erstellt durch: Single Sign-on mit Partner Apple.</li>
+                    <li><b>appleSSO</b><br/>Das Profil wurde erstellt als Ergebnis von: Single Sign-on mit Partner-Apple.</li>
                   </ul>
                </td>
-               <td><i>erforderlich</i></td>
+               <td><i>required</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">attributes</td>
+               <td style="background-color: #DEEBFF;">Attribute</td>
                <td>
-                    Die Liste der Benutzermetadatenattribute.
+                    Die Liste der Benutzer-Metadatenattribute.
                     <br/><br/>
-                    Diese Attribute können:
+                    Diese Attribute können sein:
                     <ul>
-                        <li>Obligatorisch, z. B. "userId"</li>
-                        <li>Nicht obligatorisch, z. B. "zip", "budgetId", "maxRating" usw.</li>
+                        <li>Obligatorisch, wie „userId“</li>
+                        <li>Nicht obligatorisch, wie „zip“, „householdId“, „maxRating“ usw.</li>
                     </ul>
-                    Die Werte für die Attribute können:
+                    Die Werte für die Attribute können wie folgt sein:
                     <ul>
-                        <li>einfach</li>
-                        <li>Liste</li>
-                        <li>map</li>
+                        <li>schlicht</li>
+                        <li>auflisten</li>
+                        <li>kartieren</li>
                     </ul>
                </td>
-               <td><i>erforderlich</i></td>
+               <td><i>required</i></td>
             </tr>
          </table>
       </td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
 </table>
 
 ### Fehler {#error}
@@ -300,28 +300,28 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
       <td>400, 401, 405, 500</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Content-Type</td>
+      <td style="background-color: #DEEBFF;">content-type</td>
       <td>application/json</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">body</th>
+      <th style="background-color: #EFF2F7;">Textkörper</th>
       <th style="background-color: #EFF2F7;"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>Der Antworttext kann zusätzliche Fehlerinformationen bereitstellen, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Verbesserte Fehlercodes</a> entsprechen.</td>
-      <td><i>erforderlich</i></td>
+      <td>Der Antworttext kann zusätzliche Fehlerinformationen bereitstellen, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.</td>
+      <td><i>required</i></td>
    </tr>
 </table>
 
-## Stichproben {#samples}
+## Beispiele {#samples}
 
-### 1. Profil mithilfe der Antwort zur Partnerauthentifizierung abrufen
+### 1. Abrufen des Profils mithilfe der Antwort der Partnerauthentifizierung
 
 >[!BEGINTABS]
 
@@ -378,7 +378,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Profil mithilfe der Antwort auf die Partnerauthentifizierung abrufen, aber es wird ein Abbau vorgenommen
+### 2. Profil mit Antwort der Partnerauthentifizierung abrufen, es wird jedoch eine Beeinträchtigung vorgenommen
 
 >[!BEGINTABS]
 

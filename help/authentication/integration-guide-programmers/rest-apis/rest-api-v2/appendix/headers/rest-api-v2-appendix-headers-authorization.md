@@ -1,6 +1,6 @@
 ---
-title: Kopfzeile - Autorisierung
-description: REST API V2 - Header - Authorization
+title: Header - Autorisierung
+description: REST API v2 - Kopfzeile - Autorisierung
 exl-id: 86917d7e-ffd9-4d34-8f9c-5a50083f85e6
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -10,27 +10,27 @@ ht-degree: 1%
 ---
 
 
-# Kopfzeile - Autorisierung {#header-authorization}
+# Header - Autorisierung {#header-authorization}
 
 >[!NOTE]
 >
-> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 ## Übersicht {#overview}
 
-Der Anforderungsheader <b>Autorisierung</b> enthält das Zugriffstoken `Bearer` , das von der Clientanwendung für den Zugriff auf Adobe Pass-geschützte APIs benötigt wird.
+Der <b>Autorisierungs</b>-Anfrage-Header enthält das `Bearer` Zugriffstoken, das von der Client-Anwendung für den Zugriff auf durch Adobe Pass geschützte APIs benötigt wird.
 
-Weitere Informationen zum Mechanismus für den Zugriff auf Adobe Pass-geschützte APIs finden Sie in der Dokumentation [Übersicht über die dynamische Client-Registrierung](../../../rest-api-dcr/dynamic-client-registration-overview.md) .
+Weitere Informationen zum Mechanismus für den Zugriff auf Adobe Pass-geschützte APIs finden Sie in der Dokumentation [Übersicht über die dynamische Client-Registrierung](../../../rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Syntax {#syntax}
 
 <table>
    <tr>
-      <td style="background-color: #DEEBFF;" colspan="2"><b>Autorisierung</b>: Träger&lt;access_token&gt;</td>
+      <td style="background-color: #DEEBFF;" colspan="2"><b>Authorization</b>: Bearer &lt;access_token&gt;</td>
    </tr>
    <tr>
       <td>Kopfzeilentyp</td>
-      <td>Anforderungs-Header</td>
+      <td>Anfrage-Header</td>
    </tr>
    <tr>
       <td>Standard</td>
@@ -38,11 +38,11 @@ Weitere Informationen zum Mechanismus für den Zugriff auf Adobe Pass-geschützt
    </tr>
 </table>
 
-## Richtlinien {#directives}
+## Anweisungen {#directives}
 
 <b>&lt;access_token></b>
 
-Der Zugriffstoken-Wert ist ein undurchsichtiger Wert mit einer begrenzten Live-Lebensdauer (z. B. 24 Stunden), der von Adobe Pass abgerufen werden muss, wie in der API-Dokumentation zum [Zugriffstoken abrufen](../../../rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) beschrieben.
+Der Wert des Zugriffstokens ist ein undurchsichtiger Wert mit einer begrenzten Lebensdauer (z. B. 24 Stunden), der von Adobe Pass abgerufen werden muss, wie in der API-Dokumentation zum [ des Zugriffstokens ](../../../rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 
 ## Beispiele {#examples}
 

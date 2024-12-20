@@ -1,7 +1,8 @@
 ---
 title: Produktankündigungen
 description: Produktankündigungen
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+exl-id: 3c9c66e1-d31d-4af3-8ab2-eb32492f42ca
+source-git-commit: c677427f7ae09809461bd9f0316b2fda746b2e17
 workflow-type: tm+mt
 source-wordcount: '670'
 ht-degree: 1%

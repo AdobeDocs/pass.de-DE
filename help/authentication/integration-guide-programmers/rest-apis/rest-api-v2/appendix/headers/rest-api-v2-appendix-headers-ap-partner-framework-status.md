@@ -1,6 +1,6 @@
 ---
 title: Header - AP-Partner-Framework-Status
-description: REST API V2 - Header - AP-Partner-Framework-Status
+description: REST API v2 - Kopfzeile - AP-Partner-Framework-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 ## Übersicht {#overview}
 
-Der Anforderungsheader <b>AP-Partner-Framework-Status</b> enthält Statusinformationen, die von einem Partner-Framework abgerufen wurden, um Single Sign-On (SSO) zu erzielen.
+Der <b>AP-Partner-Framework-Status</b>-Anfrage-Header enthält Statusinformationen, die von einem Partner-Framework abgerufen wurden, um Single Sign-on (SSO) zu erzielen.
 
 ## Syntax {#syntax}
 
@@ -27,7 +27,7 @@ Der Anforderungsheader <b>AP-Partner-Framework-Status</b> enthält Statusinforma
    </tr>
    <tr>
       <td>Kopfzeilentyp</td>
-      <td>Anforderungs-Header</td>
+      <td>Anfrage-Header</td>
    </tr>
    <tr>
       <td>Standard</td>
@@ -35,11 +35,11 @@ Der Anforderungsheader <b>AP-Partner-Framework-Status</b> enthält Statusinforma
    </tr>
 </table>
 
-## Richtlinien {#directives}
+## Anweisungen {#directives}
 
-<b>&lt;partner_framework_status_information></b>
+<b>&lt;PARTNER_FRAMEWORK_STATUS_INFORMATION></b>
 
-Der `Base64-encoded` -Wert des JSON-Elements, das die folgenden Attribute enthält:
+Der `Base64-encoded` des JSON-Elements, das die folgenden Attribute enthält:
 
 <table>
    <tr>
@@ -51,7 +51,7 @@ Der `Base64-encoded` -Wert des JSON-Elements, das die folgenden Attribute enthä
       <td>
          Dies ist ein erforderliches Attribut.
          <br/><br/>
-         Die Benutzerberechtigungsstatus-Informationen, die vom Partner-Framework zurückgegeben und von der Anwendung verarbeitet werden.
+         Die vom Partner-Framework zurückgegebenen und von der Anwendung verarbeiteten Statusinformationen zu Benutzerberechtigungen.
          <br/><br/>
          Dies ist ein JSON-Element mit den folgenden Attributen:
          <br/>
@@ -68,19 +68,19 @@ Der `Base64-encoded` -Wert des JSON-Elements, das die folgenden Attribute enthä
                   Dies ist eine Auflistung mit den folgenden möglichen Werten:
                   <br/>
                   <ul>
-                     <li>provided - Der Benutzer hat der Anwendung Zugriff auf Abonnementinformationen gewährt.</li>
-                     <li>verweigert - Der Benutzer verweigerte der Anwendung den Zugriff auf Abonnementinformationen.</li>
-                     <li>Ausstehend - Der Benutzer hat sich noch nicht dafür entschieden, der Anwendung den Zugriff auf Abonnementinformationen zu erlauben.</li>
-                     <li>notDetermined - Die Anwendung kann nicht auf Abonnementinformationen zugreifen.</li>
+                     <li>Gewährt - Der Benutzer hat der Anwendung erlaubt, auf Abonnementinformationen zuzugreifen.</li>
+                     <li>Verweigert : Der Benutzer hat der Anwendung den Zugriff auf Abonnementinformationen verweigert.</li>
+                     <li>Ausstehend : Der Benutzer hat noch nicht ausgewählt, ob die Anwendung auf Abonnementinformationen zugreifen darf.</li>
+                     <li>notDetermined : Die Anwendung darf nicht auf Abonnementinformationen zugreifen.</li>
                   </ul>
                </td>
             </tr>
             <tr>
-               <td>error</td>
+               <td>Fehler</td>
                <td>
                   Dies ist ein optionales Attribut.
                   <br/><br/>
-                  Dies kann verwendet werden, um den Fehler des Partner-Frameworks weiterzugeben, falls einer beim Abfragen nach Statusinformationen für Benutzerberechtigungen ausgelöst wird.
+                  Dies kann verwendet werden, um den Partner-Framework-Fehler zu übergeben, falls beim Abfragen von Statusinformationen zu Benutzerberechtigungen ein Fehler ausgelöst wird.
                   <br/><br/>
                   Dies ist ein JSON-Element mit den folgenden Attributen:
                   <br/>
@@ -90,11 +90,11 @@ Der `Base64-encoded` -Wert des JSON-Elements, das die folgenden Attribute enthä
                         <th style="background-color: #EFF2F7;"></th>
                      </tr>
                      <tr>
-                        <td>code</td>
+                        <td>Code</td>
                         <td>Eine Zeichenfolge, die den Fehler eindeutig identifiziert, wie vom Partner-Framework definiert.</td>
                      </tr>
                      <tr>
-                        <td>message</td>
+                        <td>Nachricht</td>
                         <td>Eine Zeichenfolge, die die Beschreibung des Fehlers enthält, wie vom Partner-Framework definiert.</td>
                      </tr>
                   </table>
@@ -108,7 +108,7 @@ Der `Base64-encoded` -Wert des JSON-Elements, das die folgenden Attribute enthä
       <td>
          Dies ist ein erforderliches Attribut.
          <br/><br/>
-         Die vom Partner-Framework zurückgegebenen und von der Anwendung verarbeiteten Statusinformationen des Anbieters.
+         Die vom Partner-Framework zurückgegebenen und von der Anwendung verarbeiteten Provider-Anmeldeinformationen.
          <br/><br/>
          Dies ist ein JSON-Element mit den folgenden Attributen:
          <br/>
@@ -118,11 +118,11 @@ Der `Base64-encoded` -Wert des JSON-Elements, das die folgenden Attribute enthä
                <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
-               <td>id</td>
+               <td>ID</td>
                <td>
                   Dies ist ein erforderliches Attribut.
                   <br/><br/>
-                  Dies ist die mappingId , die den MVPD identifiziert, der während des Authentifizierungsflusses auf der Partner-Framework-Ebene verwendet wird.
+                  Dies ist die mappingId, die die MVPD identifiziert, die während des Authentifizierungsflusses auf Partnerframework-Ebene verwendet wurde.
                </td>
             </tr>
             <tr>
@@ -130,15 +130,15 @@ Der `Base64-encoded` -Wert des JSON-Elements, das die folgenden Attribute enthä
                <td>
                   Dies ist ein erforderliches Attribut.
                   <br/><br/>
-                  Dies ist das Ablaufdatum des authentifizierten Benutzerprofils, falls der Benutzer sich erfolgreich mit einem unterstützten MVPD auf der Partner-Framework-Ebene angemeldet hat.
+                  Dies ist das Ablaufdatum des authentifizierten Benutzerprofils, falls der Benutzer sich erfolgreich mit einer unterstützten MVPD auf Partnerframework-Ebene angemeldet hat.
                </td>
             </tr>
             <tr>
-               <td>error</td>
+               <td>Fehler</td>
                <td>
                   Dies ist ein optionales Attribut.
                   <br/><br/>
-                  Dies kann verwendet werden, um den Fehler des Partner-Frameworks zu übergeben, falls einer bei der Abfrage nach Statusinformationen der Provider-Anmeldung ausgelöst wird.
+                  Dies kann verwendet werden, um den Partner-Framework-Fehler zu übergeben, falls bei der Abfrage nach Statusinformationen der Provider-Anmeldung ein Fehler ausgelöst wird.
                   <br/><br/>
                   Dies ist ein JSON-Element mit den folgenden Attributen:
                   <br/>
@@ -148,11 +148,11 @@ Der `Base64-encoded` -Wert des JSON-Elements, das die folgenden Attribute enthä
                         <th style="background-color: #EFF2F7;"></th>
                      </tr>
                      <tr>
-                        <td>code</td>
+                        <td>Code</td>
                         <td>Eine Zeichenfolge, die den Fehler eindeutig identifiziert, wie vom Partner-Framework definiert.</td>
                      </tr>
                      <tr>
-                        <td>message</td>
+                        <td>Nachricht</td>
                         <td>Eine Zeichenfolge, die die Beschreibung des Fehlers enthält, wie vom Partner-Framework definiert.</td>
                      </tr>
                   </table>

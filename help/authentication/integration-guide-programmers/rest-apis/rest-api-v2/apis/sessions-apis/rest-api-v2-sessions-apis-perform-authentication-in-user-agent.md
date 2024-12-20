@@ -13,11 +13,11 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
-> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 >[!IMPORTANT]
 >
-> Die REST API V2-Implementierung wird durch die Dokumentation zum [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) begrenzt.
+> Die REST-API-V2-Implementierung ist an die Dokumentation [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) gebunden.
 
 ## Anfrage {#request}
 
@@ -28,12 +28,12 @@ ht-degree: 3%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">path</td>
+      <td style="background-color: #DEEBFF;">Pfad</td>
       <td>/api/v2/authenticate/{serviceProvider}/{code}</td>
       <td></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">method</td>
+      <td style="background-color: #DEEBFF;">Methode</td>
       <td>GET</td>
       <td></td>
    </tr>
@@ -44,13 +44,13 @@ ht-degree: 3%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
-      <td>Die interne eindeutige Kennung, die dem Service Provider während des Onboarding-Prozesses zugeordnet ist.</td>
-      <td><i>erforderlich</i></td>
+      <td>Die interne eindeutige Kennung, die dem Dienstleister während des Onboarding-Prozesses zugeordnet ist.</td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">code</td>
+      <td style="background-color: #DEEBFF;">Code</td>
       <td>Der Authentifizierungscode, der nach der Erstellung der Authentifizierungssitzung auf dem Streaming-Gerät abgerufen wurde.</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">Kopfzeilen</th>
@@ -58,13 +58,13 @@ ht-degree: 3%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">User-Agent</td>
-      <td>Der Benutzeragent der Clientanwendung.</td>
-      <td>optional</td>
+      <td style="background-color: #DEEBFF;">user-agent</td>
+      <td>Der Benutzeragent der Client-Anwendung.</td>
+      <td>fakultativ</td>
    </tr>
 </table>
 
-## Reaktion {#response}
+## Antwort {#response}
 
 <table style="table-layout:auto">
    <tr>
@@ -74,23 +74,23 @@ ht-degree: 3%
    </tr>
    <tr>
       <td>302</td>
-      <td>Found</td>
+      <td>gefunden</td>
       <td>
-        Der Antworttext enthält eine Standortumleitung, um den Fluss fortzusetzen, bis die MVPD-Anmeldeseite erreicht wird.
+        Der Antworttext enthält eine Standortumleitung, um den Fluss fortzusetzen, bis er die Anmeldeseite von MVPD erreicht
       </td>
    </tr>
    <tr>
       <td>400</td>
-      <td>Ungültige Anfrage</td>
+      <td>Fehlerhafte Anfrage</td>
       <td>
-        Die Anfrage ist ungültig, der Client muss die Anfrage korrigieren und es erneut versuchen.
+        Die Anfrage ist ungültig. Der Client muss die Anfrage korrigieren und es erneut versuchen.
       </td>
    </tr>
    <tr>
       <td>405</td>
       <td>Methode nicht zulässig</td>
       <td>
-        Die HTTP-Methode ist ungültig. Der Client muss eine HTTP-Methode verwenden, die für die angeforderte Ressource zulässig ist, und es erneut versuchen. Weitere Informationen finden Sie im Abschnitt <a href="#request">Anfrage</a> .
+        Die HTTP-Methode ist ungültig. Der Client muss eine HTTP-Methode verwenden, die für die angeforderte Ressource zulässig ist, und erneut versuchen. Weitere Informationen finden Sie im Abschnitt <a href="#request">Anfrage</a>.
       </td>
    </tr>
    <tr>
@@ -104,7 +104,7 @@ ht-degree: 3%
 
 ### Erfolg {#success}
 
-Die erfolgreiche Antwort ist eine Reihe von einer oder mehreren Umleitungen, bis die MVPD-Anmeldeseite erreicht ist.
+Die erfolgreiche Antwort besteht aus einer oder mehreren Weiterleitungen bis zum Erreichen der Anmeldeseite von MVPD.
 
 ### Fehler {#error}
 
@@ -117,15 +117,15 @@ Die erfolgreiche Antwort ist eine Reihe von einer oder mehreren Umleitungen, bis
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
       <td>400, 405, 500</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Content-Type</td>
+      <td style="background-color: #DEEBFF;">content-type</td>
       <td>text/html</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">body</th>
+      <th style="background-color: #EFF2F7;">Textkörper</th>
       <th style="background-color: #EFF2F7;"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
@@ -136,7 +136,7 @@ Die erfolgreiche Antwort ist eine Reihe von einer oder mehreren Umleitungen, bis
    </tr>
 </table>
 
-## Stichproben {#samples}
+## Beispiele {#samples}
 
 ### 1. Authentifizierung im Benutzeragenten durchführen
 

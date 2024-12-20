@@ -13,9 +13,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme in dieser Version beschrieben:
+Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme dieser Version beschrieben:
 
 ## Server-seitige und Web-Clients {#server-side-web-clients-266}
 
@@ -25,14 +25,14 @@ Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme in di
 ### Build-Nummer {#build-number-266}
 
 Adobe Pass-Authentifizierung: adobe-pass-**2.66.0.1**
-Releasedatum: **11.07.2023 - 13.07.2023**
+Veröffentlichungsdatum: **07/11/2023 - 07/13/2023**
 
 ### Versionsübersicht {#release-overview-266}
 
-Mit dieser Version haben wir interne Updates für die neue REST-API fortgesetzt.
+Mit dieser Version setzten wir interne Aktualisierungen für die neue REST-API fort.
 
 #### Fehlerbehebungen {#release-overview-bugfixes-266}
 
-* Korrektur des Abmeldeflusses für SAML-basierte MVPDs, bei dem der RelayState-Parameter in der Abmeldeanforderung fehlte. Wir werden nach der Veröffentlichung Konfigurationsaktualisierungen durchführen, um den Abmeldefluss für betroffene MVPDs wiederherzustellen.
-* Es wurde die Möglichkeit hinzugefügt, SSL-Zertifikate in unserer Konfiguration für SOAP Autorisierungsendpunkte zu aktualisieren.
-* Es wurde ein Eckenfall behoben, bei dem in einigen ESM-Berichten im Feld Programmierer falsche Daten protokolliert wurden.
+* Fehlerkorrektur - Der Abmeldefluss für SAML-basierte MVPDs, bei denen der RelayState-Parameter in der Abmeldeanfrage fehlt, wird jetzt nicht mehr korrigiert. Nach der Veröffentlichung werden Konfigurationsaktualisierungen geplant, um den Abmeldefluss für betroffene MVPDs wiederherzustellen.
+* Es wurde die Möglichkeit hinzugefügt, SSL-Zertifikate in unserer Konfiguration für SOAP-Autorisierungsendpunkte zu aktualisieren.
+* Es wurde ein Eckenfall behoben, bei dem in einigen ESM-Berichten falsche Daten im Feld Programmierer protokolliert wurden.

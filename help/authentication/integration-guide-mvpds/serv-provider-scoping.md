@@ -1,6 +1,6 @@
 ---
-title: Umfang des Dienstleisters
-description: Umfang des Dienstleisters
+title: Service Provider-Umfang
+description: Service Provider-Umfang
 exl-id: 730c43e1-46c0-4eec-b562-b1ad93cce6d3
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -9,33 +9,33 @@ ht-degree: 0%
 
 ---
 
-# Umfang des Dienstleisters {#service-provoider-scoping}
+# Service Provider-Umfang {#service-provoider-scoping}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 ## Übersicht {#overview}
 
-Die Standardimplementierung einer Adobe Pass-Authentifizierungsintegration mit einem MVPD basiert auf der **OLCA-Spezifikation**. Im Abschnitt Authentifizierungsanforderungen der OLCA-Spezifikation (6.5, Subject Identifier) wird angegeben, dass der Umfang des Service Providers (SP) für die Subject Identifier angegeben werden kann. (Die Betreffkennung ist die verschleierte Benutzer-ID, die der MVPD an die SP zurückgibt.)  In einer Adobe Pass-Authentifizierungsintegration ist es erforderlich, dass MVPDs das Scoping der SP-Authentifizierungsanforderungen aktivieren.
+Die Standardimplementierung einer Adobe Pass-Authentifizierungsintegration mit einem MVPD basiert auf der **OLCA-Spezifikation**. Im Abschnitt Authentifizierungsanforderungen der OLCA-Spezifikation (6.5, Subjekt-ID) wird angegeben, dass es möglich ist, den Umfang des Service Providers (SP) für die Subjekt-ID anzugeben. (Die Betreffkennung ist die verschleierte Benutzer-ID, die MVPD an den SP zurückgibt.)  In einer Adobe Pass-Authentifizierungsintegration ist es erforderlich, dass MVPDs den Umfang der SP-Authentifizierungsanfragen aktivieren.
 
-Da die Adobe Pass-Authentifizierung die Rolle von SP für den Programmierer übernimmt, ist es erforderlich, eine Anpassung zu implementieren, die das SP-Scoping der Authentifizierungsanforderung ermöglicht.  Dies muss geschehen, damit der MVPD die Netzwerkmarke identifizieren kann, die in der SAML-Assertion an den Identitäts-Provider (IdP) des MVPD übergeben wurde.  Scoping kann auf eine der beiden im nächsten Abschnitt beschriebenen Arten implementiert werden.
+Da die Adobe Pass-Authentifizierung für den Programmierer die Rolle des SP übernimmt, ist es erforderlich, eine Anpassung zu implementieren, die das SP-Scoping der Authentifizierungsanfrage ermöglicht.  Dies muss geschehen, damit der MVPD die Netzwerkmarke identifizieren kann, die in der SAML-Bestätigung an den Identitätsanbieter (IdP) des MVPD übergeben wurde.  Die Berechnung kann auf eine der beiden Arten implementiert werden, die im nächsten Abschnitt beschrieben werden.
 
-## Umfang des Dienstleisters {#service-provider-scoping}
+## Service Provider-Umfang {#service-provider-scoping}
 
-Die Adobe Pass-Authentifizierung unterstützt die folgenden beiden Möglichkeiten, das SP-Scoping von Authentifizierungsanforderungen zu aktivieren:
+Die Adobe Pass-Authentifizierung unterstützt die folgenden beiden Möglichkeiten, um die SP-Begrenzung von Authentifizierungsanfragen zu aktivieren:
 
-* **Der SAML-Ausstelleransatz.** Bei diesem Ansatz wird die &quot;Anforderer-ID&quot;in der SAML-Authentifizierungsanforderung an die SAML-Ausstellerzeichenfolge angehängt.
+* **Der SAML-Ausstelleransatz.** Bei diesem Ansatz wird die „Anforderer-ID“ an die SAML-Ausstellerzeichenfolge in der SAML-Authentifizierungsanfrage angehängt.
 
-* **Der benutzerdefinierte Scoping-Eigenschaftsansatz.** Bei diesem Ansatz ist die &quot;Anforderer-ID&quot;explizit als benutzerdefinierte Eigenschaft &quot;Scoping&quot;in der SAML-Authentifizierungsanforderung enthalten.
+* **Der Ansatz der benutzerdefinierten Scoping-Eigenschaft.** Bei diesem Ansatz wird die „Anforderer-ID“ explizit als benutzerdefinierte Eigenschaft „Scoping“ in die SAML-Authentifizierungsanfrage aufgenommen.
 
 >[!NOTE]
 >
->Die &quot;Anforderer-ID&quot;bezieht sich auf die Netzwerkmarke des Programmierers (z. B.: &quot;CNN&quot;ist eine der Marken des Turner-Netzwerks).
+>Die „Anforderer-ID“ bezeichnet die Adobe Pass-Authentifizierung als die Netzwerkmarke des Programmierers (z. B.: „CNN“ ist eine der Marken des Turner-Netzwerks).
 
-### SAML-Ausstellungsansatz {#saml-issuer-approach}
+### SAML-Ausstelleransatz {#saml-issuer-approach}
 
-Bei diesem Ansatz wird das SAML `<Issuer>` -Element in der SAML-Authentifizierungsanforderung verwendet, wie in diesem Snippet gezeigt:
+Dieser Ansatz verwendet das SAML-`<Issuer>`-Element in der SAML-Authentifizierungsanfrage, wie in diesem Ausschnitt gezeigt:
 
 ```xml
 ...
@@ -45,9 +45,9 @@ Bei diesem Ansatz wird das SAML `<Issuer>` -Element in der SAML-Authentifizierun
 ...
 ```
 
-### Eigene Scoping-Eigenschaftsansatz {#custom-scoping-property-approach}
+### Eigenschaftsansatz für benutzerdefinierte Umfangsberechnung {#custom-scoping-property-approach}
 
-Dieser Ansatz verwendet eine benutzerdefinierte Eigenschaft mit dem Namen &quot;Scoping&quot;, wie in diesem Ausschnitt einer SAML-Authentifizierungsanforderung dargestellt:
+Dieser Ansatz verwendet eine benutzerdefinierte Eigenschaft mit dem Namen „Scoping“, wie in diesem Ausschnitt einer SAML-Authentifizierungsanfrage gezeigt:
 
 ```xml
 ...

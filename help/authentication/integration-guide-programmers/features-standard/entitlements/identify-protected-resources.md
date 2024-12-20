@@ -1,6 +1,6 @@
 ---
-title: Ermitteln geschützter Ressourcen
-description: Ermitteln geschützter Ressourcen
+title: Identifizieren geschützter Ressourcen
+description: Identifizieren geschützter Ressourcen
 exl-id: e96aea02-54b2-491d-ba91-253c0d0e681c
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -9,30 +9,30 @@ ht-degree: 0%
 
 ---
 
-# Ermitteln geschützter Ressourcen {#identifying-protected-resources}
+# Identifizieren geschützter Ressourcen {#identifying-protected-resources}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 ## Übersicht {#overview}
 
-Jede Autorisierungsanfrage (oder Anforderung der Autorisierung) muss eine eindeutige Kennung für die geschützte Ressource enthalten, für die der Benutzer Zugriff anfordert. Eine geschützte Ressource kann eine beliebige Ebene autorisierter Inhalte sein, wie zwischen einem MVPD und teilnehmenden Programmierern vereinbart. Potenzielle geschützte Ressourcen müssen in diese Baumstruktur mit zunehmend spezifischer Granularität passen:
+Jede Autorisierungsanfrage (oder Anfrage zur Überprüfung der Autorisierung) muss eine eindeutige Kennung für die geschützte Ressource enthalten, für die der Benutzer den Zugriff anfordert. Eine geschützte Ressource kann eine beliebige Ebene autorisierter Inhalte sein, wie zwischen einem MVPD und teilnehmenden Programmierern vereinbart. Potenzielle geschützte Ressourcen müssen in diese Baumstruktur mit zunehmend spezifischer Granularität passen:
 
 - Netzwerk
    - Kanal
       - Anzeigen
-         - Folge
+         - Episode
             - Asset
 
 </br>
 
-## Medien-RSS-Format {#media_rss}
+## RSS-Format für Medien {#media_rss}
 
-Ressourcen können durch eine einfache Zeichenfolge (eine eindeutige Kennung für einen Kanal) identifiziert oder im Media RSS-Format (MRSS) dargestellt werden, wie zwischen der Adobe (oder einem für die Adobe Pass-Authentifizierung autorisierten Partner) und den teilnehmenden MVPDs und Programmierern vereinbart. Die als Ressourcenspezifikator verwendete RSS-Zeichenfolge kann zusätzliche Informationen wie Bewertungen und Metadaten zur elterlichen Kontrolle enthalten.
+Ressourcen können durch eine einfache Zeichenfolge (eine eindeutige Kennung für einen Kanal) identifiziert oder im Media RSS-Format (MRSS) dargestellt werden, wie es zwischen Adobe (oder einem autorisierten Adobe Pass-Authentifizierungspartner) und den beteiligten MVPDs und Programmierern vereinbart wurde. Die als Ressourcenbezeichner verwendete RSS-Zeichenfolge kann zusätzliche Informationen enthalten, z. B. Bewertungen und Metadaten der elterlichen Kontrolle.
 
 
-Wenn Sie eine einfache Ressourcenkennung wie &quot;TNT&quot;verwenden, wird angenommen, dass diese einen Kanal darstellt und in diesen RSS-Ressourcenbezeichner übersetzt wird:
+Wenn Sie eine einfache Ressourcenkennung verwenden, z. B. „TNT“, wird davon ausgegangen, dass es sich um einen Kanal handelt, und er wird in diesen RSS-Ressourcenbezeichner übersetzt:
 
 ```RSS
     <rss version="2.0"> 
@@ -56,7 +56,7 @@ Ein komplexerer Bezeichner kann beispielsweise zusätzliche Bewertungsinformatio
     getAuthorization(resource);
 ```
 
-Ressourcenspezifikatoren sind für die Adobe Pass-Authentifizierung opak; sie werden einfach an den MVPD weitergeleitet. Wenn der MVPD Ihren Ressourcenbezeichner nicht erkennt oder nicht analysieren kann, wird ein Fehler an die Adobe Pass-Authentifizierung zurückgegeben, wodurch der Fehler an Ihren `tokenRequestFailed()` -Rückruf zurückgegeben wird.
+Ressourcenbezeichner sind für die Adobe Pass-Authentifizierung undurchsichtig; sie werden einfach an die MVPD weitergeleitet. Wenn MVPD Ihren Ressourcenbezeichner nicht erkennt oder nicht analysieren kann, wird ein Fehler an die Adobe Pass-Authentifizierung zurückgegeben, wodurch der Fehler an Ihren `tokenRequestFailed()`-Callback zurückgegeben wird.
 
 <!--
 ## Related Information {#related}

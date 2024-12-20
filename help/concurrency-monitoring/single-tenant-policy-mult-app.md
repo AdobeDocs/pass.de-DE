@@ -15,21 +15,21 @@ ht-degree: 0%
 
 ## Anwendungsbeispiele
 
-Programmierer P verfügt über eine iPhone-Anwendung, eine iPad-Anwendung und eine Website. Es muss in die Adobe Concurency Monitoring (CM) integriert werden, um die Anzahl der gleichzeitigen Streams zwischen diesen Apps zu begrenzen. Der Programmierer erstellt Richtlinien, die die gleichzeitige Nutzung einschränken. Wir werden uns zwei Beispiele ansehen:
+Programmierer P hat eine iPhone-Anwendung, eine iPad-Anwendung und eine Website. Es muss mit Adobe Concurrency Monitoring (CM) integriert werden, um die Anzahl der gleichzeitigen Streams zwischen diesen Apps zu beschränken. Der Programmierer erstellt Richtlinien, die die gleichzeitige Verwendung einschränken. Wir werden uns zwei Beispiele ansehen:
 
-Die erste Richtlinie enthält eine Regel, die maximal zwei gleichzeitige Streams erlaubt. Der neueste Stream darf wiedergegeben werden.
-Die zweite Richtlinie enthält zwei Regeln. Es ermöglicht maximal 3 gleichzeitige Streams von maximal 2 Geräten, und der neueste Stream kann wiedergegeben werden.
+Die erste Richtlinie enthält eine Regel, die nicht mehr als zwei gleichzeitige Streams zulässt. Der neueste Stream wird abgespielt werden dürfen.
+Die zweite Richtlinie umfasst zwei Regeln. Es lassen nicht mehr als 3 gleichzeitige Streams von nicht mehr als 2 Geräten zu und der neueste Stream darf wiedergegeben werden.
 
 
 ## Eine Richtlinie mit einer Regel
 
-Unsere erste Richtlinie enthält eine einzige Regel: maximal 2 gleichzeitige Streams sind zulässig, der erste Stream, der gestartet wird, wird gestoppt, falls drei gleichzeitige Streams wiedergegeben werden.
+Unsere erste Richtlinie enthält eine einzige Regel: Es sind nicht mehr als zwei gleichzeitige Streams zulässig. Der erste Stream, der gestartet wird, wird angehalten, falls drei gleichzeitige Streams wiedergegeben werden.
 
-Zum Starten von Streams werden zwei Apps + eine Website verwendet:
+Zwei Apps + eine Website werden verwendet, um Streams zu starten:
 
-1. Der Benutzer startet einen Stream über die iPhone-App und einen Stream über die iPad-App. Die Richtlinie erlaubt dies.
+1. Der Benutzer startet einen Stream aus der iPhone-App und einen Stream aus der iPad-App. Die Richtlinie erlaubt dies.
 1. Der Benutzer startet dann einen dritten Stream von der Website des Programmierers.
-1. Die Regel in der Richtlinie (max. 2 Streams, aktuelle Gewinne) ermöglicht die Wiedergabe des neuesten Streams, sodass **der erste gestartete Stream als nicht konform mit der Richtlinie markiert und gestoppt wird.**
+1. Die Regel in der Richtlinie (max. 2 Streams, zuletzt erfolgreicher) ermöglicht die Wiedergabe des neuesten Streams, sodass **der erste gestartete Stream als nicht richtlinienkonform markiert und gestoppt wird.**
 
 
 

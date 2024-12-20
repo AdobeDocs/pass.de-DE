@@ -1,6 +1,6 @@
 ---
 title: Anwendungsbeispiele
-description: Anwendungsfälle bei der Überwachung der Parallelität.
+description: Anwendungsfälle bei der Überwachung von gleichzeitigen Aufrufen.
 exl-id: 6cc30bb6-e985-4d9a-9f99-a7f04ae8deb7
 source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
@@ -9,24 +9,24 @@ ht-degree: 0%
 
 ---
 
-# Nutzungsszenarios {#use-cases}
+# Anwendungsfälle {#use-cases}
 
-Der Hauptanwendungsfall des Stream-Zählungs-Service besteht darin, die Anzahl der gleichzeitigen Videostreams zu zählen, die von einem Benutzer angesehen werden, und eine Entscheidung über die gleichzeitige Verwendung dieser Video-Streams für dieselbe Konto-ID zu treffen.
+Der Hauptanwendungsfall des Stream Counting Service besteht darin, die Anzahl der gleichzeitigen Videostreams zu zählen, die von einer Benutzerin oder einem Benutzer angesehen werden, und eine Entscheidung über die gleichzeitige Verwendung für dieselbe Konto-ID zu treffen.
 
-Um die Nutzung durch Abonnenten zu überwachen, ist ein zentralisierter Dienst erforderlich, der Benutzeraktivitäten aggregieren kann, unabhängig davon, ob sie auf der Website oder in der Anwendung des Programmierers, im Inhaltsportal des MVPD oder in einer syndizierten Eigenschaft stattfinden.
+Um die Nutzung durch Abonnenten zu überwachen, ist ein zentralisierter Service erforderlich, der Benutzeraktivitäten unabhängig davon aggregieren kann, ob sie auf der Website oder in der Anwendung des Programmierers, im Inhaltsportal von MVPD oder in einer Syndication-Eigenschaft stattfinden.
 
-Die wichtigsten Anwendungsfälle, die von diesem zentralen Dienst unterstützt werden, sind:
+Die wichtigsten Anwendungsfälle, die von diesem zentralisierten Service unterstützt werden, sollten sein:
 
-1. Sobald ein Abonnent mit der Wiedergabe eines Videos beginnt, kann die Anwendung **eine Streaming-Sitzung initialisieren** und **Daten zur Berichterstellung** starten.
-1. Im selben zentralen Dienst erhält eine andere Instanz ***CM-Entscheidungen*** - Wenn die Anwendung eine oder mehrere Richtlinien im CM-Dienst registriert hat, antwortet der Dienst mit der Zugriffsentscheidung, die auf der aktuellen Aktivität basiert.
+1. Sobald ein Abonnent beginnt, ein Video anzusehen, kann die Anwendung **Streaming-Sitzung initialisieren** und Daten **Berichtsaktivität** starten.
+1. Im selben zentralen Service erhält eine andere Instanz ***CM-Entscheidungen***. Wenn die Anwendung eine oder mehrere im CM-Service registrierte Richtlinien hat, antwortet der Service mit einer Zugriffsentscheidung, die auf der aktuellen Aktivität basiert.
 
 
-## Sitzungserstellung {#create-session}
+## Erstellen einer Sitzung {#create-session}
 
-Mit diesem API-Aufruf kann der Client eine neue CM-Sitzung erstellen, wenn der Benutzer zum Ansehen von Inhalten die Schaltfläche &quot;Abspielen&quot;drückt. Die Server-Antwort enthält die neue Stream-URL (die die Stream-ID enthält), um sie aktiv zu halten, und den Zeitpunkt, zu dem der Stream mit einer Zeitüberschreitung beendet wird. Es wird erwartet, dass die Client-Anwendung die Aktivität über Heartbeats meldet. Der Aufruf zur Sitzungsinitialisierung muss Metadaten in Form von Schlüssel/Wert-Paaren enthalten, die als Formulardaten (oder Abfragezeichenfolgenparameter) gesendet werden. Darüber hinaus enthält die Antwort auch eine Markierung, die angibt, ob die Wiedergabe &quot;richtlinienkonform&quot;ist. Ist dies nicht der Fall, ist die Wiedergabe nicht zulässig.
+Dieser API-Aufruf ermöglicht es dem Client, eine neue CM-Sitzung zu erstellen, wenn der Benutzer die Schaltfläche „Abspielen“ drückt, um sich Inhalte anzusehen. Die Server-Antwort enthält die neue Stream-URL (mit der Stream-ID), um sie am Leben zu erhalten, und den Zeitpunkt, zu dem die Zeitüberschreitung des Streams eintritt. Es wird erwartet, dass die Client-Anwendung die Aktivität über Heartbeats meldet. Der Sitzungsinitialisierungsaufruf muss Metadaten in Form von Schlüssel/Wert-Paaren enthalten, die als Formulardaten (oder Abfragezeichenfolgenparameter) gesendet werden. Darüber hinaus enthält die Antwort auch eine Markierung, die anzeigt, ob die Wiedergabe richtlinienkonform ist. Wenn dies nicht der Fall ist, ist die Wiedergabe nicht zulässig.
 
 ## Berichtsaktivität {#reporting-activity}
 
-Nachdem eine Sitzung erstellt wurde, muss die Anwendung regelmäßig Heartbeats senden, damit dieser Stream aktiv bleibt. Außerdem wird empfohlen, dass die Client-App den Stream stoppt, sobald der Benutzer die Wiedergabe stoppt, damit der Stream erst nach einer Zeitüberschreitung als aktiv gezählt wird.
+Nachdem eine Sitzung erstellt wurde, muss die Anwendung regelmäßig Heartbeats senden, damit dieser Stream aktiv bleibt. Außerdem wird empfohlen, dass die Client-App den Stream stoppt, sobald der Benutzer die Wiedergabe stoppt, sodass der Stream bis zur Zeitüberschreitung nicht als aktiv zählt.
 
-Die Antwort des Heartbeat-Aufrufs kann der Clientanwendung erlauben, die Videowiedergabe fortzusetzen (wenn sie richtlinienkonform ist) oder sie kann sie anweisen, die Videowiedergabe zu stoppen. Wenn der Video-Stream nicht kompatibel ist, muss die Client-Anwendung ihn stoppen. Die Antwort enthält Informationen, damit die Client-Anwendung eine Fehlermeldung und/oder verfügbare Aktionen anzeigt, damit der Benutzer die Wiedergabe fortsetzen kann.
+Die Antwort auf den Heartbeat-Aufruf kann der Client-Anwendung erlauben, die Videowiedergabe fortzusetzen (wenn sie richtlinienkonform ist), oder sie kann anweisen, die Videowiedergabe anzuhalten. Wenn der Video-Stream nicht kompatibel ist, muss er von der Client-Anwendung angehalten werden. Die Antwort enthält Informationen, damit die Client-Anwendung eine Fehlermeldung und/oder verfügbare Aktionen anzeigt, mit denen der Benutzer die Wiedergabe fortsetzen kann.

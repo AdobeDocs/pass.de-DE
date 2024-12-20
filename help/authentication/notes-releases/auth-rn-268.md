@@ -13,27 +13,27 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme in dieser Version beschrieben:
+Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme dieser Version beschrieben:
 
 ## Server-seitige und Web-Clients {#server-side-web-clients-268}
 
 * [Build-Nummer](#build-number-268)
 * [Neue Funktionen](#new-features-268)
-* [Fehlerkorrekturen](#bug-fixes-268)
+* [Fehlerbehebungen](#bug-fixes-268)
 
 ### Build-Nummer {#build-number-268}
 
 Adobe Pass-Authentifizierung: adobe-pass-**2.68.0.5**
-Releasedatum: **12/05/2023 - 12/07/2023**
+Veröffentlichungsdatum: **12/05/2023 - 12/07/2023**
 
 ### Neue Funktionen {#new-features-268}
 
-* Laufende Entwicklung für neue REST-APIS. Die neuen Endpunkte und Flüsse, die in einer künftigen dedizierten Version verfügbar sein sollen. Die Dokumentation zur Verwendung dieser neuen APIS wird derzeit aktualisiert.
-* Weitere interne Architekturverbesserungen.
-* Die Device Atlas-Bibliothek wurde auf die neueste Version aktualisiert, um die Geräteerkennung zu verbessern.
+* Laufende Entwicklung zu neuen REST-APIs. Die neuen Endpunkte und Flüsse sollen in einer kommenden dedizierten Version verfügbar sein. Die Dokumentation für die Verwendung dieser neuen APIs wird derzeit aktualisiert.
+* Kontinuierliche interne architektonische Verbesserungen.
+* Die Device Atlas-Bibliothek wurde auf die neueste Version aktualisiert, um die Geräte-Identifizierung zu verbessern.
 
-#### Fehlerkorrekturen {#bug-fixes-268}
+#### Fehlerbehebungen {#bug-fixes-268}
 
-* Es wurde ein Problem mit dem Video-MVPD behoben, sodass mehrere Entscheidungen für dieselbe Ressource nicht zurückgegeben werden können.
+* Es wurde ein Problem mit Video MVPD behoben, sodass mehrere Entscheidungen nicht für dieselbe Ressource zurückgegeben werden können.

@@ -1,6 +1,6 @@
 ---
 title: Best Practices für Account IQ
-description: Erfahren Sie mehr über [!UICONTROL Account IQ] in Adobe Pass.
+description: Informationen zu [!UICONTROL Account IQ] in Adobe Pass.
 exl-id: 55901f5d-d9c1-4ee5-9349-afa28445b324
 source-git-commit: 60aeba449cae1c4dc510a23aaf1ba793a7a60db0
 workflow-type: tm+mt
@@ -11,46 +11,46 @@ ht-degree: 0%
 
 # Best Practices {#aiq-best-practices}
 
-Mit [!UICONTROL Account IQ] können Sie die Freigabe von Anmeldedaten identifizieren, den Umfang und die Wirkung messen, relevante Kohorten segmentieren und die Wirkung gezielter Aktionen verfolgen. Es bietet eine Vielzahl von Tools, Diagrammen und Berichten, die zum Verständnis und Verwalten von freigegebenen Konten verwendet werden und auf unterschiedliche Weise verwendet werden können. Jeder Streaming-Dienst nähert sich diesem Verhalten an und entwickelt Prozesse, die ihren individuellen Zielen entsprechen. Das Produkt ist so konzipiert, dass es diese Anforderungen flexibel erfüllt.  Es gibt jedoch einige Regeln für allgemeine Praktiken, die auf eine breite Palette von Szenarien angewendet werden können.
+[!UICONTROL Account IQ] können Sie die Freigabe von Anmeldeinformationen identifizieren, ihren Umfang und ihre Auswirkungen messen, relevante Kohorten segmentieren und die Wirkung zielgerichteter Aktionen verfolgen. Es bietet eine Vielzahl von Tools, Diagrammen und Berichten, die zum Verständnis und zur Verwaltung freigegebener Konten verwendet werden und auf verschiedene Arten verwendet werden können. Jeder Streaming-Service geht dieses Verhalten an und entwickelt Prozesse, die zu ihren individuellen Zielen passen. Das Produkt ist so konzipiert, dass es diese Anforderungen flexibel erfüllt.  Es gibt jedoch einige allgemeine Regeln, die auf einen breiten Satz von Szenarien angewendet werden können.
 
-## Analysieren und Verstehen {#analyze-understand}
+## Analysieren und verstehen {#analyze-understand}
 
-[!UICONTROL Account IQ] -Tools helfen Ihnen dabei, Art und Umfang der Weitergabe von Anmeldedaten für Ihr Unternehmen zu verstehen, von den Diagrammen auf höchster Ebene, die den Prozentsatz der freigegebenen Konten anzeigen, bis hin zu den Exporten auf der niedrigsten Ebene, die die Merkmale einzelner Konten melden. Verwenden Sie diese Werkzeuge besonders zu Beginn, um die Daten zu untersuchen und ungewöhnliche oder interessante Kohorten oder Verhaltensmuster zu identifizieren - beispielsweise ein Hinweis auf ein hohes Maß an Freigabe. Anschließend können Segmente identifiziert werden, die eine bestimmte Chance oder ein bestimmtes Ziel darstellen.
+[!UICONTROL Account IQ] Tools helfen Ihnen, die Art und den Umfang der Freigabe von Anmeldeinformationen in Ihrem Unternehmen zu verstehen, von den Diagrammen der obersten Ebene, die den Prozentsatz freigegebener Konten anzeigen, bis hin zu den Exporten der untersten Ebene, die die Eigenschaften einzelner Konten melden. Nutzen Sie diese Tools besonders zu Beginn, um die Daten zu untersuchen und ungewöhnliche oder interessante Kohorten oder Verhaltensmuster zu identifizieren - beispielsweise Hinweise auf ein hohes Maß an Freigabe. Anschließend können Segmente identifiziert werden, die eine bestimmte Opportunity oder ein bestimmtes Ziel darstellen.
 
-So verstehen Sie Art und Auswirkung der Freigabe auf Ihr Unternehmen:
+Um die Art und die Auswirkungen der Freigabe auf Ihr Unternehmen zu verstehen:
 
 * Überprüfen Sie zunächst alle potenziell relevanten Daten.
 
-* Identifizieren und analysieren Sie die Freigabe im Kontext Ihrer Ziele.
+* Identifizieren und analysieren Sie die gemeinsame Nutzung im Kontext Ihrer Ziele.
 
-* Identifizieren Sie Zielmuster und -verhalten.
+* Identifizieren Sie Muster und Verhaltensweisen, die Sie ansprechen möchten.
 
-## Schrittweise gezielte Maßnahmen ergreifen {#incremental-targeted-action}
+## Gezielte inkrementelle Aktion durchführen {#incremental-targeted-action}
 
-Führen Sie mit einem definierten Zielsegment Aktionen durch. Wenn Sie klein mit einem klar definierten Segment beginnen, verringern Sie Ihr Risiko unbeabsichtigter Folgen und können das Ergebnis besser verstehen. Unabhängig davon, wo Sie sich auf Ihrem Pfad befinden, können Sie das Ziel Ihres Vorgangs immer verfeinern oder erweitern.
-Klein anfangen und aufsteigen zu lassen ist ein umsichtiger Ansatz. Verwenden Sie zuvor identifizierte Segmente und ergreifen Sie Aktionen (als Experimente) mit spezifischen Zielen.
+Bei einem definierten Zielsegment führen Sie die folgenden Aktionen aus. Wenn Sie mit einem kleinen Segment beginnen, verringern Sie das Risiko unbeabsichtigter Folgen und können das Ergebnis besser verstehen. Egal, wo Sie sich auf Ihrem Weg befinden, Sie können das Ziel Ihres Vorgangs immer verfeinern oder erweitern.
+Klein zu beginnen und anzukurbeln ist ein umsichtiger Ansatz. Verwenden Sie zuvor identifizierte Segmente und führen Sie Aktionen (als Experimente) mit bestimmten Zielen durch.
 
-Verwenden Sie das Kampagnenwerkzeug, um das Zielsegment und ein operatives Zeitintervall zu definieren. Auf diese Weise können Sie die Auswirkungen in der nächsten Phase verfolgen.
+Verwenden Sie das Tool Operation , um das Zielsegment und ein Betriebszeitintervall zu definieren. Auf diese Weise können Sie Effekte in der nächsten Phase verfolgen.
 
-* Identifizieren Sie eine klar definierte, repräsentative Gruppe (oder Untergruppe) von Benutzern, auf die reagiert werden soll.
+* Identifizieren Sie eine klar definierte, repräsentative Gruppe (oder Untergruppe) von Benutzern, auf die Sie reagieren müssen.
 
-* Erstellen Sie einen Vorgang, der das Zielsegment und das Vorgangsintervall definiert.
+* Erstellen Sie einen Vorgang, der das Zielsegment und das Vorgangszeitintervall definiert.
 
-* Je nach Zielen wie dem Hochladen, Erhöhen der Anzeigenauslastung oder der Reduzierung des Zugriffs auf betrügerische Konten müssen Sie relevante Maßnahmen für das definierte Benutzerstapel ergreifen, z. B. In-App-Angebote, zusätzliche Anzeigen oder die Authentifizierung mit mehreren Faktoren.
+* Führen Sie je nach Zielen wie Upsell, Erhöhung der Anzeigenlast oder Abmilderung des Zugriffs auf betrügerische Konten relevante Aktionen für den definierten Benutzersatz aus, z. B. In-App-Angebote, zusätzliche Anzeigen oder die Notwendigkeit einer Multi-Faktor-Authentifizierung.
 
 <!--If necessary, gauge the affect [by measuring the impact of actions taken](#track-measure-impact).-->
 
-## Auswirkungen von Aktionen verfolgen und messen {#track-measure-impact}
+## Nachverfolgen und Messen der Wirkung von Aktionen {#track-measure-impact}
 
-Aktionen benötigen Zeit, um wirksam zu werden. Verwenden Sie den Vorgang und die zugehörigen Diagramme, um den Vorgangsstatus und die Segmentmerkmale in den nachfolgenden Wochen oder Monaten des Vorgangsintervalls zu verfolgen. Kombinieren Sie diese Informationen mit anderen Analysen, um das Ergebnis zu beantworten oder zu verstehen. Beispiel: Welcher Prozentsatz der in Abonnenten konvertierten Kreditnehmer? Wie viele zusätzliche Anzeigen wurden angezeigt? Ist die Zahl der Kreditnehmer gesunken?
+Maßnahmen benötigen Zeit, bis sie wirksam werden. Verwenden Sie den Vorgang und die zugehörigen Diagramme, um den Betriebsstatus und die Segmentmerkmale über die folgenden Wochen oder Monate des Vorgangszeitintervalls nachzuverfolgen. Kombinieren Sie diese Informationen mit anderen Analysen, um das Ergebnis zu beantworten oder zu verstehen. Beispiel: Welcher Prozentsatz von Kreditnehmern ist in Abonnenten umgerechnet worden? Wie viele zusätzliche Anzeigen wurden angezeigt? Ist die Zahl der Kreditnehmer gesunken?
 
-* Verwenden Sie Diagramme und andere Analysen, um die Wirkung von Aktionen zu verfolgen und zu messen.
+* Verwenden Sie Vorgangsdiagramme und andere Analysen, um die Wirkung von Aktionen zu verfolgen und zu messen.
 
-## Verbessern und Wiederholen {#improve-repeat}
+## Verbessern und wiederholen {#improve-repeat}
 
-Basierend auf den Ergebnissen Ihrer Experimente und zielgerichteten Aktionen einer Reihe von Benutzern können Sie die Reichweite Ihrer Strategien auf einen größeren Satz von Benutzern erweitern oder den Ansatz anpassen oder zurücksetzen.
+Basierend auf den Ergebnissen Ihrer Experimente und zielgerichteten Aktionen einer Benutzergruppe können Sie die Reichweite Ihrer Strategien auf eine größere Benutzergruppe erweitern oder den Ansatz anpassen oder zurücksetzen.
 
-* Wenn die Ergebnisse des Experiments günstig sind, können Sie das Experiment oder die Aktion skalieren und diese Aktionen auf eine größere Gruppe wiederholen.
+* Wenn die Ergebnisse des Experiments günstig sind, können Sie das Experiment oder die Aktion vergrößern und diese Aktionen in einer größeren Gruppe wiederholen.
 
 * Wenn die Ergebnisse des Experiments ungünstig sind, können Sie Ihre Aktion oder das Segment anpassen.
 

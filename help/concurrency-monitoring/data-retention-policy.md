@@ -13,39 +13,39 @@ ht-degree: 0%
 
 >[!WARNING]
 >
->**Hinweis:** Der Inhalt auf dieser Seite wird nur zu Informationszwecken bereitgestellt. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>**Hinweis:** Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 
 ## Einführung {#introduction}
 
-Adobe muss in seiner Rolle als Datenverarbeiter geeignete Maßnahmen ergreifen, um seine Kunden bei der Erfüllung von Zugriffs-, Lösch- und anderen Anfragen von Einzelpersonen zu unterstützen. Die Anwendung geeigneter, sicherer und zeitnaher Löschrichtlinien ist ein wichtiger Teil der Erfüllung dieser Verpflichtung.
+Adobe muss in seiner Rolle als Auftragsverarbeiter geeignete Maßnahmen ergreifen, um seine Kunden bei der Erfüllung von Zugriffs-, Löschungs- und anderen Anfragen von Einzelpersonen zu unterstützen. Die Anwendung angemessener, sicherer und zeitnaher Richtlinien zur Löschung ist ein wichtiger Bestandteil der Einhaltung dieser Verpflichtung.
 
 ## Definitionen {#definitions}
 
-Eine Richtlinie zur Datenaufbewahrung bestimmt, wie lange Adobe Kundendaten speichert. Die standardmäßige Datenaufbewahrungsrichtlinie für die Überwachung der Parallelität ist **25 Monate**.
+Eine Richtlinie zur Datenaufbewahrung bestimmt, wie lange Adobe die Kundendaten speichert. Die standardmäßige Richtlinie zur Datenaufbewahrung für die gleichzeitige Überwachung beträgt **25 Monate**.
 
-| Datenaufbewahrungszeitraum | Der Datenaufbewahrungszeitraum ist der standardmäßige Datenaufbewahrungszeitraum (25 Monate). |
+| Aufbewahrungsfrist für Daten | Die Datenspeicherungsdauer ist die standardmäßige Datenspeicherungsdauer (25 Monate). |
 |---|---|
-| **Fenster zur Datenaufbewahrung** | Im Fenster zur Datenaufbewahrung werden die Parameter definiert, für die vollständige Daten angezeigt und in Berichten aufgeführt werden können. Das Datenspeicherungsfenster wird wie folgt bestimmt:<br/> *Startdatum* = aktuelles Datum - Datenaufbewahrungszeitraum <br/>*Enddatum* = aktuelles Datum |
+| **Datenaufbewahrungsfenster** | Das Fenster Datenaufbewahrung definiert die Parameter, für die vollständige Daten angezeigt und gemeldet werden können. Das Datenspeicherungsfenster wird wie folgt bestimmt:<br/> *Startdatum* = aktuelles Datum - Datenspeicherungszeitraum <br/>*Enddatum* = aktuelles Datum |
 
 ## Datenerfassung {#data-collection}
 
-*Clickstream-Daten* stellen Daten dar, die von Kunden in den Sitzungs-Heartbeats freigegeben werden (z. B. subjectID, mvpdName und Metadaten). Alle benutzerdefinierten Metadatenfelder werden in den [Standard-Metadatenattributen](/help/concurrency-monitoring/standard-metadata-attributes.md) referenziert.
+*Clickstream-Daten* stellen Daten dar, die von Kundinnen und Kunden in den Sitzungs-Heartbeats freigegeben werden (z. B. subjectID, mvpdName und Metadaten). Alle benutzerdefinierten Metadatenfelder werden in den [Standard-Metadatenattributen“ ](/help/concurrency-monitoring/standard-metadata-attributes.md).
 
 ## Kundentypen {#customer-types}
 
 ### Aktuelle Kunden {#current-customers}
 
-Sofern der Kunde keine Datenaufbewahrungserweiterungen erwirbt, erfüllt die Überwachung der Gleichzeitigkeit die folgenden Anforderungen an die Kundendatenaufbewahrung:
+Sofern der Kunde keine Datenaufbewahrungserweiterungen erwirbt, erfüllt die gleichzeitige Überwachung die folgenden Anforderungen an die Kundendatenaufbewahrung:
 
-* *Clickstream-Daten*, die von der gleichzeitigen Überwachung erfasst werden, müssen spätestens **25 Monate** ab dem Datum der Erfassung gelöscht werden.
+* *Clickstream-Daten* die von Concurrency Monitoring erfasst werden, müssen spätestens **25 Monate** ab dem Datum der Erfassung gelöscht werden.
 
-### Terminierte Kunden {#terminated-customers}
+### Beendet gegangene Kunden {#terminated-customers}
 
-Ein beendeter Kunde ist ein Kunde, der die Beziehung zu Adobe beendet hat und die gleichzeitige Überwachung nicht mehr verwendet.
+Ein beendeter Kunde ist ein Kunde, der die Beziehung mit Adobe beendet hat und die gleichzeitige Überwachung nicht mehr verwendet.
 
-* *Clickstream-Daten*, die von der gleichzeitigen Überwachung erfasst werden, müssen innerhalb von **6 Monaten** ab dem Datum der Vertragsbeendigung gelöscht werden.
+* *Clickstream-Daten* die von Concurrency Monitoring erfasst werden, müssen innerhalb von **6 Monaten** Vertragsende des Kunden gelöscht werden.
 
-## Datenlöschung {#data-deletion}
+## Löschen von Daten {#data-deletion}
 
-Adobe behält sich das Recht vor, Daten für Daten, die über die Datenaufbewahrungsdauer hinausgehen, ohne Wiederherstellungsoption zu löschen. Daten aktueller Kunden sollten monatlich rollierend gelöscht werden.
+Adobe behält sich das Recht vor, Daten für Zeiträume zu löschen, die über die Datenspeicherungsfrist hinausgehen, ohne dass eine Option zur Wiederherstellung besteht. Daten für aktuelle Kunden sollten auf rollierender monatlicher Basis gelöscht werden.

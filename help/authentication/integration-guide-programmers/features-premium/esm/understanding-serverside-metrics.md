@@ -1,6 +1,6 @@
 ---
-title: Grundlegendes zu serverseitigen Metriken
-description: Grundlegendes zu serverseitigen Metriken
+title: Verstehen von Server-seitigen Metriken
+description: Verstehen von Server-seitigen Metriken
 exl-id: 516884e9-6b0b-451a-b84a-6514f571aa44
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -9,68 +9,68 @@ ht-degree: 0%
 
 ---
 
-# Grundlegendes zu serverseitigen Metriken {#understanding-server-side-metrics}
+# Verstehen von Server-seitigen Metriken {#understanding-server-side-metrics}
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 
 ## Einführung {#intro}
 
-In diesem Dokument werden die serverseitigen Metriken der Adobe Pass-Authentifizierung beschrieben, die vom Entitlement Service Monitoring (ESM)-Dienst generiert wurden. Es werden nicht die Ereignisse beschrieben, die aus der Client-seitigen Perspektive betrachtet werden (was die Programmierer sehen würden, wenn sie einen Messungsdienst wie Adobe Analytics auf ihrer Seite/Anwendung implementieren würden).
+In diesem Dokument werden die Server-seitigen Metriken der Adobe Pass-Authentifizierung beschrieben, die vom ESM-Service (Berechtigungs-Service-Überwachung) generiert wurden. Es beschreibt nicht die gleichen Ereignisse, die aus Client-seitiger Perspektive betrachtet werden (was Programmierer sehen würden, wenn sie einen Mess-Service wie Adobe Analytics auf ihrer Seite / Anwendung implementieren würden).
 
 ## Ereigniszusammenfassung {#events_summary}
 
-Vom Server-seitigen Standpunkt der Adobe Pass-Authentifizierung werden die folgenden Ereignisse generiert:
+Aus der Server-seitigen Sicht der Adobe Pass-Authentifizierung werden die folgenden Ereignisse generiert:
 
-* **Im Authentifizierungsfluss generierte Ereignisse** (tatsächliche Anmeldung mit dem MVPD)
+* **Im Authentifizierungsfluss generierte Ereignisse**(tatsächliche Anmeldung bei MVPD)
 
-   * Benachrichtigung über AuthN-Versuch - Dies wird generiert, wenn der Benutzer an die MVPD-Anmeldeseite gesendet wird.
-   * Benachrichtigung über &quot;AuthN ausstehend&quot;- Wenn es dem Benutzer gelingt, sich mit seinem MVPD anzumelden, wird dies generiert, wenn der Benutzer        zurück zur Adobe Pass-Authentifizierung umgeleitet.
-   * Benachrichtigung über AuthN Granted (AuthN gewährt): Diese wird generiert, wenn der Benutzer wieder auf der Website des Programmierers ist und das Authentifizierungstoken erfolgreich aus der Adobe Pass-Authentifizierung abgerufen hat.
-* **Autorisierungsfluss** (Nur Prüfung auf Autorisierung mit einer
+   * Benachrichtigung über Authentifizierungsversuch - Diese wird generiert, wenn Benutzende an die MVPD-Anmeldeseite gesendet werden.
+   * Benachrichtigung über ausstehende Authentifizierung : Wenn sich der Benutzer erfolgreich mit seiner MVPD anmeldet, wird dies generiert, wenn der Benutzer        Zurück zur Adobe Pass-Authentifizierung.
+   * Benachrichtigung über AuthN-Genehmigung erteilt : Diese Benachrichtigung wird generiert, wenn sich der/die Benutzende wieder auf der Programmierer-Site befindet und das Authentifizierungstoken erfolgreich von der Adobe Pass-Authentifizierung abgerufen hat.
+* **Autorisierungsfluss** (Nur eine Prüfung auf Autorisierung mit einem
 MVPD)\
-  *Voraussetzung:* Ein gültiges AuthN-Token
+  *Voraussetzung:* Ein gültiges Authentifizierungs-Token
    * Benachrichtigung über AuthZ-Versuch
-   * Benachrichtigung über die Gewährung von AuthZ
-* **Anfrage zur erfolgreichen Wiedergabe**\
-  *Voraussetzung:* Gültige AuthN- und AuthZ-Token
-   * Benachrichtigung über einen Check mit Adobe Pass-Authentifizierung
-   * Eine Wiedergabeanforderung erfordert sowohl eine erteilte Authentifizierung als auch eine erteilte Genehmigung
+   * Benachrichtigung über erteilte AuthZ
+* **Erfolgreiche Play-Anfrage**\
+  *Voraussetzung:* Authentifizierungs- und AuthZ-Token
+   * Benachrichtigung über eine Prüfung mit Adobe Pass-Authentifizierung
+   * Eine Play-Anfrage erfordert sowohl eine erteilte Authentifizierung als auch eine erteilte Autorisierung
 
 
-Die Anzahl der Unique Users wird im Abschnitt [Unique Users](#unique-users) unten ausführlich beschrieben. Da die Antworten auf erteilte Authentifizierung und Autorisierung in der Regel zwischengespeichert werden, gelten in der Regel die folgenden Formeln:
+Die Anzahl der eindeutigen Benutzer wird im Abschnitt [Eindeutige Benutzer](#unique-users) unten detailliert behandelt. Da die Antworten auf die Authentifizierung und Autorisierung normalerweise zwischengespeichert werden, gelten für gewöhnlich die folgenden Formeln:
 
-* Anzahl der AuthN-Versuche \> Anzahl der gewährten AuthN
+* Anzahl der Authentifizierungsversuche \> Anzahl der gewährten Authentifizierung
 * Anzahl der AuthZ-Versuche \> Anzahl der gewährten AuthZ
-* Anzahl der AuthZ-Versuche \> Anzahl der gewährten AuthN (normalerweise)
-* Anzahl erfolgreicher Wiedergabeanforderungen \> Anzahl der erteilten AuthZ
+* Anzahl der AuthZ-Versuche \> Anzahl der gewährten AuthZ (normalerweise)
+* Anzahl erfolgreicher Wiedergabeanforderungen \> Anzahl der gewährten Authentifizierungen
 
 
 ### Beispiel {#example}
 
-Das folgende Beispiel zeigt die serverseitigen Metriken für einen Monat für
-eine Marke:
+Das folgende Beispiel zeigt die Server-seitigen Metriken für einen Monat
+Eine Marke:
 
-| Metrik | MVPD 1 | MVPD 2 | ... | MVPD n | Ingesamt |
+| Metrik | MVPD 1 | MVPD 2 | … | MVPD n | Gesamt |
 | -------------------------- | ------ | ------ | - | ------ | ---------------------------------------------- |
-| Erfolgreiche Authentifizierungen | 1125 | 2892 |   | 2203 | SUM(MVP1+...MVPD n) |
-| Erfolgreiche Berechtigungen | 2527 | 5603 |   | 5904 | SUM(MVP1+...MVPD n) |
-| Erfolgreiche Abspielanforderungen | 4201 | 10518 |   | 10737 | SUM(MVP1+...MVPD n) |
-| Unique Users | 1375 | 2400 |   | 2890 | SUM aller Benutzer für alle deduplizierten MVPDs\* |
-| versucht Authentifizierungen | 2147 | 3887 |   | 3108 | SUM(MVP1+...MVPD n) |
-| Versuchsberechtigungen | 2889 | 6139 |   | 6039 | SUM(MVP1+...MVPD n) |
+| Erfolgreiche Authentifizierungen | 1125 | 2892 |   | 2203 | SUM(MVP1+…MVPD n) |
+| Erfolgreiche Berechtigungen | 2527 | 5603 |   | 5904 | SUM(MVP1+…MVPD n) |
+| Erfolgreiche Wiedergabeanfragen | 4201 | 10518 |   | 10737 | SUM(MVP1+…MVPD n) |
+| Unique Users | 1375 | 2400 |   | 2890 | Summe aller Benutzer für alle deduplizierten MVPDs\* |
+| Authentifizierungsversuche | 2147 | 3887 |   | 3108 | SUM(MVP1+…MVPD n) |
+| Autorisierungsversuch | 2889 | 6139 |   | 6039 | SUM(MVP1+…MVPD n) |
 
 </br>
 
-Eine Deduplizierung in diesem Fall sollte keine Auswirkungen haben, da verschiedene MVPD-Benutzer nicht dieselbe Benutzer-ID erhalten sollten. Bei der Summe für zwei verschiedene Marken, aber für denselben MVPD sollte die Deduplizierungswirkung viel größer sein.
+Die Deduplizierung sollte in diesem Fall keine Auswirkungen haben, da verschiedene MVPD-Benutzende nicht dieselbe Benutzer-ID erhalten sollten. Wenn Sie eine Summe für zwei verschiedene Marken, aber denselben MVPD erstellen, sollte der Deduplizierungseffekt viel größer sein.
 
 ## Ereignis-Trigger {#event_triggers}
 
 ### Neuer Benutzer - Vollständiger Fluss {#new-user-full-flow}
 
-In der folgenden Tabelle werden die Ereignisse und Schritte für einen Benutzer ohne Authentifizierungstoken beschrieben (ein neuer Benutzer oder ein Benutzer, dessen Authentifizierungstoken abgelaufen ist):
+Das folgende Diagramm beschreibt die Ereignisse und Schritte für eine Benutzerin oder einen Benutzer ohne Authentifizierungs-Token (ein neuer Benutzer oder ein Benutzer mit abgelaufenem Authentifizierungs-Token):
 
 
 
@@ -78,130 +78,130 @@ In der folgenden Tabelle werden die Ereignisse und Schritte für einen Benutzer 
 
 
 
-Der Fluss umfasst Rundfahrten zu MVPDs für die Authentifizierung (#5 bis \#7) und die Autorisierung (\#11).
+Der Fluss umfasst Roundtrips zu MVPDs sowohl für die Authentifizierung (#5 zu \#7) als auch für die Autorisierung (\#11).
 
 
 
-Nach Abschluss des Workflows werden die Authentifizierungs- und Autorisierungstoken auf dem Gerät des Benutzers zwischengespeichert. Die TTL-Werte (Time-to-Live) für Authentifizierungstoken liegen zwischen 6 Stunden und 90 Tagen. Ein AuthN-Token-Ablauf erzwingt automatisch den Ablauf eines AuthZ-Tokens. Der TTL-Wert für das Autorisierungstoken beträgt in der Regel 24 Stunden.
+Nach Abschluss des Flusses werden die Authentifizierungs- und Autorisierungs-Token auf dem Gerät des Benutzers zwischengespeichert. Die TTL-Werte (Time-to-Live) für Authentifizierungs-Token liegen zwischen 6 Stunden und 90 Tagen. Eine AuthN-Token-Gültigkeit erzwingt automatisch eine AuthZ-Token-Gültigkeit. Der TTL-Wert für das Autorisierungs-Token beträgt in der Regel 24 Stunden.
 
-| Ausgelöste serverseitige Ereignisse | <ul><li>Authentifizierungsversuch, Authentifizierung ausstehend, Authentifizierung gewährt</li><li>Autorisierungsversuch, Autorisierung erteilt</li><li>Erfolgreiche Play-Anfrage</li></ul> |
+| Ausgelöste Server-seitige Ereignisse | <ul><li>Authentifizierungsversuch, ausstehende Authentifizierung, Authentifizierung erteilt</li><li>Autorisierungsversuch, Autorisierung erteilt</li><li>Erfolgreiche Play-Anfrage</li></ul> |
 |---|---|
 
 
 ### Wiederkehrender Benutzer - AuthZ- und AuthN-Token zwischengespeichert
 
-Für Benutzer mit gültigen AuthZ- und AuthN-Token im Cache:
--Schritte ausgeführt werden:
+Für Benutzer, die gültige AuthZ- und AuthN-Token zwischengespeichert haben, gilt Folgendes
+Schritte passieren:
 
 
 ![](../../../assets/ae-flow-tokens-cached-web.png)
 
 
 
-Dies wird beim Aufruf von `getAuthorization()` automatisch ausgelöst und umfasst nur Prüfungen mit Adobe Pass-Authentifizierung. Der MVPD ist an diesem Fluss nicht beteiligt.
+Dies wird beim Aufruf von `getAuthorization()` automatisch ausgelöst und umfasst nur Prüfungen mit der Adobe Pass-Authentifizierung. Der MVPD ist an diesem Fluss nicht beteiligt.
 
 
-| Ausgelöste serverseitige Ereignisse | * Anfrage zur erfolgreichen Wiedergabe |
+| Ausgelöste Server-seitige Ereignisse | * Erfolgreiche Play-Anfrage |
 |---|---|
 
 
-### Wiederkehrender Benutzer - AuthN-Token zwischengespeichert, AuthZ-Token abgelaufen
+### Wiederkehrender Benutzer - AuthZ-Token zwischengespeichert, AuthZ-Token abgelaufen
 
-Für Benutzer, die noch gültige AuthN-Token haben, werden die folgenden Schritte ausgeführt:
+Für Benutzer, die noch gültige Authentifizierungs-Token haben, passieren die folgenden Schritte:
 
 ![](../../../assets/ae-flow-authn-token-cached.png)
 
 
-Dieser Fluss beinhaltet eine Hin- und Rückfahrt zum MVPD.
+Dieser Fluss beinhaltet einen Hin- und Rückflug zur MVPD.
 
 
-| Ausgelöste serverseitige Ereignisse | <ul><li>Autorisierungsversuch, Autorisierung OK</li><li>Erfolgreiche Play-Anfrage</li> |
+| Ausgelöste Server-seitige Ereignisse | <ul><li>Autorisierungsversuch, Autorisierung OK</li><li>Erfolgreiche Play-Anfrage</li> |
 |---|---|
 
 ## Authentifizierungsereignisse {#authn_events}
 
 ### Authentifizierungsversuch {#authentication-attempt}
 
-Wie im obigen Diagramm dargestellt, werden die Authentifizierungsereignisse nur ausgelöst, wenn der Benutzer einen Hin- und Rücklauf zum MVPD durchführt. Authentifizierungs-Ereignisse enthalten keine zwischengespeicherten Token-Authentifizierungen.
+Wie im obigen Diagramm dargestellt, werden die Authentifizierungsereignisse nur ausgelöst, wenn der/die Benutzende einen Roundtrip zur MVPD durchführt. Authentifizierungsereignisse beinhalten keine Authentifizierungen von zwischengespeicherten Token.
 
-Das Authentifizierungsversuch-Ereignis wird ausgelöst, nachdem der Benutzer in der Auswahl auf einen bestimmten MVPD geklickt hat.
+Das Authentifizierungsversuch-Ereignis wird ausgelöst, nachdem der Benutzer in der Auswahl auf eine bestimmte MVPD geklickt hat.
 
-* Das erste Ereignis auf der MVPD-Seite, das dieser Seite nahe liegt, ist das Laden der Seite
-* Die Adobe Pass-Authentifizierung zählt keine wiederholten Anmeldeversuche des Benutzers auf der MVPD-Seite (falsches Kennwort, versuchen Sie es erneut).
+* Das erste Ereignis auf der MVPD-Seite, das diesem Wert nahe kommt, ist das Laden der Seite
+* Die Adobe Pass-Authentifizierung zählt nicht die wiederholten Anmeldeversuche der Benutzenden auf der MVPD-Seite (falsches Kennwort, versuchen Sie es erneut)
 * Mehrere Versuche werden als ein Versuch gezählt
-* Einige MVPDs führen die Autorisierung auch im Schritt Authentifizierung durch und der Benutzer wird nicht zurückgeleitet, wenn die Autorisierung fehlschlägt.
+* Einige MVPDs führen auch eine Autorisierung im Authentifizierungsschritt durch, und der Benutzer wird nicht zurückgeleitet, wenn die Autorisierung fehlschlägt.
 
 ### Authentifizierung ausstehend {#authentication-pending}
 
 Dieses Ereignis tritt auf, wenn der Umleitungsprozess zur Adobe Pass-Authentifizierung gestartet wurde.
 
-### Authentifizierung gewährt {#authentication-granted}
+### Authentifizierung erteilt {#authentication-granted}
 
-Der Benutzer ist ein bekannter Abonnent des MVPD, in der Regel mit einem Pay TV-Abonnement, manchmal aber nur mit Internetzugang. Eine erfolgreiche Authentifizierung kann entweder dadurch erfolgen, dass der Benutzer explizit gültige Anmeldeinformationen mit seinem MVPD eingegeben hat oder weil er zuvor gültige Anmeldeinformationen eingegeben und &quot;mich speichern&quot;aktiviert hatte (und die vorherige Sitzung noch nicht abgelaufen war).
+Der Nutzer ist ein bekannter MVPD-Abonnent, typischerweise mit einem Pay-TV-Abonnement, manchmal jedoch nur mit Internetzugang. Eine erfolgreiche Authentifizierung kann entweder dadurch erfolgen, dass der/die Benutzende explizit gültige Anmeldeinformationen für seine/ihre MVPD eingegeben hat, oder dadurch, dass er/sie zuvor gültige Anmeldeinformationen eingegeben und „mich erinnern“ aktiviert hat (und die vorherige Sitzung nicht abgelaufen war).
 
-Der MVPD sendet daher eine positive Antwort auf die Authentifizierungsanforderung an die Adobe Pass-Authentifizierung und die Adobe Pass-Authentifizierung erstellt ein *AuthN-Token*.
+Daher sendet die MVPD eine positive Antwort auf die Authentifizierungsanfrage an die Adobe Pass-Authentifizierung, und die Adobe Pass-Authentifizierung erstellt ein *AuthN-Token*.
 
-* Die Authentifizierung wird normalerweise über einen langen Zeitraum (einen Monat oder länger) zwischengespeichert. Aus diesem Grund sind Authentifizierungsereignisse erst dann mehr vorhanden, wenn das Token abläuft und der Fluss erneut gestartet wird.
-* Wenn Sie von einer anderen Site/App über Single Sign-On eingehen, werden keine Authentifizierungsereignisse für den Trigger angezeigt.
+* Die Authentifizierung wird in der Regel über einen langen Zeitraum zwischengespeichert (einen Monat oder länger). Aus diesem Grund sind Authentifizierungsereignisse erst dann vorhanden, wenn das Token abläuft und der Fluss erneut gestartet wird.
+* Wenn Sie über Single Sign-On von einer anderen Site/App eingehen, werden keine Trigger-Authentifizierungsereignisse ausgelöst.
 
 
 
 ### Comcast-Authentifizierung {#comcast-authentication}
 
-Comcast weist einen anderen AuthN-Fluss auf als der Rest der MVPDs.
+Comcast hat einen anderen AuthN-Fluss als die übrigen MVPDs.
 
 Die folgenden Funktionen beschreiben die Unterschiede:
 
-* **Sitzungs-Cookie-Verhalten**: Dies führt dazu, dass alle Authentifizierungstoken vollständig entfernt werden, nachdem der Benutzer den Browser geschlossen hat. Diese Funktion ist nur im Internet verfügbar. Der Hauptzweck besteht darin sicherzustellen, dass Ihre Comcast-Sitzung nicht auf unsicheren/freigegebenen Computern beibehalten wird. Die Auswirkung besteht darin, dass es mehr Authentifizierungsversuche/genehmigte Flüsse als für den Rest der MVPDs geben wird.
+* **Verhalten von Sitzungs-**: Dadurch werden alle Authentifizierungs-Token entfernt, nachdem der Browser geschlossen wurde. Diese Funktion ist nur im Internet verfügbar. Der Hauptzweck besteht darin, sicherzustellen, dass Ihre Comcast-Sitzung nicht auf unsicheren/freigegebenen Computern persistiert wird. Dies hat zur Folge, dass es mehr Authentifizierungsversuche/gewährte Flüsse geben wird als für den Rest der MVPDs.
 
-* **AuthN pro Anfragende-ID**: Der Comcast lässt nicht zu, dass der AuthN-Status von einer Anfragenkennung an eine andere zwischengespeichert wird. Daher muss jede Website/App zu Comcast gehen, um ein Authentifizierungstoken zu erhalten. Abgesehen von den Überlegungen zum Benutzererlebnis wird wie oben gezeigt, dass mehr Authentifizierungsversuche/gewährte Ereignisse generiert werden.
+* **AuthN pro RequestorID**: Bei Comcast kann der AuthN-Status nicht von einer Requestor-ID in eine andere zwischengespeichert werden. Aus diesem Grund muss jede Site/App zu Comcast gehen, um ein Authentifizierungs-Token zu erhalten. Neben Überlegungen zum Benutzererlebnis hat dies, wie oben beschrieben, zur Folge, dass mehr Authentifizierungsversuche/gewährte Ereignisse generiert werden.
 
-* **Passive Authentifizierung**: Um das Benutzererlebnis zu verbessern, aber
-weiterhin die AuthN-Funktionalität pro Anfrage-ID beibehalten, wird ein passiver Authentifizierungsfluss in einem ausgeblendeten iFrame durchgeführt. Der Benutzer sieht nichts, aber die Ereignisse werden weiterhin wie zuvor ausgelöst.
+* **Passive Authentifizierung**: Zur Verbesserung des Benutzererlebnisses, aber
+die AuthN-Funktion pro RequestorID beibehalten wird, findet ein passiver Authentifizierungsfluss in einem ausgeblendeten iFrame statt. Der/die Benutzende sieht nichts, aber die Ereignisse werden trotzdem wie zuvor ausgelöst.
 
-Wenn der Benutzer auf der Anmeldeseite Comcast auf &quot;Angaben speichern&quot;klickt, werden nachfolgende Besuche auf dieser Seite (in einem Zeitraum von 2 Wochen) nur eine kurze Umleitung ermöglichen. Andernfalls müssen sich Benutzer tatsächlich auf der Seite authentifizieren.
+Wenn der Benutzer auf der Comcast-Anmeldeseite auf „Mich erinnern“ klickt, sind nachfolgende Besuche auf dieser Seite (in einem Zeitraum von 2 Wochen) nur eine schnelle Umleitung zurück. Andernfalls müssen sich Benutzer tatsächlich auf der Seite authentifizieren.
 
-### Nicht erfolgreiche Authentifizierung {#unsuccessful-authentication}
+### Erfolglose Authentifizierung {#unsuccessful-authentication}
 
-Eine nicht erfolgreiche Authentifizierung ist kein Ereignis pro Person in der Adobe Pass-Authentifizierung, sondern kann als Unterschied zwischen Versuchen und Erfolgen berechnet werden.
+Eine nicht erfolgreiche Authentifizierung ist kein Ereignis an sich in der Adobe Pass-Authentifizierung, kann aber als Unterschied zwischen Versuchen und Erfolgen berechnet werden.
 
-In der Version vom Mai 2013 fügt die Adobe Pass-Authentifizierung Fehlercodes für nicht erfolgreiche Authentifizierungen hinzu, die auf System- oder Netzwerkfehler zurückzuführen sind, einschließlich DRM-Fehlern (Token-Bindung fehlgeschlagen) und LSO-Fehlern (kein Leerzeichen zum Schreiben des Tokens usw.).
+In der Version vom Mai 2013 fügt Adobe Pass Authentication Fehler-Codes für fehlgeschlagene Authentifizierungen hinzu, die auf System- oder Netzwerkfehler zurückzuführen sind, einschließlich DRM-Fehler (Token-Bindung fehlgeschlagen) und LSO-Fehler (kein Speicherplatz zum Schreiben des Tokens usw.).
 
-### Authentifizierungskonversionsrate {#authenitication-conversion-rate}
+### Authentifizierungs-Konversionsrate {#authenitication-conversion-rate}
 
-Eine interessante Metrik, die Programmierer verfolgen können, ist die Authentifizierungskonversionsrate, berechnet als (AuthN-Anfragen / AuthN gewährt)%.
+Eine interessante Metrik, die Programmierer verfolgen können, ist die Authentifizierungs-Konversionsrate, berechnet als (AuthN-Anfragen / AuthN gewährt)%.
 
 Einige Hinweise zu den Metriken:
 
-* Da es sich um eine ereignisbasierte Metrik handelt, spiegelt sie nicht wirklich die Unique User-Konversionsrate wider - wenn ein Benutzer acht Mal versucht und das neunte Mal erfolgreich ist - spiegelt sich dies sehr schlecht in der obigen Konversionsrate wider.
-* In der Adobe Pass-Authentifizierung (serverseitig) gibt es (noch) keine Möglichkeit, eine eindeutige basierte Authentifizierungskonvertierung zu berechnen.
-* Wenn automatische AuthN-Zustellversuche auf der Site/in der App vorhanden sind, wirkt sich dies auch auf die obige Metrik aus.
+* Da es sich um eine ereignisbasierte Metrik handelt, spiegelt sie nicht die Konversionsrate der einzelnen Benutzer wider. Wenn ein Benutzer acht Mal versucht und dies zum neunten Mal erfolgreich ist, spiegelt dies sehr schlecht die Konversionsrate oben wider.
+* Es gibt (noch) keine Möglichkeit, bei der Adobe Pass-Authentifizierung (serverseitig) eine eindeutige Authentifizierungskonvertierung zu berechnen.
+* Wenn in der Site/App automatische Authentifizierungsversuche vorhanden sind, verzerrt dies auch die obige Metrik.
 
 ## Autorisierungsereignisse {#authorization_events}
 
 ### Autorisierungsversuch {#authorization_attempt}
 
-Zusätzlich zum Abrufen eines Authentifizierungstokens müssen Benutzer vor dem Abspielen von Inhalten auch ein Autorisierungstoken erhalten. Dies geschieht normalerweise nach der Authentifizierung oder nach Ablauf des Autorisierungstokens. Da diese Prüfung Server-seitig durchgeführt wird (von den Adobe Pass-Authentifizierungsservern zu den MVPD-Servern), ist der Benutzer nicht verpflichtet, irgendetwas zu tun.
+Benutzer müssen nicht nur ein Authentifizierungs-Token erhalten, sondern auch ein Autorisierungs-Token, bevor sie Inhalte wiedergeben können. Dies geschieht normalerweise nach der Authentifizierung oder wenn das Autorisierungs-Token abläuft. Da diese Prüfung Server-seitig durchgeführt wird (von den Adobe Pass-Authentifizierungsservern bis zu den MVPD-Servern), ist der Benutzer nicht verpflichtet, etwas zu tun.
 
-### Genehmigte Genehmigung erteilt {#authorization-granted}
+### Genehmigung erteilt {#authorization-granted}
 
-Eine &quot;Autorisierung erteilt&quot;signalisiert, dass das Abonnement des authentifizierten Benutzers die angeforderte Programmierung enthält.
+Eine „Autorisierung erteilt“ signalisiert, dass das Abonnement des authentifizierten Benutzers die angeforderte Programmierung enthält.
 
-Beachten Sie, dass nicht alle MVPDs einen separaten Autorisierungsschritt unterstützen. Für einige Authentifizierung ist mit Autorisierung gleichgesetzt. Der MVPD sendet Adobe Pass-Authentifizierung eine erfolgreiche Antwort auf die Backchannel-AuthZ-Anfrage, und die Adobe Pass-Authentifizierung erstellt ein AuthZ-Token.
+Beachten Sie, dass nicht alle MVPDs einen separaten Autorisierungsschritt unterstützen. Für einige Authentifizierungen wird dies mit einer Autorisierung gleichgesetzt. Die MVPD Adobe Pass-Authentifizierung sendet eine erfolgreiche Antwort auf die Backchannel AuthZ-Anfrage und die Adobe Pass-Authentifizierung erstellt ein AuthZ-Token.
 
-* Das AuthZ-Token wird für einen bestimmten Zeitraum zwischengespeichert, in der Regel 24 Stunden Während dieses Zeitraums werden keine AuthZ-Ereignisse ausgelöst.
-* Manche MVPDs funktionieren mit Asset-Level-Berechtigungen, andere arbeiten mit Kanalebene-Berechtigungen. Je nachdem, welche Option verwendet wird, werden mehr oder weniger AuthZ-Ereignisse ausgelöst. Selbst für die Autorisierung auf Kanalebene ist das Caching vorhanden. Wenn dasselbe Asset also in weniger als 24 Stunden angefordert wird, werden keine Ereignisse ausgelöst.
+* Das AuthZ-Token wird für einen bestimmten Zeitraum zwischengespeichert, in der Regel nach 24 Stunden. Während dieses Zeitraums werden keine AuthZ-Ereignisse ausgelöst.
+* Einige MVPDs arbeiten mit Berechtigungen auf Asset-Ebene, andere mit Berechtigungen auf Kanalebene. Je nachdem, welche verwendet werden, werden mehr oder weniger AuthZ-Ereignisse ausgelöst. Selbst für die Autorisierung auf Kanalebene ist ein Caching vorhanden - wenn dasselbe Asset in weniger als 24 Stunden angefordert wird, werden keine Ereignisse ausgelöst.
 
-### Genehmigung verweigert {#authorization-denied}
+### Autorisierung verweigert {#authorization-denied}
 
-Wenn eine Autorisierung verweigert wird, verfügt der authentifizierte Benutzer nicht über ein bestätigtes Abonnement für die angeforderte Programmierung. Die wahrscheinlichste Ursache ist, dass der Kanal nicht Teil des Abonnementpakets des Benutzers ist, aber dies kann auch für einen Benutzer gelten, der nur über einen Internetzugang von MVPD verfügt.
+Wenn eine Autorisierung verweigert wird, verfügt der authentifizierte Benutzer nicht über ein bestätigtes Abonnement für die angeforderte Programmierung. Die wahrscheinlichste Ursache ist, dass der Kanal nicht Teil des Abonnementpakets des Benutzers ist. Dies kann jedoch auch darauf zurückzuführen sein, dass ein Benutzer nur über Internetzugriff von MVPD verfügt.
 
-Bei einigen MVPDs sind Benutzer erfolgreich authentifiziert, obwohl sie nur über ein Internet-Abonnement des MVPD verfügen (kein Pay-TV-Abonnement). In diesem Fall wird die Autorisierung verweigert, auch wenn der Kanal, für den der Benutzer die Autorisierung anfordert, im Basispaket enthalten ist.
+Bei einigen MVPDs werden Benutzer erfolgreich authentifiziert, obwohl sie nur über ein Internetabonnement von der MVPD verfügen (kein Pay-TV-Abonnement). In diesem Fall wird die Autorisierung verweigert, obwohl sich der Kanal, für den der Benutzer die Autorisierung anfordert, im Basispaket befindet.
 
-Einige MVPDs bieten benutzerdefinierte Fehlermeldungen für AuthZ-Ablehnungen, die Angebote zur Aktualisierung ihres Pakets enthalten können.
+Einige MVPDs bieten benutzerdefinierte Fehlermeldungen für AuthZ-Ablehnungen, die Angebote für ein Upgrade ihres Pakets enthalten können.
 
 
-### Autorisierungs-Konversionsrate {#authorization-conversion-rate}
+### Konversionsrate der Autorisierung {#authorization-conversion-rate}
 
 Die Konversionsrate der Authentifizierung kann als (AuthZ-Anfragen / AuthZ gewährt)% berechnet werden.
 
@@ -209,83 +209,83 @@ Die Konversionsrate der Authentifizierung kann als (AuthZ-Anfragen / AuthZ gewä
 
 Ein Benutzer, der sowohl authentifiziert als auch autorisiert ist, darf geschützte Inhalte anzeigen.
 
-Bei einer erfolgreichen Wiedergabeanforderung generiert die Adobe Pass-Authentifizierung ein kurzlebiges Medien-Token, das bestätigt, dass der Benutzer berechtigt ist, das angeforderte Video anzuzeigen. Der Programmierer verwendet dieses Media Token zur weiteren Validierung des potenziellen Betrachters. Media Tokens werden als erfolgreiche Wiedergabeanforderungen verfolgt.
+Bei einer erfolgreichen Wiedergabeanfrage generiert die Adobe Pass-Authentifizierung ein kurzlebiges Medien-Token, das bestätigt, dass der Benutzer berechtigt ist, das angeforderte Video anzuzeigen. Der Programmierer verwendet dieses Medien-Token für die weitere Validierung des potenziellen Betrachters. Medien-Token werden als erfolgreiche Wiedergabeanfragen verfolgt.
 
-* Die Adobe Pass-Authentifizierung verfolgt *nicht*, ob die Videowiedergabe nach der Generierung des Medien-Tokens tatsächlich begonnen hat. Wenn es beispielsweise eine Geo-Beschränkung für den Inhalt gibt, zählt die Transaktion weiterhin als erfolgreiche Wiedergabeanforderung, auch wenn der Stream nie tatsächlich gestartet wird.
-* Da AuthN- und AuthZ-Token die MVPD-Antwort für einen bestimmten Zeitraum zwischenspeichern, ist das erfolgreiche Wiedergabeanforderungsereignis das häufigste Ereignis in den Metriken.
+* Bei der Adobe Pass *Authentifizierung wird nicht*, ob die Videowiedergabe nach der Generierung des Medien-Tokens tatsächlich begonnen hat. Wenn es beispielsweise eine Geo-Einschränkung für den Inhalt gibt, zählt die Transaktion weiterhin als erfolgreiche Wiedergabeanfrage, obwohl der Stream tatsächlich nie gestartet wird.
+* Da AuthN- und AuthZ-Token die MVPD-Antwort über einen bestimmten Zeitraum zwischenspeichern, ist das erfolgreiche Wiedergabeanfrageereignis das häufigste Ereignis in den Metriken.
 
 ## Unique Users {#unique-users}
 
 ### Definition {#definition}
 
-Bei erfolgreicher Authentifizierung verfolgt die Adobe Pass-Authentifizierung die Existenz eines eindeutigen Benutzers basierend auf dem zurückgegebenen MVPD-Benutzer-ID-Wert.  Dieser Wert basiert auf den Anmeldeinformationen des Benutzers, enthält jedoch keine personenbezogenen Informationen.
+Bei erfolgreicher Authentifizierung verfolgt die Adobe Pass-Authentifizierung die Existenz eines eindeutigen Benutzers basierend auf dem zurückgegebenen Wert der MVPD-Benutzer-ID.  Dieser Wert basiert auf den Anmeldeinformationen des Benutzers, enthält jedoch keine persönlich identifizierbaren Informationen.
 
-Dieser Wert wird auch im Rückruf sendTrackingData an die Site/App übergeben.
+Dieser Wert wird auch im sendTrackingData-Callback an die Site/App übergeben.
 
-Dieser Wert kann geräteübergreifend persistent sein (der MVPD erzeugt für einen bestimmten Benutzer denselben Wert, unabhängig davon, wo die Anmeldung erfolgt) oder transient (für jede Anmeldung wird ein neuer Wert generiert, den der MVPD in seinem Backend zuordnet. In der Regel sind die Werte, die von MVPDs für die Adobe Pass-Authentifizierung bereitgestellt werden, sitzungs- und geräteübergreifend persistent, aber wie angegeben, wird die Persistenz weder garantiert noch validiert.
+Dieser Wert kann geräteübergreifend persistent sein (die MVPD erzeugt für eine bestimmte Benutzerin oder einen bestimmten Benutzer denselben Wert, unabhängig davon, wo die Anmeldung stattfindet) oder transient (für jede Anmeldung wird ein neuer Wert generiert, den die MVPD in ihrem Backend zuordnet. Normalerweise sind die Werte, die von MVPDs für die Adobe Pass-Authentifizierung bereitgestellt werden, sitzungs- und geräteübergreifend persistent. Wie jedoch bereits erwähnt, wird die Persistenz weder garantiert noch validiert.
 
-Dieser Wert dient zur Berechnung der Unique Users. Der gemeldete Wert (pro Anfrage-ID/Intervall/MVPD) wird für das jeweilige Intervall dedupliziert. Die Summe der Unique Users pro Tag unterscheidet sich also normalerweise vom Monatswert, wobei der Monatswert den niedrigeren Wert aufweist.
+Dieser Wert wird zur Berechnung der eindeutigen Benutzer verwendet. Der gemeldete Wert (pro Anforderer-ID/Intervall/MVPD) wird für das jeweilige Intervall dedupliziert. Die Summe der Unique Users pro Tag unterscheidet sich daher für gewöhnlich vom Monatswert, wobei der Monatswert den niedrigeren Wert aufweist.
 
-Diese Zahl enthält alle Ereignisse aus der Adobe Pass-Authentifizierung abzüglich Authentifizierungsversuche (die keine Benutzer-ID aufweisen), jedoch einschließlich der versucht wurde (und möglicherweise fehlgeschlagenen) Berechtigungen.
+Diese Zahl enthält alle Ereignisse aus der Adobe Pass-Authentifizierung abzüglich Authentifizierungsversuche (die keine Benutzer-ID haben), aber einschließlich versuchter (und möglicherweise fehlgeschlagener) Autorisierungen.
 
 ### Beispiele {#examples}
 
 #### Tag 1 {#day1}
 
-Benutzer XYZ besucht die Site, um sich ein Video anzusehen.
+Benutzer XYZ geht auf die Website, um ein Video anzusehen.
 
 Ausgelöste Ereignisse:
 
-* AuthN-Versuch (noch kein eindeutiger Benutzer)
-* AuthN erteilt
-   * an diesem Punkt identifizieren wir den Benutzer eindeutig anhand dessen, was der MVPD zurückgibt - sodass die tägliche Unique User-Anzahl um 1 erhöht wird.
-   * Das AuthN-Token wird 30 Tage lang zwischengespeichert.
-* AuthZ-Versuch/gewährtes Ereignis
-   * AuthZ-Token 1 Tag lang zwischengespeichert
-* Erfolgreiches Wiedergabeanforderungsereignis
+* Authentifizierungsversuch (noch kein eindeutiger Benutzer)
+* Auth. erteilt
+   * An dieser Stelle identifizieren wir den Benutzer eindeutig anhand dessen, was MVPD zurückgibt - sodass die tägliche Anzahl eindeutiger Benutzer um 1 erhöht wird
+   * Das AuthN-Token wird 30 Tage lang zwischengespeichert
+* AuthZ-Versuch/erteiltes Ereignis
+   * AuthZ-Token für 1 Tag zwischengespeichert
+* Erfolgreiches Wiedergabeanfrageereignis
 
-#### Tag 1 (später am) {#day1-later-on}
+#### Tag 1 (später) {#day1-later-on}
 
-Benutzer XYZ sieht sich ein weiteres Video an.
+Benutzer XYZ sieht sich ein anderes Video an.
 
 Ausgelöste Ereignisse:
 
-* Erfolgreiches Wiedergabeanforderungsereignis (der Rest wird zwischengespeichert)
-* Keine Erhöhung der individuellen Tageswerte oder Monatswerte
+* Erfolgreiches Wiedergabeanforderungsereignis (die restlichen Daten werden zwischengespeichert)
+* Keine Zunahme der Unique-Werte pro Tag oder pro Monat
 
 #### Tag 3 {#day3}
 
-Benutzer XYZ sieht sich ein weiteres Video an.
+Benutzer XYZ sieht sich ein anderes Video an.
 
 Ausgelöste Ereignisse:
 
-* AuthZ-Versuch/gewährtes Ereignis
-   * Seit 1 Tag ist die Zwischenspeicherung ab Tag 1 abgelaufen
-* Erfolgreiches Wiedergabeanforderungsereignis (der Rest wird zwischengespeichert)
-* Unique Users pro Tag erhöht um 1 - Unique Visitors pro Monat sind immer noch 1
+* AuthZ-Versuch/erteiltes Ereignis
+   * Seit 1 Tag, an dem das Caching ab Tag 1 abgelaufen ist
+* Erfolgreiches Wiedergabeanforderungsereignis (die restlichen Daten werden zwischengespeichert)
+* Täglich Unique Users um 1 erhöht - Unique-Werte pro Monat sind immer noch 1
 
 #### Tag 31 {#day31}
 
-Benutzer XYZ sieht sich ein weiteres Video an.
+Benutzer XYZ sieht sich ein anderes Video an.
 
-Wie an Tag 1, seit die AuthN-Zwischenspeicherung abgelaufen ist.
+Wie in Tag 1 seit dem Ablauf der AuthN-Zwischenspeicherung.
 
-Wenn derselbe Benutzer die Autorisierung nicht erfolgreich abschließen sollte, wird die Anzahl der Unique Users pro Monat dennoch um 1 erhöht, da es zwei Ereignisse gibt, die die Benutzer-ID enthalten: Authentifizierung gewährt und Autorisierungsversuch.
+Wenn die Autorisierung bei demselben Benutzer fehlschlägt, wird die monatliche Anzahl der Unique Users weiterhin um 1 erhöht, da es zwei Ereignisse gibt, die die Benutzer-ID enthalten - „Authentifizierung erteilt“ und „Autorisierungsversuch“.
 
 ### Single-Sign-On (SSO) {#single-sign-on-sso}
 
-In einigen Fällen kann die Anzahl der Unique Users größer sein als die Anzahl der erfolgreichen Authentifizierungen. Dies ist normalerweise der Fall, wenn viele Benutzer von anderen Sites/Apps per SSO eingehen und nur eine Autorisierung für die aktuelle Site/App benötigen.
+In einigen Fällen kann die Anzahl der eindeutigen Benutzer größer sein als die Anzahl der erfolgreichen Authentifizierungen. Dies ist in der Regel der Fall, wenn viele Benutzer über SSO von anderen Sites/Programmen aus eintreten und nur eine Autorisierung für die aktuelle Site/App benötigen.
 
-### Vergleich zwischen Client- und Server-seitigen Unique Users {#comparing-client-side-and-server-side-unique-users}
+### Vergleich von clientseitigen und serverseitigen eindeutigen Benutzern {#comparing-client-side-and-server-side-unique-users}
 
-Wenn der Benutzer-ID-Wert von `sendTrackingData()` clientseitig verwendet wird, um Unique Users zu zählen, sollten die clientseitigen und serverseitigen Zahlen übereinstimmen.
+Wenn der Benutzer-ID-Wert aus `sendTrackingData()` Client-seitig verwendet wird, um eindeutige Benutzer zu zählen, sollten die Client- und Server-seitigen Zahlen übereinstimmen.
 
-Wenn es sich bei den Unterschieden um wesentliche Unterschiede handelt, sind in der Regel die folgenden Gründe für die
-difference:
+Wenn die Unterschiede erheblich sind, sind die folgenden Gründe in der Regel für Folgendes verantwortlich
+Unterschied:
 
-* Eindeutige Videowiedergabe im Vergleich zu allen Ereignissen. Wie bereits erwähnt, zählt die Adobe Pass-Authentifizierung Unique Users für alle Ereignisse außer AuthN-Versuchen. Das bedeutet, dass eine Erhöhung der Unique User-Anzahl immer noch ausgelöst wird, wenn sich der Benutzer nur authentifiziert (auf der Seite), aber kein Video anzeigt.
+* Eindeutige Videowiedergabe im Vergleich zu allen einzigartigen Ereignissen. Wie bereits erwähnt, zählt die Adobe Pass-Authentifizierung eindeutige Benutzende für alle Ereignisse außer Authentifizierungsversuchen. Wenn sich der/die Benutzende also nur authentifiziert (auf der Seite), aber kein Video anzeigt, wird weiterhin eine Zunahme der Unique User Count ausgelöst.
 
-* Zählung von Benutzern, die die Autorisierung fehlgeschlagen haben - Adobe Pass-Authentifizierung zählt diese Benutzer auch in der gemeldeten Zahl.
+* Zählen der Benutzer, die bei der Autorisierung fehlgeschlagen sind - Bei der Adobe Pass-Authentifizierung werden diese Benutzer ebenfalls in der gemeldeten Zahl gezählt.
 
 <!--
 ## Related Information {#related-information}

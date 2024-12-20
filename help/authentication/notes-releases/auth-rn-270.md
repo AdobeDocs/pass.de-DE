@@ -13,9 +13,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme in dieser Version beschrieben:
+Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme dieser Version beschrieben:
 
 ## Server-seitige und Web-Clients {#server-side-web-clients-270}
 
@@ -25,19 +25,19 @@ Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme in di
 ### Build-Nummer {#build-number-270}
 
 Adobe Pass-Authentifizierung: adobe-pass-**2.70**
-Releasedatum: **23.04.2024 - 25.04.2024**
+Veröffentlichungsdatum: **04/23/2024 - 04/25/2024**
 
 ### Neue Funktionen {#new-features-270}
 
-#### Verschiedenes {#misc}
+#### Sonstiges {#misc}
 
-* Sicherheitslücken behoben.
-* Verbesserungen am Degradation API-Dienst.
+* Behobene Sicherheitslücken.
+* Verbesserungen am Degradation API-Service.
    * Verwenden Sie DCR als Sicherheitsmechanismus für die Degradation-API.
-   * Weitere Informationen finden Sie hier: [Übersicht über die Abbau-API](../integration-guide-programmers/features-premium/degraded-access/degradation-api-overview.md)
+   * Weitere Informationen finden Sie hier: [Degradation API Overview](../integration-guide-programmers/features-premium/degraded-access/degradation-api-overview.md)
 
 #### REST-APIs {#rest-apis}
 
-* Laufende Entwicklung für neue REST-APIs.
-   * In einer künftigen dedizierten Version werden neue Endpunkte und Flüsse eingeführt, die in einer separaten Benachrichtigung angekündigt werden.
-   * Die Dokumentation zur Verwendung dieser neuen APIs wird derzeit aktualisiert.
+* Laufende Entwicklung zu neuen REST-APIs.
+   * In einer kommenden dedizierten Version werden neue Endpunkte und Flüsse eingeführt, die in einer separaten Benachrichtigung angekündigt werden.
+   * Die Dokumentation für die Verwendung dieser neuen APIs wird derzeit aktualisiert.

@@ -1,6 +1,6 @@
 ---
 title: Abrufen von Client-Anmeldeinformationen
-description: Dynamic Client Registration API - Abrufen von Client-Anmeldeinformationen
+description: Dynamische Client-Registrierungs-API - Abrufen von Client-Anmeldeinformationen
 exl-id: 0b39768b-25b8-47b9-8080-59c56fb829fb
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 >[!IMPORTANT]
 >
-> Die Implementierung der Dynamic Client Registration API wird durch die Dokumentation zum [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) begrenzt.
+> Die Implementierung der dynamischen Client-Registrierungs-API ist an die Dokumentation [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) gebunden.
 
 ## Anfrage {#request}
 
@@ -28,17 +28,17 @@ ht-degree: 0%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">path</td>
+      <td style="background-color: #DEEBFF;">Pfad</td>
       <td>/o/client/register</td>
       <td></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">method</td>
+      <td style="background-color: #DEEBFF;">Methode</td>
       <td>POST</td>
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">Textparameter</th>
+      <th style="background-color: #EFF2F7;">Hauptteilparameter</th>
       <th style="background-color: #EFF2F7;"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
@@ -47,14 +47,14 @@ ht-degree: 0%
       <td>
             Die mit der registrierten Anwendung verknüpfte Softwareanweisung, die vom <a href="https://experience.adobe.com/#/pass/authentication">Adobe Pass TVE Dashboard</a> erstellt und heruntergeladen wurde.
             <br/><br/>
-            Die Verwaltung registrierter Anwendungen wird in der Dokumentation <a href="../dynamic-client-registration-overview.md">Übersicht über die dynamische Kundenregistrierung</a> beschrieben.
+            Die Verwaltung registrierter Anwendungen wird in der Dokumentation <a href="../dynamic-client-registration-overview.md">Übersicht über die Dynamic Client-Registrierung</a> beschrieben.
       </td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirect_uri</td>
       <td>Der Umleitungs-URI, der mit dem Speicherort verknüpft ist, zu dem der Benutzeragent navigiert, wenn der Authentifizierungsfluss abgeschlossen ist.</td>
-      <td>optional</td>
+      <td>fakultativ</td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">Kopfzeilen</th>
@@ -62,44 +62,44 @@ ht-degree: 0%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Content-Type</td>
+      <td style="background-color: #DEEBFF;">content-type</td>
       <td>
          Der akzeptierte Medientyp für die gesendeten Ressourcen.
          <br/><br/>
          Es muss application/json sein.
       </td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">X-Device-Info</td>
+      <td style="background-color: #DEEBFF;">x-device-info</td>
       <td>
-         Die Erstellung der Payload der Geräteinformationen wird in der Dokumentation <a href="../../rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> beschrieben.
+         Die Erzeugung der Payload mit Geräteinformationen wird in der Dokumentation <a href="../../rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> beschrieben.
          <br/><br/>
-         Es wird dringend empfohlen, sie immer zu verwenden, wenn die Geräteplattform der Anwendung die explizite Bereitstellung gültiger Werte zulässt.
+         Es wird dringend empfohlen, sie immer dann zu verwenden, wenn die Geräteplattform der Anwendung die explizite Bereitstellung gültiger Werte zulässt.
          <br/><br/>
-         Wenn dies bereitgestellt wird, führt das Adobe Pass-Authentifizierungs-Backend explizit Werte mit extrahierten Werten zusammen (standardmäßig).
+         Wenn angegeben, führt das Backend für die Adobe Pass-Authentifizierung explizit eingestellte Werte mit extrahierten Werten implizit zusammen (standardmäßig).
          <br/><br/>
-         Wenn kein Wert angegeben wird, verwendet das Backend für die Adobe Pass-Authentifizierung implizit extrahierte Werte (standardmäßig).
+         Wenn keine Angabe gemacht wird, verwendet das Backend für die Adobe Pass-Authentifizierung implizit die extrahierten Werte (standardmäßig).
       </td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Accept</td>
+      <td style="background-color: #DEEBFF;">Akzeptieren</td>
       <td>
-         Der Medientyp, der von der Clientanwendung akzeptiert wird.
+         Der von der Client-Anwendung akzeptierte Medientyp.
          <br/><br/>
          Wenn angegeben, muss es application/json sein.
       </td>
-      <td>optional</td>
+      <td>fakultativ</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">User-Agent</td>
-      <td>Der Benutzeragent der Clientanwendung.</td>
-      <td>optional</td>
+      <td style="background-color: #DEEBFF;">user-agent</td>
+      <td>Der Benutzeragent der Client-Anwendung.</td>
+      <td>fakultativ</td>
    </tr>
 </table>
 
-## Reaktion {#response}
+## Antwort {#response}
 
 ### Erfolg {#success}
 
@@ -112,15 +112,15 @@ ht-degree: 0%
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
       <td>201</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Content-Type</td>
+      <td style="background-color: #DEEBFF;">content-type</td>
       <td>application/json</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">body</th>
+      <th style="background-color: #EFF2F7;">Textkörper</th>
       <th style="background-color: #EFF2F7"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
@@ -136,37 +136,37 @@ ht-degree: 0%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">client_id</td>
-               <td>Die Client-Anwendungs-ID-Zeichenfolge.</td>
-               <td><i>erforderlich</i></td>
+               <td>Die Zeichenfolge der Client-Anwendungskennung.</td>
+               <td><i>required</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">client_secret</td>
-               <td>Die geheime Zeichenfolge der Clientanwendung.</td>
-               <td><i>erforderlich</i></td>
+               <td>Die geheime Zeichenfolge des Client-Programms.</td>
+               <td><i>required</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">client_id_displayed_at</td>
-               <td>Der Zeitpunkt, zu dem die Client-Anwendungs-ID ausgegeben wurde.</td>
-               <td><i>erforderlich</i></td>
+               <td style="background-color: #DEEBFF;">client_id_issued_at</td>
+               <td>Der Zeitpunkt, zu dem die Client-Anwendungskennung ausgegeben wurde.</td>
+               <td><i>required</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">redirect_uris</td>
-               <td>Das Array von Weiterleitungs-URI-Zeichenfolgen, die die Client-Anwendung in Umleitungs-basierten Flüssen verwenden kann.</td>
-               <td><i>erforderlich</i></td>
+               <td>Das Array von Umleitungs-URI-Zeichenfolgen, das die Client-Anwendung in umleitungsbasierten Flüssen verwenden kann.</td>
+               <td><i>required</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">grant_types</td>
-               <td>Die Grant-Typ-Zeichenfolgen, die die Client-Anwendung für den Client-Token-Endpunkt verwenden kann.</td>
-               <td><i>erforderlich</i></td>
+               <td>Die Zeichenfolgen vom Typ „grant“, die die Client-Anwendung für den Client-Token-Endpunkt verwenden kann.</td>
+               <td><i>required</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">Bereiche</td>
-               <td>Die Scope-Zeichenfolgen, die die Adobe Pass-Authentifizierungs-APIs definieren, die die Clientanwendung verwenden kann.</td>
-               <td><i>erforderlich</i></td>
+               <td>Die Bereichszeichenfolgen, die die Adobe Pass-Authentifizierungs-APIs definieren, die die Client-Anwendung verwenden kann.</td>
+               <td><i>required</i></td>
             </tr>
          </table>
       </td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
 </table>
 
 ### Fehler {#error}
@@ -180,22 +180,22 @@ ht-degree: 0%
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
       <td>400</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Content-Type</td>
+      <td style="background-color: #DEEBFF;">content-type</td>
       <td>application/json</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">body</th>
+      <th style="background-color: #EFF2F7;">Textkörper</th>
       <th style="background-color: #EFF2F7;"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">error</td>
+      <td style="background-color: #DEEBFF;">Fehler</td>
       <td>
-        Mögliche Werte sind:
+        Die möglichen Werte sind:
         <table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">Wert</th>
@@ -203,36 +203,36 @@ ht-degree: 0%
                <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">invalid_request</td>
+               <td style="background-color: #DEEBFF;">Invalid_request</td>
                <td>
                     Die Anfrage ist aus einem der folgenden Gründe ungültig:
                     <ul>
-                        <li>Bei der Anfrage fehlt ein erforderlicher Parameter.</li>
+                        <li>In der Anfrage fehlt ein erforderlicher Parameter.</li>
                         <li>Die Anfrage enthält einen nicht unterstützten Parameterwert.</li>
-                        <li>Die Anfrage wiederholt einen -Parameter.</li>
+                        <li>Die Anfrage wiederholt einen Parameter.</li>
                         <li>Die Anfrage ist fehlerhaft.</li>
                     </ul>
                </td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">invalid_redirect_uri</td>
-               <td>Die Anfrage enthält einen Wert für den Weiterleitungs-URI, der ungültig ist.</td>
+               <td>Die Anfrage enthält einen ungültigen Wert für den Umleitungs-URI.</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">invalid_software_statement</td>
                <td>Die Anfrage enthält einen Wert für die Software-Anweisung, der ungültig ist.</td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">unauthorised_software_statement</td>
-               <td>Die Anfrage enthält einen Wert für die Softwareanweisung, der nicht für die Verwendung durch den Adobe Pass-Authentifizierungsserver genehmigt ist.</td>
+               <td style="background-color: #DEEBFF;">unauthorized_software_statement</td>
+               <td>Die Anfrage enthält einen -Wert für die Softwareanweisung, der nicht für die Verwendung durch den Adobe Pass-Authentifizierungsserver genehmigt ist.</td>
             </tr>
          </table>
       </td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
 </table>
 
-## Stichproben {#samples}
+## Beispiele {#samples}
 
 ### Abrufen von Client-Anmeldeinformationen {#samples-retrieve-client-credentials}
 

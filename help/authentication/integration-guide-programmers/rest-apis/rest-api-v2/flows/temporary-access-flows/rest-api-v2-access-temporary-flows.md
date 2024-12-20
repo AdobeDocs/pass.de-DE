@@ -1,6 +1,6 @@
 ---
-title: Temporärer Zugriffsfluss
-description: REST API V2 - Fluss temporärer Zugriffsberechtigungen
+title: Temporäre Zugriffsflüsse
+description: REST API v2 - Temporäre Zugriffsflüsse
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -13,32 +13,32 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 >[!IMPORTANT]
 >
-> Die REST API V2-Implementierung wird durch die Dokumentation zum [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) begrenzt.
+> Die REST-API-V2-Implementierung ist an die Dokumentation [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) gebunden.
 
-TempPass ermöglicht es Programmierern, temporären Zugriff auf ihren geschützten Inhalt zu gewähren, ohne Benutzer zu bitten, sich mit einem gültigen MVPD-Konto zu authentifizieren.
+Mit TempPass können Programmierer temporären Zugriff auf ihre geschützten Inhalte gewähren, ohne die Benutzer zur Authentifizierung mit einem gültigen MVPD-Konto aufzufordern.
 
-Weitere Informationen zur Funktion &quot;TempPass&quot;finden Sie in der Dokumentation zu [TempPass](../../../../features-premium/temporary-access/temp-pass.md) .
+Weitere Informationen zur TempPass-Funktion finden Sie in der Dokumentation [TempPass](../../../../features-premium/temporary-access/temp-pass.md).
 
-Mit temporären Zugriffsflüssen können Sie nach folgenden Szenarien abfragen:
+Temporäre Zugriffsflüsse ermöglichen die Abfrage für die folgenden Szenarien:
 
-* [Abrufen von Autorisierungsentscheidungen mit einfachen TempPass](#retrieve-authorization-decisions-using-basic-temppass)
-* [Abrufen von Autorisierungsentscheidungen mit der Promotion TempPass](#retrieve-authorization-decisions-using-promotional-temppass)
-* [Maximale Ressourcenanzahl mithilfe der Promotion TempPass nutzen](#consume-maximum-number-of-resources-using-promotional-temppass)
-* [Abrufen von Autorisierungsentscheidungen bei Ablauf von einfachen oder Werbe-TempPass](#retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires)
-* [Profil für einfachen TempPass abrufen](#retrieve-profile-for-basic-temppass)
-* [Profil für die Promotion TempPass abrufen](#retrieve-profile-for-promotional-temppass)
+* [Abrufen von Autorisierungsentscheidungen mit einfachem TempPass](#retrieve-authorization-decisions-using-basic-temppass)
+* [Abrufen von Autorisierungsentscheidungen mithilfe von Werbe-TempPass](#retrieve-authorization-decisions-using-promotional-temppass)
+* [Maximale Ressourcenanzahl mit Werbe-TempPass verbrauchen](#consume-maximum-number-of-resources-using-promotional-temppass)
+* [Abrufen von Autorisierungsentscheidungen bei Ablauf von Standard- oder Promotion-TempPass](#retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires)
+* [Profil für einfache TempPass-Funktion abrufen](#retrieve-profile-for-basic-temppass)
+* [Profil für Werbe-TempPass abrufen](#retrieve-profile-for-promotional-temppass)
 
-## Abrufen von Autorisierungsentscheidungen mit einfachen TempPass {#retrieve-authorization-decisions-using-basic-temppass}
+## Abrufen von Autorisierungsentscheidungen mit einfachem TempPass {#retrieve-authorization-decisions-using-basic-temppass}
 
 ### Voraussetzungen {#prerequisites-retrieve-authorization-decisions-using-basic-temppass}
 
-Bevor Sie Autorisierungsentscheidungen mit einfachen TempPass abrufen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
+Stellen Sie vor dem Abrufen von Autorisierungsentscheidungen mit Basic TempPass sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
-* Die Streaming-Anwendung möchte temporären Zugriff auf Wiedergabeinhalte bereitstellen, ohne den Benutzer zur Authentifizierung aufzufordern.
+* Die Streaming-Anwendung möchte einen temporären Zugriff bereitstellen, um Inhalte wiederzugeben, ohne den Benutzer zur Authentifizierung aufzufordern.
 * Die Streaming-Anwendung muss eine Autorisierungsentscheidung abrufen, bevor eine vom Benutzer ausgewählte Ressource wiedergegeben wird.
 
 >[!IMPORTANT]
@@ -47,66 +47,66 @@ Bevor Sie Autorisierungsentscheidungen mit einfachen TempPass abrufen, stellen S
 > 
 > <br/>
 > 
-> * Es muss eine gültige Konfigurationseinstellung des einfachen TempPass geben, der auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
-> * Die für den einfachen TempPass konfigurierte TTL (Time-To-Live) ist nicht abgelaufen.
+> * Es muss eine gültige Konfigurationseinstellung von Basic TempPass vorhanden sein, die auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
+> * Die für „Basic TempPass“ konfigurierte Time-to-Live (TTL) ist noch nicht abgelaufen.
 
 ### Workflow {#workflow-retrieve-authorization-decisions-using-basic-temppass}
 
-Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss mithilfe des einfachen TempPass zu implementieren, wie im folgenden Diagramm dargestellt.
+Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss mit einfachem TempPass zu implementieren, wie im folgenden Diagramm dargestellt.
 
-![Abrufen von Autorisierungsentscheidungen mit einfachen TempPass](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-using-basic-temppass-flow.png)
+![Abrufen von Autorisierungsentscheidungen mit einfachem TempPass](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-using-basic-temppass-flow.png)
 
-*Abrufen von Autorisierungsentscheidungen mit einfachen TempPass*
+*Abrufen von Autorisierungsentscheidungen mit einfachem TempPass*
 
-1. **Autorisierungsentscheidung abrufen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um eine Autorisierungsentscheidung für eine bestimmte Ressource zu erhalten, indem sie den Endpunkt Entscheidungsautorisierung aufruft.
-
-   >[!IMPORTANT]
-   >
-   > Weitere Informationen finden Sie in der Dokumentation zur API [Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) -API:
-   > 
-   > * Alle _erforderlichen_ Parameter, wie `serviceProvider`, `mvpd` und `resources`
-   > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization` und `AP-Device-Identifier`
-   > * Alle Parameter und Kopfzeilen von _optional_
-
-1. **Validieren des einfachen TempPass-Dienstes:** Der Adobe Pass-Server überprüft, ob eine gültige Konfigurationseinstellung des einfachen TempPass vorhanden ist, der auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
-
-1. **Rückgabe `Permit` -Entscheidung mit Medien-Token:** Die Antwort des Endpunkts Entscheidungsautorisierung enthält eine `Permit` -Entscheidung und ein Medien-Token.
+1. **Autorisierungsentscheidung abrufen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um eine Autorisierungsentscheidung für eine bestimmte Ressource zu erhalten, indem sie den Decisions Authorize-Endpunkt aufruft.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der Dokumentation zur [Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) -API .
-   >
-   > <br/>
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    > 
-   > Der Endpunkt Entscheidungsautorisierung validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
-   >
-   > * Die Parameter und Header _required_ müssen gültig sein.
-   > * Die Integration zwischen dem bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
-   >
-   > <br/>
-   > 
-   > Wenn die grundlegende Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
-   >
-   > <br/>
-   > 
-   > Der Endpunkt Entscheidungsautorisierung verwendet die Anfragedaten, um zu überprüfen, ob temporäre Zugriffsbedingungen erfüllt sind:
-   >
-   > * Die für den einfachen TempPass konfigurierte TTL (Time-To-Live) darf nicht abgelaufen sein.
-   >
-   > <br/>
-   > 
-   > Wenn die Validierung des temporären Zugriffs fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+   > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
+   > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
+   > * Alle _optionalen_ Parameter und Kopfzeilen
 
-1. **Stream mit Medien-Token starten:** Die Streaming-Anwendung verwendet das Medien-Token zur Wiedergabe des Inhalts.
+1. **Einfache TempPass validieren:** Der Adobe Pass-Server überprüft, ob eine gültige Konfigurationseinrichtung von einfachem TempPass vorhanden ist, die auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
 
-## Abrufen von Autorisierungsentscheidungen mit der Promotion TempPass {#retrieve-authorization-decisions-using-promotional-temppass}
+1. **Rückgabe `Permit` Entscheidung mit Medien-Token:** Die Endpunktantwort „Entscheidungen autorisieren“ enthält eine `Permit` Entscheidung und ein Medien-Token.
+
+   >[!IMPORTANT]
+   >
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   >
+   > <br/>
+   > 
+   > Der Decisions-Autorisierungs-Endpunkt validiert die Anfragedaten, um sicherzustellen, dass grundlegende Bedingungen erfüllt werden:
+   >
+   > * Die _erforderlichen_ Parameter und Kopfzeilen müssen gültig sein.
+   > * Die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
+   >
+   > <br/>
+   > 
+   > Wenn die einfache Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
+   >
+   > <br/>
+   > 
+   > Der Endpunkt Decisions-Autorisierung verwendet die Anfragedaten, um zu überprüfen, ob temporäre Zugriffsbedingungen erfüllt sind:
+   >
+   > * Die für den grundlegenden TempPass konfigurierte Time-to-Live (TTL) darf nicht abgelaufen sein.
+   >
+   > <br/>
+   > 
+   > Wenn die Validierung des temporären Zugriffs fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehler-Codes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
+
+1. **Stream mit Medien-Token starten:** Die Streaming-Anwendung verwendet das Medien-Token, um den Inhalt wiederzugeben.
+
+## Abrufen von Autorisierungsentscheidungen mithilfe von Werbe-TempPass {#retrieve-authorization-decisions-using-promotional-temppass}
 
 ### Voraussetzungen {#prerequisites-retrieve-authorization-decisions-using-promotional-temppass}
 
-Bevor Sie Autorisierungsentscheidungen mit dem Promo-TempPass abrufen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
+Stellen Sie vor dem Abrufen von Autorisierungsentscheidungen mit dem Werbe-TempPass sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
-* Die Streaming-Anwendung möchte temporären Zugriff gewähren, um eine maximale Anzahl von Ressourcen abzuspielen, ohne den Benutzer zur Authentifizierung aufzufordern.
-* Die Streaming-Anwendung muss eindeutige Informationen über die Identität des Benutzers enthalten, wenn eine Autorisierungsentscheidung abgerufen wird.
+* Die Streaming-Anwendung möchte einen temporären Zugriff bereitstellen, um eine maximale Anzahl von Ressourcen abzuspielen, ohne den Benutzer zur Authentifizierung aufzufordern.
+* Die Streaming-Anwendung muss beim Abrufen einer Autorisierungsentscheidung eindeutige Informationen zur Identität des Benutzers enthalten.
 * Die Streaming-Anwendung muss eine Autorisierungsentscheidung abrufen, bevor eine vom Benutzer ausgewählte Ressource wiedergegeben wird.
 
 >[!IMPORTANT]
@@ -115,76 +115,76 @@ Bevor Sie Autorisierungsentscheidungen mit dem Promo-TempPass abrufen, stellen S
 >
 > <br/>
 > 
-> * Es muss eine gültige Konfigurationseinstellung für die Promotion TempPass geben, die auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
-> * Die für den Promo-TempPass konfigurierte TTL (Time-To-Live) ist nicht abgelaufen.
-> * Die maximale Anzahl von Ressourcen, die für die Promotion TempPass konfiguriert wurden, wurde nicht verbraucht.
+> * Es muss eine gültige Konfigurationseinrichtung für den temporären Werbepass vorhanden sein, die auf die Integration zwischen der bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
+> * Die für den Werbe-TempPass konfigurierte Time-to-Live (TTL) ist noch nicht abgelaufen.
+> * Die maximale Anzahl von Ressourcen, die für den Werbe-TempPass konfiguriert sind, wurde nicht verbraucht.
 
 ### Workflow {#workflow-retrieve-authorization-decisions-using-promotional-temppass}
 
-Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss mithilfe von TempPass zu implementieren, wie in der folgenden Abbildung dargestellt.
+Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss mithilfe von Promotion-TempPass zu implementieren, wie im folgenden Diagramm dargestellt.
 
-![Abrufen von Autorisierungsentscheidungen mit der Promotion TempPass](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-using-promotional-temppass-flow.png)
+![Abrufen von Autorisierungsentscheidungen mithilfe von Werbe-TempPass](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-using-promotional-temppass-flow.png)
 
-*Abrufen von Autorisierungsentscheidungen mit der Promotion TempPass*
+*Abrufen von Autorisierungsentscheidungen mithilfe von Werbe-TempPass*
 
-1. **Autorisierungsentscheidung abrufen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um eine Autorisierungsentscheidung für eine bestimmte Ressource zu erhalten, indem sie den Endpunkt Entscheidungsautorisierung aufruft.
-
-   >[!IMPORTANT]
-   >
-   > Weitere Informationen finden Sie in der Dokumentation zur API [Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) -API:
-   >
-   > * Alle _erforderlichen_ Parameter, wie `serviceProvider`, `mvpd` und `resources`
-   > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization` und `AP-Device-Identifier`
-   > * Alle Parameter und Kopfzeilen von _optional_
-   >
-   > <br/>
-   >
-   > Der Entscheidungsendpunkt Autorisierung erfordert bei Verwendung des Promotionsprinzips TempPass das Vorhandensein von `AP-TempPass-Identity` -Kopfzeilen. Die Kopfzeile enthält eindeutige Informationen zur Identität des Benutzers, der auf den Inhalt zugreift.
-   > 
-   > <br/>
-   > 
-   > Weitere Informationen zum Header `AP-TempPass-Identity` finden Sie in der Dokumentation [AP-TempPass-Identity](../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md) .
-
-1. **Validieren Sie die Werbeaktion TempPass:** Der Adobe Pass-Server überprüft, ob eine gültige Konfigurationseinstellung für die Werbeaktion TempPass vorhanden ist, die auf die Integration zwischen dem bereitgestellten `serviceProvider` und dem bereitgestellten `mvpd` angewendet wird.
-
-1. **Rückgabe `Permit` -Entscheidung mit Medien-Token:** Die Antwort des Endpunkts Entscheidungsautorisierung enthält eine `Permit` -Entscheidung und ein Medien-Token.
+1. **Autorisierungsentscheidung abrufen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um eine Autorisierungsentscheidung für eine bestimmte Ressource zu erhalten, indem sie den Decisions Authorize-Endpunkt aufruft.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der Dokumentation zur [Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) -API .
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
+   >
+   > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
+   > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
+   > * Alle _optionalen_ Parameter und Kopfzeilen
+   >
+   > <br/>
+   >
+   > Der Endpunkt Decisions Authorize erfordert bei Verwendung von Werbe-TempPass das Vorhandensein `AP-TempPass-Identity` -Headers. Die Kopfzeile enthält eindeutige Informationen über die Identität des Benutzers, der auf den Inhalt zugreift.
    > 
    > <br/>
    > 
-   > Der Endpunkt Entscheidungsautorisierung validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
-   >
-   > * Die Parameter und Header _required_ müssen gültig sein.
-   > * Die Integration zwischen dem bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
-   >
-   > <br/>
-   > 
-   > Wenn die grundlegende Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
-   >
-   > <br/>
-   > 
-   > Der Endpunkt Entscheidungsautorisierung verwendet die Anfragedaten, um zu überprüfen, ob temporäre Zugriffsbedingungen erfüllt sind:
-   >
-   > * Die für den Promotion-TempPass konfigurierte TTL (Time-To-Live) darf nicht abgelaufen sein.
-   > * Die maximale Anzahl von Ressourcen, die für die Promotion TempPass konfiguriert sind, darf nicht verbraucht werden.
-   >
-   > <br/>
-   > 
-   > Wenn die Validierung des temporären Zugriffs fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+   > Weitere Informationen zu `AP-TempPass-Identity`-Header finden Sie in der Dokumentation [AP-TempPass-Identity](../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md).
 
-1. **Stream mit Medien-Token starten:** Die Streaming-Anwendung verwendet das Medien-Token zur Wiedergabe des Inhalts.
+1. **Promotion-TempPass validieren:** Der Adobe Pass-Server überprüft, ob eine gültige Konfigurationseinrichtung für Promotion-TempPass vorhanden ist, die auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
 
-## Maximale Ressourcenanzahl mithilfe der Promotion TempPass nutzen {#consume-maximum-number-of-resources-using-promotional-temppass}
+1. **Rückgabe `Permit` Entscheidung mit Medien-Token:** Die Endpunktantwort „Entscheidungen autorisieren“ enthält eine `Permit` Entscheidung und ein Medien-Token.
+
+   >[!IMPORTANT]
+   >
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > 
+   > <br/>
+   > 
+   > Der Decisions-Autorisierungs-Endpunkt validiert die Anfragedaten, um sicherzustellen, dass grundlegende Bedingungen erfüllt werden:
+   >
+   > * Die _erforderlichen_ Parameter und Kopfzeilen müssen gültig sein.
+   > * Die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
+   >
+   > <br/>
+   > 
+   > Wenn die einfache Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
+   >
+   > <br/>
+   > 
+   > Der Endpunkt Decisions-Autorisierung verwendet die Anfragedaten, um zu überprüfen, ob temporäre Zugriffsbedingungen erfüllt sind:
+   >
+   > * Die für den Werbe-TempPass konfigurierte Time-to-Live (TTL) darf nicht abgelaufen sein.
+   > * Die maximale Anzahl von Ressourcen, die für den Werbe-TempPass konfiguriert sind, darf nicht verbraucht werden.
+   >
+   > <br/>
+   > 
+   > Wenn die Validierung des temporären Zugriffs fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehler-Codes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
+
+1. **Stream mit Medien-Token starten:** Die Streaming-Anwendung verwendet das Medien-Token, um den Inhalt wiederzugeben.
+
+## Maximale Ressourcenanzahl mit Werbe-TempPass verbrauchen {#consume-maximum-number-of-resources-using-promotional-temppass}
 
 ### Voraussetzungen {#prerequisites-consume-maximum-number-of-resources-using-promotional-temppass}
 
-Bevor Sie eine maximale Anzahl von Ressourcen mit der Promotion TempPass verbrauchen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
+Bevor Sie eine maximale Anzahl von Ressourcen mit dem Werbe-TempPass verbrauchen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
-* Die Streaming-Anwendung möchte temporären Zugriff gewähren, um eine maximale Anzahl von Ressourcen abzuspielen, ohne den Benutzer zur Authentifizierung aufzufordern.
-* Die Streaming-Anwendung muss eindeutige Informationen über die Identität des Benutzers enthalten, wenn eine Autorisierungsentscheidung abgerufen wird.
+* Die Streaming-Anwendung möchte einen temporären Zugriff bereitstellen, um eine maximale Anzahl von Ressourcen abzuspielen, ohne den Benutzer zur Authentifizierung aufzufordern.
+* Die Streaming-Anwendung muss beim Abrufen einer Autorisierungsentscheidung eindeutige Informationen zur Identität des Benutzers enthalten.
 * Die Streaming-Anwendung muss eine Autorisierungsentscheidung abrufen, bevor eine vom Benutzer ausgewählte Ressource wiedergegeben wird.
 
 >[!IMPORTANT]
@@ -193,174 +193,174 @@ Bevor Sie eine maximale Anzahl von Ressourcen mit der Promotion TempPass verbrau
 >
 > <br/>
 > 
-> * Es muss eine gültige Konfigurationseinstellung für die Promotion TempPass geben, die auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
-> * Die für den Promo-TempPass konfigurierte TTL (Time-To-Live) ist nicht abgelaufen.
-> * Die maximale Anzahl von Ressourcen, die für die Promotion &quot;TempPass&quot;konfiguriert sind, beträgt 1.
+> * Es muss eine gültige Konfigurationseinrichtung für den temporären Werbepass vorhanden sein, die auf die Integration zwischen der bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
+> * Die für den Werbe-TempPass konfigurierte Time-to-Live (TTL) ist noch nicht abgelaufen.
+> * Die maximale Anzahl von Ressourcen, die für den Werbe-TempPass konfiguriert sind, ist 1.
 
 ### Workflow {#workflow-consume-maximum-number-of-resources-using-promotional-temppass}
 
-Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss zu implementieren, wenn Sie eine maximale Anzahl von Ressourcen mit der Promotion TempPass verbrauchen, wie im folgenden Diagramm dargestellt.
+Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementieren, wenn Sie eine maximale Anzahl von Ressourcen mit dem Werbe-TempPass verbrauchen, wie im folgenden Diagramm dargestellt.
 
-![Maximale Anzahl an Ressourcen mit der Promotion TempPass](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-consume-maximum-number-of-resources-using-promotional-temppass-flow.png) verbrauchen
+![Verwenden Sie die maximale Anzahl von Ressourcen mit dem Werbe-TempPass](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-consume-maximum-number-of-resources-using-promotional-temppass-flow.png)
 
-*Maximale Anzahl an Ressourcen mit der Promotion TempPass* verbrauchen
+*Verwenden Sie die maximale Anzahl von Ressourcen mit dem Werbe-TempPass*
 
-1. **Profil für den Promotion-TempPass abrufen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um Profilinformationen für den Promo-TempPass abzurufen, indem eine Anfrage an den Endpunkt Profile gesendet wird.
-
-   >[!IMPORTANT]
-   >
-   > Weitere Informationen finden Sie in der Dokumentation zur API [Abrufen des Profils für bestimmte mvpd](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) :
-   >
-   > * Alle _erforderlichen_ Parameter, wie `serviceProvider` und `mvpd`
-   > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization` und `AP-Device-Identifier`
-   > * Alle Parameter und Kopfzeilen von _optional_
-   >
-   > <br/>
-   > 
-   > Die Abfrage des Endpunkts Profile ist optional und kann verwendet werden, um zu bestimmen, wie viele Ressourcen noch mit dem Promo-TempPass abgespielt werden können.
-
-1. **Validieren Sie die Werbeaktion TempPass:** Der Adobe Pass-Server überprüft, ob eine gültige Konfigurationseinstellung für die Werbeaktion TempPass vorhanden ist, die auf die Integration zwischen dem bereitgestellten `serviceProvider` und dem bereitgestellten `mvpd` angewendet wird.
-
-1. **Rückgabe von Informationen zum temporären Profil:** Die Antwort des Profilendpunkts enthält Informationen zum temporären Profil, einschließlich des Attributs `type`, das auf &quot;temporär&quot;gesetzt ist.
+1. **Profil für Werbe-TempPass abrufen:** Die Streaming-Anwendung sammelt alle erforderlichen Daten, um Profilinformationen für Werbe-TempPass abzurufen, indem sie eine Anfrage an den Endpunkt „Profiles“ sendet.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den Informationen in einer Profilantwort finden Sie in der Dokumentation zur API [Profil für bestimmte mvpd](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) -API.
-   > 
-   > <br/>
-   > 
-   > Der Endpunkt Profile validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
    >
-   > * Die Parameter und Header _required_ müssen gültig sein.
-   > * Die Integration zwischen dem bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
-   > 
-   > <br/>
-   >
-   > Wenn die grundlegende Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+   > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `mvpd`
+   > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
+   > * Alle _optionalen_ Parameter und Kopfzeilen
    >
    > <br/>
    > 
-   > Der Endpunkt Profile verwendet die Anfragedaten, um zu überprüfen, ob temporäre Zugriffsbedingungen erfüllt sind:
-   >
-   > * Die für den Promotion-TempPass konfigurierte TTL (Time-To-Live) darf nicht abgelaufen sein.
-   > * Die maximale Anzahl von Ressourcen, die für die Promotion TempPass konfiguriert sind, darf nicht verbraucht werden.
-   >
-   > <br/>
-   > 
-   > Wenn die Validierung des temporären Zugriffs fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+   > Die Abfrage des Profilendpunkts ist optional und kann verwendet werden, um festzustellen, wie viele Ressourcen mit dem Werbe-TempPass noch wiedergegeben werden können.
 
-1. **Mit Entscheidungsflüssen fortfahren:** Wenn die Profil-Endpunktantwort ein Profil enthält, verwendet die Streaming-Anwendung die temporären Profilinformationen, um mit nachfolgenden Entscheidungsflüssen fortzufahren.
+1. **Promotion-TempPass validieren:** Der Adobe Pass-Server überprüft, ob eine gültige Konfigurationseinrichtung für Promotion-TempPass vorhanden ist, die auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
 
-1. **Autorisierungsentscheidung abrufen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um eine Autorisierungsentscheidung für eine bestimmte Ressource zu erhalten, indem sie den Endpunkt Entscheidungsautorisierung aufruft.
-
-   >[!IMPORTANT]
-   > 
-   > Weitere Informationen finden Sie in der Dokumentation zur API [Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) -API:
-   >
-   > * Alle _erforderlichen_ Parameter, wie `serviceProvider`, `mvpd` und `resources`
-   > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization` und `AP-Device-Identifier`
-   > * Alle Parameter und Kopfzeilen von _optional_
-   >
-   > <br/>
-   > 
-   > Der Entscheidungsendpunkt Autorisierung erfordert bei Verwendung des Promotionsprinzips TempPass das Vorhandensein von `AP-TempPass-Identity` -Kopfzeilen. Die Kopfzeile enthält eindeutige Informationen zur Identität des Benutzers, der auf den Inhalt zugreift.
-   > 
-   > <br/>
-   > 
-   > Weitere Informationen zum Header `AP-TempPass-Identity` finden Sie in der Dokumentation [AP-TempPass-Identity](../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md) .
-
-1. **Validieren Sie die Werbeaktion TempPass:** Der Adobe Pass-Server überprüft, ob eine gültige Konfigurationseinstellung für die Werbeaktion TempPass vorhanden ist, die auf die Integration zwischen dem bereitgestellten `serviceProvider` und dem bereitgestellten `mvpd` angewendet wird.
-
-1. **Rückgabe `Permit` -Entscheidung mit Medien-Token:** Die Antwort des Endpunkts Entscheidungsautorisierung enthält eine `Permit` -Entscheidung und ein Medien-Token.
+1. **Rückgabeinformationen zum temporären Profil:** Die Antwort des Endpunkts „Profiles“ enthält Informationen zum temporären Profil, einschließlich des Attributs, das auf „temporär“ festgelegt `type`.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der Dokumentation zur [Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) -API .
+   > Weitere Informationen zu [ in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
    > 
    > <br/>
    > 
-   > Der Endpunkt Entscheidungsautorisierung validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
+   > Der Profiles-Endpunkt validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
    >
-   > * Die Parameter und Header _required_ müssen gültig sein.
-   > * Die Integration zwischen dem bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
+   > * Die _erforderlichen_ Parameter und Kopfzeilen müssen gültig sein.
+   > * Die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
+   > 
+   > <br/>
+   >
+   > Wenn die einfache Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
    >
    > <br/>
    > 
-   > Wenn die grundlegende Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
-   > 
-   > <br/>
-   > 
-   > Der Endpunkt Entscheidungsautorisierung verwendet die Anfragedaten, um zu überprüfen, ob temporäre Zugriffsbedingungen erfüllt sind:
+   > Der Profilendpunkt verwendet die Anfragedaten, um zu überprüfen, ob temporäre Zugriffsbedingungen erfüllt sind:
    >
-   > * Die für den Promotion-TempPass konfigurierte TTL (Time-To-Live) darf nicht abgelaufen sein.
-   > * Die maximale Anzahl von Ressourcen, die für die Promotion TempPass konfiguriert sind, darf nicht verbraucht werden.
+   > * Die für den Werbe-TempPass konfigurierte Time-to-Live (TTL) darf nicht abgelaufen sein.
+   > * Die maximale Anzahl von Ressourcen, die für den Werbe-TempPass konfiguriert sind, darf nicht verbraucht werden.
    >
    > <br/>
    > 
-   > Wenn die Validierung des temporären Zugriffs fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+   > Wenn die Validierung des temporären Zugriffs fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehler-Codes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
 
-1. **Autorisierungsentscheidung abrufen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um eine Autorisierungsentscheidung für eine bestimmte Ressource zu erhalten, indem sie den Endpunkt Entscheidungsautorisierung aufruft.
+1. **Fahren Sie mit Entscheidungsflüssen fort:** Wenn die Antwort des Endpunkts „Profile“ ein Profil enthält, verwendet die Streaming-Anwendung die temporären Profilinformationen, um mit nachfolgenden Entscheidungsflüssen fortzufahren.
+
+1. **Autorisierungsentscheidung abrufen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um eine Autorisierungsentscheidung für eine bestimmte Ressource zu erhalten, indem sie den Decisions Authorize-Endpunkt aufruft.
+
+   >[!IMPORTANT]
+   > 
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
+   >
+   > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
+   > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
+   > * Alle _optionalen_ Parameter und Kopfzeilen
+   >
+   > <br/>
+   > 
+   > Der Endpunkt Decisions Authorize erfordert bei Verwendung von Werbe-TempPass das Vorhandensein `AP-TempPass-Identity` -Headers. Die Kopfzeile enthält eindeutige Informationen über die Identität des Benutzers, der auf den Inhalt zugreift.
+   > 
+   > <br/>
+   > 
+   > Weitere Informationen zu `AP-TempPass-Identity`-Header finden Sie in der Dokumentation [AP-TempPass-Identity](../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md).
+
+1. **Promotion-TempPass validieren:** Der Adobe Pass-Server überprüft, ob eine gültige Konfigurationseinrichtung für Promotion-TempPass vorhanden ist, die auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
+
+1. **Rückgabe `Permit` Entscheidung mit Medien-Token:** Die Endpunktantwort „Entscheidungen autorisieren“ enthält eine `Permit` Entscheidung und ein Medien-Token.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen finden Sie in der Dokumentation zur API [Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) -API:
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > 
+   > <br/>
+   > 
+   > Der Decisions-Autorisierungs-Endpunkt validiert die Anfragedaten, um sicherzustellen, dass grundlegende Bedingungen erfüllt werden:
    >
-   > * Alle _erforderlichen_ Parameter, wie `serviceProvider`, `mvpd` und `resources`
-   > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization` und `AP-Device-Identifier`
-   > * Alle Parameter und Kopfzeilen von _optional_
+   > * Die _erforderlichen_ Parameter und Kopfzeilen müssen gültig sein.
+   > * Die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
    >
    > <br/>
    > 
-   > Der Entscheidungsendpunkt Autorisierung erfordert bei Verwendung des Promotionsprinzips TempPass das Vorhandensein von `AP-TempPass-Identity` -Kopfzeilen. Die Kopfzeile enthält eindeutige Informationen zur Identität des Benutzers, der auf den Inhalt zugreift.
+   > Wenn die einfache Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
+   > 
+   > <br/>
+   > 
+   > Der Endpunkt Decisions-Autorisierung verwendet die Anfragedaten, um zu überprüfen, ob temporäre Zugriffsbedingungen erfüllt sind:
+   >
+   > * Die für den Werbe-TempPass konfigurierte Time-to-Live (TTL) darf nicht abgelaufen sein.
+   > * Die maximale Anzahl von Ressourcen, die für den Werbe-TempPass konfiguriert sind, darf nicht verbraucht werden.
    >
    > <br/>
    > 
-   > Weitere Informationen zum Header `AP-TempPass-Identity` finden Sie in der Dokumentation [AP-TempPass-Identity](../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md) .
+   > Wenn die Validierung des temporären Zugriffs fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehler-Codes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
 
-1. **Validieren Sie die Werbeaktion TempPass:** Der Adobe Pass-Server überprüft, ob eine gültige Konfigurationseinstellung für die Werbeaktion TempPass vorhanden ist, die auf die Integration zwischen dem bereitgestellten `serviceProvider` und dem bereitgestellten `mvpd` angewendet wird.
-
-1. **Rückgabe `Deny` -Entscheidung mit Details:** Die Antwort des Endpunkts Entscheidungsautorisierung enthält eine `Deny` -Entscheidung und eine Fehler-Payload, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entspricht.
+1. **Autorisierungsentscheidung abrufen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um eine Autorisierungsentscheidung für eine bestimmte Ressource zu erhalten, indem sie den Decisions Authorize-Endpunkt aufruft.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der Dokumentation zur [Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) -API .
-   > 
-   > <br/>
-   > 
-   > Der Endpunkt Entscheidungsautorisierung validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    >
-   > * Die Parameter und Header _required_ müssen gültig sein.
-   > * Die Integration zwischen dem bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
+   > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
+   > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
+   > * Alle _optionalen_ Parameter und Kopfzeilen
    >
    > <br/>
    > 
-   > Wenn die grundlegende Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+   > Der Endpunkt Decisions Authorize erfordert bei Verwendung von Werbe-TempPass das Vorhandensein `AP-TempPass-Identity` -Headers. Die Kopfzeile enthält eindeutige Informationen über die Identität des Benutzers, der auf den Inhalt zugreift.
    >
    > <br/>
    > 
-   > Der Endpunkt Entscheidungsautorisierung verwendet die Anfragedaten, um zu überprüfen, ob temporäre Zugriffsbedingungen erfüllt sind:
-   >
-   > * Die für den Promotion-TempPass konfigurierte TTL (Time-To-Live) darf nicht abgelaufen sein.
-   > * Die maximale Anzahl von Ressourcen, die für die Promotion TempPass konfiguriert sind, darf nicht verbraucht werden.
-   >
-   > <br/>
-   > 
-   > Wenn die Validierung des temporären Zugriffs fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+   > Weitere Informationen zu `AP-TempPass-Identity`-Header finden Sie in der Dokumentation [AP-TempPass-Identity](../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md).
 
-1. **Entscheidungsdetails verarbeiten `Deny`:** Die Streaming-Anwendung verarbeitet die Fehlerinformationen aus der Antwort und kann sie verwenden, um optional eine bestimmte Meldung auf der Benutzeroberfläche anzuzeigen.
+1. **Promotion-TempPass validieren:** Der Adobe Pass-Server überprüft, ob eine gültige Konfigurationseinrichtung für Promotion-TempPass vorhanden ist, die auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
+
+1. **Rückgabe `Deny` Entscheidung mit Details:** Die Endpunktantwort „Decisions Authorize“ enthält eine `Deny` Entscheidung und eine Fehler-Payload, die der Dokumentation zu [Enhanced Error Codes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+
+   >[!IMPORTANT]
+   >
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > 
+   > <br/>
+   > 
+   > Der Decisions-Autorisierungs-Endpunkt validiert die Anfragedaten, um sicherzustellen, dass grundlegende Bedingungen erfüllt werden:
+   >
+   > * Die _erforderlichen_ Parameter und Kopfzeilen müssen gültig sein.
+   > * Die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
+   >
+   > <br/>
+   > 
+   > Wenn die einfache Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
+   >
+   > <br/>
+   > 
+   > Der Endpunkt Decisions-Autorisierung verwendet die Anfragedaten, um zu überprüfen, ob temporäre Zugriffsbedingungen erfüllt sind:
+   >
+   > * Die für den Werbe-TempPass konfigurierte Time-to-Live (TTL) darf nicht abgelaufen sein.
+   > * Die maximale Anzahl von Ressourcen, die für den Werbe-TempPass konfiguriert sind, darf nicht verbraucht werden.
+   >
+   > <br/>
+   > 
+   > Wenn die Validierung des temporären Zugriffs fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehler-Codes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
+
+1. **Handhabung `Deny` Entscheidungsdetails:** Die Streaming-Anwendung verarbeitet die Fehlerinformationen aus der Antwort und kann sie verwenden, um optional eine bestimmte Nachricht auf der Benutzeroberfläche anzuzeigen.
 
    >[!TIP]
    >
-   > Empfehlung: Die Streaming-Anwendung kann Benutzer darüber informieren, dass die maximale Ressourcenanzahl überschritten wurde, und ihnen empfehlen, einen einfachen Authentifizierungsfluss mit einem regulären MVPD zu initiieren, um die Wiedergabe fortzusetzen.
+   > Empfehlung: Die Streaming-Anwendung kann Benutzende darüber informieren, dass die maximale Anzahl von Ressourcen überschritten wurde, und ihnen empfehlen, einen einfachen Authentifizierungsfluss mithilfe einer regulären MVPD einzuleiten, um den Überwachungsvorgang fortzusetzen.
 
-## Abrufen von Autorisierungsentscheidungen bei Ablauf von einfachen oder Werbe-TempPass {#retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
+## Abrufen von Autorisierungsentscheidungen bei Ablauf von Standard- oder Promotion-TempPass {#retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
 
 ### Voraussetzungen {#prerequisites-retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
 
-Bevor Autorisierungsentscheidungen abgerufen werden, wenn grundlegende oder Werbe-TempPass abläuft, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
+Stellen Sie vor dem Abrufen von Autorisierungsentscheidungen bei Ablauf des Standard- oder Promotion-TempPass sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
-* [Voraussetzungen vor dem Abrufen von Autorisierungsentscheidungen mit dem einfachen TempPass](#prerequisites-retrieve-authorization-decisions-using-basic-temppass).
-* [Voraussetzungen vor dem Abrufen von Autorisierungsentscheidungen mithilfe des Promotionprogramms TempPass](#prerequisites-retrieve-authorization-decisions-using-promotional-temppass).
+* [Voraussetzungen vor dem Abrufen von Autorisierungsentscheidungen mit Basic TempPass](#prerequisites-retrieve-authorization-decisions-using-basic-temppass).
+* [Voraussetzungen vor dem Abrufen von Autorisierungsentscheidungen mithilfe von Werbe-TempPass](#prerequisites-retrieve-authorization-decisions-using-promotional-temppass).
 
 >[!IMPORTANT]
 >
@@ -368,80 +368,80 @@ Bevor Autorisierungsentscheidungen abgerufen werden, wenn grundlegende oder Werb
 > 
 > <br/>
 > 
-> * Es muss eine gültige Konfigurationseinstellung für einfachen oder Werbe-TempPass geben, der auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
-> * Die für die Basis- oder Werbeaktion konfigurierte TTL (Time-To-Live) Die zeitliche Beschränkung für den temporären Zugriff wurde überschritten.
+> * Es muss eine gültige Konfigurationseinstellung von Basic oder Promotion TempPass vorhanden sein, die auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
+> * Die Time-to-Live (TTL), die für die Standard- oder Werbeanzeige konfiguriert wurde. Die zeitweilige Zugriffsdauer wurde überschritten.
 
 ### Workflow {#workflow-retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
 
-Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss zu implementieren, wenn der grundlegende oder Werbe-TempPass abläuft, wie im folgenden Diagramm dargestellt.
+Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementieren, wenn der Standard- oder Promotion-TempPass abläuft, wie in der folgenden Abbildung dargestellt.
 
-![Abrufen von Autorisierungsentscheidungen, wenn der grundlegende oder Werbe-TempPass abläuft](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires-flow.png)
+![Abrufen von Autorisierungsentscheidungen bei Ablauf von Standard- oder Promotion-TempPass](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires-flow.png)
 
-*Abrufen von Autorisierungsentscheidungen, wenn der grundlegende oder Werbe-TempPass abläuft*
+*Abrufen von Autorisierungsentscheidungen bei Ablauf von Standard- oder Promotion-TempPass*
 
-1. **Autorisierungsentscheidung abrufen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um eine Autorisierungsentscheidung für eine bestimmte Ressource zu erhalten, indem sie den Endpunkt Entscheidungsautorisierung aufruft.
-
-   >[!IMPORTANT]
-   >
-   > Weitere Informationen finden Sie in der Dokumentation zur API [Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) -API:
-   > 
-   > * Alle _erforderlichen_ Parameter, wie `serviceProvider`, `mvpd` und `resources`
-   > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization` und `AP-Device-Identifier`
-   > * Alle Parameter und Kopfzeilen von _optional_
-   >
-   > <br/>
-   > 
-   > Der Entscheidungsendpunkt Autorisierung erfordert bei Verwendung des Promotionsprinzips TempPass das Vorhandensein von `AP-TempPass-Identity` -Kopfzeilen. Die Kopfzeile enthält eindeutige Informationen zur Identität des Benutzers, der auf den Inhalt zugreift.
-   > 
-   > <br/>
-   > 
-   > Weitere Informationen zum Header `AP-TempPass-Identity` finden Sie in der Dokumentation [AP-TempPass-Identity](../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md) .
-
-1. **Validieren Sie den einfachen oder Werbe-TempPass:** Der Adobe Pass-Server überprüft, ob eine gültige Konfigurationseinstellung für den einfachen oder Werbe-TempPass vorhanden ist, der auf die Integration zwischen dem bereitgestellten `serviceProvider` und dem bereitgestellten `mvpd` angewendet wird.
-
-1. **Rückgabe `Deny` -Entscheidung mit Details:** Die Antwort des Endpunkts Entscheidungsautorisierung enthält eine `Deny` -Entscheidung und eine Fehler-Payload, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entspricht.
+1. **Autorisierungsentscheidung abrufen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um eine Autorisierungsentscheidung für eine bestimmte Ressource zu erhalten, indem sie den Decisions Authorize-Endpunkt aufruft.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der Dokumentation zur [Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) -API .
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    > 
-   > <br/>
-   > 
-   > Der Endpunkt Entscheidungsautorisierung validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
-   >
-   > * Die Parameter und Header _required_ müssen gültig sein.
-   > * Die Integration zwischen dem bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
+   > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
+   > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
+   > * Alle _optionalen_ Parameter und Kopfzeilen
    >
    > <br/>
    > 
-   > Wenn die grundlegende Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
-   >
+   > Der Endpunkt Decisions Authorize erfordert bei Verwendung von Werbe-TempPass das Vorhandensein `AP-TempPass-Identity` -Headers. Die Kopfzeile enthält eindeutige Informationen über die Identität des Benutzers, der auf den Inhalt zugreift.
+   > 
    > <br/>
    > 
-   > Der Endpunkt Entscheidungsautorisierung verwendet die Anfragedaten, um zu überprüfen, ob temporäre Zugriffsbedingungen erfüllt sind:
-   >
-   > * Die für den einfachen oder Werbe-TempPass konfigurierte TTL (Time-To-Live) darf nicht abgelaufen sein.
-   > * Die maximale Anzahl von Ressourcen, die für die Promotion TempPass konfiguriert sind, darf nicht verbraucht werden.
-   >
-   > <br/>
-   > 
-   > Wenn die Validierung des temporären Zugriffs fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+   > Weitere Informationen zu `AP-TempPass-Identity`-Header finden Sie in der Dokumentation [AP-TempPass-Identity](../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md).
 
-1. **Entscheidungsdetails verarbeiten `Deny`:** Die Streaming-Anwendung verarbeitet die Fehlerinformationen aus der Antwort und kann sie verwenden, um optional eine bestimmte Meldung auf der Benutzeroberfläche anzuzeigen.
+1. **Validieren von Standard- oder Promotion-TempPass:** Der Adobe Pass-Server überprüft, ob eine gültige Konfigurationseinrichtung von Standard- oder Promotion-TempPass vorhanden ist, die auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
+
+1. **Rückgabe `Deny` Entscheidung mit Details:** Die Endpunktantwort „Decisions Authorize“ enthält eine `Deny` Entscheidung und eine Fehler-Payload, die der Dokumentation zu [Enhanced Error Codes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+
+   >[!IMPORTANT]
+   >
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > 
+   > <br/>
+   > 
+   > Der Decisions-Autorisierungs-Endpunkt validiert die Anfragedaten, um sicherzustellen, dass grundlegende Bedingungen erfüllt werden:
+   >
+   > * Die _erforderlichen_ Parameter und Kopfzeilen müssen gültig sein.
+   > * Die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
+   >
+   > <br/>
+   > 
+   > Wenn die einfache Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
+   >
+   > <br/>
+   > 
+   > Der Endpunkt Decisions-Autorisierung verwendet die Anfragedaten, um zu überprüfen, ob temporäre Zugriffsbedingungen erfüllt sind:
+   >
+   > * Die für den Standard- oder Werbe-TempPass konfigurierte Time-to-Live (TTL) darf nicht abgelaufen sein.
+   > * Die maximale Anzahl von Ressourcen, die für den Werbe-TempPass konfiguriert sind, darf nicht verbraucht werden.
+   >
+   > <br/>
+   > 
+   > Wenn die Validierung des temporären Zugriffs fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehler-Codes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
+
+1. **Handhabung `Deny` Entscheidungsdetails:** Die Streaming-Anwendung verarbeitet die Fehlerinformationen aus der Antwort und kann sie verwenden, um optional eine bestimmte Nachricht auf der Benutzeroberfläche anzuzeigen.
 
    >[!TIP]
    >
-   > Empfehlung: Die Streaming-Anwendung kann Benutzer darüber informieren, dass der temporäre Zugriff abgelaufen ist, und ihnen empfehlen, einen einfachen Authentifizierungsfluss mit einem regulären MVPD zu initiieren, um die Wiedergabe fortzusetzen.
+   > Empfehlung: Die Streaming-Anwendung kann Benutzende darüber informieren, dass der temporäre Zugriff abgelaufen ist, und ihnen empfehlen, einen einfachen Authentifizierungsfluss mithilfe einer regulären MVPD einzuleiten, um den Überwachungsvorgang fortzusetzen.
 
-## Profil für einfachen TempPass abrufen {#retrieve-profile-for-basic-temppass}
+## Profil für einfache TempPass-Funktion abrufen {#retrieve-profile-for-basic-temppass}
 
 >[!IMPORTANT]
 >
-> Die Abfrage des Endpunkts Profile ist für den einfachen TempPass optional.
+> Die Abfrage des Profilendpunkts ist für einfache TempPass-Abfragen optional.
 
 ### Voraussetzungen {#prerequisites-retrieve-profile-for-basic-temppass}
 
-Bevor Sie das Profil für den einfachen TempPass abrufen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
+Stellen Sie vor dem Abrufen des Profils für Basic TempPass sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
 * Die Streaming-Anwendung möchte das temporäre Profil abrufen, um sicherzustellen, dass der temporäre Zugriff nicht abgelaufen ist.
 
@@ -451,67 +451,67 @@ Bevor Sie das Profil für den einfachen TempPass abrufen, stellen Sie sicher, da
 > 
 > <br/>
 > 
-> * Es muss eine gültige Konfigurationseinstellung des einfachen TempPass geben, der auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
-> * Die für den einfachen TempPass konfigurierte TTL (Time-To-Live) darf nicht abgelaufen sein.
+> * Es muss eine gültige Konfigurationseinstellung von Basic TempPass vorhanden sein, die auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
+> * Die für den grundlegenden TempPass konfigurierte Time-to-Live (TTL) darf nicht abgelaufen sein.
 
 ### Workflow {#workflow-retrieve-profile-information-for-basic-temppass}
 
-Führen Sie die angegebenen Schritte aus, um den Profilabruf-Fluss für den einfachen TempPass zu implementieren, wie im folgenden Diagramm dargestellt.
+Führen Sie die angegebenen Schritte aus, um den Fluss zum Abrufen von Profilen für einfache TempPass zu implementieren, wie im folgenden Diagramm dargestellt.
 
-![Profil für grundlegenden TempPass abrufen](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-profile-for-basic-temppass-flow.png)
+![Profil für einfachen TempPass abrufen](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-profile-for-basic-temppass-flow.png)
 
-*Profil für grundlegenden TempPass abrufen*
+*Profil für einfachen TempPass abrufen*
 
-1. **Profil für einfachen TempPass abrufen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um Profilinformationen für einfachen TempPass abzurufen, indem eine Anfrage an den Endpunkt Profile gesendet wird.
-
-   >[!IMPORTANT]
-   >
-   > Weitere Informationen finden Sie in der Dokumentation zur API [Abrufen des Profils für bestimmte mvpd](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) :
-   > 
-   > * Alle _erforderlichen_ Parameter, wie `serviceProvider` und `mvpd`
-   > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization` und `AP-Device-Identifier`
-   > * Alle Parameter und Kopfzeilen von _optional_
-
-1. **Validieren des einfachen TempPass-Dienstes:** Der Adobe Pass-Server überprüft, ob eine gültige Konfigurationseinstellung des einfachen TempPass vorhanden ist, der auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
-
-1. **Rückgabe von Informationen zum temporären Profil:** Die Antwort des Profilendpunkts enthält Informationen zum temporären Profil, einschließlich des Attributs `type`, das auf &quot;temporär&quot;gesetzt ist.
+1. **Profil für einfache TempPass abrufen:** Die Streaming-Anwendung sammelt alle erforderlichen Daten, um Profilinformationen für einfache TempPass abzurufen, indem sie eine Anfrage an den Endpunkt „Profiles“ sendet.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den Informationen in einer Profilantwort finden Sie in der Dokumentation zur API [Profil für bestimmte mvpd](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) -API.
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
    > 
-   > <br/>
-   > 
-   > Der Endpunkt Profile validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
-   >
-   > * Die Parameter und Header _required_ müssen gültig sein.
-   > * Die Integration zwischen dem bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
-   >
-   > <br/>
-   > 
-   > Wenn die grundlegende Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
-   >
-   > <br/>
-   > 
-   > Der Endpunkt Profile verwendet die Anfragedaten, um zu überprüfen, ob temporäre Zugriffsbedingungen erfüllt sind:
-   >
-   > * Die für den einfachen TempPass konfigurierte TTL (Time-To-Live) darf nicht abgelaufen sein.
-   >
-   > <br/>
-   > 
-   > Wenn die Validierung des temporären Zugriffs fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+   > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `mvpd`
+   > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
+   > * Alle _optionalen_ Parameter und Kopfzeilen
 
-1. **Mit Entscheidungsflüssen fortfahren:** Wenn die Profil-Endpunktantwort ein Profil enthält, verwendet die Streaming-Anwendung die temporären Profilinformationen, um mit nachfolgenden Entscheidungsflüssen fortzufahren.
+1. **Einfache TempPass validieren:** Der Adobe Pass-Server überprüft, ob eine gültige Konfigurationseinrichtung von einfachem TempPass vorhanden ist, die auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
 
-## Profil für die Promotion TempPass abrufen {#retrieve-profile-for-promotional-temppass}
+1. **Rückgabeinformationen zum temporären Profil:** Die Antwort des Endpunkts „Profiles“ enthält Informationen zum temporären Profil, einschließlich des Attributs, das auf „temporär“ festgelegt `type`.
+
+   >[!IMPORTANT]
+   >
+   > Weitere Informationen zu [ in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
+   > 
+   > <br/>
+   > 
+   > Der Profiles-Endpunkt validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
+   >
+   > * Die _erforderlichen_ Parameter und Kopfzeilen müssen gültig sein.
+   > * Die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
+   >
+   > <br/>
+   > 
+   > Wenn die einfache Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
+   >
+   > <br/>
+   > 
+   > Der Profilendpunkt verwendet die Anfragedaten, um zu überprüfen, ob temporäre Zugriffsbedingungen erfüllt sind:
+   >
+   > * Die für den grundlegenden TempPass konfigurierte Time-to-Live (TTL) darf nicht abgelaufen sein.
+   >
+   > <br/>
+   > 
+   > Wenn die Validierung des temporären Zugriffs fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehler-Codes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
+
+1. **Fahren Sie mit Entscheidungsflüssen fort:** Wenn die Antwort des Endpunkts „Profile“ ein Profil enthält, verwendet die Streaming-Anwendung die temporären Profilinformationen, um mit nachfolgenden Entscheidungsflüssen fortzufahren.
+
+## Profil für Werbe-TempPass abrufen {#retrieve-profile-for-promotional-temppass}
 
 >[!IMPORTANT]
 >
-> Die Abfrage des Endpunkts Profile ist für die Promotion TempPass optional.
+> Die Abfrage des Profilendpunkts ist für Werbe-TempPass optional.
 
 ### Voraussetzungen {#prerequisites-retrieve-profile-for-promotional-temppass}
 
-Bevor Sie das Profil für die Promotion &quot;TempPass&quot;abrufen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
+Stellen Sie vor dem Abrufen des Profils für den Werbe-TempPass sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
 * Die Streaming-Anwendung möchte das temporäre Profil abrufen, um sicherzustellen, dass der temporäre Zugriff nicht abgelaufen ist, oder um zu bestimmen, wie viele Ressourcen noch wiedergegeben werden können.
 
@@ -521,56 +521,56 @@ Bevor Sie das Profil für die Promotion &quot;TempPass&quot;abrufen, stellen Sie
 >
 > <br/>
 > 
-> * Es muss eine gültige Konfigurationseinstellung für die Promotion TempPass geben, die auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
-> * Die für den Promo-TempPass konfigurierte TTL (Time-To-Live) ist nicht abgelaufen.
-> * Die maximale Anzahl von Ressourcen, die für die Promotion TempPass konfiguriert wurden, wurde nicht verbraucht.
+> * Es muss eine gültige Konfigurationseinrichtung für den temporären Werbepass vorhanden sein, die auf die Integration zwischen der bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
+> * Die für den Werbe-TempPass konfigurierte Time-to-Live (TTL) ist noch nicht abgelaufen.
+> * Die maximale Anzahl von Ressourcen, die für den Werbe-TempPass konfiguriert sind, wurde nicht verbraucht.
 
 ### Workflow {#workflow-retrieve-profile-information-for-promotional-temppass}
 
-Führen Sie die angegebenen Schritte aus, um den Profilabruf-Fluss für die Promotion TempPass zu implementieren, wie im folgenden Diagramm dargestellt.
+Führen Sie die angegebenen Schritte aus, um den Fluss zum Abrufen von Profilen für den Werbe-TempPass zu implementieren, wie in der folgenden Abbildung dargestellt.
 
-![Profil für die Promotion TempPass abrufen](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-profile-for-promotional-temppass-flow.png)
+![Profil für Werbe-TempPass abrufen](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-profile-for-promotional-temppass-flow.png)
 
-*Profil für die Promotion TempPass abrufen*
+*Profil für Werbe-TempPass abrufen*
 
-1. **Profil für den Promotion-TempPass abrufen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um Profilinformationen für den Promo-TempPass abzurufen, indem eine Anfrage an den Endpunkt Profile gesendet wird.
-
-   >[!IMPORTANT]
-   >
-   > Weitere Informationen finden Sie in der Dokumentation zur API [Abrufen des Profils für bestimmte mvpd](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) :
-   > 
-   > * Alle _erforderlichen_ Parameter, wie `serviceProvider` und `mvpd`
-   > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization` und `AP-Device-Identifier`
-   > * Alle Parameter und Kopfzeilen von _optional_
-
-1. **Validieren Sie die Werbeaktion TempPass:** Der Adobe Pass-Server überprüft, ob eine gültige Konfigurationseinstellung für die Werbeaktion TempPass vorhanden ist, die auf die Integration zwischen dem bereitgestellten `serviceProvider` und dem bereitgestellten `mvpd` angewendet wird.
-
-1. **Rückgabe von Informationen zum temporären Profil:** Die Antwort des Profilendpunkts enthält Informationen zum temporären Profil, einschließlich des Attributs `type`, das auf &quot;temporär&quot;gesetzt ist.
+1. **Profil für Werbe-TempPass abrufen:** Die Streaming-Anwendung sammelt alle erforderlichen Daten, um Profilinformationen für Werbe-TempPass abzurufen, indem sie eine Anfrage an den Endpunkt „Profiles“ sendet.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den Informationen in einer Profilantwort finden Sie in der Dokumentation zur API [Profil für bestimmte mvpd](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) -API.
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
    > 
-   > <br/>
-   > 
-   > Der Endpunkt Profile validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
-   >
-   > * Die Parameter und Header _required_ müssen gültig sein.
-   > * Die Integration zwischen dem bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
-   >
-   > <br/>
-   > 
-   > Wenn die grundlegende Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
-   >
-   > <br/>
-   > 
-   > Der Endpunkt Profile verwendet die Anfragedaten, um zu überprüfen, ob temporäre Zugriffsbedingungen erfüllt sind:
-   >
-   > * Die für den Promotion-TempPass konfigurierte TTL (Time-To-Live) darf nicht abgelaufen sein.
-   > * Die maximale Anzahl von Ressourcen, die für die Promotion TempPass konfiguriert sind, darf nicht verbraucht werden.
-   >
-   > <br/>
-   > 
-   > Wenn die Validierung des temporären Zugriffs fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+   > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `mvpd`
+   > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
+   > * Alle _optionalen_ Parameter und Kopfzeilen
 
-1. **Mit Entscheidungsflüssen fortfahren:** Wenn die Profil-Endpunktantwort ein Profil enthält, verwendet die Streaming-Anwendung die temporären Profilinformationen, um mit nachfolgenden Entscheidungsflüssen fortzufahren.
+1. **Promotion-TempPass validieren:** Der Adobe Pass-Server überprüft, ob eine gültige Konfigurationseinrichtung für Promotion-TempPass vorhanden ist, die auf die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` angewendet wird.
+
+1. **Rückgabeinformationen zum temporären Profil:** Die Antwort des Endpunkts „Profiles“ enthält Informationen zum temporären Profil, einschließlich des Attributs, das auf „temporär“ festgelegt `type`.
+
+   >[!IMPORTANT]
+   >
+   > Weitere Informationen zu [ in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
+   > 
+   > <br/>
+   > 
+   > Der Profiles-Endpunkt validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
+   >
+   > * Die _erforderlichen_ Parameter und Kopfzeilen müssen gültig sein.
+   > * Die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
+   >
+   > <br/>
+   > 
+   > Wenn die einfache Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
+   >
+   > <br/>
+   > 
+   > Der Profilendpunkt verwendet die Anfragedaten, um zu überprüfen, ob temporäre Zugriffsbedingungen erfüllt sind:
+   >
+   > * Die für den Werbe-TempPass konfigurierte Time-to-Live (TTL) darf nicht abgelaufen sein.
+   > * Die maximale Anzahl von Ressourcen, die für den Werbe-TempPass konfiguriert sind, darf nicht verbraucht werden.
+   >
+   > <br/>
+   > 
+   > Wenn die Validierung des temporären Zugriffs fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehler-Codes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
+
+1. **Fahren Sie mit Entscheidungsflüssen fort:** Wenn die Antwort des Endpunkts „Profile“ ein Profil enthält, verwendet die Streaming-Anwendung die temporären Profilinformationen, um mit nachfolgenden Entscheidungsflüssen fortzufahren.

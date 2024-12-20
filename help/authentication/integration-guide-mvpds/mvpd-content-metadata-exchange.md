@@ -13,37 +13,37 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 ## Übersicht {#content-metadat-exchange-overview}
 
-Auf dieser Seite werden zwei Standardimplementierungen beschrieben, mit denen die Adobe Pass-Authentifizierung strukturierte Daten bei der Autorisierungsanfrage an MVPDs sendet.  Die strukturierten Daten stellen die Ressource (den Programmierer) dar, die die Anforderung ausführt, und gegebenenfalls zusätzliche Daten wie die Inhaltsbewertung.
+Auf dieser Seite werden zwei Standardimplementierungen beschrieben, die von der Adobe Pass-Authentifizierung verwendet werden, um strukturierte Daten über die Autorisierungsanfrage an MVPDs zu senden.  Die strukturierten Daten stellen die Ressource (den Programmierer) dar, die die Anfrage stellt, und möglicherweise zusätzliche Daten wie die Inhaltsbewertung.
 
-Auf der Programmierseite unterstützt die Adobe Pass-Authentifizierung strukturierte MRSS-Datenressourcen wie folgt:
+Auf Programmiererseite unterstützt die Adobe Pass-Authentifizierung strukturierte MRSS-Datenressourcen wie folgt:
 
-1. Der Programmierer sendet die Ressource als MRSS-Zeichenfolge. Die Adobe Pass-Authentifizierung kodiert sie nicht clientseitig für Web- oder native Geräte. Das MRSS wird als reguläre Zeichenfolge an den Adobe Pass-Authentifizierungsserver gesendet.
-1. Auf der Serverseite wird das MRSS anhand des vordefinierten Schemas (http://search.yahoo.com/mrss/) validiert.  Wenn die Validierung erfolgreich ist, extrahiert die Adobe Pass-Authentifizierung die Informationen aus den MRSS-Feldern, einschließlich:
+1. Der Programmierer sendet die Ressource als MRSS-Zeichenfolge. Die Adobe Pass-Authentifizierung kodiert sie Client-seitig nicht für Web- oder native Geräte. Die MRSS wird als reguläre Zeichenfolge an den Adobe Pass-Authentifizierungsserver gesendet.
+1. Auf der Serverseite wird die MRSS anhand des vordefinierten Schemas (http://search.yahoo.com/mrss/) validiert.  Wenn die Validierung erfolgreich ist, extrahiert die Adobe Pass-Authentifizierung die Informationen aus den MRSS-Feldern, einschließlich:
    * Kanaltitel
    * Artikeltitel
-   * Ressourcen-ID
+   * Ressourcenkennung
    * Bewertungswert und -typ
-1. Die aus dem MRSS extrahierten Werte werden verwendet, um die an den MVPD übergebene Genehmigungsanfrage zu erstellen.
+1. Die aus dem MRSS extrahierten Werte werden zur Erstellung der Autorisierungsanfrage verwendet, die an den MVPD übergeben wird.
 
-Die Adobe Pass-Authentifizierung unterstützt zwei Ansätze zur Übersetzung der MRSS in Formate, die von MVPDs unterstützt werden:
+Die Adobe Pass-Authentifizierung unterstützt zwei Ansätze zum Übersetzen des MRSS in Formate, die von MVPDs unterstützt werden:
 
-* **XACML**.  Der erste Ansatz entspricht dem OLCA-Standard.  Es verwendet XACML, in dem die MRSS-Werte extrahiert werden, um eine XACMLResource mit Attributen zu erstellen, die den MRSS-Elementen zugeordnet sind.  Dies wird dann an den MVPD übergeben.
+* **XACML**.  Der erste Ansatz entspricht dem OLCA-Standard.  Es verwendet XACML, in dem die MRSS-Werte extrahiert werden, um eine XACMLR-Ressource mit Attributen zu erstellen, die den MRSS-Elementen zugeordnet sind.  Dieser wird dann an die MVPD übergeben.
 * **REST**.  Der zweite Ansatz ist REST-basiert.  Das MRSS ist base64-kodiert und wird als URL-Parameter beim REST-Aufruf übergeben.
 
-In beiden Ansätzen verarbeitet der MVPD die Genehmigungsanfrage, indem die extrahierten Werte in den eigenen logischen Fluss eingefügt werden und eine Autorisierungsantwort zurückgegeben wird.
+Bei beiden Ansätzen verarbeitet der MVPD die Autorisierungsanfrage, indem er die extrahierten Werte in seinen eigenen logischen Fluss einbezieht und eine Autorisierungsantwort zurückgibt.
 
 ## Integrationsdetails {#integration-details}
 
-* OLCA-basierte XACML-strukturierte Ressource
+* LOCA-basierte strukturierte XACML-Ressource
 * REST-basierte strukturierte Ressource
 
-### OLCA-basierte XACML-strukturierte Ressource {#olca-based-xacml-struc-resource}
+### LOCA-basierte strukturierte XACML-Ressource {#olca-based-xacml-struc-resource}
 
-Die meisten kabelorientierten MVPDs verwenden den XACML-basierten Ansatz, unterstützen jedoch noch nicht den vollständig strukturierten Datenansatz.  Andere MVPDs, die XACML unterstützen, nehmen den Kanaltitel und akzeptieren dies für das ResourceID-Attribut. Das folgende Beispiel zeigt den vollständig strukturierten XACML-basierten Ansatz. Das Adobe Pass-Authentifizierungsteam empfiehlt, dass für MVPDs, die XACML verwenden, Funktionen wie elterliche Steuerelemente jedoch noch nicht unterstützen, ihre XACML-Integration an das folgende Beispiel angepasst wird:
+Die meisten kabelorientierten MVPDs verwenden den XACML-basierten Ansatz, unterstützen jedoch noch nicht den vollständig strukturierten Datenansatz.  Andere MVPDs, die XACML unterstützen, nehmen den Kanaltitel an und akzeptieren ihn für das ResourceID-Attribut. Das folgende Beispiel zeigt den vollständig strukturierten XACML-basierten Ansatz. Das Adobe Pass-Authentifizierungsteam empfiehlt, dass MVPDs, die XACML verwenden, aber noch keine Funktionen wie die Kindersicherung unterstützen, ihre XACML-Integration an das folgende Beispiel anpassen sollten:
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -106,7 +106,7 @@ Die meisten kabelorientierten MVPDs verwenden den XACML-basierten Ansatz, unters
 
 ### REST-basierte strukturierte Ressource {#rest-based-struct-resource}
 
-Einige MVPDs basieren auf dem folgenden REST-basierten Protokoll zur Autorisierung. Dieser Ansatz ist so umfassend wie der XACML-Ansatz, bietet jedoch eine Implementierung mit &quot;geringerer Gewichtung&quot;.
+Einige MVPDs haben das folgende REST-basierte Protokoll zur Autorisierung standardisiert. Dieser Ansatz ist ebenso umfassend wie der XACML-Ansatz, bietet jedoch eine Implementierung mit weniger Aufwand.
 
 `// The MRSS is base64 encoded by Adobe Pass Authentication, and passed in that format to the REST-based Authorization endpoint.`
 

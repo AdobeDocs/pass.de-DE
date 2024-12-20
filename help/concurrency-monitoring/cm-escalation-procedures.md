@@ -1,6 +1,6 @@
 ---
-title: Eskalationsverfahren für die gleichzeitige Überwachung
-description: Eskalationsverfahren für die gleichzeitige Überwachung
+title: Eskalationsverfahren zur Überwachung von gleichzeitigen Aufrufen
+description: Eskalationsverfahren zur Überwachung von gleichzeitigen Aufrufen
 exl-id: eb110465-3a74-489e-a521-0e17f5aeecb8
 source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
@@ -9,98 +9,98 @@ ht-degree: 0%
 
 ---
 
-# Eskalationsverfahren für die gleichzeitige Überwachung {#esc-procedures}
+# Eskalationsverfahren zur Überwachung von gleichzeitigen Aufrufen {#esc-procedures}
 
 >[!NOTE]
 >
->Rufen Sie die Hotline auf: +1-205-693-9813 und senden Sie eine E-Mail an `tve-support@adobe.com` einschließlich &quot;DRINGEND - INCIDENT&quot;in der Betreffzeile.
+>Rufen Sie die Hotline unter +1-205-693-9813 an und senden Sie eine E-Mail an `tve-support@adobe.com`, die in der Betreffzeile „DRINGEND - VORFALL“ enthält.
 
 
 ## Einführung {#cm-escalation-intro}
 
-In diesem Dokument werden die Supportverfahren für größere Vorfälle (**SEVERITY 1**-Ebene) beschrieben, die sich auf die Adobe Pass-Authentifizierung, die Adobe Pass-Überwachung der Parallelität und ihre Partner auswirken.
+In diesem Dokument werden die Support-Verfahren für schwerwiegende Vorfälle (**SCHWEREGRAD 1** Ebene) beschrieben, die die Adobe Pass-Authentifizierung, die Adobe Pass-Gleichzeitigkeitsüberwachung und die -Partner betreffen.
 
-## Definition der Eskalation Schweregrad 1 Level {#defn-escl-sevrityone-level}
+## Definition der Eskalationsstufe 1 {#defn-escl-sevrityone-level}
 
-Ein Vorfall auf Ebene **SEVERITY 1** ist eine **LIVE**-Situation, **die in der Produktionsumgebung stattfindet**, die den Abschluss der Authentifizierungs- und/oder Autorisierungsflüsse für einen Kanal und einen MVPD nicht zulässt, was eine große Anzahl von Abonnenten des MVPD betrifft, der den Fluss durchführt.
+Ein Vorfall **SCHWEREGRAD 1** ist eine **LIVE**-Situation, **in der Produktionsumgebung**, die den Abschluss der Authentifizierungs- und/oder Autorisierungsflüsse für einen Kanal und einen MVPD nicht zulässt und eine große Anzahl von Abonnentinnen und Abonnenten des MVPD, die den Fluss durchführen, betrifft.
 
-## Beispiele für Fälle von Schweregrad 1 {#exampl-sevone-incident}
+## Beispiele für Vorfälle mit Schweregrad 1 {#exampl-sevone-incident}
 
-* Der unter <http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js> gehostete Produktions-Access-Enabler ist nicht verfügbar.
+* Der auf <http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js> gehostete Produktionszugriffs-Enabler ist nicht verfügbar.
 
-* Bei einem bestimmten MVPD leitet Adobe die Anmeldeseite nicht mehr weiter/zeigt sie an, nachdem der Benutzer das MVPD (in einem der unterstützten Browser) ausgewählt hat.
+* Für eine bestimmte MVPD leitet Adobe die Anmeldeseite nicht mehr um bzw. zeigt diese an, nachdem der Benutzer die MVPD ausgewählt hat (in einem der unterstützten Browser).
 
-* Der Partner erhält eine große Anzahl von Berichten, denen zufolge Benutzer sich nicht mit einem bestimmten MVPD authentifizieren/autorisieren können.
+* Der -Partner erhält eine große Anzahl von Berichten, die die Benutzerinnen und Benutzer nicht mit einer bestimmten MVPD authentifizieren/autorisieren können.
 
-* Während des Authentifizierungsprozesses hängt der Benutzer auf einer Adobe-Fehlerseite, ohne den Authentifizierungs-/Autorisierungsfluss neu starten zu können.
+* Während des Authentifizierungsprozesses wird der Anwender auf einer Adobe-Fehlerseite festgehalten, ohne dass der Authentifizierungs-/Autorisierungsfluss erneut initiiert werden kann.
 
 
-## Beispiele für den Vorfall vom Typ *NOT* wegen Schweregrad 1 {#exampl-not-sev1}
+## Beispiele für &quot;*&quot;* Vorfall vom Schweregrad 1 {#exampl-not-sev1}
 
-*Bei Problemen dieser Art bietet Adobe Unterstützung für Untersuchungen, es handelt sich jedoch nicht um Vorfälle des Schweregrads 1:*
+*Bei Problemen dieser Art bietet Adobe Unterstützung für Ermittlungen, es handelt sich jedoch nicht um Vorfälle mit Schweregrad 1:*
 
-* Ein oder mehrere Abonnenten können den Ablauf aufgrund eines Flash-Versionsfehlers (fehlende Flash, Flash-Blocker, falsche Flash-Version) nicht durchführen.
-* Ein oder mehrere Abonnenten können sich nicht authentifizieren und bleiben auf der MVPD-Anmeldeseite.
+* Ein oder mehrere Abonnenten können den Vorgang aufgrund eines Flash-Versionsproblems nicht ausführen (fehlende Flash, Flash-Blocker, falsche Flash-Version).
+* Mindestens ein Abonnent kann sich nicht authentifizieren und auf der Anmeldeseite von MVPD bleiben.
 * Ein oder mehrere Abonnenten sind authentifiziert, können jedoch keine Videos abspielen.
-* Bei einem/mehreren Abonnenten tritt auf der Programmierer-Site ein JavaScript-Fehler auf.
+* Ein Abonnent/wenige Abonnenten/alle Abonnenten bemerken einen JavaScript-Fehler auf der Programmierer-Site.
 
-## Eskalationsflüsse des Schweregrads 1 {#sevone-escalation-flows}
+## Eskalationsflüsse von Schweregrad 1 {#sevone-escalation-flows}
 
-Vorfälle des Schweregrads 1 können entweder von Adobe oder einem Adobe Pass-Authentifizierungspartner eingeleitet werden. Die einzelnen Schritte werden nachfolgend beschrieben.
+Vorfälle des Schweregrads 1 können entweder von einer Adobe oder einem Adobe Pass-Authentifizierungspartner initiiert werden. Die einzelnen Schritte werden im Folgenden beschrieben.
 
 ### Vom Partner initiierter Fluss {#partner-initiated-flow}
 
-1. Der Partner identifiziert einen Vorfall des Schweregrads 1 (wie oben beschrieben), der eine sofortige Aufmerksamkeit der Adobe erfordert.
+1. Der Partner identifiziert einen Vorfall mit Schweregrad 1 (wie oben beschrieben), der sofortiges Eingreifen der Adobe erfordert.
 
-1. Der Partner sendet eine E-Mail an tve-support@adobe.com , in der in der Betreffzeile &quot;URGENT - INCIDENT&quot;enthalten ist und folgende Informationen hinzugefügt werden:
+1. Der Partner sendet eine E-Mail an tve-support@adobe.com, die in der Betreffzeile „DRINGEND - VORFALL“ enthält und die folgenden Informationen hinzufügt:
 
    * Titel
-   * Beschreibung und Schritte zum Reproduzieren
-   * BS
+   * Beschreibung und Schritte zur Reproduktion
+   * Betriebssystem
    * Browser
-   * Flash-Version
-   * (Optional) Alle verfügbaren Screenshots oder Videoaufnahmen, die das Problem demonstrieren
+   * Flash Version
+   * (Optional) Alle verfügbaren Screenshots oder Videoaufnahmen, die das Problem zeigen
 
-1. Wenn Adobe nicht innerhalb von 30 Minuten auf das Ticket antwortet, ruft der Partner die unten stehende Nummer auf:
+1. Wenn Adobe nicht innerhalb von 30 Minuten auf das Ticket antwortet, ruft der Partner die unten stehende Nummer an:
 
-   * **1-205-693-9813**
+   * **-205-693-9813**
 
 
-**Wenn Sie &quot;URGENT-INCIDENT&quot;nicht in den Titel des Tickets aufnehmen, wird dies nicht von unserem Benachrichtigungssystem erfasst.**
+**Wenn Sie „URGENT-INCIDENT“ nicht in den Titel des Tickets aufnehmen, wird es von unserem Benachrichtigungssystem nicht abgeholt.**
 
 ### Adobe-initiierter Fluss {#adobe-initiated-flow}
 
-**...für ein Adobe Pass-Authentifizierungsproblem**
+**…bei einem Adobe Pass-Authentifizierungsproblem**
 
 1. Adobe identifiziert ein internes Problem und öffnet ein Ticket mit unserem Tracking-System.
 
-1. Adobe informiert den Programmmanager und den technischen Ansprechpartner des Partners unter Angabe der Ticketnummer und der geschätzten Auswirkungen des Problems.
+1. Adobe benachrichtigt den Programmmanager und den technischen Ansprechpartner des Partners und gibt die Ticketnummer sowie die voraussichtliche Auswirkung des Problems an.
 
-1. Adobe arbeitet an der Lösung des Vorfalls und informiert alle betroffenen Partner.
+1. Adobe arbeitet an der Behebung des Vorfalls und hält alle betroffenen Partner auf dem Laufenden.
 
 
-**...für ein Partnerproblem (Programmierer/MVPD)**
+**…für ein Partnerproblem (Programmierer/MVPD)**
 
-1. Adobe identifiziert ein Problem im Zusammenhang mit der Integration mit einem MVPD oder auf einer der Sites des Programmierers.
+1. Adobe kennzeichnet ein Problem im Zusammenhang mit der Integration mit einer MVPD oder auf einer der Sites des Programmierers.
 
-1. Adobe benachrichtigt den betroffenen Partner **über die Einhaltung der mit diesem Partner bestehenden Supportverfahren** und öffnet ein Ticket bei der Support-Organisation des Partners.
+1. Adobe benachrichtigt den betroffenen Partner **nach den bei diesem Partner eingerichteten Support-Verfahren** und eröffnet ein Ticket bei der Support-Organisation des Partners.
 
-1. Wenn Adobe bei der Folgenabschätzung feststellt, dass das Problem zu einer der im Voraus vereinbarten Entscheidungen über Störungsszenarien gehört (siehe Abschnitt &quot;Vorab vereinbarte Entscheidungen über Störungsszenarien&quot;unten), wird es entsprechend handeln, ohne auf den Partner1 zu warten. -Eingabe.
+1. Wenn Adobe während der Folgeanalyse feststellt, dass das Problem zu einer der im Voraus vereinbarten Entscheidungen über Vorfallsszenarien gehört (siehe Abschnitt „Vorab vereinbarte Entscheidungen über Vorfallsszenarien“ unten), handelt sie entsprechend, ohne auf den Partner zu warten1. s Eingabe.
 
-1. Adobe wartet auf Updates vom Partner und eine Benachrichtigung vom Partner, sobald der Dienst wiederhergestellt wurde.
+1. Adobe wartet auf Updates des Partners und auf eine Benachrichtigung des Partners, wenn der Service wiederhergestellt wurde.
 
-### Vorab vereinbarte Beschlüsse über Unfallszenarien {#pre-agreed-decisions}
+### Vorab vereinbarte Entscheidungen über Vorfallsszenarien {#pre-agreed-decisions}
 
-Es gibt einige Situationen, in denen eine Standardaktion ausgeführt wird, falls dieses Szenario auftritt:
+Es gibt einige Situationen, in denen im Falle des Auftretens dieses Szenarios eine Standardaktion ausgeführt wird:
 
 |    | Szenario | Beschreibung | Aktionen |
 |:---:|:---|:---|:---|
-| S1 | Adobe identifiziert ein Problem mit der Integration eines MVPD während normaler Produktionsvorgänge. | Bei normalen Produktionsvorgängen erkennt Adobe ein Problem mit einem der MVPDs, das die Ausführung der Authentifizierungs-/Autorisierungsflüsse unmöglich macht (z. B. abgelaufene Zertifikate, abgelaufene SAML-Antworten, geschlossene Ports, geänderte Parameter usw.) | Adobe benachrichtigt die betroffenen MVPD- und Programmierer. Adobe deaktiviert diesen MVPD für alle betroffenen Programmierer. Adobe öffnet ein Ticket mit dem MVPD nach dem vereinbarten Supportverfahren mit diesem MVPD |
-| S2 | Adobe aktiviert einen neuen MVPD für einen Programmierer, und der Programmierer weiß den MVPD vor dem Startdatum. | Adobe aktiviert einen neuen MVPD für die Seite eines Programmierers, und die Site zeigt den neuen MVPD bereits in der Auswahl an, selbst wenn dies nicht vorgesehen war. | Adobe wird den Programmierer vor dem geplanten Datum über das neue MVPD in der Auswahl informieren. Programmierer ergreifen Maßnahmen, um sie bei Bedarf aus der Auswahl zu entfernen. |
-| S3 | Adobe aktiviert einen neuen MVPD für einen Programmierer, selbst wenn der MVPD nicht bereit ist, in die Produktion zu gehen | Adobe aktiviert einen neuen MVPD für einen Programmierer, aber der MVPD hat die Unterstützung für die Integration noch nicht bereitgestellt, sodass die Authentifizierungs-/Autorisierungsflüsse nicht ausgeführt werden können | Adobe wird die Bereitstellung nur durchführen, wenn der Programmierer dies verlangt. Der Programmierer ist dafür verantwortlich, die Whitelist des MVPD zu gewährleisten, sobald alle Tests durchgeführt wurden. |
+| S1 | Adobe kennzeichnet ein Problem mit der MVPD-Integration während des normalen Produktionsbetriebs. | Bei normalen Produktionsvorgängen erkennt Adobe ein Problem mit einem der MVPDs, das die Durchführung der Authentifizierungs-/Autorisierungsflüsse unmöglich macht (z. B. abgelaufene Zertifikate, abgelaufene SAML-Antworten, geschlossene Ports, geänderte Parameter usw.) | Adobe benachrichtigt die betroffenen MVPD und Programmierer. Adobe deaktiviert diese MVPD für alle betroffenen Programmierer. Adobe öffnet ein Ticket bei der MVPD nach dem vereinbarten Support-Verfahren mit dieser MVPD |
+| S2 | Adobe aktiviert eine neue MVPD für einen Programmierer, und der Programmierer erstellt vor dem Launch-Datum eine Whitelist für die MVPD. | Adobe aktiviert eine neue MVPD für die Website eines Programmierers, und die Website zeigt die neue MVPD bereits in der Auswahl an, selbst wenn sie nicht hätte angezeigt werden sollen. | Adobe wird den Programmierer vor dem geplanten Datum über die neue MVPD in der Auswahl informieren. Der Programmierer wird bei Bedarf Maßnahmen ergreifen, um sie aus der Auswahl zu entfernen. |
+| S3 | Adobe aktiviert eine neue MVPD für einen Programmierer, selbst wenn die MVPD nicht produktionsbereit ist | Adobe aktiviert eine neue MVPD für einen Programmierer, aber MVPD hat noch keine Unterstützung für die Integration bereitgestellt, sodass die Authentifizierungs-/Autorisierungsflüsse nicht ausgeführt werden können | Adobe führt die Bereitstellung nur durch, wenn vom Programmierer angefordert. Der Programmierer ist dafür verantwortlich, die Whitelist der MVPD sicherzustellen, sobald alle Tests durchgeführt wurden. |
 
-### Reaktionserwartungen bei Schweregraden 1 Unfälle {#response-expectations}
+### Erwartete Reaktionen auf Vorfälle mit Schweregrad 1 {#response-expectations}
 
-* Erstes Ansprechen: 30 Minuten (24/7)
+* Erste Reaktion: 30 Minuten (24/7)
 * Aktionsplan: 1 Stunde (24/7)
-* Lösung: ASAP (24/7)
+* Lösung: so bald wie möglich (24/7)

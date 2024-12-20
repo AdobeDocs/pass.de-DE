@@ -13,47 +13,47 @@ ht-degree: 1%
 
 ## Einführung {#introduction}
 
-Adobe muss in seiner Rolle als Datenverarbeiter geeignete Maßnahmen ergreifen, um sicherzustellen, dass die Benutzer unserer Kunden Ressourcen gerecht nutzen und der Dienst nicht mit unnötigen API-Anfragen überflutet wird. Dazu haben wir einen Drosselmechanismus eingerichtet.
-Eine Anwendung zur Überwachung der Parallelität kann von mehreren Benutzern verwendet werden und ein Benutzer kann über mehrere Sitzungen verfügen. Daher hat der Dienst innerhalb eines bestimmten Zeitraums Beschränkungen für die Anzahl der zulässigen Aufrufe pro Benutzer/Sitzung.
-Wenn das Limit erreicht wurde, werden die Anforderungen mit einem bestimmten Antwortstatus markiert (HTTP 429 Zu viele Anforderungen). Jeder nachfolgende Aufruf, der nach Erhalt der Antwort &quot;429 Zu viele Anforderungen&quot;erfolgt, sollte mit einer Abkühlzeit von mindestens einer Minute erfolgen, um sicherzustellen, dass eine gültige Geschäftsantwort eingeht.
+Adobe muss in seiner Rolle als Auftragsverarbeiter geeignete Maßnahmen ergreifen, um sicherzustellen, dass die Benutzer unserer Kunden die Ressourcen gerecht verwenden und der Service nicht mit unnötigen API-Anfragen überschwemmt wird. Dazu haben wir einen Drosselungsmechanismus eingerichtet.
+Eine Anwendung zur Überwachung gleichzeitiger Nutzung kann von mehreren Benutzern verwendet werden, und ein Benutzer kann mehrere Sitzungen haben. Daher sind für den Service Limits für die Anzahl der akzeptierten Aufrufe pro Benutzer/Sitzung innerhalb eines bestimmten Zeitintervalls konfiguriert.
+Wenn das Limit erreicht wurde, werden die Anfragen mit einem bestimmten Antwortstatus markiert (HTTP 429: Zu viele Anfragen). Jeder nachfolgende Aufruf, der nach Eingang einer „429-zu-viele-Anfragen“-Antwort erfolgt, sollte mit mindestens einer Minute Abkühlzeit erfolgen, um sicherzustellen, dass eine gültige Geschäftsantwort eingeht.
 
-## Mechanik - Übersicht {#mechanism-overview}
+## Mechanism - Übersicht {#mechanism-overview}
 
-Der Mechanismus bestimmt die maximale Anzahl der zulässigen Aufrufe für jeden Endpunkt der Überwachung der Parallelität innerhalb eines bestimmten Zeitintervalls.
-Sobald diese maximale Anzahl von Anrufen erreicht ist, wird unser Dienst mit &#39;429 Zu viele Anfragen&#39; antworten. Die Kopfzeile &quot;Läuft ab&quot;der Antwort &quot;429&quot;enthält den Zeitstempel, zu dem der nächste Aufruf als gültig betrachtet wird oder zu dem Zeitpunkt, zu dem die Drosselung abläuft. Derzeit läuft die Drosselung nach einer   Minute ab der ersten 429-Antwort.
+Der Mechanismus bestimmt die maximale Anzahl akzeptierter Aufrufe für jeden Gleichzeitigkeitsüberwachungs-Endpunkt innerhalb eines bestimmten Zeitintervalls.
+Sobald diese maximale Anzahl von Anrufen erreicht ist, wird unser Service mit „429 Zu viele Anfragen“ antworten. Die 429-Antwort-Kopfzeile „Expires“ enthält den Zeitstempel, wann der nächste Aufruf als gültig betrachtet würde oder wann die Drosselung abläuft. Derzeit läuft die Drosselung nach einer ab   Minute ab der ersten Antwort von 429.
 
 Die mit Einschränkungen konfigurierten Endpunkte sind:
 1. Erstellen Sie eine neue Sitzung: POST /sessions/{idp}/{subject}
 2. Heartbeat-Aufruf: POST /sessions/{idp}/{subject}/{sessionId}
 3. Beenden einer Sitzung: DELETE /sessions/{idp}/{subject}/{sessionId}
 
-Die Einschränkungen werden auf zwei Ebenen konfiguriert:
-1. session: derselbe eindeutige {sessionId} -Parameter, der beim `Heartbeat` -Aufruf und beim `Terminate a session` -Aufruf gesendet wird.
-2. user: derselbe eindeutige {subject} -Parameter, der im `Create a new session` -Aufruf gesendet wird.
+Die Drosselung wird auf zwei Ebenen konfiguriert:
+1. Sitzung: Derselbe eindeutige {sessionId}, der in `Heartbeat` Aufruf und `Terminate a session` Aufruf gesendet wird.
+2. Benutzer: Derselbe eindeutige {subject}, der bei `Create a new session` Aufruf gesendet wurde.
 
-Das Limit für die Einschränkungen auf Sitzungsebene ist auf 200 Anforderungen innerhalb einer Minute festgelegt.\
-Das Limit für die Einschränkungen auf Benutzerebene ist auf 200 Anforderungen innerhalb einer Minute festgelegt.\
-Diese beiden Beschränkungen (Einschränkungen auf Sitzungsebene und Einschränkungen auf Benutzerebene) sind konfigurierbar und wir werden sie aktualisieren, falls sie durch gültige Integrationsszenarien erreicht werden. Zu diesem Zweck empfehlen wir, das Supportteam zu kontaktieren.
+Das Limit für Einschränkungen auf Sitzungsebene ist auf 200 Anfragen innerhalb einer Minute festgelegt.\
+Das Limit für Einschränkungen auf Benutzerebene ist auf 200 Anfragen innerhalb einer Minute festgelegt.\
+Beide Limits (Einschränkungen auf Sitzungsebene und Einschränkungen auf Benutzerebene) sind konfigurierbar und werden aktualisiert, falls sie über gültige Integrationsszenarien erreicht werden. Dazu empfehlen wir, sich an das Support-Team zu wenden.
 
 **Szenario für Einschränkungen auf Sitzungsebene:**
 
-| Zeit | Senden einer Anfrage an CM | Anzahl der Anfragen | Antwort von CM | Erklärung |
+| Uhrzeit | Anforderung an CM senden | Anzahl der Anfragen | Antwort von CM erhalten | Erklärung |
 |-----------|-----------------------------------------|--------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| Zweiter 10 | POST /sessions/idp1/subject1/session1 | 50 | Alle Anrufe erhalten &quot;202 Akzeptiert&quot; | 50 vom Limit aus verbrauchte Aufrufe |
-| Second 50 | POST /sessions/idp1/subject1/session1 | 151 | 150 Aufrufe erhalten &quot;202 Akzeptiert&quot;und 1 Aufruf erhält &quot;429 Zu viele Anfragen&quot; | 200 vom Limit verbrauchte Aufrufe und 1 Aufruf erhält 429 Antworten |
-| Second 61 | DELETE /sessions/idp1/subject1/session1 | 1 | 1 Aufruf erhält &quot;429 Zu viele Anfragen&quot; | Noch keine Aufrufe im Limit verfügbar |
-| Second 70 | DELETE /sessions/idp1/subject1/session1 | 1 | 1 Aufruf erhält &quot;202 Akzeptiert&quot; | Auf 200 verfügbare Aufrufe begrenzen, da seit dem zweiten 10. Lebensjahr 60 Sekunden vergangen sind |
+| Zweite 10 | POST /sessions/idp1/subject1/session1 | 50 | Alle Anrufe erhalten „202 Accepted“ | Vom Limit verbrauchte 50 Aufrufe |
+| Zweite 50 | POST /sessions/idp1/subject1/session1 | 151 | 150 Anrufe erhalten „202 Akzeptiert“ und 1 Anruf erhält „429 Zu viele Anfragen“ | 200 Aufrufe werden vom Limit verbraucht, und 1 Aufruf erhält eine Antwort von 429 |
+| Zweite 61 | DELETE /sessions/idp1/subject1/session1 | 1 | 1 Anruf erhält „429 Zu viele Anfragen“ | Noch keine Aufrufe im Limit verfügbar |
+| Zweite 70 | DELETE /sessions/idp1/subject1/session1 | 1 | 1 Aufruf erhält „202 Accepted“ | Beschränkung auf 200 verfügbare Aufrufe, da seit Sekunde 10 60 Sekunden vergangen sind |
 
 **Szenario für Einschränkungen auf Benutzerebene:**
 
-| Zeit | Senden einer Anfrage an CM | Anzahl der Anfragen | Antwort von CM | Erklärung |
+| Uhrzeit | Anforderung an CM senden | Anzahl der Anfragen | Antwort von CM erhalten | Erklärung |
 |-----------|------------------------------|--------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| Zweiter 10 | POST /sessions/idp1/subject1 | 50 | 50 Anrufe erhalten &quot;202 Akzeptiert&quot; | 50 vom Limit aus verbrauchte Aufrufe |
-| Second 50 | POST /sessions/idp1/subject1 | 151 | 150 Aufrufe erhalten &quot;202 Akzeptiert&quot;und 1 Aufruf erhält &quot;429 Zu viele Anfragen&quot; | 200 vom Limit verbrauchte Aufrufe und 1 Aufruf erhält 429 Antworten |
-| Second 61 | POST /sessions/idp1/subject1 | 1 | 1 Aufruf erhält &quot;429 Zu viele Anfragen&quot; | Noch keine Aufrufe im Limit verfügbar |
-| Second 70 | POST /sessions/idp1/subject1 | 1 | 1 Aufruf erhält &quot;202 Akzeptiert&quot; | Auf 200 verfügbare Aufrufe begrenzen, da seit dem zweiten 10. Lebensjahr 60 Sekunden vergangen sind |
+| Zweite 10 | POST /sessions/idp1/subject1 | 50 | 50 Anrufe erhalten „202 Angenommen“ | Vom Limit verbrauchte 50 Aufrufe |
+| Zweite 50 | POST /sessions/idp1/subject1 | 151 | 150 Anrufe erhalten „202 Akzeptiert“ und 1 Anruf erhält „429 Zu viele Anfragen“ | 200 Aufrufe werden vom Limit verbraucht, und 1 Aufruf erhält eine Antwort von 429 |
+| Zweite 61 | POST /sessions/idp1/subject1 | 1 | 1 Anruf erhält „429 Zu viele Anfragen“ | Noch keine Aufrufe im Limit verfügbar |
+| Zweite 70 | POST /sessions/idp1/subject1 | 1 | 1 Aufruf erhält „202 Accepted“ | Beschränkung auf 200 verfügbare Aufrufe, da seit Sekunde 10 60 Sekunden vergangen sind |
 
-**429 Antwortbeispiel:**
+Beispiel einer **429-Antwort:**
 
 ```
 HTTP/2 429
@@ -72,5 +72,5 @@ x-content-type-options: nosniff
 
 ## Empfehlungen zur Kundenintegration {#customer-integration-recommendations}
 
-Bei einer korrekten Implementierung erhalten die Kunden keine Antwort &quot;429 Zu viele Anforderungen&quot;.
-Adobe empfiehlt jedoch, dass jeder Kunde die Antwort &quot;429 Zu viele Anforderungen&quot;entsprechend mit den oben genannten technischen Details verarbeitet. Bei der Verarbeitung der Antwort sollte die Kopfzeile &quot;Läuft ab&quot;verwendet werden, um zu bestimmen, wann die nächste gültige Anfrage gesendet werden soll.
+Bei korrekter Implementierung erhalten die Kunden keine Antwort „429 Zu viele Anfragen“.
+Adobe empfiehlt jedoch, dass jeder Kunde die Antwort „429 Zu viele Anfragen“ entsprechend den oben beschriebenen technischen Details verarbeitet. Bei der Verarbeitung der Antwort sollte der Header „Läuft ab“ verwendet werden, um zu bestimmen, wann die nächste gültige Anfrage gesendet werden soll.

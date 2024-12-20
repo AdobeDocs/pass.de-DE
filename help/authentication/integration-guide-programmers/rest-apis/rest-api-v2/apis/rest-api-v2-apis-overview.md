@@ -13,41 +13,41 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Um zu beginnen, besuchen Sie die öffentliche Dokumentation der APIs, die in der folgenden Liste aufgeführt sind.
+Zu Beginn konsultieren Sie die öffentliche Dokumentation der APIs, die für Sie in der folgenden Liste interessant sind.
 
 ## Konfiguration {#rest-api-v2-apis-configuration}
 
-* [Konfiguration für bestimmte Dienstleister abrufen](configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
+* [Abrufen der Konfiguration für einen bestimmten Dienstleister](configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
 
 ## Sitzungen {#rest-api-v2-apis-sessions}
 
-* [Erstellen einer Authentifizierungssitzung](sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
+* [Authentifizierungssitzung erstellen](sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
 * [Authentifizierungssitzung fortsetzen](sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
-* [Abrufen einer Authentifizierungssitzung](sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
+* [Authentifizierungssitzung abrufen](sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
 * [Authentifizierung im Benutzeragenten durchführen](sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)
 
 ## Profile {#rest-api-v2-apis-profiles}
 
 * [Profile abrufen](profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
-* [Profil für bestimmte mvpd abrufen](profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
-* [Profil für bestimmten Code abrufen](profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
+* [Abrufen eines Profils für ein bestimmtes MVPD](profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
+* [Abrufen eines Profils für einen bestimmten Code](profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
 
 ## Entscheidungen {#rest-api-v2-apis-decisions}
 
-* [Abrufen von Autorisierungsentscheidungen mit einer bestimmten mvpd](decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
-* [Abrufen von Vorab-Autorisierungsentscheidungen mit einer bestimmten mvpd](decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
+* [Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD](decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
+* [Abrufen von Entscheidungen vor der Autorisierung mithilfe bestimmter MVPD](decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
 
 ## Abmelden {#rest-api-v2-apis-logout}
 
-* [Initiieren der Abmeldung für bestimmte mvpd](logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
+* [Initiieren des Abmeldens für bestimmte MVPDs](logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
 
-## Single Sign-On für Partner {#rest-api-v2-apis-partner-single-sign-on}
+## Partner-Single-Sign-on {#rest-api-v2-apis-partner-single-sign-on}
 
-* [Anfrage zur Partnerauthentifizierung abrufen](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
-* [Profil mithilfe der Antwort auf die Partnerauthentifizierung abrufen](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+* [Partnerauthentifizierungsanfrage abrufen](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
+* [Abrufen des Profils mit der Antwort der Partnerauthentifizierung](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
 
 ## Möchten Sie die REST API V2 ausprobieren?
 
-Sie können jetzt die REST-API V2 über unsere produktspezifische Seite von der Website [Adobe Developer](https://developer.adobe.com/adobe-pass/) aus aufrufen.
+Sie können jetzt die REST-API V2 über unsere produktspezifische Seite auf der [Adobe Developer](https://developer.adobe.com/adobe-pass/)-Website erkunden.

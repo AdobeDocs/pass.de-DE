@@ -13,17 +13,17 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 In diesem Dokument werden die aktuellen Anforderungen für die Implementierung von Adobe Pass-Authentifizierungsintegrationen auf unterstützten Plattformen beschrieben.
 
-Die unten aufgeführten Browser und Betriebssysteme werden vom Adobe Pass-Authentifizierungsteam unterstützt, das an die vereinbarten SLAs gebunden ist. Wir empfehlen, die neuesten stabilen Versionen der Browser und Betriebssysteme zu verwenden, um neben der Verbesserung der Leistung, Effizienz und Sicherheit bei allen potenziellen Problemen die volle Unterstützung der Adobe Pass-Authentifizierung zu erhalten.
+Die unten aufgeführten Browser und Betriebssysteme profitieren von der Unterstützung durch das Adobe Pass-Authentifizierungsteam, das an die vereinbarten SLAs gebunden ist. Wir empfehlen die Verwendung der neuesten stabilen Versionen der Browser und Betriebssysteme, damit bei allen potenziellen Problemen neben Leistungs-, Effizienz- und Sicherheitsverbesserungen die Adobe Pass-Authentifizierung voll unterstützt wird.
 
-Wir erkennen auch die Existenz älterer Browser und Betriebssysteme an, die derzeit verwendet werden. Diese veralteten Geräte funktionieren möglicherweise weiterhin problemlos, sind jedoch fehleranfälliger. Bei der ersten Vorgehensweise zur Lösung von Problemen, die auf diesen veralteten Plattformen auftreten, sollte das Upgrade auf die neuesten Versionen durchgeführt werden, also auf die Betriebssystemversion, die Browserversion oder die Version der installierten Anwendung. Alle Probleme, die auf diesen Plattformen auftreten, werden vom Adobe Pass-Authentifizierungsteam nach besten Kräften behoben.
+Wir erkennen auch an, dass es ältere Browser und Betriebssysteme gibt, die derzeit verwendet werden. Diese veralteten Geräte können weiterhin problemlos funktionieren, sind jedoch fehleranfälliger. Um Probleme auf diesen veralteten Plattformen zu beheben, sollten Sie zunächst ein Upgrade auf die neuesten Versionen durchführen, bei denen es sich um die Betriebssystemversion, die Browser-Version oder die Version der installierten Anwendung handeln kann. Alle Probleme, die auf diesen Plattformen auftreten, werden vom Adobe Pass-Authentifizierungsteam nach bestem Bemühen angegangen.
 
-## Browser- und Betriebssystemanforderungen {#browser-OS-system-requirements}
+## Anforderungen an Browser und Betriebssystem {#browser-OS-system-requirements}
 
-| Web-/Mobilbrowser (†) | Unterstützte Versionen |
+| Web-/Mobile-Browser (†) | Unterstützte Versionen |
 |------------------------------|--------------------|
 | Google Chrome | **90** oder höher |
 | Mozilla Firefox | **57** oder höher |
@@ -32,7 +32,7 @@ Wir erkennen auch die Existenz älterer Browser und Betriebssysteme an, die derz
 
 >[!IMPORTANT]
 > 
-> Die Adobe Pass-Authentifizierung rät von der Verwendung des privaten oder Inkognito-Modus ab.
+> Die Adobe Pass-Authentifizierung rät davon ab, den privaten oder Inkognito-Modus zu verwenden.
 
 | Betriebssystem | Unterstützte Versionen |
 |---------------------|------------------------------|
@@ -46,8 +46,8 @@ Wir erkennen auch die Existenz älterer Browser und Betriebssysteme an, die derz
 
 >[!IMPORTANT]
 >
-> Berechtigungsflüsse für die Adobe Pass-Authentifizierung schlagen möglicherweise fehl, wenn Drittanbieter-Cookies deaktiviert sind und die Browsereinstellungen geändert werden.
+> Berechtigungsflüsse für die Adobe Pass-Authentifizierung schlagen möglicherweise fehl, wenn Drittanbieter-Cookies deaktiviert sind und die Browser-Einstellungen geändert werden.
 > 
 > <br/>
 > 
-> Berechtigungsflüsse für die Adobe Pass-Authentifizierung funktionieren mit den standardmäßigen Browsereinstellungen.
+> Berechtigungsflüsse für die Adobe Pass-Authentifizierung funktionieren mit den standardmäßigen Browser-Einstellungen.

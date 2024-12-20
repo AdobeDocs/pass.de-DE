@@ -13,11 +13,11 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Anwendungsfälle für die Abmeldung können entweder durch eine SAML-Abmeldeanfrage implementiert werden, die an das IdP gesendet wird, oder durch einen benutzerdefinierten Abmeldeendpunkt, der aufgerufen wird.  Die folgenden Anforderungs- und Antwortbeispiele enthalten Beispiele für die SAML-Abmeldeimplementierung.
+Anwendungsfälle für die Abmeldung können entweder durch eine SAML-Abmeldeanfrage implementiert werden, die an den IdP gesendet wird, oder durch einen benutzerdefinierten Abmeldeendpunkt, der aufgerufen wird.  Die folgenden Anfrage- und Antwortbeispiele enthalten Beispiele für die SAML-Abmeldeimplementierung.
 
-## Beispielabmeldeanforderung {#sample-logout-request}
+## Beispiel einer Abmeldeanfrage {#sample-logout-request}
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -37,7 +37,7 @@ Anwendungsfälle für die Abmeldung können entweder durch eine SAML-Abmeldeanfr
 </samlp:LogoutRequest>
 ```
 
-## Beispielabmeldeantwort {#sample-logout-response}
+## Beispiel für Abmeldeantwort {#sample-logout-response}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

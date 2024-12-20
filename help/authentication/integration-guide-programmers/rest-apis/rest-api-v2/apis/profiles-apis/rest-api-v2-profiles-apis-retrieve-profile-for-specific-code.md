@@ -1,5 +1,5 @@
 ---
-title: Profil für bestimmten Code abrufen
+title: Abrufen eines Profils für einen bestimmten Code
 description: REST API V2 - Profil für bestimmten Code abrufen
 exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
@@ -9,15 +9,15 @@ ht-degree: 1%
 
 ---
 
-# Profil für bestimmten Code abrufen {#retrieve-profile-for-specific-code}
+# Abrufen eines Profils für einen bestimmten Code {#retrieve-profile-for-specific-code}
 
 >[!IMPORTANT]
 >
-> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 >[!IMPORTANT]
 >
-> Die REST API V2-Implementierung wird durch die Dokumentation zum [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) begrenzt.
+> Die REST-API-V2-Implementierung ist an die Dokumentation [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) gebunden.
 
 ## Anfrage {#request}
 
@@ -28,12 +28,12 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">path</td>
+      <td style="background-color: #DEEBFF;">Pfad</td>
       <td>/api/v2/{serviceProvider}/profiles/code/{code}</td>
       <td></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">method</td>
+      <td style="background-color: #DEEBFF;">Methode</td>
       <td>GET</td>
       <td></td>
    </tr>
@@ -44,13 +44,13 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
-      <td>Die interne eindeutige Kennung, die dem Service Provider während des Onboarding-Prozesses zugeordnet ist.</td>
-      <td><i>erforderlich</i></td>
+      <td>Die interne eindeutige Kennung, die dem Dienstleister während des Onboarding-Prozesses zugeordnet ist.</td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">code</td>
+      <td style="background-color: #DEEBFF;">Code</td>
       <td>Der Authentifizierungscode, der nach der Erstellung der Authentifizierungssitzung auf dem Streaming-Gerät abgerufen wurde.</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7;">Kopfzeilen</th>
@@ -59,42 +59,42 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorisierung</td>
-      <td>Die Erstellung der Payload des Trägertokens wird in der Kopfzeilendokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">Autorisierung</a> beschrieben.</td>
-      <td><i>erforderlich</i></td>
+      <td>Die Generierung der Bearer-Token-Payload wird in der Dokumentation zur <a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">-Kopfzeile </a>.</td>
+      <td><i>required</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
          Die IP-Adresse des Streaming-Geräts.
          <br/><br/>
-         Es wird dringend empfohlen, ihn immer für Server-zu-Server-Implementierungen zu verwenden, insbesondere wenn der Aufruf vom Programmierer-Dienst und nicht vom Streaming-Gerät erfolgt.
+         Es wird dringend empfohlen, sie immer für Server-zu-Server-Implementierungen zu verwenden, insbesondere wenn der Aufruf vom Programmierdienst und nicht vom Streaming-Gerät erfolgt.
          <br/><br/>
          Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts implizit gesendet.
       </td>
-      <td>optional</td>
+      <td>fakultativ</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-TempPass-Identity</td>
-      <td>Die Erstellung der Payload der eindeutigen Kennung des Benutzers wird in der Kopfzeilendokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md">AP-TempPass-Identity</a> beschrieben.</td>
-      <td>optional</td>
+      <td>Die Erstellung der Payload der eindeutigen Benutzerkennung wird in der Header-Dokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md">AP-TempPass-Identity</a> beschrieben.</td>
+      <td>fakultativ</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Accept</td>
+      <td style="background-color: #DEEBFF;">Akzeptieren</td>
       <td>
-         Der Medientyp, der von der Clientanwendung akzeptiert wird.
+         Der von der Client-Anwendung akzeptierte Medientyp.
          <br/><br/>
          Wenn angegeben, muss es application/json sein.
       </td>
-      <td>optional</td>
+      <td>fakultativ</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">User-Agent</td>
-      <td>Der Benutzeragent der Clientanwendung.</td>
-      <td>optional</td>
+      <td style="background-color: #DEEBFF;">user-agent</td>
+      <td>Der Benutzeragent der Client-Anwendung.</td>
+      <td>fakultativ</td>
    </tr>
 </table>
 
-## Reaktion {#response}
+## Antwort {#response}
 
 <table style="table-layout:auto">
    <tr>
@@ -111,37 +111,37 @@ ht-degree: 1%
    </tr>
    <tr>
       <td>400</td>
-      <td>Ungültige Anfrage</td>
+      <td>Fehlerhafte Anfrage</td>
       <td>
-        Die Anfrage ist ungültig, der Client muss die Anfrage korrigieren und es erneut versuchen. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Verbesserte Fehlercodes</a> entsprechen.
+        Die Anfrage ist ungültig. Der Client muss die Anfrage korrigieren und es erneut versuchen. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.
       </td>
    </tr>
    <tr>
       <td>401</td>
-      <td>Unerlaubt</td>
+      <td>Nicht autorisiert</td>
       <td>
-        Das Zugriffstoken ist ungültig. Der Client muss ein neues Zugriffstoken abrufen und es erneut versuchen. Weitere Informationen finden Sie in der Dokumentation zur <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Übersicht über die dynamische Client-Registrierung</a> .
+        Das Zugriffstoken ist ungültig. Der Client muss ein neues Zugriffstoken abrufen und es erneut versuchen. Weitere Informationen finden Sie in der Dokumentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Übersicht über die Dynamic Client-Registrierung</a> .
       </td>
    </tr>
    <tr>
       <td>403</td>
       <td>Verboten</td>
       <td>
-        Die temporäre Zugriffszeit (TTL) ist abgelaufen oder die maximale Anzahl von Ressourcen wird überschritten. Der Client muss den Benutzer anweisen, einen einfachen Authentifizierungsfluss mit einem regulären MVPD zu initiieren. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Verbesserte Fehlercodes</a> entsprechen.
+        Die TTL (Temporary Access Time-to-Live) ist abgelaufen, oder die maximale Anzahl der Ressourcen wird überschritten. Der Client muss den Benutzer angeben, um einen einfachen Authentifizierungsfluss mithilfe einer regulären MVPD zu initiieren. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.
       </td>
    </tr> 
    <tr>
       <td>405</td>
       <td>Methode nicht zulässig</td>
       <td>
-        Die HTTP-Methode ist ungültig. Der Client muss eine HTTP-Methode verwenden, die für die angeforderte Ressource zulässig ist, und es erneut versuchen. Weitere Informationen finden Sie im Abschnitt <a href="#request">Anfrage</a> .
+        Die HTTP-Methode ist ungültig. Der Client muss eine HTTP-Methode verwenden, die für die angeforderte Ressource zulässig ist, und erneut versuchen. Weitere Informationen finden Sie im Abschnitt <a href="#request">Anfrage</a>.
       </td>
    </tr>
    <tr>
       <td>500</td>
       <td>Interner Server-Fehler</td>
       <td>
-        Auf der Serverseite ist ein Problem aufgetreten. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Verbesserte Fehlercodes</a> entsprechen.
+        Auf der Serverseite ist ein Problem aufgetreten. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.
       </td>
    </tr>
 </table>
@@ -157,20 +157,20 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
       <td>200</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Content-Type</td>
+      <td style="background-color: #DEEBFF;">content-type</td>
       <td>application/json</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">body</th>
+      <th style="background-color: #EFF2F7;">Textkörper</th>
       <th style="background-color: #EFF2F7"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">profiles</td>
+      <td style="background-color: #DEEBFF;">Profile</td>
       <td>
         JSON mit einer Zuordnung von Schlüssel-/Wert-Paaren.
         <br/><br/>
@@ -183,8 +183,8 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
-               <td>Die interne eindeutige Kennung, die dem Identitäts-Provider während des Onboarding-Prozesses zugeordnet ist.</td>
-               <td><i>erforderlich</i></td>
+               <td>Die interne eindeutige Kennung, die dem Identitätsanbieter während des Onboarding-Prozesses zugeordnet ist.</td>
+               <td><i>required</i></td>
             </tr>
          </table>
          Das value-Element wird durch die folgenden Attribute definiert:
@@ -196,61 +196,61 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>Der Zeitstempel, vor dem das Profil nicht gültig ist.</td>
-               <td><i>erforderlich</i></td>
+               <td>Der Zeitstempel, vor dem das Profil ungültig ist.</td>
+               <td><i>required</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>Der Zeitstempel, nach dem das Profil nicht gültig ist.</td>
-               <td><i>erforderlich</i></td>
+               <td>Der Zeitstempel, nach dem das Profil ungültig ist.</td>
+               <td><i>required</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">Emittent</td>
+               <td style="background-color: #DEEBFF;">Aussteller</td>
                <td>
                   Die Entität, der das Profil gehört.
                   <br/><br/>
-                  Mögliche Werte sind:
+                  Die möglichen Werte sind:
                   <ul>
-                    <li><b>mvpd (z. B. Spektrum, Kabel usw.)</b><br/>Das Profil wurde durch folgende einfache Authentifizierung erstellt:</li>
-                    <li><b>Adobe</b><br/>Das Profil wurde erstellt durch: eingeschränkten Zugriff, temporären Zugriff.</li>
+                    <li><b>mvpd (z. B. Spectrum, Cablevision usw.)</b><br/>Das Profil wurde erstellt aus: Standardauthentifizierung.</li>
+                    <li><b>Adobe</b><br/>Das Profil wurde erstellt als Ergebnis von: eingeschränkter Zugriff, temporärer Zugriff.</li>
                   </ul>
-               <td><i>erforderlich</i></td>
+               <td><i>required</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">type</td>
+               <td style="background-color: #DEEBFF;">Typ</td>
                <td>
                   Der Profiltyp.
                   <br/><br/>
-                  Mögliche Werte sind:
+                  Die möglichen Werte sind:
                   <ul>
-                    <li><b>normal</b><br/>Das Profil wurde als Ergebnis der einfachen Authentifizierung erstellt.</li>
-                    <li><b>degraded</b><br/>Das Profil wurde durch folgenden eingeschränkten Zugriff erstellt:</li>
-                    <li><b>temporär</b><br/>Das Profil wurde durch den temporären Zugriff erstellt.</li>
+                    <li><b>normal</b><br/>Das Profil wurde als Ergebnis von: Standardauthentifizierung erstellt.</li>
+                    <li><b>degraded</b><br/>Das Profil wurde als Ergebnis von: eingeschränktem Zugriff erstellt.</li>
+                    <li><b>temporär</b><br/>Das Profil wurde erstellt als Ergebnis von: temporärer Zugriff.</li>
                   </ul>
-               <td><i>erforderlich</i></td>
+               <td><i>required</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">attributes</td>
+               <td style="background-color: #DEEBFF;">Attribute</td>
                <td>
-                    Die Liste der Benutzermetadatenattribute.
+                    Die Liste der Benutzer-Metadatenattribute.
                     <br/><br/>
-                    Diese Attribute können:
+                    Diese Attribute können sein:
                     <ul>
-                        <li>Obligatorisch, z. B. "userId"</li>
-                        <li>Nicht obligatorisch, z. B. "zip", "budgetId", "maxRating" usw.</li>
+                        <li>Obligatorisch, wie „userId“</li>
+                        <li>Nicht obligatorisch, wie „zip“, „householdId“, „maxRating“ usw.</li>
                     </ul>
-                    Die Werte für die Attribute können:
+                    Die Werte für die Attribute können wie folgt sein:
                     <ul>
-                        <li>einfach</li>
-                        <li>Liste</li>
-                        <li>map</li>
+                        <li>schlicht</li>
+                        <li>auflisten</li>
+                        <li>kartieren</li>
                     </ul>
                </td>
-               <td><i>erforderlich</i></td>
+               <td><i>required</i></td>
             </tr>
          </table>
       </td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
 </table>
 
 ### Fehler {#error}
@@ -264,28 +264,28 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Status</td>
       <td>400, 401, 403, 405, 500</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Content-Type</td>
+      <td style="background-color: #DEEBFF;">content-type</td>
       <td>application/json</td>
-      <td><i>erforderlich</i></td>
+      <td><i>required</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">body</th>
+      <th style="background-color: #EFF2F7;">Textkörper</th>
       <th style="background-color: #EFF2F7;"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>Der Antworttext kann zusätzliche Fehlerinformationen bereitstellen, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Verbesserte Fehlercodes</a> entsprechen.</td>
-      <td><i>erforderlich</i></td>
+      <td>Der Antworttext kann zusätzliche Fehlerinformationen bereitstellen, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.</td>
+      <td><i>required</i></td>
    </tr>
 </table>
 
-## Stichproben {#samples}
+## Beispiele {#samples}
 
-### 1. Profil für spezifischen Code abrufen, der durch einfache Authentifizierung abgerufen wurde
+### 1. Abrufen eines Profils für einen bestimmten Code, der durch Standardauthentifizierung abgerufen wurde
 
 >[!BEGINTABS]
 
@@ -338,7 +338,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Profil für bestimmten Code abrufen, während der grundlegende TempPass ausgewählt ist
+### 2. Abrufen des Profils für einen bestimmten Code, während der einfache TempPass ausgewählt ist
 
 >[!BEGINTABS]
 
@@ -381,7 +381,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
->[!TAB Antwort - Maximale Dauer ]
+>[!TAB Antwort - Dauer überschritten]
 
 ```HTTPS
 HTTP/1.1 403 Forbidden
@@ -397,7 +397,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
->[!TAB Antwort - ungültige Konfiguration]
+>[!TAB Antwort - Ungültige Konfiguration]
 
 ```HTTPS
 HTTP/1.1 500 Internal Server Error
@@ -415,7 +415,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Profil für bestimmten Code abrufen, während die Promotion &quot;TempPass&quot;ausgewählt ist
+### 3. Abrufen des Profils für einen bestimmten Code bei ausgewähltem Werbe-TempPass
 
 >[!BEGINTABS]
 
@@ -472,7 +472,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
->[!TAB Antwort - Maximale Dauer ]
+>[!TAB Antwort - Dauer überschritten]
 
 ```HTTPS
 HTTP/1.1 403 Forbidden
@@ -504,7 +504,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
->[!TAB Antwort - ungültige Konfiguration]
+>[!TAB Antwort - Ungültige Konfiguration]
 
 ```HTTPS
 HTTP/1.1 500 Internal Server Error
@@ -520,7 +520,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
->[!TAB Antwort - ungültige Identität]
+>[!TAB Antwort - Ungültige Identität]
 
 ```HTTPS
 HTTP/1.1 400 Bad Request
@@ -538,7 +538,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Profil für spezifischen Code abrufen, während die Verschlechterung angewendet wird
+### 4. Profil für bestimmten Code abrufen, während die Beeinträchtigung angewendet wird
 
 >[!BEGINTABS]
 
@@ -552,7 +552,7 @@ GET /api/v2/REF30/profiles/code/XTC98W HTTP/1.1
     User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
 ```
 
->[!TAB Antwort - AuthNAll-Abbau]
+>[!TAB Antwort - AuthNAll-Beeinträchtigung]
 
 ```HTTPS
 HTTP/1.1 200 OK
@@ -579,6 +579,6 @@ Content-Type: application/json;charset=UTF-8
 
 >[!IMPORTANT]
 >
-> `95cf93bcd183214a` ist ein abbaubarkeitsspezifisches Präfix.
+> `95cf93bcd183214a` ist ein abbauspezifisches Präfix.
 
 >[!ENDTABS]

@@ -1,6 +1,6 @@
 ---
-title: MVPD-Benutzermetadaten-Exchange
-description: MVPD-Benutzermetadaten-Exchange
+title: Austausch von Benutzermetadaten in MVPD
+description: Austausch von Benutzermetadaten in MVPD
 exl-id: 8bce6acc-cd33-476c-af5e-27eb2239cad1
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -9,17 +9,17 @@ ht-degree: 0%
 
 ---
 
-# MVPD-Benutzermetadaten-Exchange
+# Austausch von Benutzermetadaten in MVPD
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 ## Einführung {#intro-user-metadata-exchange}
 
-MVPDs verwalten benutzerspezifische Metadaten über ihre Kunden, die in einigen Fällen für Programmierer freigegeben werden. Ziel der Adobe Pass-Authentifizierung ist es, einen Austausch dieser &quot;Benutzermetadaten&quot;zu vermitteln, aber keine Regeln für den Austausch durchzusetzen. Die Austauschregeln sollen es MVPDs ermöglichen, mit ihren Programmierungspartnern zusammenzuarbeiten.
+MVPDs verwalten benutzerspezifische Metadaten über ihre Kunden, die in einigen Fällen für Programmierer freigegeben sind. Ziel der Adobe Pass-Authentifizierung ist es, einen Austausch dieser „Benutzermetadaten“ zu vermitteln, jedoch keine Regeln in Bezug auf den Austausch durchzusetzen. Die Austauschregeln sind für MVPDs, um mit ihren Programmierern zu arbeiten.
 
-Zu den für den Austausch verfügbaren Metadatentypen für Benutzer gehören derzeit die folgenden:
+Die für Exchange verfügbaren Benutzer-Metadatentypen umfassen derzeit Folgendes:
 
 * Postleitzahl
 * Maximale Bewertung (VChip oder MPAA)
@@ -27,36 +27,36 @@ Zu den für den Austausch verfügbaren Metadatentypen für Benutzer gehören der
 * Haushalts-ID
 * Kanal-ID
 
-Mithilfe dieser Funktion können MVPDs und Programmierer spezielle Anwendungsfälle wie die elterliche Kontrolle implementieren. Beispielsweise kann ein MVPD elterliche Bewertungsdaten an einen Programmierer übergeben, der diese Daten verwendet, um verfügbare Anzeigeoptionen für einen Benutzer zu filtern.
+Mit dieser Funktion können MVPDs und Programmierer spezielle Anwendungsfälle wie die elterliche Kontrolle implementieren. Beispielsweise kann ein MVPD die Daten der elterlichen Bewertung an einen Programmierer übergeben, der diese Daten dann verwendet, um die verfügbaren Anzeigeoptionen für einen Benutzer zu filtern.
 
 Wichtige Punkte zu Benutzermetadaten:
 
-* Der MVPD übergibt Benutzermetadaten während der Authentifizierungs- und Autorisierungsflüsse an die Anwendung des Programmierers.
-* Adobe Pass Authentication speichert die Metadatenwerte in den AuthN- und AuthZ-Token
+* MVPD übergibt während der Authentifizierungs- und Autorisierungsflüsse Benutzermetadaten an das Programm des Programmierers
+* Die Adobe Pass-Authentifizierung speichert die Metadatenwerte in den AuthN- und AuthZ-Token
 * Die Adobe Pass-Authentifizierung kann Werte für MVPDs normalisieren, die Benutzermetadaten in verschiedenen Formaten bereitstellen
-* Einige Parameter können mit dem Schlüssel des Programmierers verschlüsselt werden
-* Spezifische Werte werden durch Adobe über eine Konfigurationsänderung bereitgestellt
+* Einige Parameter können mit dem Programmierschlüssel verschlüsselt werden
+* Bestimmte Werte werden per Adobe über eine Konfigurationsänderung zur Verfügung gestellt
 
 >[!NOTE]
 >
->Benutzermetadaten sind eine Erweiterung der statischen Metadaten (Authentifizierungstoken TTL, Autorisierungstoken TTL und Geräte-ID), die zuvor in der Adobe Pass-Authentifizierung verfügbar waren.
+>Benutzermetadaten sind eine Erweiterung der statischen Metadaten (Authentifizierungstoken-TTL, Autorisierungstoken-TTL und Geräte-ID), die zuvor in der Adobe Pass-Authentifizierung verfügbar waren.
 
 ## Beispiele {#example-mvpd-user-metadata-exch}
 
-### Elternkontrolle {#example-parental-control}
+### elterliche Gewalt {#example-parental-control}
 
-Dieses Beispiel zeigt den Austausch der folgenden Elemente:
+Dieses Beispiel zeigt den Austausch von Folgendem:
 
-* [Programming to MVPD Metadata Exchange](#progr-mvpd-metadata-exch)
+* [Programmierer für MVPD-Metadatenaustausch](#progr-mvpd-metadata-exch)
 
-* [MVPD-to-Programmierer-Metadatenaustauschfluss](#mvpd-progr-exchange-flow)
+* [Austausch von MVPD-zu-Programmierer-Metadaten](#mvpd-progr-exchange-flow)
 
-### Programming to MVPD Metadata Exchange {#progr-mvpd-metadata-exch}
+### Programmierer für MVPD-Metadatenaustausch {#progr-mvpd-metadata-exch}
 
-Derzeit unterstützen die Programmierer-API, die Adobe Pass-Authentifizierung und MVPD-Autorisierer nur die Autorisierung auf Kanalebene. Der Kanal wird als Nur-Text-Zeichenfolge im getAuthorization() -API-Aufruf des Programmierers angegeben. Diese Zeichenfolge wird bis zum autorisierenden Backend des MVPD übertragen:
+Derzeit unterstützen die Programmierer-API, die Adobe Pass-Authentifizierung und die MVPD-Autorisierer nur die Autorisierung auf Kanalebene. Der Kanal wird im Aufruf der getAuthorization()-API des Programmierers als Nur-Text-Zeichenfolge angegeben. Diese Zeichenfolge wird bis zum autorisierenden Backend von MVPD übertragen:
 
-Aus der App oder Site des Programmierers wählt der Benutzer einen XACML-fähigen MVPD (in diesem Beispiel &quot;TNT&quot;). Informationen zu XACML finden Sie unter [eXtensible Access Control Markup Language](https://en.wikipedia.org/wiki/XACML){target=_blank}.
-Das Programm des Programmierers erstellt eine AuthZ-Anfrage, die die Ressource und ihre Metadaten enthält.  Dieses Beispiel enthält eine MPAA-Bewertung von &quot;pg&quot;im Medienattribut des Kanalelements:
+Von der App oder Site des Programmierers wählt der Benutzer eine XACML-fähige MVPD (in diesem Beispiel „TNT„). Informationen zu XACML finden Sie unter [eXtensible Access Control Markup Language](https://en.wikipedia.org/wiki/XACML){target=_blank}.
+Die App des Programmierers bildet eine AuthZ-Anfrage, die die Ressource und ihre Metadaten enthält.  Dieses Beispiel enthält eine MPAA-Bewertung von „pg“ im Medienattribut des Kanalelements:
 
 ```XML
 var resource = '<rss version="2.0" xmlns:media="http://video.search.yahoo.com/mrss/">
@@ -68,20 +68,20 @@ var resource = '<rss version="2.0" xmlns:media="http://video.search.yahoo.com/mr
 getAuthorization(resource);
 ```
 
-Die Adobe Pass-Authentifizierung unterstützt eine detailliertere Autorisierung bis hin zur Asset-Ebene, wenn sie sowohl vom MVPD als auch vom Programmierer unterstützt wird. Die Ressource und ihre Metadaten sind für Adobe opak. Ziel ist es, ein Standardformat für die normalisierte Angabe der Ressourcen-ID und Metadaten festzulegen, um Ressourcen-IDs an verschiedene MVPDs zu senden.
+Die Adobe Pass-Authentifizierung unterstützt tatsächlich eine detailliertere Autorisierung bis hin zur Asset-Ebene, wenn sie sowohl von MVPD als auch vom Programmierer unterstützt wird. Die Ressource und ihre Metadaten sind für das Adobe undurchsichtig. Ziel ist es, ein Standardformat für die normalisierte Angabe der Ressourcen-ID und der Metadaten zu erstellen, um Ressourcen-IDs an verschiedene MVPDs zu senden.
 
 >[!NOTE]
 >
->Wenn der Benutzer einen nur kanalfähigen MVPD auswählt, extrahiert die Adobe Pass-Authentifizierung NUR den Kanaltitel (&quot;TNT&quot;im obigen Beispiel) und übergibt nur den Titel an den MVPD.
+>Wenn der/die Benutzende eine Nur-Kanal-MVPD auswählt, extrahiert die Adobe Pass-Authentifizierung NUR den Kanalitel („TNT“ im obigen Beispiel) und übergibt nur den Titel an die MVPD.
 
-### MVPD-to-Programmierer-Metadatenaustauschfluss {#mvpd-progr-exchange-flow}
+### Austausch von MVPD-zu-Programmierer-Metadaten {#mvpd-progr-exchange-flow}
 
-Die Adobe Pass-Authentifizierung geht von folgenden Annahmen aus:
+Bei der Adobe Pass-Authentifizierung wird von folgenden Annahmen ausgegangen:
 
-* Der MVPD sendet die maximale Bewertung als Teil der SAML-Antwort
-* Diese Informationen werden als Teil des Authentifizierungstokens gespeichert.
-* Eine API wird von der Adobe Pass-Authentifizierung bereitgestellt, damit Programmierer diese Informationen abrufen können
-* Programmierer implementieren diese Funktion auf ihrer Website oder in ihrer App (um beispielsweise Videos auszublenden, die über der maximalen Bewertung für den Benutzer liegen)
+* Die MVPD sendet die maximale Bewertung als Teil der SAML-Antwort
+* Diese Informationen werden als Teil des Authentifizierungstokens gespeichert
+* Die Adobe Pass-Authentifizierung stellt eine API bereit, mit der Programmierer diese Informationen abrufen können
+* Programmierer implementieren diese Funktion auf ihrer Site oder in ihrem Programm (um beispielsweise Videos auszublenden, die über der maximalen Bewertung für den Benutzer liegen)
 
 ```XML
 <saml:Assertion ID="pfxec5f92e0-8589-3fc3-c708-f4fb8e2fad59"
@@ -103,59 +103,59 @@ Die Adobe Pass-Authentifizierung geht von folgenden Annahmen aus:
 </saml:Assertion>
 ```
 
-### Hinweise {#notes-mvpd-progr-metadata-exch-flow}
+### Notizen {#notes-mvpd-progr-metadata-exch-flow}
 
-**Ressourcennormalisierung und -validierung.** Ressourcen-IDs können als einfache Zeichenfolge oder als MRSS-Zeichenfolge übergeben werden. Ein Programmierer kann entweder das Nur-String-Format oder das MRSS verwenden, benötigt jedoch eine vorherige Vereinbarung mit dem MVPD, damit der MVPD weiß, wie diese Ressource zu behandeln ist.
+**Ressourcennormalisierung und -validierung.** Ressourcen-IDs können als Nur-String oder MRSS-String übergeben werden. Ein Programmierer kann entweder das Nur-String-Format oder das MRSS verwenden, benötigt jedoch eine vorherige Vereinbarung mit der MVPD, damit die MVPD weiß, wie diese Ressource zu behandeln ist.
 
-**Ressourcen-ID und Metadatenspezifikation.** Die Adobe Pass-Authentifizierung verwendet den RSS-Standard mit der Media RSS-Erweiterung, um eine Ressource und deren Metadaten anzugeben. In Verbindung mit der Media RSS-Erweiterung unterstützt die Adobe Pass-Authentifizierung eine Vielzahl von Metadaten, z. B. elterliche Steuerelemente (über `<media:rating>`) oder Geolocation (`<media:location>`).
+**Ressourcen-ID und Metadatenspezifikation.** Adobe Pass-Authentifizierung verwendet den RSS-Standard mit der RSS-Erweiterung für Medien, um eine Ressource und ihre Metadaten anzugeben. In Verbindung mit der Media RSS-Erweiterung unterstützt die Adobe Pass-Authentifizierung eine Vielzahl von Metadaten, z. B. Kindersicherung (über `<media:rating>`) oder Geolokalisierung (`<media:location>`).
 
-Die Adobe Pass-Authentifizierung kann auch eine transparente Konvertierung von der Legacy-Kanalzeichenfolge in die entsprechende RSS-Ressource für MVPDs unterstützen, die RSS erfordern. Andernfalls unterstützt die Adobe Pass-Authentifizierung die Konvertierung von RSS+MRSS in den reinen Kanaltitel für nur kanalübergreifende MVPDs.
+Die Adobe Pass-Authentifizierung kann auch eine transparente Konvertierung der alten Kanalzeichenfolge in die entsprechende RSS-Ressource für MVPDs unterstützen, für die RSS erforderlich ist. Umgekehrt unterstützt die Adobe Pass-Authentifizierung die Konvertierung von RSS+MRSS in einen Nur-Kanal-Titel für Nur-Kanal-MVPDs.
 
-**Adobe Pass-Authentifizierung stellt die vollständige Abwärtskompatibilität mit vorhandenen Integrationen sicher.** Das bedeutet, dass für Programmierer, die die Authentifizierung auf Kanalebene verwenden, die Adobe Pass-Authentifizierung darauf achtet, die Kanal-ID im erforderlichen Format zu verpacken, bevor sie an einen MVPD gesendet wird, der dieses Format versteht. Das Gegenteil trifft auch zu: Wenn ein Programmierer alle seine Ressourcen in einem neuen Format angibt, übersetzt die Adobe Pass-Authentifizierung das neue Format in eine einfache Kanalzeichenfolge, wenn sie für eine MVPD autorisiert wird, die nur die Kanalebenenautorisierung durchführt.
+Die **Adobe Pass-Authentifizierung stellt die vollständige Abwärtskompatibilität mit bestehenden Integrationen sicher.** das heißt, für Programmierer, die Authentifizierung auf Kanalebene verwenden, wird bei der Adobe Pass-Authentifizierung darauf geachtet, die Kanal-ID im erforderlichen Format zu verpacken, bevor sie an eine MVPD gesendet wird, die dieses Format versteht. Umgekehrt gilt auch Folgendes: Wenn ein Programmierer alle seine Ressourcen in einem neuen Format angibt, übersetzt die Adobe Pass-Authentifizierung das neue Format in eine einfache Kanalzeichenfolge, wenn die Autorisierung für eine MVPD erfolgt, die nur eine Autorisierung auf Kanalebene ausführt.
 
 ## Anwendungsfälle für Benutzermetadaten {#user-metadata-use-cases}
 
-Anwendungsfälle ändern sich ständig und erweitern sich, da mehr MVPDs rechtliche Vorkehrungen treffen und Funktionen hinzufügen. Im Folgenden finden Sie Beispiele dafür, wofür Benutzermetadaten verwendet werden können.
+Anwendungsfälle ändern sich ständig und werden immer größer, da mehr MVPDs rechtliche Vorkehrungen treffen und Funktionen hinzufügen. Im Folgenden finden Sie Beispiele dafür, wofür Benutzermetadaten verwendet werden können.
 
-* [MVPD User ID](#mvpd-user-id)
+* [MVPD-Benutzer-ID](#mvpd-user-id)
 * [Haushalts-ID](#household-user-id)
 * [Postleitzahl](#zip-code)
-* [Max Rating (Elternkontrolle)](#max-rating-parental-control)
-* [Kanalverbindung](#channel-line-up)
+* [Max. Bewertung (Kindersicherung)](#max-rating-parental-control)
+* [Kanalanordnung](#channel-line-up)
 
-### MVPD User ID {#mvpd-user-id}
+### MVPD-Benutzer-ID {#mvpd-user-id}
 
 * Wie vom MVPD bereitgestellt
-* Nicht die tatsächlichen Anmeldeinformationen des Benutzers, da sie vom MVPD gehasht werden
-* Kann verwendet werden, um Probleme mit oder für bestimmte Benutzer anzuzeigen
-* Verschlüsselt
+* Nicht die eigentlichen Anmeldeinformationen des Benutzers, da sie von der MVPD gehasht werden
+* Kann verwendet werden, um Probleme mit oder für bestimmte Benutzende anzuzeigen
+* verschlüsselt
 * MVPD-Unterstützung: Alle MVPDs
 
-### Haushalts-Benutzer-ID {#household-user-id}
+### Haushaltsbenutzer-ID {#household-user-id}
 
 * Ermöglicht gute Metrikinformationen
-* Verschlüsselt
+* verschlüsselt
 * MVPD-Unterstützung: Einige MVPDs
 
 ### Postleitzahl {#zip-code}
 
-* Postleitzahl der Abrechnung des Benutzers
-* Wird hauptsächlich verwendet, um die Regeln zum Einfrieren von Ereignissen zu erzwingen.
+* Die Postleitzahl der Rechnungsstellung des Benutzers
+* Wird hauptsächlich verwendet, um Regeln für das Einfrieren von Sportereignissen zu erzwingen
 * Kann mit der AuthZ-Antwort für schnelle Aktualisierungen bereitgestellt werden
 * MVPD-Unterstützung: Einige MVPDs
 
-### Max Rating (Elternkontrolle) {#max-rating-parental-control}
+### Max. Bewertung (Kindersicherung) {#max-rating-parental-control}
 
-* AuthN anfangs, plus AuthZ-Aktualisierung
-* Filtern von Inhalten über die Benutzeroberfläche
+* AuthN anfänglich plus AuthZ-Aktualisierung
+* Filtern von Inhalten aus der Benutzeroberfläche
 * MPAA- oder VChip-Bewertungen
 * MVPD-Unterstützung: Einige MVPDs
 
-### Kanalverbindung {#channel-line-up}
+### Kanalanordnung {#channel-line-up}
 
 * MVPDs können eine Liste von Kanälen bereitstellen, die der Benutzer anzeigen darf
-* Ermöglicht schnelles Zeichnen in der Benutzeroberfläche
-* Die OLCA-Spezifikation ermöglicht dies als AttributeStatement in der AuthN-Antwort
+* Ermöglicht schnelles Zeichnen der Benutzeroberfläche
+* Die OLCA-Spezifikation ermöglicht dies als AttributeStatement in der Authentifizierungsantwort
 * Unterstützende MVPDs: Einige MVPDs
 
 <!--

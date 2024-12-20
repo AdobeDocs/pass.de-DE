@@ -11,4 +11,4 @@ ht-degree: 85%
 
 # Dokumentation zu Harman Primetime {#harman-primetime}
 
-+ [Harman Primetime - Überblick](home.md)
++ [Übersicht über Harman Primetime](home.md)

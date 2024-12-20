@@ -1,6 +1,6 @@
 ---
-title: Grundlegende Authentifizierung - Sekundäre Anwendung - Fluss
-description: REST API V2 - Grundlegende Authentifizierung - Sekundäre Anwendung - Fluss
+title: Einfache Authentifizierung - Sekundäre Anwendung - Fluss
+description: REST API v2 - Standardauthentifizierung - Sekundäre Anwendung - Fluss
 exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -9,44 +9,44 @@ ht-degree: 0%
 
 ---
 
-# Grundlegender Authentifizierungsfluss, der in der sekundären Anwendung ausgeführt wird {#basic-authentication-flow-performed-within-secondary-application}
+# Grundlegender Authentifizierungsfluss innerhalb der sekundären Anwendung {#basic-authentication-flow-performed-within-secondary-application}
 
 >[!IMPORTANT]
 >
-> Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 >[!IMPORTANT]
 >
-> Die REST API V2-Implementierung wird durch die Dokumentation zum [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) begrenzt.
+> Die REST-API-V2-Implementierung ist an die Dokumentation [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) gebunden.
 
-Mit dem **Authentifizierungsfluss** innerhalb der Adobe Pass-Authentifizierungsberechtigungen kann die Streaming-Anwendung überprüfen, ob ein Benutzer über ein gültiges MVPD-Konto verfügt. Für diesen Prozess muss der Benutzer über ein aktives MVPD-Konto verfügen und gültige Anmeldedaten auf der MVPD-Anmeldeseite eingeben.
+Mit dem **Authentifizierungsfluss** innerhalb der Adobe Pass-Authentifizierungsberechtigung kann die Streaming-Anwendung überprüfen, ob ein Benutzer über ein gültiges MVPD-Konto verfügt. Für diesen Vorgang muss der Benutzer über ein gültiges MVPD-Konto verfügen und gültige Anmeldeinformationen auf der MVPD-Anmeldeseite eingeben.
 
-In den folgenden Fällen ist ein Authentifizierungsfluss erforderlich:
+Der Authentifizierungsfluss ist in den folgenden Fällen erforderlich:
 
-* Wenn der Benutzer eine Anwendung zum ersten Mal öffnet.
+* Wenn der/die Benutzende eine Anwendung zum ersten Mal öffnet.
 * Wenn die vorherige Authentifizierung des Benutzers abgelaufen ist.
-* Wenn sich der Benutzer vom MVPD-Konto abmeldet.
-* Wenn der Benutzer sich mit einem anderen MVPD authentifizieren möchte.
+* Wenn sich der Benutzer beim MVPD-Konto abmeldet.
+* Wenn sich der/die Benutzende mit einer anderen MVPD authentifizieren möchte.
 
-In allen diesen Fällen erhält die Anwendung, die einen der Profile-Endpunkte aufruft, eine leere Antwort oder ein oder mehrere Profile, jedoch für verschiedene MVPDs.
+In all diesen Fällen erhält die Anwendung, die einen der Profile-Endpunkte aufruft, eine leere Antwort oder ein oder mehrere Profile, jedoch für verschiedene MVPDs.
 
-Für den **Authentifizierungsfluss** muss ein Benutzeragent (Browser) eine Reihe von Aufrufen von der Anwendung zum Adobe Pass-Backend, dann zur MVPD-Anmeldeseite und schließlich zurück zur Anwendung durchführen. Dieser Ablauf kann mehrere Umleitungen zu MVPD-Systemen und die Verwaltung von Cookies oder Sitzungen umfassen, die für jede Domäne gespeichert sind. Dies kann ohne einen Benutzeragenten schwierig zu erreichen und zu sichern sein.
+Der **Authentifizierungsfluss** erfordert, dass ein Benutzeragent (Browser) eine Reihe von Aufrufen vom Programm an das Adobe Pass-Backend, dann an die MVPD-Anmeldeseite und schließlich zurück an die Anwendung ausführt. Dieser Fluss kann mehrere Umleitungen zu MVPD-Systemen und die Verwaltung von Cookies oder Sitzungen für jede Domain umfassen, was ohne Benutzeragenten schwierig zu erreichen und zu schützen ist.
 
-Basierend auf den Funktionen der primären Anwendung (Streaming-Anwendung), die Benutzerinteraktionen zur Auswahl eines MVPD und zur Authentifizierung mit dem ausgewählten MVPD in einem Benutzeragenten unterstützen, sind die Authentifizierungsszenarien:
+Basierend auf den Funktionen der Primäranwendung (Streaming-Anwendung) zur Unterstützung der Benutzerinteraktion zur Auswahl einer MVPD und zur Authentifizierung mit der ausgewählten MVPD in einem Benutzeragenten lauten die Authentifizierungsszenarien wie folgt:
 
 * [Authentifizierung innerhalb der primären Anwendung durchführen](rest-api-v2-basic-authentication-primary-application-flow.md)
-* [Authentifizierung innerhalb der sekundären Anwendung mit vorab ausgewählter mvpd](./rest-api-v2-basic-authentication-secondary-application-flow.md)
-* [Authentifizierung innerhalb der sekundären Anwendung ohne vorab ausgewählte mvpd](./rest-api-v2-basic-authentication-secondary-application-flow.md)
+* [Authentifizierung innerhalb der sekundären Anwendung mit vorab ausgewähltem mvpd durchführen](./rest-api-v2-basic-authentication-secondary-application-flow.md)
+* [Authentifizierung innerhalb der sekundären Anwendung ohne vorab ausgewählte mvpd durchführen](./rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-## Authentifizierung innerhalb der sekundären Anwendung mit vorab ausgewählter mvpd {#perform-authentication-within-secondary-application-with-preselected-mvpd}
+## Authentifizierung innerhalb der sekundären Anwendung mit vorab ausgewähltem mvpd durchführen {#perform-authentication-within-secondary-application-with-preselected-mvpd}
 
 ### Voraussetzungen {#prerequisites-perform-authentication-within-secondary-application-with-preselected-mvpd}
 
-Bevor Sie den Authentifizierungsfluss in einer primären Anwendung starten und durch Benutzerinteraktionen in einer sekundären Anwendung abschließen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
+Stellen Sie vor dem Starten des Authentifizierungsflusses in einer primären Anwendung und seiner Fertigstellung durch Benutzerinteraktion in einer sekundären Anwendung sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
-* Die Streaming-Anwendung muss einen MVPD auswählen.
-* Die Streaming-Anwendung muss eine Authentifizierungssitzung starten, um sich mit dem ausgewählten MVPD anzumelden.
-* Die sekundäre Anwendung muss sich mit dem ausgewählten MVPD in einem Benutzeragenten authentifizieren.
+* Die Streaming-Anwendung muss eine MVPD auswählen.
+* Die Streaming-Anwendung muss eine Authentifizierungssitzung starten, um sich mit der ausgewählten MVPD anzumelden.
+* Die sekundäre Anwendung muss sich mit der ausgewählten MVPD in einem Benutzeragenten authentifizieren.
 
 >[!IMPORTANT]
 >
@@ -54,143 +54,143 @@ Bevor Sie den Authentifizierungsfluss in einer primären Anwendung starten und d
 >
 > <br/>
 > 
-> * Die Streaming-Anwendung unterstützt Benutzerinteraktionen zur Auswahl eines MVPD.
-> * Die sekundäre Anwendung (normalerweise auf einem sekundären Gerät) unterstützt Benutzerinteraktionen, um sich bei dem ausgewählten MVPD in einem Benutzeragenten zu authentifizieren.
+> * Die Streaming-Anwendung unterstützt Benutzerinteraktionen bei der Auswahl einer MVPD.
+> * Die sekundäre Anwendung (normalerweise auf einem sekundären Gerät) unterstützt die Benutzerinteraktion zur Authentifizierung bei der ausgewählten MVPD in einem Benutzeragenten.
 
 ### Workflow {#workflow-perform-authentication-within-secondary-application-with-preselected-mvpd}
 
-Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierungsfluss zu implementieren, der in einer sekundären Anwendung mit einem vorab ausgewählten MVPD durchgeführt wird, wie im folgenden Diagramm dargestellt.
+Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierungsfluss zu implementieren, der in einer sekundären Anwendung mit einer vorab ausgewählten MVPD ausgeführt wird, wie im folgenden Diagramm dargestellt.
 
-![Führen Sie die Authentifizierung innerhalb der sekundären Anwendung mit vorab ausgewähltem mvpd durch](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-with-preselected-mvpd.png)
+![Authentifizierung innerhalb der sekundären Anwendung mit vorab ausgewähltem mvpd durchführen](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-with-preselected-mvpd.png)
 
-*Führen Sie die Authentifizierung innerhalb der sekundären Anwendung mit vorab ausgewähltem mvpd durch*
+*Authentifizierung innerhalb der sekundären Anwendung mit vorab ausgewähltem mvpd durchführen*
 
-1. **Erstellen einer Authentifizierungssitzung:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um eine Authentifizierungssitzung durch Aufruf des Sitzungsendpunkts zu starten.
-
-   >[!IMPORTANT]
-   >
-   > Weitere Informationen finden Sie in der API-Dokumentation zum [Erstellen einer Authentifizierungssitzung](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) .
-   > 
-   > * Alle _erforderlichen_ Parameter, wie `serviceProvider`, `mvpd`, `domainName` und `redirectUrl`
-   > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization`, `AP-Device-Identifier`
-   > * Alle Parameter und Kopfzeilen von _optional_
-   >
-   > <br/>
-   > 
-   > Die Streaming-Anwendung muss beim Erstellen der Authentifizierungssitzung alle erforderlichen Parameter in einem einzigen Aufruf bereitstellen.
-
-1. **Geben Sie die nächste Aktion an:** Die Sitzungsendpunktantwort enthält die erforderlichen Daten, um die Streaming-Anwendung zur nächsten Aktion zu leiten.
+1. **Authentifizierungssitzung erstellen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um eine Authentifizierungssitzung zu initiieren, indem der Sessions-Endpunkt aufgerufen wird.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der Dokumentation zur API zur [Erstellen einer Authentifizierungssitzung](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) .
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)Dokumentation zu „Authentifizierungssitzung erstellen“:
    > 
-   > <br/>
-   > 
-   > Der Sitzungsendpunkt validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
-   >
-   > * Die Parameter und Header _required_ müssen gültig sein.
-   > * Die Integration zwischen dem bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
+   > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd`, `domainName` und `redirectUrl`
+   > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
+   > * Alle _optionalen_ Parameter und Kopfzeilen
    >
    > <br/>
    > 
-   > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+   > Die Streaming-Anwendung muss beim Erstellen der Authentifizierungssitzung in einem einzigen Aufruf alle erforderlichen Parameter bereitstellen.
 
-1. **Fahren Sie mit den Entscheidungsflüssen fort:** Die Sitzungsendpunktantwort enthält die folgenden Daten:
-   * Das Attribut `actionName` ist auf &quot;Autorisieren&quot;festgelegt.
-   * Das Attribut `actionType` ist auf &quot;direct&quot;festgelegt.
+1. **Nächste Aktion angeben:** Die Antwort des Sitzungs-Endpunkts enthält die erforderlichen Daten, um die Streaming-Anwendung bezüglich der nächsten Aktion zu führen.
+
+   >[!IMPORTANT]
+   >
+   > Weitere Informationen zu den [ in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)Dokumentation zu „Authentifizierungssitzung erstellen“.
+   > 
+   > <br/>
+   > 
+   > Der Sessions-Endpunkt validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
+   >
+   > * Die _erforderlichen_ Parameter und Kopfzeilen müssen gültig sein.
+   > * Die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
+   >
+   > <br/>
+   > 
+   > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
+
+1. **Fahren Sie mit Entscheidungs-Flüssen fort**: Die Antwort des Sitzungs-Endpunkts enthält die folgenden Daten:
+   * Das `actionName`-Attribut ist auf „authorize“ festgelegt.
+   * Das `actionType`-Attribut ist auf „direct“ festgelegt.
 
    Wenn das Adobe Pass-Backend ein gültiges Profil identifiziert, muss sich die Streaming-Anwendung nicht erneut mit dem ausgewählten MVPD authentifizieren, da bereits ein Profil vorhanden ist, das für nachfolgende Entscheidungsflüsse verwendet werden kann.
 
-1. **Authentifizierungscode anzeigen:** Die Sitzungsendpunktantwort enthält die folgenden Daten:
-   * Der `code` , der verwendet werden kann, um die Authentifizierungssitzung in einer sekundären Anwendung wiederaufzunehmen.
-   * Das Attribut `actionName` ist auf &quot;Authentifizieren&quot;festgelegt.
-   * Das Attribut `actionType` ist auf &quot;interaktiv&quot;festgelegt.
+1. **Authentifizierungs-Code anzeigen** Die Antwort des Sitzungs-Endpunkts enthält die folgenden Daten:
+   * Die `code`, mit der die Authentifizierungssitzung in einer sekundären Anwendung fortgesetzt werden kann.
+   * Das `actionName`-Attribut ist auf „Authenticate“ festgelegt.
+   * Das `actionType`-Attribut ist auf „interaktiv“ festgelegt.
 
-   Wenn das Adobe Pass-Backend kein gültiges Profil angibt, zeigt die Streaming-Anwendung die `code` an, die zur Wiederaufnahme der Authentifizierungssitzung in einer sekundären Anwendung verwendet werden kann.
+   Wenn das Adobe Pass-Backend kein gültiges Profil identifiziert, zeigt die Streaming-Anwendung die `code` an, die verwendet werden können, um die Authentifizierungssitzung in einer sekundären Anwendung fortzusetzen.
 
-1. **Authentifizierungscode validieren:** Die sekundäre Anwendung überprüft den Benutzer, der `code` angegeben hat, um sicherzustellen, dass die MVPD-Authentifizierung im Benutzeragenten fortgesetzt werden kann.
-
-   >[!IMPORTANT]
-   >
-   > Weitere Informationen finden Sie in der API-Dokumentation zum [Abrufen von Authentifizierungssitzungsinformationen](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) .
-   >
-   > * Alle _erforderlichen_ Parameter, wie `serviceProvider` und `code`
-   > * Alle _erforderlichen_ -Kopfzeilen, z. B. `Authorization`
-   > * Alle Parameter und Kopfzeilen von _optional_
-
-1. **Rückgabe von Informationen zur Authentifizierungssitzung:** Die Sitzungsendpunktantwort enthält die folgenden Daten:
-   * Das Attribut `existing` enthält die vorhandenen Parameter, die bereits bereitgestellt wurden.
-   * Das Attribut `missing` enthält die fehlenden Parameter, die zum Abschluss des Authentifizierungsflusses angegeben werden müssen.
+1. **Authentifizierungs-Code validieren** Die sekundäre Anwendung validiert den bereitgestellten `code`, um sicherzustellen, dass sie mit der MVPD-Authentifizierung im Benutzeragenten fortfahren kann.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den in einer Sitzungsvalidierungsantwort bereitgestellten Informationen finden Sie in der API-Dokumentation zum [Abrufen von Authentifizierungssitzungsinformationen](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) .
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)Dokumentation zu Authentifizierungssitzungen abrufen:
+   >
+   > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `code`
+   > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`
+   > * Alle _optionalen_ Parameter und Kopfzeilen
+
+1. **Rückgabeinformationen zur Authentifizierungssitzung:** Die Antwort des Sitzungs-Endpunkts enthält die folgenden Daten:
+   * Das `existing`-Attribut enthält die vorhandenen Parameter, die bereits angegeben wurden.
+   * Das Attribut `missing` enthält die fehlenden Parameter, die angegeben werden müssen, um den Authentifizierungsfluss abzuschließen.
+
+   >[!IMPORTANT]
+   >
+   > Weitere Informationen zu den [ in einer Antwort zur Sitzungsvalidierung ](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) Informationen finden Sie in der API-Dokumentation zu Authentifizierungssitzungsinformationen abrufen .
    >
    > <br/>
    >
-   > Der Sitzungsendpunkt validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
+   > Der Sessions-Endpunkt validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
    >
-   > * Die Parameter und Header _required_ müssen gültig sein.
+   > * Die _erforderlichen_ Parameter und Kopfzeilen müssen gültig sein.
    >
    > <br/>
    >
-   > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+   > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
 
    >[!TIP]
    >
-   > Empfehlung: Die sekundäre Anwendung kann Benutzer darüber informieren, dass der verwendete `code` im Falle einer Fehlerantwort, die auf eine fehlende Authentifizierungssitzung hinweist, ungültig ist, und ihnen empfehlen, einen erneuten Versuch mit einer neuen zu unternehmen.
+   > Vorschlag: Die sekundäre Anwendung kann Benutzer im Falle einer Fehlerantwort, die auf eine fehlende Authentifizierungssitzung hinweist, darüber informieren, dass die verwendete `code` ungültig ist, und ihnen empfehlen, es erneut mit einer neuen Authentifizierungssitzung zu versuchen.
 
-1. **URL im Benutzeragenten öffnen:** Die sekundäre Anwendung öffnet einen Benutzeragenten, um den selbst berechneten `url` zu laden. Dadurch wird eine Anfrage an den Endpunkt Authentifizieren gesendet. Dieser Ablauf kann mehrere Umleitungen umfassen, die den Benutzer letztendlich zur MVPD-Anmeldeseite führen und gültige Anmeldeinformationen angeben.
-
-   >[!IMPORTANT]
-   >
-   > Weitere Informationen finden Sie in der Dokumentation zur API [Authentifizierung im Benutzeragenten durchführen](../../apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) .
-   >
-   > * Alle _erforderlichen_ Parameter, wie `serviceProvider` und `code`
-   > * Alle Parameter und Kopfzeilen von _optional_
-
-1. **Vollständige MVPD-Authentifizierung:** Wenn der Authentifizierungsfluss erfolgreich ist, speichert die Benutzeragenten-Interaktion ein reguläres Profil im Adobe Pass-Backend und erreicht die bereitgestellte `redirectUrl`.
-
-1. **Profil für bestimmten Code abrufen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um Profilinformationen abzurufen, indem eine Anfrage an den Endpunkt Profile gesendet wird.
+1. **URL im Benutzeragenten öffnen:** Die sekundäre Anwendung öffnet einen Benutzeragenten, um den selbst berechneten `url` zu laden, und sendet eine Anfrage an den Authentifizierungsendpunkt. Dieser Fluss kann mehrere Weiterleitungen enthalten, die den Benutzer letztendlich zur Anmeldeseite von MVPD führen und gültige Anmeldeinformationen angeben.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen finden Sie in der Dokumentation zur [Abrufen des Profils für bestimmte Code-API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) .
+   > Weitere Informationen zu folgenden [ finden Sie in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)Dokumentation zu „Authentifizierung im Benutzeragenten durchführen“:
+   >
+   > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `code`
+   > * Alle _optionalen_ Parameter und Kopfzeilen
+
+1. **Vollständige MVPD-Authentifizierung:** Wenn der Authentifizierungsfluss erfolgreich ist, speichert die Benutzeragenten-Interaktion ein reguläres Profil im Adobe Pass-Backend und erreicht die angegebene `redirectUrl`.
+
+1. **Profil für bestimmten Code abrufen:** Die Streaming-Anwendung sammelt alle erforderlichen Daten, um Profilinformationen abzurufen, indem eine Anfrage an den Endpunkt „Profiles“ gesendet wird.
+
+   >[!IMPORTANT]
+   >
+   > Weitere Informationen zu folgenden [ finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)Dokumentation zum Abrufen von Profilen für bestimmten Code:
    > 
-   > * Alle _erforderlichen_ Parameter, wie `serviceProvider` und `code`
-   > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization`, `AP-Device-Identifier`
-   > * Alle Parameter und Kopfzeilen von _optional_
+   > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `code`
+   > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
+   > * Alle _optionalen_ Parameter und Kopfzeilen
 
    >[!TIP]
    >
-   > Empfehlung: Die Streaming-Anwendung kann mithilfe von `code` einen Abruffegel implementieren, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
+   > Empfehlung: Die Streaming-Anwendung kann mithilfe der `code` einen Abrufmechanismus implementieren, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
 
-1. **Informationen zum regulären Profil zurückgeben:** Die Profil-Endpunktantwort enthält Informationen zum regulären Profil, das mit den empfangenen Parametern und Kopfzeilen verknüpft ist.
+1. **Informationen zum regulären Profil zurückgeben:** Die Antwort des Endpunkts „Profile“ enthält Informationen zum regulären Profil, das mit den empfangenen Parametern und Kopfzeilen verknüpft ist.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den Informationen, die in einer Profilantwort bereitgestellt werden, finden Sie in der Dokumentation zur API für spezifischen Code-Code-Abruf-Profil](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) .[
+   > Weitere Informationen zu [ in einer Profilantwort bereitgestellten Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)Dokumentation zum Abrufen von Profilen für bestimmten Code.
    > 
    > <br/>
    > 
-   > Der Endpunkt Profile validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
+   > Der Profiles-Endpunkt validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
    >
-   > * Die Parameter und Header _required_ müssen gültig sein.
+   > * Die _erforderlichen_ Parameter und Kopfzeilen müssen gültig sein.
    >
    > <br/>
    > 
-   > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+   > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
 
-## Authentifizierung innerhalb der sekundären Anwendung ohne vorab ausgewählte mvpd {#perform-authentication-within-secondary-application-without-preselected-mvpd}
+## Authentifizierung innerhalb der sekundären Anwendung ohne vorab ausgewählte mvpd durchführen {#perform-authentication-within-secondary-application-without-preselected-mvpd}
 
 ### Voraussetzungen {#prerequisites-perform-authentication-within-secondary-application-without-preselected-mvpd}
 
-Bevor Sie den Authentifizierungsfluss in einer primären Anwendung starten und durch Benutzerinteraktionen in einer sekundären Anwendung abschließen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
+Stellen Sie vor dem Starten des Authentifizierungsflusses in einer primären Anwendung und seiner Fertigstellung durch Benutzerinteraktion in einer sekundären Anwendung sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
 * Die Streaming-Anwendung muss eine Authentifizierungssitzung starten, wenn sie sich anmelden muss.
-* Die sekundäre Anwendung muss einen MVPD auswählen.
-* Die sekundäre Anwendung muss sich mit dem ausgewählten MVPD in einem Benutzeragenten authentifizieren.
+* Die sekundäre Anwendung muss eine MVPD auswählen.
+* Die sekundäre Anwendung muss sich mit der ausgewählten MVPD in einem Benutzeragenten authentifizieren.
 
 >[!IMPORTANT]
 >
@@ -198,124 +198,124 @@ Bevor Sie den Authentifizierungsfluss in einer primären Anwendung starten und d
 >
 > <br/>
 > 
-> * Die sekundäre Anwendung (normalerweise auf einem sekundären Gerät) unterstützt Benutzerinteraktionen zur Auswahl eines MVPD.
-> * Die sekundäre Anwendung (normalerweise auf einem sekundären Gerät) unterstützt Benutzerinteraktionen, um sich bei dem ausgewählten MVPD in einem Benutzeragenten zu authentifizieren.
+> * Die sekundäre Anwendung (normalerweise auf einem sekundären Gerät) unterstützt die Benutzerinteraktion bei der Auswahl einer MVPD.
+> * Die sekundäre Anwendung (normalerweise auf einem sekundären Gerät) unterstützt die Benutzerinteraktion zur Authentifizierung bei der ausgewählten MVPD in einem Benutzeragenten.
 
 ### Workflow {#workflow-perform-authentication-within-secondary-application-without-preselected-mvpd}
 
-Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierungsfluss zu implementieren, der in einer sekundären Anwendung ohne vorab ausgewählten MVPD durchgeführt wird, wie im folgenden Diagramm dargestellt.
+Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierungsfluss in einer sekundären Anwendung ohne vorab ausgewählte MVPD zu implementieren, wie in der folgenden Abbildung dargestellt.
 
-![Führen Sie die Authentifizierung innerhalb der sekundären Anwendung ohne vorab ausgewählte mvpd durch](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-without-preselected-mvpd.png)
+![Authentifizierung innerhalb der sekundären Anwendung ohne vorab ausgewählte mvpd durchführen](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-without-preselected-mvpd.png)
 
-*Führen Sie die Authentifizierung innerhalb der sekundären Anwendung ohne vorab ausgewählte mvpd durch*
+*Authentifizierung innerhalb der sekundären Anwendung ohne vorab ausgewählte mvpd durchführen*
 
-1. **Erstellen einer Authentifizierungssitzung:** Die Streaming-Anwendung erfasst einige der erforderlichen Daten, um eine Authentifizierungssitzung durch Aufruf des Sitzungsendpunkts zu initiieren.
-
-   >[!IMPORTANT]
-   >
-   > Weitere Informationen finden Sie in der API-Dokumentation zum [Erstellen einer Authentifizierungssitzung](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) .
-   >
-   > * Alle _erforderlichen_ Parameter, z. B. `serviceProvider`
-   > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization`, `AP-Device-Identifier`
-   > * Alle Parameter und Kopfzeilen von _optional_
-   >
-   > <br/>
-   > 
-   > Die Streaming-Anwendung kann beim Erstellen der Authentifizierungssitzung nicht alle erforderlichen Parameter in einem einzelnen Aufruf bereitstellen.
-
-1. **Geben Sie die nächste Aktion an:** Die Sitzungsendpunktantwort enthält die erforderlichen Daten, um die Streaming-Anwendung in Bezug auf die nächste Aktion zu leiten:
-   * Der `code` , der verwendet werden kann, um die Authentifizierungssitzung in einer sekundären Anwendung wiederaufzunehmen.
-   * Das Attribut `actionName` ist auf &quot;resume&quot;(Fortsetzen) festgelegt.
-   * Das Attribut `actionType` ist auf &quot;direct&quot;festgelegt.
+1. **Authentifizierungssitzung erstellen:** Die Streaming-Anwendung erfasst einige der erforderlichen Daten, um eine Authentifizierungssitzung durch Aufruf des Sitzungs-Endpunkts zu initiieren.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der Dokumentation zur API zur [Erstellen einer Authentifizierungssitzung](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) .
-   > 
-   > <br/>
-   > 
-   > Der Sitzungsendpunkt validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)Dokumentation zu „Authentifizierungssitzung erstellen“:
    >
-   > * Die Parameter und Header _required_ müssen gültig sein.
+   > * Alle _erforderlichen_ Parameter wie `serviceProvider`
+   > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
+   > * Alle _optionalen_ Parameter und Kopfzeilen
    >
    > <br/>
    > 
-   > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+   > Die Streaming-Anwendung kann beim Erstellen der Authentifizierungssitzung nicht alle erforderlichen Parameter in einem einzigen Aufruf bereitstellen.
 
-1. **Authentifizierungscode anzeigen:** Die Streaming-Anwendung zeigt die `code` an, die verwendet werden kann, um die Authentifizierungssitzung in einer sekundären Anwendung wiederaufzunehmen.
-
-1. **Stellen Sie die fehlenden Parameter für die Authentifizierungssitzung bereit:** Die sekundäre Anwendung erfasst alle fehlenden Daten, die zur Wiederaufnahme der Authentifizierungssitzung erforderlich sind, und ruft den Sitzungsendpunkt auf.
+1. **Nächste Aktion angeben:** Die Antwort des Sitzungs-Endpunkts enthält die erforderlichen Daten, um die Streaming-Anwendung bezüglich der nächsten Aktion zu leiten:
+   * Die `code`, mit der die Authentifizierungssitzung in einer sekundären Anwendung fortgesetzt werden kann.
+   * Das Attribut `actionName` ist auf „resume“ festgelegt.
+   * Das `actionType`-Attribut ist auf „direct“ festgelegt.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen finden Sie in der API-Dokumentation zur [Fortsetzen der Authentifizierungssitzung](../../apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md) .
+   > Weitere Informationen zu den [ in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)Dokumentation zu „Authentifizierungssitzung erstellen“.
+   > 
+   > <br/>
+   > 
+   > Der Sessions-Endpunkt validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
    >
-   > * Alle _erforderlichen_ Parameter, wie `serviceProvider`, `mvpd`, `domainName` und `redirectUrl`
-   > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization`, `AP-Device-Identifier`
-   > * Alle Parameter und Kopfzeilen von _optional_
+   > * Die _erforderlichen_ Parameter und Kopfzeilen müssen gültig sein.
+   >
+   > <br/>
+   > 
+   > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
 
-1. **Geben Sie die nächste Aktion an:** Die Sitzungsendpunktantwort enthält die erforderlichen Daten, um die Streaming-Anwendung zur nächsten Aktion zu leiten.
+1. **Authentifizierungs-Code anzeigen** Die Streaming-Anwendung zeigt die `code` an, mit der die Authentifizierungssitzung in einer sekundären Anwendung fortgesetzt werden kann.
+
+1. **Fehlende Parameter für Authentifizierungssitzung angeben:** Die sekundäre Anwendung erfasst alle fehlenden Daten, die erforderlich sind, um die Authentifizierungssitzung fortzusetzen, und ruft den Sitzungs-Endpunkt auf.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API-Dokumentation zur [Wiederaufnahme der Authentifizierungssitzung ](../../apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md) .
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)Dokumentation zur Wiederaufnahme der Authentifizierungssitzung:
+   >
+   > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd`, `domainName` und `redirectUrl`
+   > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
+   > * Alle _optionalen_ Parameter und Kopfzeilen
+
+1. **Nächste Aktion angeben:** Die Antwort des Sitzungs-Endpunkts enthält die erforderlichen Daten, um die Streaming-Anwendung bezüglich der nächsten Aktion zu führen.
+
+   >[!IMPORTANT]
+   >
+   > Weitere Informationen zu den [ in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)Dokumentation zu „Authentifizierungssitzung fortsetzen“.
    > 
    > <br/>
    > 
-   > Der Sitzungsendpunkt validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
+   > Der Sessions-Endpunkt validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
    >
-   > * Die Parameter und Header _required_ müssen gültig sein.
-   > * Die Integration zwischen dem bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
+   > * Die _erforderlichen_ Parameter und Kopfzeilen müssen gültig sein.
+   > * Die Integration zwischen den bereitgestellten `serviceProvider` und `mvpd` muss aktiv sein.
    >
    > <br/>
    > 
-   > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+   > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
 
    >[!TIP]
    >
-   > Empfehlung: Die sekundäre Anwendung kann Benutzer darüber informieren, dass der verwendete `code` im Falle einer Fehlerantwort, die auf eine fehlende Authentifizierungssitzung hinweist, ungültig ist, und ihnen empfehlen, einen erneuten Versuch mit einer neuen zu unternehmen.
+   > Vorschlag: Die sekundäre Anwendung kann Benutzer im Falle einer Fehlerantwort, die auf eine fehlende Authentifizierungssitzung hinweist, darüber informieren, dass die verwendete `code` ungültig ist, und ihnen empfehlen, es erneut mit einer neuen Authentifizierungssitzung zu versuchen.
 
-1. **Vorhandenes Profil angeben:** Die Sitzungsendpunktantwort enthält die folgenden Daten:
-   * Das Attribut `actionName` ist auf &quot;Autorisieren&quot;festgelegt.
-   * Das Attribut `actionType` ist auf &quot;direct&quot;festgelegt.
+1. **Vorhandenes Profil angeben:** Die Antwort des Sitzungs-Endpunkts enthält die folgenden Daten:
+   * Das `actionName`-Attribut ist auf „authorize“ festgelegt.
+   * Das `actionType`-Attribut ist auf „direct“ festgelegt.
 
    Wenn das Adobe Pass-Backend ein gültiges Profil identifiziert, muss sich die Streaming-Anwendung nicht erneut mit dem ausgewählten MVPD authentifizieren, da bereits ein Profil vorhanden ist, das für nachfolgende Entscheidungsflüsse verwendet werden kann.
 
-1. **URL im Benutzeragenten öffnen:** Die Sitzungsendpunktantwort enthält die folgenden Daten:
-   * Der `url` , der verwendet werden kann, um die interaktive Authentifizierung innerhalb der MVPD-Anmeldeseite zu initiieren.
-   * Das Attribut `actionName` ist auf &quot;Authentifizieren&quot;festgelegt.
-   * Das Attribut `actionType` ist auf &quot;interaktiv&quot;festgelegt.
+1. **URL im Benutzeragenten öffnen** Die Antwort des Sitzungs-Endpunkts enthält die folgenden Daten:
+   * Die `url`, die verwendet werden kann, um die interaktive Authentifizierung auf der Anmeldeseite von MVPD zu initiieren.
+   * Das `actionName`-Attribut ist auf „Authenticate“ festgelegt.
+   * Das `actionType`-Attribut ist auf „interaktiv“ festgelegt.
 
-   Wenn das Adobe Pass-Backend kein gültiges Profil identifiziert, öffnet die sekundäre Anwendung einen Benutzeragenten, um den bereitgestellten `url` zu laden. Dadurch wird eine Anfrage an den Endpunkt Authentifizieren gesendet. Dieser Ablauf kann mehrere Umleitungen umfassen, die den Benutzer letztendlich zur MVPD-Anmeldeseite führen und gültige Anmeldeinformationen angeben.
+   Wenn das Adobe Pass-Backend kein gültiges Profil identifiziert, öffnet die sekundäre Anwendung einen Benutzeragenten, um die angegebene `url` zu laden, und sendet eine Anfrage an den Authentifizierungsendpunkt. Dieser Fluss kann mehrere Weiterleitungen enthalten, die den Benutzer letztendlich zur Anmeldeseite von MVPD führen und gültige Anmeldeinformationen angeben.
 
-1. **Vollständige MVPD-Authentifizierung:** Wenn der Authentifizierungsfluss erfolgreich ist, speichert die Benutzeragenten-Interaktion ein reguläres Profil im Adobe Pass-Backend und erreicht die bereitgestellte `redirectUrl`.
+1. **Vollständige MVPD-Authentifizierung:** Wenn der Authentifizierungsfluss erfolgreich ist, speichert die Benutzeragenten-Interaktion ein reguläres Profil im Adobe Pass-Backend und erreicht die angegebene `redirectUrl`.
 
-1. **Profil für bestimmten Code abrufen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um Profilinformationen abzurufen, indem eine Anfrage an den Endpunkt Profile gesendet wird.
+1. **Profil für bestimmten Code abrufen:** Die Streaming-Anwendung sammelt alle erforderlichen Daten, um Profilinformationen abzurufen, indem eine Anfrage an den Endpunkt „Profiles“ gesendet wird.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen finden Sie in der Dokumentation zur [Abrufen des Profils für bestimmte Code-API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) .
+   > Weitere Informationen zu folgenden [ finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)Dokumentation zum Abrufen von Profilen für bestimmten Code:
    >
-   > * Alle _erforderlichen_ Parameter, wie `serviceProvider` und `code`
-   > * Alle _erforderlichen_ Kopfzeilen, wie `Authorization`, `AP-Device-Identifier`
-   > * Alle Parameter und Kopfzeilen von _optional_
+   > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `code`
+   > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
+   > * Alle _optionalen_ Parameter und Kopfzeilen
 
    >[!TIP]
    >
-   > Empfehlung: Die Streaming-Anwendung kann mithilfe von `code` einen Abruffegel implementieren, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
+   > Empfehlung: Die Streaming-Anwendung kann mithilfe der `code` einen Abrufmechanismus implementieren, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
 
-1. **Informationen zum regulären Profil zurückgeben:** Die Profil-Endpunktantwort enthält Informationen zum regulären Profil, das mit den empfangenen Parametern und Kopfzeilen verknüpft ist.
+1. **Informationen zum regulären Profil zurückgeben:** Die Antwort des Endpunkts „Profile“ enthält Informationen zum regulären Profil, das mit den empfangenen Parametern und Kopfzeilen verknüpft ist.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den Informationen, die in einer Profilantwort bereitgestellt werden, finden Sie in der Dokumentation zur API für spezifischen Code-Code-Abruf-Profil](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) .[
+   > Weitere Informationen zu [ in einer Profilantwort bereitgestellten Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)Dokumentation zum Abrufen von Profilen für bestimmten Code.
    > 
    > <br/>
    > 
-   > Der Endpunkt Profile validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
+   > Der Profiles-Endpunkt validiert die Anfragedaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
    >
-   > * Die Parameter und Header _required_ müssen gültig sein.
+   > * Die _erforderlichen_ Parameter und Kopfzeilen müssen gültig sein.
    >
    > <br/>
    > 
-   > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen bereitstellt, die der Dokumentation [Verbesserte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) entsprechen.
+   > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](../../../../features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.

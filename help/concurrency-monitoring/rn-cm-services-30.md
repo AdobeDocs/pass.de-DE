@@ -11,19 +11,19 @@ ht-degree: 2%
 
 # Versionshinweise zu Concurrency Monitoring Services 3.0 {#cms-rn-30}
 
-Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme in dieser Version beschrieben.
+Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme dieser Version beschrieben.
 
 ## Versionsinformationen {#release-info}
 
 Version: 3.0
-Releasedatum: 5.05.2020
+Veröffentlichungsdatum: 05/05/2020
 
 ## Versionsübersicht {#release-overview}
 
-* Diese Version verbessert die CM-Dienste, indem ein neuer Cloud-basierter Mechanismus zur Verwaltung der Konfiguration aller Anwendungen, Mandanten und Richtlinien eingeführt wird.
-* Neue REST Configuration API (Internal), die eine vereinfachte Konfigurationsverwaltung über mehrere Rechenzentren hinweg und schnellere Bearbeitungszeiten für Konfigurationsänderungen ermöglicht, ohne dass Code- oder Produktionsversionen erforderlich sind.
+* Diese Version verbessert die CM-Services durch die Einführung eines neuen Cloud-basierten Mechanismus zur Verwaltung der Konfiguration aller Anwendungen, Mandanten und Richtlinien.
+* Neue REST-Konfigurations-API (intern), die ein vereinfachtes Konfigurationsmanagement über mehrere Rechenzentren hinweg ermöglicht und schnellere Durchlaufzeiten für Konfigurationsänderungen ermöglicht, ohne dass Code- oder Produktionsversionen erforderlich sind.
 
 
 ## Bekannte Probleme {#known-issues}
 
-Keines
+Keine

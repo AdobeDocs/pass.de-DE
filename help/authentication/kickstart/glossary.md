@@ -13,45 +13,45 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur Informationszwecken. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe erforderlich. Eine unbefugte Anwendung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-## AccessEnabler {#accessEnabler}
+## Access Enabler {#accessEnabler}
 
-Die Client-Komponente der Adobe Pass-Authentifizierung. Adobe Pass Authentication bietet eine AccessEnabler-Bibliothek für jede unterstützte Plattform.
+Die Client-Komponente der Adobe Pass-Authentifizierung. Die Adobe Pass-Authentifizierung bietet eine AccessEnabler-Bibliothek für jede unterstützte Plattform.
 
-## AuthN {#authn}
+## AuthNr {#authn}
 
-Wird als Kurzbezeichnung für &quot;Authentifizierung&quot;verwendet, wie in &quot;AuthN Token&quot;oder &quot;AuthN Flow&quot;.
+Wird als Kurzschreibweise für „Authentifizierung“ verwendet, wie in „AuthN Token“ oder „AuthN Flow“.
 
 
-## AuthN-Token{#authn-token}
+## Authentifizierungs-Token{#authn-token}
 
-Authentifizierungstoken, das von der Adobe Pass-Authentifizierung generiert wird, nachdem ein Benutzer erfolgreich bei einem MVPD authentifiziert wurde. Je nach Integrationsplattform des Programmierers wird das Token auf dem Gerät des Benutzers oder auf den Adobe Pass-Authentifizierungsservern gespeichert.
+Authentifizierungstoken, das von der Adobe Pass-Authentifizierung generiert wird, nachdem ein Benutzer erfolgreich mit einer MVPD authentifiziert wurde. Je nach Integrationsplattform des Programmierers wird das Token auf dem Gerät des Benutzers oder auf den Adobe Pass-Authentifizierungsservern gespeichert.
 
 ## AuthZ {#authz}
 
-Wird als Kurzbezeichnung für &quot;Autorisierung&quot;verwendet, wie in &quot;AuthZ Token&quot;oder &quot;AuthZ Flow&quot;.
+Wird als Kurzschreibweise für „Autorisierung“ verwendet, wie in „AuthZ Token“ oder „AuthZ Flow“.
 
 ## AuthZ-Token {#authz-token}
 
-Autorisierungstoken, das von der Adobe Pass-Authentifizierung generiert wird, nachdem ein Benutzer zur Anzeige geschützter Inhalte autorisiert wurde. Das AuthZ-Token wird auf Adobe Pass-Authentifizierungsservern gespeichert und zum Generieren eines [Tokens für kurzlebige Medien](#short-lived-token) verwendet.
+Autorisierungs-Token, das von der Adobe Pass-Authentifizierung generiert wird, nachdem ein Benutzer berechtigt wurde, geschützte Inhalte anzuzeigen. Das AuthZ-Token wird auf Adobe Pass-Authentifizierungs-Servern gespeichert und zum Generieren eines [kurzlebigen Medien-Tokens](#short-lived-token) verwendet.
 
-## Kanal-ID (nicht mehr unterstützt) {#channel_id}
+## Kanal-ID (veraltet) {#channel_id}
 
 Ehemaliger Begriff für Ressourcen-ID.
 
-## Clientlose API {#clientless-api}
+## Clientless-API {#clientless-api}
 
-Eine Adobe Pass-Authentifizierungsintegrationslösung, die Webdienste anstelle der AccessEnabler-Client-Komponente verwendet.
+Eine Lösung zur Integration der Adobe Pass-Authentifizierung, die Web-Services anstelle der AccessEnabler-Client-Komponente verwendet.
 
 ## Geräte-ID {#device-id}
 
-Identifiziert ein Gerät (z. B. ein Smartphone, Tablet usw.) in der Adobe Pass-Authentifizierung eindeutig. Diese ID wird von der Anwendung des Programmierers abgerufen/bereitgestellt.
+Identifiziert ein Gerät (Smartphone, Tablet usw.) in der Adobe Pass-Authentifizierung eindeutig. Diese ID wird vom Programm des Programmierers abgerufen/bereitgestellt.
 
 
 ## Berechtigungsfluss{#entitlement_flow}
 
-Der in der Adobe Pass-Authentifizierungsdokumentation verwendete Begriff bezieht sich auf den gesamten Prozess der Registrierung eines Geräts/Benutzers mit Adobe Pass-Authentifizierung, der Authentifizierung eines Benutzers mit einem MVPD, der Autorisierung einer Ressource für einen Benutzer und der Abmeldung eines Benutzers.
+Der in der Dokumentation zur Adobe Pass-Authentifizierung verwendete Begriff bezieht sich auf den gesamten Prozess der Registrierung eines Geräts/Benutzers bei der Adobe Pass-Authentifizierung, der Authentifizierung eines Benutzers bei einer MVPD, der Autorisierung einer Ressource für einen Benutzer und der Abmeldung eines Benutzers.
 
 
 ## GUID {#guid}
@@ -60,15 +60,15 @@ Siehe [Benutzer-ID](#user-id).
 
 ## IdP {#idp}
 
-Identifizieren Sie den Provider; Synonym mit MVPD im Kontext der Rolle eines MVPD in einer Adobe Pass-Authentifizierungsintegration. (Die Kunden müssen ihre Identifizierung über die Anmeldeseite ihres Pay TV-Anbieters überprüfen.)
+Identifizieren Sie den -Anbieter, der in einer Adobe Pass-Authentifizierungsintegration als Synonym für MVPD im Kontext der Rolle eines MVPDs fungiert. (Kunden müssen ihre Identität über die Anmeldeseite ihres Pay-TV-Anbieters überprüfen.)
 
-## Media Token Verifier {#media-token-verifier}
+## Medien-Token-Verifizierer {#media-token-verifier}
 
-Eine von Adobe bereitgestellte Bibliothek, die von Programmierern verwendet wird, um das von der Adobe Pass-Authentifizierung nach erfolgreichem Abschluss eines Berechtigungsflusses generierte kurzlebige Medien-Token zu überprüfen.
+Eine von Adobe bereitgestellte Bibliothek, die von Programmierern verwendet wird, um das kurzlebige Medien-Token zu überprüfen, das von der Adobe Pass-Authentifizierung nach erfolgreichem Abschluss eines Berechtigungsflusses generiert wurde.
 
 ## MVPD {#mvpd}
 
-Multichannel Video Programming Distributor; Synonym für &quot;Pay TV Provider&quot;.
+Multi-Channel Video Programming Distributor; Synonym für „Pay TV Provider“.
 
 ## MVPD ID {#mvpd-id}
 
@@ -76,55 +76,55 @@ Siehe [Benutzer-ID](#user-id).
 
 ## Partner-ID {#partner-id}
 
-Eine Kennung, die von Adobe an MVPDs übergeben wird, die sie zur Identifizierung verwenden, in deren Namen die Adobe Pass-Authentifizierung eine Authentifizierung anfordert. Manchmal wird es zum Konfigurieren ihrer Benutzeroberflächen für bestimmte Programmierer verwendet, manchmal ist es für alle Programmierer gleich, es hängt von den Anforderungen des MVPD ab.
+Eine Kennung, die Adobe an MVPDs übergibt, die damit identifizieren, für wen die Adobe Pass-Authentifizierung eine Authentifizierung anfordert. Manchmal wird sie zum Konfigurieren der Benutzeroberflächen für bestimmte Programmierer verwendet, manchmal ist sie für alle Programmierer gleich und hängt von den Anforderungen der MVPD ab.
 
-## Pay TV Provider {#pay-tv-provider}
+## Pay-TV-Anbieter {#pay-tv-provider}
 
-Synonym mit [MVPD](#mvpd).
+Synonym für [MVPD](#mvpd).
 
 ## Programmierer {#programmer}
 
-Synonym mit &quot;Inhaltsanbieter&quot;, &quot;Konto&quot;, &quot;Kanal&quot;, &quot;Dienstleister&quot;, &quot;Marke&quot;usw.
+Synonym für „Content Provider“, „Account“, „Channel“, „Service Provider“, „Brand“ usw.
 
 ## Proxy-MVPD {#proxy-mvpd}
 
-Ein MVPD, der Identitätsdienste für andere MVPDs bereitstellt, die direkt mit der Adobe Pass-Authentifizierung integriert sind.
+Eine MVPD, die Identitätsdienste für andere MVPDs bereitstellt; direkt in die Adobe Pass-Authentifizierung integriert.
 
-## Proximiertes MVPD {#proxied-mvpd}
+## Proxy-MVPD {#proxied-mvpd}
 
-Ein MVPD, das keine direkte Integration mit dem Adobe SP hat, aber über einen Proxy-MVPD integriert ist.
+Eine MVPD, die keine direkte Integration mit dem Adobe-SP aufweist, aber über einen Proxy-MVPD integriert ist.
 
-## Anforderer-ID {#requestor-id}
+## Antragsteller-ID {#requestor-id}
 
-Identifiziert eindeutig einen [Programmierer](#programmer) (ein Konto, eine Marke, einen Kanal oder eine Eigenschaft) innerhalb der Adobe Pass-Authentifizierung. Diese ID wird während der Ersteinrichtung des Kontos zwischen dem Programmierer und der Adobe bestimmt. Im Internet ist die Anforderer-ID mit einer Reihe von auf der Whitelist befindlichen Domänen verknüpft. Aufrufe, die eine Kennung von einer externen Domäne verwenden, werden abgelehnt. Programmierer verwenden auch die Anforderer-ID für Analysen. Normalerweise gibt es nur eine Anforderer-ID pro Programmierer. Eine zusätzliche Funktion im Zusammenhang mit der Anforderer-ID besteht darin, dass der Programmierer Adobe ein öffentliches Zertifikat bereitstellen muss, da der setRequestor-API-Aufruf erwartet, dass verschlüsselte Daten gesendet werden, die zur Authentifizierung des Programmierers im Adobe Pass-Authentifizierungssystem verwendet werden.
+Identifiziert einen [Programmierer](#programmer) (ein Konto, eine Marke, einen Kanal oder eine Eigenschaft) innerhalb der Adobe Pass-Authentifizierung. Diese ID wird zwischen dem Programmierer und dem Adobe bei der Ersteinrichtung des Accounts festgelegt. Im Internet ist die Anforderer-ID mit einer Reihe von Domains auf der Whitelist verknüpft. Aufrufe, die eine ID von einer externen Domain verwenden, werden abgelehnt. Programmierer verwenden auch die Anforderer-ID für die Analyse. Pro Programmierer gibt es in der Regel nur eine Anforderer-ID. Eine zusätzliche Funktion im Zusammenhang mit der Anforderer-ID besteht darin, dass der Programmierer Adobe ein öffentliches Zertifikat bereitstellen muss, da der setRequestor-API-Aufruf das Senden verschlüsselter Daten erwartet, die zur Authentifizierung des Programmierers im Adobe Pass-Authentifizierungssystem verwendet werden.
 
 ## Ressourcen-ID {#resource-id}
 
-Eine Zeichenfolge oder mRSS-Ressource, die einen [Programmierer](#programmer) für MVPDs angibt. Es wird zwischen dem Programmierer und den MVPDs vereinbart. Die Adobe Pass-Authentifizierung übergibt die Ressourcen-ID über &quot;unberührt&quot;, daher muss sie für alle MVPDs gleich sein. Ein Programmierer kann mehrere Ressourcen-IDs verwenden, solange die MVPDs wissen, was jede ID darstellt.
+Eine String- oder mRSS-Ressource, die einen [Programmierer](#programmer) für MVPDs identifiziert. Es wird zwischen dem Programmierer und den MVPDs vereinbart; die Adobe Pass-Authentifizierung übergibt die Ressourcen-ID durch unberührt, sodass sie für alle MVPDs gleich sein muss. Ein Programmierer kann mehrere Ressourcen-IDs verwenden, solange die MVPDs wissen, was jede ID darstellt.
 
 ## SessionGUID {#sessionGUID}
 
 Siehe [Benutzer-ID](#user-id).
 
-## Kurzlebige Medien-Token {#short-lived-token}
+## Kurzlebiges Medien-Token {#short-lived-token}
 
-Dieses Token wird von der Adobe Pass-Authentifizierung nach erfolgreichem Abschluss des Berechtigungsprozesses für einen bestimmten Benutzer generiert. Das Token wird an den Programmierer übergeben, der den Verifikator für Adobe Pass-Authentifizierungstoken auf dem Token für kurzlebige Medien verwendet, um die Sicherheit des Berechtigungsprozesses zu überprüfen.
+Dieses Token wird von der Adobe Pass-Authentifizierung nach erfolgreichem Abschluss des Berechtigungsprozesses für einen bestimmten Benutzer generiert. Das Token wird an den Programmierer übergeben, der den Adobe Pass Authentication Token Verifier auf dem kurzlebigen Medien-Token verwendet, um die Sicherheit des Berechtigungsprozesses zu überprüfen.
 
-## Smart Device {#smart-device}
+## Intelligentes Gerät {#smart-device}
 
-Ein Begriff, der in der gesamten Adobe Pass-Authentifizierungsdokumentation verwendet wird, um auf Set-Top-Boxen, Spielekonsolen und Smart-TVs zu verweisen. Hierbei handelt es sich um Geräte mit Netzwerkfunktionen, die jedoch nicht in der Lage sind, Web-Seiten zu rendern.
+Ein Begriff, der in der Dokumentation zur Adobe Pass-Authentifizierung verwendet wird und sich auf Set-Top-Boxen, Spielekonsolen und Smart-TVs bezieht. Hierbei handelt es sich um Geräte mit Netzwerkfunktionen, die jedoch keine Web-Seiten rendern können.
 
 ## SP{#sp}
 
-Service Provider; dies bezieht sich normalerweise auf die *Rolle* von SP, die von der Adobe Pass-Authentifizierung im Auftrag eines Programmierers in einer Integration mit einem [MVPD](#mvpd) gespielt wird.
+Dienstleister; bezieht sich in der Regel auf die *Rolle* des SP, die von der Adobe Pass-Authentifizierung wahrgenommen wird und im Namen eines Programmierers in einer Integration mit einer [MVPD agiert](#mvpd).
 
-## Temporärer Pass {#temp-pass}
+## Temp Pass {#temp-pass}
 
-Eine Funktion, die es Programmierern ermöglicht, temporären freien Zugang zu bezahlten Inhalten bereitzustellen. Der Zugriff erfolgt pro Anforderer für einen vom Programmierer festgelegten Zeitraum.
+Eine Funktion, mit der Programmierer temporären kostenlosen Zugriff auf Pay-Inhalte bereitstellen können. Der Zugriff erfolgt pro Anfragendem für einen vom Programmierer festgelegten Zeitraum.
 
 ## TTL {#ttl}
 
-Time to Live. Dies ist die angegebene Zeitdauer, für die ein Token gültig ist.
+Zeit zu leben. Dies ist die angegebene Zeitspanne, für die ein Token gültig ist.
 
 ## TVE {#tve}
 
@@ -132,12 +132,12 @@ Time to Live. Dies ist die angegebene Zeitdauer, für die ein Token gültig ist.
 
 ## Benutzer-ID {#user-id}
 
-Identifiziert eindeutig den Benutzer der App eines Programmierers, stammt jedoch aus dem MVPD. In verschiedenen Formularen für verschiedene Anwendungsfälle verfügbar. Siehe [Grundlegendes zu Benutzer-IDs in der Programmierer-Übersicht](/help/authentication/kickstart/programmer-overview.md#user-ids).
+identifiziert den Benutzer einer Programmierer-App eindeutig, stammt jedoch vom MVPD. In verschiedenen Formularen für verschiedene Anwendungsfälle verfügbar. Siehe [Grundlegendes zu Benutzer-IDs in der Übersicht zu ](/help/authentication/kickstart/programmer-overview.md#user-ids).
 
 ## Zulassungsliste {#whitelist}
 
-Eine Liste der Domänen, die für die Kommunikation mit der Adobe Pass-Authentifizierung als rechtmäßig bezeichnet wurden.
+Eine Liste der Domains, die für die Kommunikation mit der Adobe Pass-Authentifizierung als legitim gekennzeichnet sind.
 
 ## XSTS-Token {#xsts-token}
 
-Ein von Microsoft ausgegebenes Sicherheits-Token für die Entwicklung von Xbox Console-Apps, das in der Integration von Xbox/Adobe Pass-Authentifizierung verwendet wird.
+Ein von Microsoft ausgestelltes Sicherheits-Token für die Entwicklung von Xbox Console-Apps, das in der Xbox/Adobe Pass-Authentifizierungsintegration verwendet wird.
