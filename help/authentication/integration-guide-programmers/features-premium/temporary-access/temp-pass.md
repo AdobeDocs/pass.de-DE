@@ -2,7 +2,7 @@
 title: Temporärer Durchlauf
 description: Temporärer Durchlauf
 exl-id: 1df14090-8e71-4e3e-82d8-f441d07c6f64
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '2243'
 ht-degree: 0%
@@ -26,7 +26,7 @@ Mit Temp Pass können Programmierer Benutzern, die über keine Kontoanmeldeinfor
 * Programmierer geben die Dauer (Time-to-Live, oder TTL) ihres temporären Passes an.
 * Temporärer Pass wird pro Anfordernder ausgeführt.  Beispielsweise könnte NBC einen 4-Stunden-Temp-Pass für den Anforderer „NBCOlympics“ einrichten.
 * Programmierer können alle einem bestimmten Anforderer gewährten Token zurücksetzen.  Die „temporäre MVPD&quot;, die zur Implementierung des temporären Passes verwendet wird, muss mit aktivierter „Authentifizierung pro Anforderer“ konfiguriert werden.
-* **Temp Pass-Zugriff wird einzelnen Benutzern auf bestimmten Geräten gewährt**. Nach Ablauf des Zugriffs auf „Temporär weiterleiten“ für einen Benutzer kann dieser Benutzer keinen temporären Zugriff auf dasselbe Gerät erhalten, bis das abgelaufene [Autorisierungstoken) dieses Benutzers ](/help/authentication/kickstart/glossary.md#authz-token) Adobe Pass-Authentifizierungsserver gelöscht wird.
+* **Temp Pass-Zugriff wird einzelnen Benutzern auf bestimmten Geräten gewährt**. Nach Ablauf des temporären Passzugriffs für einen Benutzer kann dieser Benutzer keinen temporären Zugriff auf dasselbe Gerät erhalten, bis das abgelaufene Autorisierungstoken dieses Benutzers vom Adobe Pass-Authentifizierungsserver gelöscht wird.
 
 
 >[!NOTE]

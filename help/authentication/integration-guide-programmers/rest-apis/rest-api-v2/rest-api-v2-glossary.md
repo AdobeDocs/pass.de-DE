@@ -2,9 +2,9 @@
 title: Glossar zur REST-API v2
 description: Glossar zur REST-API v2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '1964'
+source-wordcount: '1747'
 ht-degree: 0%
 
 ---
@@ -15,19 +15,19 @@ ht-degree: 0%
 >
 > Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-In diesem Dokument finden Sie Definitionen für Begriffe, die bei der Integration der REST-API V2-Dokumentation zur Adobe Pass-Authentifizierung verwendet werden, und diese werden in unserem alten [ (Glossar](/help/authentication/kickstart/glossary.md) überschrieben.
+Dieses Dokument enthält Definitionen für Begriffe, die bei der Integration der Adobe Pass Authentication REST API V2 verwendet werden.
+
+>[!MORELIKETHIS]
+>
+> * [Glossar zur dynamischen Client-Registrierung (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
 
 ## Glossarbegriffe {#glossary-terms}
 
 ### Ein {#a}
 
-#### Zugriffstoken {#access-token}
-
-Das Zugriffs-Token ist ein Token, das von der Adobe Pass-Authentifizierung als Ergebnis des [Dynamic Client Registration (DCR)-](#dcr) generiert wird, um den Zugriff auf geschützte APIs sicherzustellen.
-
 #### Authentifizierung {#authentication}
 
-Die Authentifizierung ist ein Prozess, der es einem Benutzer ermöglicht, seine Identität einem [Programmierer](#programmer) nachzuweisen, um Zugriff auf geschützte Inhalte ([Ressource](#resource)) zu erhalten, nachdem das Benutzerabonnement mit der [MVPD validiert ](#mvpd).
+Die Authentifizierung ist ein Prozess, der es einem Benutzer ermöglicht, seine Identität gegenüber einem [Programmierer](#programmer) nachzuweisen, um Zugriff auf geschützte Inhalte ([Ressource](#resource)) zu erhalten, nachdem das Benutzerabonnement mit der [MVPD validiert ](#mvpd).
 
 #### Authentifizierungs-Code {#code}
 
@@ -49,27 +49,11 @@ Die Autorisierung ist ein Prozess, der es einem Benutzer ermöglicht, auf gesch�
 
 ### C {#c}
 
-#### Client-Anmeldedaten {#client-credentials}
-
-Die Client-Anmeldeinformationen sind ein Satz eindeutiger Werte, die während des [Dynamischen Client-Registrierungsprozesses (DCR)](#dcr) generiert werden und zum Abrufen eines [Zugriffstokens“ verwendet ](#access-token).
-
 #### Konfiguration {#configuration}
 
 Bei der Konfiguration handelt es sich um ein Adobe Pass-Authentifizierungskonzept, das Informationen zu den [Programmierer](#programmer)- und [MVPD](#mvpd)-Integrationseinstellungen speichert und während des [Authentifizierungs](#authentication)-Prozesses verwendet werden kann, wenn Benutzende gebeten werden, ihren [TV-Anbieter](#tv-provider) aus einer Liste aktiver Integrationen auszuwählen.
 
-#### Benutzerdefiniertes Schema {#custom-scheme}
-
-Das benutzerdefinierte Schema ist ein eindeutiger Wert, der auf eine [Programmierer](#programmer)-Anwendung verweist, die über das Adobe Pass-[TVE-Dashboard](#tve-dashboard) generiert und heruntergeladen werden kann und als endgültige Umleitung in Anwendungen dienen soll, die auf iOS-Geräten ausgeführt werden.
-
 ### D {#d}
-
-#### DCR {#dcr}
-
-Die dynamische Client-Registrierung (DCR) ist ein Autorisierungsmechanismus, der durch [RFC 7591](https://datatracker.ietf.org/doc/html/rfc7591) definiert wird und auf dem OAuth 2.0-Autorisierungs-Framework basiert, das durch [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749) beschrieben wird.
-
-Der DCR wird an einen [Programmierer](#programmer) als Adobe Pass-Authentifizierungs-Service bereitgestellt, der den Zugriff auf geschützte APIs weiter ermöglichen kann.
-
-Weitere Informationen finden Sie in der Dokumentation [Übersicht über die Dynamic Client-Registrierung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 #### Entscheidung {#decision}
 
@@ -80,6 +64,10 @@ Bei der Entscheidung handelt es sich um ein Adobe Pass-Authentifizierungskonzept
 Bei der Beeinträchtigung handelt es sich um eine Adobe Pass-Authentifizierungsfunktion, mit der Benutzende auch dann auf geschützte Inhalte zugreifen können, wenn bei ihrer [MVPD](#mvpd) eine Service-Unterbrechung auftritt.
 
 Weitere Informationen finden Sie in der Dokumentation [Übersicht über die ](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-api-overview.md)-API“.
+
+#### Geräte-ID {#device-id}
+
+Die Geräte-ID ist eine eindeutige Kennung, die an das Gerät des Benutzers gebunden ist und von der Anwendung [Programmierer](#programmer) in allen Phasen des Flusses [Berechtigung](#entitlement) bereitgestellt werden muss.
 
 ### E {#e}
 
@@ -97,7 +85,7 @@ Weitere Informationen finden Sie in der Dokumentation [Erweiterte ](/help/authen
 
 #### HBA {#hba}
 
-Bei der Home Based Authentication (HBA) handelt es sich um den Prozess, bei dem einem Verbraucher automatisch Zugriff auf [TV Everywhere (TVE)-](#tve) auf ausgewählten Geräten gewährt wird, die mit seinem Heimnetzwerk verbunden sind, das Teil des Speicherorts im Abonnementvertrag ist.
+Bei der Home-Based Authentication (HBA) handelt es sich um den Prozess, bei dem einem Verbraucher automatisch Zugriff auf [TV Everywhere (TVE)-](#tve) auf ausgewählten Geräten gewährt wird, die mit seinem Heimnetzwerk verbunden sind, das Teil des Speicherorts im Abonnementvertrag ist.
 
 ### Ich {#i}
 
@@ -141,7 +129,7 @@ Synonym für [TV Provider](#tv-provider) und [Identity Provider](#identity-provi
 
 #### Teilhaber {#partner}
 
-Der Partner ist ein Unternehmen, das einem [Programmierer“ einen Service oder ein Framework ](#programmer), um ein Single Sign-on-Benutzererlebnis zu ermöglichen.
+Der Partner ist ein Unternehmen, das einem Programmierer einen Service oder ein Framework [, ](#programmer) ein Single Sign-on-Benutzererlebnis zu ermöglichen.
 
 Der Partner wird durch einen eindeutigen Wert (z. B. „apple„) identifiziert, der während des Onboarding-Prozesses zwischen dem Partner und der Adobe definiert wird.
 
@@ -165,7 +153,7 @@ Die primäre Anwendung bezieht sich auf eine [Programmierer](#programmer)-Anwend
 
 Bei dem Profil handelt es sich um ein Adobe Pass-Authentifizierungskonzept, das Informationen über das Start- und Enddatum der Authentifizierung des Benutzers, die [Metadaten des Benutzers](#user-metadata) sowie andere Felder speichert, die die Authentifizierungsmethode angeben (z. B. „normal“, „degradiert“, „temporär“, „Single Sign-on“ usw.).
 
-Synonym für den früheren Begriff „Authentifizierungstoken“.
+Synonym für den früheren Begriff „verwendetes Authentifizierungstoken“.
 
 #### Programmierer {#programmer}
 
@@ -189,10 +177,6 @@ Weitere Informationen finden Sie in der Dokumentation [Single Sign-on using Plat
 
 ### R {#r}
 
-#### Registrierte Anwendung {#registered-application}
-
-Die registrierte Anwendung ist ein Adobe Pass-Authentifizierungskonzept, das Informationen über die [Programmierer](#programmer)-Anwendung speichert, die zum Fortfahren mit dem [Dynamic Client Registration (DCR)-](#dcr) erforderlich sind.
-
 #### Ressource {#resource}
 
 Die Ressource ist ein geschützter Inhalt, auf den eine Benutzerin oder ein Benutzer über einen [-](#programmer)-Katalog zugreifen möchte.
@@ -215,7 +199,7 @@ Die sekundäre Anwendung kann auf demselben Gerät wie die primäre Anwendung od
 
 #### Service-Token {#service-token}
 
-Das Service-Token ist eine eindeutige Benutzerkennung, die von einem Service oder einem Framework (einer Bibliothek) generiert wird, der/die an den Benutzer gebunden ist, und dem [Programmierer](#programmer) bereitgestellt wird, um ein Single Sign-on-Benutzererlebnis zu ermöglichen.
+Das Service-Token ist eine eindeutige Benutzerkennung, die von einem Service oder einer Framework (Bibliothek) generiert wird, der/die an den Benutzer gebunden ist, und dem [Programmierer) bereitgestellt wird](#programmer) um ein Single Sign-on-Benutzererlebnis zu ermöglichen.
 
 Weitere Informationen finden Sie in der Dokumentation [Single Sign-on using Service Token Flows](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
 
@@ -225,11 +209,7 @@ Der Dienstleister ist ein Kanal (eine Marke), der/die einem [Programmierer) ](#p
 
 Der Dienstleister wird durch einen eindeutigen Wert identifiziert, der während des Onboarding-Prozesses zwischen dem Programmierer und dem Adobe definiert wird.
 
-Synonym für den zuvor verwendeten Begriff [Antragsteller-ID](/help/authentication/kickstart/glossary.md#requestor-id).
-
-#### Software-Anweisung {#software-statement}
-
-Die Software-Anweisung ist ein JSON Web Token (JWT), das vom Adobe Pass [TVE Dashboard](#tve-dashboard) heruntergeladen werden kann und als Teil des Prozesses [Dynamische Client-Registrierung (DCR)](#dcr) verwendet werden soll.
+Synonym für den früheren Begriff „Antragsteller-ID“.
 
 #### LANGWEILIG {#slo}
 
@@ -261,7 +241,7 @@ Weitere Informationen finden Sie in der Dokumentation [Promotion Temp Pass](/hel
 
 Die Time-to-Live (TTL) ist ein Wert, der die Zeitdauer angibt, für die eine zugrunde liegende Entität gültig ist.
 
-Die TTL kann für ein [Zugriffstoken](#access-token), ein [Profil](#profile), eine Autorisierung [Entscheidung](#decision) oder ein [Medien-Token](#media-token).
+Die TTL kann für ein [Zugriffstoken](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md#access-token), ein [Profil](#profile), eine Autorisierung [Entscheidung](#decision) oder ein [Medien-Token](#media-token).
 
 #### TVE {#tve}
 
@@ -269,7 +249,7 @@ Der TV Everywhere (TVE) ist eine Nische in der Branche, in der Verbraucher auf i
 
 #### TVE-Dashboard {#tve-dashboard}
 
-Das TV Everywhere-Dashboard (TVE) ist ein Adobe Pass-Authentifizierungs-Tool, das [Programmierern“ zur ](#programmer) von Konfiguration und Daten bereitgestellt wird.
+Das TV Everywhere-Dashboard (TVE) ist ein Adobe Pass-Authentifizierungstool, das [Programmierern“ zur ](#programmer) von Konfiguration und Daten bereitgestellt wird.
 
 Weitere Informationen finden Sie in der Dokumentation [TVE Dashboard User Guide](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md).
 
@@ -285,7 +265,11 @@ Synonym für [MVPD](#mvpd) und [Identitätsanbieter](#identity-provider).
 
 #### Benutzeragent {#user-agent}
 
-Der Benutzeragent verweist auf einen Browser oder eine ähnliche Komponente (plattformspezifisch), die im Web navigieren und die Anmeldeseite [MVPD](#mvpd) rendern kann.
+Der Benutzeragent verweist auf einen Browser oder eine ähnliche Komponente (plattformspezifisch), die im Web navigieren und die Anmeldeseite von [MVPD](#mvpd) rendern kann.
+
+#### Benutzer-ID {#user-id}
+
+Die Benutzer-ID ist eine eindeutige Kennung, die an den Benutzer gebunden ist und aus dem Authentifizierungsprozess [MVPD](#mvpd) stammt.
 
 #### Benutzermetadaten {#user-metadata}
 

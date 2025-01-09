@@ -2,7 +2,7 @@
 title: Programmierer
 description: Erfahren Sie mehr über Programmierer und ihre Konfigurationen im TVE-Dashboard.
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1139'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Nutzung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Der **Programmierer** Abschnitt des TVE-Dashboards ermöglicht Ihnen die Anzeige und Verwaltung der Einstellungen für die [Programmierer](/help/authentication/kickstart/glossary.md#programmer), die mit Ihren Kontoberechtigungen verknüpft sind. Sie können auch [einen neuen Programmierer hinzufügen](#add-new-programmer) je nach Ihren Anforderungen.
+Der **Programmierer** Abschnitt des TVE-Dashboards ermöglicht Ihnen die Anzeige und Verwaltung der Einstellungen für die [Programmierer](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#programmer), die mit Ihren Kontoberechtigungen verknüpft sind. Sie können auch [einen neuen Programmierer hinzufügen](#add-new-programmer) je nach Ihren Anforderungen.
 
 Auf **Registerkarte** Programmierer“ im linken Bereich wird eine Liste vorhandener Programmierer mit den folgenden Details angezeigt:
 

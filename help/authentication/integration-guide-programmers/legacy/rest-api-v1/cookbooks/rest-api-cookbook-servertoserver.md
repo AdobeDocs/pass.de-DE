@@ -2,9 +2,9 @@
 title: REST-API-Cookbook (Server-zu-Server)
 description: REST-API-Cookbook-Server zu Server.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '1867'
+source-wordcount: '1856'
 ht-degree: 0%
 
 ---
@@ -42,10 +42,6 @@ In einer funktionierenden Server-zu-Server-Lösung sind die folgenden Komponente
 | Adobe-Infrastruktur | Adobe Pass-Service | Ein Service, der mit dem MVPD IDp- und AuthZ-Service integriert ist und Authentifizierungs- und Autorisierungsentscheidungen bereitstellt. |
 | MVPD-Infrastruktur | MVPD IDp | Ein MVPD-Endpunkt, der einen auf Berechtigungen basierenden Authentifizierungsdienst zur Überprüfung der Benutzeridentität bereitstellt. |
 | | MVPD AuthZ-Service | Ein MVPD-Endpunkt, der Autorisierungsentscheidungen basierend auf Benutzerabonnements, Kindersicherung usw. bereitstellt. |
-
-
-Zusätzliche im Fluss verwendete Begriffe werden im
-[Glossar](/help/authentication/kickstart/glossary.md).
 
 ## Flows {#flows}
 
@@ -197,10 +193,3 @@ Der Programmierdienst sollte Daten und Formate senden, die von einzelnen MVPDs o
 Der Programmierdienst muss beim Caching authN- und authZ-TTLs berücksichtigen und die authN- oder authZ-Sitzung bei einer Benachrichtigung ungültig machen.
 
 Der Programmierer muss Zertifikate verwalten, die mit Adobe geteilt werden.
-
-<!--
-## Related Information {#related}
-
-* [REST API Reference](/help/authentication/rest-api-reference.md)
-* [Glossary of Terms](/help/authentication/adobe-pass-glossary.md)
--->

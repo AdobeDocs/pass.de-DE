@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass-Authentifizierung
 user-guide-description: Die Adobe Pass-Authentifizierung ist eine Berechtigungslösung für TV Everywhere. Sie bietet ein modulares Framework, mit dem festgestellt werden kann, ob eine Person, die Zugriff auf eine Ressource anfordert, dazu berechtigt ist.
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '1260'
+source-wordcount: '1267'
 ht-degree: 2%
 
 ---
@@ -51,11 +51,12 @@ ht-degree: 2%
    + [Anleitung für Programmierer](kickstart/programmer-kickstart-guide.md)
    + [Schnellstartanleitung für MVPD](kickstart/mvpd-kickstart-guide.md)
    + [Eskalationsverfahren](kickstart/escalation-procedures.md)
-   + [Glossar](kickstart/glossary.md)
 + Integrationshandbuch für Programmierer {#integration-guide-programmers}
    + REST-APIs {#rest-apis}
       + REST API DCR-{#rest-api-dcr}
          + [Übersicht über die dynamische Client-Registrierung](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+         + [Glossar zur dynamischen Client-Registrierung](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
+         + [Häufig gestellte Fragen zur dynamischen Client-Registrierung](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)
          + API-{#rest-api-dcr-apis}
             + [Abrufen von Client-Anmeldeinformationen](integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
             + [Zugriffstoken abrufen](integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)

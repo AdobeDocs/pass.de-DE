@@ -2,7 +2,7 @@
 title: REST API V2-Cookbook (Server-zu-Server)
 description: REST API V2-Cookbook (Server-zu-Server)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1578'
 ht-degree: 0%
@@ -35,7 +35,7 @@ In einer funktionierenden Server-zu-Server-Lösung sind die folgenden Komponente
 | MVPD-Infrastruktur | MVPD IDp | Ein MVPD-Endpunkt, der einen auf Berechtigungen basierenden Authentifizierungsdienst zur Überprüfung der Benutzeridentität bereitstellt. |
 |                           | MVPD AuthZ-Service | Ein MVPD-Endpunkt, der Autorisierungsentscheidungen basierend auf Benutzerabonnements, Kindersicherung usw. bereitstellt. |
 
-Zusätzliche im Fluss verwendete Begriffe werden im [Glossar](/help/authentication/kickstart/glossary.md) definiert.
+Zusätzliche im Fluss verwendete Begriffe werden im [Glossar](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md) definiert.
 
 Das folgende Diagramm veranschaulicht den gesamten Fluss:
 

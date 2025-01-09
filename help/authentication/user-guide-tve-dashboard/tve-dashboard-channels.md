@@ -2,7 +2,7 @@
 title: Kanäle
 description: Erfahren Sie mehr über Kanäle und ihre verschiedenen Konfigurationen im TVE-Dashboard.
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1556'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Auf **Registerkarte** Kanäle“ im linken Bereich wird eine Liste verknüpfter 
 
 * **Anzeigename**: Der Markenname des Kanals, der für kommerzielle Zwecke verwendet wird.
 * **Kanal-ID**: Eine eindeutige Kennung, auch als Anforderer-ID bezeichnet.
-* **Integrationen**: Die Anzahl der Verbindungen, die mit (MVPDs[ hergestellt ](/help/authentication/kickstart/glossary.md#mvpd).
+* **Integrationen**: Die Anzahl der Verbindungen, die mit (MVPDs[ hergestellt ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#mvpd).
 
 ![Liste der vorhandenen Kanäle](../assets/tve-dashboard/new-tve-dashboard/channels/channels-list-view.png)
 
