@@ -2,9 +2,9 @@
 title: Abrufen der Liste der vorab autorisierten Ressourcen durch die Web-App im zweiten Bildschirm
 description: Abrufen der Liste der vorab autorisierten Ressourcen durch die Web-App im zweiten Bildschirm
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 1c357b918fa4f6d4b92a9055de018c55ee5861e0
 workflow-type: tm+mt
-source-wordcount: '277'
+source-wordcount: '275'
 ht-degree: 0%
 
 ---
@@ -46,15 +46,15 @@ Es gibt zwei Sätze von APIs: einen Satz für die Streaming-App oder den Program
 
 | Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/preauthorize/{registration code} | AuthN-Modul | 1. Registrierungs-Code </br>    (Pfadkomponente)</br>2.  Antragsteller (obligatorisch)</br>3.  Ressourcenliste (obligatorisch) | GET | XML oder JSON mit einzelnen Entscheidungen vor der Autorisierung oder Fehlerdetails. Siehe Beispiele unten. | 200 - </br></br>400 - Fehlerhafte Anfrage</br></br>401 - Nicht autorisiert</br></br>405 - Methode nicht zulässig </br></br>412 - Voraussetzung fehlgeschlagen</br></br>500 - Interner Server-Fehler |
+| &lt;SP_FQDN>/api/v1/preauthorize/{registration code} | AuthN-Modul | 1. Registrierungs-Code </br>    (Pfadkomponente)</br>2.  Antragsteller (obligatorisch)</br>3.  Ressource (obligatorisch) | GET | XML oder JSON mit einzelnen Entscheidungen vor der Autorisierung oder Fehlerdetails. Siehe Beispiele unten. | 200 - </br></br>400 - Fehlerhafte Anfrage</br></br>401 - Nicht autorisiert</br></br>405 - Methode nicht zulässig </br></br>412 - Voraussetzung fehlgeschlagen</br></br>500 - Interner Server-Fehler |
 
 
 
 | Eingabeparameter | Beschreibung |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Registrierungs-Code | Der Wert des Registrierungs-Codes, der vom Benutzer zu Beginn des Authentifizierungsflusses angegeben wurde. |
 | Antragsteller | Die RequestorId des Programmierers, für den dieser Vorgang gültig ist. |
-| Ressourcenliste | Eine Zeichenfolge, die eine kommagetrennte Liste von resourceIds enthält, die den Inhalt identifiziert, auf den ein Benutzer zugreifen kann und der von MVPD-Autorisierungsendpunkten erkannt wird. |
+| Ressource | Eine Zeichenfolge, die eine kommagetrennte Liste von resourceIds enthält, die den Inhalt identifiziert, auf den ein Benutzer zugreifen kann und der von MVPD-Autorisierungsendpunkten erkannt wird. |
 
 
 ### Beispielantwort {#sample-response}
