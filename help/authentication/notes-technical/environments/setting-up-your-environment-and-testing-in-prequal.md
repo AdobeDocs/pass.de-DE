@@ -2,9 +2,9 @@
 title: Einrichten der Umgebung und Testen in Pre-Qual
 description: Einrichten der Umgebung und Testen in Pre-Qual
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: ca95bc45027410becf8987154c7c9f8bb8c2d5f8
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '478'
 ht-degree: 0%
 
 ---
@@ -41,6 +41,16 @@ In den Schritten 1 und 2 wird die Test Umgebung auf einer der Prüfmaschinen ein
 
 ```Choose any IP from **addresses** section (e.g. `52.13.71.11)```
 
+```cmd
+C:\>nslookup entitlement-prequal.auth.adobe.com 
+...
+Addresses:  52.26.79.43
+            54.190.212.171
+```
+
+```Choose any IP from **addresses** section (e.g. `54.190.212.171)```
+
+
 * **Unter Linux/Mac**
 
 ```sh
@@ -53,6 +63,17 @@ In den Schritten 1 und 2 wird die Test Umgebung auf einer der Prüfmaschinen ein
 ```
 
 ```Choose any IP from **A records (**e.g `52.13.71.11)```
+
+```sh
+    $ dig entitlement-prequal.auth.adobe.com
+    
+    ;; ANSWER SECTION:
+    ...
+    ............ 60 IN A      52.26.79.43
+    ............ 60 IN A      54.190.212.171
+```
+
+```Choose any IP from **A records (**e.g `54.190.212.171)```
 
 >[!NOTE]
 >
@@ -68,14 +89,15 @@ In den Schritten 1 und 2 wird die Test Umgebung auf einer der Prüfmaschinen ein
 * Bearbeiten die *Datei c:\\windows\\System32\\drivers\\etc\\hosts* (unter Windows) bzw *. /etc/hosts* (unter Macintosh/Linux/Android) und fügen Sie Folgendes hinzu:
 
 * Spoof-Produktion Profil
-   * 52.13.71.11 entitlement.auth.adobe.com sp.auth.adobe.com api.auth.adobe.com
+   * 52.13.71.11 sp.auth.adobe.com api.auth.adobe.com
+   * 54.190.212.171 entitlement.auth.adobe.com
 
 **Spoofing auf Android:** Zum Spoofing auf Android müssen Sie einen Android-Emulator verwenden.
 
 * Sobald das Spoofing eingerichtet ist, können Sie einfach die regulären URLs für die Produktions- und Staging-Profile verwenden: (d. h. `http://sp.auth-staging.adobe.com` und `http://entitlement.auth-staging.adobe.com`, und Sie werden tatsächlich die *Präqualifikationsumgebung/-produktion* des neuen Builds erreichen.
 
 
-## SCHRITT 3.  Stellen Sie sicher, dass Sie auf die richtige Umgebung verweisen {#Verify-you-are-pointing-to-the-right-environment}
+## SCHRITT 3.  Vergewissern Sie sich, dass Sie auf die richtige Umgebung zeigen {#Verify-you-are-pointing-to-the-right-environment}
 
 **Dies ist ein einfacher Schritt:**
 
@@ -86,13 +108,13 @@ In den Schritten 1 und 2 wird die Test Umgebung auf einer der Prüfmaschinen ein
 
 * Für diesen Schritt sind die Website-Adresse des Programmierers und einige gültige MVPD-Anmeldeinformationen erforderlich (eine User, dass es authentifiziert und autorisiert ist).
 
-## SCHRITT 5.  Szenariotests auf den Websites des Programmierers durchführen {#perform-scenario-testing-using-programmer-website}
+## SCHRITT 5.  Durchführen von Szenario-Tests mithilfe der Websites des Programmierers {#perform-scenario-testing-using-programmer-website}
 
-* Nachdem Sie die Einrichtung des Umgebung abgeschlossen und sichergestellt haben, dass der Ablauf für die grundlegende Authentifizierung Autorisierung funktioniert, können Sie mit dem Testen komplexerer Szenarien fortfahren.
+* Nachdem Sie die Einrichtung der Umgebung abgeschlossen und sichergestellt haben, dass der grundlegende Authentifizierungs-Autorisierungsfluss funktioniert, können Sie mit dem Testen komplexerer Szenarien fortfahren.
 
 
 ## SCHRITT 6.  Durchführen von Tests mithilfe der API-Test-Site {#perform-testing-using-api-testing-site}
 
 * Wenn Sie sich eingehender mit dem Testen der Adobe Pass-Authentifizierung befassen möchten, empfehlen wir die Verwendung der [API-Test-Site](http://entitlement-prequal.auth.adobe.com/apitest/api.html).
 
-Weitere Informationen zur API-Test-Site finden Sie unter [Testen von Authentifizierungs- und Autorisierungsflüssen mithilfe der Adobe-API-Test-Site](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md).
+Weitere Informationen zur API-Test-Site finden Sie auf [der Test Authentication- und Autorisierungs-Flows mithilfe der API Test-Site](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md) von Adobe Systems.
