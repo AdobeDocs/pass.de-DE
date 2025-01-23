@@ -2,9 +2,9 @@
 title: Testen von Authentifizierungs- und Autorisierungsflüssen mithilfe der Test-Site der Adobe-API
 description: Testen von Authentifizierungs- und Autorisierungsflüssen mithilfe der Test-Site der Adobe-API
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
-source-git-commit: 811feba1f2476bdfacb20e332e33df7f7ae8ac00
+source-git-commit: 65475d6da7a1b25cb2d8ebd6229a7cb360c7ab4a
 workflow-type: tm+mt
-source-wordcount: '380'
+source-wordcount: '368'
 ht-degree: 0%
 
 ---
@@ -33,8 +33,8 @@ Führen Sie nach Abschluss von Teil I die folgenden Schritte aus:
 
 1. Webseite öffnen: [Staging-API-Test](https://sp.auth-staging.adobe.com/apitest/api.html).
 1. Load Access Enabler von:
-   * Auswahl aus dem Dropdown-Menü, welche Version von AccessEnabler benötigt wird (v3 oder v4), von wo aus Sie darauf zugreifen möchten (Staging oder Produktion) und ob es sich im Debugging-Modus befinden soll
-   * Software-Anweisung eingeben, mit der getestet werden soll, ob V4 verwendet wird
+   * Auswahl aus dem Dropdown-Menü, über das Sie darauf zugreifen möchten (Staging oder Produktion) und ob es sich im Debugging-Modus befinden soll
+   * Software-Anweisung eingeben, mit der getestet werden soll
    * Klicken Sie dann auf die Schaltfläche **Load Access Enabler**.
 1. Setzen Sie nun den Wert der Anforderer-ID auf &quot;**RequestorID** und klicken Sie auf die Schaltfläche „setRequestor“.
 1. Klicken Sie anschließend auf die Schaltfläche „getAuthentication“ und warten Sie, bis die Anzeigeauswahl angezeigt wird.
