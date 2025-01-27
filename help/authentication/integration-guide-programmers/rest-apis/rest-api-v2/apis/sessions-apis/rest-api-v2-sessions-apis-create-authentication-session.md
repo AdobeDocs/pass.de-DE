@@ -2,9 +2,9 @@
 title: Authentifizierungssitzung erstellen
 description: REST API V2 - Authentifizierungssitzung erstellen
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
 workflow-type: tm+mt
-source-wordcount: '954'
+source-wordcount: '1000'
 ht-degree: 0%
 
 ---
@@ -266,6 +266,23 @@ ht-degree: 0%
                <td><i>required</i></td>
             </tr>
             <tr>
+               <td style="background-color: #DEEBFF;">reasonType</td>
+               <td>
+                  Der Typ des verwendeten Grundes, der den „actionName“ erklärt.
+                  <br/><br/>
+                  Die möglichen Werte sind:
+                  <ul>
+                    <li><b>Keine</b></li>
+                    <li><b>Authentifiziert</b></li>
+                    <li><b>Temporär</b></li>
+                    <li><b>degradiert</b></li>
+                    <li><b>Authentifiziertes SSO</b></li>
+                    <li><b>pfs_fallback</b></li>
+                    <li><b>configuration_fallback</b></li>
+                  </ul>
+               <td><i>required</i></td>
+            </tr>
+            <tr>
                <td style="background-color: #DEEBFF;">missingParameters</td>
                <td>Die fehlenden Parameter, die angegeben werden müssen, um den einfachen Authentifizierungsfluss abzuschließen.</td>
                <td>fakultativ</td>
@@ -295,7 +312,17 @@ ht-degree: 0%
                <td>Die interne eindeutige Kennung, die dem Dienstleister während des Onboarding-Prozesses zugeordnet ist.</td>
                <td><i>required</i></td>
             </tr>
-         </table>
+            <tr>
+               <td style="background-color: #DEEBFF;">notBefore</td>
+               <td>Der Zeitstempel, vor dem der Authentifizierungs-Code nicht gültig ist.</td>
+               <td>fakultativ</td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">notAfter</td>
+               <td>Der Zeitstempel, nach dem der Authentifizierungs-Code ungültig ist.</td>
+               <td>fakultativ</td>
+            </tr>
+</table>
       </td>
       <td><i>required</i></td>
 </table>
@@ -363,11 +390,14 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authenticate",
     "actionType": "interactive",
+    "reasonType": "none",
     "url": "/api/v2/authenticate/REF30/8ER640M",
     "code": "8ER640M",
     "sessionId": "1b614390-6610-4d14-9421-6565f6e75958",
     "mvpd": "Cablevision",
-    "serviceProvider": "REF30"
+    "serviceProvider": "REF30",
+    "notBefore": "1733735289035",
+    "notAfter": "1733737089035"
 }
 ```
 
@@ -402,11 +432,14 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "resume",
     "actionType": "direct",
+    "reasonType": "none",
     "url": "/api/v2/REF30/sessions/8ER640M",
     "missingParameters": ["mvpd", "domain", "redirectUrl"],
     "code": "8ER640M",
     "sessionId": "1b614390-6610-4d14-9421-6565f6e75958",
-    "serviceProvider": "REF30"
+    "serviceProvider": "REF30",
+    "notBefore": "1733735289035",
+    "notAfter": "1733737089035"
 }
 ```
 
@@ -443,6 +476,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authorize",
     "actionType": "direct",
+    "reasonType": "authenticated",
     "url": "/api/v2/REF30/decisions/authorize/Cablevision",
     "sessionId": "1b614390-6610-4d14-9421-6565f6e75958",
     "mvpd": "Cablevision",
@@ -481,6 +515,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authorize",
     "actionType": "direct",
+    "reasonType": "temporary",
     "url": "/api/v2/REF30/decisions/authorize/TempPass_TEST40",
     "sessionId": "1b614390-6610-4d14-9421-6565f6e75958",
     "mvpd": "TempPass_TEST40",
@@ -521,6 +556,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authorize",
     "actionType": "direct",
+    "reasonType": "degraded",
     "url": "/api/v2/REF30/decisions/authorize/Cablevision",
     "sessionId": "1b614390-6610-4d14-9421-6565f6e75958",
     "mvpd": "Cablevision",
