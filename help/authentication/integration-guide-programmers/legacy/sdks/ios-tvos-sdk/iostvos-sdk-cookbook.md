@@ -2,7 +2,7 @@
 title: iOS/tvOS-Cookbook
 description: iOS/tvOS-Cookbook
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
 source-wordcount: '2425'
 ht-degree: 0%
@@ -229,7 +229,7 @@ authentifiziert.
 1. Rufen Sie [getAuthorization()](#$getAuthZ) auf, um den Autorisierungsfluss zu initiieren.
 
    * **Dependency:** mit den MVPD(s) vereinbarte ResourceID(s).
-   * Die Ressourcen-IDs müssen mit den IDs übereinstimmen, die auf anderen Geräten oder Plattformen verwendet werden, und sie müssen für alle MVPDs identisch sein. Informationen zu Ressourcen-IDs finden Sie unter [Identifizieren geschützter Ressourcen](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md)
+   * Die Ressourcen-IDs müssen mit den IDs übereinstimmen, die auf anderen Geräten oder Plattformen verwendet werden, und sie müssen für alle MVPDs identisch sein. Informationen zu Ressourcen-IDs finden Sie unter [Identifizieren geschützter Ressourcen](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers)
 
 1. Authentifizierung und Autorisierung überprüfen.
 

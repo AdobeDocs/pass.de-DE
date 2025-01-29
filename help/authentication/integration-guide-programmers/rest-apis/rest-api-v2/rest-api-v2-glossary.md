@@ -2,9 +2,9 @@
 title: Glossar zur REST-API v2
 description: Glossar zur REST-API v2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '1747'
+source-wordcount: '1744'
 ht-degree: 0%
 
 ---
@@ -115,7 +115,7 @@ Synonym für den früheren Begriff verwendet Short Authorization Token.
 
 Der Media Token Verifier ist eine von der Adobe Pass-Authentifizierung verteilte Bibliothek, die für die Überprüfung der Authentizität eines [Medien-Tokens“ ](#media-token) ist.
 
-Weitere Informationen finden Sie in der Dokumentation [Integrieren des Media Token Verifier](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md).
+Weitere Informationen finden Sie in der Dokumentation [Media Token Verifier](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier) .
 
 #### MVPD {#mvpd}
 
@@ -183,7 +183,7 @@ Die Ressource ist ein geschützter Inhalt, auf den eine Benutzerin oder ein Benu
 
 Die Ressource wird durch einen eindeutigen Wert identifiziert, der zwischen dem Programmierer und den MVPDs vereinbart wird.
 
-Weitere Informationen finden Sie in der Dokumentation [Identifizieren geschützter Ressourcen](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md) .
+Weitere Informationen finden Sie in der Dokumentation [Geschützte Ressourcen](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers) .
 
 ### S {#s}
 
@@ -275,7 +275,7 @@ Die Benutzer-ID ist eine eindeutige Kennung, die an den Benutzer gebunden ist un
 
 Die Benutzermetadaten beziehen sich auf benutzerspezifische Attribute (z. B. Postleitzahlen, elterliche Bewertungen, Benutzer-IDs usw.), die von der [MVPD](#mvpd) verwaltet und von der Adobe Pass-Authentifizierung als Teil eines [Profils](#profile) bereitgestellt werden.
 
-Weitere Informationen finden Sie in der Dokumentation [Benutzermetadaten](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md) .
+Weitere Informationen finden Sie in der Dokumentation [Benutzermetadaten](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) .
 
 ### v {#v}
 

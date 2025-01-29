@@ -2,7 +2,7 @@
 title: Der Fluss der Programmierberechtigungen
 description: Der Fluss der Programmierberechtigungen
 exl-id: b1c8623a-55da-4b7b-9827-73a9fe90ebac
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
 source-wordcount: '1823'
 ht-degree: 0%
@@ -115,7 +115,7 @@ Ein AuthN-Token wird als gültig betrachtet, wenn die folgenden beiden Punkte zu
 
 ### Autorisierungsfluss {#authorization}
 
-Autorisierung ist eine Voraussetzung für die Anzeige geschützter Inhalte. Bei erfolgreicher Autorisierung wird ein AuthZ-Token zusammen mit einem kurzlebigen Medien-Token generiert, das der App des Programmierers zu Sicherheitszwecken bereitgestellt wird. Beachten Sie, dass Sie zur Unterstützung des Autorisierungs-Workflows zuvor die erforderliche Einrichtung des Anforderers durchgeführt und den [Media Token Verifier“ integriert ](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md) müssen. Sobald diese abgeschlossen sind, können Sie die Autorisierung starten.
+Autorisierung ist eine Voraussetzung für die Anzeige geschützter Inhalte. Bei erfolgreicher Autorisierung wird ein AuthZ-Token zusammen mit einem kurzlebigen Medien-Token generiert, das der App des Programmierers zu Sicherheitszwecken bereitgestellt wird. Beachten Sie, dass Sie zur Unterstützung des Autorisierungs-Workflows zuvor die erforderliche Einrichtung des Anforderers durchgeführt und den [Media Token Verifier“ integriert ](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier) müssen. Sobald diese abgeschlossen sind, können Sie die Autorisierung starten.
 
 Ihre App initiiert die Autorisierung, wenn ein Benutzer Zugriff auf eine geschützte Ressource anfordert. Sie übergeben eine Ressourcen-ID, die die angeforderte Ressource angibt (z. B. einen Kanal, eine Folge usw.). Ihre App sucht zunächst nach einem gespeicherten Authentifizierungstoken. Wenn keine gefunden wird, starten Sie den Authentifizierungsprozess.
 

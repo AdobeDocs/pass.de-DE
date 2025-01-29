@@ -2,9 +2,9 @@
 title: Häufig gestellte Fragen zur REST API V2
 description: Häufig gestellte Fragen zur REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '6668'
+source-wordcount: '6664'
 ht-degree: 0%
 
 ---
@@ -126,7 +126,7 @@ Weitere Informationen finden Sie in den folgenden Dokumenten:
 
 #### 3. Wie kann die Client-Anwendung die Metadateninformationen des Benutzers abrufen? {#authentication-phase-faq3}
 
-Die Client-Anwendung kann einen der folgenden Endpunkte abfragen, die [Benutzermetadaten](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md) als Teil der Profilinformationen zurückgeben können:
+Die Client-Anwendung kann einen der folgenden Endpunkte abfragen, die [Benutzermetadaten](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) als Teil der Profilinformationen zurückgeben können:
 
 * [Profil-Endpunkt-API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
 * [Profile-Endpunkt für bestimmte MVPD-APIs](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
@@ -245,7 +245,7 @@ Die eindeutige Kennung der Ressource kann zwei Formate aufweisen:
 * Ein einfaches Zeichenfolgenformat wie eine eindeutige Kennung für einen Kanal (eine Marke).
 * Ein RSS-Format für Medien (MRSS), das zusätzliche Informationen wie Titel, Bewertungen und Metadaten zur elterlichen Kontrolle enthält.
 
-Weitere Informationen finden Sie in der Dokumentation [Identifizieren geschützter Ressourcen](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md) .
+Weitere Informationen finden Sie in der Dokumentation [Geschützte Ressourcen](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers) .
 
 #### 6. Für wie viele Ressourcen kann die Client-Anwendung gleichzeitig eine Vorabautorisierungsentscheidung erhalten? {#preauthorization-phase-faq6}
 
@@ -294,7 +294,7 @@ Das Medien-Token ist ein Begriff, der in der Dokumentation [Glossar](/help/authe
 
 Das Medien-Token besteht aus einer signierten Zeichenfolge, die als Klartext gesendet wird und vom Entscheidungsautorisierungs-Endpunkt abgerufen werden kann.
 
-Weitere Informationen finden Sie in der Dokumentation [Integrieren des Media Token Verifier](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md).
+Weitere Informationen finden Sie in der Dokumentation [Media Token Verifier](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier) .
 
 Das Medien-Token ist für einen begrenzten und kurzen Zeitraum gültig, der zum Zeitpunkt der Ausgabe angegeben ist. Es gibt die Zeitdauer an, die von der Client-Anwendung verwendet werden muss, bevor der Entscheidungs-Autorisierungs-Endpunkt erneut abgefragt werden muss.
 
@@ -316,7 +316,7 @@ Die eindeutige Kennung der Ressource kann zwei Formate aufweisen:
 * Ein einfaches Zeichenfolgenformat wie eine eindeutige Kennung für einen Kanal (eine Marke).
 * Ein RSS-Format für Medien (MRSS), das zusätzliche Informationen wie Titel, Bewertungen und Metadaten zur elterlichen Kontrolle enthält.
 
-Weitere Informationen finden Sie in der Dokumentation [Identifizieren geschützter Ressourcen](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md) .
+Weitere Informationen finden Sie in der Dokumentation [Geschützte Ressourcen](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers) .
 
 #### 6. Für wie viele Ressourcen kann die Client-Anwendung gleichzeitig eine Autorisierungsentscheidung erhalten? {#authorization-phase-faq6}
 
