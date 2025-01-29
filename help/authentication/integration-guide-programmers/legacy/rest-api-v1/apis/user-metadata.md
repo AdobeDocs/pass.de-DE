@@ -2,7 +2,7 @@
 title: Benutzermetadaten
 description: Benutzermetadaten
 exl-id: 3d7b6429-972f-4ccb-80fd-a99870a02f65
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '518'
 ht-degree: 0%
@@ -48,7 +48,7 @@ Rufen Sie Metadaten ab, die MVPD über den authentifizierten Benutzer freigegebe
 
 
 | Eingabeparameter | Beschreibung |
-|------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Antragsteller | Die RequestorId des Programmierers, für den dieser Vorgang gültig ist. |
 | deviceId | Die Geräte-ID-Bytes. |
 | device_info/<p>x-device-info | Informationen zu Streaming-Geräten.</br></br> **Hinweis:** Dies kann als URL-Parameter an device_info übergeben werden, sollte jedoch aufgrund der potenziellen Größe dieses Parameters und der Längenbeschränkungen für eine GET-URL als X-Device-Info im HTTP-Header übergeben werden. </br></br> Details finden Sie unter [Übergeben von Geräte- und Verbindungsinformationen](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
@@ -94,6 +94,6 @@ Im Stammverzeichnis des -Objekts befinden sich drei Knoten:
 
 Im Falle eines Fehlers gibt der Server ein XML- oder JSON-Objekt zurück, das eine detaillierte Fehlermeldung angibt.
 
-Weitere Informationen finden Sie unter [Benutzermetadaten](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md).
+Weitere Informationen finden Sie unter [Benutzermetadaten](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md).
 
 [Zurück zur REST-API-Referenz](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)

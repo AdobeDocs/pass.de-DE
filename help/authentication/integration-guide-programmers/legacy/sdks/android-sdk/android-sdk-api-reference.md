@@ -2,7 +2,7 @@
 title: Android SDK API-Referenz
 description: Android SDK API-Referenz
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '4560'
 ht-degree: 0%
@@ -614,7 +614,7 @@ Programmierern stehen zwei Arten von Metadaten zur Verfügung:
 
 **Ausgelöste Callbacks:** [`setMetadataStatus()`](#setMetadaStatus)
 
-**Weitere Informationen:** [Benutzermetadaten](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)
+**Weitere Informationen:** [Benutzermetadaten](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)
 
 [Zurück zur Android-API…](#api)
 
@@ -676,7 +676,7 @@ Dieser Wert ist null, wenn die Anfrage für einfache Metadaten (Authentifizierun
 
 **Ausgelöst von:** [`getMetadata()`](#getMetadata)
 
-**Weitere Informationen:** [Benutzermetadaten](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)
+**Weitere Informationen:** [Benutzermetadaten](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)
 
 
 [Zurück zur Android-API…](#api)

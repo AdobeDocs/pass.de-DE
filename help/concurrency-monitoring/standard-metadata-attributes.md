@@ -2,7 +2,7 @@
 title: Standard-Metadatenattribute
 description: Standard-Metadatenattribute
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '1053'
 ht-degree: 0%
@@ -21,10 +21,10 @@ Auf dieser Seite erhalten Sie eine umfassende Liste von Metadatenattributen, die
 Die Parallelitätsüberwachungs-API zwingt Clients, im Rahmen eines gültigen Initialisierungsaufrufs die folgenden Werte zu senden: [Sitzungsinitiierungsaufrufe](/help/concurrency-monitoring/restrict-concurr-usage-mult-apps.md#api-calls-descr).
 
 | Feldname | Beispielwert | Verwendungsbereiche | Erhalten von |
-|-------------|---------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------|
+|---------------|-----------------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | applicationId | 75b4-431b-adb2-eb6b9e546013 | Autorisierungs-Header | Zendesk-Ticket bei der Integration |
 | mvpdName | sample_MVPD | URI-Pfad | Adobe Pass-Authentifizierung über den config-Endpunkt, wenn der Benutzer die MVPD auswählt |
-| accountId | 12345 | URI-Pfad | Adobe Pass-Authentifizierung upstreamUserID-Metadaten nach Benutzeranmeldung [UserMetadata upstreamUserID - Adobe Pass-Authentifizierung](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md) |
+| accountId | 12345 | URI-Pfad | Adobe Pass-Authentifizierung upstreamUserID-Metadaten nach Benutzeranmeldung [UserMetadata upstreamUserID - Adobe Pass-Authentifizierung](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) |
 
 
 ## Metadatenattribute {#metadata-attr}
