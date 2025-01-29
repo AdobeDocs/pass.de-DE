@@ -2,7 +2,7 @@
 title: Tracking Prevention Assessment Apple Safari
 description: Tracking Prevention Assessment Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '1849'
 ht-degree: 0%
@@ -133,7 +133,7 @@ Zu diesem Zeitpunkt entsprechen diese Safari-Anforderungen/-Aufforderungen nicht
 
 **Temp Pass**
 
-Um die Individualisierungsprobleme abzumildern und eine Benutzerinteraktion zu ermöglichen, empfehlen wir, **[Werbe-Temporärpass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)** interaktiv zu verwenden und mindestens eine zusätzliche Information über den Benutzer bereitzustellen (z. B. E-Mail-Adresse).
+Um die Individualisierungsprobleme abzumildern und eine Benutzerinteraktion zu ermöglichen, empfehlen wir, **[Werbe-Temporärpass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)** interaktiv zu verwenden und mindestens eine zusätzliche Information über den Benutzer bereitzustellen (z. B. E-Mail-Adresse).
 
 ## Safari 13 {#safari13}
 

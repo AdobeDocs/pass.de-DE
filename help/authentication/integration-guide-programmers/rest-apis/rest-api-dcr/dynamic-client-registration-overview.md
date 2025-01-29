@@ -2,7 +2,7 @@
 title: Übersicht über die dynamische Client-Registrierung
 description: Übersicht über die dynamische Client-Registrierung
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '813'
 ht-degree: 0%
@@ -20,7 +20,7 @@ Die dynamische Client-Registrierung stellt einen Autorisierungsmechanismus dar, 
 Adobe Pass bietet einen dynamischen Client-Registrierungs-Service, der den Zugriff auf die folgenden geschützten APIs ermöglicht:
 
 * Adobe Pass Authentication Management-APIs:
-   * [Temporäre Pass-API zurücksetzen](../../features-premium/temporary-access/reset-temp-pass.md)
+   * [Temporäre Pass-API zurücksetzen](../../features-premium/temporary-access/temp-pass-feature.md)
    * [Abbauungs-API](../../features-premium/degraded-access/degradation-api-overview.md)
    * [Proxy MVPD API](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
    * [Berechtigungs-Service-Überwachungs-API](../../features-premium/esm/entitlement-service-monitoring-api.md)

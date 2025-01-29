@@ -2,7 +2,7 @@
 title: Autorisierung starten
 description: Autorisierung starten
 exl-id: 2f8a5499-e94f-40dd-9fb0-aac8e080de66
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '446'
 ht-degree: 0%
@@ -51,7 +51,7 @@ Erhält die Autorisierungsantwort.
 
 
 | Eingabeparameter | Beschreibung |
-| --- | --- |
+| --- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Antragsteller | Die RequestorId des Programmierers, für den dieser Vorgang gültig ist. |
 | deviceId | Die Geräte-ID-Bytes. |
 | Ressource | Eine Zeichenfolge, die eine resourceId (oder ein MRSS-Fragment) enthält, den von einem Benutzer angeforderten Inhalt identifiziert und von MVPD-Autorisierungsendpunkten erkannt wird. |
@@ -59,7 +59,7 @@ Erhält die Autorisierungsantwort.
 | _deviceType_ | Der Gerätetyp (z. B. Roku, PC).</br></br>Wenn dieser Parameter richtig festgelegt ist, bietet ESM Metriken an, die [nach Gerätetyp aufgeschlüsselt) ](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) Verwendung von Clientless sind, sodass verschiedene Arten der Analyse für z. B. Roku, AppleTV, Xbox usw. durchgeführt werden können.</br></br>Siehe [Vorteile des Client-losen Gerätetyp-Parameters in Kennzahlen ](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Hinweis**: Der Parameter wird durch „device_info“ ersetzt. |
 | _deviceUser_ | Die Geräte-Benutzerkennung. |
 | _appId_ | Die Anwendungs-ID/-name. </br></br>**Hinweis**: device_info ersetzt diesen Parameter. |
-| Zusätzliche Parameter | Der Aufruf kann auch optionale Parameter enthalten, die andere Funktionen ermöglichen, z. B.: </br></br>* generic_data - Aktiviert die Verwendung von [Werbe-TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)</br></br>Beispiel: `generic_data=("email":"email@domain.com")` |
+| Zusätzliche Parameter | Der Aufruf kann auch optionale Parameter enthalten, die andere Funktionen ermöglichen, z. B.: </br></br>* generic_data - Aktiviert die Verwendung von [Werbe-TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)</br></br>Beispiel: `generic_data=("email":"email@domain.com")` |
 
 {style="table-layout:auto"}
 

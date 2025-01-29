@@ -2,7 +2,7 @@
 title: Temporäre Zugriffsflüsse
 description: REST API v2 - Temporäre Zugriffsflüsse
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '3215'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 Mit TempPass können Programmierer temporären Zugriff auf ihre geschützten Inhalte gewähren, ohne die Benutzer zur Authentifizierung mit einem gültigen MVPD-Konto aufzufordern.
 
-Weitere Informationen zur TempPass-Funktion finden Sie in der Dokumentation [TempPass](../../../../features-premium/temporary-access/temp-pass.md).
+Weitere Informationen zur TempPass-Funktion finden Sie in der Dokumentation [TempPass](../../../../features-premium/temporary-access/temp-pass-feature.md).
 
 Temporäre Zugriffsflüsse ermöglichen die Abfrage für die folgenden Szenarien:
 

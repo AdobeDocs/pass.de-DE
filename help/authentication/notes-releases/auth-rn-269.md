@@ -2,9 +2,9 @@
 title: Versionshinweise zur Adobe Pass-Authentifizierung 2.69
 description: Versionshinweise zur Adobe Pass-Authentifizierung 2.69
 exl-id: d031c4c5-dbd5-4a77-b298-a53b992cc4c5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
-source-wordcount: '215'
+source-wordcount: '214'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Veröffentlichungsdatum: **02/27/2024 - 02/29/2024**
 
 * Behobene Sicherheitslücken.
 * Verbesserungen beim Zurücksetzen der Sicherheitsebene „Temp Pass“ mit der dynamischen Client-Registrierung (DCR).
-   * Weitere Informationen finden Sie hier: [Temporären Pass zurücksetzen](../integration-guide-programmers/features-premium/temporary-access/reset-temp-pass.md)
+   * Weitere Informationen finden Sie hier: [TempPass-Funktion](../integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
 * Verbesserungen beim Reporting zur Plattformidentifizierung.
 
 #### REST-APIs {#rest-apis}
