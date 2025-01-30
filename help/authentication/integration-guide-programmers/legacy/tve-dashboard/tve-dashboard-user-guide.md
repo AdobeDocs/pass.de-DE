@@ -2,9 +2,9 @@
 title: Benutzerhandbuch für Primetime TVE Dashboard
 description: Benutzerhandbuch für Primetime TVE Dashboard
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '5526'
+source-wordcount: '5524'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,6 @@ Bevor Sie sich mit diesem Benutzerhandbuch vertraut machen, empfehlen wir Ihnen,
 
 * [Technisches Papier zu TVE](/help/authentication/kickstart/technical-paper.md)
 * [Anleitung für Programmierer](/help/authentication/kickstart/programmer-kickstart-guide.md)
-* [Berechtigungsfluss](/help/authentication/integration-guide-programmers/entitlement-flow.md)
 
 Wenn Sie mit den nächsten Abschnitten dieses Benutzerhandbuchs fortfahren, erfahren Sie, wie Sie verschiedene Einstellungen für die Kanäle, Programmierer oder die Integrationen zwischen Kanälen und MVPDs (Multichannel Video Program Distributors) Ihres Unternehmens verwalten können.
 

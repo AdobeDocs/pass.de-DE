@@ -2,9 +2,9 @@
 title: TVE Dashboard - Übersicht
 description: Erfahren Sie mehr über das TVE-Dashboard und die Ressourcen.
 exl-id: 91baeb34-a32a-4dc3-94d8-f6cfca59dc4e
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '303'
+source-wordcount: '305'
 ht-degree: 0%
 
 ---
@@ -52,6 +52,6 @@ Adobe schlägt vor, die folgenden Ressourcen zu verwenden, um die Abläufe und F
 
 * [Technisches Papier zu TVE](/help/authentication/kickstart/technical-paper.md)
 * [Anleitung für Programmierer](/help/authentication/kickstart/programmer-kickstart-guide.md)
-* [Berechtigungsfluss](/help/authentication/integration-guide-programmers/entitlement-flow.md)
+* [Handbuch zur Programmiererintegration - Übersicht](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)
 * [Glossar zur dynamischen Client-Registrierung (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
 * [Glossar zur REST-API v2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)

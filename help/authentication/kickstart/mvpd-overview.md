@@ -2,9 +2,9 @@
 title: Übersicht für MVPDs
 description: Übersicht für MVPDs
 exl-id: b918550b-96a8-4e80-af28-0a2f63a02396
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '2734'
+source-wordcount: '2727'
 ht-degree: 0%
 
 ---
@@ -166,7 +166,7 @@ Das folgende Diagramm zeigt den gesamten Prozess der Bestätigung von Berechtigu
 
 Die folgenden Schritte zeigen ein Beispiel für den Adobe Pass-Authentifizierungsfluss.  Dies ist der Teil des Berechtigungsprozesses, in dem ein Programmierer bestimmt, ob der Benutzer ein gültiger Kunde einer MVPD ist.  In diesem Szenario ist der Benutzer ein gültiger Abonnent einer MVPD.  Der/die Benutzende versucht, geschützte Inhalte mithilfe einer Flash-Anwendung eines Programmierers anzuzeigen:
 
-1. Der/die Benutzende navigiert zur Programmierer-Webseite, auf der die Flash-Anwendung des/die Programmierers und die Adobe Pass Authentication Access Enabler-Komponenten auf den Computer des/der Benutzenden geladen werden. Die Flash-Anwendung verwendet Access Enabler, um die Identität des Programmierers mit der Adobe Pass-Authentifizierung festzulegen, und die Adobe Pass-Authentifizierung stellt dem Access Enabler die Konfigurations- und Statusdaten für diesen Programmierer (den „Anforderer„) zur Verfügung. Der Access Enabler muss diese Daten vom Server erhalten, bevor andere API-Aufrufe durchgeführt werden können.  Technischer Hinweis: Der Programmierer legt seine Identität mit der `setRequestor()`-Methode des Access Enablers fest. Weitere Informationen finden Sie im [Programmierer-Integrationshandbuch](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md).
+1. Der/die Benutzende navigiert zur Programmierer-Webseite, auf der die Flash-Anwendung des/die Programmierers und die Adobe Pass Authentication Access Enabler-Komponenten auf den Computer des/der Benutzenden geladen werden. Die Flash-Anwendung verwendet Access Enabler, um die Identität des Programmierers mit der Adobe Pass-Authentifizierung festzulegen, und die Adobe Pass-Authentifizierung stellt dem Access Enabler die Konfigurations- und Statusdaten für diesen Programmierer (den „Anforderer„) zur Verfügung. Der Access Enabler muss diese Daten vom Server erhalten, bevor andere API-Aufrufe durchgeführt werden können.  Technische Anmerkung: Der Programmierer legt seine Identität mit der `setRequestor()` Methode des Access Enabler fest.
 1. Wenn der Benutzer versucht, die geschützten Inhalte des Programmierers anzuzeigen, stellt das Programm des Programmierers dem Benutzer eine Liste von MVPDs zur Verfügung, aus denen der Benutzer einen Anbieter auswählt.
 1. Der Benutzer wird an einen Adobe Pass-Authentifizierungsserver umgeleitet, auf dem eine verschlüsselte SAML-Anfrage für den vom Benutzer ausgewählten MVPD erstellt wird. Diese Anfrage wird als Authentifizierungsanfrage im Namen des Programmierers an MVPD gesendet. Abhängig vom MVPD-System wird der Browser des Benutzers entweder zur MVPD-Site weitergeleitet, um sich anzumelden, oder es wird ein Anmelde-iFrame in der App des Programmierers erstellt.
 1. In beiden Fällen (Redirect oder iFrame) akzeptiert die MVPD die Anfrage und zeigt ihre Anmeldeseite an.

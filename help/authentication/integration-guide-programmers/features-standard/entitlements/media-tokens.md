@@ -2,9 +2,9 @@
 title: Medien-Token
 description: Medien-Token
 exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '653'
+source-wordcount: '667'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,9 @@ ht-degree: 0%
 >
 > Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Das Medien-Token ist ein Token, das von der Adobe Pass-Authentifizierung [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) als Ergebnis einer Autorisierungsentscheidung generiert wird, die darauf abzielt, Anzeigezugriff auf geschützte Inhalte (Ressourcen) zu gewähren. Das Medien-Token ist für einen begrenzten und kurzen Zeitraum (einige Minuten) gültig, der zum Zeitpunkt der Ausgabe angegeben ist. Es gibt die Zeit an, die es von der Client-Anwendung überprüft und verwendet werden muss.
+Das Medien-Token ist ein Token, das von der Adobe Pass-Authentifizierung [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) als Ergebnis einer Autorisierungsentscheidung generiert wird, die darauf abzielt, Anzeigezugriff auf geschützte Inhalte (Ressourcen) zu gewähren.
+
+Das Medien-Token ist für einen begrenzten und kurzen Zeitraum (standardmäßig 7 Minuten) gültig, der zum Zeitpunkt der Ausgabe angegeben ist. Dadurch wird der Zeitraum angegeben, bevor es von der Client-Anwendung überprüft und verwendet werden muss. Das Medien-Token ist auf die einmalige Verwendung beschränkt und darf nie zwischengespeichert werden.
 
 Das Medien-Token besteht aus einer signierten Zeichenfolge, die auf der als Klartext gesendeten Public Key Infrastructure (PKI) basiert. Mit dem PKI-basierten Schutz wird das Token mit einem asymmetrischen Schlüssel signiert, der von einer Zertifizierungsstelle (Certification Authority, CA) zum Adobe ausgestellt wird.
 
@@ -25,7 +27,7 @@ Der Media Token Verifier ist eine von der Adobe Pass-Authentifizierung verteilte
 
 ## Medien-Token-Verifizierer {#media-token-verifier}
 
-Die Adobe Pass-Authentifizierung empfiehlt, dass Programmierer das Medien-Token an einen Backend-Service senden, der die Media Token Verifier-Bibliothek integriert, um einen sicheren Zugriff sicherzustellen, bevor der Video-Stream gestartet wird. Die Time-to-Live (TTL) des Medien-Tokens wurde entwickelt, um potenzielle Probleme mit der Uhrensynchronisierung zwischen dem Token-generierenden Server und dem validierenden Server zu berücksichtigen.
+Bei der Adobe Pass-Authentifizierung wird empfohlen, dass Programmierer das Medien-Token an ihren eigenen Backend-Service senden, der die Media Token Verifier-Bibliothek integriert, um einen sicheren Zugriff sicherzustellen, bevor der Video-Stream gestartet wird. Die Time-to-Live (TTL) des Medien-Tokens wurde entwickelt, um potenzielle Probleme mit der Uhrensynchronisierung zwischen dem Token-generierenden Server und dem validierenden Server zu berücksichtigen.
 
 Die Adobe Pass-Authentifizierung rät dringend davon ab, das Medien-Token zu analysieren und seine Daten direkt zu extrahieren, da das Token-Format nicht garantiert ist und sich in Zukunft ändern kann. Die Media Token Verifier-Bibliothek sollte das einzige Tool sein, das zum Analysieren des Token-Inhalts verwendet wird.
 

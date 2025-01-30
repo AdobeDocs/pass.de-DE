@@ -2,9 +2,9 @@
 title: Anleitung für Programmierer
 description: Anleitung für Programmierer
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '972'
+source-wordcount: '969'
 ht-degree: 0%
 
 ---
@@ -51,7 +51,6 @@ Adobe bietet:
 
 * Bereitstellungshandbuch: **`https://tve.zendesk.com/entries/498741-tve-deployment-guide`**
 * Zugriff auf unser Zendesk-Kundensupportsystem. Hier finden Sie auch Beispiele, Informationen und Video-Tutorials zu einigen der Prozesse. Um auf dieses Dokument auf Zendesk und andere dort veröffentlichte Dokumente zugreifen zu können, müssen Sie sich bei `https://tve.zendesk.com/home` registrieren und ein Konto erstellen. Die Anzahl der Benutzer, die Sie registrieren können, ist unbegrenzt.  Sie können Kommentare zu jedem abgelegten Ticket anzeigen und freigeben. Alle Support-Fragen sollten an `tve-support@adobe.com` gerichtet werden.
-* [Integrationshandbuch für Programmierer](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)
 * Media Token Verifier-Bibliothek: `https://tve.zendesk.com/entries/471323-media-token-validator-library`.
 
 ## Einrichtung der Testumgebung {#test-env-setup}
