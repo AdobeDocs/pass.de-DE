@@ -2,95 +2,89 @@
 title: Anleitung für Programmierer
 description: Anleitung für Programmierer
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: 37858fa83aecbdf443a4a6058c78e4f9246eee42
 workflow-type: tm+mt
-source-wordcount: '969'
+source-wordcount: '758'
 ht-degree: 0%
 
 ---
 
 # Anleitung für Programmierer {#programmer-kickstart-guide}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-## Einführung {#prog-kickstart-guide-intro}
+Dieses Schnellstartanleitung richtet sich an Inhaltsanbieter (Programmierer), die beabsichtigen, die Adobe® Pass-Authentifizierung in ihre Websites oder Programme zu integrieren.
 
-Willkommen bei der Adobe Pass-Authentifizierung für TV Everywhere. Wir freuen uns auf die Zusammenarbeit mit Ihnen.
+In diesem Dokument werden die wichtigsten ersten Schritte für einen reibungslosen und effizienten Start des Integrationsprozesses beschrieben. Sie soll die Erwartungen verdeutlichen und Anleitungen dazu geben, wie wir mit Partnern zusammenarbeiten werden, um erfolgreiche Integrationen zu erreichen.
 
->[!NOTE]
+Adobe bietet eine Reihe von Ressourcen, mit denen Sie die Adobe Pass-Authentifizierung in Ihre Website oder Ihr Programm integrieren können. Bitte beachten Sie die **„You will provide“** und **&quot;Adobe will provide“** Erwähnungen aus jedem folgenden Abschnitt.
+
+## Einrichtungsprozess {#setup-process}
+
+Der Einrichtungsprozess umfasst unter anderem die folgenden Schritte:
+
+![Adobe® Authentifizierungs-Integrationsprozess erfolgreich](../assets/progr-flow-int-lifecycle.png)
+
+*Adobe® Authentifizierungs-Integrationsprozess erfolgreich*
+
+**Sie geben** in der Kickoff-Phase Folgendes an:
+
+* **Dienstleister (Anfordererkennung)**
+
+  Dies ist eine Zeichenfolge, die die Marke der Website oder der Anwendung, die Anfragen an die Adobe Pass-Authentifizierung sendet, eindeutig identifiziert. Die Zeichenkette selbst ist willkürlich, muss aber zwischen Adobe und dem Programmierer vereinbart werden
+
+* **Kanalinformationen**
+
+  Hierbei handelt es sich um einen Satz von Zeichenfolgen, mit denen die vom Dienstleister angeforderten Inhaltskanäle identifiziert werden. In vielen Fällen sind Kanal und Dienstleister identisch. Eine einzelne Kennung kann jedoch mehrere Inhaltskanäle darstellen. Diese Kanalnamenszeichenfolgen sollten an die entsprechenden Kabel-TV-Kanäle angepasst sein. Beachten Sie, dass einige MVPDs diesen Wert während des Authentifizierungs- und/oder Autorisierungsprozesses überprüfen können.
+
+* **Domain-Namen**
+
+  Diese Liste enthält die tatsächlichen Domain-Namen, die als Adobe für den Dienstleister aufgeführt sind. Dadurch wird sichergestellt, dass nur Ihre autorisierten Domains über Ihre Metadaten auf die Adobe Pass-Authentifizierung zugreifen können. Stellen Sie sicher, dass Sie Domain-Namen sowohl für Produktions- als auch für Staging-(Test-)Umgebungen bereitstellen und klar identifizieren, da diese unterschiedlich sein können.
+
+**Sie stellen Folgendes** MVPD bereit:
+
+* **Berechtigungssätze**
+
+  Hierbei handelt es sich um Anmeldeinformationen, die zur Authentifizierung und Autorisierung oder nur zur Authentifizierung des Benutzers bei der MVPD verwendet werden. Normalerweise bestehen diese Anmeldeinformationen aus einem Benutzernamen und einem Kennwort, die Ihnen von MVPD für beide Profile (Staging und Produktion) bereitgestellt werden.
+
+* **Ressourcenkennungen**
+
+  Dies sind eindeutige Kennungen für die Inhaltskanäle, Sendungen, Folgen oder Assets, die der Dienstleister schützen möchte. Diese Kennungen werden verwendet, um Autorisierungsentscheidungen anzufordern, und müssen mit der MVPD vereinbart werden.
+
+>[!IMPORTANT]
 >
->Dies ist das Kickstart-Handbuch für Programmierer (Inhaltsanbieter). Wenn Sie mit einem Multi-Channel-Videoprogrammierungs-Distributor (MVPD) arbeiten, lesen Sie bitte das [MVPD-Kickstart-Handbuch](/help/authentication/kickstart/mvpd-kickstart-guide.md).
-
-
-Adobe Pass-Authentifizierungskontakte:
-
-* Support - für alle Fragen, Vorfälle oder Funktionsanfragen, `tve-support@adobe.com`
-* Zum Zeitpunkt des Projektstarts wird Ihrem Projekt ein Kontakt zur Aktivierung zugewiesen.
-
-Die folgenden Informationen beschreiben einige wichtige erste Schritte, um einen soliden und effizienten Start zu ermöglichen. Ziel ist es, eine Erklärung und Erwartung darüber zu liefern, wie wir mit Partnern zusammenarbeiten werden, um Integrationen zu erreichen. Bitte beachten Sie für jeden Artikel die folgenden Abschnitte „Sie werden bereitstellen“ / &quot;Adobe wird bereitstellen“. Diese werden während der Bearbeitung des Projekts als Checkliste oder Leitfaden aufgeführt.
-
-In diesem Dokument wird davon ausgegangen, dass Programmierer angemeldet sind, um mit einem ausgewählten MVPD-Partner zu arbeiten.
-
-## Veröffentlichungszeitplan {#release-schedule}
-
-Der Entwicklungszyklus des Adobe-Sprints ist so geplant, dass Sie sehen können, wann unsere Versionen geplant sind und wie jede Version durch unser Entwicklungssystem beworben wird.
-
-Nach jedem Sprint ist er für QE verfügbar oder um neue Implementierungen auf unserem UAT-Server zu sehen.
-
-Etwa alle 6 Wochen wird eine Veröffentlichung auf dem Adobe-Vorbequalifizierungsserver vorgenommen. (Dies ist der Server, auf dem wir unsere vorgeschlagene nächste Version halten, während wir die endgültige QE durchführen.) Diese Builds enthalten alle seit dem letzten Abwurf in Sprints abgeschlossenen Arbeiten. Zurzeit steht den Partnern ein zweiwöchiges QE-Fenster zur Verfügung, in dem sie diese Version testen können.
-
-Wenn im vorausgegangenen zweiwöchigen Testfenster keine kritischen Probleme aufgetreten sind, wird die Version zur Live-Produktion weitergeleitet. Das bedeutet, dass die Integration in der Adobe-Veröffentlichungsumgebung verfügbar ist, die Partner jedoch selbst entscheiden, wann sie die Veröffentlichung durchführen.
-
-<!--For the latest release schedule information, see the Release Calendar.-->
-
-## Support-Dokumentation {#supp-doc}
-
-Adobe bietet:
-
-* Bereitstellungshandbuch: **`https://tve.zendesk.com/entries/498741-tve-deployment-guide`**
-* Zugriff auf unser Zendesk-Kundensupportsystem. Hier finden Sie auch Beispiele, Informationen und Video-Tutorials zu einigen der Prozesse. Um auf dieses Dokument auf Zendesk und andere dort veröffentlichte Dokumente zugreifen zu können, müssen Sie sich bei `https://tve.zendesk.com/home` registrieren und ein Konto erstellen. Die Anzahl der Benutzer, die Sie registrieren können, ist unbegrenzt.  Sie können Kommentare zu jedem abgelegten Ticket anzeigen und freigeben. Alle Support-Fragen sollten an `tve-support@adobe.com` gerichtet werden.
-* Media Token Verifier-Bibliothek: `https://tve.zendesk.com/entries/471323-media-token-validator-library`.
-
-## Einrichtung der Testumgebung {#test-env-setup}
-
-Adobe richtet Sie zunächst auf der Adobe-Test-Site ein, wo Adobe zu Testzwecken als MVPD fungiert. Ihr Team kann dann eine Test-Website einrichten, die die Adobe-API aufruft. Verwenden Sie den standardmäßigen MVPD-Selektor und wählen Sie als ID &quot;Adobe&quot; aus.
-
-Sie geben Folgendes an:
-
-1. Antragsteller-ID. Dies ist eine Zeichenfolge, die die Marke der Website oder der Anwendung, die Anfragen an die Adobe Pass-Authentifizierung sendet, eindeutig identifiziert. Die Zeichenkette selbst ist willkürlich, muss aber zwischen Adobe und dem Programmierer vereinbart werden
-1. Kanalinformationen. Dies ist ein Satz von Zeichenfolgen, der die Inhaltskanäle identifiziert, die von der Anforderer-ID angefordert werden. In vielen Fällen sind der Kanal und die Anforderer-ID identisch. Sie können jedoch über mehrere Inhaltskanäle verfügen, die von derselben ID angefordert werden können. Die Zeichenfolge des Kanalnamens sollte mit den Kabelfernsehkanälen übereinstimmen. Einige MVPDs überprüfen diesen Wert über das AuthN- und/oder AuthZ-Protokoll.
-1. Domain-Namen (für diese Anforderer-ID zulässig). Dies ist eine Liste der tatsächlichen Domain-Namen, die von Adobe aufgelistet werden, um die Anforderer-ID zu akzeptieren. Dadurch wird sichergestellt, dass nur Ihre genehmigten Domains mit Ihren Metadaten Zugriff auf die Adobe Pass-Authentifizierung haben. HINWEIS: Die für die Produktion gültigen Domain-Namen können für Tests/Staging unterschiedlich sein und sollten angegeben und identifiziert werden.
-
-Adobe richtet das Konto ein und Adobe stellt Folgendes bereit:
-
-* Anmelden und Kennwort für den Zugriff auf die Test-Site
-
-## Einrichten mit MVPD {#setup-mvpd}
-
-In diesem Abschnitt wird beschrieben, was Sie benötigen, wenn Sie von der Adobe-Test-Site zu einer MVPD migrieren.
-
-Sie geben Folgendes an (über MVPD):
-
-* **Zwei Sätze von Anmeldeinformationen**:
-   * AuthN + AuthZ : Anmelden/Kennwort eines Benutzers, der authentifiziert und autorisiert ist
-   * AuthN + Nicht-AuthZ : Anmelden/Kennwort eines Benutzers, der authentifiziert, aber nicht autorisiert ist
-* **Ressourcen-ID**. Dies ist eine spezifische Inhaltskennung, die mit einem MVPD über das AuthZ-Protokoll validiert wird. Dies kann auf Kanal-, Show-, Folge- oder Asset-Ebene erfolgen; es sollte mit Ihrem MVPD abgestimmt werden.
-
-Die Adobe Pass-Authentifizierung unterstützt ein MRSS-basiertes Metadatenschema, d. h. Ressourcen-IDs können bei Bedarf spezifisch sein und Kennungen enthalten, die für eine bestimmte MVPD eindeutig sein können.
-
-**NEW MVPD-Integration**: Beachten Sie, dass die von Ihnen gewählte MVPD bei jeder Integration eine wesentliche Rolle spielt. Adobe muss Code für jede MVPD gemäß ihren Spezifikationen schreiben. Solange diese Schritte nicht abgeschlossen sind, können Sie diese MVPD nicht aus dem Dialogfeld auswählen oder Ihre Produkttests abschließen. Adobe muss diese Arbeit im Voraus planen, damit sie zum nächsten verfügbaren Sprint passt. (Aktuelle Zeitplaninformationen finden Sie im Veröffentlichungskalender.)
-
-**Bestehende MVPD-Integrationen**: Wenn Ihre ausgewählte MVPD bereits mit Adobe eingerichtet ist, sollten die Konnektivitätsschritte viel einfacher (schneller) sein und häufig kann die Konnektivität durch Konfigurationsänderungen erreicht werden.
-
->[!NOTE]
+> Der Programmierer ist dafür verantwortlich, sich mit der MVPD abzustimmen, um alle notwendigen Geschäftsvereinbarungen abzuschließen. In der Zwischenzeit arbeitet die Adobe Pass-Authentifizierung mit der MVPD zusammen, um sicherzustellen, dass die technische Integration ordnungsgemäß eingerichtet ist:
 >
->Die MVPD muss weiterhin den Programmierer aktivieren und alle relevanten Geschäftsabschlüsse abzeichnen.
+> * **New MVPD**
+>
+>     Wenn der MVPD nicht mit Adobe integriert ist, muss benutzerdefinierter Code basierend auf den MVPD-spezifischen Anforderungen entwickelt werden. Bis zum Abschluss dieser Entwicklung ist die MVPD nicht verfügbar und die Produkttests mit dieser MVPD können nicht fortgesetzt werden.
+>
+> * **Vorhandene MVPD**
+>
+>     Wenn die MVPD bereits mit Adobe integriert ist, ist der Konnektivitätsprozess erheblich optimiert. In den meisten Fällen kann die Konnektivität schnell durch Konfigurationsanpassungen statt durch umfangreiche Entwicklungen hergestellt werden.
+>
+> Alle Integrationen erfordern gemeinsame Bemühungen zur Qualitätssicherung (QA), einschließlich Tests durch den MVPD, da der Endbenutzer letztendlich Kunde von MVPD ist. Die Koordination von Testzyklen hängt oft von der Ressourcenverfügbarkeit von MVPD ab, was zu potenziellen Verzögerungen führen kann.
 
-**QE mit MVPDs**: Alle Integrationen beinhalten gemeinsame QE, und da der Endanwender letztendlich ein Kunde der MVPD ist, haben viele Testzyklen festgelegt, bevor sie „live“ pushen. Da dies die Planung von MVPD-Ressourcen beinhaltet, ist dies ein potenzielles Verzugsgebiet.
+## Zugriff auf den Support {#access-customer-support}
 
-<!--
->[RELATEDINFORMATION]
->[MVPD Kickstart Guide](help\authentication\mvpd-kickstart-guide.md)
--->
+**Adobe bietet** Zugriff auf unser Kundensupportsystem über [Zendesk](https://tve.zendesk.com/home). Um auf Zendesk zugreifen zu können, müssen Sie sich registrieren und ein Konto unter https://tve.zendesk.com/home erstellen. Die Anzahl der Benutzer, die Sie registrieren können, ist unbegrenzt. Nach der Registrierung können Sie Kommentare zu jedem gesendeten Ticket anzeigen und freigeben.
+
+Das Adobe Pass-Authentifizierungsteam steht Ihnen bei allen Fragen oder technischen Problemen zur Verfügung, die während des Integrationsprozesses auftreten können. Bitte kontaktieren Sie uns unter [tve-support@adobe.com](mailto:tve-support@adobe.com).
+
+## Zugriff auf die Dokumentation {#access-documentation}
+
+**Adobe bietet** Zugriff auf unsere öffentliche Dokumentation über [Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home).
+
+Das Adobe Pass-Authentifizierungs-Team bietet eine umfassende Dokumentation zu den verfügbaren Funktionen und APIs im Abschnitt [Integrationshandbuch für Programmierer](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md). Links zu detaillierten Informationen zu den einzelnen Themen finden Sie im Inhaltsverzeichnis unter diesem Abschnitt .
+
+## Zugriff auf das Test-Tool {#access-testing-tool}
+
+**Adobe bietet** Zugriff auf unser API-Explorations-Tool über die [Adobe Developer](https://developer.adobe.com/adobe-pass/)-Website.
+
+## Zugriff auf das Konfigurationsverwaltungs-Tool {#access-configuration-management-tool}
+
+**Adobe bietet** Zugriff auf ein Self-Service-Tool zur Verwaltung Ihrer Konfiguration und Daten über das [Adobe Pass TVE Dashboard](https://experience.adobe.com/pass/authentication).
+
+Das Adobe Pass-Authentifizierungsteam bietet eine umfassende Dokumentation zur Verwendung des TVE-Dashboards im Abschnitt [Benutzerhandbuch für TVE-Dashboard](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md). Links zu detaillierten Informationen zu den einzelnen Themen finden Sie im Inhaltsverzeichnis unter diesem Abschnitt .
