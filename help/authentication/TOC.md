@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass-Authentifizierung
 user-guide-description: Die Adobe Pass-Authentifizierung ist eine Berechtigungslösung für TV Everywhere. Sie bietet ein modulares Framework, mit dem festgestellt werden kann, ob eine Person, die Zugriff auf eine Ressource anfordert, dazu berechtigt ist.
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
 workflow-type: tm+mt
-source-wordcount: '1231'
+source-wordcount: '1230'
 ht-degree: 2%
 
 ---
@@ -48,7 +48,6 @@ ht-degree: 2%
    + [Technisches Dokument](kickstart/technical-paper.md)
    + [Anleitung für Programmierer](kickstart/programmer-kickstart-guide.md)
    + [Schnellstartanleitung für MVPD](kickstart/mvpd-kickstart-guide.md)
-   + [Übersicht über MVPD](kickstart/mvpd-overview.md)
    + [Häufig gestellte Fragen zu Support-Verfahren](kickstart/support-procedures-faqs.md)
 + Integrationshandbuch für Programmierer {#integration-guide-programmers}
    + [Integrationshandbuch für Programmierer](integration-guide-programmers/programmer-integration-guide-overview.md)
@@ -260,7 +259,7 @@ ht-degree: 2%
             + [(Legacy) Überwachen der Adobe Pass Adobe PayTV-Pass](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
             + [(Veraltet) Testen von Authentifizierungs- und Autorisierungsflüssen mithilfe der Adobe-API-Test-Site](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
 + Integrationshandbuch für MVPDs {#integration-guide-mvpds}
-   + [Integrationsfunktionen](integration-guide-mvpds/mvpd-integr-features.md)
+   + [MVPD-Integrationshandbuch](integration-guide-mvpds/mvpd-integration-guide-overview.md)
    + [Authentifizierung](integration-guide-mvpds/authn-usecase.md)
    + [Authentifizierung mit dem OAuth 2.0-Protokoll](integration-guide-mvpds/authn-oauth2-protocol.md)
    + [Autorisierung](integration-guide-mvpds/authz-usecase.md)
