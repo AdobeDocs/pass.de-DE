@@ -2,7 +2,7 @@
 title: Heruntergestufte Zugriffsströme
 description: REST API v2 - Gestörter Zugriffsfluss
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
 source-wordcount: '1605'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 Durch die Beeinträchtigung werden bestimmte Authentifizierungs- und Autorisierungsendpunkte von MVPD vorübergehend umgangen. Normalerweise initiiert der Programmierer diese Aktion, aber unabhängig davon, wer ein Degradation-Ereignis Trigger, hängt die Aktion von vorherigen Vereinbarungen mit den betroffenen MVPDs ab.
 
-Weitere Informationen zur Degradation-Funktion finden Sie in der Dokumentation [Degradation](../../../../features-premium/degraded-access/degradation-api-overview.md).
+Weitere Informationen zur Degradation-Funktion finden Sie in der Dokumentation [Degradation](../../../../features-premium/degraded-access/degradation-feature.md).
 
 Aufgrund des eingeschränkten Zugriffs können Sie Abfragen für die folgenden Szenarien durchführen:
 

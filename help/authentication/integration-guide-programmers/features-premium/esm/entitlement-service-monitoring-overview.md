@@ -2,7 +2,7 @@
 title: Übersicht über die Überwachung des Berechtigungsdienstes
 description: Übersicht über die Überwachung des Berechtigungsdienstes
 exl-id: ebd5d650-0a32-4583-9045-5156356494e2
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
 source-wordcount: '1303'
 ht-degree: 0%
@@ -129,11 +129,3 @@ Sie können die ESM-Daten für die folgenden Anwendungsfälle verwenden:
 - **Debugging/Qualitätstests** Da die Daten auch nach Plattform, Gerät, Browser und Betriebssystem aufgeschlüsselt sind, können bei der Analyse von Nutzungsmustern Probleme auf bestimmte Kombinationen (z. B. Safari unter OSX) festgestellt werden.
 
 - **Analytics** - Die bereitgestellten Daten können verwendet werden, um die Client-seitigen Daten, die über Adobe Analytics oder ein anderes Analytics-Tool erfasst werden, zu ergänzen/zu überprüfen.
-
-<!--
-## Related Information {#related-information}
-
-- [ESM API](/help/authentication/entitlement-service-monitoring-api.md)
-- [Degradation API Overview](/help/authentication/degradation-api-overview.md)
-- [Server-side Metrics](/help/authentication/understanding-serverside-metrics.md)
--->

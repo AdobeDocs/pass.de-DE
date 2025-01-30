@@ -2,7 +2,7 @@
 title: Übersicht über die dynamische Client-Registrierung
 description: Übersicht über die dynamische Client-Registrierung
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
 source-wordcount: '813'
 ht-degree: 0%
@@ -20,8 +20,8 @@ Die dynamische Client-Registrierung stellt einen Autorisierungsmechanismus dar, 
 Adobe Pass bietet einen dynamischen Client-Registrierungs-Service, der den Zugriff auf die folgenden geschützten APIs ermöglicht:
 
 * Adobe Pass Authentication Management-APIs:
-   * [Temporäre Pass-API zurücksetzen](../../features-premium/temporary-access/temp-pass-feature.md)
-   * [Abbauungs-API](../../features-premium/degraded-access/degradation-api-overview.md)
+   * [Temporäre Pass-API zurücksetzen](../../features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+   * [Abbauungs-API](../../features-premium/degraded-access/degradation-feature.md#degradation-api-access)
    * [Proxy MVPD API](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
    * [Berechtigungs-Service-Überwachungs-API](../../features-premium/esm/entitlement-service-monitoring-api.md)
 * Adobe Pass Authentication REST-APIs:
@@ -102,7 +102,7 @@ Die Software-Anweisung ist ein JSON Web Token (`JWT`), das Informationen zu Ihre
 
 Ausführlichere Erläuterungen dazu, was Software-Anweisungen sind und wie sie funktionieren, finden Sie in der Dokumentation [RFC 7591](https://tools.ietf.org/html/rfc7591).
 
-## Dynamischer Client-Registrierungsfluss  {#dynamic-client-registration-flow}
+## Dynamischer Client-Registrierungsfluss {#dynamic-client-registration-flow}
 
 Zusammenfassend lässt sich sagen, dass der dynamische Client-Registrierungs-Autorisierungsmechanismus mehrere Schritte umfasst:
 

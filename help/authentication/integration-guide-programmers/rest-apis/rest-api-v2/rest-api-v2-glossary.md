@@ -2,9 +2,9 @@
 title: Glossar zur REST-API v2
 description: Glossar zur REST-API v2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
-source-wordcount: '1743'
+source-wordcount: '1742'
 ht-degree: 0%
 
 ---
@@ -63,7 +63,7 @@ Bei der Entscheidung handelt es sich um ein Adobe Pass-Authentifizierungskonzept
 
 Bei der Beeinträchtigung handelt es sich um eine Adobe Pass-Authentifizierungsfunktion, mit der Benutzende auch dann auf geschützte Inhalte zugreifen können, wenn bei ihrer [MVPD](#mvpd) eine Service-Unterbrechung auftritt.
 
-Weitere Informationen finden Sie in der Dokumentation [Übersicht über die ](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-api-overview.md)-API“.
+Weitere Informationen finden Sie in der Dokumentation [Abbaufunktion](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md).
 
 #### Geräte-ID {#device-id}
 
