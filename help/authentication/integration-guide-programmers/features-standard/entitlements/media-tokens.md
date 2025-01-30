@@ -1,9 +1,10 @@
 ---
 title: Medien-Token
 description: Medien-Token
-source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
+exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '653'
 ht-degree: 0%
 
 ---
@@ -12,9 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Das Medien-Token ist ein Token, das von der Adobe Pass-Authentifizierung als Ergebnis einer Autorisierungsentscheidung generiert wird, die den Anzeigezugriff auf geschützte Inhalte (Ressourcen) ermöglichen soll. Das Medien-Token ist für einen begrenzten und kurzen Zeitraum (einige Minuten) gültig, der zum Zeitpunkt der Ausgabe angegeben ist. Dadurch wird angegeben, wie lange es von der Client-Anwendung verwendet werden muss, bevor ein neues abgerufen werden muss.
+Das Medien-Token ist ein Token, das von der Adobe Pass-Authentifizierung [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) als Ergebnis einer Autorisierungsentscheidung generiert wird, die darauf abzielt, Anzeigezugriff auf geschützte Inhalte (Ressourcen) zu gewähren. Das Medien-Token ist für einen begrenzten und kurzen Zeitraum (einige Minuten) gültig, der zum Zeitpunkt der Ausgabe angegeben ist. Es gibt die Zeit an, die es von der Client-Anwendung überprüft und verwendet werden muss.
 
 Das Medien-Token besteht aus einer signierten Zeichenfolge, die auf der als Klartext gesendeten Public Key Infrastructure (PKI) basiert. Mit dem PKI-basierten Schutz wird das Token mit einem asymmetrischen Schlüssel signiert, der von einer Zertifizierungsstelle (Certification Authority, CA) zum Adobe ausgestellt wird.
 
@@ -49,7 +50,7 @@ Die Media Token Verifier-Bibliothek, die durch das `mediatoken-verifier-VERSION.
 
 Die `ITokenVerifier`-Klasse definiert die folgenden Methoden:
 
-* Die `isValid()` Methode, die zum Überprüfen des Medien-Tokens verwendet wird. Sie akzeptiert ein einziges Argument, die [Ressourcenkennung](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md). Wenn die angegebene Ressourcenkennung `null` ist, validiert die Methode nur die Authentizität und den Gültigkeitszeitraum des Medien-Tokens.
+* Die `isValid()` Methode, die zum Überprüfen des Medien-Tokens verwendet wird. Sie akzeptiert ein einziges Argument, die [Ressourcenkennung](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#resource-identifier). Wenn die angegebene Ressourcenkennung `null` ist, validiert die Methode nur die Authentizität und den Gültigkeitszeitraum des Medien-Tokens.
 
   Die `isValid()`-Methode gibt einen der folgenden Statuswerte zurück:
 
@@ -193,7 +194,7 @@ Das Medien-Token kann mit der folgenden API abgerufen werden:
 
 * [Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
 
-Weitere Informationen zu den Modellen für Autorisierungsentscheidungen **Sie in den** Antwort **und Beispiele** der obigen API.
+Weitere Informationen zur Struktur von Autorisierungsentscheidungen und Medien **Token finden Sie in** Abschnitten zu „Antwort **und** Beispiele“ der obigen API.
 
 Weitere Informationen zur Integration der oben genannten API sowie dazu, wann diese integriert werden sollte, finden Sie im folgenden Dokument:
 

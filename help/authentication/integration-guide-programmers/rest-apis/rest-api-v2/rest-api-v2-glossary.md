@@ -2,7 +2,7 @@
 title: Glossar zur REST-API v2
 description: Glossar zur REST-API v2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '1742'
 ht-degree: 0%
@@ -183,7 +183,7 @@ Die Ressource ist ein geschützter Inhalt, auf den eine Benutzerin oder ein Benu
 
 Die Ressource wird durch einen eindeutigen Wert identifiziert, der zwischen dem Programmierer und den MVPDs vereinbart wird.
 
-Weitere Informationen finden Sie in der Dokumentation [Geschützte Ressourcen](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers) .
+Weitere Informationen finden Sie in der Dokumentation [Geschützte Ressourcen](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources) .
 
 ### S {#s}
 

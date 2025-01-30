@@ -2,7 +2,7 @@
 title: Benutzermetadaten
 description: Benutzermetadaten
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '1793'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 Benutzermetadaten beziehen sich auf benutzerspezifische [Attribute](#attributes) (z. B. Postleitzahlen, elterliche Bewertungen, Benutzer-IDs usw.), die von MVPDs verwaltet und Programmierern über die Adobe Pass-Authentifizierung (REST [ V2) bereitgestellt ](#apis).
 

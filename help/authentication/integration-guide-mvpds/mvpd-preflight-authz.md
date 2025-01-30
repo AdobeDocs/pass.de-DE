@@ -2,7 +2,7 @@
 title: MVPD Preflight-Autorisierung
 description: MVPD Preflight-Autorisierung
 exl-id: da2e7150-b6a8-42f3-9930-4bc846c7eee9
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '750'
 ht-degree: 0%
@@ -129,12 +129,3 @@ In der folgenden Tabelle sind die MVPDs aufgeführt, die die Preflight-Autorisie
 | Kanalaufstellung in Benutzermetadaten | SuddenLink HTC | Alle Synacor Direct-Integrationen können diesen Ansatz ebenfalls unterstützen. |
 | Verzweigung und Verbindung | Alle anderen nicht oben aufgeführt | Die standardmäßige maximale Anzahl von überprüften Ressourcen = 5. |
 
-<!--
-![RelatedInformation]
->* [Logout](/help/authentication/usecase-mvpd-logout.md)
->* [Authorization](/help/authentication/authz-usecase.md)
->* [MVPD Integration Features](/help/authentication/mvpd-integr-features.md)
->* [MVPD User Metadata Exchange](/help/authentication/mvpd-user-metadata-exchng.md)
->* [Preflight Authorization - Programmer Integration Guide](/help/authentication/preflight-authz.md)
->* [AuthN and AuthZ Interface 1.0 Specification](https://www.cablelabs.com/specifications/CL-SP-AUTH1.0-I04-120621.pdf){target=_blank} 
--->
