@@ -1,126 +1,144 @@
 ---
-title: MVPD Direct-Integrationsplan
-description: MVPD Direct-Integrationsplan
+title: Schnellstartanleitung für MVPD
+description: Schnellstartanleitung für MVPD
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 936c1cda465dd3a9fc3f16381edb24a2b3e41779
 workflow-type: tm+mt
-source-wordcount: '1071'
+source-wordcount: '934'
 ht-degree: 0%
 
 ---
 
-# Schnellstartanleitung für MVPD: Plan für die MVPD-Direktintegration {#mvpd-dir-int-plan}
-
->[!NOTE]
->
->Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
-
-## Einführung {#mvpd-kickstart-intro}
-
-Willkommen bei der Adobe Pass-Authentifizierung für TV Everywhere.  Wir freuen uns auf die Zusammenarbeit mit Ihnen.
-
->[!NOTE]
->
->Dies ist das Schnellstartanleitung für Multichannel Video Programming Distributors (MVPDs). Wenn Sie ein Programmierer (Inhaltsanbieter) sind, lesen Sie das [Schnellstarthandbuch für Programmierer](/help/authentication/kickstart/programmer-kickstart-guide.md).
-
-Der Support ist jederzeit über das Adobe Pass-Authentifizierungs-Ticketsystem auf Zendesk verfügbar. Hier finden Sie auch Beispiele, Dokumentationen und Video-Tutorials zu unseren Prozessen. Um [Zendesk](https://adobeprimetime.zendesk.com/) nutzen zu können, müssen Sie sich registrieren und ein Konto bei https://tve.zendesk.com/home erstellen. Die Anzahl der Benutzer, die Sie registrieren können und die Kommentare zu einem abgelegten Ticket sehen oder posten können, ist unbegrenzt. Alle Support-Fragen richten Sie bitte an: tve-support unter adobe.com
-
-**Teamkontakte**:
-
-**Support** - Für alle Fragen, Vorfälle oder Funktionsanfragen **tve-support@adobe.com**.
-
-## 1. Auftaktbesprechungen {#kickoff-meetings}
-
-Der Rahmen für diese Treffen ist der Beginn technischer Gespräche zwischen Adobe und MVPD. An dieser Stelle des Prozesses muss die Dokumentation von beiden Seiten gemeinsam genutzt werden. Als Folgemaßnahme muss Adobe ein Ticket in unserem Ticketing-System (https://tve.zendesk.com/) öffnen, um den Status der Integration zu verfolgen.
-
-## 2. Funktionen {#features}
-
-Adobe richtet einen wöchentlichen Statusaufruf ein, um den Zeitplan, die Schritte, den Zeitplan und die Implementierungsdetails der Integration zu besprechen und zu verfolgen. In dieser Phase überprüft Adobe die MVPD-Spezifikationen. Das Ergebnis sollte eine Spezifikationsseite sein, die alle für die MVPD erforderlichen Funktionen detailliert beschreibt. Die MVPD sendet dem Adobe ein Spezifikationsdokument, in dem die Authentifizierungs-/Autorisierungsimplementierung der MVPD detailliert beschrieben wird.
-
-Zu klärende Elemente, siehe [MVPD-Integrationsfunktionen](/help/authentication/integration-guide-mvpds/mvpd-integr-features.md).
-
-Es gibt mehrere Einstellungen, die an dieser Stelle detailliert beschrieben werden müssen:
-
-* **MVPDs Logo-URL** - Dies ist eine Datei mit den folgenden Abmessungen: 112 x 33 Pixel. Das Logo wird von Programmierern auf ihren Sites angezeigt, wenn der Benutzer auf die Schaltfläche „Anmelden“ klickt, um seinen Pay-TV-Anbieter auszuwählen.
-* **TTL-Werte (Time-to-Live**: Die TTL wird normalerweise von MVPD während des Authentifizierungs-/Autorisierungsprozesses festgelegt. Adobe kann diese TTL-Werte jedoch überschreiben und unterschiedliche Werte bereitstellen, je nachdem, was sowohl vom Programmierer als auch von MVPD vereinbart wurde.
-* **Anzeigename** - Wird von Programmierern auf ihren Sites angezeigt, wenn der Benutzer auf die Schaltfläche „Anmelden“ klickt, um seinen Pay-TV-Anbieter auszuwählen.
-* **Testanmeldeinformationen** - Beide Profile (Staging und Produktion) sollten über eine Liste von Testanmeldeinformationen verfügen.
+# Schnellstartanleitung für MVPD {#mvpd-kickstart-guide}
 
 >[!IMPORTANT]
 >
->Jedes Mal, wenn ein Benutzer einen Berechtigungsfluss initiiert, wird er mit einer einzigen, undurchsichtigen, eindeutigen Benutzer-ID verknüpft.  Die Benutzer-ID wird verwendet, um den Benutzer einer Programmierer-App zu identifizieren, stammt jedoch von der MVPD.
+> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
+
+Dieses Schnellstartanleitung ist für Multichannel Video Programming Distributors (MVPDs) gedacht, die eine Integration mit der Adobe® Pass-Authentifizierung planen.
+
+In diesem Dokument werden die wichtigsten ersten Schritte für einen reibungslosen und effizienten Start des Integrationsprozesses beschrieben. Sie soll die Erwartungen verdeutlichen und Anleitungen dazu geben, wie wir mit Partnern zusammenarbeiten werden, um erfolgreiche Integrationen zu erreichen.
+
+Adobe bietet eine Reihe von Ressourcen, die Sie bei der Integration mit der Adobe Pass-Authentifizierung unterstützen. Bitte beachten Sie die **„You will provide“** und **&quot;Adobe will provide“** Erwähnungen aus jedem folgenden Abschnitt.
 
 >[!CAUTION]
 >
->Ein wichtiger Hinweis für jede MVPD: Die Benutzer-ID sollte KEINE PII (Personally Identifiable Information) enthalten, d. h. Informationen, die Sie allein oder mit anderen Informationen zur Identifizierung, zum Kontakt oder zum Auffinden des Benutzers verwenden können.
-
-## 2. Austausch von Metadaten {#metadata-ex}
-
-Beide Seiten müssen die Metadaten für alle beteiligten Umgebungen (Produktion, Staging usw.) austauschen.
-
-* **Adobe**
-   * Adobe Für die Staging-Umgebung können SP-Metadaten von abgerufen werden: [Authentifizierungs-Staging-SP-Metadaten](https://sp.auth-staging.adobe.com/sp/metadata)
-   * Für die Produktionsumgebung können SP-Metadaten von Adobe abgerufen werden unter: [Authentifizierung ProduktionsSP-Metadaten](https://sp.auth.adobe.com/sp/metadata)
-
-* **MVPD**
-   * So fügen Sie Metadaten hinzu (Staging/Produktion).
-
-## 4. IP-Zulassungsliste {#allow-ip-list}
-
-Die folgenden IPs sollten in der MVPD-Firewall auf die Whitelist gesetzt werden. Bitte kontaktieren Sie Adobe für die Liste der IPs.
-
-* Die Adobe Pass-Authentifizierung erfordert, dass Firewalls an den Ports 80 und 443 geöffnet werden, um den Zugriff auf eingeschränkte Ressourcen zu ermöglichen.
-
-* Der MVPD muss eine Liste von IP-Adressen für Authentifizierungs- und Autorisierungsserver hinzufügen (falls dies der Fall ist).
-
-## 5. Entwicklung {#deve}
-
-Die Dauer der Entwicklungsphase wird nach Überprüfung der Spezifikationen und unter Berücksichtigung der Punkte, die beide Seiten abzeichnen, festgelegt. Adobe muss benutzerdefinierten Code für den Autorisierungsteil schreiben.
-
->[!NOTE]
+> Jedes Mal, wenn ein Benutzer einen Berechtigungsfluss initiiert, wird ihm eine einzige, undurchsichtige, eindeutige Benutzer-ID zugewiesen. Diese vom MVPD stammende ID wird verwendet, um den Benutzer in der App eines Programmierers zu identifizieren.
 >
->Beachten Sie, dass die Autorisierung pro Ressource durchgeführt wird. Die Autorisierungstransaktion wird in der Regel mit einer ID-Zeichenfolge ausgeführt, die von der Website des Programmierers übergeben wird und den Kanal darstellt, für den der Benutzer die Autorisierung anfordert. Diese Ressourcen-ID wird zwischen dem Programmierer und MVPD festgelegt und kann bei Bedarf detailliert sein.
-
-## 6. Adobe-Umgebungen {#adobe-env}
-
-Adobe bietet verschiedene Umgebungen für verschiedene Phasen des Entwicklungsprozesses:
-
-* **Präqualifikation** (PRE-QUAL): Die PRE-QUAL-Umgebung enthält den nächsten Release-Kandidaten. Adobe integriert zunächst neue Partner in diese Umgebung, bevor die Integration in die Veröffentlichungsumgebung aktualisiert wird. Die Partner haben zwei Wochen Zeit, um die PRE-QUAL-Umgebung zu testen, und müssen alle Änderungen an der PRE-QUAL-Konfiguration explizit anfordern (kontaktieren Sie Ihren Adobe-Support-Mitarbeiter, um weitere Informationen zum Änderungsanforderungsprozess zu erhalten). Fehlerbehebungen für neue Trigger-Bereitstellungen in dieser Umgebung.
-* **Version** (VERSION): Der aktuelle Produktions-Build von Adobe wird hier in einer Live-Umgebung bereitgestellt.
-
-Weitere Informationen zur Verwendung von Adobe-Umgebungen finden Sie unter [Grundlagen zu Adobe-Umgebungen](/help/authentication/notes-technical/environments/understanding-the-adobe-environments.md)
-
-## 7. Staging-Bereitstellung {#stag-env}
-
-Basierend auf den von der MVPD empfangenen Metadaten erstellt und konfiguriert Adobe im Adobe Pass-Authentifizierungssystem eine neue MVPD. Dieser wird in der PreQual-Staging-Umgebung von Adobe bereitgestellt und mit unserem Testprogrammierer (TestDistributors) konfiguriert.
-
-Die MVPD muss dieselbe Bereitstellung in ihrer QA-/Staging-/Testumgebung durchführen.
-
-## 8. Testen und Fehlerbehebung {#tes-troubleshoot}
-
-In dieser Phase testen und beheben Adobe und MVPD die Integration. Um die Integration zu testen, kann das Adobe Pass-Authentifizierungsteam die Adobe-API-Test-Site verwenden. Weitere Informationen zur Verwendung der Adobe-API-Test-Site finden Sie [Testen von Authentifizierungs- und Autorisierungsflüssen mithilfe der Adobe-API-Test-Site](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md).
-
-Nach erfolgreichem Abschluss der Tests und der Fehlerbehebung wird die Integration in der Staging-Umgebung der Adobe-Version aktiviert. An dieser Stelle kann Adobe die MVPD mit einem eigentlichen Programmierer integrieren.
-
-## 9. Produktionsbereitstellung {#prod-dep}
-
-* MVPD muss zuerst im Produktionsprofil bereitstellen, um die Konnektivität zu testen.
-
-* Adobe wird in der Prequal-Produktion bereitgestellt.
-
-* Alle Parteien können jetzt im Produktionsprofil testen.
-
-* Wenn jetzt alles in Ordnung ist, kann Adobe die Integration in die Release-Produktionsumgebung („Live„) verschieben, die für alle Anwender verfügbar ist.
-
-## 10. Eskalationsverfahren {#esc-proc}
-
-Sobald die Integration in der Produktion verfügbar ist, ist es wichtig, das beste Kundenerlebnis zu bieten. Um im Falle eines Serverausfalls die beste Reaktion zu gewährleisten, müssen MVPDs eine Eskalationsdokumentation für Probleme bereitstellen, die der Adobe zur Kenntnis gebracht werden.
-
-Adobe wiederum stellt MVPDs mit dem aktuellen Eskalationsprozess für die Adobe Pass-Authentifizierung bereit.
-
-
-<!--- [!RELATEDINFORMATION]
+> <br/>
 >
->* [Programmer Kickstart Guide](/help/authentication/programmer-kickstart-guide.md)
->* [MVPD Integration Guide](/help/authentication/mvpd-integr-features.md)
--->
+> Die Benutzer-ID darf keine personenbezogenen Daten (PII) oder Daten enthalten, die allein oder in Kombination mit anderen Details verwendet werden könnten, um den Benutzer zu identifizieren, zu kontaktieren oder zu finden.
+
+## Einrichtungsprozess {#setup-process}
+
+Der Einrichtungsprozess umfasst unter anderem die folgenden Schritte:
+
+![Adobe® Authentifizierungs-Integrationsprozess erfolgreich](../assets/mvpd-int-lifecycle.png)
+
+*Adobe® Authentifizierungs-Integrationsprozess erfolgreich*
+
+### Start {#kickoff}
+
+**Sie geben** in der Kickoff-Phase Folgendes an:
+
+* **Anzeigename**
+
+  Dies ist eine Zeichenfolge, die auf Programmierer-Websites oder -Anwendungen angezeigt wird, wenn Benutzer aufgefordert werden, ihren Pay-TV-Anbieter auszuwählen.
+
+* **Logo-URL**
+
+  Hierbei handelt es sich um eine Datei mit einer Größe von 112 x 33 Pixel, die das Logo enthält, das auf den Websites oder Anwendungen von Programmierern angezeigt wird, wenn die Benutzer aufgefordert werden, ihren Pay-TV-Anbieter auszuwählen.
+
+* **Time-to-Live (TTL)**
+
+  Die TTL ist ein Wert, der normalerweise von MVPD im Rahmen der Authentifizierungs- oder Autorisierungsprozesse festgelegt wird. Adobe kann diese TTL-Werte jedoch überschreiben und unterschiedliche Werte bereitstellen, je nachdem, was sowohl vom Programmierer als auch von MVPD vereinbart wurde.
+
+* **Berechtigungssätze**
+
+  Hierbei handelt es sich um Anmeldeinformationen, die zur Authentifizierung und Autorisierung oder nur zur Authentifizierung des Benutzers bei der MVPD verwendet werden. Normalerweise bestehen diese Anmeldeinformationen aus einem Benutzernamen und einem Kennwort, die für beide Profile (Staging und Produktion) angegeben werden müssen.
+
+### Metadatenaustausch (SAML) {#metadata-exchange-saml}
+
+**Adobe stellt während** Phase des Metadatenaustauschs Folgendes bereit:
+
+* **Staging-Umgebung - Metadaten**
+
+  Adobe-SP-Metadaten können unter https://sp.auth-staging.adobe.com/sp/metadata abgerufen werden.
+
+* **Metadaten der Produktionsumgebung**
+
+  Adobe-SP-Metadaten können unter https://sp.auth.adobe.com/sp/metadata abgerufen werden.
+
+**Sie geben während** Phase des Metadatenaustauschs Folgendes an:
+
+* **Staging-Metadaten**
+
+  Die Metadaten von MVPD für die Staging-Umgebung.
+
+* **Produktionsmetadaten**
+
+  Die Metadaten von MVPD für die Produktionsumgebung.
+
+### Konnektivität {#connectivity}
+
+auf die Zulassungsliste setzen **Sie bieten** Möglichkeit, IPs von Adobe zu übertragen, da für die Adobe Pass-Authentifizierung Firewalls erforderlich sind, um den Traffic über die Ports 80 und 443 zuzulassen, damit der Zugriff auf eingeschränkte Ressourcen sowohl während des Authentifizierungs- als auch während des Autorisierungsprozesses ermöglicht wird.
+
+**Sie stellen** Bereitstellung im Staging-Profil bereit, um die Verbindung zu testen.
+
+### Entwicklung {#development}
+
+**Adobe wird dem Engineering Zeit**, eng mit MVPD zusammenzuarbeiten, um sicherzustellen, dass die technische Integration korrekt eingerichtet ist. Dieser Prozess umfasst die Entwicklung von benutzerdefiniertem Code, der auf die spezifischen Anforderungen von MVPD zugeschnitten ist.
+
+### Staging-Bereitstellung {#deployment-staging}
+
+**Adobe stellt einen Build** den erforderlichen Code-Updates bereit, der zuerst in der PRE-QUAL-Staging-Umgebung bereitgestellt wird. In dieser Phase werden auch die erforderlichen Konfigurationsänderungen implementiert, um die MVPD zu Testzwecken mit dem `TestDistributors`-Dienstleister zu integrieren.
+
+**Sie und Adobe stellen** Qualitätssicherung (QA) Zeit zur Verfügung, um sicherzustellen, dass die Integration in der STAGING-Umgebung von PRE-QUAL erfolgreich getestet wurde. Nach dieser Phase wird die MVPD in die Staging-Umgebung der Version verschoben, um sie mit einem tatsächlichen Programmierer weiter zu testen.
+
+### Bereitstellung in der Produktion {#deployment-production}
+
+**Sie stellen** Bereitstellung im Produktionsprofil bereit, um die Konnektivität zu testen.
+
+**Adobe stellt einen Build** den erforderlichen Code-Updates bereit, der in der Pre-QUAL-Produktionsumgebung bereitgestellt wird.
+
+**Sie und Adobe stellen** Qualitätssicherung (QA) Zeit zur Verfügung, um sicherzustellen, dass die Integration anhand des Produktionsprofils erfolgreich getestet wurde. Wenn zu diesem Zeitpunkt alles in Ordnung ist, kann Adobe die Integration in die RELEASE-Produktionsumgebung („Live„) verschieben, die für alle Benutzerinnen und Benutzer verfügbar ist.
+
+>[!IMPORTANT]
+>
+> Sobald die Integration in der RELEASE-Produktionsumgebung verfügbar ist, ist es von größter Bedeutung, ein optimales Kundenerlebnis aufrechtzuerhalten. Um Serverausfallszenarien effektiv zu beheben, müssen MVPDs eine detaillierte Eskalationsvorgangsdokumentation für das Adobe bereitstellen, um solche Probleme zu beheben.
+>
+> Im Gegenzug stellt Adobe sicher, dass MVPDs die neueste Version des Adobe Pass-Authentifizierungs-Eskalationsprozesses erhalten, um eine optimierte Problembehebung zu ermöglichen.
+
+## Zugriff auf Umgebungen {#access-environments}
+
+**Adobe bietet** Zugriff auf Umgebungen für verschiedene Phasen des Entwicklungsprozesses:
+
+* **Präqualifikation (PRE-QUAL)**
+
+  Die PRE-QUAL-Umgebung hostet den nächsten Release-Kandidaten und dient als erste Integrationsplattform für neue Partner. Bevor Partner zur RELEASE-Umgebung wechseln, erhalten sie Zeit, ihre Integration in PRE-QUAL zu testen.
+
+* **Version (RELEASE)**
+
+  Die RELEASE-Umgebung hostet den aktuellen (stabilen) Produktions-Build.
+
+Weitere Informationen zur Verwendung dieser Umgebungen finden Sie in der Dokumentation [Grundlagen zu den Adobe](/help/authentication/notes-technical/environments/understanding-the-adobe-environments.md)Umgebungen.
+
+>[!IMPORTANT]
+> 
+> Konfigurationsänderungen an diesen Umgebungen müssen gemäß dem etablierten Änderungsanforderungsprozess explizit von Ihrem Adobe-Support-Mitarbeiter angefordert werden.
+
+## Zugriff auf den Support {#access-customer-support}
+
+**Adobe bietet** Zugriff auf unser Kundensupportsystem über [Zendesk](https://tve.zendesk.com/home). Um auf Zendesk zugreifen zu können, müssen Sie sich registrieren und ein Konto unter https://tve.zendesk.com/home erstellen.
+
+Das Adobe Pass-Authentifizierungsteam steht zur Verfügung, um alle Fragen oder technischen Probleme zu behandeln, auf die wir während des Integrationsprozesses stoßen können. Bitte kontaktieren Sie uns unter [tve-support@adobe.com](mailto:tve-support@adobe.com).
+
+## Zugriff auf die Dokumentation {#access-documentation}
+
+**Adobe bietet** Zugriff auf unsere öffentliche Dokumentation über [Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home).
+
+Das Adobe Pass-Authentifizierungsteam bietet unter dem Abschnitt [Integrationshandbuch für MVPDs“ eine umfassende Dokumentation ](/help/authentication/kickstart/mvpd-overview.md) verfügbaren Funktionen und Workflows. Links zu detaillierten Informationen zu den einzelnen Themen finden Sie im Inhaltsverzeichnis unter diesem Abschnitt .
+
+## Zugriff auf das Test-Tool {#access-testing-tool}
+
+**Adobe bietet** Zugriff auf unser API-Explorations-Tool über die [Adobe Developer](https://developer.adobe.com/adobe-pass/)-Website.
