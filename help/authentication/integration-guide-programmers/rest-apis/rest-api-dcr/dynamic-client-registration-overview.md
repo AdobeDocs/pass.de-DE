@@ -2,7 +2,7 @@
 title: Übersicht über die dynamische Client-Registrierung
 description: Übersicht über die dynamische Client-Registrierung
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
 source-wordcount: '813'
 ht-degree: 0%
@@ -13,7 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
+> Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![Live-Webinar-Reihe](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 Die dynamische Client-Registrierung stellt einen Autorisierungsmechanismus dar, der von [RFC 7591](https://datatracker.ietf.org/doc/html/rfc7591) definiert wird und auf dem OAuth 2.0-Autorisierungs-Framework basiert, das von [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749) beschrieben wird.
 

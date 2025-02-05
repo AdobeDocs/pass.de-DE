@@ -2,7 +2,7 @@
 title: Übersicht über REST-API-Flüsse v2
 description: Übersicht über REST-API-Flüsse v2
 exl-id: 84a9ac0f-c26a-4159-82a8-3a31bb31f529
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
 source-wordcount: '170'
 ht-degree: 0%
@@ -13,7 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
+> Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![Live-Webinar-Reihe](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 Zu Beginn konsultieren Sie die öffentliche Dokumentation der Flüsse, an denen Sie in der folgenden Liste interessiert sind.
 

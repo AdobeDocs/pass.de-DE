@@ -2,9 +2,9 @@
 title: Willkommen bei Adobe&reg; Pass Authentication
 description: Willkommen bei Adobe&reg; Pass Authentication
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: c9e31a036a0300fabd9f75dd85d472c390d9053e
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
-source-wordcount: '419'
+source-wordcount: '423'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,8 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![Live-Webinar-Reihe](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 Die Adobe Pass-Authentifizierung ist eine leistungsstarke Berechtigungslösung für TV Everywhere (TVE), die dazu dient, den Prozess der Überprüfung, ob Zuschauer berechtigt sind, auf geschützte Inhalte zuzugreifen, zu optimieren und zu sichern. Dieses modulare Framework verbindet Content-Provider (Programmierer) mit Pay-TV-Providern (MVPDs) und erleichtert damit Berechtigungstransaktionen mit Geschwindigkeit, Konsistenz und Zuverlässigkeit.
 

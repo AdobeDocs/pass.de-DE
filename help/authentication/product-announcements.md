@@ -2,14 +2,39 @@
 title: Produktankündigungen
 description: Produktankündigungen
 exl-id: 3c9c66e1-d31d-4af3-8ab2-eb32492f42ca
-source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
-source-wordcount: '670'
+source-wordcount: '859'
 ht-degree: 1%
 
 ---
 
 # Produktankündigungen {#product-announcements}
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![Live-Webinar-Reihe](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
+
+Als geschätzter Adobe Pass-Authentifizierungspartner möchten wir Sie zu unserem kommenden Live-Webinar über die neue REST-API einladen. Die neue API wurde im letzten Jahr eingeführt, um das Endbenutzererlebnis zu verbessern und die Integration mit Adobe Pass-Services zu vereinfachen. 
+
+Wir werden eine Reihe von zwei Webinaren durchführen, um einen Überblick über die neue API, die Vorteile und zusätzliche Anwendungsfälle zu geben, die durch die Migration zur neuen API aktiviert werden können.
+
+Registrieren Sie sich für das Webinar, das für Sie und Ihr Team am besten geeignet ist.
+
+* [Webinar 1. - 19. Februar 2025](https://events.teams.microsoft.com/event/83c6ec1e-2522-4918-910f-c529b4fb0574@fa7b1b5a-7b34-4387-94ae-d2c178decee1)
+* [Webinar 2. - 5. März 2025](https://events.teams.microsoft.com/event/6f673689-e848-4c00-93d9-4f5d8f108977@fa7b1b5a-7b34-4387-94ae-d2c178decee1)
+
+In dieser Sitzung erfahren Sie mehr über:
+
+* REST API v2 - Überblick und Vorteile
+* Anleitung für grundlegende Flüsse
+* Timelines und nächste Schritte
+
+Das Webinar wäre unter folgenden Umständen nützlich:
+
+* Ein neuer Kunde plant die Einführung einer neuen TVE-App
+* Bestehende Kunden, die zu den neuen APIs migrieren müssen
+* Implementierungspartner, die APIs für Kunden implementieren
+
+Die technische Dokumentation zur neuen API finden Sie [hier](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md). Wir empfehlen Ihnen und Ihrem Team, alle Fragen auszufüllen, die Sie während der Sitzung ([) ](https://forms.office.com/r/sJea78tUy3) möchten.
 
 ## End of Life (EOL) {#eol}
 
