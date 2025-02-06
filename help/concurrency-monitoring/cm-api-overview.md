@@ -2,9 +2,9 @@
 title: API-Übersicht
 description: API-Übersicht über die Überwachung von gleichzeitigen Aufrufen
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: dd370b231acc08ea0544c0dedaa1bdb0683e378f
+source-git-commit: b30d9217e70f48bf8b8d8b5eaaa98fea257f3fc5
 workflow-type: tm+mt
-source-wordcount: '1556'
+source-wordcount: '2102'
 ht-degree: 0%
 
 ---
@@ -73,12 +73,27 @@ Führen Sie den Sitzungsinitialisierungsaufruf aus. Sie erhalten die folgende An
 
 Alle benötigten Daten sind in den Antwort-Headern enthalten. Der **Location**-Header stellt die ID der neu erstellten Sitzung dar und die **Date**- und **Expires**-Header stellen die Werte dar, mit denen Ihre Anwendung so geplant wird, dass der nächste Heartbeat ausgeführt wird, um die Sitzung am Leben zu erhalten.
 
+Bei jedem Aufruf dürfen Sie alle benötigten Metadaten senden, nicht nur die obligatorischen Metadaten für Ihr Programm. Das Senden von Metadaten kann auf zwei Arten erreicht werden:
+* Verwenden von **query** **parameters**:
+
+  ```sh
+  curl -i -XPOST -u "user:pass" "https://streams-stage.adobeprimetime.com/v2/sessions/some_idp/some_user?metadata1=value1&metadata2=value2"
+  ```
+
+* Verwenden von **request** **body**:
+
+  ```sh
+  curl -i -XPOST -u "user:pass" https://streams-stage.adobeprimetime.com/v2/sessions/some_idp/some_user -d "metadata1=value1" -d "metadata2=value2" -H "Content-Type=application/x-www-form-urlencoded"
+  ```
+
 #### Herzschlag {#heartbeat}
 
 Heartbeat-Aufruf ausführen. Geben Sie die **Sitzungs-ID** an, die im Sitzungsinitialisierungsaufruf abgerufen wurde, sowie die **subject** und **idp** Parameter.
 
 ![](assets/heartbeat.png)
 
+Für einen Heartbeat-Aufruf können Sie Metadaten auf die gleiche Weise senden wie für die Sitzungsinitialisierung. Es können jederzeit neue Metadaten hinzugefügt und zuvor gesendete Werte mit einigen **aktualisiert**. Die folgenden Werte können nach dem Festlegen nicht mehr geändert werden: **package**, **channel**, **platform**, **assetId**, **idp**, **mvpd**, **hba_status**, **hba**,
+**mobileDevice**
 
 Wenn die Sitzung noch gültig ist (sie ist noch nicht abgelaufen oder wurde manuell gelöscht), erhalten Sie ein erfolgreiches Ergebnis:
 
@@ -111,8 +126,11 @@ Wenn Sie den -Aufruf ausführen, erhalten Sie die folgende Antwort:
 
 ![](assets/get-all-running-streams-success.png)
 
-Beachten Sie die Kopfzeile **Läuft ab**. Das ist der Zeitpunkt, zu dem die erste Sitzung ablaufen sollte, es sei denn, ein Heartbeat wird gesendet. OtherStreams hat den Wert 0, da für diesen Benutzer keine anderen Streams in den Programmen anderer Mandanten ausgeführt werden.
+Für jede Sitzung erhält man den **terminationCode** und vollständige Metadaten.
+
+Beachten Sie die Kopfzeile **Läuft ab**. Das ist der Zeitpunkt, zu dem die erste Sitzung ablaufen sollte, es sei denn, ein Heartbeat wird gesendet.
 Das Metadatenfeld wird mit allen Metadaten gefüllt, die beim Start der Sitzung gesendet werden. Wir filtern es nicht, Sie erhalten alles, was Sie gesendet haben.
+Die Antwort enthält alle Streams, die in den Apps anderer Mandanten ausgeführt werden, solange die Apps dieselbe Richtlinie verwenden.
 Wenn es beim Aufruf keine laufenden Sitzungen für einen bestimmten Benutzer gibt, erhalten Sie diese Antwort:
 
 ![](assets/get-all-running-streams-empty.png)
@@ -126,8 +144,13 @@ Um das Verhalten unserer Anwendung zu simulieren, wenn die ihr zugewiesene Richt
 
 ![](assets/breaking-policy-frstapp.png)
 
+Wir erhalten eine 409-KONFLIKT-Antwort zusammen mit einem Auswertungsergebnisobjekt in der Payload. Dies bedeutet, dass die Server-seitigen Richtlinien die Erstellung oder den Fortgang dieser Sitzung nicht zulassen. Der Antworttext enthält ein EvaluationResult-Objekt mit einem nicht leeren AssociatedAdvice, d. h. die Liste der Advice-Objekte, die Erklärungen für jede Regelverletzung enthalten.
 
-Wir erhalten eine 409-KONFLIKT-Antwort zusammen mit einem Auswertungsergebnisobjekt in der Payload. Eine vollständige Beschreibung des Auswertungsergebnisses finden Sie in der [Swagger API-Spezifikation](http://docs.adobeptime.io/cm-api-v2/#evaluation-result).
+Die Anwendung sollte den Benutzer mit der/den Fehlermeldung(en) auffordern, die von jeder Advice-Instanz gesendet wird. Außerdem enthält jeder Ratschlag auch die Regeldetails wie Attribute, Schwellenwerte, Regel- und Richtliniennamen. Darüber hinaus werden die widersprüchlichen Werte auch in die Liste der aktiven Sitzungen für jeden Wert aufgenommen.
+
+Diese Informationen dienen zur erweiterten Formatierung von Fehlermeldungen und ermöglichen es Benutzenden, Aktionen bezüglich widersprüchlicher Sitzungen durchzuführen.
+
+Jede konfliktbehaftete Sitzung trägt einen **terminationCode**, der für das &quot;**&quot;** Streams verwendet werden kann. Auf diese Weise kann die Anwendung dem Benutzer erlauben, zu entscheiden, welche Sitzung(en) beendet werden soll(en), um Zugriff auf die aktuelle Sitzung zu erhalten.
 
 Die Anwendung kann die Informationen aus dem Bewertungsergebnis nutzen, um dem Benutzer beim Anhalten des Videos eine bestimmte Meldung anzuzeigen und bei Bedarf weitere Aktionen durchzuführen. Ein Anwendungsfall kann es sein, andere vorhandene Streams zu stoppen, um einen neuen zu starten. Dies geschieht mithilfe des **terminationCode**-Werts, der im Feld **Konflikte** für ein bestimmtes konfliktbehaftetes Attribut vorhanden ist. Der Wert wird als X-Terminate-HTTP-Header im Aufruf für eine neue Sitzungsinitialisierung angegeben.
 
@@ -136,6 +159,30 @@ Die Anwendung kann die Informationen aus dem Bewertungsergebnis nutzen, um dem B
 Wenn bei der Sitzungsinitialisierung ein oder mehrere Beendigungscodes angegeben werden, ist der Aufruf erfolgreich und es wird eine neue Sitzung generiert. Wenn wir dann versuchen, mit einer der Sitzungen, die remote gestoppt wurden, einen Heartbeat durchzuführen, erhalten wir eine 410 GONE -Antwort mit einer Payload des Bewertungsergebnisses, die die Tatsache beschreibt, dass die Sitzung remote beendet wurde, wie im Beispiel:
 
 ![](assets/remote-termination.png)
+
+410 kann mit oder ohne Textkörper zurückgegeben werden, je nachdem, wodurch die aktuelle Sitzung beendet wurde.
+
+Wenn die Antwort keinen Hauptteil enthält, bedeutet 410, dass ein Heartbeat- (oder Beendigungs-) Aufruf für eine Sitzung versucht wird, die nicht mehr aktiv ist (aufgrund einer Zeitüberschreitung oder eines vorherigen Konflikts oder was auch immer). Die einzige Möglichkeit, sich von diesem Zustand zu erholen, besteht darin, dass die Anwendung eine neue Sitzung einleitet. Da es keinen Text gibt, soll die Anwendung diesen Fehler beheben, ohne dass der Benutzer davon weiß.
+
+Wenn dagegen ein Antworttext bereitgestellt wird, muss die Anwendung innerhalb des Attributs **associatedAdvice** suchen, um einen Hinweis **remote-termination** zu finden, der die Remote-Sitzung angibt, die mit der expliziten Absicht initiiert wurde, die aktuelle Sitzung **abzutöten**. Dies sollte zu einer Fehlermeldung wie „Ihre Sitzung wurde durch ein Gerät/eine Anwendung beendet“ führen.
+
+### Antworttext {#response-body}
+
+Bei allen Sitzungslebenszyklus-API-Aufrufen ist der Antworttext (falls vorhanden) ein JSON-Objekt, das die folgenden Felder enthält:
+
+![](assets/body_small.png)
+
+**Tipp**
+Das **EvaluationResult** enthält ein Array von Advice-Objekten unter **associatedAdvice**. Die Ratschläge sind dafür gedacht, dass die Anwendung eine umfassende Fehlermeldung für den Benutzer anzeigt und (möglicherweise) dem Benutzer die Durchführung von Aktionen ermöglicht.
+
+Derzeit gibt es zwei Arten von Hinweisen (angegeben durch ihren **type**-Attributwert): **Regelverletzung** und **remote-termination**. Die erste liefert Details zu einer gebrochenen Regel und zu den Sitzungen, die mit der aktuellen kollidieren (einschließlich des Attributs terminate , das verwendet werden kann, um diese Sitzung remote zu beenden). Die zweite ist nur zu sagen, dass die aktuelle Sitzung wurde absichtlich durch eine Remote-Sitzung beendet, sodass die Benutzer wissen, wer sie rausgeworfen, wenn die Grenzen erreicht wurden.
+
+![](assets/advices.png)
+
+**Verpflichtung**
+Die Auswertung kann auch eine oder mehrere vordefinierte Aktionen enthalten, die durch die Anwendung als Ergebnis dieser Auswertung ausgelöst werden müssen.
+
+![](assets/obligation.png)
 
 ### Zweite Anmeldung {#second-application}
 
