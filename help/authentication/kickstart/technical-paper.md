@@ -2,9 +2,9 @@
 title: Über Adobe Pass-Authentifizierung und TV Everywhere
 description: Über Adobe Pass-Authentifizierung und TV Everywhere
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 95e750b5c0efe5850a3ff8130f5b4bb6c5b35f57
 workflow-type: tm+mt
-source-wordcount: '6288'
+source-wordcount: '6287'
 ht-degree: 0%
 
 ---
@@ -112,7 +112,11 @@ Der Rest dieses Artikels bietet eine technische Einführung in die Adobe Pass-Au
 
 ## Bausteine {#arch-building-blocks}
 
-![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/import-pc7mz3dfnv/check.gif) Im Folgenden werden die zentralen Berechtigungstransaktionen für Authentifizierung und Autorisierung erläutert. Bei der Authentifizierung wird einem Pay-TV-Anbieter bestätigt, dass ein bestimmter Benutzer ein bekannter Kunde ist. Autorisierung ist der Prozess, bei dem ein Pay-TV-Anbieter bestätigt, dass ein authentifizierter Benutzer über ein gültiges Abonnement für eine bestimmte Ressource verfügt.
+<!-- BROKEN LINK
+![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/import-pc7mz3dfnv/check.gif) 
+-->
+
+Im Folgenden werden die zentralen Berechtigungstransaktionen für Authentifizierung und Autorisierung erläutert. Bei der Authentifizierung wird einem Pay-TV-Anbieter bestätigt, dass ein bestimmter Benutzer ein bekannter Kunde ist. Autorisierung ist der Prozess, bei dem ein Pay-TV-Anbieter bestätigt, dass ein authentifizierter Benutzer über ein gültiges Abonnement für eine bestimmte Ressource verfügt.
 Die Adobe Pass-Authentifizierung besteht aus den folgenden Grundkomponenten:
 
 * Client-Komponente (eine der folgenden):
