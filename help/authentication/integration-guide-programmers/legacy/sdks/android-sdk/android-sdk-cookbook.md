@@ -2,9 +2,9 @@
 title: Android SDK-Cookbook
 description: Android SDK-Cookbook
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 79b3856e3ab2755cc95c3fcd34121171912a5273
 workflow-type: tm+mt
-source-wordcount: '1704'
+source-wordcount: '1703'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ Die Lösung für die Berechtigung zur Adobe Pass-Authentifizierung für Android 
 
 - Die Domain der Benutzeroberfläche : Dies ist die Anwendungsebene der oberen Ebene, die die Benutzeroberfläche implementiert und die von der AccessEnabler-Bibliothek bereitgestellten Services verwendet, um Zugriff auf eingeschränkte Inhalte zu gewähren.
 - Die AccessEnabler-Domain - hier werden die Berechtigungs-Workflows in Form von Folgendem implementiert:
-   - Netzwerkaufrufe an Adobe-Backend-Server
+   - Netzwerkaufrufe an die Backend-Server von Adobe
    - Geschäftslogikregeln in Bezug auf die Authentifizierungs- und Autorisierungs-Workflows
    - Verwaltung verschiedener Ressourcen und Verarbeitung des Workflow-Status (z. B. des Token-Cache)
 
@@ -135,7 +135,9 @@ Android Library (AccessEnabler)
 
    | HINWEIS |     |
    | --- | --- |  
-   | ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/icons/1313859077_lightbulb.png) | Berechtigungsanfragen können erst abgeschlossen werden, wenn die Identität des Antragstellers vollständig ermittelt wurde. Dies bedeutet effektiv, dass während der Ausführung von setRequestor() alle nachfolgenden Berechtigungsanfragen (z. B. `checkAuthentication()`) blockiert werden.<br><br>Sie haben zwei Implementierungsoptionen: Sobald die Anfordereridentifizierungsinformationen an den Backend-Server gesendet wurden, kann die Benutzeroberflächen-Anwendungsebene einen der beiden folgenden Ansätze auswählen:<br><br>1.  Warten Sie, bis der `setRequestorComplete()`-Callback ausgelöst wird (Teil des AccessEnabler-Delegaten).  Diese Option bietet die größte Sicherheit, dass abgeschlossen `setRequestor()`. Daher wird sie für die meisten Implementierungen empfohlen.<br>2.  Fahren Sie fort, ohne auf das Auslösen des `setRequestorComplete()`-Callbacks zu warten, und beginnen Sie mit der Ausgabe von Berechtigungsanfragen. Diese Aufrufe (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) werden von der AccessEnabler-Bibliothek in die Warteschlange gestellt, die die eigentlichen Netzwerkaufrufe nach dem `setRequestor(). ` ausführt. Diese Option kann gelegentlich unterbrochen werden, wenn z. B. die Netzwerkverbindung instabil ist. |
+   |  | Berechtigungsanfragen können erst abgeschlossen werden, wenn die Identität des Antragstellers vollständig ermittelt wurde. Dies bedeutet effektiv, dass während der Ausführung von setRequestor() alle nachfolgenden Berechtigungsanfragen (z. B. `checkAuthentication()`) blockiert werden.<br><br>Sie haben zwei Implementierungsoptionen: Sobald die Anfordereridentifizierungsinformationen an den Backend-Server gesendet wurden, kann die Benutzeroberflächen-Anwendungsebene einen der beiden folgenden Ansätze auswählen:<br><br>1.  Warten Sie, bis der `setRequestorComplete()`-Callback ausgelöst wird (Teil des AccessEnabler-Delegaten).  Diese Option bietet die größte Sicherheit, dass abgeschlossen `setRequestor()`. Daher wird sie für die meisten Implementierungen empfohlen.<br>2.  Fahren Sie fort, ohne auf das Auslösen des `setRequestorComplete()`-Callbacks zu warten, und beginnen Sie mit der Ausgabe von Berechtigungsanfragen. Diese Aufrufe (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) werden von der AccessEnabler-Bibliothek in die Warteschlange gestellt, die die eigentlichen Netzwerkaufrufe nach dem `setRequestor(). ` ausführt. Diese Option kann gelegentlich unterbrochen werden, wenn z. B. die Netzwerkverbindung instabil ist. |
+
+   <!--Removed bad image link from first note cell above. ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/icons/1313859077_lightbulb.png) -->
 
 1. Rufen Sie [checkAuthentication()](#$checkAuthN) auf, um auf eine vorhandene Authentifizierung zu prüfen, ohne den vollständigen Authentifizierungsfluss zu initiieren.   Wenn dieser Aufruf erfolgreich ist, können Sie direkt mit dem Autorisierungsfluss fortfahren.  Andernfalls fahren Sie mit dem Authentifizierungsfluss fort.
 
