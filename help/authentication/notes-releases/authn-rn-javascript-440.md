@@ -2,14 +2,14 @@
 title: Versionshinweise zur Adobe Pass-Authentifizierung für JavaScript 4.4.0
 description: Versionshinweise zur Adobe Pass-Authentifizierung für JavaScript 4.4.0
 exl-id: 28cc0ccc-7a1d-45bd-8455-26cfde25c5c5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '245'
 ht-degree: 0%
 
 ---
 
-# Versionshinweise zur Adobe Pass-Authentifizierung für JavaScript 4.4.0 {#javascript-sdk-440-release-notes}
+# Versionshinweise zur Adobe Pass-Authentifizierung für JavaScript 4.4.0 {#javascript-sdk-440-rn}
 
 >[!NOTE]
 >
@@ -17,16 +17,15 @@ ht-degree: 0%
 
 Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme dieser Version beschrieben:
 
-## Build-Nummer {#build-no-javascript-sdk-440}
+## Build-Nummer {#build-number-440}
 
 Adobe Pass-Authentifizierung: JavaScript 4.4.0
 
 Veröffentlichungsdatum: **06/22/2021**
 
+## Versionsübersicht {#release-overview-440}
 
-## Versionsübersicht {#overview-javascript-sdk-440}
-
-### Neue Funktionen {#new-features-javascript-sdk-440}
+### Neue Funktionen
 
 Vorfluggenehmigung
 
@@ -42,14 +41,13 @@ Sonstige
 
 * Interne architektonische Verbesserungen.
 
-
-### Fehlerbehebungen {#bug-fixes-javascript-sdk-440}
+### Fehlerbehebungen
 
 * Behebung einer Racebedingung, die erzeugt wird, wenn setRequestor und getAuthentication gleichzeitig aufgerufen werden.
 * Es wurde ein Problem behoben, das verhinderte, dass Berechtigungen korrekt in Staging-Umgebungen geladen wurden.
 * Es wurde ein Problem behoben, das verhinderte, dass der Abmeldefluss im Hintergrund in Safari-Browsern abgeschlossen wurde. Daher schien der Benutzer weiterhin authentifiziert zu sein, bis eine Seitenaktualisierung stattfand. Es wurde eine maximale Wartezeit eingeführt, die derzeit auf 30 Sekunden festgelegt ist. Wenn während dieses Zeitraums keine Antwort vom Primetime-Authentifizierungsserver erfolgt, ruft die SDK den Rückruf setAuthenticationStatus auf.
 
-## Versionspaket {#rel-pkg-javascript-sdk-440}
+## Versionspaket {#release-package-440}
 
 Die Produktions-URL lautet: https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js
 

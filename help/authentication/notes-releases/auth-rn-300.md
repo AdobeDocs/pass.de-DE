@@ -2,14 +2,14 @@
 title: Versionshinweise zur Adobe Pass-Authentifizierung 3.0
 description: Versionshinweise zur Adobe Pass-Authentifizierung 3.0
 exl-id: 9284151a-8458-44a3-937b-35f379ca0e4e
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '199'
 ht-degree: 0%
 
 ---
 
-# Versionshinweise zur Adobe Pass-Authentifizierung 3.0 {#pt-authn-300-rn}
+# Versionshinweise zur Adobe Pass-Authentifizierung 3.0 {#authn-300-rn}
 
 >[!NOTE]
 >
@@ -22,14 +22,15 @@ Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme diese
 * [Build-Nummer](#build-number-300)
 * [Versionsübersicht](#release-overview-300)
 
-### Build-Nummer {#build-number-2651}
+### Build-Nummer {#build-number-300}
 
 Adobe Pass-Authentifizierung: adobe-pass-**3.0**
+
 Veröffentlichungsdatum: **09/10/2024 - 09/12/2024**
 
-### Neue Funktionen {#new-features-300}
+### Versionsübersicht {#release-overview-300}
 
-#### REST API v2 {#rest-apis}
+#### REST API v2
 
 ##### Code
 
@@ -48,6 +49,6 @@ Veröffentlichungsdatum: **09/10/2024 - 09/12/2024**
 
 * Informationen zum Testen der neuen REST-API v2 finden Sie auf der neuen Seite zur Adobe Pass-Authentifizierung von der [Adobe Developer](https://developer.adobe.com/adobe-pass)-Website.
 
-### Fehlerbehebungen {#bug-fixes-300}
+#### Fehlerbehebungen
 
 * Es wurde ein Problem behoben, bei dem der Umleitungs-URL-Parameter nicht verwendet wurde, wenn er in der Abmeldeanfrage vorhanden war.

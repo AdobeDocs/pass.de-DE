@@ -2,7 +2,7 @@
 title: Versionshinweise zur Adobe Pass-Authentifizierung 2.64.1
 description: Versionshinweise zur Adobe Pass-Authentifizierung 2.64.1
 exl-id: b0edbd90-ebb5-40a7-9034-1699dccfadb5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '137'
 ht-degree: 0%
@@ -25,6 +25,7 @@ Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme diese
 ### Build-Nummer {#build-number-2641}
 
 Adobe Pass-Authentifizierung: adobe-pass-**2.64.1**
+
 Veröffentlichungsdatum: **01/31/2023 - 02/02/2023**
 
 ### Versionsübersicht {#release-overview-2641}
