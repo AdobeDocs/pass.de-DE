@@ -2,18 +2,18 @@
 title: Versionshinweise zur Adobe Pass-Authentifizierung 2.70
 description: Versionshinweise zur Adobe Pass-Authentifizierung 2.70
 exl-id: 81713f8e-bc51-4057-9b00-6a2d6c83cd02
-source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
+source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '140'
+source-wordcount: '136'
 ht-degree: 0%
 
 ---
 
 # Versionshinweise zur Adobe Pass-Authentifizierung 2.70 {#authn-270-rn}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
+> Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
 
 Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme dieser Version beschrieben:
 

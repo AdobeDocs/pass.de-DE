@@ -2,18 +2,18 @@
 title: Versionshinweise zur Adobe Pass-Authentifizierung 2.63
 description: Versionshinweise zur Adobe Pass-Authentifizierung 2.63
 exl-id: 40987328-6d41-4948-aa4a-bab31f98a18a
-source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
+source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '304'
+source-wordcount: '300'
 ht-degree: 0%
 
 ---
 
 # Versionshinweise zur Adobe Pass-Authentifizierung 2.63 {#authn-263-rn}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
+> Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
 
 Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme dieser Version beschrieben:
 
