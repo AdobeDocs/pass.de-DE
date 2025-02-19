@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass-Authentifizierung
 user-guide-description: Die Adobe Pass-Authentifizierung ist eine Berechtigungslösung für TV Everywhere. Sie bietet ein modulares Framework, mit dem festgestellt werden kann, ob eine Person, die Zugriff auf eine Ressource anfordert, dazu berechtigt ist.
-source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
+source-git-commit: 4ad5ea619f64a78a72f69228c9ae3c83a7b66f24
 workflow-type: tm+mt
-source-wordcount: '1230'
+source-wordcount: '1246'
 ht-degree: 2%
 
 ---
@@ -17,6 +17,9 @@ ht-degree: 2%
 + [Adobe Pass-Authentifizierung](home.md)
 + [Produktankündigungen](product-announcements.md)
 + Produktversionen {#product-releases}
+   + {#2025} 2025
+      + [Versionshinweise zur Adobe Pass-Authentifizierung 3.1.0](notes-releases/auth-rn-310.md)
+      + [Versionshinweise zur Adobe Pass-Authentifizierung für JavaScript 4.7.1](notes-releases/authn-rn-javascript-471.md)
    + {#2024} 2024
       + [Versionshinweise zu Adobe Pass Authentication 3.0.3](notes-releases/auth-rn-303.md)
       + [Versionshinweise zur Adobe Pass-Authentifizierung 3.0](notes-releases/auth-rn-300.md)
@@ -116,7 +119,7 @@ ht-degree: 2%
                + [Header - AP-Device-Identifier](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
                + [Kopfzeile - x-device-info](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
                + [Kopfzeile - AD-Service-Token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
-               + [Header - Adobe-subject-token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
+               + [Kopfzeile - Adobe-subject-token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
                + [Header - AP-Partner-Framework-Status](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
                + [Kopfzeile - AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + {#standard-features} Standardfunktionen
@@ -152,7 +155,7 @@ ht-degree: 2%
          + [Server-seitige Metriken](integration-guide-programmers/features-premium/esm/understanding-serverside-metrics.md)
       + Analytics {#analytics}
          + [Integrieren von Server-seitigen Daten der Adobe Pass-Authentifizierung in Adobe Analytics](integration-guide-programmers/features-premium/analytics/integrate-authn-servr-data-analytics.md)
-         + [Verwenden der Experience Cloud-ID bei der Adobe Pass-Authentifizierung](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
+         + [Verwenden der Experience Cloud ID bei der Adobe Pass-Authentifizierung](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
    + Legacy-{#legacy}
       + (Legacy) REST API v1-{#rest-api-v1}
          + [Übersicht über die (veraltete) REST-API v1](integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
@@ -256,7 +259,7 @@ ht-degree: 2%
             + [(Legacy) Verhindern, dass MVPDs im Auswahldialogfeld angezeigt werden](integration-guide-programmers/legacy/notes-technical/prevent-mvpd-selectn-dialog.md)
          + (Veraltete) {#troubleshooting} zur Fehlerbehebung
             + [(veraltet) Verwenden von Charles Proxy](integration-guide-programmers/legacy/notes-technical/using-charles-proxy.md)
-            + [(Legacy) Überwachen der Adobe Pass Adobe PayTV-Pass](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
+            + [(Legacy) Überwachen des Adobe Pass Adobe PayTV-Ausweises](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
             + [(Veraltet) Testen von Authentifizierungs- und Autorisierungsflüssen mithilfe der Adobe-API-Test-Site](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
 + Integrationshandbuch für MVPDs {#integration-guide-mvpds}
    + [MVPD-Integrationshandbuch](integration-guide-mvpds/mvpd-integration-guide-overview.md)
