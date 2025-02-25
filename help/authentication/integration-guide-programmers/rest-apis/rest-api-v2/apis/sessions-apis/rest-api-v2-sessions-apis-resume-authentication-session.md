@@ -2,9 +2,9 @@
 title: Authentifizierungssitzung fortsetzen
 description: REST API V2 - Fortsetzen der Authentifizierungssitzung
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
+source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
 workflow-type: tm+mt
-source-wordcount: '841'
+source-wordcount: '876'
 ht-degree: 1%
 
 ---
@@ -233,17 +233,14 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  Der Typ des verwendeten Grundes, der den „actionName“ erklärt.
+                  Der Typ des Grundes, der den „actionName“ erklärt.
                   <br/><br/>
                   Die möglichen Werte sind:
                   <ul>
-                    <li><b>Keine</b></li>
-                    <li><b>Authentifiziert</b></li>
-                    <li><b>Temporär</b></li>
-                    <li><b>degradiert</b></li>
-                    <li><b>Authentifiziertes SSO</b></li>
-                    <li><b>pfs_fallback</b></li>
-                    <li><b>configuration_fallback</b></li>
+                    <li><b>none</b><br/>Die Client-Anwendung ist erforderlich, um weiterhin authentifiziert zu werden.</li>
+                    <li><b>authentifiziert</b><br/>Die Client-Anwendung wird bereits über grundlegende Zugriffsflüsse authentifiziert.</li>
+                    <li><b>temporär</b><br/> Die Client-Anwendung wird bereits über temporäre Zugriffsflüsse authentifiziert.</li>
+                    <li><b>Heruntergestuft</b><br/> Die Client-Anwendung wird bereits über eingeschränkte Zugriffsflüsse authentifiziert.</li>
                   </ul>
                <td><i>required</i></td>
             </tr>
@@ -353,6 +350,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authenticate",
     "actionType": "interactive",
+    "reasonType": "none",
     "url": "/api/v2/authenticate/REF30/8ER640M",
     "code": "8ER640M",
     "sessionId": "1b614390-6610-4d14-9421-6565f6e75958",
@@ -444,6 +442,8 @@ Content-Type: application/json;charset=UTF-8
     "serviceProvider": "REF30"
 }
 ```
+
+>[!ENDTABS]
 
 ### 4. Fortsetzen der Authentifizierungssitzung mit Standard- oder Werbe-TempPass (nicht erforderlich)
 

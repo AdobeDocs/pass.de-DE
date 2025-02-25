@@ -2,9 +2,9 @@
 title: MVPD-Liste der IP-Adressen
 description: MVPD-Liste der IP-Adressen
 exl-id: be18084c-22f5-47b5-b088-d9032681113d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 1f04f0c60d404d8ae1056a8610e76c07d0c6505e
 workflow-type: tm+mt
-source-wordcount: '147'
+source-wordcount: '127'
 ht-degree: 0%
 
 ---
@@ -25,14 +25,18 @@ Für eine MVPD/Adobe Pass-Authentifizierungsintegration müssen bestimmte IPs in
 | 34.198.39.14 | Produktion | US-Ost |
 | 35.162.207.100 | Produktion | US-West |
 | 34.212.224.47 | Produktion | US-West |
-| 52.27.200.183 | Staging | US-West |
 | 52.37.19.205 | Staging | US-West |
-| 34.193.92.8 | Staging | US-Ost |
-| 35.174.195.14 | Staging | US-Ost |
+| 44.225.108.111 | Staging | US-West |
+| 52.34.62.16 | Staging | US-West |
+| 52.27.200.183 | Staging | US-West |
 | 52.41.27.220 | Staging | US-West |
 | 52.43.250.32 | Staging | US-West |
 | 54.70.252.231 | Staging | US-West |
+| 54.205.118.100 | Staging | US-Ost |
+| 35.174.195.14 | Staging | US-Ost |
 | 54.146.175.174 | Staging | US-Ost |
+| 54.83.175.243 | Staging | US-Ost |
+| 34.193.92.8 | Staging | US-Ost |
 | 18.215.135.17 | Staging | US-Ost |
 | 193.105.140.131 | VPN | eu-east |
 | 192.150.10.0/24 | VPN | US-West |

@@ -2,9 +2,9 @@
 title: Authentifizierungssitzung erstellen
 description: REST API V2 - Authentifizierungssitzung erstellen
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
+source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
 workflow-type: tm+mt
-source-wordcount: '1000'
+source-wordcount: '1047'
 ht-degree: 0%
 
 ---
@@ -132,7 +132,7 @@ ht-degree: 0%
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-subject-token</td>
       <td>
-        Die Erstellung der Single-Sign-On-Payload für die Platform-Identitätsmethode wird in der Kopfzeilendokumentation zu <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> beschrieben.
+        Die Erstellung der Single Sign-On-Payload für die Platform-Identitätsmethode wird in der Kopfzeilendokumentation zu <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> beschrieben.
         <br/><br/>
         Weitere Informationen zu Flüssen, für die Single Sign-on unter Verwendung einer Platform-Identität aktiviert ist, finden Sie in der Dokumentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-on unter Verwendung von Platform-Identitätsflüssen</a> .
       </td>
@@ -268,17 +268,15 @@ ht-degree: 0%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  Der Typ des verwendeten Grundes, der den „actionName“ erklärt.
+                  Der Typ des Grundes, der den „actionName“ erklärt.
                   <br/><br/>
                   Die möglichen Werte sind:
                   <ul>
-                    <li><b>Keine</b></li>
-                    <li><b>Authentifiziert</b></li>
-                    <li><b>Temporär</b></li>
-                    <li><b>degradiert</b></li>
-                    <li><b>Authentifiziertes SSO</b></li>
-                    <li><b>pfs_fallback</b></li>
-                    <li><b>configuration_fallback</b></li>
+                    <li><b>none</b><br/>Die Client-Anwendung ist erforderlich, um weiterhin authentifiziert zu werden.</li>
+                    <li><b>authentifiziert</b><br/>Die Client-Anwendung wird bereits über grundlegende Zugriffsflüsse authentifiziert.</li>
+                    <li><b>temporär</b><br/> Die Client-Anwendung wird bereits über temporäre Zugriffsflüsse authentifiziert.</li>
+                    <li><b>Heruntergestuft</b><br/> Die Client-Anwendung wird bereits über eingeschränkte Zugriffsflüsse authentifiziert.</li>
+                    <li><b>AuthenticatedSSO</b><br/>Die Client-Anwendung wird bereits über Single Sign-on-Zugriffsflüsse authentifiziert.</li>
                   </ul>
                <td><i>required</i></td>
             </tr>
@@ -483,6 +481,8 @@ Content-Type: application/json;charset=UTF-8
     "serviceProvider": "REF30"
 }
 ```
+
+>[!ENDTABS]
 
 ### 4. Erstellen Sie eine Authentifizierungssitzung mit einfachem oder Promotional-TempPass (nicht erforderlich).
 

@@ -2,9 +2,9 @@
 title: Partnerauthentifizierungsanfrage abrufen
 description: REST API V2 - Partnerauthentifizierungsanfrage abrufen
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
+source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
 workflow-type: tm+mt
-source-wordcount: '1136'
+source-wordcount: '1230'
 ht-degree: 0%
 
 ---
@@ -258,6 +258,23 @@ ht-degree: 0%
                <td><i>required</i></td>
             </tr>
             <tr>
+               <td style="background-color: #DEEBFF;">reasonType</td>
+               <td>
+                  Der Typ des Grundes, der den „actionName“ erklärt.
+                  <br/><br/>
+                  Die möglichen Werte sind:
+                  <ul>
+                    <li><b>none</b><br/>Die Client-Anwendung ist erforderlich, um weiterhin authentifiziert zu werden.</li>
+                    <li><b>authentifiziert</b><br/>Die Client-Anwendung wird bereits über grundlegende Zugriffsflüsse authentifiziert.</li>
+                    <li><b>temporär</b><br/> Die Client-Anwendung wird bereits über temporäre Zugriffsflüsse authentifiziert.</li>
+                    <li><b>Heruntergestuft</b><br/> Die Client-Anwendung wird bereits über eingeschränkte Zugriffsflüsse authentifiziert.</li>
+                    <li><b>AuthenticatedSSO</b><br/>Die Client-Anwendung wird bereits über Single Sign-on-Zugriffsflüsse authentifiziert.</li>
+                    <li><b>pfs_fallback</b><br/>Die Client-Anwendung muss aufgrund eines fehlenden oder ungültigen Kopfzeilenwerts <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> zum einfachen Authentifizierungsfluss zurückkehren.</li>
+                    <li><b>configuration_fallback</b><br/>Die Client-Anwendung muss aufgrund der Partnerkonfiguration für einmaliges Anmelden im Adobe Pass-Backend auf einen einfachen Authentifizierungsfluss zurückgreifen.</li>
+                  </ul>
+               <td><i>required</i></td>
+            </tr>
+            <tr>
                <td style="background-color: #DEEBFF;">missingParameters</td>
                <td>
                     Die fehlenden Parameter, die angegeben werden müssen, um den einfachen Authentifizierungsfluss abzuschließen.
@@ -379,6 +396,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "partner_profile",
     "actionType": "direct",
+    "reasonType": "none",
     "url": "/api/v2/REF30/profiles/sso/Apple",
     "sessionId": "83c046be-ea4b-4581-b5f2-13e56e69dee9",
     "mvpd": "Cablevision",
@@ -435,15 +453,52 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Partner-Authentifizierungsanfrage abrufen, aber auf einfachen Authentifizierungsfluss zurückgreifen, ohne dass Parameter fehlen
+### 3. Abrufen der Partnerauthentifizierungsanfrage, aber Zurückfallen auf den einfachen Authentifizierungsfluss aufgrund eines fehlenden oder ungültigen Kopfzeilenwerts für den AP-Partner-Framework-Status
 
->[!IMPORTANT]
-> 
-> Annahmen
-> 
-> <br/>
->
-> * Fallback zum einfachen Authentifizierungsfluss aufgrund der Single-Sign-On-Parameter des Partners oder der Single-Sign-On-Konfiguration des Partners im Adobe Pass-Backend.
+>[!BEGINTABS]
+
+>[!TAB Anfrage]
+
+```HTTPS
+POST /api/v2/REF30/sessions/sso/Apple HTTP/1.1
+ 
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    Content-Type: application/x-www-form-urlencoded
+    AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    AP-Partner-Framework-Status: ewogICAgImZyYW1ld29ya1Blcm1pc3Npb25JbmZvIjogewogICAgICAiYWNjZXNzU3RhdHVzIjogImRlbmllZCIKICAgIH0sCiAgICAiZnJhbWV3b3JrUHJvdmlkZXJJbmZvIiA6IHt9Cn0=
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
+
+Body:
+
+domainName=adobe.com&redirectUrl=https%3A%2F%2Fadobe.com
+```
+
+>[!TAB Antwort]
+
+```HTTPS
+HTTP/1.1 200 OK  
+
+Content-Type: application/json;charset=UTF-8
+
+{
+    "actionName": "authenticate",
+    "actionType": "interactive",
+    "reasonType": "pfs_fallback",
+    "url": "/api/v2/authenticate/REF30/OKTWW2W",
+    "code": "OKTWW2W",
+    "sessionId": "748f0b9e-a2ae-46d5-acd9-4b4e6d71add7",
+    "mvpd": "Cablevision",
+    "serviceProvider": "REF30",
+    "notBefore": "1733735289035",
+    "notAfter": "1733737089035"
+}
+```
+
+>[!ENDTABS]
+
+### 4. Abrufen der Partnerauthentifizierungsanfrage, jedoch aufgrund der Partnerkonfiguration mit Single Sign-on im Adobe Pass-Backend auf den einfachen Authentifizierungsfluss zurückgreifen
 
 >[!BEGINTABS]
 
@@ -475,7 +530,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authenticate",
     "actionType": "interactive",
-    "reasonType": "none",
+    "reasonType": "configuration_fallback",
     "url": "/api/v2/authenticate/REF30/OKTWW2W",
     "code": "OKTWW2W",
     "sessionId": "748f0b9e-a2ae-46d5-acd9-4b4e6d71add7",
@@ -488,15 +543,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Partner-Authentifizierungsanfrage abrufen, aber auf einfachen Authentifizierungsfluss mit fehlenden Parametern zurückgreifen
-
->[!IMPORTANT]
->
-> Annahmen
->
-> <br/>
->
-> * Fallback zum einfachen Authentifizierungsfluss aufgrund der Single-Sign-On-Parameter des Partners oder der Single-Sign-On-Konfiguration des Partners im Adobe Pass-Backend.
+### 5. Partner-Authentifizierungsanfrage abrufen, aber aufgrund fehlender Parameter auf einfachen Authentifizierungsfluss zurückgreifen
 
 >[!BEGINTABS]
 
