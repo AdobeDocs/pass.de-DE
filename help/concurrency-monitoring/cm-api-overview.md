@@ -2,9 +2,9 @@
 title: API-Übersicht
 description: API-Übersicht über die Überwachung von gleichzeitigen Aufrufen
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: b30d9217e70f48bf8b8d8b5eaaa98fea257f3fc5
+source-git-commit: 0cabb090e3c0282f9bcd097719d52374f2d991dd
 workflow-type: tm+mt
-source-wordcount: '2102'
+source-wordcount: '2155'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Dieses Dokument unterstützt Anwendungsentwickler bei der Verwendung unserer Swa
 
 Während des Entwicklungsprozesses stellt die öffentliche Swagger-Dokumentation die Referenz-Richtlinie zum Verständnis und Testen der API-Flüsse dar. Dies ist ein guter Ausgangspunkt, um einen praxisnahen Ansatz zu haben und sich mit der Art und Weise vertraut zu machen, wie sich reale Anwendungen in verschiedenen Szenarien der Benutzerinteraktion verhalten würden.
 
-Reichen Sie ein Ticket in [Zendesk](mailto:tve-support@adobe.com) ein, um Ihr Unternehmen und Ihre Anträge bei der Parallelitätsüberwachung zu registrieren. Adobe weist jeder Entität eine Anwendungs-ID zu. In diesem Handbuch verwenden wir zwei Referenzanwendungen mit den IDs **demo-app** und **demo-app-2** die sich unter der Mandanten-Adobe befinden.
+Reichen Sie ein Ticket in [Zendesk](mailto:tve-support@adobe.com) ein, um Ihr Unternehmen und Ihre Anträge bei der Parallelitätsüberwachung zu registrieren. Adobe weist jeder Entität eine Anwendungs-ID zu. In diesem Handbuch verwenden wir zwei Referenzanwendungen mit den IDs **demo-app** und **demo-app-2** die sich unter dem Mandanten-Adobe befinden.
 
 
 ## Anwendungsbeispiele {#api-use-case}
@@ -107,7 +107,7 @@ Sie können die Option „Keep the stream alive“ verwenden, die in der Swagger
 
 #### Session Termination {#session-termination}
 
-Der Business-Case Ihres Unternehmens erfordert möglicherweise eine gleichzeitige Überwachung, um eine bestimmte Sitzung zu beenden, z. B. wenn ein Benutzer ein Video nicht mehr ansieht. Dies kann durch einen DELETE-Aufruf in der Sitzungsressource erfolgen.
+Der Business-Case Ihres Unternehmens erfordert möglicherweise eine gleichzeitige Überwachung, um eine bestimmte Sitzung zu beenden, z. B. wenn ein Benutzer ein Video nicht mehr ansieht. Dies kann durch einen DELETE-Aufruf auf der Sitzungsressource erfolgen.
 
 ![](assets/delete-session.png)
 
@@ -136,6 +136,10 @@ Wenn es beim Aufruf keine laufenden Sitzungen für einen bestimmten Benutzer gib
 ![](assets/get-all-running-streams-empty.png)
 
 Beachten Sie außerdem, dass in diesem Fall die **Expires**-Kopfzeile nicht vorhanden ist.
+
+Wenn eine Sitzung erstellt wurde, bei der eine andere mit dem Header **X-Terminate** unter „Metadaten“ getötet wurde, finden Sie das Feld **ersetzt**. Sein Wert ist ein Indikator für die getötete Sitzung, um Platz für die aktuelle zu machen.
+
+![](assets/get-all-running-streams-superseded.png)
 
 #### Die Richtlinie durchbrechen {#breaking-policy-app-first}
 
@@ -175,7 +179,7 @@ Bei allen Sitzungslebenszyklus-API-Aufrufen ist der Antworttext (falls vorhanden
 **Tipp**
 Das **EvaluationResult** enthält ein Array von Advice-Objekten unter **associatedAdvice**. Die Ratschläge sind dafür gedacht, dass die Anwendung eine umfassende Fehlermeldung für den Benutzer anzeigt und (möglicherweise) dem Benutzer die Durchführung von Aktionen ermöglicht.
 
-Derzeit gibt es zwei Arten von Hinweisen (angegeben durch ihren **type**-Attributwert): **Regelverletzung** und **remote-termination**. Die erste liefert Details zu einer gebrochenen Regel und zu den Sitzungen, die mit der aktuellen kollidieren (einschließlich des Attributs terminate , das verwendet werden kann, um diese Sitzung remote zu beenden). Die zweite ist nur zu sagen, dass die aktuelle Sitzung wurde absichtlich durch eine Remote-Sitzung beendet, sodass die Benutzer wissen, wer sie rausgeworfen, wenn die Grenzen erreicht wurden.
+Derzeit gibt es zwei Arten von Hinweisen (angegeben durch ihren **type**-Attributwert): **Regelverletzung** und **remote-termination**. Die erste liefert Details zu einer gebrochenen Regel und zu den Sitzungen, die mit der aktuellen kollidieren (einschließlich des Attributs terminate , das verwendet werden kann, um diese Sitzung remote zu beenden). Die zweite ist nur zu sagen, dass die aktuelle Sitzung wurde absichtlich durch eine Remote-Sitzung beendet, sodass die Benutzer wissen, wer sie rausgeworfen, wenn die Grenzen erreicht wurden. Falls **ersetzt** in den Metadaten enthalten ist, wurde die betreffende Sitzung mit dem Header **X-Terminate** erstellt.
 
 ![](assets/advices.png)
 
