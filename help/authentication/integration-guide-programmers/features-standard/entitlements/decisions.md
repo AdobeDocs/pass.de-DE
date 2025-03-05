@@ -1,9 +1,10 @@
 ---
 title: Entscheidungen
 description: Entscheidungen
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+exl-id: 1efd70af-8c1d-43c4-87fc-14488d42b23d
+source-git-commit: a19f4fd40c9cd851a00f05f82adbabb85edd8422
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '988'
 ht-degree: 0%
 
 ---
@@ -69,6 +70,17 @@ Beachten Sie, dass Autorisierungsentscheidungen nur für eine begrenzte Anzahl v
 >
 > Die maximale Anzahl von Ressourcen kann erst erhöht werden, nachdem eine Vereinbarung mit den MVPDs und den Adobe Pass-Authentifizierungsbeauftragten getroffen wurde.
 
+## Autorisierungs-TTL-Verwaltung (Time-to-Live) {#authorization-ttl-management}
+
+Die Gültigkeitsdauer (Time-to-Live, TTL) für die Autorisierung definiert, wie lange eine Ressource autorisiert bleibt, bevor eine erneute Autorisierung erforderlich wird. Dieser Zeitraum ist begrenzt und muss mit MVPD-Vertretern vereinbart werden. TTL-Werte können je nach folgenden Kriterien variieren:
+
+* Plattformkategorie (z. B. Desktop-Computer, Mobilgeräte, an das Fernsehgerät angeschlossene Geräte)
+* Spezifische Plattform (z. B. iOS, Android, tvOS, Roku, FireTV)
+
+Die Autorisierungs-(Autorisierungs-)TTL kann über das Adobe Pass [TVE-Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) von einem Ihrer Organisationsadministratoren oder von einem in Ihrem Namen handelnden Adobe Pass-Authentifizierungsbeauftragten angezeigt und geändert werden.
+
+Weitere Informationen finden Sie in der Dokumentation [TVE Dashboard Integrations-Benutzerhandbuch](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
+
 ## Geschützte Ressourcen {#protected-resources}
 
 Geschützte Ressourcen beziehen sich auf streambare Inhalte, die durch eindeutige Werte identifiziert werden, die durch Vereinbarungen zwischen MVPDs und teilnehmenden Programmierern definiert werden.
@@ -133,3 +145,8 @@ Weitere Informationen zur Integration der oben genannten APIs finden Sie in den 
 
 * [Grundlegender Vorautorisierungsfluss innerhalb der primären Anwendung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
 * [Grundlegender Autorisierungsfluss innerhalb der primären Anwendung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
+
+>[!MORELIKETHIS]
+>
+> [Häufig gestellte Fragen zur Vorautorisierungsphase](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general)
+> [Häufig gestellte Fragen zur Genehmigungsphase](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)

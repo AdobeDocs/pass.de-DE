@@ -2,9 +2,9 @@
 title: Medien-Token
 description: Medien-Token
 exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: a19f4fd40c9cd851a00f05f82adbabb85edd8422
 workflow-type: tm+mt
-source-wordcount: '667'
+source-wordcount: '682'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Das Medien-Token ist ein Token, das von der Adobe Pass-Authentifizierung [REST A
 
 Das Medien-Token ist für einen begrenzten und kurzen Zeitraum (standardmäßig 7 Minuten) gültig, der zum Zeitpunkt der Ausgabe angegeben ist. Dadurch wird der Zeitraum angegeben, bevor es von der Client-Anwendung überprüft und verwendet werden muss. Das Medien-Token ist auf die einmalige Verwendung beschränkt und darf nie zwischengespeichert werden.
 
-Das Medien-Token besteht aus einer signierten Zeichenfolge, die auf der als Klartext gesendeten Public Key Infrastructure (PKI) basiert. Mit dem PKI-basierten Schutz wird das Token mit einem asymmetrischen Schlüssel signiert, der von einer Zertifizierungsstelle (Certification Authority, CA) zum Adobe ausgestellt wird.
+Das Medien-Token besteht aus einer signierten Zeichenfolge, die auf der als Klartext gesendeten Public Key Infrastructure (PKI) basiert. Mit dem PKI-basierten Schutz wird das Token mit einem asymmetrischen Schlüssel signiert, der von einer Zertifizierungsstelle (Certification Authority, CA) an Adobe ausgegeben wird.
 
 Das Medien-Token wird an den Programmierer übergeben, der es dann mithilfe des Media Token Verifier validieren kann, bevor der Video-Stream gestartet wird, um die Zugriffssicherheit für diese Ressource sicherzustellen.
 
@@ -39,7 +39,7 @@ Die Media Token Verifier-Bibliothek erfordert JDK Version 1.5 oder höher und un
 
 Die Media Token Verifier-Bibliothek, die durch das `mediatoken-verifier-VERSION.jar` Java-Archiv dargestellt wird, umfasst:
 
-* Öffentlichen Adobe-Schlüssel.
+* Öffentlicher Adobe-Schlüssel.
 * Token Verification API (`ITokenVerifier.java`).
 * Referenzimplementierung (`com.adobe.entitlement.test.EntitlementVerifierTest.java`).
 * Abhängigkeiten und Zertifikatschlüsselspeicher.
@@ -198,10 +198,14 @@ Das Medien-Token kann mit der folgenden API abgerufen werden:
 
 Weitere Informationen zur Struktur von Autorisierungsentscheidungen und Medien **Token finden Sie in** Abschnitten zu „Antwort **und** Beispiele“ der obigen API.
 
+>[!IMPORTANT]
+>
+> Die Client-Anwendung muss keinen separaten Endpunkt abfragen, um die [Medien-Token](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md) abzurufen, da sie bereits in den Autorisierungsentscheidungen enthalten sind, die den Benutzerzugriff ermöglichen.
+
 Weitere Informationen zur Integration der oben genannten API sowie dazu, wann diese integriert werden sollte, finden Sie im folgenden Dokument:
 
 * [Grundlegender Autorisierungsfluss innerhalb der primären Anwendung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
 
->[!IMPORTANT]
+>[!MORELIKETHIS]
 >
-> Die Client-Anwendung muss zur Validierung den `serializedToken`-Wert aus der zurückgegebenen `token` an [Media Token Verifier](#media-token-verifier) übergeben.
+> [Häufig gestellte Fragen zur Autorisierungsphase](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)
