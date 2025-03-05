@@ -2,9 +2,9 @@
 title: Single Sign-On - Service-Token - Flüsse
 description: REST API v2 - Single Sign-On - Service-Token - Flüsse
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1848'
+source-wordcount: '1858'
 ht-degree: 0%
 
 ---
@@ -19,12 +19,16 @@ ht-degree: 0%
 >
 > Die REST-API-V2-Implementierung ist an die Dokumentation [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) gebunden.
 
+>[!MORELIKETHIS]
+>
+> Stellen Sie sicher, dass Sie auch die häufig gestellten Fragen [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general) besuchen.
+
 Die Service-Token-Methode ermöglicht es mehreren Anwendungen, bei der Verwendung von Adobe Pass-Services eine eindeutige Benutzerkennung zu verwenden, um Single Sign-on (SSO) auf mehreren Geräten und Plattformen zu erzielen.
 
 Die Programme sind für das Abrufen der Payload der eindeutigen Benutzerkennung mithilfe von externen Identity Services außerhalb von Adobe Pass-Systemen verantwortlich, z. B.:
 
 * Ein DTC-Dienst (Direct-to-Consumer), bei dem sich Benutzer auf jedem Gerät mit denselben Anmeldeinformationen anmelden und mit derselben Benutzer-ID oder demselben Benutzerkontonamen verknüpft sind.
-* Ein Authentifizierungsdienst eines Drittanbieters, wie Google oder Facebook, bei dem sich Benutzende auf jedem Gerät mit denselben Anmeldeinformationen anmelden und mit derselben E-Mail-Adresse verknüpft sind.
+* Ein Authentifizierungsdienst eines Drittanbieters, wie Google oder Facebook, bei dem sich Benutzer auf jedem Gerät mit denselben Anmeldeinformationen anmelden und mit derselben E-Mail-Adresse verknüpft sind.
 
 Die Programme sind dafür verantwortlich, diese Payload mit eindeutiger Benutzerkennung als Teil der `AD-Service-Token`-Kopfzeile für alle Anfragen einzuschließen, die sie angeben.
 

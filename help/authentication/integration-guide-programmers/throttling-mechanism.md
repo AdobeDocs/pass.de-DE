@@ -2,7 +2,7 @@
 title: Drosselmechanismus
 description: Erfahren Sie mehr über den Drosselungsmechanismus, der bei der Adobe Pass-Authentifizierung verwendet wird. Einen Überblick über diesen Mechanismus finden Sie auf dieser Seite .
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
 source-wordcount: '1141'
 ht-degree: 0%
@@ -42,7 +42,7 @@ Server-zu-Server-Implementierungen müssen die IP-Adressen ihrer Clients unter V
 
 Weitere Informationen zum Übergeben der Kopfzeile „X-Forwarded-For“ finden [ hier](legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md).
 
-### Tatsächliche Grenzwerte und Endpunkte
+### Tatsächliche Grenzwerte und Endpunkte {#throttling-mechanism-limits}
 
 Derzeit ermöglicht das standardmäßige Limit maximal 1 Anfrage pro Sekunde mit einem anfänglichen Burst von 10 Anfragen (einmalige Vergütung für die erste Interaktion des identifizierten Clients, die es ermöglichen sollte, dass die Initialisierung erfolgreich abgeschlossen wird). Dies sollte keinen regulären Business Case für alle unsere Kunden betreffen.
 
@@ -97,7 +97,7 @@ Informationen zu den einzelnen Implementierungsdetails finden Sie in der entspre
 - [Android SDK API-Referenz](legacy/sdks/android-sdk/android-sdk-api-reference.md)
 - [iOS/tvOS-API-Referenz](legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
 
-### API-Antwortänderungen und -antwort
+### API-Antwortänderungen und -antwort {#throttling-mechanism-response}
 
 Wenn wir feststellen, dass der Grenzwert überschritten wird, markieren wir diese Anfrage mit einem bestimmten Antwortstatus (HTTP 429: Zu viele Anfragen) und weisen Sie an, dass Sie alle dem Benutzergerät zugewiesenen Token (IP-Adresse) für das Zeitintervall verwendet haben.
 

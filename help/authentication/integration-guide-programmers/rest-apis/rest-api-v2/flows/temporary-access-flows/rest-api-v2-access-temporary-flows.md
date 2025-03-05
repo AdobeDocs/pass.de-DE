@@ -2,9 +2,9 @@
 title: Temporäre Zugriffsflüsse
 description: REST API v2 - Temporäre Zugriffsflüsse
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '3215'
+source-wordcount: '3225'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > Die REST-API-V2-Implementierung ist an die Dokumentation [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) gebunden.
+
+>[!MORELIKETHIS]
+>
+> Stellen Sie sicher, dass Sie auch die häufig gestellten Fragen [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general) besuchen.
 
 Mit TempPass können Programmierer temporären Zugriff auf ihre geschützten Inhalte gewähren, ohne die Benutzer zur Authentifizierung mit einem gültigen MVPD-Konto aufzufordern.
 

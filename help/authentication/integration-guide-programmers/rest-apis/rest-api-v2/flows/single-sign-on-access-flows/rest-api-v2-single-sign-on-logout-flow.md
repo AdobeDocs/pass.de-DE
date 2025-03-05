@@ -2,9 +2,9 @@
 title: Einzelne Abmeldung - Fluss
 description: REST API v2 - Einzelne Abmeldung - Fluss
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '587'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > Die REST-API-V2-Implementierung ist an die Dokumentation [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) gebunden.
+
+>[!MORELIKETHIS]
+>
+> Stellen Sie sicher, dass Sie auch die häufig gestellten Fragen [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general) besuchen.
 
 ## Initiieren der einmaligen Abmeldung für eine bestimmte MVPD {#initiate-single-logout-for-specific-mvpd}
 
@@ -62,7 +66,7 @@ Führen Sie die angegebenen Schritte aus, um den einzelnen Abmeldefluss für ein
    >
    > <br/>
    > 
-   > Weitere Informationen zu `Adobe-Subject-Token`-Header finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) .
+   > Weitere Informationen zu `Adobe-Subject-Token` Kopfzeile finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
    > 
    > <br/>
    > 

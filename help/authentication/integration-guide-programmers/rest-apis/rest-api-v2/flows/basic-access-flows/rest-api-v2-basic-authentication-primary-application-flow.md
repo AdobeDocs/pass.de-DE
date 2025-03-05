@@ -2,9 +2,9 @@
 title: Einfache Authentifizierung - Primäre Anwendung - Fluss
 description: REST API v2 - Standardauthentifizierung - Primäre Anwendung - Fluss
 exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '894'
+source-wordcount: '904'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > Die REST-API-V2-Implementierung ist an die Dokumentation [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) gebunden.
+
+>[!MORELIKETHIS]
+>
+> Stellen Sie sicher, dass Sie auch die häufig gestellten Fragen [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general) besuchen.
 
 Mit dem **Authentifizierungsfluss** innerhalb der Adobe Pass-Authentifizierungsberechtigung kann die Streaming-Anwendung überprüfen, ob ein Benutzer über ein gültiges MVPD-Konto verfügt. Für diesen Vorgang muss der Benutzer über ein gültiges MVPD-Konto verfügen und gültige Anmeldeinformationen auf der MVPD-Anmeldeseite eingeben.
 
