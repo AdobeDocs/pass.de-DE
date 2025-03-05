@@ -2,9 +2,9 @@
 title: Apple SSO-Cookbook (REST API v2)
 description: Apple SSO-Cookbook (REST API v2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '3443'
+source-wordcount: '3615'
 ht-degree: 0%
 
 ---
@@ -284,7 +284,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
    * [Authentifizierung innerhalb der sekundären Anwendung mit vorab ausgewähltem mvpd durchführen](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
    * [Authentifizierung innerhalb der sekundären Anwendung ohne vorab ausgewählte mvpd durchführen](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-1. **Fahren Sie mit dem Abrufen des Profils mithilfe des Antwortflusses zur Partnerauthentifizierung fort:** Die Antwort des Sitzungspartner-Endpunkts enthält die folgenden Daten:
+1. **Fahren Sie mit dem Erstellen und Abrufen eines Profils mithilfe des Antwortflusses zur Partnerauthentifizierung fort:** Die Antwort „Sitzungspartner-Endpunkt“ enthält die folgenden Daten:
    * Das `actionName`-Attribut ist auf „partner_profile“ festgelegt.
    * Das `actionType`-Attribut ist auf „direct“ festgelegt.
    * Das `authenticationRequest - type`-Attribut enthält das Sicherheitsprotokoll, das vom Partner-Framework für die Anmeldung bei MVPD verwendet wird (derzeit nur auf SAML festgelegt).
@@ -316,11 +316,11 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
    * Das Ablaufdatum des Benutzeranbieterprofils (falls verfügbar) ist gültig.
    * Die Partnerauthentifizierungsantwort (SAML-Antwort) ist vorhanden und gültig.
 
-1. **Profil mit Partnerauthentifizierungsantwort abrufen:** Die Streaming-Anwendung sammelt alle erforderlichen Daten, um ein Profil zu erstellen und abzurufen, indem sie den Partner-Endpunkt „Profile“ aufruft.
+1. **Profil mit Partnerauthentifizierungsantwort erstellen und abrufen:** Die Streaming-Anwendung sammelt alle erforderlichen Daten, um ein Profil zu erstellen und abzurufen, indem sie den Partner-Endpunkt „Profile“ aufruft.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [ finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request)Dokumentation zum Abrufen von Profilen mit Partnerauthentifizierungsantwort:
+   > Weitere Informationen zu folgenden [ finden Sie in der API-Dokumentation ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `partner` und `SAMLResponse`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` und `AP-Partner-Framework-Status`
@@ -338,7 +338,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [ in einer Profilantwort angegebenen Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Response)Dokumentation zum Abrufen von Profilen mit Partnerauthentifizierungsantwort .
+   > Weitere Informationen zu [ in einer Profilantwort enthaltenen Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Response)Dokumentation Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort .
    >
    > <br/>
    >
@@ -371,6 +371,10 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [ entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
 
    >[!IMPORTANT]
+   > 
+   > Die Streaming-Anwendung kann diesen Schritt überspringen, wenn der ausgewählte Benutzerprofiltyp nicht „appleSSO“ lautet.
+
+   >[!IMPORTANT]
    >
    > Weitere Informationen zu folgenden [ finden Sie in der Dokumentation ](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
    >
@@ -386,13 +390,17 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
    > Die Streaming-Anwendung muss sicherstellen, dass sie einen booleschen Wert angibt, der `false` für die [`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed)-Eigenschaft im `VSAccountMetadataRequest`-Objekt entspricht, um anzugeben, dass der Benutzer in dieser Phase nicht unterbrochen werden kann.
 
    >[!TIP]
-   > 
-   > Empfehlung: Die Streaming-Anwendung kann einen zwischengespeicherten Wert für die Partner-Framework-Statusinformationen verwenden. Wir empfehlen, ihn zu aktualisieren, wenn die Anwendung vom Hintergrund- in den Vordergrundstatus wechselt.
+   >
+   > Empfehlung: Die Streaming-Anwendung kann stattdessen einen zwischengespeicherten Wert für die Partner-Framework-Statusinformationen verwenden. Wir empfehlen, ihn zu aktualisieren, wenn die Anwendung vom Hintergrund- in den Vordergrundstatus wechselt. In diesem Fall muss die Streaming-Anwendung sicherstellen, dass sie zwischenspeichert und nur gültige Werte für den Partner-Framework-Status verwendet, wie im Schritt „Informationen zum Partner-Framework-Status zurückgeben“ beschrieben.
 
 1. **Partner-Framework-Statusinformationen zurückgeben:** Die Streaming-Anwendung validiert die Antwortdaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
    * Der Benutzerberechtigungs-Zugriffsstatus wird gewährt.
    * Die Kennung der Benutzeranbieter-Zuordnung ist vorhanden und gültig.
-   * Das Ablaufdatum des Benutzeranbieterprofils (falls verfügbar) ist gültig.
+   * Das Ablaufdatum des Benutzeranbieterprofils ist gültig.
+
+   >[!IMPORTANT]
+   >
+   > Die Streaming-Anwendung kann diesen Schritt überspringen, wenn der ausgewählte Benutzerprofiltyp nicht „appleSSO“ lautet.
 
 1. **Vorabautorisierungsentscheidungen abrufen:** Die Streaming-Anwendung sammelt alle erforderlichen Daten, um Vorabautorisierungsentscheidungen für eine Liste von Ressourcen zu erhalten, indem sie den Endpunkt Decisions Preauthorize aufruft.
 
@@ -406,7 +414,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
    >
    > <br/>
    >
-   > Die Streaming-Anwendung muss sicherstellen, dass sie einen gültigen Wert für den Partner-Framework-Status enthält, bevor sie eine weitere Anfrage stellt, wenn das ausgewählte Profil ein Profil vom Typ „appleSSO“ ist.
+   > Die Streaming-Anwendung muss sicherstellen, dass sie einen gültigen Wert für den Partner-Framework-Status enthält, bevor sie eine weitere Anfrage stellt, wenn das ausgewählte Profil ein Profil vom Typ „appleSSO“ ist. Dieser Schritt kann jedoch übersprungen werden, wenn der ausgewählte Benutzerprofiltyp nicht „appleSSO“ ist.
    >
    > <br/>
    >
@@ -435,6 +443,10 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
+   > Die Streaming-Anwendung kann diesen Schritt überspringen, wenn der ausgewählte Benutzerprofiltyp nicht „appleSSO“ lautet.
+
+   >[!IMPORTANT]
+   >
    > Weitere Informationen zu folgenden [ finden Sie in der Dokumentation ](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
    >
    > <br/>
@@ -450,12 +462,16 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!TIP]
    >
-   > Empfehlung: Die Streaming-Anwendung kann einen zwischengespeicherten Wert für die Partner-Framework-Statusinformationen verwenden. Wir empfehlen, ihn zu aktualisieren, wenn die Anwendung vom Hintergrund- in den Vordergrundstatus wechselt.
+   > Empfehlung: Die Streaming-Anwendung kann stattdessen einen zwischengespeicherten Wert für die Partner-Framework-Statusinformationen verwenden. Wir empfehlen, ihn zu aktualisieren, wenn die Anwendung vom Hintergrund- in den Vordergrundstatus wechselt. In diesem Fall muss die Streaming-Anwendung sicherstellen, dass sie zwischenspeichert und nur gültige Werte für den Partner-Framework-Status verwendet, wie im Schritt „Informationen zum Partner-Framework-Status zurückgeben“ beschrieben.
 
 1. **Partner-Framework-Statusinformationen zurückgeben:** Die Streaming-Anwendung validiert die Antwortdaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
    * Der Benutzerberechtigungs-Zugriffsstatus wird gewährt.
    * Die Kennung der Benutzeranbieter-Zuordnung ist vorhanden und gültig.
-   * Das Ablaufdatum des Benutzeranbieterprofils (falls verfügbar) ist gültig.
+   * Das Ablaufdatum des Benutzeranbieterprofils ist gültig.
+
+   >[!IMPORTANT]
+   >
+   > Die Streaming-Anwendung kann diesen Schritt überspringen, wenn der ausgewählte Benutzerprofiltyp nicht „appleSSO“ lautet.
 
 1. **Autorisierungsentscheidung abrufen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um eine Autorisierungsentscheidung für eine bestimmte Ressource zu erhalten, indem sie den Decisions Authorize-Endpunkt aufruft.
 
@@ -469,7 +485,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
    >
    > <br/>
    >
-   > Die Streaming-Anwendung muss sicherstellen, dass sie einen gültigen Wert für den Partner-Framework-Status enthält, bevor sie eine weitere Anfrage stellt, wenn das ausgewählte Profil ein Profil vom Typ „appleSSO“ ist.
+   > Die Streaming-Anwendung muss sicherstellen, dass sie einen gültigen Wert für den Partner-Framework-Status enthält, bevor sie eine weitere Anfrage stellt, wenn das ausgewählte Profil ein Profil vom Typ „appleSSO“ ist. Dieser Schritt kann jedoch übersprungen werden, wenn der ausgewählte Benutzerprofiltyp nicht „appleSSO“ ist.
    >
    > <br/>
    >
@@ -515,6 +531,10 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
+   > Die Streaming-Anwendung muss den Benutzer auffordern, den Abmeldevorgang auf Partnerebene abzuschließen, wie in den Attributen `actionName` und `actionType` angegeben, wenn der entfernte Benutzerprofiltyp „appleSSO“ ist.
+
+   >[!IMPORTANT]
+   >
    > Weitere Informationen zu den [ in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#response)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
    >
    > <br/>
@@ -527,9 +547,5 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
    > <br/>
    >
    > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
-
-   >[!IMPORTANT]
-   > 
-   > Die Streaming-Anwendung muss sicherstellen, dass sie anzeigt, dass sich der Benutzer weiterhin von der Partnerebene abmelden soll.
 
 +++

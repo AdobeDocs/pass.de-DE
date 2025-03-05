@@ -2,9 +2,9 @@
 title: Integrationshandbuch für Programmierer
 description: Integrationshandbuch für Programmierer
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '2071'
+source-wordcount: '2073'
 ht-degree: 0%
 
 ---
@@ -210,7 +210,7 @@ In den folgenden Schritten werden die allgemeinen Schritte für den Fall einer S
 **APIs**
 
 * [Partnerauthentifizierungsanfrage abrufen](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
-* [Abrufen des Profils mit der Antwort der Partnerauthentifizierung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+* [Erstellen und Abrufen eines Profils mithilfe der Antwort zur Partnerauthentifizierung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
 
 **Flows**
 

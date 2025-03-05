@@ -2,9 +2,9 @@
 title: Single Sign-On - Partner - Flüsse
 description: REST API v2 - Single Sign-On - Partner - Flüsse
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '1454'
+source-wordcount: '1468'
 ht-degree: 0%
 
 ---
@@ -125,7 +125,7 @@ Führen Sie die angegebenen Schritte aus, um die Partnerauthentifizierungsanfrag
 
    Wenn das Adobe Pass-Backend kein gültiges Profil identifiziert und die Partnervalidierung mit Single Sign-on erfolgreich ist, erhält die Streaming-Anwendung eine Antwort mit Aktionen und Daten, die an das Partner-Framework übergeben werden, um den Authentifizierungsfluss mit der MVPD zu starten.
 
-   Weitere Informationen zum Abruf von Profilen mithilfe einer Partnerauthentifizierungsantwort finden Sie im Abschnitt [Abrufen von Profilen mithilfe einer Partnerauthentifizierungsantwort](#retrieve-profile-using-partner-authentication-response).
+   Weitere Informationen zum Abruf von Profilen mithilfe einer Partnerauthentifizierungsantwort finden Sie im Abschnitt [Erstellen und Abrufen von Profilen mithilfe einer Partnerauthentifizierungsantwort](#create-and-retrieve-profile-using-partner-authentication-response).
 
 1. **Mit einfachem Authentifizierungsfluss fortfahren:** Die Antwort des Sitzungspartner-Endpunkts enthält die folgenden Daten:
    * Das `actionName`-Attribut wird entweder auf „Authentifizieren“ oder auf „Fortsetzen“ festgelegt.
@@ -152,9 +152,9 @@ Führen Sie die angegebenen Schritte aus, um die Partnerauthentifizierungsanfrag
    > 
    > Weitere Informationen zu `AP-Partner-Framework-Status` Kopfzeile finden Sie in der Dokumentation [AP-Partner-Framework-Status](../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md).
 
-## Abrufen des Profils mit der Antwort der Partnerauthentifizierung {#retrieve-profile-using-partner-authentication-response}
+## Erstellen und Abrufen eines Profils mithilfe der Antwort zur Partnerauthentifizierung {#create-and-retrieve-profile-using-partner-authentication-response}
 
-### Voraussetzungen {#prerequisites-retrieve-profile-using-partner-authentication-response}
+### Voraussetzungen {#prerequisites-create-and-retrieve-profile-using-partner-authentication-response}
 
 Stellen Sie vor dem Abrufen des Profils mit einer Antwort der Partnerauthentifizierung sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
@@ -169,13 +169,13 @@ Stellen Sie vor dem Abrufen des Profils mit einer Antwort der Partnerauthentifiz
 > * Das Partner-Framework unterstützt Benutzerinteraktionen bei der Authentifizierung mit der ausgewählten MVPD.
 > * Das Partner-Framework stellt Benutzerberechtigungen und Anbieterinformationen bereit.
 
-### Workflow {#workflow-retrieve-profile-using-partner-authentication-response}
+### Workflow {#workflow-create-and-retrieve-profile-using-partner-authentication-response}
 
 Führen Sie die angegebenen Schritte aus, um den Profilabruffluss mithilfe einer Partnerauthentifizierungsantwort zu implementieren, wie im folgenden Diagramm dargestellt.
 
-![Profil mit Antwort der Partnerauthentifizierung abrufen](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
+![Erstellen und Abrufen von Profilen mithilfe der Antwort zur Partnerauthentifizierung](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
 
-*Authentifiziertes Profil mit Antwort der Partnerauthentifizierung abrufen*
+*Authentifiziertes Profil mithilfe einer Antwort der Partnerauthentifizierung erstellen und abrufen*
 
 1. **Vollständige MVPD-Authentifizierung mit Partnerframework:** Wenn der Authentifizierungsfluss erfolgreich ist, erzeugt die Partnerframework-Interaktion mit der MVPD eine Partnerauthentifizierungsantwort (SAML-Antwort), die zusammen mit den Statusinformationen des Partnerframeworks zurückgegeben wird.
 
@@ -184,11 +184,11 @@ Führen Sie die angegebenen Schritte aus, um den Profilabruffluss mithilfe einer
    * Die Kennung der Benutzeranbieter-Zuordnung ist vorhanden und gültig.
    * Das Ablaufdatum des Benutzeranbieterprofils (falls verfügbar) ist gültig.
 
-1. **Profil mit Partnerauthentifizierungsantwort abrufen:** Die Streaming-Anwendung sammelt alle erforderlichen Daten, um ein Profil zu erstellen und abzurufen, indem sie den Partner-Endpunkt „Profile“ aufruft.
+1. **Profil mit Partnerauthentifizierungsantwort erstellen und abrufen:** Die Streaming-Anwendung sammelt alle erforderlichen Daten, um ein Profil zu erstellen und abzurufen, indem sie den Partner-Endpunkt „Profile“ aufruft.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [ finden Sie in der API](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)Dokumentation zum Abrufen von Profilen mit Partnerauthentifizierungsantwort:
+   > Weitere Informationen zu folgenden [ finden Sie in der API-Dokumentation ](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `partner` und `SAMLResponse`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` und `AP-Partner-Framework-Status`
@@ -208,7 +208,7 @@ Führen Sie die angegebenen Schritte aus, um den Profilabruffluss mithilfe einer
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [ in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)Dokumentation zum Abrufen von Profilen mit Partnerauthentifizierungsantwort .
+   > Weitere Informationen zu [ in einer Profilantwort enthaltenen Informationen finden Sie in der API](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)Dokumentation Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort .
    > 
    > <br/>
    > 

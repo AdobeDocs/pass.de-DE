@@ -1,15 +1,15 @@
 ---
-title: Abrufen des Profils mit der Antwort der Partnerauthentifizierung
-description: REST API V2 - Profil mit Antwort der Partnerauthentifizierung abrufen
+title: Erstellen und Abrufen eines Profils mithilfe der Antwort zur Partnerauthentifizierung
+description: REST API V2 - Erstellen und Abrufen von Profilen mit der Antwort der Partnerauthentifizierung
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: '734'
 ht-degree: 1%
 
 ---
 
-# Abrufen des Profils mit der Antwort der Partnerauthentifizierung {#retrieve-profile-using-partner-authentication-response}
+# Erstellen und Abrufen eines Profils mithilfe der Antwort zur Partnerauthentifizierung {#create-and-retrieve-profile-using-partner-authentication-response}
 
 >[!IMPORTANT]
 >
@@ -321,7 +321,7 @@ ht-degree: 1%
 
 ## Beispiele {#samples}
 
-### 1. Abrufen des Profils mithilfe der Antwort der Partnerauthentifizierung
+### 1. Erstellen und Abrufen eines Profils mithilfe der Antwort der Partnerauthentifizierung
 
 >[!BEGINTABS]
 
@@ -378,7 +378,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Profil mit Antwort der Partnerauthentifizierung abrufen, es wird jedoch eine Beeinträchtigung vorgenommen
+### 2. Profil mithilfe der Antwort der Partnerauthentifizierung erstellen und abrufen, es kommt jedoch zu einer Beeinträchtigung
 
 >[!BEGINTABS]
 
