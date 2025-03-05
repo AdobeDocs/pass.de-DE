@@ -2,9 +2,9 @@
 title: Abrufen der Konfiguration für einen bestimmten Dienstleister
 description: REST API V2 - Abrufen der Konfiguration für einen bestimmten Dienstleister
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 871afc4e7ec04d62590dd574bf4e28122afc01b6
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '725'
 ht-degree: 1%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 > Die REST-API-V2-Implementierung ist an die Dokumentation [Drosselungsmechanismus](/help/authentication/integration-guide-programmers/throttling-mechanism.md) gebunden.
+
+>[!MORELIKETHIS]
+>
+> Stellen Sie sicher, dass Sie auch die häufig gestellten Fragen [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#configuration-phase-faqs-general) besuchen.
 
 ## Anfrage {#request}
 
@@ -210,9 +214,9 @@ ht-degree: 1%
                 <td>
                     JSON-Objekt mit den folgenden Attributen:
                     <ul>
-                        <li><b>ID</b></li>
-                        <li><b>name</b></li>
-                        <li><b>Domains</b></li>
+                        <li><b>id</b><br/>Die interne eindeutige Kennung, die dem Dienstleister während des Onboarding-Prozesses zugeordnet ist.</li>
+                        <li><b>name</b><br/> Der kommerzielle (Marken-)Name, der dem Dienstleister während des Onboarding-Prozesses zugeordnet ist.</li>
+                        <li><b>domains</b><br/>Die Liste der Domain-Namen, die zur Adobe Pass-Authentifizierung als Darstellung des Dienstleisters aufgeführt sind.</li>
                     </ul>
                 </td>
                 <td><i>required</i></td>
@@ -222,16 +226,16 @@ ht-degree: 1%
                 <td>
                     JSON-Objekt mit den folgenden Attributen:
                     <ul>
-                        <li><b>ID</b></li>
-                        <li><b>displayName</b></li>
-                        <li><b>logoUrl</b></li>
-                        <li><b>isTempPass</b></li>
-                        <li><b>isProxy</b></li>
-                        <li><b>OnboardingStatus</b></li>
-                        <li><b>platformMappingId</b></li>
-                        <li><b>enablePlatformServices</b></li>
-                        <li><b>displayInPlatformPicker</b></li>
-                        <li><b>forcePlatformPermissions</b></li>
+                        <li><b>id</b><br/>Die interne eindeutige Kennung, die dem Identitätsanbieter während des Onboarding-Prozesses zugeordnet ist.</li>
+                        <li><b>displayName</b><br/>Der kommerzielle (Marken-)Name, der dem Identitätsanbieter während des Onboarding-Prozesses zugeordnet ist.</li>
+                        <li><b>logoUrl</b><br>Die URL, von der das mit dem Identitätsanbieter verknüpfte Logo heruntergeladen werden soll.</li>
+                        <li><b>isTempPass</b><br/>Das Flag, das angibt, ob die MVPD für die Bereitstellung der Funktionen <a href="../../../../features-premium/temporary-access/temp-pass-feature.md">TempPass</a> ausgelegt ist.</li>
+                        <li><b>isProxy</b><br/>Das Flag, das angibt, ob die MVPD eine Proxy-MVPD ist.</li>
+                        <li><b>boardingStatus</b><br/>Der Status, der angibt, ob der Identitätsanbieter von der Streaming-Geräteplattform für Single-Sign-On-Flüsse integriert wird.</li>
+                        <li><b>platformMappingId</b><br/>Die interne eindeutige Kennung, die dem Identitätsanbieter von der Streaming-Geräteplattform für Single-Sign-On-Flüsse zugeordnet ist.</li>
+                        <li><b>enablePlatformServices</b><br/>Das Flag, das angibt, ob die Konfiguration des Identitätsanbieters für Flüsse mit einmaliger Anmeldung für die Plattform des Streaming-Geräts aktiviert ist.</li>
+                        <li><b>displayInPlatformPicker</b><br/>Das Flag, das angibt, ob der Identitätsanbieter in der Plattformauswahl für Streaming-Geräte für Single Sign-On-Flüsse angezeigt werden kann.</li>
+                        <li><b>forcePlatformPermissions</b><br/>Das Flag, das angibt, ob das Streaming-Gerät die von der Plattform für Single-Sign-On-Flüsse bereitgestellten Benutzerberechtigungen erzwingen muss.</li>
                     </ul>
                 </td>
                 <td><i>required</i></td>
