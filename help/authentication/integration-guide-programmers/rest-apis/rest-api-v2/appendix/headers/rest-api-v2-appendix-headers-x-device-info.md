@@ -2,9 +2,9 @@
 title: Kopfzeile - x-device-info
 description: REST API v2 - Kopfzeile - x-device-info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
-source-wordcount: '1085'
+source-wordcount: '1122'
 ht-degree: 2%
 
 ---
@@ -21,7 +21,7 @@ Der <b>X-Device-Info</b>-Anfrage-Header enthält die Client-Informationen (Gerä
 
 ## Syntax {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>X-Device-Info</b>: &lt;device_information&gt;</td>
    </tr>
@@ -41,7 +41,7 @@ Der <b>X-Device-Info</b>-Anfrage-Header enthält die Client-Informationen (Gerä
 
 Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, die in der folgenden Tabelle als erforderlich markiert sind.
 
-<table>
+<table style="table-layout:auto">
     <tr>
         <th style="background-color: #EFF2F7; width: 15%;">Präsenz</th>
         <th style="background-color: #EFF2F7; width: 15%;">Schlüssel</th>
@@ -721,3 +721,7 @@ Die Anwendungsinformationen können wie folgt aufgebaut werden:
 | Schlüssel | Source | Wert (Beispiel) |
 |---------------|-----------|-----------------|
 | applicationId | hartcodiert | REF30 |
+
+### Sonstige {#others}
+
+Für Geräteplattformen, die nicht in der Dokumentation behandelt werden, sollten die Client-Informationen (Gerät, Verbindung und Anwendung) mit allen verfügbaren Hardware- und Betriebssystemattributen verknüpft werden, die normalerweise in den Hardware- und Betriebssystemhandbüchern des Geräts angegeben sind.

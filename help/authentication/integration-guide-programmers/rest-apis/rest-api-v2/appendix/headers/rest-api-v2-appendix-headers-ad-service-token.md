@@ -2,7 +2,7 @@
 title: Kopfzeile - AD-Service-Token
 description: REST API v2 - Kopfzeile - AD-Service-Token
 exl-id: 856f76fc-cde6-4b3f-81f7-deaa0df015dc
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '252'
 ht-degree: 1%
@@ -25,7 +25,7 @@ Weitere Informationen zu den für Single Sign-on (SSO) aktivierten Flüssen, die
 
 ## Syntax {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>AD-Service-Token</b>: &lt;unique_user_identifier&gt;</td>
    </tr>
@@ -47,7 +47,7 @@ Die JSON-Web-Signatur (`JWS`), ein signiertes JSON-Web-Token (`JWT`), das Inform
 
 Die `JWT` weist die folgenden Attribute auf:
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <th style="background-color: #EFF2F7; width: 15%;">Attribut</th>
       <th style="background-color: #EFF2F7;">Beschreibung</th>
@@ -62,7 +62,7 @@ Die `JWT` weist die folgenden Attribute auf:
    </tr>
    <tr>
       <td>Hilfsmittel</td>
-      <td>Die Zielgruppe, die "Adobe" lauten sollte.</td>
+      <td>Die Zielgruppe, die "Adobe" sein sollte.</td>
    </tr>
    <tr>
       <td>IAT</td>

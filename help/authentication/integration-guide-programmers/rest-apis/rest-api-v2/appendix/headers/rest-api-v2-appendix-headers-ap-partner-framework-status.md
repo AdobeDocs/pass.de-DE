@@ -2,7 +2,7 @@
 title: Header - AP-Partner-Framework-Status
 description: REST API v2 - Kopfzeile - AP-Partner-Framework-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '388'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Der <b>AP-Partner-Framework-Status</b>-Anfrage-Header enthält Statusinformation
 
 ## Syntax {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>AP-Partner-Framework-Status</b>: &lt;partner_framework_status_information&gt;</td>
    </tr>
@@ -41,7 +41,7 @@ Der <b>AP-Partner-Framework-Status</b>-Anfrage-Header enthält Statusinformation
 
 Der `Base64-encoded` des JSON-Elements, das die folgenden Attribute enthält:
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <th style="background-color: #EFF2F7; width: 15%;">Attribut</th>
       <th style="background-color: #EFF2F7;"></th>
@@ -68,10 +68,10 @@ Der `Base64-encoded` des JSON-Elements, das die folgenden Attribute enthält:
                   Dies ist eine Auflistung mit den folgenden möglichen Werten:
                   <br/>
                   <ul>
-                     <li>Gewährt - Der Benutzer hat der Anwendung erlaubt, auf Abonnementinformationen zuzugreifen.</li>
-                     <li>Verweigert : Der Benutzer hat der Anwendung den Zugriff auf Abonnementinformationen verweigert.</li>
-                     <li>Ausstehend : Der Benutzer hat noch nicht ausgewählt, ob die Anwendung auf Abonnementinformationen zugreifen darf.</li>
-                     <li>notDetermined : Die Anwendung darf nicht auf Abonnementinformationen zugreifen.</li>
+                     <li><b>granted</b><br/>Der Benutzer hat der Anwendung erlaubt, auf Abonnementinformationen zuzugreifen.</li>
+                     <li><b>verweigert</b><br/> Der Benutzer hat der Anwendung den Zugriff auf Abonnementinformationen verweigert.</li>
+                     <li><b>Ausstehend</b><br/> Der Benutzer hat noch nicht ausgewählt, ob die Anwendung auf Abonnementinformationen zugreifen darf.</li>
+                     <li><b>notDetermined</b><br/>Die Anwendung darf nicht auf Abonnementinformationen zugreifen.</li>
                   </ul>
                </td>
             </tr>

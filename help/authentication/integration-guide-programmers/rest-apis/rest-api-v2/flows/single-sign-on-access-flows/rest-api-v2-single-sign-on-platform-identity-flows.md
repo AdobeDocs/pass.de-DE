@@ -2,9 +2,9 @@
 title: Single Sign-On - Platform-Identität - Flüsse
 description: REST API v2 - Single Sign-On - Platform-Identität - Flüsse
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
-source-wordcount: '1830'
+source-wordcount: '1836'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,12 @@ Die Programme sind für das Abrufen der eindeutigen Plattformkennungs-Payload mi
 
 Die Programme sind dafür verantwortlich, diese eindeutige Plattformkennungs-Payload als Teil der `Adobe-Subject-Token`-Kopfzeile für alle Anfragen einzuschließen, die sie angeben.
 
-Weitere Informationen zu `Adobe-Subject-Token`-Header finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) .
+Weitere Informationen zu `Adobe-Subject-Token` Kopfzeile finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
+
+>[!MORELIKETHIS]
+> 
+> * [Amazon SSO-Cookbook](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+> * [Roku SSO Cookbook](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
 
 ## Durchführen der Authentifizierung über Single Sign-on unter Verwendung der Platform-Identität {#perform-authentication-through-single-sign-on-using-platform-identity}
 
@@ -34,11 +39,11 @@ Weitere Informationen zu `Adobe-Subject-Token`-Header finden Sie in der Dokument
 Bevor Sie den Authentifizierungsfluss über Single Sign-on mit einer Platform-Identität durchführen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
 * Die Plattform muss einen Identity Service oder eine Bibliothek bereitstellen, der bzw. die konsistente Informationen als `JWS` oder `JWE` Payload über alle Anwendungen hinweg auf demselben Gerät oder auf derselben Plattform zurückgibt.
-* Die erste Streaming-Anwendung muss die eindeutige Plattformkennung abrufen und die `JWS`- oder `JWE`-Payload als Teil der Kopfzeile [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) für alle Anfragen einschließen, die sie angeben.
+* Die erste Streaming-Anwendung muss für alle Anfragen, die sie angeben, die eindeutige Plattformkennung abrufen und die `JWS`- oder `JWE`-Payload als Teil der Kopfzeile [Adobe](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)Subject-Token}.
 * Die erste Streaming-Anwendung muss eine MVPD auswählen.
 * Die erste Streaming-Anwendung muss eine Authentifizierungssitzung initiieren, um sich mit der ausgewählten MVPD anzumelden.
 * Die erste Streaming-Anwendung muss sich mit der ausgewählten MVPD in einem Benutzeragenten authentifizieren.
-* Die zweite Streaming-Anwendung muss für alle Anfragen, die sie angeben, die eindeutige Plattformkennung abrufen und die `JWS`- oder `JWE`-Payload als Teil der Kopfzeile {2](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)Adobe-Subject-Token}.[
+* Die zweite Streaming-Anwendung muss für alle Anfragen, die sie angeben, die eindeutige Plattformkennung abrufen und die `JWS`- oder `JWE`-Payload als Teil der Kopfzeile [Adobe](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)Subject-Token} einschließen.
 
 >[!IMPORTANT]
 >
@@ -79,7 +84,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
    >
    > <br/>
    > 
-   > Weitere Informationen zu `Adobe-Subject-Token`-Header finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) .
+   > Weitere Informationen zu `Adobe-Subject-Token` Kopfzeile finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
 
 1. **Nächste Aktion angeben:** Die Antwort des Sitzungs-Endpunkts enthält die erforderlichen Daten, um die erste Streaming-Anwendung bezüglich der nächsten Aktion anzuleiten.
 
@@ -147,7 +152,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
    >
    > <br/>
    > 
-   > Weitere Informationen zu `Adobe-Subject-Token`-Header finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) .
+   > Weitere Informationen zu `Adobe-Subject-Token` Kopfzeile finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
 
 1. **Plattformkennung abrufen:** Die zweite Streaming-Anwendung ruft den Identity Service oder die Identity Library außerhalb von Adobe Pass-Systemen auf, um die `JWS` oder `JWE` Payload abzurufen, die mit der eindeutigen Plattformkennung verknüpft ist.
 
@@ -171,7 +176,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
    >
    > <br/>
    > 
-   > Weitere Informationen zu `Adobe-Subject-Token`-Header finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) .
+   > Weitere Informationen zu `Adobe-Subject-Token` Kopfzeile finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
 
 1. **Single-Sign-On-Profil suchen:** Der Adobe Pass-Server identifiziert ein gültiges Single-Sign-On-Profil basierend auf den empfangenen Parametern und Kopfzeilen.
 
@@ -199,7 +204,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
    >
    > <br/>
    > 
-   > Weitere Informationen zu `Adobe-Subject-Token`-Header finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) .
+   > Weitere Informationen zu `Adobe-Subject-Token` Kopfzeile finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
 
 ## Abrufen von Autorisierungsentscheidungen über Single Sign-on mithilfe der Platform-Identität{#performing-authorization-flow-using-platform-identity-single-sign-on-method}
 
@@ -208,7 +213,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
 Bevor Sie den Autorisierungsfluss über Single Sign-on mit einer Platform-Identität durchführen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
 * Die Plattform muss einen Identity Service oder eine Bibliothek bereitstellen, der bzw. die konsistente Informationen als `JWS` oder `JWE` Payload über alle Anwendungen hinweg auf demselben Gerät oder auf derselben Plattform zurückgibt.
-* Die zweite Streaming-Anwendung muss für alle Anfragen, die sie angeben, die eindeutige Plattformkennung abrufen und die `JWS`- oder `JWE`-Payload als Teil der Kopfzeile {2](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)Adobe-Subject-Token}.[
+* Die zweite Streaming-Anwendung muss für alle Anfragen, die sie angeben, die eindeutige Plattformkennung abrufen und die `JWS`- oder `JWE`-Payload als Teil der Kopfzeile [Adobe](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)Subject-Token} einschließen.
 * Die zweite Streaming-Anwendung muss eine Autorisierungsentscheidung abrufen, bevor eine vom Benutzer ausgewählte Ressource wiedergegeben wird.
 
 >[!IMPORTANT]
@@ -249,7 +254,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss durch Singl
    >
    > <br/>
    > 
-   > Weitere Informationen zu `Adobe-Subject-Token`-Header finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) .
+   > Weitere Informationen zu `Adobe-Subject-Token` Kopfzeile finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
 
 1. **Single-Sign-On-Profil suchen:** Der Adobe Pass-Server identifiziert ein gültiges Single-Sign-On-Profil basierend auf den empfangenen Parametern und Kopfzeilen.
 

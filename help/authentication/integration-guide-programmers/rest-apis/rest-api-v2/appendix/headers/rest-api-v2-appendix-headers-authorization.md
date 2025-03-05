@@ -2,7 +2,7 @@
 title: Header - Autorisierung
 description: REST API v2 - Kopfzeile - Autorisierung
 exl-id: 86917d7e-ffd9-4d34-8f9c-5a50083f85e6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '118'
 ht-degree: 1%
@@ -24,7 +24,7 @@ Weitere Informationen zum Mechanismus für den Zugriff auf Adobe Pass-geschützt
 
 ## Syntax {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>Authorization</b>: Bearer &lt;access_token&gt;</td>
    </tr>
