@@ -2,7 +2,7 @@
 title: Übersicht über die Datenschutzunterstützung
 description: Übersicht über die Datenschutzunterstützung
 exl-id: 9868a7e7-30f6-420e-a660-7d2f7870374d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 7e56c0a3651290376a72752638f463cf9415ec0e
 workflow-type: tm+mt
 source-wordcount: '217'
 ht-degree: 0%
@@ -21,12 +21,4 @@ ht-degree: 0%
 
 **CCPA** Der California Consumer Privacy Act (CCPA) ist ein Gesetz, das Einwohnern Kaliforniens neue Rechte in Bezug auf ihre personenbezogenen Daten gewährt und bestimmte Unternehmen, die in Kalifornien Geschäfte tätigen, zur Datenschutzverantwortung verpflichtet. Der CCPA nutzt einige bereits unter der DSGVO bekannte Konzepte, wie das Recht auf Zugriff auf und die Löschung personenbezogener Daten. Es gibt jedoch andere Bereiche, in denen sich CCPA von der DSGVO unterscheidet.
 
-Als Adobe Pass-Authentifizierungs-Kunde können Sie einzelne DSGVO- oder CCPA-Datenschutzanfragen für den Zugriff auf oder die Löschung von Kundendaten entweder über die [Privacy Service-Benutzeroberfläche ](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) durch einen Aufruf der [Privacy Service-API ](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_api_tutorial.md).
-
-<!--
-
->[!MORELIKETHIS]
->
->* [Privacy Services Overview](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/technical_overview/privacy_service_overview/privacy_service_overview.md)
->* [Privacy Service API documentation](https://www.adobe.io/apis/experiencecloud/gdpr.html)
--->
+Als Kundin oder Kunde von Adobe Pass Authentication können Sie einzelne DSGVO- oder CCPA-Datenschutzanfragen für den Zugriff auf und die Löschung von Kundendaten einreichen, entweder über die [Privacy Service](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)Benutzeroberfläche oder durch Aufruf der [Privacy Service-API](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_api_tutorial.md).
