@@ -2,7 +2,7 @@
 title: Erstellen und Abrufen eines Profils mithilfe der Antwort zur Partnerauthentifizierung
 description: REST API V2 - Erstellen und Abrufen von Profilen mit der Antwort der Partnerauthentifizierung
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: 7fdfd28e2aba0d201f19dc25757bbe37cebd8ffe
 workflow-type: tm+mt
 source-wordcount: '734'
 ht-degree: 1%
@@ -272,8 +272,8 @@ ht-degree: 1%
                     <br/><br/>
                     Diese Attribute können sein:
                     <ul>
-                        <li>Obligatorisch, wie „userId“</li>
-                        <li>Nicht obligatorisch, wie „zip“, „householdId“, „maxRating“ usw.</li>
+                        <li>Obligatorisch, wie „userID“</li>
+                        <li>Nicht obligatorisch, wie „zip“, „householdID“, „maxRating“ usw.</li>
                     </ul>
                     Die Werte für die Attribute können wie folgt sein:
                     <ul>
@@ -358,11 +358,11 @@ Content-Type: application/json;charset=UTF-8
             "issuer": "Apple",
             "type": "appleSSO",
             "attributes": {
-                "userId": {
+                "userID": {
                     "value": "BASE64_value_userId",
                     "state": "plain"
                 },
-                "householdId": {
+                "householdID": {
                     "value": "BASE64_value_householdId",
                     "state": "plain"
                 },

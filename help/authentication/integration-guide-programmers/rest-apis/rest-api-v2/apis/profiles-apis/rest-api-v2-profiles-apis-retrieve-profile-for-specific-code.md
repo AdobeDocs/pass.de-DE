@@ -2,7 +2,7 @@
 title: Abrufen eines Profils für einen bestimmten Code
 description: REST API V2 - Profil für bestimmten Code abrufen
 exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 7fdfd28e2aba0d201f19dc25757bbe37cebd8ffe
 workflow-type: tm+mt
 source-wordcount: '711'
 ht-degree: 1%
@@ -240,8 +240,8 @@ ht-degree: 1%
                     <br/><br/>
                     Diese Attribute können sein:
                     <ul>
-                        <li>Obligatorisch, wie „userId“</li>
-                        <li>Nicht obligatorisch, wie „zip“, „householdId“, „maxRating“ usw.</li>
+                        <li>Obligatorisch, wie „userID“</li>
+                        <li>Nicht obligatorisch, wie „zip“, „householdID“, „maxRating“ usw.</li>
                     </ul>
                     Die Werte für die Attribute können wie folgt sein:
                     <ul>
@@ -318,21 +318,17 @@ Content-Type: application/json;charset=UTF-8
             "issuer": "Cablevision",
             "type": "regular",
             "attributes": {
-                "userId": {
+                "userID": {
                     "value": "BASE64_value_userId",
                     "state": "plain"
                 },
-                "householdId" : {
+                "householdID": {
                     "value": "BASE64_value_householdId",
                     "state": "plain"
                 },
-                "zip" : {
+                "zip": {
                     "value": "BASE64_value_zip",
                     "state": "enc"
-                },
-                "parental-controls" : {
-                    "value": BASE64_value_parental-controls,
-                    "state": "plain"
                 }
             }
         }
