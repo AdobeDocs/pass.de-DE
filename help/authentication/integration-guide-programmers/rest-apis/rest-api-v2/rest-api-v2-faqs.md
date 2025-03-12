@@ -2,7 +2,7 @@
 title: Häufig gestellte Fragen zur REST API V2
 description: Häufig gestellte Fragen zur REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: 1795b4aba2940879f2dcb575048d553db4f0bf35
 workflow-type: tm+mt
 source-wordcount: '9072'
 ht-degree: 0%
@@ -303,7 +303,7 @@ Um die Effizienz zu gewährleisten und unnötige Anfragen zu vermeiden, muss die
 
 | **Authentifizierung wird innerhalb der primären (Bildschirm-)Anwendung durchgeführt** | **Authentifizierung wird in einer sekundären (Bildschirm-)Anwendung durchgeführt** |
 |----------------------------------------------------------------------|----------------------------------------------------------------------|
-| Die primäre (Streaming-)Anwendung sollte alle 1-5 Sekunden abfragen. | Die primäre (Streaming-)Anwendung sollte alle 3-5 Sekunden eine Abfrage durchführen. |
+| Die primäre (Streaming-)Anwendung sollte alle 3-5 Sekunden eine Abfrage durchführen. | Die primäre (Streaming-)Anwendung sollte alle 3-5 Sekunden eine Abfrage durchführen. |
 
 #### 16. Wie viele Abrufanfragen kann die Client-Anwendung maximal senden? {#authentication-phase-faq16}
 
