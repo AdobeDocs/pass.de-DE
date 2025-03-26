@@ -2,9 +2,9 @@
 title: MVPD-Integrationshandbuch
 description: MVPD-Integrationshandbuch
 exl-id: b918550b-96a8-4e80-af28-0a2f63a02396
-source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
+source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
 workflow-type: tm+mt
-source-wordcount: '1265'
+source-wordcount: '1307'
 ht-degree: 0%
 
 ---
@@ -15,13 +15,13 @@ ht-degree: 0%
 >
 > Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Dieses Integrationshandbuch ist für Multichannel Video Programming Distributors (MVPDs) gedacht, die eine Integration mit der Adobe® Pass-Authentifizierung planen.
+Dieses Integrationshandbuch richtet sich an Multi-Channel Video Programming Distributors (MVPDs), die eine Integration mit der Adobe® Pass-Authentifizierung planen.
 
 TV Everywhere (TVE) ist eine transformative Initiative in der Pay-TV-Branche, durch die Abonnentinnen und Abonnenten auf Inhalte zugreifen können, für die sie bereits bezahlen, und zwar über mehrere Geräte hinweg, ob zu Hause oder unterwegs. Für Pay-TV-Anbieter bietet TVE erhebliche Möglichkeiten, unter anderem die bestehenden Kundenbeziehungen zu stärken und Türen für neue zu öffnen. Diese Chancen sind jedoch mit Herausforderungen verbunden.
 
 Im TVE-Ökosystem liefern **Programmierer** die Inhalte, während **MVPDs** (Multichannel Video Programming Distributors) die Kundendaten verwalten, die benötigt werden, um zu verifizieren, ob Betrachter berechtigte Abonnenten sind. Während die Koordination der Authentifizierung und Autorisierung mit einem einzelnen Programmierer verwaltbar sein kann, führt dies mit Dutzenden oder sogar Hunderten von Programmierern zu erheblicher Komplexität.
 
-Hier vereinfacht die Authentifizierung mit **Adobe® Pass** den Prozess. MVPDs müssen nur eine einzige, optimierte Integration mit Adobe Pass implementieren, um Zugriff auf das gesamte TVE-Ökosystem zu erhalten. Das bereitgestellte Integrations-Framework beschleunigt die Time-to-Market, bietet eine sichere Umgebung zur Betrugsbekämpfung und verbessert das Kundenerlebnis, indem es mehr TV-Inhalte über mehrere Plattformen hinweg bereitstellt.
+Hier vereinfacht die Authentifizierung zum Bestehen von **Adobe® den**. MVPDs müssen nur eine einzige, optimierte Integration mit Adobe Pass implementieren, um Zugriff auf das gesamte TVE-Ökosystem zu erhalten. Das bereitgestellte Integrations-Framework beschleunigt die Time-to-Market, bietet eine sichere Umgebung zur Betrugsbekämpfung und verbessert das Kundenerlebnis, indem es mehr TV-Inhalte über mehrere Plattformen hinweg bereitstellt.
 
 ## Adobe Pass-Authentifizierung für TV Everywhere {#adobe-pass-authentication-for-tv-everywhere}
 
@@ -36,7 +36,7 @@ Die Adobe Pass-Authentifizierung ist vollständig an die neuen Standards und Pro
 
 Die Adobe Pass-Authentifizierung wurde entwickelt, um mehrere Protokolle zu unterstützen (z. B. SAML, OAuth 2.0 usw.). Diese Flexibilität ermöglicht zukünftige Erweiterungen, einschließlich benutzerdefinierter Protokolle, basierend auf sich verändernden Anforderungen.
 
-Die meisten Integrationen verwenden das SAML-Protokoll (Security Assertion Markup Language), einen primären Standard für die Authentifizierung. Die Adobe Pass-Authentifizierung fungiert als Proxy-Service-Provider innerhalb des SAML-Frameworks und behält die SAML-Authentifizierungsantwort als sicheres Token in der gemeinsamen Adobe-Domain bei.
+Die meisten Integrationen verwenden das SAML-Protokoll (Security Assertion Markup Language), einen primären Standard für die Authentifizierung. Die Adobe Pass-Authentifizierung fungiert als Proxy-Service-Provider innerhalb des SAML-Frameworks und behält die SAML-Authentifizierungsantwort als sicheres Token in der allgemeinen Domain von Adobe bei.
 
 Im Endeffekt ist die Adobe Pass-Authentifizierung protokollunabhängig und wurde entwickelt, um sie eng an die OLCA-Standards anzupassen. Diese Standards bilden ein gemeinsames Framework für Programmierer, MVPDs und Dienstleister, wodurch ein kohärenter Ansatz zur Implementierung von TVE-Funktionen gewährleistet wird.
 
@@ -53,10 +53,10 @@ Die Adobe Pass-Authentifizierung arbeitet wie folgt mit den technischen MVPD-Tea
 Die Adobe Pass-Authentifizierung unterstützt die effiziente Handhabung der Geschäftslogik von MVPD wie folgt:
 
 * **eigenständige Geschäftslogik**\
-  Für Geschäftslogiken, die während Autorisierungsanfragen vollständig von MVPD erzwungen werden, stellt Adobe die erforderlichen Daten bereit. Zu diesen Daten können unter anderem die eindeutige Geräte-ID und die IP-Adresse des Geräts des Benutzers gehören, das die Anfrage stellt.
+  Für Geschäftslogiken, die während Autorisierungsanfragen vollständig von der MVPD erzwungen werden, stellt Adobe die erforderlichen Daten bereit. Zu diesen Daten können unter anderem die eindeutige Geräte-ID und die IP-Adresse des Geräts des Benutzers gehören, das die Anfrage stellt.
 
 * **Unterstützung benutzerdefinierter Eigenschaften**\
-  Für Geschäftslogiken, die ein Eingreifen des Benutzers oder eine Adobe-spezifische Handhabung erfordern, kann Adobe benutzerdefinierte Konfigurationen für jede MVPD verwalten. Diese Richtlinien ermöglichen vordefinierte Workflows, die an bestimmten Punkten im Berechtigungs-Workflow ausgelöst werden können. Weitere Informationen erhalten Sie von Ihrem Adobe-Support-Mitarbeiter.
+  Für Geschäftslogiken, die ein Eingreifen des Benutzers oder eine Adobe-spezifische Handhabung erfordern, kann Adobe benutzerdefinierte Konfigurationen für jede MVPD verwalten. Diese Richtlinien ermöglichen vordefinierte Workflows, die an bestimmten Punkten im Berechtigungs-Workflow ausgelöst werden können. Weitere Informationen erhalten Sie vom Adobe-Support.
 
 ## Berechtigungsfluss {#entitlement-flow}
 
@@ -139,4 +139,6 @@ Weitere Informationen zu Berechtigungen finden Sie in den folgenden Dokumenten:
 
 * **[Medien-Token](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md)**
 
-  Nach erfolgreicher Autorisierung erstellt die Adobe Pass-Authentifizierung ein Medien-Token („kurzlebig„), das mit einer erfolgreichen Wiedergabeanfrage verknüpft ist.
+  Nach erfolgreicher Autorisierung erstellt die Adobe Pass-Authentifizierung ein Medien-Token („kurzlebig„), das mit einer erfolgreichen Wiedergabeanfrage verknüpft ist, und bietet Unterstützung für Best Practices der Branche zur Risikominderung (z. B. Stream-Ripping).
+
+Die TTL-Werte (Time-to-Live) für Profile und Entscheidungen werden auf der Grundlage von Vereinbarungen zwischen Programmierern und Pay-TV-Anbietern festgelegt, die sich auf einen Wert einigen, der allen Beteiligten am besten dient.

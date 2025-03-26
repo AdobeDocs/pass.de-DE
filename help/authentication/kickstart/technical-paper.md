@@ -1,23 +1,23 @@
 ---
-title: Über Adobe Pass-Authentifizierung und TV Everywhere
-description: Über Adobe Pass-Authentifizierung und TV Everywhere
+title: Über die Adobe Pass-Authentifizierung
+description: Über die Adobe Pass-Authentifizierung
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: 95e750b5c0efe5850a3ff8130f5b4bb6c5b35f57
+source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
 workflow-type: tm+mt
-source-wordcount: '6287'
+source-wordcount: '1832'
 ht-degree: 0%
 
 ---
 
-# Über Adobe Pass-Authentifizierung und TV Everywhere {#about-auth-tve}
+# Über die Authentifizierung mit Adobe® Pass {#about-adobe-pass-authentication}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
+> Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-## Über TV Everywhere {#about-tve}
+## Über TV Everywhere {#about-tv-everywhere}
 
-Die Fernsehzuschauer von heute können zu jeder Zeit und an jedem Ort online gehen, und sie erwarten, dass ihre Möglichkeiten, auf Pay-TV-Inhalte zuzugreifen, genau dort sein werden, wo sie auch sind. Darüber hinaus verwenden Zielgruppen zur Anzeige von Inhalten eine ständig wachsende Auswahl an Internet-fähigen Geräten, darunter:
+Fernsehzuschauer erwarten heute einen nahtlosen Zugang zu Pay-TV-Inhalten - jederzeit und überall. Mit dem Aufkommen von Geräten, die mit dem Internet verbunden sind, konsumieren Zielgruppen Inhalte über eine wachsende Anzahl von Plattformen, darunter:
 
 * Notebooks
 * Tablets
@@ -28,400 +28,229 @@ Die Fernsehzuschauer von heute können zu jeder Zeit und an jedem Ort online geh
 * Set-Top-Boxen
 * Smart-TVs
 
-TV Everywhere ist die Branchenbewegung, die die Fähigkeit von Pay-TV-Abonnenten unterstützt, auf dieselben Inhalte zuzugreifen, für die sie bereits bezahlen, und zwar auf mehreren Geräten sowohl innerhalb als auch außerhalb ihres Hauses. Während der Großteil des Fernsehkonsums noch immer im konventionellen, linearen Fernsehen stattfindet, ist der Konsum bei zeitverschobenen Inhalten, Online-Videos und alternativen Bildschirmen gestiegen. Infolgedessen befindet sich der Videovertriebsmarkt heute in einer Umbruchsituation und TV Everywhere hat sich als die Lösung etabliert, die die Interessen von Programmierern, Pay-TV-Anbietern und Pay-TV-Abonnenten miteinander in Einklang bringt.
+TV Everywhere ist eine Initiative der Branche, die dafür sorgt, dass Pay-TV-Abonnenten auf Inhalte zugreifen können, für die sie bereits bezahlen, und zwar über mehrere Geräte hinweg, sowohl innerhalb als auch außerhalb ihres Hauses.
 
+Während das traditionelle (lineare) Fernsehen stark bleibt, sind die am schnellsten wachsenden Segmente des Videokonsums zeitverschobene Inhalte, Online-Streaming und alternative Bildschirme. Dieser Wandel hat den Videovertrieb gestört, sodass TV Everywhere zu einer wichtigen Lösung geworden ist, durch die die Interessen von **Programmierern, Pay-TV-Anbietern und Abonnenten“ in Einklang gebracht werden**
 
-Das technische Ziel von TV Everywhere besteht darin, es Pay-TV-Kunden zu ermöglichen, auf Inhalte zuzugreifen, die sie bereits auf all ihren Geräten und Plattformen abonniert haben.
+### Ziele von TV Everywhere {#goals-tv-everywhere}
 
+**Technisches Ziel**
 
-Die Geschäftsziele von TV Everywhere sind:
+* Bezahlfernsehkunden den nahtlosen Zugriff auf abonnierte Inhalte über alle Geräte und Plattformen hinweg ermöglichen.
 
-* **Bestehende Kundenbeziehungen beibehalten und neue aktivieren**
-* Ermöglichen Sie es Programmierern und Inhaltsverantwortlichen, die breiteste Zielgruppe zu erreichen und mehr Wert aus Premium-Inhalten zu gewinnen
-* Marken durch direkte Online-Interaktion mit Betrachtern erweitern
+**Geschäftsziele**
 
-## Herausforderungen bei TV Everywhere {#tve-challenges}
+* Bewahren und stärken Sie bestehende Kundenbeziehungen und eröffnen Sie gleichzeitig neue Chancen.
+* Ermöglichen Sie es Programmierern und Inhaltsverantwortlichen, breitere Zielgruppen zu erreichen und den Wert von Premium-Inhalten zu maximieren.
+* Marken durch direkte Online-Interaktion mit Betrachtern erweitern.
 
-Zusammen mit den Möglichkeiten von TV Everywhere kommen Herausforderungen. Im Mittelpunkt dieser Rechte steht das Recht. Bevor ein Betrachter auf Abonnementinhalte zugreift, muss jemand feststellen, ob ihm dieser Zugriff gewährt werden darf.
+### Herausforderungen des Fernsehens überall {#challenges-tv-everywhere}
 
-Besitzt der Benutzer ein Abonnement bei einem Pay-TV-Anbieter? Wenn ja, enthält dieses Abonnement den angeforderten Inhalt? Für Programmierer und Inhaltsbesitzer ist die direkte Feststellung von Berechtigungen besonders schwierig, da es die Pay-TV-Anbieter sind, die über die Identifizierungsdaten für ihre Kunden sowie über die Zugriffsberechtigungen ihrer Kunden verfügen.
+Angesichts der Möglichkeiten, die das Fernsehen „Überall“ bietet, stehen die Anspruchsberechtigungen im Vordergrund. Bevor ein Betrachter auf Abonnementinhalte zugreifen kann, muss ein System seine Berechtigung überprüfen.
 
+Zu den wichtigsten Fragen gehören:
 
-Neben den Berechtigungen gibt es eine Vielzahl damit verbundener technischer und Integrationsherausforderungen, darunter:
+* Verfügt der Benutzer über ein aktives Abonnement bei einem Pay-TV-Anbieter?
+* Enthält ihr Abonnement die angeforderten Inhalte?
 
-* Entwicklung und Umsetzung einer umfassenden Strategie für mehrere Geräte
-* Koordination der unzähligen Beziehungen zwischen Programmierern und Pay-TV-Anbietern
-* Verhinderung von betrügerischem Zugriff oder Missbrauch von Nutzungsbedingungen
-* Bereitstellen eines konsistenten und frustrierfreien Authentifizierungserlebnisses für Benutzer über Websites und Apps hinweg
-* Einfache Time-to-Market, um mit Affiliate-Angeboten Schritt zu halten
-* Verwaltung der Kosten für mehrere Integrationen
+Für Programmierer und Inhaltsinhaber ist es besonders schwierig, eine Berechtigung zu bestimmen, da Pay-TV-Anbieter Kundendaten und Zugriffsberechtigungen kontrollieren.
 
-Diese Herausforderungen machen die Durchführung und Pflege komplexer, direkter Integrationen zwischen Programmierern und den Authentifizierungssystemen mehrerer Pay-TV-Anbieter äußerst ressourcenintensiv und erfordern Zeit und technische Raffinesse.
+Neben den Berechtigungen stellen sich verschiedene technische und Integrationsprobleme, darunter:
 
+* Entwicklung einer Strategie mit mehreren Geräten, die den nahtlosen Zugriff sicherstellt.
+* Verwaltung komplexer Beziehungen zwischen Programmierern und Pay-TV-Anbietern.
+* Verhinderung von betrügerischem Zugriff und Durchsetzung von Nutzungsbedingungen.
+* Bereitstellen eines konsistenten, benutzerfreundlichen Authentifizierungserlebnisses für Websites und Apps.
+* Gewährleistung einer schnellen Markteinführungszeit, um sich an Affiliate-Vereinbarungen anzupassen.
+* Kostenkontrolle im Zusammenhang mit mehreren Integrationen.
 
-Die Lösung? **Adobe® Authentifizierung bestehen**.
+Diese Herausforderungen machen die direkte Integration zwischen Programmierern und mehreren Pay-TV-Authentifizierungssystemen äußerst ressourcenintensiv und erfordern sowohl Zeit als auch technisches Know-how.
 
-## Einführung in die Adobe Pass-Authentifizierung {#authentication-intro}
+Um diese Hürden zu überwinden, vereinfacht und optimiert die **Adobe® Pass Authentication** die Überprüfung von Berechtigungen und ermöglicht so einen nahtlosen, sicheren Zugriff auf TV Everywhere-Inhalte.
 
-Bei der Adobe Pass-Authentifizierung müssen Programmierer und Pay-TV-Anbieter nur eine einfache Integration durchführen, indem sie Adobe Pass-Authentifizierungs-APIs verwenden, um Zugriff auf das gesamte Ökosystem zu erhalten, einschließlich:
+## Einführung in die Adobe Pass-Authentifizierung {#introduction-adobe-pass-authentication}
 
-* Programmierer wie Turner Broadcasting (TBS, TNT, CNN), Fox Broadcast Networks und Hulu
-
-* Alle führenden Pay-TV-Anbieter in den USA, die mehr als 90 % aller Pay-TV-Haushalte in den USA ausmachen
-
-Darüber hinaus bietet die Adobe Pass-Authentifizierung das Framework, das die Benutzerauthentifizierung und -autorisierung einfach und sicher macht.
+Die Adobe Pass-Authentifizierung vermittelt auf sichere Weise Berechtigungstransaktionen zwischen Programmierern und Pay-TV-Anbietern, um sicherzustellen, dass die richtigen Kunden mühelos auf die richtigen Inhalte zugreifen können.
 
 ![](../assets/programmers-connect-authn.png)
 
-*Abbildung 1: Nur einige der Programmierer und Pay-TV-Anbieter, die über die Adobe Pass-Authentifizierung eine Verbindung herstellen…*
+*Einige der Programmierer und Pay-TV-Anbieter, die eine Verbindung über die Adobe Pass-Authentifizierung herstellen*
 
-Adobe Pass vermittelt Berechtigungstransaktionen sicher zwischen Programmierern und Pay-TV-Anbietern, wodurch der Zuschauerzugriff auf Abonnementinhalte erleichtert wird. Oder mit anderen Worten…
+**Wer profitiert von der Adobe Pass-Authentifizierung**
 
-**Die Adobe Pass-Authentifizierung erleichtert und beschleunigt den Zugriff der richtigen Kundinnen und Kunden auf die richtigen Inhalte.**
+* **Programmierer**
 
-**Für wen ist die Adobe Pass-Authentifizierung?**
+  Wer problemlos mit Pay-TV-Anbietern, auch bekannt als MVPDs (Multichannel Video Programming Distributors), integrieren möchte, um die breiteste Zielgruppe zu erreichen und die Umsätze zu optimieren.
 
-* **Programmierer** die sich problemlos mit Pay-TV-Anbietern (auch als „MVPDs“ oder „Multichannel Video Programming Distributors“ bezeichnet) integrieren lassen möchten, um die größte Zielgruppe zu erreichen und so optimale Umsätze zu erzielen. Mithilfe der Adobe Pass-Authentifizierung können Programmierer Viewer bei allen wichtigen Anbietern authentifizieren, unabhängig von der Client-Plattform.
+* **Pay-TV-Anbieter (MVPDs)**
 
-* **Pay-TV-Anbieter/-MVPDs** die schmerzlose Konnektivität mit mehreren Programmierern und eine höhere Kundenzufriedenheit suchen, indem sie den Zugriff auf Abonnementinhalte online erleichtern.
+  Personen, die über eine einzige Integration mit mehreren Inhaltsinhabern (Programmierern) in Kontakt treten möchten, um die Kundenzufriedenheit zu steigern, indem sie den Online-Zugriff auf Abonnementinhalte erleichtern.
 
-* **Pay-TV** Kunden, die einen einfachen Zugang zu Inhalten wünschen, die sie bereits abonniert haben, unabhängig davon, wo sie sich befinden, ohne zusätzliche Kosten. Single Sign-on bietet eine sichere Viewer-Authentifizierung im Web oder über Mobile Apps hinweg, ohne dass Client-Downloads oder wiederholte Anmeldungen erforderlich sind, sowie ein gutes Benutzererlebnis.
+* **Pay-TV-Kunden**
 
-Für **Programmierer** bietet die Adobe Pass-Authentifizierung:
+  Wer die Inhalte sehen möchte, für die er bereits bezahlt, jederzeit, überall und auf jedem Gerät.
 
-* Einfache Integration und sofortige Konnektivität mit führenden Pay-TV-Anbietern, ohne die Last mehrerer, direkter Integrationen
-* Optimierung sowohl des Abonnement- (Lizenzierungs-) als auch des Werbeeinkommens durch Unterstützung der größtmöglichen Zielgruppen für Inhalte
-* Sichere Authentifizierung mit Zugriff auf Premium-Inhalte, die nur autorisierten Benutzern/Geräten gewährt wird
-* Ein offenes und flexibles Framework, das sowohl Player- als auch DRM-Plattformunabhängig ist. Die Wiedergabe kann auf einer Vielzahl von Plattformen erfolgen, einschließlich iOS, Android, Windows 8, Spielkonsolen, Set-Top-Boxen und mehr.
-* Kompatibilität mit jeder DRM-Technologie, z. B. Adobe Flash Acceß ® oder Play Ready®.
-* Unterstützung für Single-Sign-On (SSO)-Authentifizierung und -Autorisierung, sodass sich Abonnentinnen und Abonnenten nach der ersten Authentifizierung auf ihrem eigenen System nicht erneut anmelden müssen.
+**Programmierer**
 
+Programmierer, die die Reichweite und den Umsatz ihrer Zielgruppe maximieren möchten, können:
 
-Für **Pay-TV-Anbieter/MVPDs** bietet die Adobe Pass-Authentifizierung:
+* Einfache Integration mit führenden Pay-TV-Anbietern ohne Verwaltung mehrerer Direktverbindungen.
+* Erweitern Sie Ihre Zielgruppe, indem Sie die Authentifizierung über alle wichtigen Anbieter und Plattformen hinweg sicherstellen.
+* Schützen Sie Premium-Inhalte durch sichere Authentifizierung, die den Zugriff auf autorisierte Benutzer und Geräte einschränkt.
+* Single Sign-On (SSO) aktivieren, um das Benutzererlebnis auf Apps und Websites zu verbessern.
 
-* Einfache Integration mit Inhaltsverantwortlichen für sofortige Konnektivität mit mehreren Programmierern über eine einzige Integration
-* Verbesserte Kundeninteraktion durch Unterstützung eines reibungslosen Markenerlebnisses bei der Anzeige von Inhalten auf mehreren Plattformen und Geräten
-* Sichere Authentifizierung, die sicherstellt, dass nur autorisierte Benutzer/Geräte Zugriff auf Premium-Inhalte erhalten, und (optional) die Anzahl der Geräte und gleichzeitigen Streams begrenzt, die pro Haushaltskonto eine Verbindung herstellen können.
+**Pay-TV-Anbieter (MVPDs)**
 
+Pay-TV-Anbieter können das Kundenerlebnis verbessern und den Betrieb optimieren durch:
 
-Für **Pay-TV** Kunden bietet die Adobe Pass-Authentifizierung:
+* Herstellen einer Verbindung zu mehreren Inhaltsinhabern über eine einzige Integration.
+* Bietet ein markenübergreifendes, nahtloses Anwendererlebnis auf allen Geräten und Plattformen.
+* Sichere Authentifizierung, um nicht autorisierten Zugriff zu verhindern und gleichzeitige Datenströme pro Haushalt zu verwalten
 
-* **TV Everywhere!**
+**Pay-TV-Kunden**
 
-Der Rest dieses Artikels bietet eine technische Einführung in die Adobe Pass-Authentifizierung.  Während sich viele der folgenden Themen auf die Programmiererintegration konzentrieren, gibt es sowohl allgemeine als auch spezifische Informationen, die auch für Pay-TV-Anbieter gelten. In diesem Dokument wird auch die Sicherheit und Integrität der Funktionsweise der Adobe Pass-Authentifizierung als Lösung für TV Everywhere hervorgehoben. Für weitere Informationen über dieses Dokument hinaus wenden Sie sich an Ihren Adobe-Support-Mitarbeiter oder füllen Sie das Informationsanfrageformular ([) ](https://www.adobe.com/).
+Abonnentinnen und Abonnenten profitieren von TV Everywhere , sodass sie jederzeit, überall und auf jedem Gerät Inhalte sehen können, für die sie bereits bezahlen.
 
-## Bausteine {#arch-building-blocks}
+### Integrieren mit der Adobe Pass-Authentifizierung {#integrating-adobe-pass-authentication}
 
-<!-- BROKEN LINK
-![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/import-pc7mz3dfnv/check.gif) 
--->
+Unabhängig davon, ob Sie Pay-TV-Anbieter oder Programmierer sind, erfordert die Integration in die Adobe Pass-Authentifizierung eine aktive Beteiligung. Nachfolgend finden Sie einen Überblick über den Prozess für beide Rollen.
 
-Im Folgenden werden die zentralen Berechtigungstransaktionen für Authentifizierung und Autorisierung erläutert. Bei der Authentifizierung wird einem Pay-TV-Anbieter bestätigt, dass ein bestimmter Benutzer ein bekannter Kunde ist. Autorisierung ist der Prozess, bei dem ein Pay-TV-Anbieter bestätigt, dass ein authentifizierter Benutzer über ein gültiges Abonnement für eine bestimmte Ressource verfügt.
-Die Adobe Pass-Authentifizierung besteht aus den folgenden Grundkomponenten:
+#### Integrationsprozess für Programmierer {#programmer-integration-process}
 
-* Client-Komponente (eine der folgenden):
+Zusätzliche Anleitungen sind verfügbar, sobald die Integration formell eingeleitet wurde, aber der Prozess umfasst in der Regel die folgenden Schritte:
 
-   * Der Access Enabler - eine plattformspezifische Bibliothek; bietet benutzerfreundliche APIs und Code-Beispiele zur Implementierung der Berechtigungsflüsse
-   * Die Clientless-API - RESTful-Web-Services; stellt Endpunkte für Berechtigungsflüsse für Plattformen ohne Website-Rendering-Funktionen bereit (z. B. Spielekonsolen, Set-Top-Boxen usw.),
+**Voraussetzungen**
 
-* Adobe-gehostete Backend-Server
-* Media Token Verifier
-* Ein sicheres, zentrales Medium für den Austausch (Token)
+* Ein Content Management System (CMS).
+* Ein Mechanismus zur Bereitstellung von Inhalten, der ein Content Delivery Network (CDN) eines Drittanbieters enthalten kann.
+* Eine vorhandene Online-Videoplattform mit einem in eine Website eingebetteten Medien-Player oder einer eigenständigen Anwendung.
 
-Auf allgemeiner Ebene besteht die Adobe Pass-Authentifizierung aus drei Komponenten (dem Access Enabler, Adobe-gehosteten Backend-Servern und dem Media Token Verifier) und einem zentralen Exchange-Element (Token).
+**Integrationsaufgaben**
 
-### Client-Komponenten {#client-components}
+* Integrieren Sie die Adobe Pass-Authentifizierung [REST-API DCR](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+* Integrieren Sie die Adobe Pass-Authentifizierung [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md).
+* Integrieren Sie die Adobe Pass-Authentifizierung [Media Token Verifier](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier).
+* Entwickeln Sie eine Benutzeroberfläche für den Authentifizierungs-, Autorisierungs- und Abmelde-Workflow.
 
-* Access Enabler
-* Clientless-API
+Weitere Informationen zum Programmierer-Integrationsprozess finden Sie im [Programmierer-Schnellstartanleitung](/help/authentication/kickstart/programmer-kickstart-guide.md) und [Programmierer-Integrationshandbuch](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md).
 
-#### Access Enabler {#access-enabler}
+#### Integrationsprozess des Pay-TV-Anbieters {#pay-tv-provider-integration-process}
 
-Auf vollständig unterstützten Plattformen (einschließlich Web, iOS, Android, Windows 8) interagieren Programmierer über die Access Enabler-Client-Komponente mit der Adobe Pass-Authentifizierung. Diese Komponente erleichtert alle Authentifizierungs- und Autorisierungsinteraktionen mit dem Kunden.  Access Enabler wird lokal auf ihrem System ausgeführt. Wenn ein(e) Benutzende(r) auf eine Programmierer-Site oder ein Programm zugreift und Inhalte anfordert, wird die Adobe-gehostete/gepflegte Access Enabler-Komponente im Hintergrund geladen.
+Zusätzliche Anleitungen sind verfügbar, sobald die Integration formell eingeleitet wurde, aber der Prozess umfasst in der Regel die folgenden Schritte:
 
-Der Access Enabler verwaltet die tatsächlichen Berechtigungs-Workflows, während der Programmierer die Verantwortung für die übergeordnete Web-Seite oder Player-Anwendung behält, die die Benutzeroberfläche implementiert und mit dem Access Enabler interagiert. Diese Interaktionen erfolgen über ein asynchrones System von Funktionen und Callbacks, die von der Access Enabler-API definiert werden.
+**Voraussetzungen**
 
-Dies sind die grundlegenden Berechtigungsflüsse, die mithilfe der Access Enabler-API einfach zu implementieren sind:
+* Unterschreiben Sie die Adobe Pass Authentication Non-Disclosure Agreement (NDA).
+* Geben Sie dem Adobe Pass Authentication Engineering-Team Spezifikationen für das Authentifizierungs- und Autorisierungssystem. Für die einfachste Integration werden ein SAML-basierter Identitätsanbieter (IdP) für die Authentifizierung und ein SOAP-basiertes Autorisierungssystem empfohlen.
 
-* Anfordereridentität (Programmierer) festlegen
-* Benutzerauthentifizierung mit einem bestimmten Pay-TV-Anbieter (dem „Identitätsanbieter„) prüfen/einholen
-* Überprüfen/Abrufen der Benutzerautorisierung für eine bestimmte Ressource
-* Abmelden des Benutzers
+**Integrationsaufgaben**
 
-Access Enabler bietet außerdem die folgenden Services:
+* Herstellen der Verbindung mit Adobe Pass-Authentifizierungsservern.
+* Vollständige Staging-Version und Qualitätssicherung.
+* Vollständige Produktionsfreigabe und Sicherstellung der Qualitätssicherung.
 
-* Es validiert Abfragen vom Programmierer, einschließlich des Registrierungsstatus bestimmter Clients, ihrer Domains und ihrer Ressourcen/Kanäle.
-* Es liefert die Daten, die die Liste der Pay-TV-Anbieter erstellen, aus denen der Nutzer seinen Anbieter auswählt. Diese Liste wird ebenfalls validiert und für den Programmierer, von dem die Anfrage stammt, entsprechend definiert.
-* Sie initiiert für Pay-TV-Betreiber spezifische Authentifizierungs- und Autorisierungs-Workflows.
-* Die erfolgreichen Autorisierungsantworten werden pro Programmiererressource/Kanal zwischengespeichert, um unnötigen Anfragedatenverkehr zu minimieren.
-* Er kann für vordefinierte Workflows konfiguriert werden, die für jeden Pay-TV-Benutzer spezifisch sind, z. B. für die explizite Geräteregistrierung.
+Die Standardintegration ist für Pay-TV-Anbieter kostenlos, einschließlich Dokumentation und grundlegender E-Mail-Support. Anbieter, die umfangreiche Unterstützung oder beschleunigte Zeitpläne benötigen, können jedoch eine Support-Gebühr entrichten oder sich dafür entscheiden, mit einem erfahrenen Drittanbieter wie Synacor zusammenzuarbeiten.
 
-Je nach Website oder Player-Anwendung kann Access Enabler die folgenden Formen annehmen:
+Die Adobe Pass-Authentifizierung kann die für Pay-TV-Anbieter spezifische Geschäftslogik auf zwei Arten effizient unterstützen:
 
-* Eine SWF-Datei, die die Flash Player-Laufzeit ausführen kann
-* JS-Datei, die direkt vom Browser ausgeführt wird
-* Ein nativer Access Enabler für unterstützte Plattformen (einschließlich iOS, Android und Windows 8)
+* Für eine Geschäftslogik, die eigenständig ist und vom Pay-TV-Anbieter angewendet wird, wenn eine Autorisierungsanfrage eingeht, stellt Adobe die erforderlichen Daten (z. B. eindeutige Geräte-ID, IP-Adresse) bereit, um die Durchsetzung zu unterstützen.
+* Für eine Geschäftslogik, die ein Eingreifen des Benutzers oder eine spezifische Handhabung durch Adobe erfordert, können für jeden Pay-TV-Anbieter benutzerdefinierte Eigenschaften verwaltet werden. Diese Konfigurationen können vordefinierte Workflows enthalten, die an bestimmten Punkten des Authentifizierungsprozesses ausgelöst werden.
 
-#### Clientless-API {#clientless-api}
+Weitere Informationen zum Integrationsprozess für Pay-TV-Anbieter finden Sie im [Handbuch zur MVPD-](/help/authentication/kickstart/mvpd-kickstart-guide.md) und im [Handbuch zur MVPD-Integration](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md).
 
-Der Client-lose API-Ansatz eignet sich für „intelligente Geräte“ (Spielekonsolen, Set-Top-Boxen und Smart-TVs), die keine Webbrowser unterstützen (erforderlich für die Authentifizierung mit MVPDs).  Beim Client-losen Ansatz kommunizieren Apps für intelligente Geräte direkt mit der Adobe Pass-Authentifizierung über RESTful-Webservices-APIs für alles, mit Ausnahme der Authentifizierung, die in einer zweiten Bildschirm-(Browser-)App durchgeführt wird. Mit anderen Worten, die Client-seitige Bibliothek von Access Enabler wird nicht verwendet. Stattdessen verwenden Entwickler von Apps für intelligente Geräte direkt die Web-Services-APIs für die Adobe Pass-Authentifizierung, um die Berechtigungsflüsse zu implementieren.
+### Berechtigungsfluss {#entitlement-flow}
 
-### Adobe-gehostete Backend-Server {#adobe-backend-servers}
+Die Adobe Pass-Authentifizierung dient als Proxy und erleichtert den Berechtigungsfluss zwischen Programmierern und MVPDs, indem sie sichere und konsistente Schnittstellen für beide Parteien bietet.
 
-Die Adobe Pass-Authentifizierungs-Backend-Server, gehostet von Adobe:
+Für Programmierer stellt die Adobe Pass-Authentifizierung APIs als Teil einer **Standard**- oder **Premium**-Ebene bereit:
 
-* Bereitstellen der Authentifizierungs- und Autorisierungs-Workflows mit den Pay-TV-Anbietern, die eine Server-zu-Server-Kommunikation zwischen der Adobe Pass-Authentifizierung und dem Operator erfordern.
-* Verwalten Sie die Konfiguration für Programmierer-Sites und -Programme.
-* Hosten Sie die herunterladbaren Komponentendateien des Access Enabler.
-* Stellen Sie die RESTful-Webservice-Endpunkte für die Client-lose API-Integration bereit.
-* Generieren von Authentifizierungs- und Autorisierungs-Token (und in einigen Fällen Speichern).
+* Standard-APIs zur Adobe Pass-Authentifizierung:
+   * [REST-API-DCR](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+   * [REST-API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
-### Token und der Media Token Verifier {#tokens-media-token-verifier}
+* Premium Adobe Pass-Authentifizierungs-APIs:
+   * [Temporäre Pass-API zurücksetzen](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [TempPass-Funktion](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+   * [Abbauungs-API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+      * [Abbaumerkmal](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+   * [Berechtigungs-Service-Überwachungs-API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
-Die Adobe Pass-Lösung für Authentifizierungsberechtigungen konzentriert sich auf die Generierung bestimmter Datenelemente, die nach erfolgreichem Abschluss der Authentifizierungs-/Autorisierungs-Workflows abgerufen werden. Diese Daten werden als Token bezeichnet. Sie haben eine begrenzte Lebensdauer und werden sicher gespeichert, entweder an plattformabhängigen Stellen auf dem Client oder auf Adobe-Servern im Fall der Client-losen API-Lösung. Nach Ablauf müssen Token durch die erneute Initiierung der Authentifizierungs- und/oder Autorisierungs-Workflows erneut ausgestellt werden.
+Weitere Informationen zum Ablauf von Berechtigungen finden Sie in der Dokumentation [Handbuch zur Programmiererintegration](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow).
 
-Es gibt drei Arten von Token, die bei der Adobe Pass-Authentifizierung während der Authentifizierungs-/Autorisierungs-Workflows auftreten. Zwei davon sind „langlebig“ und bieten Kontinuität im Anwendererlebnis. Das dritte, ein kurzlebiges Token, unterstützt die Best Practices der Branche zur Betrugsbekämpfung (wo Betrug beispielsweise Exploits wie Stream-Ripping umfasst). Die TTL-Werte (Time-to-Live) werden auf der Grundlage von Vereinbarungen zwischen Programmierern und Pay-TV-Anbietern festgelegt, die sich auf einen Wert einigen, der allen Beteiligten am besten dient.
+#### Grundlegendes zu Berechtigungen {#understanding-entitlements}
 
-#### (Langlebiges) Authentifizierungstoken {#long-lived-auth-token}
+Die Adobe Pass-Authentifizierungslösung umfasst die Erstellung von Berechtigungen - spezifische Datenelemente, die nach erfolgreichem Abschluss der Authentifizierungs- und Autorisierungs-Workflows generiert werden. Diese Berechtigungen gewähren Zugriff auf geschützte Inhalte, haben jedoch eine begrenzte Lebensdauer. Sobald eine Berechtigung abläuft, muss sie erneuert werden, indem die Authentifizierungs- oder Autorisierungsprozesse erneut initiiert werden.
 
-Die Authentifizierung wird erfolgreich durchgeführt, sobald eine Kundin oder ein Kunde die Adobe Pass-Authentifizierung verwendet, um sich erfolgreich bei ihrem Pay-TV-Konto anzumelden. Die Adobe Pass-Authentifizierung erzeugt dann ein langlebiges Authentifizierungstoken (AuthN), das mit dem anfragenden Gerät verknüpft ist, und (je nach Pay-TV-Anbieter) eine global eindeutige Kennung („GUID„), die den Benutzer anonym identifiziert.
+Weitere Informationen zu Berechtigungen finden Sie in den folgenden Dokumenten:
 
-* Die Adobe Pass-Authentifizierung speichert das AuthN-Token sicher an einem Speicherort, an dem es für alle Anwendungen verfügbar ist, die die Adobe Pass-Authentifizierung verwenden. Bei Access Enabler-Integrationen werden Token sicher auf der Client-Seite gespeichert.  Die Adobe Pass-Authentifizierung verwendet das AuthN-Token, um nachfolgende Autorisierungsabfragen im Namen der Benutzerin bzw. des Benutzers durchzuführen.
-* Es wird immer nur ein Authentifizierungs-Token gespeichert. Wenn ein neues AuthN-Token ausgegeben wird und bereits ein altes vorhanden ist, überschreibt das neue Token den vorhandenen gespeicherten Wert.
+* **Profile**
 
-#### (Langlebiges) Autorisierungs-Token {#long-lived-authriz-token}
+  Bei erfolgreicher Authentifizierung erstellt die Adobe Pass-Authentifizierung ein authentifiziertes Profil („langlebig„), das mit der ID der anfragenden Anwendung, des Geräts und des Dienstleisters (Anfordererkennung) verknüpft ist.
 
-Nach erfolgreicher Autorisierung erstellt die Adobe Pass-Authentifizierung ein langlebiges Autorisierungs-Token („AuthZ„). Dieses Token ist nicht portabel, da es an das anfordernde Gerät und eine bestimmte geschützte Ressource (z. B. einen Kanal, eine Serie oder eine Folge) gebunden ist.
+* **[Benutzermetadaten](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)**
 
-* Die Adobe Pass-Authentifizierung speichert das AuthZ-Token sicher zusammen mit anderen Autorisierungs-Token für andere Ressourcen.  Wie bei den AuthN-Token wird bei Plattformen, die Access Enabler verwenden, das Token lokal auf dem Client gespeichert. Bei Plattformen, die die Clientless-API verwenden, werden Token auf den Adobe Pass-Authentifizierungsservern gespeichert.
-* Die Time-to-Live (TTL) des langlebigen AuthZ-Tokens wird in der Regel im Bereich von Tagen bis Wochen definiert, je nach der spezifischen Vereinbarung zwischen dem Pay-TV-Anbieter und dem Programmierer.
-* Pro Ressource wird immer nur ein AuthZ-Token gespeichert. Es können mehrere Autorisierungs-Token gespeichert werden, sofern sie mit verschiedenen Ressourcen verknüpft sind. Wenn ein neues Autorisierungs-Token ausgegeben wird und bereits ein altes für dieselbe Ressource vorhanden ist, überschreibt das neue Token den vorhandenen zwischengespeicherten Wert.
-* Die Adobe Pass-Authentifizierung verwendet das langlebige AuthZ-Token, um die kurzlebigen Medien-Token zu erstellen, die für den tatsächlichen Anzeigezugriff verwendet werden.
+  Nach erfolgreicher Authentifizierung (und in einigen Fällen auch nach der Autorisierung) empfängt die Adobe Pass-Authentifizierung Benutzermetadaten von der MVPD, die sie für die anfragende Anwendung verfügbar machen.
 
-#### Kurzlebiges Medien-Token {#short-lived-media-token}
+* **[Entscheidungen](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md)**
 
-Sobald die Adobe Pass-Authentifizierung das AuthZ-Token generiert, verwendet sie dieses Token, um ein einmaliges, kurzlebiges Medien-Token zu generieren, das von Adobe signiert und verschlüsselt wird, um Manipulationen während des Austauschs zu vermeiden:
+  Nach erfolgreicher Autorisierung erstellt die Adobe Pass-Authentifizierung eine Autorisierungsentscheidung („langlebig„), die mit der anfragenden Anwendung, dem Gerät, der Kennung des Dienstleisters (Anfordererkennung) und einer bestimmten geschützten Ressource (Ressourcenkennung) verknüpft ist.
 
-* Die TTL des kurzlebigen Tokens (Standard: 5 Minuten) ist so eingestellt, dass Probleme bei der Uhrensynchronisierung zwischen dem Server, der das Token generiert, und dem Server, der das Token validiert, möglich sind.
-* Das kurzlebige Token wird auf der Einbettungs-Site verfügbar gemacht, bevor der Zugriff auf die geschützte Ressource bereitgestellt wird. Daher muss der Programmierer das Token mithilfe des Media Token Verifier für Access Enabler-Integrationen oder, im Fall von Client-losen API-Integrationen, des Token Verifier-Services validieren.
+* **[Medien-Token](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md)**
 
-#### Medien-Token-Verifizierer {#media-token-verifier}
+  Nach erfolgreicher Autorisierung erstellt die Adobe Pass-Authentifizierung ein Medien-Token („kurzlebig„), das mit einer erfolgreichen Wiedergabeanfrage verknüpft ist, und bietet Unterstützung für Best Practices der Branche zur Risikominderung (z. B. Stream-Ripping).
 
-Programmierer sind dafür verantwortlich, die Media Token Verifier-Bibliothek in ihren vorhandenen Anwendungs-Server zu integrieren, damit der Verifier die endgültigen Benutzervalidierungen durchführen kann, bevor ein Video-Stream tatsächlich gestartet wird. Die Media Token Verifier-Bibliothek definiert:
+Die TTL-Werte (Time-to-Live) für Profile und Entscheidungen werden auf der Grundlage von Vereinbarungen zwischen Programmierern und Pay-TV-Anbietern festgelegt, die sich auf einen Wert einigen, der allen Beteiligten am besten dient.
 
-* Eine Token-Verifizierungs-API, die Informationen aus dem Token abruft, z. B. ob es gültig ist, wann das Token ausgegeben wurde und andere relevante Daten
-* Der öffentliche Adobe-Schlüssel, mit dem überprüft wird, ob das Token tatsächlich von Adobe stammt
-* Eine Referenzimplementierung, die zeigt, wie die Verifier-API verwendet wird und wie der in der Bibliothek enthaltene öffentliche Adobe-Schlüssel zur Überprüfung seiner Herkunft verwendet wird
+#### Erstellen der Benutzeroberfläche {#building-user-interface}
 
-![](../assets/high-level-architecture-nflows.png)
+Programmierer sind für die Gestaltung und Implementierung der Benutzeroberfläche (User Interface, UI) für den Berechtigungs-Workflow innerhalb ihrer Website oder App verantwortlich, während bestimmte Elemente, wie der Anmeldeprozess, vom Pay-TV-Anbieter verwaltet werden.
 
-*Abbildung 2: Allgemeine Architektur des Adobe Pass-Authentifizierungs-Ökosystems in einer Access Enabler-Integration*
+Programmierer müssen mindestens:
 
-## Integration mit der Adobe Pass-Authentifizierung {#integrate-auth}
+* **Implementieren einer Schnittstelle zur Anbieterauswahl**
+   * Ermöglichen Sie es neuen Nutzern, ihren Pay-TV-Anbieter zu identifizieren und sich zum ersten Mal anzumelden.
+   * Einige Pay-TV-Anbieter leiten Benutzer zu einer externen Anmeldeseite weiter, während andere die Anmeldung innerhalb eines iFrames erfordern. Programmierer müssen eine Callback-Funktion implementieren, um bei Bedarf den iframe zu generieren.
 
-Unabhängig davon, ob Sie Pay-TV-Anbieter oder Programmierer sind, erfordert der Integrationsprozess mit der Adobe Pass-Authentifizierung einen gewissen Anteil Ihrer aktiven Teilnahme. Jeder dieser Prozesse wird im Folgenden beschrieben.
+* **Verwalten einer Liste unterstützter Pay-TV-Anbieter**
+   * Stellen Sie sicher, dass Benutzer nur über genehmigte Anbieter auf Inhalte zugreifen können.
 
-### Der Prozess für Pay-TV-Anbieter
+* **Authentifizierungsstatus angeben**
+   * Anzeigen, wenn ein Benutzer in der App oder auf der Website authentifiziert wird.
 
-Die Hauptverantwortung des Pay-TV-Anbieters bei der Adobe Pass-Authentifizierung besteht darin, zu überprüfen, ob ein anfragender Nutzer tatsächlich ein bekannter Abonnent ist, der zum Zugriff auf die Inhalte des Programmierers berechtigt ist. Auf Hochtouren
-Auf dieser Ebene erfordert der Adobe Pass-Authentifizierungsprozess für die Integration mit einem neuen Pay-TV-Anbieter die folgenden Schritte:
-
-1. Der Anbieter unterzeichnet die Adobe Pass Authentication Non-Disclosure Agreement (NDA).
-1. Der Anbieter stellt Adobe Spezifikationen für das Authentifizierungs- und Autorisierungssystem zur Verfügung. Für die einfachste Integration wird empfohlen, dass Pay-TV-Anbieter einen SAML-basierten Identitätsanbieter (IdP) für die Authentifizierung und die Möglichkeit zur Kommunikation über das SOAP-Zugriffsprotokoll zur Autorisierung haben.
-1. Der Anbieter stellt die Verbindung zwischen seinen Servern und den Adobe Pass-Authentifizierungsservern her. Dazu gehören die Bereitstellung von Endpunkten und die Auflistung von IPs.
-1. Präqualifikationsfreigabe und QE.
-1. Produktionsfreigabe und QE.
-
-Während die Adobe Pass-Authentifizierung bestehende Integrationen für Programmierer ersetzen kann, ist dies für Pay-TV-Anbieter in der Regel nicht erforderlich. Adobe arbeitet mit dem technischen Team des Anbieters zusammen, um die Adobe Pass-Authentifizierung so zu konfigurieren, dass sie den Anforderungen vorhandener Integrationen entspricht. Die Integration ist für Pay-TV-Anbieter kostenlos, vorausgesetzt, es handelt sich um eine „Standardintegration“ und minimale Support-Anforderungen (Dokumentation und grundlegender E-Mail-Support). Wenn ein Provider erheblichen Support oder einen eskalierten Zeitplan benötigt, kann eine Support-Gebühr erhoben werden oder der Provider möchte mit einem Drittanbieter zusammenarbeiten, der mit unserer Lösung vertraut ist, wie z. B. Synacor.
-
-
-Die Adobe Pass-Authentifizierung unterstützt auch die effiziente Handhabung der Geschäftslogik von Pay-TV-Anbietern wie folgt:
-
-* Für eine eigenständige Geschäftslogik, die vom Benutzer angewendet werden kann, wenn eine Autorisierungsanfrage eingeht, stellt Adobe die erforderlichen Daten bereit, um die Durchsetzung der Geschäftslogik zu unterstützen, wenn der Benutzer eine Autorisierungsanfrage erhält. Zu diesen Daten können u. a. die eindeutige Geräte-ID des Benutzers, der die Anfrage stellt, und die IP-Adresse des Geräts gehören.
-* Für eine Geschäftslogik, die ein Eingreifen des Benutzers und/oder eine spezifische Handhabung durch die Adobe-Lösung erfordert, kann Adobe einige benutzerdefinierte Eigenschaften für jeden Pay-TV-Anbieter beibehalten. Zu diesen benutzerspezifischen Konfigurationen/Richtlinien gehört die Aktivierung vordefinierter Workflows, die an bestimmten Punkten des Workflows der obersten Ebene gestartet werden können. Weitere Informationen zur Unterstützung benutzerdefinierter Eigenschaften erhalten Sie von Ihrem Adobe-Support-Mitarbeiter.
-
-Adobe bietet außerdem Betrugsbekämpfungsdienste an. Weitere Informationen erhalten Sie von Ihrem Adobe-Support-Mitarbeiter.
-
-### Der Programmierprozess {#programmer-process}
-
-Um die Adobe Pass-Authentifizierung erfolgreich zu integrieren, müssen Programmierer ihre Media Player-Anwendung oder Web-Seite so einrichten, dass sie mit der Adobe Pass-Authentifizierung bei der Verarbeitung der wichtigsten Berechtigungsprozesse zusammenarbeitet: Authentifizierung, Autorisierung und Abmeldung.
-
-
-Bevor Sie eine Integration mit der Adobe Pass-Authentifizierung beginnen, sollten Programmierer über Folgendes verfügen:
-
-* Eine vorhandene Online-Videoplattform, einschließlich eines Medien-Players, entweder als Teil einer Website oder als eigenständige Anwendung
-* Ein Content Management System
-* Ein Bereitstellungsmechanismus, der ein Content Delivery Network (CDN) eines Drittanbieters enthalten kann oder nicht
-
-Programmierer sollten erwarten, einige Integrationsaufgaben als Teil der Bereitstellung von TV Everywhere-Services mit Adobe Pass-Authentifizierung durchzuführen. Zu diesen Aufgaben gehören:
-
-* Integrieren der Access Enabler-Bibliothek der Adobe Pass-Authentifizierung in Ihre Web-Seite oder Ihren Media Player oder Implementieren der Integration mithilfe des Client-losen Ansatzes für „intelligente Geräte“, die nicht Web-fähig sind
-* Serverseitige Arbeit zur Integration der Adobe Pass Authentication Token Verifier-Komponente in Ihren Video-Streaming-Workflow
-* Erstellen einer Benutzeroberfläche für den Zugriffs-Workflow in Ihrer Website oder Ihrer Mobile App (einige Elemente davon, wie der eigentliche Anmeldevorgang, werden vom Pay-TV-Benutzer bereitgestellt, und einige Elemente sind optional als Teil der Adobe Pass-Authentifizierung verfügbar)
-
-Dieses Dokument bietet einen Überblick über den Programmierprozess, und Adobe bietet zusätzliche Anleitungen bei der formellen Initiierung der Integration.
-
-#### Einrichtung des Anforderers (Programmierers) {#requester-prog-setup}
-
-##### Registrieren bei Adobe {#registering}
-
-Als ersten Schritt müssen sich Programmierer bei Adobe oder einem Adobe-autorisierten Partner registrieren und die Domains angeben, die sie mit der Adobe Pass-Authentifizierung verwenden möchten. Programmierer erhalten dann für jede Sitzung, in der der Programmierer mit dem Access Enabler interagiert, eine eindeutige Anforderer-ID, die der Adobe Pass-Authentifizierung bereitgestellt wird.
-
-##### Setup für die Integration von Initial Access Enabler {#access-enabler-int-setup}
-
-Bevor Kunden Zugriff auf Inhalte anfordern, müssen Programmierer die Client-Komponente für die Adobe Pass-Authentifizierung - den Access Enabler - in ihre bestehende Media Player-App oder Web-Seite integrieren. Es gibt verschiedene Möglichkeiten, wie dies geschehen kann:
-
-* Sie können die Flash-Version AccessEnabler.swf in einen Flash-basierten Videoplayer auf einer Webseite oder direkt in HTML einbetten. Sie können mit der SWF auf ActionScript oder JavaScript kommunizieren. Die Basis-API ist ActionScript, aber eine vollständige JavaScript-Wrapper-Bibliothek ist verfügbar.
-* Bei Nicht-Flash-Geräten haben Sie folgende Möglichkeiten:
-   * Verwenden Sie die HTML5-/JavaScript-Version, AccessEnabler.js, und kommunizieren Sie mit ihr über die JavaScript-API oder
-   * Verwenden einer nativen Access Enabler-Bibliothek, z. B. für iOS, Android oder Windows 8
-
-##### Setup für die anfängliche Client-lose API-Integration {#clientless-api-int-setup}
-
-Bevor Kunden Zugriff auf Inhalte anfordern, müssen Programmierer die RESTful-Webservice-Aufrufe mit der Clientless-API in ihre Media Player-App implementieren und eine „Second-Screen“-Anwendung einrichten, um die Anmeldung des Benutzers bei seinem Pay-TV-Anbieter über das Web zu verarbeiten.
-
-#### Handhabung von Authentifizierung und Autorisierung {#auth-authr-handling}
-
-Wenn ein Kunde zum ersten Mal eine geschützte Ressource von einem Programmierer anfordert, stellt der Programmierer dem Kunden eine Liste von Pay-TV-Anbietern zur Auswahl. Wenn der Anbieter ausgewählt ist, wird der Benutzer zur ersten Benutzerauthentifizierung zu diesem Operator weitergeleitet. Sobald die Authentifizierung erfolgreich war, kommuniziert die Adobe Pass-Authentifizierung mit dem ausgewählten Pay-TV-Anbieter, um den Zugriff auf die angegebene Ressource zu autorisieren. Details zu diesen Prozessen folgen.
-
-![](../assets/providr-selection-ui.png)
-
-
-*Abbildung 3: Beispiel für die Benutzeroberfläche zur Anbieterauswahl*
-
->[!NOTE]
->
->* Die Authentifizierung erfolgt als SAML-Austausch zwischen der Adobe Pass-Authentifizierung als Dienstleister (oder „SP„) und einem Pay-TV-Anbieter als Identitätsanbieter (oder „IdP„).
->* Bei der Autorisierung wird ein Back-Channel-Webservice-Austausch (Server-zu-Server) zwischen der Adobe Pass-Authentifizierung (dem SP) und einem Pay-TV-Anbieter (dem IdP) verwendet.
-
-
-##### Programmiererkommunikation mit dem Access Enabler
-
-Der bidirektionale Kommunikationskanal zwischen dem Access Enabler und der Web-Seite oder der Player-App des Programmierers folgt einem vollständig asynchronen Muster. Der Programmierer sendet Nachrichten über die Methoden, die von der Access Enabler-API verfügbar gemacht werden, an den Access Enabler. Der Access Enabler antwortet über Callbacks, die mit der Access Enabler-Bibliothek registriert sind.
-
-* Bei jeder Autorisierungsanfrage wird automatisch zuerst die Authentifizierung angefordert, wenn im lokalen System kein Authentifizierungstoken gefunden wird. Wenn die Authentifizierung erfolgreich ist, wird das Token des Kunden lokal gespeichert, sodass er sich über einen bestimmten Zeitraum nicht erneut anmelden muss. Wenn sie sich in einem anderen Kontext erfolgreich über die Adobe Pass-Authentifizierungsberechtigungslösung authentifiziert haben (z. B. über die Website des Pay-TV-Anbieters oder einen anderen Programmierer), hat der Access Enabler Zugriff auf das lokale Token und benötigt keine zusätzliche Authentifizierung.
-* Wenn ein Kunde eine bestimmte Ressource anfordert, fordert der Programmierer über den Access Enabler die Autorisierung des Pay-TV-Anbieters an. Nach Überprüfung (oder Initiierung) der Authentifizierung kontaktiert der Access Enabler den Pay-TV-Anbieter (über die Adobe Pass-Authentifizierung), um zu ermitteln, ob der Kunde berechtigt ist, die Ressource anzuzeigen. Die Adobe Pass-Authentifizierung verarbeitet die Kommunikation mit dem Pay-TV-Anbieter, um eine Autorisierung zu erhalten. Der Programmierer muss lediglich die Anfrage an den Access Enabler senden und die Antwort verarbeiten (Erfolg oder Fehler bei der Autorisierung). Wenn die Autorisierung erfolgreich ist, wird ein Autorisierungs-Token auf dem Client-System gespeichert und der Callback erhält ein kurzlebiges Medien-Token.
-
-##### Programmiererkommunikation mit der Client-losen API {#progr-comm-clientless-api}
-
-Die Kommunikation zwischen der App des Programmierers und der Adobe Pass-Authentifizierung erfolgt über RESTful-Webservices.  Für alle API-Aufrufe an die Adobe Pass-Authentifizierungsendpunkte sind Sicherheitsprotokolle vorhanden.  Die Sicherheitsanforderungen werden in der Dokumentation zur Clientless-API beschrieben.
-
-##### Beispiel-Workflow mit SSO-basierter SAML-Webbrowser-Authentifizierung {#sample-wf}
-
-1. Betrachter Navigiert zu einer Website (dummy1.com) und versucht, auf berechtigte Inhalte zuzugreifen.
-1. Video-Seite/Player lädt Access Enabler von adobe.com und fordert bei Aufforderung durch eine Benutzeraktion zur Autorisierung des angeforderten Inhalts auf.
-1. Access Enabler führt den Anforderer und die Anforderung aus und validiert sie.
-1. Access Enabler sucht im lokalen Speicher nach einem gültigen Autorisierungstoken. Wenn eine gültige Autorisierung gefunden wird, erzeugt der Access Enabler ein kurzlebiges Medien-Token (siehe Schritt 14).
-1. Wenn keine gültige Autorisierung für die angeforderte Ressource gefunden wird, aber ein gültiges Authentifizierungstoken vorhanden ist, initiiert Access Enabler eine Autorisierungsanfrage beim Pay-TV-Anbieter, gegen den der Benutzer authentifiziert ist. Der Adobe-Server stellt den Autorisierungs-/Antwortaustausch mit dem Pay-TV-Anbieter bereit.
-1. Wenn kein gültiges Authentifizierungstoken gefunden wird, fordert Access Enabler den Benutzer auf, seinen Pay-TV-Anbieter anzugeben. (Auswahl eines Anbieters, der die SSO-basierten SAML-Webbrowser-Authentifizierungs-Trigger unterstützt, durch einen SAML-basierten Authentifizierungs-Workflow. Bei Nicht-SAML-Anbietern verarbeitet Adobe einen ähnlichen benutzerdefinierten Workflow.)
-1. Access Enabler führt den Browser zum SAML-Service (Service Provider) von Adobe und übergibt ihm alle entsprechenden Parameter.
-1. Der SAML-SP ruft den entsprechenden SAML-IdP (Identity Provider) beim Pay-TV-Anbieter des Benutzers auf, wobei das SAML-Webbrowserprofil verwendet wird, wie in den IdP-Metadaten angegeben. Dadurch wird der Benutzer effektiv zur Seite des IdP (Pay-TV-Anbieter) weitergeleitet, wo er sich authentifiziert.
-1. Nach erfolgreicher Authentifizierung wird der Benutzer zurück zu Adobe auf SAML SP weitergeleitet und übergibt in der SAML-Antwort eine Authentifizierungs-GUID.
-1. Adobe auf SAML SP erstellt eine Server-seitige Sitzung, in der die Authentifizierungs-GUID gespeichert ist, und leitet den Benutzer zurück zur ursprünglichen Programmiererseite. (Die Serversitzung wird beim Abrufen des Authentifizierungs-Tokens durch Access Enabler gelöscht.)
-1. Access Enabler ruft die Authentifizierungs-GUID vom Adobe-Server ab, um sie mit einer von der Adobe Pass-Authentifizierung verwalteten Geräte-ID in das Token aufzunehmen. Wenn sich das Flash-DRM auf dem Gerät befindet, erfolgt dies über Flash Acceß-APIs (Flash Player-DRM-Komponente), die die Bindung der GUID an die Geräte-ID ermöglichen und ein Authentifizierungstoken zurückgeben. Andernfalls erfolgt dies über JS-APIs über HTTPS unter Verwendung von HTML5-basiertem Speicher oder über bestimmte native Komponenten.
-1. Das Authentifizierungstoken wird von Access Enabler verwendet, um Autorisierungsanfragen an den Pay-TV-Anbieter zu stellen. Auf Flash Acceß-fähigen Geräten werden die Anfragen immer über Flash Acceß-APIs gestellt, sodass das daraus resultierende Autorisierungs-Token an das Gerät gebunden ist. Auf Nicht-Flash Acceß-Geräten wird HTTPS für die sichere Kommunikation zwischen Client und Server verwendet.
-1. Nach erfolgreicher Autorisierung erstellt die Adobe Pass-Authentifizierung ein langlebiges Autorisierungs-Token („authZ„) und übergibt es an den Access Enabler, der es auf dem lokalen System speichert.
-1. Der Access Enabler verwendet das AuthZ-Token, um kurzlebige Medien-Token zu erstellen, die für den tatsächlichen Anzeigezugriff verwendet werden. Aus Sicherheitsgründen müssen diese kurzlebigen Token von einer anderen Adobe Pass-Authentifizierungskomponente, dem Media Token Verifier, validiert werden.
-
-![](../assets/authn-authz-entitlmnt-flow.png)
-
-
-*Abbildung 4: Workflow „Authentication and Authorization Access Enabler“*
-
-##### Bereitstellen einer Benutzeroberfläche für Berechtigungen {#entitlement-ui}
-
-Programmierer müssen ihre eigene Benutzeroberfläche für den Zugriffs-Workflow auf ihre Website oder App erstellen. Einige Elemente, wie der eigentliche Anmeldevorgang, werden vom Pay-TV-Anbieter bereitgestellt, und einige Elemente sind optional als Teil der Adobe Pass-Authentifizierung verfügbar. Der Programmierer führt mindestens Folgendes aus:
-
-* **Implementiert eine Schnittstelle zur Anbieterauswahl** über die neue Benutzende ihren Pay-TV-Anbieter identifizieren und sich erstmals anmelden können. Für die Entwicklung bietet der Access Enabler eine grundlegende Benutzeroberfläche, die dem Kunden eine Auswahl an Pay-TV-Anbietern ermöglicht und den Anmeldeprozess initiiert. In einer Produktionsumgebung müssen Programmierer ihr eigenes Dialogfeld für die Anbieterauswahl implementieren. Einige Pay-TV-Anbieter leiten zur Anmeldung zu ihrer eigenen Website weiter, und einige verlangen, dass ihre Anmeldeseiten in einem iFrame angezeigt werden. Programmierer müssen den Callback implementieren, der diesen iframe erstellt, falls der Kunde einen dieser Anbieter auswählt.
-* **Identifiziert geschützte Ressourcen.** Geschützte Ressourcen sind diejenigen, für die eine Zugriffsautorisierung erforderlich ist. Beim Anbieten dieser Ressourcen sollte die Programmierschnittstelle angeben, dass vor dem Anzeigen eine Autorisierung erforderlich ist. Bei erfolgreicher Autorisierung sollte die Benutzeroberfläche zeigen, dass die Ressource jetzt autorisiert ist.
-* **Erstellt und verwaltet eine Liste von Pay-TV** Anbietern, um den Benutzerzugriff nur auf die von Ihnen angegebenen Anbieter zu steuern.
-* **Zeigt an, dass ein Benutzer authentifiziert ist.** Der Programmierer sollte den Authentifizierungsstatus des Kunden als Teil der Mittel angeben, die zur Identifizierung geschützter Ressourcen verwendet werden. Programmierer können den Access Enabler abfragen, um festzustellen, ob ein Kunde bereits authentifiziert wurde.
-
-#### Unterstützen von Single Logout {#single-logout-support}
-
-In den meisten Fällen ist der Programmierer für die Verarbeitung von Benutzerabmeldungen über einen einfachen API-Aufruf verantwortlich. Der Aufruf logout() weist die Adobe Pass-Authentifizierung an, den aktuellen Benutzer abzumelden, indem er:
-
-* Löschen aller AuthN- und AuthZ-Token
-* Löschen aller Authentifizierungs- und Autorisierungsinformationen für diesen Benutzer
-* Initiieren eines anbieterspezifischen Pay-TV-Workflows zum Löschen der Authentifizierungssitzung des Benutzers beim Anbieter (wenn die Authentifizierung beispielsweise mit dem SAML-Authentifizierungsanforderungsprotokoll durchgeführt wurde, kann die Abmeldung mit dem SAML-Abmeldeprotokoll erfolgen).
-
-Wenn der/die Benutzende den Computer so lange inaktiv lässt, dass seine/ihre Token ablaufen, kann er/sie trotzdem zu seiner/ihrer Sitzung zurückkehren und die Abmeldung erfolgreich starten. Die Adobe Pass-Authentifizierung stellt sicher, dass alle Token gelöscht werden, und benachrichtigt den Pay-TV-Anbieter, auch seine Sitzung zu löschen.
-
-
-Wenn die Abmeldung von einer Site initiiert wird, die nicht in die Adobe Pass-Authentifizierung integriert ist, kann der Pay-TV-Anbieter den einmaligen Abmelde-Service der Adobe Pass-Authentifizierung über eine Browser-Umleitung aufrufen.
-
-## Über die grundlegenden Leistungsflüsse hinaus - zusätzliche Funktionen {#beyond-basics}
-
-Die grundlegenden Flüsse für Berechtigungen sind Start, Authentifizierung, Autorisierung und Abmelden.  Im Zuge der Reife und Entwicklung der Adobe Pass-Authentifizierung wurden und werden eine Reihe zusätzlicher Funktionen zu den grundlegenden -Flüssen hinzugefügt.  Dazu gehören:
-
-* **Benutzermetadaten** - Abhängig von Vereinbarungen zwischen MVPDs und Programmierern können MVPDs Metadaten wie Postleitzahl, maximale Bewertung, Kanal-ID und mehr sicher austauschen. Metadaten ermöglichen verschiedene Anwendungsfälle, darunter Kindersicherung, regionale Einfrierzeiten für Sportereignisse usw.
-* **Temporary Free Access** - Ermöglicht es Programmierern, temporären freien Zugriff auf ihre geschützten Inhalte anzubieten (z. B. kurze Beispiele für die tägliche Programmierung oder kostenlose Präsentation eines großen Ereignisses).
-* **Proxy MVPD** - Ein MVPD kann seine eigene Integration mit der Adobe Pass-Authentifizierung verwalten und auch den Berechtigungsprozess im Namen einer Gruppe verknüpfter „ProxiedMVPDs“ verwalten.
-
-## Sicherheit {#security}
-
-In diesem Abschnitt wird die Sicherheit und Integrität der Authentifizierungsinfrastruktur von Adobe Pass beschrieben.
-
-### Token-Sicherheit {#token-security}
-
-Eines der Hauptziele der Adobe Pass-Authentifizierung besteht darin, sicherzustellen, dass das System Angriffen auf die Inhaltsberechtigungsdaten durch einen nicht autorisierten Benutzer oder einen Inhalts-Aggregator standhalten kann. Daher wird der Datenzugriff auf verschiedenen Ebenen im Workflow gesichert, wobei dem Schutz der Generierung und Verwendung der Daten des Autorisierungs-Tokens die höchste Bedeutung zukommt. Die Adobe Pass-Authentifizierungsarchitektur soll sicherstellen, dass Token-Inhalte sicher gepflegt werden und das Token auf dem Gerät, auf das es ausgegeben wurde, verbleibt.
-
-* **Langlebige AuthN- und AuthZ-Token-**: Alle langlebigen Token werden vom Adobe Pass-Authentifizierungsserver digital signiert. Die digitale Signatur unterscheidet sich jedoch von Plattform zu Plattform insofern, als sie eine Geräte-ID verwendet, die sich hinsichtlich der Generierung, des Schutzes und der Validierung unterscheidet. In allen Fällen stellt eine Client-seitige Validierung sicher, dass die digitale Signatur intakt ist und die Integrität des Tokens erhalten bleibt. Der Access Enabler speichert die validierten Token sicher an Orten, die für die Umgebung spezifisch sind, in der er ausgeführt wird. Wenn die Überprüfung der Geräte-ID fehlschlägt, wird die Authentifizierungssitzung ungültig gemacht, Token werden zurückgesetzt und der Benutzer wird aufgefordert, sich erneut anzumelden.
-* **Kurzlebige Medien-Token-**: Kurzlebige Medien-Token, die im letzten Schritt vor dem Inhaltszugriff erstellt werden, werden per Adobe signiert und verschlüsselt, um Manipulationen während des Austauschs zu vermeiden. Für kurzlebige Medien-Token ist außerdem ein zusätzlicher Validierungsschritt durch eine zusätzliche Adobe Pass-Authentifizierungskomponente, den Media Token Verifier, erforderlich. Die TTL des kurzlebigen Tokens ist auf den Standardwert von 5 Minuten eingestellt und kann bei Bedarf kürzer gestaltet werden. Das kurzlebige Medien-Token wird nie zwischengespeichert. Jedes Mal, wenn eine Autorisierungs-API aufgerufen wird, wird ein neues Token vom Server abgerufen.
-
-### Plattformspezifische Gerätesicherheit {#platform-sp-security}
-
-Die von der Adobe Pass-Authentifizierung verwendeten Sicherheitsmaßnahmen variieren je nach Plattform, sind jedoch alle robust und auf dem neuesten Stand der Technik.
-
-* **Flash-fähige Geräte** - Wenn sich Flash Player 10.1+ oder AIR 2.5+ auf dem Gerät befindet, verwendet die Adobe Pass-Authentifizierung zum Schutz die Flash Player-DRM-Funktion, auch als Flash Acceß bezeichnet. Flash bietet ein zusätzliches Schutzniveau. Die hohe Sicherheit der Gerätebindung für Flash-basierte Token bedeutet, dass die Lebensdauer in den meisten Fällen länger sein kann, Benutzende sich nicht so oft anmelden müssen und das Benutzererlebnis im Allgemeinen reibungsloser ist.
-* **Browser-interne Erlebnisse auf HTML5-fähigen Geräten**- Auf Nicht-Flash-Geräten mit HTML5-Browser-Funktion bietet die Adobe Pass-Authentifizierung eine alternative Möglichkeit zum eingeschränkten Schutz für Browser-basierte Integrationen. Da die Gerätebindung für HTML5 jedoch nicht so stark ist, ist die Time-to-Live (TTL) für Token auf HTML5-Plattformen in der Regel kürzer.
-* **Native App-Unterstützung für In- und Out-of-Home-Geräte** - Adobe bietet native SDKs pro Betriebssystem (iOS, Android, Windows 8 usw.), die verbesserte Sicherheit gegenüber der HTML5-Lösung bieten. Diese SDKs verwenden native APIs, um eine Geräte-ID abzurufen und sie sicher an den Adobe Pass-Authentifizierungsserver zu übergeben.
-* **Clientless** - Die Adobe Pass-Authentifizierung verwendet das HTTPS-Protokoll für eine sichere Kommunikation. Darüber hinaus müssen alle Aufrufe von einem intelligenten Gerät digital signiert werden.
+* **Identifizieren geschützter Ressourcen**
+   * Geben Sie klar an, welche Inhalte autorisiert werden müssen, bevor sie angezeigt werden.
+   * Aktualisieren Sie die Benutzeroberfläche, um die erfolgreiche Autorisierung widerzuspiegeln, sobald der Zugriff gewährt wurde.
 
 ## FAQs {#faqs}
 
 **Was ist TV Everywhere?**
-Die als TV Everywhere bekannte Branchenbewegung ermöglicht es Pay-TV-Kunden, auf Premium-Inhalte zuzugreifen, die sie bereits für eine Vielzahl an mit dem Internet verbundenen Geräten abonniert haben, darunter PCs, Tablets, Smartphones, Spielekonsolen, Set-Top-Boxen und „Smart-TVs“. Die Herausforderung dieser Initiative besteht darin, den Authentifizierungsprozess so einfach und schmerzlos wie möglich zu gestalten, sodass Kunden reibungslos und ohne untragbare Hindernisse und mit mehreren Anmeldungen auf ihren Abonnementinhalt zugreifen können.
 
+TV Everywhere ist eine Initiative der Branche, die es Pay-TV-Kunden ermöglicht, auf Premium-Inhalte zuzugreifen, die sie bereits auf verschiedenen mit dem Internet verbundenen Geräten abonniert haben. Dazu gehören PCs, Tablets, Smartphones, Spielekonsolen, Set-Top-Boxen und Smart-TVs. Die größte Herausforderung besteht darin, einen nahtlosen und benutzerfreundlichen Authentifizierungsprozess sicherzustellen, der es Kunden ermöglicht, ohne mehrere Anmeldungen oder technische Hindernisse auf ihre Abonnementinhalte zuzugreifen.
 
-**Was ist die Adobe Pass-Authentifizierung und wie steht sie in Bezug zu TV Everywhere?**
-Mit der Adobe Pass-Authentifizierung wird TV Everywhere von Konzept zu Realität, indem die Berechtigung von Benutzenden für Inhalte auf einfache und sichere Weise überprüft wird. Die Adobe Pass-Authentifizierung ist ein gehosteter Service, der eine schnelle Backend-Integration ermöglicht, die auf den von Programmierern und Pay-TV-Anbietern geforderten Geschäftsregeln basiert. Dies bedeutet für alle Beteiligten eine kurze Markteinführungszeit, eine sicherere Umgebung zur Verhinderung von Betrug und eine überlegene Kundenerfahrung, wobei mehr TV-Inhalte für mehr Menschen plattformübergreifend verfügbar sind.
+**Was ist die Adobe Pass-Authentifizierung und wie unterstützt sie TV Everywhere?**
 
+Die Adobe Pass-Authentifizierung erweckt TV Everywhere zum Leben, indem sie das Recht eines Nutzers auf Inhalte sicher und effizient verifiziert. Es handelt sich dabei um einen gehosteten Dienst, der eine schnelle Backend-Integration auf der Grundlage von Geschäftsregeln ermöglicht, die sowohl von Programmierern als auch von Pay-TV-Anbietern festgelegt werden. Dies führt zu einer kürzeren Markteinführungszeit für alle Beteiligten, einer sichereren Umgebung, die Betrug minimiert, und einem besseren Benutzererlebnis mit mehr TV-Inhalten, die über mehrere Plattformen zugänglich sind.
 
-**Wie wird die Adobe Pass-Authentifizierung angeboten/bereitgestellt?**
-Die Adobe Pass-Authentifizierung wird über das SaaS-Modell (Software as a Service) angeboten. Dies ermöglicht eine sicherere Kommunikation zwischen Endnutzern, Programmierern und Pay-TV-Anbietern, um die Berechtigung auf Inhalte zu überprüfen. Zu den Kernkomponenten des Service gehören der Client-seitige Access Enabler (oder bei einigen Geräten die Client-lose API) und der gehostete Adobe Pass-Authentifizierungsserver. Der Access Enabler ist eine kleine Datei, die in die Web-Seite oder Player-Anwendung eines Programmierers geladen wird. Sie kommuniziert mit den Adobe Pass-Authentifizierungsservern, die ihrerseits über Verbindungen verfügen, die in die Authentifizierungssysteme verschiedener Pay-TV-Anbieter integriert sind. Die Adobe Pass-Authentifizierung bietet auch einen Client-losen API-Integrationsansatz für einige „intelligente Geräte“, die nicht Web-fähig sind (Smart-TVs, Set-Top-Boxen, Spielekonsolen usw.). Der Client-lose Ansatz bietet RESTful-Web-Services, mit denen Entwicklerinnen und Entwickler die Berechtigungsflüsse für die Adobe Pass-Authentifizierung auf diesen Geräten implementieren können.
+**Wie wird die Adobe Pass-Authentifizierung bereitgestellt?**
 
+Die Adobe Pass-Authentifizierung wird als SaaS-Lösung (Software as a Service) bereitgestellt. Dieser Ansatz gewährleistet eine sichere Kommunikation zwischen Endbenutzern, Programmierern und Pay-TV-Anbietern für die Validierung von Inhaltsberechtigungen.
 
-**Wie unterscheidet sich die Adobe Pass-Authentifizierung von anderen TV Everywhere-Lösungen?**
-Die Adobe Pass-Authentifizierung bietet gegenüber alternativen TV Everywhere-Lösungen deutliche Vorteile. Direkte Integrationen mit einzelnen Anbietern bieten nicht die Flexibilität einer einzigen, persistenten Anmeldung (SSO), da Benutzer über das Internet von einer Site zu einer anderen reisen. Die Adobe Pass-Authentifizierung hat auch eine bemerkenswerte Marktdurchdringung: Sobald ein Programmierer mit der Adobe Pass-Authentifizierung integriert ist, wird er sofort mit Pay-TV-Anbietern verbunden, die mehr als 90 % der Haushalte in den Vereinigten Staaten bedienen. Darüber hinaus nutzt die Adobe Pass-Authentifizierung einzigartige Sicherheitsfunktionen, die in die Flash-Laufzeit (sofern verfügbar) integriert sind, um Betrug zu reduzieren. Gleichzeitig werden SDKs bereitgestellt, damit Programmierer dieselbe TV Everywhere-Funktion in native Apps für Mobilgeräte oder Heimgeräte integrieren können, auf denen Flash nicht verfügbar ist. Und schließlich: Während die Adobe Pass-Authentifizierung als eigenständiger Service verfügbar ist, bieten wir auch die Möglichkeit einer engen Integration mit anderen Adobe-Produkten und -Services (einschließlich Adobe Pass und Adobe Analytics) im Zusammenhang mit der Bereitstellung, dem Schutz und der Monetarisierung von TV Everywhere-Inhalten.
+**Was unterscheidet die Adobe Pass-Authentifizierung von anderen TV Everywhere-Lösungen?**
+
+Die Adobe Pass-Authentifizierung bietet mehrere Vorteile gegenüber alternativen Lösungen:
+
+* **Nahtloses Single Sign-On (SSO)** - Im Gegensatz zu direkten Integrationen mit einzelnen Anbietern ermöglicht die Adobe Pass-Authentifizierung ein persistentes Anmeldeerlebnis, wenn Benutzende zwischen verschiedenen Websites und Programmen wechseln.
+* **Weit reichende Marktdurchdringung** - Sobald ein Programmierer mit der Adobe Pass-Authentifizierung integriert ist, erhält er sofort Zugriff auf Pay-TV-Anbieter, die über 90 % der US-Haushalte abdecken.
+* **Integration mit dem Adobe-Ökosystem** - arbeitet nahtlos mit anderen Adobe-Lösungen für die Bereitstellung, den Schutz und die Monetarisierung von Inhalten zusammen, einschließlich Adobe Analytics.
 
 **Wie sicher ist die Adobe Pass-Authentifizierung?**
-Die Adobe Pass-Authentifizierungsarchitektur muss in erster Linie sicherstellen, dass nur autorisierte Viewer authentifiziert werden und Zugriff auf Premium-Inhalte erhalten. Die Adobe Pass-Authentifizierung bindet den Zugriff auf das Anzeigegerät fest und kann dazu beitragen, Streams, Sitzungen und/oder Geräte für einen bestimmten Haushalt zu beschränken.
 
+Sicherheit hat oberste Priorität. Die Adobe Pass-Authentifizierung stellt sicher, dass nur autorisierte Benutzerinnen und Benutzer auf Premium-Inhalte zugreifen können, indem der Zugriff an das Gerät der Benutzerin oder des Benutzers gebunden wird. Es bietet außerdem Optionen zum Begrenzen der Anzahl gleichzeitiger Streams, Sitzungen oder Geräte pro Haushalt.
 
-**Ist Flash Player erforderlich?**
-Adobe Flash Player 11.x oder höher ist für die strengste Gerätebindungssicherheit erforderlich. Adobe Pass-Authentifizierung für TV Everywhere ist jedoch player- und plattformunabhängig und lässt sich mit jeder Wiedergabeanwendung integrieren, einschließlich Silverlight und HTML5. Darüber hinaus bietet die Adobe Pass-Authentifizierung native Unterstützung für Geräte wie iOS, Android und Xbox, auf denen keine Flash Player verfügbar ist.  Schließlich bietet die Adobe Pass-Authentifizierung einen Client-losen Ansatz für Geräte, die keine Web-Seite rendern können (Spielekonsolen, Smart-TVs, Set-Top-Boxen).
+**Welche Geräte unterstützt die Adobe Pass-Authentifizierung?**
 
+Die Adobe Pass-Authentifizierung wurde für die Verwendung auf einer Vielzahl von Geräten entwickelt, z. B. Web-basierten Geräten, Mobilgeräten oder mit dem Fernsehgerät verbundenen Geräten.
 
-**Welche Geräte werden von der Adobe Pass-Authentifizierung unterstützt?**
-Die Adobe Pass-Authentifizierung wird von praktisch jedem Gerät mit dem HTML5 Web Kit für Browser-basiertes Anwendererlebnis unterstützt. Darüber hinaus führt die Adobe Pass-Authentifizierung weiterhin native Software-Entwicklungs-Kits (SDKs) für verschiedene gerätespezifische Plattformen wie iOS, Android™ und Windows 8 ein. Die Adobe Pass-Authentifizierung unterstützt einige nicht webfähige Geräte (Smart-TVs, Set-Top-Boxen, Spielekonsolen usw.) über ihre RESTful-Webservice-APIs teilweise.
+**Kostet die Adobe Pass-Authentifizierung Endbenutzern etwas?**
 
-**Unterstützt die Adobe Pass-Authentifizierung die neuen Standards für TV Everywhere?**
-Die Adobe Pass-Authentifizierung entspricht der **CableLabs OLCA (Online Content Access)** [Spezifikation](https://www.cablelabs.com/specifications), die technische Anforderungen und Architektur für die Bereitstellung von Videos an einen Pay-TV-Kunden aus Online-Quellen bereitstellt. Adobe nahm im Juni 2011 am gemeinsamen Interopt-Testprojekt von CableLabs teil und durchlief den Testprozess für eine Service Provider-Implementierung. Die Adobe Pass-Authentifizierung wird anhand der OLCA-Authentifizierungsspezifikationen überprüft (vollständig und getestet). Die Autorisierungskomponente ist abgeschlossen, aber die Testverifizierung wartet auf die Veröffentlichung der CableLabs-Testumgebung (ETA Nov 2011).
-
-Adobe ist auch aktives Mitglied des **OATC (Open Authentication Technical Consortium)** und beteiligt sich als Teil dieses Gremiums an mehreren Spezifikationsentwürfen der Unterausschüsse.
-
-**Wie handhabt die Adobe Pass-Authentifizierung die Federated Identity Management/Single Sign-on (SSO)?**
-Mit der Adobe Pass-Authentifizierung können Sie Kundinnen und Kunden mithilfe der Back-Channel-Kommunikation (Server-zu-Server) zwischen der Adobe Pass-Authentifizierung und den beteiligten Pay-TV-Anbietern Authentifizierung und Autorisierung über Single Sign-on (SSO) bereitstellen. Bei der Adobe Pass-Authentifizierung müssen sich Abonnentinnen und Abonnenten also nicht nach ihrer ersten Authentifizierung erneut anmelden, solange diese Authentifizierung vom Pay-TV-Anbieter zugelassen wird, um fortzubestehen. Diese Beschränkung ist in der Regel auf 30 Tage festgelegt. Zu diesem Zweck stellt die Adobe Pass-Authentifizierung eine gemeinsame Domain für Authentifizierungs-Token für unsere Kunden bereit. Diese Authentifizierungszustandsinformationen stehen allen teilnehmenden Websites zur Verfügung, die mit einem bestimmten Pay-TV-Anbieter integriert sind.
-
-Derzeit verwenden die meisten Adobe Pass-Authentifizierungsintegrationen mit Pay-TV-Anbietern das SAML-Protokoll, einen der wichtigsten Authentifizierungsstandards. Die Adobe Pass-Authentifizierung fungiert als Proxy-Service-Provider in der SAML-Architektur und behält die SAML-Authentifizierungsantwort als sicheres Token in der gemeinsamen Adobe-Domain bei. Die Adobe Pass-Authentifizierung entspricht SAML 2.0.
-
-Während die Adobe Pass-Authentifizierung derzeit normalerweise mit SAML-SSO-Lösungen verwendet wird, abstrahiert die Adobe Pass-Authentifizierungsarchitektur alle Protokollspezifikationen von der Programmierer-Integration. Daher kann die Unterstützung für neue Protokolle - z. B. eines, das auf OAuth 2.0 oder benutzerdefinierten Protokollen basiert - im Laufe der Zeit hinzugefügt werden.
-
-**Wie viel kostet die Adobe Pass-Authentifizierung für TV Everywhere für Endbenutzer?**
-Endbenutzern entstehen durch die Verwendung der Adobe Pass-Authentifizierung keine zusätzlichen Kosten.
-
->[!NOTE]
->
->**Nächste Schritte:** Weitere Informationen erhalten Sie von Ihrem Adobe-Support-Mitarbeiter oder füllen Sie das Informationsanfrageformular ([) ](https://www.adobe.com/cfusion/mmform/index.cfm?name=adobepass_rfi).
->
+Anzahl Die Adobe Pass-Authentifizierung ist für Endbenutzer kostenlos.
