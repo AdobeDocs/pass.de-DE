@@ -2,9 +2,9 @@
 title: Benutzermetadaten
 description: Benutzermetadaten
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '1793'
+source-wordcount: '1902'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,8 @@ ht-degree: 0%
 > Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 Benutzermetadaten beziehen sich auf benutzerspezifische [Attribute](#attributes) (z. B. Postleitzahlen, elterliche Bewertungen, Benutzer-IDs usw.), die von MVPDs verwaltet und Programmierern über die Adobe Pass-Authentifizierung (REST [ V2) bereitgestellt ](#apis).
+
+Benutzermetadaten werden nach Abschluss des Authentifizierungsflusses verfügbar, aber bestimmte Metadatenattribute können während des Autorisierungsflusses aktualisiert werden, je nach MVPD und dem betreffenden spezifischen Metadatenattribut.
 
 Benutzermetadaten können verwendet werden, um die Personalisierung für Benutzende zu verbessern, können jedoch auch für Analysen verwendet werden. Beispielsweise kann ein Programmierer die Postleitzahl eines Benutzers verwenden, um lokalisierte Nachrichten oder Wetteraktualisierungen bereitzustellen oder elterliche Kontrollen durchzusetzen.
 
@@ -50,7 +52,7 @@ Welche Benutzermetadatenattribute einem Programmierer zur Verfügung gestellt we
 | **Formaler Name** | Nicht zutreffend | `userID` | `upstreamUserID` | `householdID` | `primaryOID` | `typeID` | `is_hoh` | `hba_status` | `allowMirroring` | `zip` | `channelID` | `maxRating` | `language` | `onNet` | `inHome` |                                                                                                                                           |
 | **Erfordert Verschlüsselung** | Nicht zutreffend | **Nein** | **Nein** | **Nein** | **Nein** | **Nein** | **Nein** | **Nein** | **Nein** | **Ja** | **Nein** | **Nein** | **Nein** | **Nein** | **Nein** |                                                                                                                                           |
 | **sensitiv** | Nicht zutreffend | **Nein** | **Nein** | **Nein** | **Nein** | **Nein** | **Nein** | **Nein** | **Nein** | **Ja** | **Nein** | **Nein** | **Nein** | **Nein** | **Nein** |                                                                                                                                           |
-| Adobe IdP | **Ja** | **Ja** | **Ja** | **Ja (nur AuthN)** | **Ja** | **Ja** | **Ja** | **Nein** | **Nein** | **Ja (nur AuthN)** | **Ja** | **Ja (nur AuthN)** | **Nein** | **Nein** | **Nein** | Rechtliche Vereinbarung nicht erforderlich. |
+| Adobe IDp | **Ja** | **Ja** | **Ja** | **Ja (nur AuthN)** | **Ja** | **Ja** | **Ja** | **Nein** | **Nein** | **Ja (nur AuthN)** | **Ja** | **Ja (nur AuthN)** | **Nein** | **Nein** | **Nein** | Rechtliche Vereinbarung nicht erforderlich. |
 | Synacor | **Ja** | **Ja** | **Ja** | **Ja (nur AuthN)** | **Nein** | **Nein** | **Ja** | **Nein** | **Nein** | **Ja (nur AuthN)** | **Ja** | **Ja (nur AuthN)** | **Nein** | **Nein** | **Nein** | Rechtsvereinbarung, die nicht alle MVPDs abdeckt. Dies ist allgemeine Unterstützung für Synacor und möglicherweise nicht für alle ihre MVPDs bereitgestellt. |
 | Teller | **Nein** | **Ja** | **Ja** | **Ja (nur AuthN)** | **Nein** | **Nein** | **Nein** | **Nein** | **Nein** | **Ja (nur AuthN)** | **Ja** | **Ja (nur AuthN)** | **Nein** | **Nein** | **Nein** | Es hat dieselbe Liste wie alle Synacor-MVPDs plus `upstreamUserID`. |
 | komcast | **Nein** | **Ja** | **Ja** | **Ja (nur AuthZ)** | **Nein** | **Nein** | **Nein** | **Ja** | **Nein** | **Nein** | **Nein** | **Ja (nur AuthZ)** | **Nein** | **Nein** | **Nein** |                                                                                                                                           |
@@ -168,7 +170,17 @@ Die Benutzermetadatenattribute können mit den folgenden APIs abgerufen werden:
 
 Weitere Informationen zur Struktur der Benutzermetadatenattribute finden Sie in **Abschnitten** Antwort **und Beispiele** der oben genannten APIs.
 
+>[!IMPORTANT]
+>
+> Benutzermetadaten werden nach Abschluss des Authentifizierungsflusses verfügbar, daher muss die Client-Anwendung keinen separaten Endpunkt abfragen, um die [Benutzermetadaten](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)-Informationen abzurufen, da sie bereits in den Profilinformationen enthalten sind.
+
 Weitere Informationen zur Integration der oben genannten APIs finden Sie in den folgenden Dokumenten:
 
 * [Fluss von grundlegenden Profilen, der in der primären Anwendung ausgeführt wird](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [Fluss der grundlegenden Profile, der in der sekundären Anwendung ausgeführt wird](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+
+Bestimmte Metadatenattribute können je nach MVPD und spezifischem Metadatenattribut während des Autorisierungsflusses aktualisiert werden. Daher muss die Client-Anwendung möglicherweise die oben genannten APIs erneut abfragen, um die neuesten Benutzermetadaten abzurufen.
+
+>[!MORELIKETHIS]
+>
+> [Häufig gestellte Fragen zur Authentifizierungsphase](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)

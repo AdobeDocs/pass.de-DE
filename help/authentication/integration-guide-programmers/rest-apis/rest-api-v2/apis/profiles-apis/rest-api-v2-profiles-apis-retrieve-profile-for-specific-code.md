@@ -2,9 +2,9 @@
 title: Abrufen eines Profils für einen bestimmten Code
 description: REST API V2 - Profil für bestimmten Code abrufen
 exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
-source-git-commit: 7fdfd28e2aba0d201f19dc25757bbe37cebd8ffe
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '711'
+source-wordcount: '752'
 ht-degree: 1%
 
 ---
@@ -236,9 +236,9 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">Attribute</td>
                <td>
-                    Die Liste der Benutzer-Metadatenattribute.
+                    JSON mit einer Zuordnung von Schlüssel-/Wert-Paaren.
                     <br/><br/>
-                    Diese Attribute können sein:
+                    Das Schlüsselelement wird durch Benutzermetadatenattribute definiert und kann sein:
                     <ul>
                         <li>Obligatorisch, wie „userID“</li>
                         <li>Nicht obligatorisch, wie „zip“, „householdID“, „maxRating“ usw.</li>
@@ -249,6 +249,7 @@ ht-degree: 1%
                         <li>auflisten</li>
                         <li>kartieren</li>
                     </ul>
+                    Benutzermetadaten werden nach Abschluss des Authentifizierungsflusses verfügbar, aber bestimmte Metadatenattribute können während des Autorisierungsflusses aktualisiert werden, je nach MVPD und dem betreffenden spezifischen Metadatenattribut.
                </td>
                <td><i>required</i></td>
             </tr>

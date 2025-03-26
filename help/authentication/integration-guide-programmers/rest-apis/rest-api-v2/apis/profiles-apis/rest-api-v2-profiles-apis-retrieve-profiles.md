@@ -2,9 +2,9 @@
 title: Profile abrufen
 description: REST API V2 - Profile abrufen
 exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
-source-git-commit: 751ebec3372145dda318c8415be5676adb3f13b5
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '824'
+source-wordcount: '865'
 ht-degree: 1%
 
 ---
@@ -265,9 +265,9 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">Attribute</td>
                <td>
-                    Die Liste der Benutzer-Metadatenattribute.
+                    JSON mit einer Zuordnung von Schlüssel-/Wert-Paaren.
                     <br/><br/>
-                    Diese Attribute können sein:
+                    Das Schlüsselelement wird durch Benutzermetadatenattribute definiert und kann sein:
                     <ul>
                         <li>Obligatorisch, wie „userID“</li>
                         <li>Nicht obligatorisch, wie „zip“, „householdID“, „maxRating“ usw.</li>
@@ -278,6 +278,7 @@ ht-degree: 1%
                         <li>auflisten</li>
                         <li>kartieren</li>
                     </ul>
+                    Benutzermetadaten werden nach Abschluss des Authentifizierungsflusses verfügbar, aber bestimmte Metadatenattribute können während des Autorisierungsflusses aktualisiert werden, je nach MVPD und dem betreffenden spezifischen Metadatenattribut.
                </td>
                <td><i>required</i></td>
             </tr>

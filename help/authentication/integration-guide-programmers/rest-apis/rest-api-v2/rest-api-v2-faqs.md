@@ -2,9 +2,9 @@
 title: Häufig gestellte Fragen zur REST API V2
 description: Häufig gestellte Fragen zur REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 1795b4aba2940879f2dcb575048d553db4f0bf35
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '9072'
+source-wordcount: '9113'
 ht-degree: 0%
 
 ---
@@ -321,12 +321,14 @@ Die Client-Anwendung kann einen der folgenden Endpunkte abfragen, die [Benutzerm
 * [Profile-Endpunkt für bestimmte MVPD-APIs](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
 * [Profile-Endpunkt für bestimmte (Authentifizierungs-)Code-API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
 
-Die Client-Anwendung muss keinen separaten Endpunkt abfragen, um die Metadateninformationen des Benutzers abzurufen, da diese bereits in den Profilinformationen enthalten sind, die bei der Überprüfung der Authentifizierung des Benutzers abgerufen werden.
+Benutzermetadaten werden nach Abschluss des Authentifizierungsflusses verfügbar, daher muss die Client-Anwendung keinen separaten Endpunkt abfragen, um die [Benutzermetadaten](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)-Informationen abzurufen, da sie bereits in den Profilinformationen enthalten sind.
 
 Weitere Informationen finden Sie in den folgenden Dokumenten:
 
 * [Fluss von grundlegenden Profilen, der in der primären Anwendung ausgeführt wird](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [Fluss der grundlegenden Profile, der in der sekundären Anwendung ausgeführt wird](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+
+Bestimmte Metadatenattribute können je nach MVPD und spezifischem Metadatenattribut während des Autorisierungsflusses aktualisiert werden. Daher muss die Client-Anwendung möglicherweise die oben genannten APIs erneut abfragen, um die neuesten Benutzermetadaten abzurufen.
 
 #### 18. Wie sollte die Client-Anwendung einen eingeschränkten Zugriff verwalten? {#authentication-phase-faq18}
 
