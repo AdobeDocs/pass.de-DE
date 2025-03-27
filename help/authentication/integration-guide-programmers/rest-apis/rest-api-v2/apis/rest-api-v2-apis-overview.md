@@ -2,9 +2,9 @@
 title: Übersicht über REST API V2-APIs
 description: Übersicht über REST API V2-APIs
 exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
 workflow-type: tm+mt
-source-wordcount: '151'
+source-wordcount: '147'
 ht-degree: 0%
 
 ---
@@ -14,8 +14,6 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
-
-<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![Live-Webinar-Reihe](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 Zu Beginn konsultieren Sie die öffentliche Dokumentation der APIs, die für Sie in der folgenden Liste interessant sind.
 
