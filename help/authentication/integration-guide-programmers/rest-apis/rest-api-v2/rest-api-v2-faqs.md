@@ -2,9 +2,9 @@
 title: Häufig gestellte Fragen zur REST API V2
 description: Häufig gestellte Fragen zur REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
 workflow-type: tm+mt
-source-wordcount: '9113'
+source-wordcount: '9537'
 ht-degree: 0%
 
 ---
@@ -248,9 +248,18 @@ Weitere Informationen finden Sie in den Dokumenten [Single Sign-on using Partner
 
 #### 10. Was sollte die Client-Anwendung tun, wenn die Benutzerin bzw. der Benutzer über mehrere MVPD-Profile verfügt? {#authentication-phase-faq10}
 
-Wenn der Benutzer über mehrere MVPD-Profile verfügt, ist die Client-Anwendung dafür verantwortlich, den besten Ansatz für die Handhabung dieses Szenarios zu bestimmen.
+Die Entscheidung, mehrere Profile zu unterstützen, hängt von den Geschäftsanforderungen der Client-Anwendung ab.
+
+Die meisten Benutzer haben nur ein Profil. Wenn jedoch mehrere Profile vorhanden sind (wie unten beschrieben), ist die Client-Anwendung dafür verantwortlich, das beste Benutzererlebnis für die Profilauswahl zu bestimmen.
 
 Die Client-Anwendung kann den Benutzer auffordern, das gewünschte MVPD-Profil auszuwählen, oder die Auswahl automatisch vornehmen, z. B. das erste Benutzerprofil aus der Antwort oder das Profil mit der längsten Gültigkeitsdauer auswählen.
+
+Die REST-API v2 unterstützt mehrere Profile, um Folgendes zu ermöglichen:
+
+* Benutzer, die möglicherweise zwischen einem regulären MVPD-Profil und einem Profil wählen müssen, das über Single Sign-on (SSO) abgerufen wurde.
+* Benutzern wird temporärer Zugriff angeboten, ohne dass sie sich von ihrem regulären MVPD abmelden müssen.
+* Benutzende mit MVPD-Abonnement in Kombination mit Direct-to-Consumer-Services (DTC).
+* Benutzende mit mehreren MVPD-Abonnements.
 
 #### 11. Was passiert, wenn Benutzerprofile ablaufen? {#authentication-phase-faq11}
 
@@ -332,9 +341,35 @@ Bestimmte Metadatenattribute können je nach MVPD und spezifischem Metadatenattr
 
 #### 18. Wie sollte die Client-Anwendung einen eingeschränkten Zugriff verwalten? {#authentication-phase-faq18}
 
-Da Ihr Unternehmen beabsichtigt, die Funktion [Beeinträchtigung](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md) zu verwenden, muss die Client-Anwendung eingeschränkte Zugriffsflüsse handhaben, die beschreiben, wie sich REST-API-v2-Endpunkte in solchen Szenarien verhalten.
+Die [Abbaufunktion](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md) ermöglicht es der Client-Anwendung, ein nahtloses Streaming-Erlebnis für Benutzende aufrechtzuerhalten, auch wenn bei den Authentifizierungs- oder Autorisierungs-Services ihrer MVPD Probleme auftreten.
+
+Zusammenfassend lässt sich sagen, dass dadurch trotz temporärer Service-Unterbrechungen in MVPD ein unterbrechungsfreier Zugriff auf Inhalte sichergestellt werden kann.
+
+Da Ihr Unternehmen beabsichtigt, die Premium-Funktion zur Beeinträchtigung zu verwenden, muss die Client-Anwendung eingeschränkte Zugriffsflüsse handhaben, die beschreiben, wie sich REST-API-v2-Endpunkte in solchen Szenarien verhalten.
 
 Weitere Informationen finden Sie in der Dokumentation [Gestörte ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)&quot;.
+
+#### 19. Wie sollte die Client-Anwendung den temporären Zugriff verwalten? {#authentication-phase-faq19}
+
+Mit [TempPass-Funktion](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) kann die Client-Anwendung dem Benutzer temporären Zugriff gewähren.
+
+Zusammenfassend lässt sich sagen, dass dies für Benutzende interessant sein kann, indem für einen bestimmten Zeitraum ein zeitlich begrenzter Zugriff auf Inhalte oder eine vordefinierte Anzahl von VOD-Titeln bereitgestellt wird.
+
+Da Ihr Unternehmen beabsichtigt, die Premium-TempPass-Funktion zu verwenden, muss die Client-Anwendung temporäre Zugriffsflüsse verarbeiten, die beschreiben, wie sich REST-API-v2-Endpunkte in solchen Szenarien verhalten.
+
+In früheren API-Versionen musste sich die Client-Anwendung von einem Benutzer abmelden, der sich bei seiner regulären MVPD authentifiziert hatte, um einen temporären Zugriff anzubieten.
+
+Mit der REST-API v2 kann die Client-Anwendung bei der Autorisierung eines Streams nahtlos zwischen einer regulären MVPD und einer TempPass-MVPD wechseln, sodass sich der Benutzer nicht mehr abmelden muss.
+
+Weitere Informationen finden Sie in der Dokumentation [Temporäre Zugriffsflüsse](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md) .
+
+#### 20. Wie sollte die Client-Anwendung den geräteübergreifenden Single-Sign-On-Zugriff verwalten? {#authentication-phase-faq20}
+
+Die REST-API v2 kann geräteübergreifendes Single Sign-on aktivieren, wenn die Client-Anwendung eine konsistente eindeutige Benutzerkennung über Geräte hinweg bereitstellt.
+
+Diese Kennung, auch als Service-Token bezeichnet, muss von der Client-Anwendung durch die Implementierung oder Integration eines externen Identity Services Ihrer Wahl generiert werden.
+
+Weitere Informationen finden Sie in der Dokumentation [Single Sign-on using Service Token Flows](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
 
 +++
 
@@ -574,9 +609,15 @@ Die Kopfzeilendokumentation [AP-Device-Identifier](/help/authentication/integrat
 >
 > Wenn die Client-Anwendung von REST API V1 zu REST API V2 migriert, kann die Client-Anwendung weiterhin dieselbe Methode zur Berechnung des Geräteinformationswerts wie zuvor verwenden.
 
-Der [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)-Anfrage-Header enthält die Client-Informationen (Gerät, Verbindung und Anwendung), die sich auf das eigentliche Streaming-Gerät beziehen.
+Der [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)-Anfrage-Header enthält die Client-Informationen (Gerät, Verbindung und Anwendung), die sich auf das eigentliche Streaming-Gerät beziehen, und wird verwendet, um plattformspezifische Regeln zu bestimmen, die von MVPDs erzwungen werden können.
 
 Die [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)-Header-Dokumentation enthält Beispiele für Hauptplattformen zur Berechnung des Werts, aber die Client-Anwendung kann basierend auf ihrer eigenen Geschäftslogik und ihren Anforderungen eine andere Methode verwenden.
+
+Wenn der Header [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md) fehlt oder falsche Werte enthält, kann die Anfrage als von einer `unknown` Plattform stammend klassifiziert werden.
+
+Dies kann dazu führen, dass die Anfrage als unsicher behandelt wird und restriktiveren Regeln unterliegt, wie z. B. kürzeren Authentifizierungs-TTLs. Darüber hinaus sind einige Felder, wie die `connectionIp` und `connectionPort` des Streaming-Geräts, für Funktionen wie die „Home Base Authentication[ von Spectrum ](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md).
+
+Selbst wenn die Anfrage im Auftrag eines Geräts von einem Server stammt, muss der [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)-Header-Wert die tatsächlichen Streaming-Geräteinformationen widerspiegeln.
 
 +++
 
