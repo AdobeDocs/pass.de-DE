@@ -2,10 +2,10 @@
 title: Verbesserte Fehler-Codes
 description: Verbesserte Fehler-Codes
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 27aaa0d3351577e60970a4035b02d814f0a17e2f
 workflow-type: tm+mt
-source-wordcount: '2610'
-ht-degree: 2%
+source-wordcount: '2649'
+ht-degree: 3%
 
 ---
 
@@ -45,8 +45,8 @@ Erweiterte Fehler-Codes können je nach integrierter Adobe Pass-Authentifizierun
 
 | Adobe Pass-Authentifizierungs-API | JSON | XML |
 |-------------------------------|---------|---------|
-| REST-API v1 | &amp;check; | &amp;check; |
 | REST API v2 | &amp;check; |         |
+| REST-API v1 | &amp;check; | &amp;check; |
 | SDKs autorisieren die API vorab | &amp;check; |         |
 
 >[!IMPORTANT]
@@ -62,9 +62,105 @@ Erweiterte Fehler-Codes können je nach integrierter Adobe Pass-Authentifizierun
 >
 > Lesen Sie die öffentliche Dokumentation für jede integrierte Adobe Pass-Authentifizierungs-API, um die Besonderheiten der erweiterten Fehlercode-Darstellung zu ermitteln.
 
-Siehe die folgenden HTTP-Antworten mit Beispielen für erweiterte Fehler-Codes, dargestellt als `JSON` oder `XML`.
+**REST API v2**
+
+Siehe die folgenden HTTP-Antworten mit Beispielen für erweiterte Fehler-Codes, die `JSON` für die REST-API v2 gelten.
 
 >[!BEGINTABS]
+
+>[!TAB REST API v2 - Fehlerinformationen auf Elementebene (JSON)]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "decisions": [
+    {
+      "resource": "REF30",
+      "serviceProvider": "REF30",
+      "mvpd": "Cablevision",
+      "source": "mvpd",
+      "authorized": true,
+      "token": {
+        "issuedAt": 1697094207324,
+        "notBefore": 1697094207324,
+        "notAfter": 1697094802367,
+        "serializedToken": "PHNpZ25hdHVyZUluZm8..."
+      }
+    },
+    {
+      "resource": "REF40",
+      "serviceProvider": "REF40",
+      "mvpd": "Cablevision",
+      "source": "mvpd",
+      "authorized": false,
+      "error" : {
+        "action": "none",
+        "status": 403,
+        "code": "authorization_denied_by_mvpd",
+        "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
+        "details": "Your subscription package does not include the \"Live\" channel",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+        "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
+      }
+    }
+  ]
+}
+```
+
+>[!TAB REST API v2 - Fehlerinformationen der obersten Ebene (JSON)]
+
+```JSON
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "action": "none",
+  "status": 400,
+  "code": "invalid_parameter_service_provider",
+  "message": "The service provider parameter value is missing or invalid.",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+  "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
+}
+```
+
+>[!ENDTABS]
+
+**REST-API v1**
+
+Siehe die folgenden HTTP-Antworten mit Beispielen für erweiterte Fehler-Codes, die als `JSON` oder `XML` für die REST-API v1 dargestellt werden.
+
+>[!BEGINTABS]
+
+>[!TAB REST API v1 - Fehlerinformationen auf Elementebene (JSON)]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "resources": [
+    {
+      "id": "TestStream1",
+      "authorized": true
+    },
+    {
+      "id": "TestStream2",
+      "authorized": false,
+      "error": {
+        "action": "none",
+        "status": 403,
+        "code": "authorization_denied_by_mvpd",
+        "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
+        "details": "Your subscription package does not include the \"Live\" channel",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+        "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
+      }
+    }
+  ]
+}
+```
 
 >[!TAB REST API v1 - Fehlerinformationen der obersten Ebene (JSON)]
 
@@ -98,102 +194,18 @@ Content-Type: application/xml
 </error>
 ```
 
->[!TAB REST API v1 - Fehlerinformationen auf Elementebene (JSON)]
-
-```JSON
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  "resources": [
-    {
-      "id": "TestStream1",
-      "authorized": true
-    },
-    {
-      "id": "TestStream2",
-      "authorized": false,
-      "error": {
-        "action": "retry",
-        "status": 403,
-        "code": "network_connection_failure",
-        "message": "Unable to contact your TV provider services",
-        "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
-        "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
-      }
-    }
-  ]
-}
-```
-
->[!TAB REST API v2 - Fehlerinformationen der obersten Ebene (JSON)]
-
-```JSON
-HTTP/1.1 400 Bad Request
-Content-Type: application/json
-
-{
-  "action": "none",
-  "status": 400,
-  "code": "invalid_parameter_service_provider",
-  "message": "The service provider parameter value is missing or invalid.",
-  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
-  "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
-}
-```
-
->[!TAB REST API v2 - Fehlerinformationen auf Elementebene (JSON)]
-
-```JSON
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  "decisions": [
-    {
-      "resource": "REF30",
-      "serviceProvider": "REF30",
-      "mvpd": "Cablevision",
-      "source": "mvpd",
-      "authorized": true,
-      "token": {
-        "issuedAt": 1697094207324,
-        "notBefore": 1697094207324,
-        "notAfter": 1697094802367,
-        "serializedToken": "PHNpZ25hdHVyZUluZm8..."
-      }
-    },
-    {
-      "resource": "REF40",
-      "serviceProvider": "REF40",
-      "mvpd": "Cablevision",
-      "source": "mvpd",
-      "authorized": false,
-      "error" : {
-        "action": "retry",
-        "status": 403,
-        "code": "network_connection_failure",
-        "message": "Unable to contact your TV provider services",
-        "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
-        "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
-      }
-    }
-  ]
-}
-```
-
 >[!ENDTABS]
 
-Erweiterte Fehler-Codes umfassen die folgenden `JSON` oder `XML` Attribute:
+### Struktur {#enhanced-error-codes-representation-structure}
+
+Erweiterte Fehler-Codes enthalten die folgenden `JSON` Felder oder `XML` Attribute mit Beispielen:
 
 | -Name | Typ | Beispiel | eingeschränkt | Beschreibung |
 |-----------|-----------|---------------------------------------------------------------------------------------------------------------------|:----------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *Aktion* | *Zeichenfolge* | *Erneut versuchen* | &amp;check; | Die von der Adobe Pass-Authentifizierung empfohlene Aktion, die die in diesem Dokument definierte Situation beheben kann. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Aktion](#enhanced-error-codes-action) . |
+| *Aktion* | *Zeichenfolge* | *Keine* | &amp;check; | Die von der Adobe Pass-Authentifizierung empfohlene Aktion, die die in diesem Dokument definierte Situation beheben kann. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Aktion](#enhanced-error-codes-action) . |
 | *status* | *Integer* | *403* | &amp;check; | Der HTTP-Antwort-Status-Code wie im Dokument [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6) definiert. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Status](#enhanced-error-codes-status) . |
-| *code* | *Zeichenfolge* | *network_connection_failure* | &amp;check; | Der eindeutige Kennungs-Code der Adobe Pass-Authentifizierung, der mit dem Fehler verknüpft ist, wie in diesem Dokument definiert. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Code](#enhanced-error-codes-code) . |
-| *message* | *Zeichenfolge* | *Der TV-Provider kann nicht kontaktiert werden* |            | Die für Menschen lesbare Nachricht, die dem Endbenutzer in einigen Fällen angezeigt werden kann. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Antwortverarbeitung](#enhanced-error-codes-response-handling) . |
+| *code* | *Zeichenfolge* | *authorization_denied_by_mvpd* | &amp;check; | Der eindeutige Kennungs-Code der Adobe Pass-Authentifizierung, der mit dem Fehler verknüpft ist, wie in diesem Dokument definiert. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Code](#enhanced-error-codes-code) . |
+| *message* | *Zeichenfolge* | *Die MVPD hat bei der Anforderung einer Autorisierung für die angegebene Ressource eine Entscheidung „Ablehnen“ zurückgegeben* |            | Die für Menschen lesbare Nachricht, die dem Endbenutzer in einigen Fällen angezeigt werden kann. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Antwortverarbeitung](#enhanced-error-codes-response-handling) . |
 | *Details* | *Zeichenfolge* | *Ihr Abonnementpaket enthält nicht den Kanal „Live“* |            | Die detaillierte Nachricht, die in einigen Fällen von einem Service-Partner bereitgestellt werden kann. <br/><br/> Dieses Feld ist möglicherweise nicht vorhanden, wenn der Service-Partner keine benutzerdefinierte Nachricht bereitstellt. |
 | *helpUrl* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html* |            | Die öffentliche Dokumentations-URL zur Adobe Pass-Authentifizierung, die auf weitere Informationen über die Gründe für diesen Fehler und mögliche Lösungen verweist. <br/><br/> Dieses Feld enthält eine absolute URL und sollte nicht aus dem Fehlercode abgeleitet werden. Abhängig vom Fehlerkontext kann eine andere URL angegeben werden. |
 | *trace* | *Zeichenfolge* | *12f6fef9-d2e0-422b-a9d7-60d799abe353* |            | Die eindeutige Kennung für die Antwort, die bei der Kontaktaufnahme mit dem Adobe Pass-Authentifizierungsdienst zur Behebung bestimmter Probleme verwendet werden kann. |
