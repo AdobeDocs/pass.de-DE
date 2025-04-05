@@ -2,9 +2,9 @@
 title: Amazon SSO-Cookbook (REST API v2)
 description: Amazon SSO-Cookbook (REST API v2)
 exl-id: 63e4fa63-8ca3-40eb-b49a-84dd75c2ca1d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '542'
+source-wordcount: '567'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,8 @@ Die Adobe Pass-Authentifizierungs-REST-API V2 unterstützt Platform Single Sign-
 Dieses Dokument dient als Erweiterung für die vorhandene [REST API V2 - Übersicht](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md), die eine allgemeine Ansicht bietet, sowie für das Dokument, in dem die Implementierung von [Single Sign-on mithilfe von Platform-Identitätsflüssen](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md) beschrieben wird.
 
 ## Amazon-Single-Sign-on mit Platform-Identitätsflüssen {#cookbook}
+
+Die Adobe Pass-Authentifizierung arbeitet mit Amazon zusammen, um das Benutzererlebnis bei der Anmeldung zu verbessern und die einmalige Anmeldung (Single Sign-On, SSO) für TV Everywhere-Programme für TV-Abonnenten zu erleichtern.
 
 ### Voraussetzungen {#prerequisites}
 
@@ -151,7 +153,7 @@ Die Adobe Pass-Authentifizierungs-REST-API V2 unterstützt die folgenden Methode
 
 >[!IMPORTANT]
 > 
-> Weitere Informationen zu `Adobe-Subject-Token`-Header finden Sie in der Dokumentation [Adobe-Subject-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) .
+> Weitere Informationen zu `Adobe-Subject-Token` Kopfzeile finden Sie in der Dokumentation [Adobe-Subject-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
 
 #### Beispiele
 

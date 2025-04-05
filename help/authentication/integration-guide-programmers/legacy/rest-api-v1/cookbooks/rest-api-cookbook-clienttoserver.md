@@ -2,9 +2,9 @@
 title: REST-API-Cookbook (Client-zu-Server)
 description: REST-API-Cookbook-Client an Server.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '888'
+source-wordcount: '886'
 ht-degree: 0%
 
 ---
@@ -72,7 +72,7 @@ Adobe Pass verwendet DCR, um die Client-Kommunikation zwischen einer Programmier
 
 1. Rufen Sie einen Registrierungs-Code und eine URL für Ihren Benutzer ab, um auf Ihre Anmeldeanwendung für den zweiten Bildschirm zuzugreifen, und präsentieren Sie diese dem Benutzer:
 
-   a. Senden Sie eine POST-Anfrage an den Adobe-Registrierungs-Code-Service und übergeben Sie eine gehashte Geräte-ID und eine „Registrierungs-URL“.  Beispiel: [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
+   a. Senden Sie eine POST-Anfrage an den Registrierungs-Code-Service von Adobe und übergeben Sie eine gehashte Geräte-ID und eine „Registrierungs-URL“.  Beispiel: [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
 
    b. Zeigen Sie dem Benutzer den zurückgegebenen Registrierungs-Code und die URL an.
 
@@ -140,7 +140,6 @@ Einige Geräte bieten dedizierte Unterstützung für Partner Single Sign-On (SSO
 Einige Geräte bieten dedizierte Unterstützung für Platform Single Sign-On (SSO):
 
 * [AMAZON SSO](../../sso-access/amazon-sso-cookbook-rest-api-v1.md)
-* [Roku SSO](../../../features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
 
 ## TempPass und Promotional TempPass für REST-API {#temppass}
 

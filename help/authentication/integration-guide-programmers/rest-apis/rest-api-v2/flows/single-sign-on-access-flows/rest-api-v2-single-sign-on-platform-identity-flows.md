@@ -2,9 +2,9 @@
 title: Single Sign-On - Platform-Identität - Flüsse
 description: REST API v2 - Single Sign-On - Platform-Identität - Flüsse
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '1846'
+source-wordcount: '1856'
 ht-degree: 0%
 
 ---
@@ -27,14 +27,14 @@ Die Platform-Identitätsmethode ermöglicht es mehreren Anwendungen, eine eindeu
 
 Die Programme sind für das Abrufen der eindeutigen Plattformkennungs-Payload mithilfe von gerätespezifischen Identitäts-Services oder Bibliotheken außerhalb von Adobe Pass-Systemen verantwortlich.
 
-Die Programme sind dafür verantwortlich, diese eindeutige Plattformkennungs-Payload als Teil der `Adobe-Subject-Token`-Kopfzeile für alle Anfragen einzuschließen, die sie angeben.
+Die Programme sind dafür verantwortlich, diese eindeutige Plattformkennungs-Payload als Teil der `Adobe-Subject-Token`/`X-Roku-Reserved-Roku-Connect-Token`-Kopfzeile für alle Anfragen einzuschließen, die sie angeben.
 
-Weitere Informationen zu `Adobe-Subject-Token` Kopfzeile finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
+Weitere Informationen zur Kopfzeile `Adobe-Subject-Token`/`X-Roku-Reserved-Roku-Connect-Token` finden Sie in der Dokumentation [Adobe-Subject-](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)/[X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md) .
 
 >[!MORELIKETHIS]
 > 
 > * [Amazon SSO-Cookbook](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
-> * [Roku SSO Cookbook](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
+> * [Roku SSO Cookbook](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
 
 ## Durchführen der Authentifizierung über Single Sign-on unter Verwendung der Platform-Identität {#perform-authentication-through-single-sign-on-using-platform-identity}
 
@@ -43,11 +43,11 @@ Weitere Informationen zu `Adobe-Subject-Token` Kopfzeile finden Sie in der Dokum
 Bevor Sie den Authentifizierungsfluss über Single Sign-on mit einer Platform-Identität durchführen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
 * Die Plattform muss einen Identity Service oder eine Bibliothek bereitstellen, der bzw. die konsistente Informationen als `JWS` oder `JWE` Payload über alle Anwendungen hinweg auf demselben Gerät oder auf derselben Plattform zurückgibt.
-* Die erste Streaming-Anwendung muss für alle Anfragen, die sie angeben, die eindeutige Plattformkennung abrufen und die `JWS`- oder `JWE`-Payload als Teil der Kopfzeile [Adobe](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)Subject-Token}.
+* Die erste Streaming-Anwendung muss die eindeutige Plattformkennung abrufen und die `JWS`- oder `JWE`-Payload als Teil der Kopfzeile [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md) für alle Anfragen einschließen, die sie angeben.
 * Die erste Streaming-Anwendung muss eine MVPD auswählen.
 * Die erste Streaming-Anwendung muss eine Authentifizierungssitzung initiieren, um sich mit der ausgewählten MVPD anzumelden.
 * Die erste Streaming-Anwendung muss sich mit der ausgewählten MVPD in einem Benutzeragenten authentifizieren.
-* Die zweite Streaming-Anwendung muss für alle Anfragen, die sie angeben, die eindeutige Plattformkennung abrufen und die `JWS`- oder `JWE`-Payload als Teil der Kopfzeile [Adobe](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)Subject-Token} einschließen.
+* Die zweite Streaming-Anwendung muss die eindeutige Plattformkennung abrufen und die `JWS`- oder `JWE`-Payload als Teil der Kopfzeile [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md) für alle Anfragen einschließen, die sie angeben.
 
 >[!IMPORTANT]
 >
@@ -88,7 +88,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
    >
    > <br/>
    > 
-   > Weitere Informationen zu `Adobe-Subject-Token` Kopfzeile finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
+   > Weitere Informationen zur Kopfzeile `Adobe-Subject-Token`/`X-Roku-Reserved-Roku-Connect-Token` finden Sie in der Dokumentation [Adobe-Subject-](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)/[X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md) .
 
 1. **Nächste Aktion angeben:** Die Antwort des Sitzungs-Endpunkts enthält die erforderlichen Daten, um die erste Streaming-Anwendung bezüglich der nächsten Aktion anzuleiten.
 
@@ -156,7 +156,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
    >
    > <br/>
    > 
-   > Weitere Informationen zu `Adobe-Subject-Token` Kopfzeile finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
+   > Weitere Informationen zur Kopfzeile `Adobe-Subject-Token`/`X-Roku-Reserved-Roku-Connect-Token` finden Sie in der Dokumentation [Adobe-Subject-](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)/[X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md) .
 
 1. **Plattformkennung abrufen:** Die zweite Streaming-Anwendung ruft den Identity Service oder die Identity Library außerhalb von Adobe Pass-Systemen auf, um die `JWS` oder `JWE` Payload abzurufen, die mit der eindeutigen Plattformkennung verknüpft ist.
 
@@ -180,7 +180,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
    >
    > <br/>
    > 
-   > Weitere Informationen zu `Adobe-Subject-Token` Kopfzeile finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
+   > Weitere Informationen zur Kopfzeile `Adobe-Subject-Token`/`X-Roku-Reserved-Roku-Connect-Token` finden Sie in der Dokumentation [Adobe-Subject-](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)/[X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md) .
 
 1. **Single-Sign-On-Profil suchen:** Der Adobe Pass-Server identifiziert ein gültiges Single-Sign-On-Profil basierend auf den empfangenen Parametern und Kopfzeilen.
 
@@ -208,7 +208,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
    >
    > <br/>
    > 
-   > Weitere Informationen zu `Adobe-Subject-Token` Kopfzeile finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
+   > Weitere Informationen zur Kopfzeile `Adobe-Subject-Token`/`X-Roku-Reserved-Roku-Connect-Token` finden Sie in der Dokumentation [Adobe-Subject-](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)/[X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md) .
 
 ## Abrufen von Autorisierungsentscheidungen über Single Sign-on mithilfe der Platform-Identität{#performing-authorization-flow-using-platform-identity-single-sign-on-method}
 
@@ -217,7 +217,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
 Bevor Sie den Autorisierungsfluss über Single Sign-on mit einer Platform-Identität durchführen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
 * Die Plattform muss einen Identity Service oder eine Bibliothek bereitstellen, der bzw. die konsistente Informationen als `JWS` oder `JWE` Payload über alle Anwendungen hinweg auf demselben Gerät oder auf derselben Plattform zurückgibt.
-* Die zweite Streaming-Anwendung muss für alle Anfragen, die sie angeben, die eindeutige Plattformkennung abrufen und die `JWS`- oder `JWE`-Payload als Teil der Kopfzeile [Adobe](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)Subject-Token} einschließen.
+* Die zweite Streaming-Anwendung muss die eindeutige Plattformkennung abrufen und die `JWS`- oder `JWE`-Payload als Teil der Kopfzeile [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md) für alle Anfragen einschließen, die sie angeben.
 * Die zweite Streaming-Anwendung muss eine Autorisierungsentscheidung abrufen, bevor eine vom Benutzer ausgewählte Ressource wiedergegeben wird.
 
 >[!IMPORTANT]
@@ -226,7 +226,7 @@ Bevor Sie den Autorisierungsfluss über Single Sign-on mit einer Platform-Identi
 > 
 > <br/>
 > 
-> * Die erste Streaming-Anwendung hat eine Authentifizierung durchgeführt und einen gültigen Wert für die Anforderungskopfzeile [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) enthalten.
+> * Die erste Streaming-Anwendung hat eine Authentifizierung durchgeführt und einen gültigen Wert für die Anforderungskopfzeile [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)} enthalten.
 
 ### Workflow {#workflow-scenario-performing-authorization-flow-using-platform-identity-single-sign-on-method}
 
@@ -258,7 +258,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss durch Singl
    >
    > <br/>
    > 
-   > Weitere Informationen zu `Adobe-Subject-Token` Kopfzeile finden Sie in der Dokumentation [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
+   > Weitere Informationen zur Kopfzeile `Adobe-Subject-Token`/`X-Roku-Reserved-Roku-Connect-Token` finden Sie in der Dokumentation [Adobe-Subject-](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)/[X-Roku-Reserved-Roku-Connect-Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md) .
 
 1. **Single-Sign-On-Profil suchen:** Der Adobe Pass-Server identifiziert ein gültiges Single-Sign-On-Profil basierend auf den empfangenen Parametern und Kopfzeilen.
 
