@@ -2,9 +2,9 @@
 title: Initiieren des Abmeldens für bestimmte MVPDs
 description: REST API V2 - Initiieren des Abmeldens für eine bestimmte mvpd
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
 workflow-type: tm+mt
-source-wordcount: '1006'
+source-wordcount: '1009'
 ht-degree: 0%
 
 ---
@@ -106,9 +106,9 @@ ht-degree: 0%
       <td>fakultativ</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-subject-token</td>
+      <td style="background-color: #DEEBFF;">Adobe-subject-token<br/>or<br/>x-roku-reserved-roku-connect-token</td>
       <td>
-        Die Erstellung der Single-Sign-On-Payload für die Platform-Identitätsmethode wird in der Kopfzeilendokumentation zu <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> beschrieben.
+        Die Erstellung der Single-Sign-On-Payload für die Platform-Identitätsmethode wird in der Kopfzeilendokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a> beschrieben.
         <br/><br/>
         Weitere Informationen zu Flüssen, für die Single Sign-on unter Verwendung einer Platform-Identität aktiviert ist, finden Sie in der Dokumentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-on unter Verwendung von Platform-Identitätsflüssen</a> .
       </td>

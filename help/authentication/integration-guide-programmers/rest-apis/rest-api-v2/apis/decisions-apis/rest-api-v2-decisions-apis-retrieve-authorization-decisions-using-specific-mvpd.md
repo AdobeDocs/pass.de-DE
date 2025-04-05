@@ -2,9 +2,9 @@
 title: Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD
 description: REST API V2 - Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD
 exl-id: e8889395-4434-4bec-a212-a8341bb9c310
-source-git-commit: 27aaa0d3351577e60970a4035b02d814f0a17e2f
+source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
 workflow-type: tm+mt
-source-wordcount: '924'
+source-wordcount: '927'
 ht-degree: 1%
 
 ---
@@ -111,9 +111,9 @@ ht-degree: 1%
       <td>fakultativ</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-subject-token</td>
+      <td style="background-color: #DEEBFF;">Adobe-subject-token<br/>or<br/>x-roku-reserved-roku-connect-token</td>
       <td>
-        Die Erstellung der Single Sign-On-Payload für die Platform-Identitätsmethode wird in der Kopfzeilendokumentation zu <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> beschrieben.
+        Die Erstellung der Single-Sign-On-Payload für die Platform-Identitätsmethode wird in der Kopfzeilendokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a> beschrieben.
         <br/><br/>
         Weitere Informationen zu Flüssen, für die Single Sign-on unter Verwendung einer Platform-Identität aktiviert ist, finden Sie in der Dokumentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-on unter Verwendung von Platform-Identitätsflüssen</a> .
       </td>

@@ -2,9 +2,9 @@
 title: Authentifizierungssitzung erstellen
 description: REST API V2 - Authentifizierungssitzung erstellen
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
 workflow-type: tm+mt
-source-wordcount: '1057'
+source-wordcount: '1060'
 ht-degree: 0%
 
 ---
@@ -134,9 +134,9 @@ ht-degree: 0%
       <td>fakultativ</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-subject-token</td>
+      <td style="background-color: #DEEBFF;">Adobe-subject-token<br/>or<br/>x-roku-reserved-roku-connect-token</td>
       <td>
-        Die Erstellung der Single Sign-On-Payload für die Platform-Identitätsmethode wird in der Kopfzeilendokumentation zu <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> beschrieben.
+        Die Erstellung der Single-Sign-On-Payload für die Platform-Identitätsmethode wird in der Kopfzeilendokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a> beschrieben.
         <br/><br/>
         Weitere Informationen zu Flüssen, für die Single Sign-on unter Verwendung einer Platform-Identität aktiviert ist, finden Sie in der Dokumentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-on unter Verwendung von Platform-Identitätsflüssen</a> .
       </td>
