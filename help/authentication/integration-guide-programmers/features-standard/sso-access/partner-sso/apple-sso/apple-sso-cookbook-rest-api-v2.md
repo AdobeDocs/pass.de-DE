@@ -2,9 +2,9 @@
 title: Apple SSO-Cookbook (REST API v2)
 description: Apple SSO-Cookbook (REST API v2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '3615'
+source-wordcount: '3609'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!TIP]
    >
-   > Vorschlag: Die Client-Anmeldedaten müssen zwischengespeichert werden und können auf unbestimmte Zeit verwendet werden.
+   > Die Client-Anmeldeinformationen müssen zwischengespeichert und unbegrenzt verwendet werden.
 
 1. **Zugriffs-Token abrufen:** Die Streaming-Anwendung erfasst alle erforderlichen Daten, um das Zugriffs-Token abzurufen, indem sie den Client-Token-Endpunkt aufruft.
 
@@ -109,7 +109,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!TIP]
    >
-   > Empfehlung: Das Zugriffstoken muss im Cache gespeichert und nur innerhalb der angegebenen Dauer verwendet werden (z. B. 24-Stunden-Time-to-Live). Nach Ablauf muss die Streaming-Anwendung ein neues Zugriffstoken anfordern.
+   > Das Zugriffstoken muss im Cache gespeichert und nur innerhalb der angegebenen Dauer verwendet werden (z. B. 24-Stunden-Time-to-Live). Nach Ablauf muss die Streaming-Anwendung ein neues Zugriffstoken anfordern.
 
 +++
 
@@ -391,7 +391,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!TIP]
    >
-   > Empfehlung: Die Streaming-Anwendung kann stattdessen einen zwischengespeicherten Wert für die Partner-Framework-Statusinformationen verwenden. Wir empfehlen, ihn zu aktualisieren, wenn die Anwendung vom Hintergrund- in den Vordergrundstatus wechselt. In diesem Fall muss die Streaming-Anwendung sicherstellen, dass sie zwischenspeichert und nur gültige Werte für den Partner-Framework-Status verwendet, wie im Schritt „Informationen zum Partner-Framework-Status zurückgeben“ beschrieben.
+   > Die Streaming-Anwendung kann stattdessen einen zwischengespeicherten Wert für die Partner-Framework-Statusinformationen verwenden, den wir aktualisieren sollten, wenn die Anwendung vom Hintergrund- in den Vordergrundstatus wechselt. In diesem Fall muss die Streaming-Anwendung sicherstellen, dass sie zwischenspeichert und nur gültige Werte für den Partner-Framework-Status verwendet, wie im Schritt „Informationen zum Partner-Framework-Status zurückgeben“ beschrieben.
 
 1. **Partner-Framework-Statusinformationen zurückgeben:** Die Streaming-Anwendung validiert die Antwortdaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
    * Der Benutzerberechtigungs-Zugriffsstatus wird gewährt.
@@ -462,7 +462,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!TIP]
    >
-   > Empfehlung: Die Streaming-Anwendung kann stattdessen einen zwischengespeicherten Wert für die Partner-Framework-Statusinformationen verwenden. Wir empfehlen, ihn zu aktualisieren, wenn die Anwendung vom Hintergrund- in den Vordergrundstatus wechselt. In diesem Fall muss die Streaming-Anwendung sicherstellen, dass sie zwischenspeichert und nur gültige Werte für den Partner-Framework-Status verwendet, wie im Schritt „Informationen zum Partner-Framework-Status zurückgeben“ beschrieben.
+   > Die Streaming-Anwendung kann stattdessen einen zwischengespeicherten Wert für die Partner-Framework-Statusinformationen verwenden, den wir aktualisieren sollten, wenn die Anwendung vom Hintergrund- in den Vordergrundstatus wechselt. In diesem Fall muss die Streaming-Anwendung sicherstellen, dass sie zwischenspeichert und nur gültige Werte für den Partner-Framework-Status verwendet, wie im Schritt „Informationen zum Partner-Framework-Status zurückgeben“ beschrieben.
 
 1. **Partner-Framework-Statusinformationen zurückgeben:** Die Streaming-Anwendung validiert die Antwortdaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
    * Der Benutzerberechtigungs-Zugriffsstatus wird gewährt.

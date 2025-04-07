@@ -2,7 +2,7 @@
 title: REST API v2 - Übersicht
 description: REST API v2 - Übersicht
 exl-id: a5595193-82c4-4033-bd98-596b4908b401
-source-git-commit: f0001d86f595040f4be74f357c95bd2919dadf15
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '493'
 ht-degree: 0%
@@ -73,8 +73,8 @@ Alle zukünftigen Entwicklungen werden jedoch auf der REST-API V2 aufbauen. Es w
 
 Zu Beginn konsultieren Sie unsere öffentliche Dokumentation:
 
-- [Checkliste](rest-api-v2-checklist.md)
 - [Glossar](rest-api-v2-glossary.md)
+- [Checkliste](rest-api-v2-checklist.md)
 - [Häufig gestellte Fragen](rest-api-v2-faqs.md)
 - [APIs](apis/rest-api-v2-apis-overview.md)
 - [Flows](flows/rest-api-v2-flows-overview.md)

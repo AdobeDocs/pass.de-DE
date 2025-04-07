@@ -2,9 +2,9 @@
 title: Einfache Authentifizierung - Primäre Anwendung - Fluss
 description: REST API v2 - Standardauthentifizierung - Primäre Anwendung - Fluss
 exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '904'
+source-wordcount: '903'
 ht-degree: 0%
 
 ---
@@ -127,7 +127,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierung
 
    >[!TIP]
    >
-   > Empfehlung: Die Streaming-Anwendung kann warten, bis der Benutzeragent den angegebenen `redirectUrl` erreicht hat, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
+   > Die Streaming-Anwendung muss warten, bis der Benutzeragent die angegebene `redirectUrl` erreicht, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
 
 1. **Informationen zum regulären Profil zurückgeben:** Die Antwort des Endpunkts „Profile“ enthält Informationen zum regulären Profil, das mit den empfangenen Parametern und Kopfzeilen verknüpft ist.
 

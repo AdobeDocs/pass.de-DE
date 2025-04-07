@@ -2,9 +2,9 @@
 title: Temporäre Zugriffsflüsse
 description: REST API v2 - Temporäre Zugriffsflüsse
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '3225'
+source-wordcount: '3223'
 ht-degree: 0%
 
 ---
@@ -355,7 +355,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!TIP]
    >
-   > Empfehlung: Die Streaming-Anwendung kann Benutzende darüber informieren, dass die maximale Anzahl von Ressourcen überschritten wurde, und ihnen empfehlen, einen einfachen Authentifizierungsfluss mithilfe einer regulären MVPD einzuleiten, um den Überwachungsvorgang fortzusetzen.
+   > Die Streaming-Anwendung kann Benutzende darüber informieren, dass die maximale Anzahl von Ressourcen überschritten wurde, und ihnen empfehlen, einen einfachen Authentifizierungsfluss mithilfe einer regulären MVPD einzuleiten, um den Überwachungsvorgang fortzusetzen.
 
 ## Abrufen von Autorisierungsentscheidungen bei Ablauf von Standard- oder Promotion-TempPass {#retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
 
@@ -435,7 +435,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!TIP]
    >
-   > Empfehlung: Die Streaming-Anwendung kann Benutzende darüber informieren, dass der temporäre Zugriff abgelaufen ist, und ihnen empfehlen, einen einfachen Authentifizierungsfluss mithilfe einer regulären MVPD einzuleiten, um den Überwachungsvorgang fortzusetzen.
+   > Die Streaming-Anwendung kann Benutzende darüber informieren, dass der temporäre Zugriff abgelaufen ist, und ihnen empfehlen, einen einfachen Authentifizierungsfluss mithilfe einer regulären MVPD einzuleiten, um den Überwachungsvorgang fortzusetzen.
 
 ## Profil für einfache TempPass-Funktion abrufen {#retrieve-profile-for-basic-temppass}
 

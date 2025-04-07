@@ -2,9 +2,9 @@
 title: Single Sign-On - Service-Token - Flüsse
 description: REST API v2 - Single Sign-On - Service-Token - Flüsse
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '1858'
+source-wordcount: '1857'
 ht-degree: 0%
 
 ---
@@ -126,7 +126,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
 
    >[!TIP]
    >
-   > Empfehlung: Die Streaming-Anwendung kann warten, bis der Benutzeragent den angegebenen `redirectUrl` erreicht hat, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
+   > Die Streaming-Anwendung muss warten, bis der Benutzeragent die angegebene `redirectUrl` erreicht, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
 
 1. **Reguläres Profil suchen:** Der Adobe Pass-Server identifiziert ein gültiges Profil anhand der empfangenen Parameter und Kopfzeilen.
 

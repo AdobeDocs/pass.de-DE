@@ -2,9 +2,9 @@
 title: Dynamischer Client-Registrierungsfluss
 description: Dynamischer Client-Registrierungsfluss
 exl-id: d881cf0a-de09-4b1d-a094-d5490f944796
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '564'
 ht-degree: 0%
 
 ---
@@ -70,7 +70,7 @@ Führen Sie die angegebenen Schritte aus, um auf Adobe Pass Protected APIs zuzug
 
    >[!TIP]
    >
-   > Vorschlag: Die Client-Anmeldedaten müssen zwischengespeichert werden und können auf unbestimmte Zeit verwendet werden.
+   > Die Client-Anmeldeinformationen müssen zwischengespeichert und unbegrenzt verwendet werden.
 
 1. **Zugriffs-Token abrufen:** Die Client-Anwendung erfasst alle erforderlichen Daten zum Abrufen des Zugriffs-Tokens durch Aufruf des Client-Token-Endpunkts.
 
@@ -100,7 +100,7 @@ Führen Sie die angegebenen Schritte aus, um auf Adobe Pass Protected APIs zuzug
 
    >[!TIP]
    >
-   > Empfehlung: Das Zugriffstoken muss im Cache gespeichert und nur innerhalb der angegebenen Dauer verwendet werden (z. B. 24-Stunden-Time-to-Live). Nach Ablauf muss die Client-Anwendung ein neues Zugriffstoken anfordern.
+   > Das Zugriffstoken muss im Cache gespeichert und nur innerhalb der angegebenen Dauer verwendet werden (z. B. 24-Stunden-Time-to-Live). Nach Ablauf muss die Client-Anwendung ein neues Zugriffstoken anfordern.
 
 1. **Zugriff auf geschützte APIs:** Die Client-Anwendung verwendet das Zugriffstoken, um auf andere durch Adobe Pass geschützte APIs zuzugreifen. Die Client-Anwendung muss das Zugriffstoken unter Verwendung des `Bearer` Authentifizierungsschemas (d. h. `Authorization: Bearer <access_token>`) in die `Authorization`-Anfragekopfzeile aufnehmen.
 

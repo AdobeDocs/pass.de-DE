@@ -2,9 +2,9 @@
 title: Einfache Authentifizierung - Sekundäre Anwendung - Fluss
 description: REST API v2 - Standardauthentifizierung - Sekundäre Anwendung - Fluss
 exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '2010'
+source-wordcount: '2006'
 ht-degree: 0%
 
 ---
@@ -143,7 +143,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierung
 
    >[!TIP]
    >
-   > Vorschlag: Die sekundäre Anwendung kann Benutzer im Falle einer Fehlerantwort, die auf eine fehlende Authentifizierungssitzung hinweist, darüber informieren, dass die verwendete `code` ungültig ist, und ihnen empfehlen, es erneut mit einer neuen Authentifizierungssitzung zu versuchen.
+   > Die sekundäre Anwendung kann Benutzer im Fall einer Fehlerantwort, die auf eine fehlende Authentifizierungssitzung hinweist, darüber informieren, dass die verwendete `code` ungültig ist, und ihnen empfehlen, eine neue Authentifizierungssitzung erneut zu verwenden.
 
 1. **URL im Benutzeragenten öffnen:** Die sekundäre Anwendung öffnet einen Benutzeragenten, um den selbst berechneten `url` zu laden, und sendet eine Anfrage an den Authentifizierungsendpunkt. Dieser Fluss kann mehrere Weiterleitungen enthalten, die den Benutzer letztendlich zur Anmeldeseite von MVPD führen und gültige Anmeldeinformationen angeben.
 
@@ -168,7 +168,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierung
 
    >[!TIP]
    >
-   > Empfehlung: Die Streaming-Anwendung kann mithilfe der `code` einen Abrufmechanismus implementieren, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
+   > Die Streaming-Anwendung muss einen Abrufmechanismus implementieren, der die `code` verwendet, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
 
 1. **Informationen zum regulären Profil zurückgeben:** Die Antwort des Endpunkts „Profile“ enthält Informationen zum regulären Profil, das mit den empfangenen Parametern und Kopfzeilen verknüpft ist.
 
@@ -277,7 +277,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierung
 
    >[!TIP]
    >
-   > Vorschlag: Die sekundäre Anwendung kann Benutzer im Falle einer Fehlerantwort, die auf eine fehlende Authentifizierungssitzung hinweist, darüber informieren, dass die verwendete `code` ungültig ist, und ihnen empfehlen, es erneut mit einer neuen Authentifizierungssitzung zu versuchen.
+   > Die sekundäre Anwendung kann Benutzer im Fall einer Fehlerantwort, die auf eine fehlende Authentifizierungssitzung hinweist, darüber informieren, dass die verwendete `code` ungültig ist, und ihnen empfehlen, eine neue Authentifizierungssitzung erneut zu verwenden.
 
 1. **Vorhandenes Profil angeben:** Die Antwort des Sitzungs-Endpunkts enthält die folgenden Daten:
    * Das `actionName`-Attribut ist auf „authorize“ festgelegt.
@@ -306,7 +306,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Authentifizierung
 
    >[!TIP]
    >
-   > Empfehlung: Die Streaming-Anwendung kann mithilfe der `code` einen Abrufmechanismus implementieren, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
+   > Die Streaming-Anwendung muss einen Abrufmechanismus implementieren, der die `code` verwendet, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
 
 1. **Informationen zum regulären Profil zurückgeben:** Die Antwort des Endpunkts „Profile“ enthält Informationen zum regulären Profil, das mit den empfangenen Parametern und Kopfzeilen verknüpft ist.
 

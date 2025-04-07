@@ -2,9 +2,9 @@
 title: Häufig gestellte Fragen zur REST API V2
 description: Häufig gestellte Fragen zur REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '9697'
+source-wordcount: '9703'
 ht-degree: 0%
 
 ---
@@ -311,7 +311,7 @@ Die Profilinformationen des Benutzers wurden erfolgreich abgerufen, wodurch der 
 
 **Authentifizierungssitzung und Code-Ablauf**
 
-Die Authentifizierungssitzung und der Code laufen ab, wie durch den `notAfter` Zeitstempel in der Endpunktantwort [Sitzungen](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) angegeben. In diesem Fall muss der Benutzer den Authentifizierungsprozess neu starten, und das Abrufen mit dem vorherigen Authentifizierungs-Code sollte sofort gestoppt werden.
+Die Authentifizierungssitzung und der Code laufen ab, wie durch den `notAfter` Zeitstempel (z. B. 30 Minuten) in der Endpunktantwort [Sitzungen](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) angegeben. In diesem Fall muss der Benutzer den Authentifizierungsprozess neu starten, und das Abrufen mit dem vorherigen Authentifizierungs-Code sollte sofort gestoppt werden.
 
 **Neuer Authentifizierungs-Code generiert**
 
@@ -322,8 +322,8 @@ Wenn der Benutzer einen neuen Authentifizierungscode auf dem Primärgerät (Bild
 Um die Effizienz zu gewährleisten und unnötige Anfragen zu vermeiden, muss die Client-Anwendung die Häufigkeit des Abrufmechanismus unter den folgenden Bedingungen konfigurieren:
 
 | **Authentifizierung wird innerhalb der primären (Bildschirm-)Anwendung durchgeführt** | **Authentifizierung wird in einer sekundären (Bildschirm-)Anwendung durchgeführt** |
-|----------------------------------------------------------------------|----------------------------------------------------------------------|
-| Die primäre (Streaming-)Anwendung sollte alle 3-5 Sekunden eine Abfrage durchführen. | Die primäre (Streaming-)Anwendung sollte alle 3-5 Sekunden eine Abfrage durchführen. |
+|----------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| Die primäre (Streaming-)Anwendung sollte alle 3-5 Sekunden oder länger abfragen. | Die primäre (Streaming-)Anwendung sollte alle 3-5 Sekunden oder länger abfragen. |
 
 #### 17. Wie viele Abrufanfragen kann die Client-Anwendung maximal senden? {#authentication-phase-faq17}
 
@@ -526,7 +526,7 @@ Die Client-Anwendung muss das Medien-Token validieren, bevor die Wiedergabe des 
 
 Anzahl
 
-Die Client-Anwendung ist nicht erforderlich, um ein abgelaufenes Medien-Token zu aktualisieren, während der Stream aktiv wiedergegeben wird. Wenn das Medien-Token während der Wiedergabe abläuft, sollte der Stream ununterbrochen fortgesetzt werden können. Der Client muss jedoch beim nächsten Versuch, dieselbe Ressource abzuspielen, eine neue Autorisierungsentscheidung anfordern und ein neues Medien-Token abrufen.
+Die Client-Anwendung ist nicht erforderlich, um ein abgelaufenes Medien-Token zu aktualisieren, während der Stream aktiv wiedergegeben wird. Wenn das Medien-Token während der Wiedergabe abläuft, sollte der Stream ununterbrochen fortgesetzt werden können. Der Client muss jedoch beim nächsten Versuch, eine Ressource abzuspielen, eine neue Autorisierungsentscheidung anfordern und ein neues Medien-Token abrufen.
 
 #### 9. Was ist der Zweck jedes Zeitstempelattributs in der Autorisierungsentscheidung? {#authorization-phase-faq9}
 

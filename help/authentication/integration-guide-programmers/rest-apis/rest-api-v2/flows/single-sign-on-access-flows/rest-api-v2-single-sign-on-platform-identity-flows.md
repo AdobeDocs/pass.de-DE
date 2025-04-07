@@ -2,9 +2,9 @@
 title: Single Sign-On - Platform-Identität - Flüsse
 description: REST API v2 - Single Sign-On - Platform-Identität - Flüsse
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '1856'
+source-wordcount: '1855'
 ht-degree: 0%
 
 ---
@@ -128,7 +128,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
 
    >[!TIP]
    >
-   > Empfehlung: Die Streaming-Anwendung kann warten, bis der Benutzeragent den angegebenen `redirectUrl` erreicht hat, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
+   > Die Streaming-Anwendung muss warten, bis der Benutzeragent die angegebene `redirectUrl` erreicht, um zu überprüfen, ob das reguläre Profil erfolgreich generiert und gespeichert wurde.
 
 1. **Reguläres Profil suchen:** Der Adobe Pass-Server identifiziert ein gültiges Profil anhand der empfangenen Parameter und Kopfzeilen.
 

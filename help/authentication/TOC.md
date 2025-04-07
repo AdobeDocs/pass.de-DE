@@ -4,7 +4,7 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass-Authentifizierung
 user-guide-description: Die Adobe Pass-Authentifizierung ist eine Berechtigungslösung für TV Everywhere. Sie bietet ein modulares Framework, mit dem festgestellt werden kann, ob eine Person, die Zugriff auf eine Ressource anfordert, dazu berechtigt ist.
-source-git-commit: f054da9a4c35fa0715039e8e06e2d10737b91b57
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '1251'
 ht-degree: 2%
@@ -68,8 +68,8 @@ ht-degree: 2%
             + [Dynamischer Client-Registrierungsfluss](integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
       + REST API V2-{#rest-api-v2}
          + [REST API v2 - Übersicht](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)
-         + [REST API v2-Checkliste](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-checklist.md)
          + [Glossar zur REST-API v2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)
+         + [REST API v2-Checkliste](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-checklist.md)
          + [Häufig gestellte Fragen zur REST API V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md)
          + API-{#rest-api-v2-apis}
             + [Übersicht über REST API V2-APIs](integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)

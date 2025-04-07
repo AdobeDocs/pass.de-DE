@@ -1,9 +1,10 @@
 ---
 title: REST API v2-Checkliste
 description: REST API v2-Checkliste
-source-git-commit: f0001d86f595040f4be74f357c95bd2919dadf15
+exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '2535'
+source-wordcount: '2545'
 ht-degree: 0%
 
 ---
@@ -40,7 +41,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Zugriffstoken-Caching</i></td>
-      <td>Speichern Sie die Zugriffstoken in einem persistenten Speicher und verwenden Sie sie bis zu ihrem Ablauf erneut - fordern Sie nicht für jeden REST API v2-Aufruf ein neues Token an.</td>
+      <td>Speichern Sie die Zugriffs-Token in einem persistenten Speicher und verwenden Sie sie bis zu ihrem Ablauf erneut.<br/><br/>Fordern Sie nicht für jeden REST API v2-Aufruf ein neues Token an. Aktualisieren Sie die Zugriffstoken erst, wenn sie ablaufen.</td>
       <td>Es besteht das Risiko, dass Systemressourcen überlastet werden, die Latenz zunimmt und möglicherweise Fehlerantworten vom Typ „Zu viele Anfragen“ in HTTP 429 ausgelöst werden.</td>
    </tr>
 </table>
@@ -85,7 +86,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Konfigurieren des Abrufmechanismus</i></td>
-      <td>Konfigurieren Sie die Häufigkeit des Abrufmechanismus unter den folgenden Bedingungen: <br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md">Authentifizierung wird innerhalb der primären (Bildschirm-)Anwendung durchgeführt</a></b><ul><li>Die primäre (Streaming-)Anwendung sollte alle 3-5 Sekunden eine Abfrage durchführen.</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md">Authentifizierung wird in einer sekundären (Bildschirm-)Anwendung durchgeführt</a></b><ul><li>Die primäre (Streaming-)Anwendung sollte alle 3-5 Sekunden eine Abfrage durchführen.</li></ul></td>
+      <td>Konfigurieren Sie die Häufigkeit des Abrufmechanismus unter den folgenden Bedingungen: <br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md">Authentifizierung wird innerhalb der primären (Bildschirm-)Anwendung durchgeführt</a></b><ul><li>Die primäre (Streaming-)Anwendung sollte alle 3-5 Sekunden oder länger abfragen.</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md">Authentifizierung wird in einer sekundären (Bildschirm-)Anwendung durchgeführt</a></b><ul><li>Die primäre (Streaming-)Anwendung sollte alle 3-5 Sekunden eine Abfrage durchführen.</li></ul></td>
       <td>Es besteht das Risiko, dass Systemressourcen überlastet werden, die Latenz zunimmt und möglicherweise Fehlerantworten vom Typ „Zu viele Anfragen“ in HTTP 429 ausgelöst werden.</td>
    </tr>
    <tr>
@@ -237,7 +238,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Validierung der Zugriffstoken</i></td>
-      <td>Proaktiv die Gültigkeit des Zugriffstokens überprüfen und bei Ablauf aktualisieren.<br/><br/>Stellen Sie sicher, dass jeder Wiederholungsmechanismus für die Verarbeitung von „nicht autorisierten“ HTTP 401-Fehlern zunächst das Zugriffstoken aktualisiert, bevor Sie die ursprüngliche Anfrage erneut versuchen.</td>
+      <td>Proaktive Überprüfung der Gültigkeit des Zugriffs-Tokens, um es nach Ablauf zu aktualisieren.<br/><br/>Stellen Sie sicher, dass jeder Wiederholungsmechanismus für die Verarbeitung von „nicht autorisierten“ HTTP 401-Fehlern zunächst das Zugriffstoken aktualisiert, bevor Sie die ursprüngliche Anfrage erneut versuchen.</td>
       <td>Risiken, die HTTP 401-Fehlerantworten „nicht autorisiert“ auslösen, Systemressourcen überlasten und die Latenz erhöhen.</td>
    </tr>
 </table>
