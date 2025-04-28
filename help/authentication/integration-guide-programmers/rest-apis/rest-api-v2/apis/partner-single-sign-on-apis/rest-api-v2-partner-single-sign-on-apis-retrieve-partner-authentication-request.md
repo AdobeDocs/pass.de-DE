@@ -2,7 +2,7 @@
 title: Partnerauthentifizierungsanfrage abrufen
 description: REST API V2 - Partnerauthentifizierungsanfrage abrufen
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: e8836c76aec10607717c0a67434b2ba5a78a8954
 workflow-type: tm+mt
 source-wordcount: '1219'
 ht-degree: 0%
@@ -307,7 +307,7 @@ ht-degree: 0%
                     <ul>
                         <li><b>type</b><br/>Gibt den Protokolltyp an, der von MVPD unterstützt wird (nur SAML).</li>
                         <li><b>request</b><br/>Die SAML-Anfrage.</li>
-                        <li><b>attributes</b><br/>Die SAML-Anfrageattribute.</li>
+                        <li><b>attributesNames</b><br/>Die SAML-Anfrageattribute.</li>
                     </ul>
                </td>
                <td>fakultativ</td>
