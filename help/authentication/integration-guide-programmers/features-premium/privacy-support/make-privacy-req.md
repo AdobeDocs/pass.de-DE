@@ -226,7 +226,7 @@ Es gibt zwei Möglichkeiten für Kundinnen und Kunden, Datenschutzanfragen an Ad
 
 ### Durch Verwendung der Privacy Service-Benutzeroberfläche {#privacy-service-ui}
 
-Ein [vollständiges Tutorial](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) zum Zugriff auf und zur Verwendung der Privacy Service-Benutzeroberfläche ist online über Adobe I/O-Services verfügbar. Darüber hinaus können Kundinnen und Kunden diesen Link verwenden, um auf eine Bibliothek mit Videos und Artikeln zu Datenschutzbestimmungen zuzugreifen. Klicken Sie auf das Menü Adobe Experience Cloud und DSGVO . Dadurch werden eine Reihe von Videos geöffnet. Im Abschnitt „Anleitung zur DSGVO-Benutzeroberfläche“ wird erläutert, wie Sie sie verwenden.
+Ein [vollständiges Tutorial](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=de#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) zum Zugriff auf und zur Verwendung der Privacy Service-Benutzeroberfläche ist online über Adobe I/O-Services verfügbar. Darüber hinaus können Kundinnen und Kunden diesen Link verwenden, um auf eine Bibliothek mit Videos und Artikeln zu Datenschutzbestimmungen zuzugreifen. Klicken Sie auf das Menü Adobe Experience Cloud und DSGVO . Dadurch werden eine Reihe von Videos geöffnet. Im Abschnitt „Anleitung zur DSGVO-Benutzeroberfläche“ wird erläutert, wie Sie sie verwenden.
 
 In der -Benutzeroberfläche müssen Kundinnen und Kunden ihre eigene IMSOrgID und eine JSON mit DSGVO-Anfragen für jedes Produkt laden.
 
@@ -259,7 +259,7 @@ In der **Privacy Service-API** Dokumentation wird ausführlich beschrieben, wie 
 
 >[!RELATEDINFORMATION]
 >
->* [Privacy Services Overview](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)
+>* [Privacy Services Overview](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=de#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)
 >* Privacy Service API documentation
 
 -->
