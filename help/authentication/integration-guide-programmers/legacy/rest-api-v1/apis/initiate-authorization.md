@@ -87,6 +87,7 @@ Erhält die Autorisierungsantwort.
 * **1. Fall: Erfolg**
 </br>
   * **XML:**
+
   </br>
 
     „XML

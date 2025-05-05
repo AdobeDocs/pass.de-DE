@@ -74,7 +74,7 @@ Die Richtlinie **P2** wird auf beide Streams angewendet und umfasst sowohl **s3*
 
 ### 5. Zwei Mieter. Drei Anwendungen. Zwei Richtlinien. Drei Streams. {#twotenants-threeapps-twopolicies-threestreams}
 
-Nehmen wir nun an, dass ein neuer Stream-Initialisierungsversuch mit {app2 **durchgeführt**:
+Nehmen wir nun an, dass ein neuer Stream-Initialisierungsversuch mit &lbrace;app2 **durchgeführt**:
 
 ![Zwei Mandanten. Drei Anwendungen. Zwei Richtlinien. Drei Streams.](assets/twotenants-policies-threeapps-streams.png)
 

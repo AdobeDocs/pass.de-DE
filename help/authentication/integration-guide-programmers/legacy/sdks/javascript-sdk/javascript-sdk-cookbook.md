@@ -86,7 +86,7 @@ Der mvpds-Parameter ist ein Array von Anbietern, die dem Benutzer zur Verfügung
 
 - `selectedProvider(mvpd)`
 
-  **Trigger:** [`getSelectedProvider()`](#$getSelProv Der Parameter &quot;`mvpd`&quot; enthält Informationen über den von ausgewählten Anbieter.
+  **Trigger:** [`getSelectedProvider()`] (#$getSelProv Der Parameter &quot;`mvpd`&quot; enthält Informationen über den von ausgewählten Anbieter.
 Der Benutzer.
 
 - `setMetadataStatus(metadata, key, arguments)`
@@ -149,7 +149,7 @@ Rufen Sie `getAuthentication()` auf, um den Authentifizierungsstatus ODER den Tr
 - `displayProviderDialog()`Wenn der Benutzer noch nicht authentifiziert wurde
 - `setAuthenticationStatus()`, ob die Authentifizierung bereits stattgefunden hat
 
-Der Abschluss des Authentifizierungsflusses wird erreicht, wenn AccessEnabler (mit `isAuthenticated == 1``setAuthenticationStatus()` aufruft.
+Der Abschluss des Authentifizierungsflusses wird erreicht, wenn AccessEnabler (mit `isAuthenticated == 1` `setAuthenticationStatus()` aufruft.
 
 ## 4. Autorisierungsfluss {#authz}
 

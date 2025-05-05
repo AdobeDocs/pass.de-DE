@@ -402,7 +402,7 @@ Das [Video Subscriber Account Framework](https://developer.apple.com/documentati
 >
 > **<u>Profi-Tipp</u>** Führen Sie die folgenden Schritte für die tvOS-Implementierung(en) aus.
 
-* Die Anwendung muss mithilfe von &quot;*tokenSource“ (Benutzermetadaten) aus dem Adobe Pass-Authentifizierungsdienst feststellen, ob die Authentifizierung als Ergebnis einer Anmeldung über ](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) Partner-SSO erfolgt* [.
+* Die Anwendung muss mithilfe von &quot;*tokenSource“ (Benutzermetadaten) aus dem Adobe Pass-Authentifizierungsdienst feststellen, ob die Authentifizierung als Ergebnis einer Anmeldung über [&#128279;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) Partner-SSO erfolgt* .
 * Die Anwendung muss den Benutzer anweisen/auffordern, sich explizit von *`Settings -> Accounts -> TV Provider`* unter tvOS abzumelden **nur**, wenn der *„tokenSource“* Wert &quot;*Apple&quot; entspricht.*
 * Die Anwendung müsste [Abmelden) vom Adobe Pass-Authentifizierungs](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)Service über einen direkten HTTP-Aufruf starten. Dies würde die Sitzungsbereinigung auf MVPD-Seite nicht erleichtern.
 
@@ -410,6 +410,6 @@ Das [Video Subscriber Account Framework](https://developer.apple.com/documentati
 >
 > **<u>Profi-Tipp</u>** Führen Sie die folgenden Schritte für die Implementierung(en) von iOS/iPadOS aus.
 
-* Die Anwendung muss mithilfe von &quot;*tokenSource“ (Benutzermetadaten) aus dem Adobe Pass-Authentifizierungsdienst feststellen, ob die Authentifizierung als Ergebnis einer Anmeldung über ](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) Partner-SSO erfolgt* [.
+* Die Anwendung muss mithilfe von &quot;*tokenSource“ (Benutzermetadaten) aus dem Adobe Pass-Authentifizierungsdienst feststellen, ob die Authentifizierung als Ergebnis einer Anmeldung über [&#128279;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) Partner-SSO erfolgt* .
 * Die Anwendung müsste den Benutzer anweisen/auffordern, sich explizit von *`Settings -> TV Provider`* auf iOS/iPadOS abzumelden **nur** wenn der *„tokenSource“* Wert *&quot;Apple&quot;*.
 * Die Anwendung müsste [Abmelden) vom Adobe Pass-Authentifizierungsdienst ](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md) einer [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)- oder [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)-Komponente initiieren. Dies würde die Sitzungsbereinigung auf MVPD-Seite erleichtern.

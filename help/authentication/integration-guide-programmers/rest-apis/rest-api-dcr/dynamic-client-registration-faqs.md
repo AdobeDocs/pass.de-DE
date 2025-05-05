@@ -47,7 +47,7 @@ Die Registrierungsphase ist obligatorisch, aber die Client-Anwendung kann diese 
 
 Die Software-Anweisung ist ein Begriff, der in der Dokumentation [Glossar](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#software-statement) definiert ist.
 
-Die Software-Anweisung besteht aus einem JSON Web Token (JWT), das von einem Ihrer Organisationsadministratoren oder einem in Ihrem Namen handelnden Adobe Pass-Authentifizierungsmitarbeiter ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) Adobe Pass [TVE Dashboard) generiert und heruntergeladen werden kann.
+Die Software-Anweisung besteht aus einem JSON Web Token (JWT), das von einem Ihrer Organisationsadministratoren oder einem in Ihrem Namen handelnden Adobe Pass-Authentifizierungsmitarbeiter [&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) Adobe Pass TVE Dashboard) generiert und heruntergeladen werden kann.
 
 Die Software-Erklärung ist für einen unbegrenzten Zeitraum gültig, Sie können jedoch einen Adobe Pass-Authentifizierungsbeauftragten bitten, sie jederzeit zu widerrufen.
 
@@ -133,7 +133,7 @@ Fahren Sie mit diesem Abschnitt fort, wenn Sie an einem Programm arbeiten, das e
 
 ### Häufig gestellte Fragen zur Migration zur REST API v2 {#rest-api-v2-migration-faqs}
 
-Häufig gestellte Fragen zur +++REST API v2-Migration
++++Häufig gestellte Fragen zur REST API v2-Migration
 
 #### 1. Kann die Client-Anwendung die vorhandenen registrierten Anwendungen (Software-Anweisungen) wiederverwenden? {#rest-api-v2-migration-faq1}
 

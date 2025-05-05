@@ -226,7 +226,7 @@ Bevor Sie den Autorisierungsfluss über Single Sign-on mit einer Platform-Identi
 > 
 > <br/>
 > 
-> * Die erste Streaming-Anwendung hat eine Authentifizierung durchgeführt und einen gültigen Wert für die Anforderungskopfzeile [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)} enthalten.
+> * Die erste Streaming-Anwendung hat eine Authentifizierung durchgeführt und einen gültigen Wert für die Anforderungskopfzeile [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) / [X-Roku-Reserved-Roku-Connect-](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)&rbrace; enthalten.
 
 ### Workflow {#workflow-scenario-performing-authorization-flow-using-platform-identity-single-sign-on-method}
 

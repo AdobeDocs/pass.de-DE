@@ -53,7 +53,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>primaryHardwareType</td>
         <td>Der primäre Hardwaretyp des Geräts.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -110,7 +110,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td><i>required</i></td>
         <td>osName</td>
         <td>Der Name des Betriebssystems (OS) des Geräts.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -132,7 +132,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>Betriebssystemfamilie</td>
         <td>Der Gruppenname des Betriebssystems (OS) des Geräts.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -155,7 +155,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>Betriebssystemanbieter</td>
         <td>Der Anbieter des Betriebssystems (OS) des Geräts.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -185,7 +185,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>browserName</td>
         <td>Der Name des Browsers.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -205,7 +205,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>browserVendor</td>
         <td>Die Firma/Organisation, die den Browser erstellt.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -290,7 +290,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>connectionSecure</td>
         <td>Der Sicherheitsstatus der Netzwerkverbindung.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>

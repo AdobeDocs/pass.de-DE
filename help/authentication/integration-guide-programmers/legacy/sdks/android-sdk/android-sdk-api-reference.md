@@ -23,7 +23,7 @@ ht-degree: 0%
 
 In diesem Dokument werden die Methoden und Callbacks beschrieben, die von der Android SDK für die Adobe Pass-Authentifizierung bereitgestellt werden, welche von der Adobe Pass-Authentifizierungsversion 1.7 und höher unterstützt wird. Die hier beschriebenen Methoden und Callback-Funktionen sind in den Header-Dateien AccessEnabler.h und EntitlementDelegate.h definiert.
 
-Die neueste Android AccessEnabler-SDK finden Sie ](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library) [https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library.
+Die neueste Android AccessEnabler-SDK finden Sie [&#128279;](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library) https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library.
 
 
 **Hinweis:** Das Adobe Pass-Authentifizierungsteam empfiehlt die Verwendung nur von (öffentlichen *Adobe Pass-*:

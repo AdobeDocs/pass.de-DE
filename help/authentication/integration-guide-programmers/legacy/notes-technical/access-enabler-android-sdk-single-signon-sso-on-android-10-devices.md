@@ -32,8 +32,8 @@ Infolge dieser Änderungen können das Single Sign-On (SSO), das von Access Enab
 Je nach **[!UICONTROL target SDK level]** Ihrer App oder der Verwendung des Manifestattributs **android:requestLegacyExternalStorage** verhält sich das von Access Enabler Android Version 3.2.1 SDK (neueste Version) und früheren Versionen angebotene Single Sign-On (SSO) derzeit wie folgt:
 
 - Ihre App für **Android 9 (API-Ebene 28)** oder niedriger **-\>** Single Sign-On (SSO) **funktioniert**
-- Ihre App ist für **Android 10** **(API-Ebene 29)** vorgesehen und **** den Wert von **requestLegacyExternalStorage in der Manifestdatei**-\>**** SSO (Single Sign-On) Ihrer App auf **gesetzt**
-- Ihre App ist für **Android 10** **(API-Ebene 29)** vorgesehen und **** den Wert von **requestLegacyExternalStorage in der Manifestdatei**-\>**SSO (Single Sign-On) Ihrer App auf** nicht **festgelegt**
+- Ihre App ist für **Android 10** **(API-Ebene 29)** vorgesehen und **&#x200B;**&#x200B;den Wert von **requestLegacyExternalStorage in der Manifestdatei**-\>**&#x200B;** SSO (Single Sign-On) Ihrer App auf **gesetzt**
+- Ihre App ist für **Android 10** **(API-Ebene 29)** vorgesehen und **&#x200B;**&#x200B;den Wert von **requestLegacyExternalStorage in der Manifestdatei**-\>**SSO (Single Sign-On) Ihrer App auf** nicht **festgelegt**
 
 >[!TIP]
 >

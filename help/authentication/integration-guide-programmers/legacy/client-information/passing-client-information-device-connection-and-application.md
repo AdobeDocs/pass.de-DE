@@ -164,7 +164,7 @@ Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 >[!IMPORTANT]
 >
-Die Geräte-, Verbindungs- und Anwendungsinformationen müssen demselben JSON-Objekt hinzugefügt werden. Danach muss das resultierende Objekt (Base64 **-kodiert)**. Bei REST-APIs für die Adobe Pass-Authentifizierung muss der Wert außerdem **URL-codiert** sein.
+>Die Geräte-, Verbindungs- und Anwendungsinformationen müssen demselben JSON-Objekt hinzugefügt werden. Danach muss das resultierende Objekt (Base64 **-kodiert)**. Bei REST-APIs für die Adobe Pass-Authentifizierung muss der Wert außerdem **URL-codiert** sein.
 
 **Beispielcode**
 
@@ -243,8 +243,8 @@ private JSONObject computeClientInformation() {
 
 >[!NOTE]
 >
-**Ressourcen:**
-* public class [build](https://developer.android.com/reference/android/os/Build.html){target=_blank} in der Dokumentation von Java-Entwicklern.
+>**Ressourcen:**
+>* public class [build](https://developer.android.com/reference/android/os/Build.html){target=_blank} in der Dokumentation von Java-Entwicklern.
 
 ### FireTV {#fire-tv}
 
@@ -276,13 +276,13 @@ Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 >[!IMPORTANT]
 >
-Die Geräte-, Verbindungs- und Anwendungsinformationen müssen demselben JSON-Objekt hinzugefügt werden. Danach muss das resultierende Objekt (Base64 **-kodiert)**. Bei REST-APIs für die Adobe Pass-Authentifizierung muss der Wert außerdem **URL-codiert** sein.
+>Die Geräte-, Verbindungs- und Anwendungsinformationen müssen demselben JSON-Objekt hinzugefügt werden. Danach muss das resultierende Objekt (Base64 **-kodiert)**. Bei REST-APIs für die Adobe Pass-Authentifizierung muss der Wert außerdem **URL-codiert** sein.
 
 >[!NOTE]
 >
-**Ressourcen:**
-* public class [Build](https://developer.android.com/reference/android/os/Build.html){target=_blank} in der Dokumentation von Android Developers.
-* [Identifizieren von FireTV-Geräten](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html){target=_blank}
+>**Ressourcen:**
+>* public class [Build](https://developer.android.com/reference/android/os/Build.html){target=_blank} in der Dokumentation von Android Developers.
+>* [Identifizieren von FireTV-Geräten](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html){target=_blank}
 
 ### iOS/tvOS {#ios-tvos}
 
@@ -315,7 +315,7 @@ Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 >[!IMPORTANT]
 >
-Die Geräte-, Verbindungs- und Anwendungsinformationen müssen demselben JSON-Objekt hinzugefügt werden. Danach muss das resultierende Objekt mit Base64 codiert sein. Außerdem muss bei REST-APIs für die Adobe Pass-Authentifizierung der Wert URL-kodiert sein.
+>Die Geräte-, Verbindungs- und Anwendungsinformationen müssen demselben JSON-Objekt hinzugefügt werden. Danach muss das resultierende Objekt mit Base64 codiert sein. Außerdem muss bei REST-APIs für die Adobe Pass-Authentifizierung der Wert URL-kodiert sein.
 
 **Beispielcode**
 
@@ -387,10 +387,10 @@ Die Geräte-, Verbindungs- und Anwendungsinformationen müssen demselben JSON-Ob
 
 >[!NOTE]
 >
-**Ressourcen:**
-* [UIDevice](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice){target=_blank}
-* [uname](https://man7.org/linux/man-pages/man2/uname.2.html){target=_blank}
-* [Über die Erreichbarkeit](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html){target=_blank}
+>**Ressourcen:**
+>* [UIDevice](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice){target=_blank}
+>* [uname](https://man7.org/linux/man-pages/man2/uname.2.html){target=_blank}
+>* [Über die Erreichbarkeit](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html){target=_blank}
 
 ### Roku {#roku}
 
@@ -422,11 +422,11 @@ Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 >[!IMPORTANT]
 >
-Die Geräte-, Verbindungs- und Anwendungsinformationen müssen demselben JSON-Objekt hinzugefügt werden. Danach muss das resultierende Objekt (Base64 **-kodiert)**. Außerdem muss bei REST-APIs für die Adobe Pass-Authentifizierung der Wert URL-kodiert sein.
+>Die Geräte-, Verbindungs- und Anwendungsinformationen müssen demselben JSON-Objekt hinzugefügt werden. Danach muss das resultierende Objekt (Base64 **-kodiert)**. Außerdem muss bei REST-APIs für die Adobe Pass-Authentifizierung der Wert URL-kodiert sein.
 
 >[!NOTE]
 >
-Weitere Informationen finden Sie unter [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md)
+>Weitere Informationen finden Sie unter [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md)
 
 ### XBOX 1/360 {#xbox}
 
@@ -458,7 +458,7 @@ Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 >[!IMPORTANT]
 >
-Die Geräte-, Verbindungs- und Anwendungsinformationen müssen demselben JSON-Objekt hinzugefügt werden. Danach muss das resultierende Objekt (Base64 **-kodiert)**. Bei REST-APIs für die Adobe Pass-Authentifizierung muss der Wert außerdem **URL-codiert** sein.
+>Die Geräte-, Verbindungs- und Anwendungsinformationen müssen demselben JSON-Objekt hinzugefügt werden. Danach muss das resultierende Objekt (Base64 **-kodiert)**. Bei REST-APIs für die Adobe Pass-Authentifizierung muss der Wert außerdem **URL-codiert** sein.
 
 **Ressourcen**
 

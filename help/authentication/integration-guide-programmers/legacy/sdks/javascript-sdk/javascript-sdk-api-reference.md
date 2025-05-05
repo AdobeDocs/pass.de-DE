@@ -178,7 +178,7 @@ Bei Erfolg erstellt und speichert ein Authentifizierungstoken für den Benutzer.
 
 ## checkAuthorization(inResourceID) {#checkauthorization(inresourceid)}
 
-**Beschreibung:** Diese Methode wird von der Anwendung verwendet, um den Autorisierungsstatus für den aktuellen Kunden und die angegebene Ressource zu überprüfen. Zunächst wird der Authentifizierungsstatus überprüft. Wenn die Methode nicht authentifiziert ist, wird der Rückruf tokenRequestFailed() ausgelöst und die Methode beendet. Wenn der Benutzer authentifiziert ist, führt dies auch zu einem Trigger des Autorisierungsflusses. Siehe Details zur Methode [getAuthorization()](#getAuthZ.
+**Beschreibung:** Diese Methode wird von der Anwendung verwendet, um den Autorisierungsstatus für den aktuellen Kunden und die angegebene Ressource zu überprüfen. Zunächst wird der Authentifizierungsstatus überprüft. Wenn die Methode nicht authentifiziert ist, wird der Rückruf tokenRequestFailed() ausgelöst und die Methode beendet. Wenn der Benutzer authentifiziert ist, führt dies auch zu einem Trigger des Autorisierungsflusses. Siehe Details zur Methode [getAuthorization()] (#getAuthZ.
 
 >[!TIP]
 >
@@ -415,7 +415,7 @@ Sie müssen diese Callbacks implementieren, um die Antworten auf Ihre asynchrone
 
 **Beschreibung:** Implementieren Sie diesen Callback, wenn der Benutzer einen MVPD ausgewählt hat, für den ein iFrame erforderlich ist, in dem die Benutzeroberfläche für die Authentifizierungs-Anmeldeseite angezeigt werden soll.
 
-**Ausgelöst durch:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Ausgelöst durch:**&#x200B;[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Zurück zum Anfang](#top)
 

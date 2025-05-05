@@ -203,7 +203,7 @@ Gehen Sie wie folgt vor, um eine Domain zu löschen.
 
    *Entfernen Sie die ausgewählte Domain*
 
-1. Wählen **** im Dialogfeld **Domain löschen** die Option „Löschen“ aus.
+1. Wählen **&#x200B;**&#x200B;im Dialogfeld **Domain löschen** die Option „Löschen“ aus.
 
 Eine neue Konfigurationsänderung wurde erstellt und ist für die Server-Aktualisierung bereit. Die Domain wird erst nach dem **(Überprüfung und Push**&#x200B;Änderungen) aus dem Abschnitt [Verfügbare Domains](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md) gelöscht.
 

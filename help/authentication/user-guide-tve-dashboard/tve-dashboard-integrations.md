@@ -267,7 +267,7 @@ Im Abschnitt Benutzermetadaten werden die folgenden Spalten angezeigt:
 >
 > Stellen Sie immer sicher **dass der ZIP**-Parameter verschlüsselt ist.
 
-Weitere Informationen zu verfügbaren Zertifikaten finden Sie in den Abschnitten [](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#available-certificates) und [Kanäle](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#available-certificates) .
+Weitere Informationen zu verfügbaren Zertifikaten finden Sie in den Abschnitten [&#128279;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#available-certificates) und [Kanäle](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#available-certificates) .
 
 **Aktiviert**: In dieser Spalte können Sie die Parameter in der API aktivieren oder deaktivieren, indem Sie **Ja** bzw. **Nein** aus dem Dropdown-Menü auswählen.
 

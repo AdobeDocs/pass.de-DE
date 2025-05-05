@@ -35,7 +35,7 @@ Der `deviceType` Parameter war seit der ersten Version in der Clientless-API vor
 
 >[!IMPORTANT]
 >
->Wenn der Parameter `deviceType` richtig festgelegt ist, hat er in der Überwachung des Berechtigungs-Service **folgenden**: Er bietet Metriken, die bei Verwendung von ](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) (nach Gerätetyp [) sind, sodass verschiedene Arten der Analyse für z. B. Roku, AppleTV, Xbox usw. durchgeführt werden können.
+>Wenn der Parameter `deviceType` richtig festgelegt ist, hat er in der Überwachung des Berechtigungs-Service **folgenden**: Er bietet Metriken, die bei Verwendung von [&#128279;](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) (nach Gerätetyp ) sind, sodass verschiedene Arten der Analyse für z. B. Roku, AppleTV, Xbox usw. durchgeführt werden können.
 
 
 Weitere Informationen zur API zur Überwachung des Berechtigungs-Service finden Sie in der [Aufschlüsselungsstruktur“, ](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md#drill-down_tree) der die in [ 2.0 verfügbaren Dimensionen](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#esm_dimensions) (Ressourcen) veranschaulicht.

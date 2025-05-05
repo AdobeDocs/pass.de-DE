@@ -17,10 +17,10 @@ ht-degree: 2%
 + [Adobe Pass-Authentifizierung](home.md)
 + [Produktankündigungen](product-announcements.md)
 + Produktversionen {#product-releases}
-   + {#2025} 2025
+   + 2025{#2025}
       + [Versionshinweise zur Adobe Pass-Authentifizierung 3.1.0](notes-releases/auth-rn-310.md)
       + [Versionshinweise zur Adobe Pass-Authentifizierung für JavaScript 4.7.1](notes-releases/authn-rn-javascript-471.md)
-   + {#2024} 2024
+   + 2024{#2024}
       + [Versionshinweise zu Adobe Pass Authentication 3.0.3](notes-releases/auth-rn-303.md)
       + [Versionshinweise zur Adobe Pass-Authentifizierung 3.0](notes-releases/auth-rn-300.md)
       + [Versionshinweise zur Adobe Pass-Authentifizierung 2.70](notes-releases/auth-rn-270.md)
@@ -28,7 +28,7 @@ ht-degree: 2%
       + [Versionshinweise zur Adobe Pass-Authentifizierung für JavaScript 4.7.0](notes-releases/authn-rn-javascript-470.md)
       + [Versionshinweise zu Adobe Pass Authentication iOS / tvOS 3.9.2](notes-releases/authn-rn-ios-tvos-392.md)
       + [Versionshinweise zu Adobe Pass Authentication iOS / tvOS 3.8.4](notes-releases/authn-rn-ios-tvos-384.md)
-   + {#2023} 2023
+   + 2023{#2023}
       + [Versionshinweise zur Adobe Pass-Authentifizierung 2.68](notes-releases/auth-rn-268.md)
       + [Versionshinweise zur Adobe Pass-Authentifizierung 2.67](notes-releases/auth-rn-267.md)
       + [Versionshinweise zur Adobe Pass-Authentifizierung 2.66](notes-releases/auth-rn-266.md)
@@ -39,12 +39,12 @@ ht-degree: 2%
       + [Versionshinweise zu Adobe Pass Authentication iOS / tvOS 3.8.2](notes-releases/authn-rn-ios-tvos-382.md)
       + [Versionshinweise zu Adobe Pass Authentication iOS / tvOS 3.8.1](notes-releases/authn-rn-ios-tvos-381.md)
       + [Versionshinweise zur Adobe Pass-Authentifizierung für Android 3.7.3](notes-releases/authn-rn-android-373.md)
-   + {#2022} 2022
+   + 2022{#2022}
       + [Versionshinweise zur Adobe Pass-Authentifizierung 2.64](notes-releases/auth-rn-264.md)
       + [Versionshinweise zur Adobe Pass-Authentifizierung 2.63](notes-releases/auth-rn-263.md)
       + [Versionshinweise zur Adobe Pass-Authentifizierung 2.62.1](notes-releases/auth-rn-2621.md)
       + [Versionshinweise zur Adobe Pass-Authentifizierung für JavaScript 4.6.0](notes-releases/authn-rn-javascript-460.md)
-   + {#2021} 2021
+   + 2021{#2021}
       + [Versionshinweise zur Adobe Pass-Authentifizierung für JavaScript 4.4.0](notes-releases/authn-rn-javascript-440.md)
       + [Versionshinweise zu Adobe Pass Authentication iOS / tvOS 3.7.0](notes-releases/authn-rn-ios-tvos-370.md)
 + {#kickstart}
@@ -75,7 +75,7 @@ ht-degree: 2%
             + [Übersicht über REST API V2-APIs](integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
             + {#rest-api-v2-configuration-apis}
                + [Abrufen der Konfiguration für einen bestimmten Dienstleister](integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
-            + {#rest-api-v2-sessions-apis} Sitzungen
+            + Sitzungen{#rest-api-v2-sessions-apis}
                + [Authentifizierungssitzung erstellen](integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
                + [Authentifizierungssitzung fortsetzen](integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
                + [Authentifizierungssitzung abrufen](integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
@@ -94,7 +94,7 @@ ht-degree: 2%
                + [Erstellen und Abrufen eines Profils mithilfe der Antwort zur Partnerauthentifizierung](integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
          + Flows {#rest-api-v2-flows}
             + [Übersicht über REST-API-Flüsse v2](integration-guide-programmers/rest-apis/rest-api-v2/flows/rest-api-v2-flows-overview.md)
-            + {#rest-api-v2-basic-access-flows} für einfachen Zugriff
+            + für einfachen Zugriff{#rest-api-v2-basic-access-flows}
                + [Fluss von grundlegenden Profilen, der in der primären Anwendung ausgeführt wird](integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
                + [Fluss der grundlegenden Profile, der in der sekundären Anwendung ausgeführt wird](integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
                + [Grundlegender Authentifizierungsfluss innerhalb der primären Anwendung](integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
@@ -115,7 +115,7 @@ ht-degree: 2%
             + [REST API V2-Cookbook (Client-zu-Server)](integration-guide-programmers/rest-apis/rest-api-v2/cookbooks/rest-api-v2-cookbook-client-server.md)
             + [REST API V2-Cookbook (Server-zu-Server)](integration-guide-programmers/rest-apis/rest-api-v2/cookbooks/rest-api-v2-cookbook-server-server.md)
          + Anhang {#rest-api-v2-appendix}
-            + {#rest-api-v2-appendix-headers} Kopfzeilen
+            + Kopfzeilen{#rest-api-v2-appendix-headers}
                + [Header - Autorisierung](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)
                + [Header - AP-Device-Identifier](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
                + [Kopfzeile - x-device-info](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
@@ -124,12 +124,12 @@ ht-degree: 2%
                + [Kopfzeile - x-roku-reserved-roku-connect-token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)
                + [Header - AP-Partner-Framework-Status](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
                + [Kopfzeile - AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
-   + {#standard-features} Standardfunktionen
+   + Standardfunktionen{#standard-features}
       + Berechtigungen {#entitlements}
          + [Benutzermetadaten](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
          + [Entscheidungen](integration-guide-programmers/features-standard/entitlements/decisions.md)
          + [Medien-Token](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
-      + {#error-reporting} für Fehlerberichte
+      + für Fehlerberichte{#error-reporting}
          + [Verbesserte Fehler-Codes](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
       + Single Sign-On-{#sso-access}
          + Partner-Single-Sign-On-{#partner-sso}
@@ -143,7 +143,7 @@ ht-degree: 2%
                + [Roku SSO Cookbook (REST API v2)](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
       + Home-Based Authentication-{#hba-access}
          + [Home-Based Authentication (HBA)](integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)
-      + {#privacy-support} zum Datenschutz
+      + zum Datenschutz{#privacy-support}
          + [Übersicht über die Datenschutzunterstützung](integration-guide-programmers/features-premium/privacy-support/privacy-supp-overview.md)
          + [So stellen Sie eine Datenschutzanfrage](integration-guide-programmers/features-premium/privacy-support/make-privacy-req.md)
    + Premium-Funktionen {#features-premium}
@@ -190,14 +190,14 @@ ht-degree: 2%
             + [(Legacy) JavaScript SDK-Cookbook](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-cookbook.md)
             + [(Veraltete) JavaScript SDK API-Referenz](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
             + [(Legacy) JavaScript SDK-API - Vorabautorisierung](integration-guide-programmers/legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
-            + {#javascript-sdk-guidelines} zu (veralteten) Richtlinien
+            + zu (veralteten) Richtlinien{#javascript-sdk-guidelines}
                + [(Legacy) Anmeldung und Abmeldung ohne Aktualisierung](integration-guide-programmers/legacy/sdks/javascript-sdk/refreshless-login-and-logout.md)
          + (Legacy) iOS/tvOS SDK {#ios-tvos-sdk}
             + [(Veraltete) Übersicht über iOS/tvOS SDK](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)
             + [(Legacy) iOS/tvOS SDK Cookbook](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-cookbook.md)
             + [(Veraltete) iOS/tvOS SDK API-Referenz](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
             + [(Legacy) iOS/tvOS SDK-API Vorautorisieren](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
-            + {#ios-tvos-sdk-guidelines} zu (veralteten) Richtlinien
+            + zu (veralteten) Richtlinien{#ios-tvos-sdk-guidelines}
                + [(Veraltete) Registrierung von iOS/tvOS-Anwendungen](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md)
                + [(Legacy) Migrationshandbuch für iOS/tvOS v3.x](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-v3x-migration-guide.md)
                + [(Legacy) Prüfung der Speicherintegrität von iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-storage-integrity-checks.md)
@@ -206,7 +206,7 @@ ht-degree: 2%
             + [(Legacy) Android SDK-Cookbook](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-cookbook.md)
             + [(Veraltete) Android SDK API-Referenz](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md)
             + [(Legacy) Android SDK-API - Vorabautorisierung](integration-guide-programmers/legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
-            + {#android-sdk-guidelines} zu (veralteten) Richtlinien
+            + zu (veralteten) Richtlinien{#android-sdk-guidelines}
                + [Registrierung von (veralteten) Android-Anwendungen](integration-guide-programmers/legacy/sdks/android-sdk/android-application-registration.md)
                + [(Legacy) Android SDK mit dynamischer Client-Registrierung](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-with-dynamic-client-registration.md)
          + (Legacy) FireOS SDK {#fireos-sdk}
@@ -216,9 +216,9 @@ ht-degree: 2%
             + [(Legacy) Registrierung der Amazon FireOS-Anwendung](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-application-registration.md)
             + [(Legacy) FireOS SDK mit dynamischer Client-Registrierung](integration-guide-programmers/legacy/sdks/fireos-sdk/fireos-sdk-with-dynamic-client-registration.md)
             + [(Legacy) Amazon FireOS SSO - Anleitung zum Programmstart](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-firetv-sso-programmer-kickoff-guide.md)
-      + (veraltete) {#client-information} zu Client-Informationen
+      + (veraltete) zu Client-Informationen {#client-information}
          + [(Legacy) Übergeben von Client-Informationen (Gerät, Verbindung und Anwendung)](integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)
-      + (Veraltete) {#error-reporting} für Fehlerberichte
+      + (Veraltete) für Fehlerberichte {#error-reporting}
          + [(Veraltete) Fehlerberichte](integration-guide-programmers/legacy/error-reporting/error-reporting.md)
       + (Legacy) Single-Sign-On-{#sso-access}
          + [Unterstützung für (veraltete) Single Sign-On](integration-guide-programmers/legacy/sso-access/sso-support.md)
@@ -258,7 +258,7 @@ ht-degree: 2%
             + [(Legacy) Preflight-Funktion: Vorgehensweise zum Aktivieren, Beheben oder Bestimmen des Problems](integration-guide-programmers/legacy/notes-technical/preflight-feature.md)
             + [(Legacy) Zulassen von MVPDs im Auswahldialogfeld](integration-guide-programmers/legacy/notes-technical/allow-mvpd-selectn-dialog.md)
             + [(Legacy) Verhindern, dass MVPDs im Auswahldialogfeld angezeigt werden](integration-guide-programmers/legacy/notes-technical/prevent-mvpd-selectn-dialog.md)
-         + (Veraltete) {#troubleshooting} zur Fehlerbehebung
+         + (Veraltete) zur Fehlerbehebung {#troubleshooting}
             + [(veraltet) Verwenden von Charles Proxy](integration-guide-programmers/legacy/notes-technical/using-charles-proxy.md)
             + [(Legacy) Überwachen des Adobe Pass Adobe PayTV-Ausweises](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
             + [(Veraltet) Testen von Authentifizierungs- und Autorisierungsflüssen mithilfe der Adobe-API-Test-Site](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)

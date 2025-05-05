@@ -41,7 +41,7 @@ Um von dem Apple SSO-Benutzererlebnis zu profitieren, muss die Anwendung den Acc
 
 >[!TIP]
 >
-> **<u>Profi-Tipp:</u>** Die Streaming-Anwendung kann die Berechtigung des Benutzers anfordern, wenn die Anwendung in den Vordergrundstatus wechselt, da die Anwendung jederzeit auf die Abonnementinformationen des ](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) zugreifen [Berechtigung für den Zugriff) kann, bevor eine Benutzerauthentifizierung erforderlich wird.
+> **<u>Profi-Tipp:</u>** Die Streaming-Anwendung kann die Berechtigung des Benutzers anfordern, wenn die Anwendung in den Vordergrundstatus wechselt, da die Anwendung jederzeit auf die Abonnementinformationen des [&#128279;](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) zugreifen Berechtigung für den Zugriff) kann, bevor eine Benutzerauthentifizierung erforderlich wird.
 
 >[!TIP]
 >

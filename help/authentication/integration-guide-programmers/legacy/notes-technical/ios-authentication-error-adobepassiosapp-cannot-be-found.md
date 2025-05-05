@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# (Legacy) iOS-Authentifizierungsfehler - adobepass.ios.app wurde {#ios-authentication-error-adobepass.ios.app-cannot-be-found} nicht gefunden
+# (Legacy) iOS-Authentifizierungsfehler - adobepass.ios.app wurde nicht gefunden {#ios-authentication-error-adobepass.ios.app-cannot-be-found}
 
 >[!NOTE]
 >

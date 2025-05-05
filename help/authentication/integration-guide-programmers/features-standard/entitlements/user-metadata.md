@@ -80,7 +80,7 @@ Welche Benutzermetadatenattribute einem Programmierer zur Verfügung gestellt we
 
 ## Verschlüsselung von Benutzermetadaten {#encryption}
 
-Zum Ver- und Entschlüsseln von Benutzermetadatenattributen muss der Programmierer ein Zertifikat (Paar aus öffentlichem/privatem Schlüssel) generieren und [ Zertifikat über das [Adobe Pass TVE Dashboard](#management) selbst konfigurieren](https://experience.adobe.com/#/pass/authentication) oder den öffentlichen Schlüssel mit Adobe Pass-Authentifizierungsbeauftragten teilen.
+Zum Ver- und Entschlüsseln von Benutzermetadatenattributen muss der Programmierer ein Zertifikat (Paar aus öffentlichem/privatem Schlüssel) generieren und [&#128279;](https://experience.adobe.com/#/pass/authentication) Zertifikat über das [Adobe Pass TVE Dashboard](#management) selbst konfigurieren oder den öffentlichen Schlüssel mit Adobe Pass-Authentifizierungsbeauftragten teilen.
 
 Gehen Sie wie folgt vor, um sicherzustellen, dass das Zertifikat korrekt generiert und konfiguriert ist:
 
