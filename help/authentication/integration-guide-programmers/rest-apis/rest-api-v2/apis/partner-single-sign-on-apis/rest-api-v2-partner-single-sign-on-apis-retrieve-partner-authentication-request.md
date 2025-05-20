@@ -2,9 +2,9 @@
 title: Partnerauthentifizierungsanfrage abrufen
 description: REST API V2 - Partnerauthentifizierungsanfrage abrufen
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: e8836c76aec10607717c0a67434b2ba5a78a8954
+source-git-commit: 9f872ad94e0aaa0546c8fcac9f88c50f47e10f6e
 workflow-type: tm+mt
-source-wordcount: '1219'
+source-wordcount: '1236'
 ht-degree: 0%
 
 ---
@@ -270,6 +270,7 @@ ht-degree: 0%
                     <li><b>AuthenticatedSSO</b><br/>Die Client-Anwendung wird bereits über Single Sign-on-Zugriffsflüsse authentifiziert.</li>
                     <li><b>pfs_fallback</b><br/>Die Client-Anwendung muss aufgrund eines fehlenden oder ungültigen Kopfzeilenwerts <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> zum einfachen Authentifizierungsfluss zurückkehren.</li>
                     <li><b>configuration_fallback</b><br/>Die Client-Anwendung muss aufgrund der Partnerkonfiguration für einmaliges Anmelden im Adobe Pass-Backend auf einen einfachen Authentifizierungsfluss zurückgreifen.</li>
+                    <li><b>missing_parameters_fallback</b><br />Die Client-Anwendung muss aufgrund eines fehlenden oder ungültigen Parameters zum Fortsetzungsfluss zurückkehren.</li>
                   </ul>
                <td><i>required</i></td>
             </tr>
@@ -574,7 +575,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "resume",
     "actionType": "direct",
-    "reasonType": "none",
+    "reasonType": "missing_parameters_fallback",
     "missingParameters": [
           "redirectUrl"
     ],
