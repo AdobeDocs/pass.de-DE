@@ -2,9 +2,9 @@
 title: Produktankündigungen
 description: Produktankündigungen
 exl-id: 3c9c66e1-d31d-4af3-8ab2-eb32492f42ca
-source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
+source-git-commit: 13b0bb640aa599109e8c2f68d1e16fbdc3840951
 workflow-type: tm+mt
-source-wordcount: '784'
+source-wordcount: '793'
 ht-degree: 2%
 
 ---
@@ -33,6 +33,7 @@ In diesem Abschnitt werden Verweise auf den Versionsverlauf und die entsprechend
 
 | Versionshinweise | Daten |
 |-----------------------------------------------------------------------------------------------------------|-------------------------|
+| Versionshinweise zur [Adobe Pass-Authentifizierung 3.2.0](notes-releases/auth-rn-320.md) | 06/10/2025 - 06/12/2025 |
 | Versionshinweise zur [Adobe Pass-Authentifizierung 3.1.0](notes-releases/auth-rn-310.md) | 02/25/2025 - 02/27/2025 |
 | [Versionshinweise zur Adobe Pass-Authentifizierung für JavaScript SDK 4.7.1](notes-releases/authn-rn-javascript-471.md) | 02/25/2025 - 02/27/2025 |
 
