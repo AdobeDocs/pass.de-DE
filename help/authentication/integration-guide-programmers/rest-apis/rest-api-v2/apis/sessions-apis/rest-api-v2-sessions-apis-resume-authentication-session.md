@@ -2,9 +2,9 @@
 title: Authentifizierungssitzung fortsetzen
 description: REST API V2 - Fortsetzen der Authentifizierungssitzung
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '890'
 ht-degree: 1%
 
 ---
@@ -280,12 +280,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>Der Zeitstempel, vor dem der Authentifizierungs-Code nicht gültig ist.</td>
+               <td>Der Zeitstempel in Millisekunden, vor dem der Authentifizierungs-Code nicht gültig ist.</td>
                <td>fakultativ</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>Der Zeitstempel, nach dem der Authentifizierungs-Code ungültig ist.</td>
+               <td>Der Zeitstempel in Millisekunden, nach denen der Authentifizierungs-Code nicht mehr gültig ist.</td>
                <td>fakultativ</td>
             </tr>
          </table>
@@ -325,7 +325,7 @@ ht-degree: 1%
 
 ## Beispiele {#samples}
 
-### 1. Fortsetzen der Authentifizierungssitzung ohne fehlende Parameter
+### &#x200B;1. Fortsetzen der Authentifizierungssitzung ohne fehlende Parameter
 
 >[!BEGINTABS]
 
@@ -367,7 +367,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Fortsetzen der Authentifizierungssitzung mit fehlenden Parametern
+### &#x200B;2. Fortsetzen der Authentifizierungssitzung mit fehlenden Parametern
 
 >[!BEGINTABS]
 
@@ -410,7 +410,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Setzt die Authentifizierungssitzung fort, während bereits ein gültiges Profil existiert
+### &#x200B;3. Setzt die Authentifizierungssitzung fort, während bereits ein gültiges Profil existiert
 
 >[!BEGINTABS]
 
@@ -449,7 +449,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Fortsetzen der Authentifizierungssitzung mit Standard- oder Werbe-TempPass (nicht erforderlich)
+### &#x200B;4. Fortsetzen der Authentifizierungssitzung mit Standard- oder Werbe-TempPass (nicht erforderlich)
 
 >[!BEGINTABS]
 
@@ -488,7 +488,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Die Authentifizierungssitzung bei angewendeter Degradation fortsetzen
+### &#x200B;5. Die Authentifizierungssitzung bei angewendeter Degradation fortsetzen
 
 >[!BEGINTABS]
 

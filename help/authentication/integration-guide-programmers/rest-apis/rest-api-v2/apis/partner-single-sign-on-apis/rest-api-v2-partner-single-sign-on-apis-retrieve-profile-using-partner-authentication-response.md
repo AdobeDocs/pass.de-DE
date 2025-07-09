@@ -2,9 +2,9 @@
 title: Erstellen und Abrufen eines Profils mithilfe der Antwort zur Partnerauthentifizierung
 description: REST API V2 - Erstellen und Abrufen von Profilen mit der Antwort der Partnerauthentifizierung
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '775'
+source-wordcount: '779'
 ht-degree: 1%
 
 ---
@@ -233,12 +233,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>Der Zeitstempel, vor dem das Profil ungültig ist.</td>
+               <td>Der Zeitstempel in Millisekunden, vor dem das Profil ungültig ist.</td>
                <td><i>required</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>Der Zeitstempel, nach dem das Profil ungültig ist.</td>
+               <td>Der Zeitstempel in Millisekunden, nach denen das Profil ungültig ist.</td>
                <td><i>required</i></td>
             </tr>
             <tr>
@@ -322,7 +322,7 @@ ht-degree: 1%
 
 ## Beispiele {#samples}
 
-### 1. Erstellen und Abrufen eines Profils mithilfe der Antwort der Partnerauthentifizierung
+### &#x200B;1. Erstellen und Abrufen eines Profils mithilfe der Antwort der Partnerauthentifizierung
 
 >[!BEGINTABS]
 
@@ -379,7 +379,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Profil mithilfe der Antwort der Partnerauthentifizierung erstellen und abrufen, es kommt jedoch zu einer Beeinträchtigung
+### &#x200B;2. Profil mithilfe der Antwort der Partnerauthentifizierung erstellen und abrufen, es kommt jedoch zu einer Beeinträchtigung
 
 >[!BEGINTABS]
 

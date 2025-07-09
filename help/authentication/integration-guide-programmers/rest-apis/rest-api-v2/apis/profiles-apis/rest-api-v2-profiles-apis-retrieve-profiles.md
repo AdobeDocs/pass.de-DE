@@ -2,9 +2,9 @@
 title: Profile abrufen
 description: REST API V2 - Profile abrufen
 exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '872'
 ht-degree: 1%
 
 ---
@@ -227,12 +227,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>Der Zeitstempel, vor dem das Profil ungültig ist.</td>
+               <td>Der Zeitstempel in Millisekunden, vor dem das Profil ungültig ist.</td>
                <td><i>required</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>Der Zeitstempel, nach dem das Profil ungültig ist.</td>
+               <td>Der Zeitstempel in Millisekunden, nach denen das Profil ungültig ist.</td>
                <td><i>required</i></td>
             </tr>
             <tr>
@@ -319,7 +319,7 @@ ht-degree: 1%
 
 ## Beispiele {#samples}
 
-### 1. Abrufen von Profilen, die durch Standardauthentifizierung ermittelt wurden
+### &#x200B;1. Abrufen von Profilen, die durch Standardauthentifizierung ermittelt wurden
 
 >[!BEGINTABS]
 
@@ -382,7 +382,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Abrufen von Profilen, die über Standardauthentifizierung oder Single Sign-on mit der Service-Token-Methode abgerufen wurden
+### &#x200B;2. Abrufen von Profilen, die über Standardauthentifizierung oder Single Sign-on mit der Service-Token-Methode abgerufen wurden
 
 >[!BEGINTABS]
 
@@ -446,7 +446,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Abrufen von Profilen, die durch einfache Authentifizierung oder Single Sign-on mit der Platform-Identitätsmethode abgerufen wurden
+### &#x200B;3. Abrufen von Profilen, die durch einfache Authentifizierung oder Single Sign-on mit der Platform-Identitätsmethode abgerufen wurden
 
 >[!BEGINTABS]
 

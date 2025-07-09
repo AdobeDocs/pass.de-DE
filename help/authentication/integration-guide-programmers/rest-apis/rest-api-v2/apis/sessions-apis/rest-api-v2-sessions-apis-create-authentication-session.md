@@ -2,9 +2,9 @@
 title: Authentifizierungssitzung erstellen
 description: REST API V2 - Authentifizierungssitzung erstellen
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '1060'
+source-wordcount: '1064'
 ht-degree: 0%
 
 ---
@@ -316,12 +316,12 @@ ht-degree: 0%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>Der Zeitstempel, vor dem der Authentifizierungs-Code nicht gültig ist.</td>
+               <td>Der Zeitstempel in Millisekunden, vor dem der Authentifizierungs-Code nicht gültig ist.</td>
                <td>fakultativ</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>Der Zeitstempel, nach dem der Authentifizierungs-Code ungültig ist.</td>
+               <td>Der Zeitstempel in Millisekunden, nach denen der Authentifizierungs-Code nicht mehr gültig ist.</td>
                <td>fakultativ</td>
             </tr>
 </table>
@@ -361,7 +361,7 @@ ht-degree: 0%
 
 ## Beispiele {#samples}
 
-### 1. Authentifizierungssitzung ohne fehlende Parameter erstellen
+### &#x200B;1. Authentifizierungssitzung ohne fehlende Parameter erstellen
 
 >[!BEGINTABS]
 
@@ -405,7 +405,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Authentifizierungssitzung mit fehlenden Parametern erstellen
+### &#x200B;2. Authentifizierungssitzung mit fehlenden Parametern erstellen
 
 >[!BEGINTABS]
 
@@ -447,7 +447,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Authentifizierungssitzung erstellen, während bereits ein gültiges Profil existiert
+### &#x200B;3. Authentifizierungssitzung erstellen, während bereits ein gültiges Profil existiert
 
 >[!BEGINTABS]
 
@@ -488,7 +488,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Erstellen Sie eine Authentifizierungssitzung mit einfachem oder Promotional-TempPass (nicht erforderlich).
+### &#x200B;4. Erstellen Sie eine Authentifizierungssitzung mit einfachem oder Promotional-TempPass (nicht erforderlich).
 
 >[!BEGINTABS]
 
@@ -529,7 +529,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Authentifizierungssitzung erstellen, während die Beeinträchtigung angewendet wird
+### &#x200B;5. Authentifizierungssitzung erstellen, während die Beeinträchtigung angewendet wird
 
 >[!BEGINTABS]
 
