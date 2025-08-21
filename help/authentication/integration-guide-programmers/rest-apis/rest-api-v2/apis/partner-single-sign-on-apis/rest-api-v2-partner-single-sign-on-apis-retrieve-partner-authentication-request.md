@@ -2,9 +2,9 @@
 title: Partnerauthentifizierungsanfrage abrufen
 description: REST API V2 - Partnerauthentifizierungsanfrage abrufen
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 9f872ad94e0aaa0546c8fcac9f88c50f47e10f6e
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '1236'
+source-wordcount: '1252'
 ht-degree: 0%
 
 ---
@@ -135,6 +135,12 @@ ht-degree: 0%
          <br/><br/>
          Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts implizit gesendet.
       </td>
+      <td>fakultativ</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        Die Erstellung der Payload der Besucherkennung wird in der Kopfzeilendokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a> beschrieben.
       <td>fakultativ</td>
    </tr>
    <tr>
@@ -364,7 +370,7 @@ ht-degree: 0%
 
 ## Beispiele {#samples}
 
-### 1. Partnerauthentifizierungsanfrage abrufen
+### &#x200B;1. Partnerauthentifizierungsanfrage abrufen
 
 >[!BEGINTABS]
 
@@ -411,7 +417,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Partner-Authentifizierungsanfrage abrufen, es kommt jedoch zu einer Beeinträchtigung
+### &#x200B;2. Partner-Authentifizierungsanfrage abrufen, es kommt jedoch zu einer Beeinträchtigung
 
 >[!BEGINTABS]
 
@@ -453,7 +459,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Abrufen der Partnerauthentifizierungsanfrage, aber Zurückfallen auf den einfachen Authentifizierungsfluss aufgrund eines fehlenden oder ungültigen Kopfzeilenwerts für den AP-Partner-Framework-Status
+### &#x200B;3. Abrufen der Partnerauthentifizierungsanfrage, aber Zurückfallen auf den einfachen Authentifizierungsfluss aufgrund eines fehlenden oder ungültigen Kopfzeilenwerts für den AP-Partner-Framework-Status
 
 >[!BEGINTABS]
 
@@ -498,7 +504,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Abrufen der Partnerauthentifizierungsanfrage, jedoch aufgrund der Partnerkonfiguration mit Single Sign-on im Adobe Pass-Backend auf den einfachen Authentifizierungsfluss zurückgreifen
+### &#x200B;4. Abrufen der Partnerauthentifizierungsanfrage, jedoch aufgrund der Partnerkonfiguration mit Single Sign-on im Adobe Pass-Backend auf den einfachen Authentifizierungsfluss zurückgreifen
 
 >[!BEGINTABS]
 
@@ -543,7 +549,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Partner-Authentifizierungsanfrage abrufen, aber aufgrund fehlender Parameter auf einfachen Authentifizierungsfluss zurückgreifen
+### &#x200B;5. Partner-Authentifizierungsanfrage abrufen, aber aufgrund fehlender Parameter auf einfachen Authentifizierungsfluss zurückgreifen
 
 >[!BEGINTABS]
 

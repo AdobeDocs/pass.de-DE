@@ -2,9 +2,9 @@
 title: Initiieren des Abmeldens für bestimmte MVPDs
 description: REST API V2 - Initiieren des Abmeldens für eine bestimmte mvpd
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '1009'
+source-wordcount: '1025'
 ht-degree: 0%
 
 ---
@@ -121,6 +121,12 @@ ht-degree: 0%
         <br/><br/>
         Weitere Informationen zu Flüssen, die Single Sign-on mit einem Service-Token aktivieren, finden Sie in der Dokumentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Single Sign-on mit Service-Token-Flüssen</a> .
       </td>
+      <td>fakultativ</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        Die Erstellung der Payload der Besucherkennung wird in der Kopfzeilendokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a> beschrieben.
       <td>fakultativ</td>
    </tr>
    <tr>
@@ -313,7 +319,7 @@ ht-degree: 0%
 
 ## Beispiele {#samples}
 
-### 1. Starten des Abmeldevorgangs für ein bestimmtes MVPD mit einem Abmeldeendpunkt
+### &#x200B;1. Starten des Abmeldevorgangs für ein bestimmtes MVPD mit einem Abmeldeendpunkt
 
 >[!BEGINTABS]
 
@@ -350,7 +356,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Starten des Abmeldevorgangs für ein bestimmtes MVPD ohne Abmeldeendpunkt
+### &#x200B;2. Starten des Abmeldevorgangs für ein bestimmtes MVPD ohne Abmeldeendpunkt
 
 >[!BEGINTABS]
 
@@ -386,7 +392,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Initiieren des einmaligen Abmeldens für bestimmte MVPDs, einschließlich der Profile, die durch einmaliges Anmelden mithilfe der Service-Token-Methode abgerufen wurden
+### &#x200B;3. Initiieren des einmaligen Abmeldens für bestimmte MVPDs, einschließlich der Profile, die durch einmaliges Anmelden mithilfe der Service-Token-Methode abgerufen wurden
 
 >[!IMPORTANT]
 >
@@ -432,7 +438,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Starten des einmaligen Abmeldens für bestimmte MVPDs, einschließlich der Profile, die durch einmaliges Anmelden mithilfe der Platform-Identitätsmethode abgerufen wurden
+### &#x200B;4. Starten des einmaligen Abmeldens für bestimmte MVPDs, einschließlich der Profile, die durch einmaliges Anmelden mithilfe der Platform-Identitätsmethode abgerufen wurden
 
 >[!IMPORTANT]
 >
@@ -478,7 +484,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Starten des Abmeldens für bestimmte MVPDs, einschließlich Profilen, die über Single Sign-on mit Partner (Apple) abgerufen wurden
+### &#x200B;5. Starten des Abmeldens für bestimmte MVPDs, einschließlich Profilen, die über Single Sign-on mit Partner (Apple) abgerufen wurden
 
 >[!BEGINTABS]
 
@@ -514,7 +520,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 6. Starten des Abmeldens für eine bestimmte MVPD, während die Degradation angewendet wird
+### &#x200B;6. Starten des Abmeldens für eine bestimmte MVPD, während die Degradation angewendet wird
 
 >[!BEGINTABS]
 
@@ -550,7 +556,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 7. Starten des Abmeldevorgangs für Basic- oder Promotion-TempPass (nicht erforderlich)
+### &#x200B;7. Starten des Abmeldevorgangs für Basic- oder Promotion-TempPass (nicht erforderlich)
 
 >[!BEGINTABS]
 

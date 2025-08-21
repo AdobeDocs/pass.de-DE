@@ -2,9 +2,9 @@
 title: Erstellen und Abrufen eines Profils mithilfe der Antwort zur Partnerauthentifizierung
 description: REST API V2 - Erstellen und Abrufen von Profilen mit der Antwort der Partnerauthentifizierung
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: be2b75d3dcde92c0b83700705892403291dcab2e
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '779'
+source-wordcount: '795'
 ht-degree: 1%
 
 ---
@@ -120,6 +120,12 @@ ht-degree: 1%
          <br/><br/>
          Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts implizit gesendet.
       </td>
+      <td>fakultativ</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        Die Erstellung der Payload der Besucherkennung wird in der Kopfzeilendokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a> beschrieben.
       <td>fakultativ</td>
    </tr>
    <tr>

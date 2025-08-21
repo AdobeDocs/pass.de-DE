@@ -2,9 +2,9 @@
 title: Authentifizierungssitzung mit Code abrufen
 description: REST API V2 - Authentifizierungssitzung mit Code abrufen
 exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '425'
+source-wordcount: '441'
 ht-degree: 2%
 
 ---
@@ -75,6 +75,12 @@ ht-degree: 2%
          <br/><br/>
          Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts implizit gesendet.
       </td> 
+      <td>fakultativ</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        Die Erstellung der Payload der Besucherkennung wird in der Kopfzeilendokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a> beschrieben.
       <td>fakultativ</td>
    </tr>
    <tr>
@@ -200,7 +206,7 @@ ht-degree: 2%
 
 ## Beispiele {#samples}
 
-### 1. Authentifizierungssitzung ohne fehlende Parameter abrufen
+### &#x200B;1. Authentifizierungssitzung ohne fehlende Parameter abrufen
 
 >[!BEGINTABS]
 
@@ -233,7 +239,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 1. Authentifizierungssitzung mit fehlenden Parametern abrufen
+### &#x200B;1. Authentifizierungssitzung mit fehlenden Parametern abrufen
 
 >[!BEGINTABS]
 
