@@ -2,7 +2,7 @@
 title: Abrufen der Konfiguration für einen bestimmten Dienstleister
 description: REST API V2 - Abrufen der Konfiguration für einen bestimmten Dienstleister
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: 871afc4e7ec04d62590dd574bf4e28122afc01b6
+source-git-commit: 8952283ccce38f70f4f504f07714c583fcb7e272
 workflow-type: tm+mt
 source-wordcount: '725'
 ht-degree: 1%
@@ -74,7 +74,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">ap-device-identifier</td>
       <td>Die Erstellung der Payload der Gerätekennung wird in der Header-Dokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a> beschrieben.</td>
-      <td><i>required</i></td>
+      <td>fakultativ</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">x-device-info</td>
@@ -87,7 +87,7 @@ ht-degree: 1%
          <br/><br/>
          Wenn keine Angabe gemacht wird, verwendet das Backend für die Adobe Pass-Authentifizierung implizit die extrahierten Werte (standardmäßig).
       </td>
-      <td><i>required</i></td>
+      <td>fakultativ</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
@@ -282,7 +282,7 @@ ht-degree: 1%
 
 ## Beispiele {#samples}
 
-### 1. Abrufen der Konfiguration für einen bestimmten Dienstleister
+### &#x200B;1. Abrufen der Konfiguration für einen bestimmten Dienstleister
 
 >[!BEGINTABS]
 
