@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass-Authentifizierung
 user-guide-description: Die Adobe Pass-Authentifizierung ist eine Berechtigungslösung für TV Everywhere. Sie bietet ein modulares Framework, mit dem festgestellt werden kann, ob eine Person, die Zugriff auf eine Ressource anfordert, dazu berechtigt ist.
-source-git-commit: 3a275f64f7f8cffa3bdc0d546c8e2db517840069
+source-git-commit: 2276066d453701dc5e034da29cb971b090688afe
 workflow-type: tm+mt
-source-wordcount: '1266'
+source-wordcount: '1274'
 ht-degree: 3%
 
 ---
@@ -18,6 +18,7 @@ ht-degree: 3%
 - [Produktankündigungen](product-announcements.md)
 - Produktversionen {#product-releases}
    - 2025 {#2025}
+      - [Versionshinweise zur Adobe Pass-Authentifizierung für Android 3.8.0](notes-releases/authn-rn-android-380.md)
       - [Versionshinweise zur Adobe Pass-Authentifizierung 3.4.0](notes-releases/auth-rn-340.md)
       - [Versionshinweise zur Adobe Pass-Authentifizierung 3.3.0](notes-releases/auth-rn-330.md)
       - [Versionshinweise zur Adobe Pass-Authentifizierung 3.2.0](notes-releases/auth-rn-320.md)
