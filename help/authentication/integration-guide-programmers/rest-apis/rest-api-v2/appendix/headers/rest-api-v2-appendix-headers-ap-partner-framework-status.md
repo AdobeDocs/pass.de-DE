@@ -2,9 +2,9 @@
 title: Header - AP-Partner-Framework-Status
 description: REST API v2 - Kopfzeile - AP-Partner-Framework-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 5c912bbbe97fff65d38dbade32cd4554ad8c2fac
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '404'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 > Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-## Übersicht {#overview}
+## Überblick {#overview}
 
 Der <b>AP-Partner-Framework-Status</b>-Anfrage-Header enthält Statusinformationen, die von einem Partner-Framework abgerufen wurden, um Single Sign-on (SSO) zu erzielen.
 
@@ -131,6 +131,8 @@ Der `Base64-encoded` des JSON-Elements, das die folgenden Attribute enthält:
                   Dies ist ein erforderliches Attribut.
                   <br/><br/>
                   Dies ist das Ablaufdatum des authentifizierten Benutzerprofils, falls der Benutzer sich erfolgreich mit einer unterstützten MVPD auf Partnerframework-Ebene angemeldet hat.
+                  <br/><br/>
+                  Dies muss ein Zeitstempel in Millisekunden seit der Unix-Epoche sein (z. B. „1735689600000„), ausgedrückt als Zeichenfolge.
                </td>
             </tr>
             <tr>
