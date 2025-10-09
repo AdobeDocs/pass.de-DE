@@ -2,9 +2,9 @@
 title: Häufig gestellte Fragen zur REST API V2
 description: Häufig gestellte Fragen zur REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
+source-git-commit: 0b8ef6c6b326d1a9de52b24823886c708c2aad33
 workflow-type: tm+mt
-source-wordcount: '9566'
+source-wordcount: '9682'
 ht-degree: 0%
 
 ---
@@ -67,7 +67,21 @@ Die Client-Anwendung muss die vom Benutzer ausgewählte MVPD-Kennung speichern, 
 
 Weitere Informationen finden Sie in der Dokumentation [Konfiguration abrufen](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md) .
 
-#### &#x200B;4. Sollte die Client-Anwendung die Konfigurationsantwortinformationen in einem persistenten Speicher zwischenspeichern? {#configuration-phase-faq4}
+#### &#x200B;4. Ist die Konfiguration für einen Dienstleister, eine Plattform oder einen Benutzer spezifisch? {#configuration-phase-faq4}
+
+Die Konfiguration ist spezifisch für einen [Dienstleister](rest-api-v2-glossary.md#service-provider).
+
+Die Konfiguration ist spezifisch für einen Platform-Typ.
+
+Die Konfiguration ist nicht benutzerspezifisch.
+
+Bei Client-Anwendungen, die eine Server-zu-Server-Architektur verwenden, wird empfohlen, die Konfigurationsantwort (z. B. mit einer TTL von 2 Minuten) für jeden Plattformtyp im Server-seitigen Speicher zwischenzuspeichern. Dies reduziert unnötige Anfragen für jeden Benutzer und verbessert das Gesamterlebnis für den Benutzer.
+
+#### &#x200B;5. Sollte die Client-Anwendung die Konfigurationsantwortinformationen in einem persistenten Speicher zwischenspeichern? {#configuration-phase-faq5}
+
+>[!IMPORTANT]
+> 
+> Bei Client-Anwendungen, die eine Server-zu-Server-Architektur verwenden, wird empfohlen, die Konfigurationsantwort (z. B. mit einer TTL von 2 Minuten) für jeden Plattformtyp im Server-seitigen Speicher zwischenzuspeichern. Dies reduziert unnötige Anfragen für jeden Benutzer und verbessert das Gesamterlebnis für den Benutzer.
 
 Die Client-Anwendung darf die Konfiguration nur abrufen, wenn die Benutzerin bzw. der Benutzer ihre MVPD zur Authentifizierung oder erneuten Authentifizierung auswählen muss.
 
@@ -77,19 +91,19 @@ Die Client-Anwendung sollte die Konfigurationsantwortinformationen in einem Arbe
 * Dem Benutzer wird temporärer Zugriff über die Basis- oder Werbe-Funktion [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) angeboten.
 * Die Benutzerauthentifizierung ist abgelaufen, aber die Client-Anwendung hat die zuvor ausgewählte MVPD als benutzererlebnismotivierte Auswahl zwischengespeichert und fordert die Benutzenden lediglich auf zu bestätigen, dass sie weiterhin Abonnenten dieser MVPD sind.
 
-#### &#x200B;5. Kann die Client-Anwendung eine eigene Liste von MVPDs verwalten? {#configuration-phase-faq5}
+#### &#x200B;6. Kann die Client-Anwendung eine eigene Liste von MVPDs verwalten? {#configuration-phase-faq6}
 
 Die Client-Anwendung kann ihre eigene Liste von MVPDs verwalten, erfordert jedoch, dass die MVPD-IDs mit der Adobe Pass-Authentifizierung synchronisiert bleiben. Es wird daher empfohlen, die von der Adobe Pass-Authentifizierung bereitgestellte Konfiguration zu verwenden, um sicherzustellen, dass die Liste aktuell und korrekt ist.
 
 Die Client-Anwendung erhält einen [Fehler](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2) von der Adobe Pass-Authentifizierungs-REST-API V2, wenn die angegebene MVPD-Kennung ungültig ist oder keine aktive Integration mit dem angegebenen [Dienstleister“ ](rest-api-v2-glossary.md#service-provider).
 
-#### &#x200B;6. Kann die Client-Anwendung die Liste der MVPDs filtern? {#configuration-phase-faq6}
+#### &#x200B;7. Kann die Client-Anwendung die Liste der MVPDs filtern? {#configuration-phase-faq7}
 
 Die Client-Anwendung kann die Liste der in der Konfigurationsantwort bereitgestellten MVPDs filtern, indem ein benutzerdefinierter Mechanismus implementiert wird, der auf ihrer eigenen Geschäftslogik und ihren Anforderungen basiert, z. B. dem Benutzerstandort oder dem Benutzerverlauf der vorherigen Auswahl.
 
 Die Client-Anwendung kann die Liste der MVPDs [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) oder der MVPDs filtern, deren Integration noch in Entwicklung oder Test ist.
 
-#### &#x200B;7. Was passiert, wenn die Integration mit einer MVPD deaktiviert und als inaktiv markiert ist? {#configuration-phase-faq7}
+#### &#x200B;8. Was passiert, wenn die Integration mit einer MVPD deaktiviert und als inaktiv markiert ist? {#configuration-phase-faq8}
 
 Wenn die Integration mit einer MVPD deaktiviert und als inaktiv markiert ist, wird die MVPD aus der Liste der MVPDs entfernt, die in weiteren Konfigurationsantworten bereitgestellt werden, und es sind zwei wichtige Folgen zu berücksichtigen:
 
@@ -98,14 +112,14 @@ Wenn die Integration mit einer MVPD deaktiviert und als inaktiv markiert ist, wi
 
 Die Client-Anwendung erhält einen [Fehler](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2) von der Adobe Pass-Authentifizierungs-REST-API V2, wenn der ausgewählte Benutzer in MVPD keine aktive Integration mehr mit dem angegebenen [Dienstleister](rest-api-v2-glossary.md#service-provider) hat.
 
-#### &#x200B;8. Was passiert, wenn die Integration mit MVPD wieder aktiviert und als aktiv markiert wird? {#configuration-phase-faq8}
+#### &#x200B;9. Was passiert, wenn die Integration mit MVPD wieder aktiviert und als aktiv markiert wird? {#configuration-phase-faq9}
 
 Wenn die Integration mit einer MVPD wieder aktiviert und als aktiviert markiert ist, wird die MVPD wieder in die Liste der MVPDs aufgenommen, die in weiteren Konfigurationsantworten bereitgestellt werden, und es sind zwei wichtige Konsequenzen zu beachten:
 
 * Die nicht authentifizierten Benutzer dieser MVPD können die Authentifizierungsphase mithilfe dieser MVPD erneut abschließen.
 * Die authentifizierten Benutzer dieser MVPD können die Vorautorisierungs-, Autorisierungs- oder Abmeldephasen mit dieser MVPD erneut abschließen.
 
-#### &#x200B;9. Wie kann ich die Integration mit MVPD aktivieren oder deaktivieren? {#configuration-phase-faq9}
+#### &#x200B;10. Wie kann ich die Integration mit MVPD aktivieren oder deaktivieren? {#configuration-phase-faq10}
 
 Dieser Vorgang kann über das Adobe Pass [TVE-Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) von einem Ihrer Organisationsadministratoren oder einem in Ihrem Namen handelnden Adobe Pass-Authentifizierungsmitarbeiter ausgeführt werden.
 
@@ -458,7 +472,7 @@ Weitere Informationen finden Sie in der Dokumentation [TVE Dashboard Integration
 
 ### Häufig gestellte Fragen zur Genehmigungsphase {#authorization-phase-faqs-general}
 
-+++Häufig gestellte Fragen zur Autorisierungsphase
++++Häufig gestellte Fragen zur Genehmigungsphase
 
 #### &#x200B;1. Was ist der Zweck der Genehmigungsphase? {#authorization-phase-faq1}
 
@@ -634,7 +648,7 @@ Selbst wenn die Anfrage im Auftrag eines Geräts von einem Server stammt, muss d
 
 ### Häufig gestellte Fragen (FAQ) {#misc-faqs-general}
 
-+++Häufig gestellte Fragen zu Sonstiges
++++Häufig gestellte Fragen (FAQ)
 
 #### &#x200B;1. Kann ich REST API V2-Anfragen und -Antworten untersuchen und die API testen? {#misc-faq1}
 
@@ -806,7 +820,7 @@ Bei der Migration von REST API V1 zu REST API V2 sind wichtige Änderungen zu be
 
 #### Häufig gestellte Fragen zur Genehmigungsphase {#authorization-phase-faqs-migration-rest-api-v1-to-rest-api-v2}
 
-+++Häufig gestellte Fragen zur Autorisierungsphase
++++Häufig gestellte Fragen zur Genehmigungsphase
 
 ##### &#x200B;1. Welche API-Migrationen auf hoher Ebene sind für die Autorisierungsphase erforderlich? {#authorization-phase-v1-to-v2-faq1}
 
@@ -996,7 +1010,7 @@ Bei der Migration von SDKs zu REST API V2 sind wichtige Änderungen zu berücksi
 
 #### Häufig gestellte Fragen zur Genehmigungsphase {#authorization-phase-faqs-migration-sdk-to-rest-api-v2}
 
-+++Häufig gestellte Fragen zur Autorisierungsphase
++++Häufig gestellte Fragen zur Genehmigungsphase
 
 ##### &#x200B;1. Welche API-Migrationen auf hoher Ebene sind für die Autorisierungsphase erforderlich? {#authorization-phase-sdk-to-v2-faq1}
 
