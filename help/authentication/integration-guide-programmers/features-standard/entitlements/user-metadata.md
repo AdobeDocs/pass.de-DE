@@ -15,13 +15,13 @@ ht-degree: 0%
 >
 > Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Benutzermetadaten beziehen sich auf benutzerspezifische [Attribute](#attributes) (z. B. Postleitzahlen, elterliche Bewertungen, Benutzer-IDs usw.), die von MVPDs verwaltet und Programmierern über die Adobe Pass-Authentifizierung (REST [ V2) bereitgestellt ](#apis).
+Benutzermetadaten beziehen sich auf benutzerspezifische [Attribute](#attributes) (z. B. Postleitzahlen, elterliche Bewertungen, Benutzer-IDs usw.), die von MVPDs verwaltet und Programmierern über die Adobe Pass-Authentifizierung (REST [&#x200B; V2) bereitgestellt &#x200B;](#apis).
 
 Benutzermetadaten werden nach Abschluss des Authentifizierungsflusses verfügbar, aber bestimmte Metadatenattribute können während des Autorisierungsflusses aktualisiert werden, je nach MVPD und dem betreffenden spezifischen Metadatenattribut.
 
 Benutzermetadaten können verwendet werden, um die Personalisierung für Benutzende zu verbessern, können jedoch auch für Analysen verwendet werden. Beispielsweise kann ein Programmierer die Postleitzahl eines Benutzers verwenden, um lokalisierte Nachrichten oder Wetteraktualisierungen bereitzustellen oder elterliche Kontrollen durchzusetzen.
 
-Die Adobe Pass-Authentifizierung normalisiert Benutzermetadatenwerte, wenn MVPDs Daten in verschiedenen Formaten bereitstellen. Für bestimmte Attribute (z. B. Postleitzahl) können die Werte [verschlüsselt) ](#encryption) das Zertifikat eines Programmierers verwendet werden.
+Die Adobe Pass-Authentifizierung normalisiert Benutzermetadatenwerte, wenn MVPDs Daten in verschiedenen Formaten bereitstellen. Für bestimmte Attribute (z. B. Postleitzahl) können die Werte [verschlüsselt) &#x200B;](#encryption) das Zertifikat eines Programmierers verwendet werden.
 
 Die Adobe Pass-Authentifizierung ermöglicht es Programmierern, die in ihren MVPD-Integrationen bereitgestellten Benutzermetadaten zu überprüfen und [verwalten](#management) über das [Adobe Pass TVE-Dashboard](https://experience.adobe.com/#/pass/authentication).
 
@@ -142,7 +142,7 @@ Gehen Sie wie folgt vor, um sicherzustellen, dass das Zertifikat korrekt generie
      openssl x509 -in mycompany-license-temp.pem -inform PEM -out mycompany-license.pem -outform PEM
      ```
 
-1. Verwenden Sie die PEM-Datei[ um das ](#management) über das [Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication) zu konfigurieren oder senden Sie die PEM-Datei an die Adobe Pass-Authentifizierungsstellen.
+1. Verwenden Sie die PEM-Datei[&#x200B; um das &#x200B;](#management) über das [Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication) zu konfigurieren oder senden Sie die PEM-Datei an die Adobe Pass-Authentifizierungsstellen.
 
    * Im nächsten Abschnitt finden Sie weitere Informationen zum Verwalten von Zertifikaten über das [Adobe Pass TVE-Dashboard](https://experience.adobe.com/#/pass/authentication).
 
@@ -158,7 +158,7 @@ Das Adobe Pass TVE-Dashboard ist ein Tool für Adobe Pass-Authentifizierungskund
 
 Um die von einer MVPD zur Verfügung gestellten Benutzermetadatenattribute zu überprüfen und zu verwalten, führen Sie die Schritte in der Dokumentation [TVE Dashboard User Guide for Integrations](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#user-metadata) aus.
 
-Um die Zertifikate zu überprüfen und zu verwalten, die zum Verschlüsseln von Benutzermetadatenattributen verwendet werden, führen Sie die Schritte im [TVE Dashboard-Benutzerhandbuch für ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#certificates) oder im [TVE Dashboard-Benutzerhandbuch für Kanäle](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#certificates) aus.
+Um die Zertifikate zu überprüfen und zu verwalten, die zum Verschlüsseln von Benutzermetadatenattributen verwendet werden, führen Sie die Schritte im [TVE Dashboard-Benutzerhandbuch für &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#certificates) oder im [TVE Dashboard-Benutzerhandbuch für Kanäle](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#certificates) aus.
 
 ## REST-API V2 {#rest-api-v2}
 

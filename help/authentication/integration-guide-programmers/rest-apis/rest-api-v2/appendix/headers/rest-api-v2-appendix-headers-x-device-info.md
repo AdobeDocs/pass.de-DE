@@ -659,7 +659,7 @@ Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 #### Betriebssystem auslösen {#fireos}
 
-Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [ „Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html) ausgeführt wird, finden Sie in den folgenden Dokumenten:
+Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [&#x200B; „Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html) ausgeführt wird, finden Sie in den folgenden Dokumenten:
 
 * Android-Entwicklerdokumentation für [Build](https://developer.android.com/reference/android/os/Build.html)-Klasse.
 * Amazon-Entwicklerdokumentation für [Identifizieren von Fire-TV-](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html))
@@ -692,7 +692,7 @@ Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 #### Roku OS {#rokuos}
 
-Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [ (Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md) ausgeführt wird, finden Sie in den folgenden Dokumenten:
+Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [&#x200B; (Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md) ausgeführt wird, finden Sie in den folgenden Dokumenten:
 
 * Roku-Entwicklerdokumentation für [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md).
 

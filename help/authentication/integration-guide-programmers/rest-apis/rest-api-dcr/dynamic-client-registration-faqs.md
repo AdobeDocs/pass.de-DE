@@ -33,7 +33,7 @@ Beginnen Sie mit diesem Abschnitt, wenn Sie an einem Programm arbeiten, das die 
 
 #### 1. Was ist der Zweck der Registrierungsphase? {#rest-api-v2-access-faq1}
 
-In der Registrierungsphase wird die Client-Anwendung über den DCR-Prozess (Dynamic Client Registration[ für die Adobe Pass-Authentifizierung ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#dcr).
+In der Registrierungsphase wird die Client-Anwendung über den DCR-Prozess (Dynamic Client Registration[&#x200B; für die Adobe Pass-Authentifizierung &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#dcr).
 
 Für den Prozess der dynamischen Client-Registrierung (DCR) muss die Client-Anwendung ein Paar von Client-Anmeldeinformationen abrufen und ein Zugriffstoken als Endziel der Registrierungsphase abrufen.
 
@@ -149,7 +149,7 @@ Um die registrierten Anwendungen (Software-Anweisungen) zu unterscheiden, die in
 
 #### 2. Kann die Client-Anwendung die vorhandenen benutzerdefinierten Schemata wiederverwenden? {#rest-api-v2-migration-faq2}
 
-Die Client-Anwendung kann die vorhandenen benutzerdefinierten Schemata wiederverwenden, die über das Adobe Pass-[TVE-Dashboard) generiert ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard).
+Die Client-Anwendung kann die vorhandenen benutzerdefinierten Schemata wiederverwenden, die über das Adobe Pass-[TVE-Dashboard) generiert &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard).
 
 Weitere Informationen finden Sie in der Dokumentation [TVE Dashboard Channels User Guide](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#custom-schemes) oder [TVE Dashboard Programmers User Guide](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#custom-schemes).
 

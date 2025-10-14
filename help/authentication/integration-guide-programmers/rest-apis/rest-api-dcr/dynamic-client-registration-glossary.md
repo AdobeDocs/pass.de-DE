@@ -26,13 +26,13 @@ In diesem Dokument finden Sie Definitionen für Begriffe, die bei der Integratio
 
 #### Zugriffstoken {#access-token}
 
-Das Zugriffstoken ist ein Token, das von der Adobe Pass-Authentifizierung als Ergebnis des [Dynamische Client-Registrierung (DCR)) generiert ](#dcr), um den Zugriff auf geschützte APIs sicherzustellen.
+Das Zugriffstoken ist ein Token, das von der Adobe Pass-Authentifizierung als Ergebnis des [Dynamische Client-Registrierung (DCR)) generiert &#x200B;](#dcr), um den Zugriff auf geschützte APIs sicherzustellen.
 
 ### C {#c}
 
 #### Client-Anmeldedaten {#client-credentials}
 
-Die Client-Anmeldeinformationen sind ein Satz eindeutiger Werte, die während des [Dynamischen Client-Registrierungsprozesses (DCR)](#dcr) generiert werden und zum Abrufen eines [Zugriffstokens“ verwendet ](#access-token).
+Die Client-Anmeldeinformationen sind ein Satz eindeutiger Werte, die während des [Dynamischen Client-Registrierungsprozesses (DCR)](#dcr) generiert werden und zum Abrufen eines [Zugriffstokens“ verwendet &#x200B;](#access-token).
 
 #### Benutzerdefiniertes Schema {#custom-scheme}
 

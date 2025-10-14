@@ -264,7 +264,7 @@ Erweiterte Fehler-Codes mit einem 5xx „Status“ erscheinen normalerweise, wen
 
 Erweiterte Fehler-Codes enthalten ein Feld „Code“, das eine eindeutige Kennung für die Adobe Pass-Authentifizierung bereitstellt, die mit dem Fehler verknüpft ist.
 
-Die möglichen Werte für das Feld „Code“ werden ([ unten) ](#enhanced-error-codes-list) zwei Listen aggregiert, die auf der integrierten Adobe Pass-Authentifizierungs-API basieren.
+Die möglichen Werte für das Feld „Code“ werden ([&#x200B; unten) &#x200B;](#enhanced-error-codes-list) zwei Listen aggregiert, die auf der integrierten Adobe Pass-Authentifizierungs-API basieren.
 
 ## Listen {#enhanced-error-codes-lists}
 
@@ -356,7 +356,7 @@ In der folgenden Tabelle sind mögliche erweiterte Fehler-Codes aufgeführt, auf
 
 ### (Ältere) SDKs autorisieren die API vorab {#enhanced-error-codes-lists-sdks-preauthorize-api}
 
-Im vorherigen [ finden Sie ](#enhanced-error-codes-list-rest-api-v1) möglichen erweiterten Fehler-Codes, auf die eine Client-Anwendung stoßen könnte, wenn sie mit Adobe Pass Authentication SDKs integriert wird, die die API vorautorisieren.
+Im vorherigen [&#x200B; finden Sie &#x200B;](#enhanced-error-codes-list-rest-api-v1) möglichen erweiterten Fehler-Codes, auf die eine Client-Anwendung stoßen könnte, wenn sie mit Adobe Pass Authentication SDKs integriert wird, die die API vorautorisieren.
 
 ## Umgang mit Antworten {#enhanced-error-codes-response-handling}
 

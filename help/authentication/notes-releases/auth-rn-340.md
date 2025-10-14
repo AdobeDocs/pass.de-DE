@@ -32,7 +32,7 @@ Veröffentlichungsdatum: **09/16/2025 - 09/18/2025**
 #### REST API v2
 
 * Unterstützung für [Experience Cloud ID (ECID) wurde hinzugefügt](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md) um die Benutzeridentifizierungs- und Tracking-Funktionen zu verbessern.
-* Die Kopfzeilen „AP-Device-Identifier“ und „X-Device-Info“ wurden in „optional“ für die REST-API V2 ([-API) ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md).
+* Die Kopfzeilen „AP-Device-Identifier“ und „X-Device-Info“ wurden in „optional“ für die REST-API V2 ([-API) &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md).
 
 #### Fehlerbehebungen
 

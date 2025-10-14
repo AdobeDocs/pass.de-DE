@@ -716,7 +716,7 @@ Während der UIWebView/WKWebView` `Controller mehrere Weiterleitungen durchläuf
 
 Ähnlich wie beim `navigateToUrl:`-Callback wird der `navigateToUrl:useSVC:` vom AccessEnabler ausgelöst, um die Anwendung aufzufordern, einen `SFSafariViewController`-Controller zu instanziieren und die im **`url`** des Callbacks angegebene URL zu laden. Der Callback übergibt den **`url`**, der die URL des Authentifizierungsendpunkts oder die URL des Abmeldeendpunkts darstellt, und den **`useSVC`**, der angibt, dass die Anwendung einen `SFSafariViewController` verwenden muss.
 
-Während der `SFSafariViewController` mehrere Weiterleitungen durchläuft, muss die Anwendung die Aktivität des Controllers überwachen und den Zeitpunkt erkennen, zu dem eine bestimmte, von Ihrer `application's custom scheme` definierte URL geladen wird (z. B. **&#x200B; **`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Beachten Sie, dass diese spezifische benutzerdefinierte URL tatsächlich ungültig ist und nicht vom Controller geladen werden soll. Sie darf von Ihrer Anwendung nur als Signal interpretiert werden, dass der Authentifizierungs- oder Abmeldefluss abgeschlossen ist und dass es sicher ist, den Controller zu schließen. Wenn der Controller diese spezifische benutzerdefinierte URL lädt, muss die Anwendung die `SFSafariViewController` schließen und die Methode &quot;`handleExternalURL:url `&quot; von AccessEnabler aufrufen.
+Während der `SFSafariViewController` mehrere Weiterleitungen durchläuft, muss die Anwendung die Aktivität des Controllers überwachen und den Zeitpunkt erkennen, zu dem eine bestimmte, von Ihrer `application's custom scheme` definierte URL geladen wird (z. B. **&#x200B; &#x200B;**`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Beachten Sie, dass diese spezifische benutzerdefinierte URL tatsächlich ungültig ist und nicht vom Controller geladen werden soll. Sie darf von Ihrer Anwendung nur als Signal interpretiert werden, dass der Authentifizierungs- oder Abmeldefluss abgeschlossen ist und dass es sicher ist, den Controller zu schließen. Wenn der Controller diese spezifische benutzerdefinierte URL lädt, muss die Anwendung die `SFSafariViewController` schließen und die Methode &quot;`handleExternalURL:url `&quot; von AccessEnabler aufrufen.
 
 **Hinweis:** Bitte beachten Sie, dass im Falle des Authentifizierungsflusses dies ein Punkt ist, an dem der Benutzer die Schaltfläche „Zurück“ drücken kann, was dem Abbruch des Authentifizierungsflusses entspricht. In einem solchen Szenario muss die Anwendung die Methode [setSelectedProvider:](#setSelProv) aufrufen, die **`nil`** als Parameter übergibt und dem AccessEnabler die Möglichkeit gibt, seinen Authentifizierungszustandsrechner zurückzusetzen.
 
@@ -744,7 +744,7 @@ Während der `SFSafariViewController` mehrere Weiterleitungen durchläuft, muss 
 * *url:* die URL, die auf die Anmeldeseite von MVPD verweist
 * *useSVC:*, ob die URL in SFSafariViewController geladen werden soll.
 
-**Ausgelöst von:**&#x200B;[ setOptions:](#setOptions) vor [setSelectedProvider:](#setSelProv)
+**Ausgelöst von:**&#x200B;[&#x200B; setOptions:](#setOptions) vor [setSelectedProvider:](#setSelProv)
 
 [Nach oben…](#apis)
 

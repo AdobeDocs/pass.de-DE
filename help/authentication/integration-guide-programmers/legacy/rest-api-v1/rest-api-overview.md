@@ -104,4 +104,4 @@ Folgendes gilt sowohl für Server-zu-Server- als auch für Connected Device-Anwe
 
 ## Mindestanforderungen an das Gerät {#min_reqs}
 
-Um die Adobe Pass-Authentifizierungs-REST-API verwenden zu können, müssen Geräte die technischen Mindestanforderungen erfüllen oder überschreiten, die im Abschnitt REST-API des Dokuments [Adobe Pass-Authentifizierungsplattform / Geräte-/Tools-Anforderungen aufgeführt ](#general_clientless_reqs).
+Um die Adobe Pass-Authentifizierungs-REST-API verwenden zu können, müssen Geräte die technischen Mindestanforderungen erfüllen oder überschreiten, die im Abschnitt REST-API des Dokuments [Adobe Pass-Authentifizierungsplattform / Geräte-/Tools-Anforderungen aufgeführt &#x200B;](#general_clientless_reqs).

@@ -424,6 +424,6 @@ $ curl -H "Authorization: Bearer <access_token_here>" -X DELETE -v "https://mgmt
 
 ## REST-API V2 {#rest-api-v2}
 
-Für die Nutzung der TempPass-Funktion ist die Implementierung von Code-Aktualisierungen erforderlich, um die Interaktion der TV Everywhere-Anwendung (TVE) mit der Adobe Pass-Authentifizierung ([-API V2) ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) ändern.
+Für die Nutzung der TempPass-Funktion ist die Implementierung von Code-Aktualisierungen erforderlich, um die Interaktion der TV Everywhere-Anwendung (TVE) mit der Adobe Pass-Authentifizierung ([-API V2) &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) ändern.
 
-Eine umfassende Anleitung zu diesen Aktualisierungen und den zugehörigen Workflows finden Sie in der Dokumentation [Temporäre ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)&quot;.
+Eine umfassende Anleitung zu diesen Aktualisierungen und den zugehörigen Workflows finden Sie in der Dokumentation [Temporäre &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)&quot;.

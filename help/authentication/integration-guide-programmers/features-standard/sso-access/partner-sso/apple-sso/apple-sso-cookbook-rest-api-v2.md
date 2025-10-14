@@ -55,7 +55,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [ in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md#request)Dokumentation zum Abrufen von Client-Anmeldeinformationen:
+   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md#request)Dokumentation zum Abrufen von Client-Anmeldeinformationen:
    >
    > * Alle _erforderlichen_ Parameter wie `software_statement`
    > * Alle _erforderlichen_ Kopfzeilen wie `Content-Type`, `X-Device-Info`
@@ -65,7 +65,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [ in einer Antwort zum Abrufen von Client](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md#success)Anmeldeinformationen finden Sie in der API-Dokumentation.
+   > Weitere Informationen zu den [&#x200B; in einer Antwort zum Abrufen von Client](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md#success)Anmeldeinformationen finden Sie in der API-Dokumentation.
    >
    > <br/>
    >
@@ -85,7 +85,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [ in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#request)Dokumentation zum Abrufen von Zugriffstoken:
+   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#request)Dokumentation zum Abrufen von Zugriffstoken:
    >
    > * Alle _erforderlichen_ Parameter wie `client_id`, `client_secret` und `grant_type`
    > * Alle _erforderlichen_ Kopfzeilen wie `Content-Type`, `X-Device-Info`
@@ -95,7 +95,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [ in einer Zugriffstoken-Antwort bereitgestellten Informationen finden ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#success) in der API-Dokumentation zum Abrufen von Zugriffstoken .
+   > Weitere Informationen zu den [&#x200B; in einer Zugriffstoken-Antwort bereitgestellten Informationen finden &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#success) in der API-Dokumentation zum Abrufen von Zugriffstoken .
    >
    > <br/>
    >
@@ -115,11 +115,11 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
 +++B. Authentifizierungsphase überprüfen
 
-1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [ entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
+1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [&#x200B; entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [ finden Sie in der Dokumentation ](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
+   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der Dokumentation &#x200B;](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
    >
    > <br/>
    >
@@ -141,7 +141,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [ in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md#Request)Dokumentation zum Abrufen von Profilen:
+   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md#Request)Dokumentation zum Abrufen von Profilen:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier` und `AP-Partner-Framework-Status`
@@ -169,7 +169,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [ finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md#Request)Dokumentation zum Abrufen der Konfiguration für einen bestimmten Dienstleister:
+   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md#Request)Dokumentation zum Abrufen der Konfiguration für einen bestimmten Dienstleister:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier` und `X-Device-Info`
@@ -179,7 +179,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [ in einer Konfigurationsantwort bereitgestellten Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md#Response)Dokumentation zum Abrufen der Konfiguration für einen bestimmten Dienstleister.
+   > Weitere Informationen zu den [&#x200B; in einer Konfigurationsantwort bereitgestellten Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md#Response)Dokumentation zum Abrufen der Konfiguration für einen bestimmten Dienstleister.
    >
    > <br/>
    >
@@ -199,11 +199,11 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
    > * `displayInPlatformPicker`: Gibt an, ob die MVPD in der Apple-Auswahl angezeigt werden kann.
    > * `boardingStatus`: Gibt an, ob MVPD in Apple Single Sign-on integriert ist.
 
-1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [ entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
+1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [&#x200B; entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [ finden Sie in der Dokumentation ](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
+   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der Dokumentation &#x200B;](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
    >
    > <br/>
    >
@@ -225,7 +225,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [ in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md#Request)Dokumentation zum Abrufen von Partnerauthentifizierungsanfragen:
+   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md#Request)Dokumentation zum Abrufen von Partnerauthentifizierungsanfragen:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `partner`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` und `AP-Partner-Framework-Status`
@@ -243,7 +243,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [ in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md#Response)Dokumentation zum Abrufen der Partnerauthentifizierungsanfrage .
+   > Weitere Informationen zu den [&#x200B; in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md#Response)Dokumentation zum Abrufen der Partnerauthentifizierungsanfrage .
    >
    > <br/>
    >
@@ -297,7 +297,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [ finden Sie in der Dokumentation ](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
+   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der Dokumentation &#x200B;](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
    >
    > <br/>
    >
@@ -320,7 +320,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [ finden Sie in der API-Dokumentation ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort:
+   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der API-Dokumentation &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `partner` und `SAMLResponse`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` und `AP-Partner-Framework-Status`
@@ -338,7 +338,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [ in einer Profilantwort enthaltenen Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Response)Dokumentation Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort .
+   > Weitere Informationen zu [&#x200B; in einer Profilantwort enthaltenen Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Response)Dokumentation Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort .
    >
    > <br/>
    >
@@ -368,7 +368,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
 +++ D. Entscheidungsphase
 
-1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [ entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
+1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [&#x200B; entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
 
    >[!IMPORTANT]
    > 
@@ -376,7 +376,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [ finden Sie in der Dokumentation ](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
+   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der Dokumentation &#x200B;](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
    >
    > <br/>
    >
@@ -406,7 +406,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [ in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md#request)Dokumentation zum Abrufen von Vorabautorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md#request)Dokumentation zum Abrufen von Vorabautorisierungsentscheidungen mithilfe bestimmter MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -426,7 +426,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md#response)Dokumentation zum Abrufen von Entscheidungen vor der Autorisierung mit bestimmten mvpd.
+   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md#response)Dokumentation zum Abrufen von Entscheidungen vor der Autorisierung mit bestimmten mvpd.
    >
    > <br/>
    >
@@ -439,7 +439,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
    >
    > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
 
-1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [ entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
+1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [&#x200B; entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
 
    >[!IMPORTANT]
    >
@@ -447,7 +447,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [ finden Sie in der Dokumentation ](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
+   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der Dokumentation &#x200B;](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
    >
    > <br/>
    >
@@ -477,7 +477,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [ in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md#request)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md#request)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -497,7 +497,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md#response)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md#response)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
    >
    > <br/>
    >
@@ -518,7 +518,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden Sie in [ API-Dokumentation ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#request) Initiieren des Abmeldens für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden Sie in [&#x200B; API-Dokumentation &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#request) Initiieren des Abmeldens für bestimmte MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `redirectUrl`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
@@ -535,7 +535,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [ in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#response)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
+   > Weitere Informationen zu den [&#x200B; in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#response)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
    >
    > <br/>
    >

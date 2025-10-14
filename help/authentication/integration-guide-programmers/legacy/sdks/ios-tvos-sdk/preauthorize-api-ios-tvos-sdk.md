@@ -173,7 +173,7 @@ In diesem Abschnitt wird die JSON-Struktur einiger möglicher PreauthorizeRespon
 
 >[!IMPORTANT]
 >
->Die Liste möglicher zusätzlicher Fehler, die über die erweiterte Fehlerberichterstattungsfunktion abgerufen werden, ist unter [Erweiterte Fehlerberichterstattung“ ](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md).
+>Die Liste möglicher zusätzlicher Fehler, die über die erweiterte Fehlerberichterstattungsfunktion abgerufen werden, ist unter [Erweiterte Fehlerberichterstattung“ &#x200B;](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md).
 
 #### Erfolgreich
 

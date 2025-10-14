@@ -23,7 +23,7 @@ ht-degree: 0%
 
 In diesem Dokument werden die Berechtigungs-Workflows beschrieben, die die Anwendung eines Programmierers auf höherer Ebene für eine JavaScript-Integration mit dem Adobe Pass-Authentifizierungs-Service implementiert. Links zur JavaScript-API-Referenz sind überall zu finden.
 
-Beachten Sie außerdem, dass [ Abschnitt „Verwandte ](#related)&quot; einen
+Beachten Sie außerdem, dass [&#x200B; Abschnitt „Verwandte &#x200B;](#related)&quot; einen
 Link zu einem Satz von JavaScript-Code-Beispielen.
 
 ## Berechtigungsflüsse {#entitlement}

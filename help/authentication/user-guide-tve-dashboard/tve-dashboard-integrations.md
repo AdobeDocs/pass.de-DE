@@ -43,7 +43,7 @@ Führen Sie diese Schritte aus, um eine bestimmte Integration zu verwalten.
 
 >[!IMPORTANT]
 >
-> Weitere Informationen [ Aktivieren der Konfigurationsänderungen finden Sie unter ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md) und Push-Änderungen .
+> Weitere Informationen [&#x200B; Aktivieren der Konfigurationsänderungen finden Sie unter &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md) und Push-Änderungen .
 
 ### Endpunktauswahl {#endpoint-selection}
 
@@ -63,7 +63,7 @@ In diesem Abschnitt können Sie die Endpunkte der für die Authentifizierungs-, 
 
 ### Platform-Einstellungen {#platform-settings}
 
-In diesem Abschnitt können Sie Integrationseinstellungen für alle (Plattformen[ anzeigen und ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md#platforms). Sie können diese Einstellungen basierend auf den einzelnen Plattformen ändern. Sie können beispielsweise die Autorisierungs-TTL-Dauer in Android anpassen, während Sie einen Standardwert für eine andere Plattform beibehalten.
+In diesem Abschnitt können Sie Integrationseinstellungen für alle (Plattformen[&#x200B; anzeigen und &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md#platforms). Sie können diese Einstellungen basierend auf den einzelnen Plattformen ändern. Sie können beispielsweise die Autorisierungs-TTL-Dauer in Android anpassen, während Sie einen Standardwert für eine andere Plattform beibehalten.
 
 Jede Eigenschaft in den Platform-Einstellungen übernimmt einen von der MVPD festgelegten Standardwert, kann jedoch bei Bedarf angepasst werden.
 
@@ -125,7 +125,7 @@ Führen Sie diese Schritte aus, um die Authentifizierungs- und Autorisierungs-TT
 
 1. Wählen Sie die Pfeile nach oben und unten aus, um die Dauer für die Anzahl der Tage, Stunden, Minuten und Sekunden in den **AuthN TTL**- und **AuthZ TTL**-Eigenschaften anzupassen.
 
-Die Dauer für **AuthN TTL** und **AuthZ TTL** auf allen Plattformen wird erst nach [Überprüfung und Push-Änderungen) ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
+Die Dauer für **AuthN TTL** und **AuthZ TTL** auf allen Plattformen wird erst nach [Überprüfung und Push-Änderungen) &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 **Plattform-SSO aktivieren**
 
@@ -157,7 +157,7 @@ Führen Sie diese Schritte aus, um SSO für eine bestimmte Integration und Platt
 
    Wenn beispielsweise sowohl die **Single Sign-On aktivieren** als auch **Platform-Berechtigung erzwingen** aktiviert sind und der Benutzer sich dafür entscheidet, Platform den Zugriff auf sein TV Provider-Abonnement zu verweigern, kann die entsprechende Anwendung (der Kanal) das von einer anderen Anwendung (dem Kanal) erhaltene Adobe Pass-Authentifizierungstoken nicht verwenden.
 
-Die **Single Sign-On**-Eigenschaft für eine ausgewählte Plattform wird erst nach ([ und Push-Änderungen) ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
+Die **Single Sign-On**-Eigenschaft für eine ausgewählte Plattform wird erst nach ([&#x200B; und Push-Änderungen) &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 **Startseite-basierte Authentifizierung aktivieren**
 
@@ -183,7 +183,7 @@ Führen Sie diese Schritte aus, um die Home-basierte Authentifizierung für OAut
 >
 >Eine Änderung der Dauer **Eigenschaft „HBA AuthN TTL** sollte vermieden werden. Dies kann zu unerwarteten Fehlern im Autorisierungsprozess führen.
 
-Die **HBA**-Eigenschaft für eine bestimmte MVPD wird erst nach den Änderungen [Überprüfung und Push-Benachrichtigung) aktiviert oder ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
+Die **HBA**-Eigenschaft für eine bestimmte MVPD wird erst nach den Änderungen [Überprüfung und Push-Benachrichtigung) aktiviert oder &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 #### Weitere Eigenschaften hinzufügen {#add-more-properties}
 
@@ -220,7 +220,7 @@ Je nach Geräteplattform und dem gewünschten Benutzererlebnis können für dies
 
 *Anzeigenamen oder Logo-URL-Eigenschaft hinzufügen*
 
-Die Eigenschaft **Anzeigename** oder **Logo-URL** wird erst nach [Überprüfung und Push-Änderungen) ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
+Die Eigenschaft **Anzeigename** oder **Logo-URL** wird erst nach [Überprüfung und Push-Änderungen) &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 **Fordern Sie einen neuen Authentifizierungsfluss beim Wechsel der App (Kanal) an**
 
@@ -232,7 +232,7 @@ Durch Hinzufügen **Auth pro Aggregator** wird die einmalige Anmeldung für den 
 
 *Authentifizierung pro Aggregator-Eigenschaft hinzufügen*
 
-Die **Auth pro Aggregator**-Eigenschaft wird erst nach [Überprüfung und Push-Änderungen) ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
+Die **Auth pro Aggregator**-Eigenschaft wird erst nach [Überprüfung und Push-Änderungen) &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 Wählen Sie nach dem Hinzufügen **Ja**, um die Eigenschaft **Auth pro Aggregator** für eine ausgewählte Integration zu aktivieren.
 
@@ -325,7 +325,7 @@ Gehen Sie wie folgt vor, um bei Ihrer aktuellen Einrichtung eine neue Integratio
 
    Wählen **oben rechts** Abschnitt **Neue Integration erstellen** die Option „Integration speichern“ aus.
 
-Eine neue Integration wird erst nach ([ und Push-Änderungen) ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
+Eine neue Integration wird erst nach ([&#x200B; und Push-Änderungen) &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 
 ## Integration deaktivieren {#disable-integration}
@@ -342,6 +342,6 @@ Gehen Sie wie folgt vor, um eine Integration zu deaktivieren:
 
    *Integration deaktivieren*
 
-Die Integration wird erst nach ([ und Push-Änderungen) ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
+Die Integration wird erst nach ([&#x200B; und Push-Änderungen) &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 Nachdem die Integration deaktiviert wurde, können sich Endbenutzer nicht mehr mit der jeweiligen MVPD authentifizieren oder autorisieren.

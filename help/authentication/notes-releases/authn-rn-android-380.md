@@ -30,4 +30,4 @@ Es werden jedoch keine kritischen Informationen gespeichert und die Wahrscheinli
 
 ## Versionspaket {#release-package-380}
 
-Sie können Android SDK v3.8.0 von ([) ](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library).
+Sie können Android SDK v3.8.0 von ([) &#x200B;](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library).

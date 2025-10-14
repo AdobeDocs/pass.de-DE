@@ -23,7 +23,7 @@ Der Service **Nutzungsberichte zur gleichzeitigen Überwachung** ist über eine 
 
 ## Voraussetzungen {#usage-rep-prerequisites}
 
-Um auf das Produkt „Nutzungsberichte zur Parallelitätsüberwachung“ zugreifen zu können, muss sich ein Kunde zunächst an das [Supportteam“ wenden ](mailto:tve-support@adobe.com) führt die erforderlichen Schritte aus, um Ihnen Zugriff auf das API-Produkt zu ermöglichen. Weitere Informationen finden Sie unter [CMU-API-Zugriff](/help/concurrency-monitoring/cmu-api-access.md).
+Um auf das Produkt „Nutzungsberichte zur Parallelitätsüberwachung“ zugreifen zu können, muss sich ein Kunde zunächst an das [Supportteam“ wenden &#x200B;](mailto:tve-support@adobe.com) führt die erforderlichen Schritte aus, um Ihnen Zugriff auf das API-Produkt zu ermöglichen. Weitere Informationen finden Sie unter [CMU-API-Zugriff](/help/concurrency-monitoring/cmu-api-access.md).
 
 ## Allgemeine Berichtsmetriken und Aufschlüsselungen {#general-rep-metrics-breakdown}
 
@@ -93,4 +93,4 @@ Der Hauptzweck dieses Berichts besteht darin, Ihnen zu helfen, die Auswirkungen 
 
 Um eine optimale Datengenauigkeit zu erzielen, empfehlen wir die auf dieser Seite vorgestellten Berichte [Beispiele für CMU-Berichte](/help/concurrency-monitoring/cm-usage-reports-examples.md)
 
-[^1]: Minimal verfügbare Berichte sind standardmäßig nicht verfügbar. Bitte wenden Sie sich an das [ (Support-Team](mailto:tve-support@adobe.com), um sie anzufordern.
+[^1]: Minimal verfügbare Berichte sind standardmäßig nicht verfügbar. Bitte wenden Sie sich an das [&#x200B; (Support-Team](mailto:tve-support@adobe.com), um sie anzufordern.

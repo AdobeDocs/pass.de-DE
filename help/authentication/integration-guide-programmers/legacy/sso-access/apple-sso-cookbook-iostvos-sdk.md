@@ -21,7 +21,7 @@ ht-degree: 0%
 
 Der Adobe Pass Authentication AccessEnabler iOS/tvOS SDK unterstützt das Partner Single Sign-On (SSO) für Endbenutzer von Client-Anwendungen, die auf iOS, iPadOS oder tvOS ausgeführt werden.
 
-Dieses Dokument dient als Erweiterung der bestehenden Dokumentation zu AccessEnabler iOS/tvOS SDK, die Sie ([) ](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md).
+Dieses Dokument dient als Erweiterung der bestehenden Dokumentation zu AccessEnabler iOS/tvOS SDK, die Sie ([) &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md).
 
 ## Cookbook {#apple-sso-cookbook-iostvos-sdk-cookbook}
 
@@ -95,7 +95,7 @@ Um von dem Apple SSO-Benutzererlebnis zu profitieren, muss die Anwendung den Acc
 >
 > **<u>Tipp</u>** Führen Sie für die Implementierung(en) von iOS/iPadOS/tvOS die folgenden Schritte aus.
 
-1. Die Anwendung müsste [ AccessEnabler](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#initsoftwarestatement-initwithsoftwarestatement) iOS/tvOS SDK initialisieren.
+1. Die Anwendung müsste [&#x200B; AccessEnabler](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#initsoftwarestatement-initwithsoftwarestatement) iOS/tvOS SDK initialisieren.
 
 
 1. Die Anwendung müsste [die aktuelle Anfordererkennung festlegen](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setrequestorrequestorid-setrequestorrequestoridserviceproviders-setreqv3).
@@ -180,7 +180,7 @@ Beim Framework ist ein Fehler aufgetreten.
 
 ### Metadaten {#apple-sso-cookbook-iostvos-sdk-metadata}
 
-Die Anwendung hat die Möglichkeit, mithilfe der API &quot;*tokenSource“ (Benutzermetadaten) aus der AccessEnabler iOS SDK/tvOS-* zu ermitteln, ob die Authentifizierung als Ergebnis [ Anmeldung über ](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getMeta) Partner-SSO erfolgt ist oder nicht.
+Die Anwendung hat die Möglichkeit, mithilfe der API &quot;*tokenSource“ (Benutzermetadaten) aus der AccessEnabler iOS SDK/tvOS-* zu ermitteln, ob die Authentifizierung als Ergebnis [&#x200B; Anmeldung über &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getMeta) Partner-SSO erfolgt ist oder nicht.
 
 ```swift
     ...
@@ -200,12 +200,12 @@ Das [Video Subscriber Account Framework](https://developer.apple.com/documentati
 >
 > **<u>Profi-Tipp</u>** Führen Sie die folgenden Schritte für die tvOS-Implementierung(en) aus.
 
-* Die Anwendung müsste [Abmelden) ](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#logout) AccessEnabler iOS/tvOS SDK starten. Dies würde die Sitzungsbereinigung auf MVPD-Seite nicht erleichtern.
+* Die Anwendung müsste [Abmelden) &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#logout) AccessEnabler iOS/tvOS SDK starten. Dies würde die Sitzungsbereinigung auf MVPD-Seite nicht erleichtern.
 * Die Anwendung muss den Benutzer anweisen/auffordern, sich nur im Falle eines Auslösens des Status-Codes [*VSA203* explizit von *`Settings -> Accounts -> TV Provider`* auf tvOS abzumelden](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md).
 
 >[!TIP]
 >
 > **<u>Profi-Tipp</u>** Führen Sie die folgenden Schritte für die Implementierung(en) von iOS/iPadOS aus.
 
-* Die Anwendung müsste [Abmelden) ](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#logout) AccessEnabler iOS/tvOS SDK starten. Dies würde die Sitzungsbereinigung auf MVPD-Seite erleichtern.
+* Die Anwendung müsste [Abmelden) &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#logout) AccessEnabler iOS/tvOS SDK starten. Dies würde die Sitzungsbereinigung auf MVPD-Seite erleichtern.
 * Die Anwendung müsste den Benutzer nur dann anweisen/auffordern, sich explizit von *`Settings -> TV Provider`* auf iOS/iPadOS abzumelden, wenn der [*VSA203*-Statuscode ausgelöst wird](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md).
