@@ -2,9 +2,9 @@
 title: REST API v2-Checkliste
 description: REST API v2-Checkliste
 exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '2545'
+source-wordcount: '2563'
 ht-degree: 0%
 
 ---
@@ -15,13 +15,17 @@ ht-degree: 0%
 >
 > Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-In diesem Dokument werden die obligatorischen Anforderungen und empfohlenen Vorgehensweisen für Programmierer, die Client-Anwendungen implementieren, die die Adobe Pass-Authentifizierung (REST [&#x200B; V2) verwenden, an einer Stelle &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md).
+In diesem Dokument werden die obligatorischen Anforderungen und empfohlenen Vorgehensweisen für Programmierer, die Client-Anwendungen implementieren, die die Adobe Pass-Authentifizierung (REST [ V2) verwenden, an einer Stelle ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md).
 
 Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihrer Akzeptanzkriterien betrachtet und als Checkliste verwendet werden, um sicherzustellen, dass alle erforderlichen Schritte unternommen wurden, um eine erfolgreiche Integration zu erreichen.
 
+>[!TIP]
+>
+> Informationen zur KI-unterstützten Entwicklung finden Sie in unserem [KI-Regeln](rest-api-v2-ai-rules.md) der diese Anforderungen in strukturierte Regeln für KI-Kodierungs-Assistenten umwandelt.
+
 ## Obligatorische Anforderungen {#mandatory-requirements}
 
-### 1. Phase der Registrierung {#mandatory-requirements-registration-phase}
+### &#x200B;1. Phase der Registrierung {#mandatory-requirements-registration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -46,7 +50,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### 2. Konfigurationsphase {#mandatory-requirements-configuration-phase}
+### &#x200B;2. Konfigurationsphase {#mandatory-requirements-configuration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -66,7 +70,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### 3. Authentifizierungsphase {#mandatory-requirements-authentication-phase}
+### &#x200B;3. Authentifizierungsphase {#mandatory-requirements-authentication-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -96,7 +100,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### 4. (Optional) Phase vor der Autorisierung {#mandatory-requirements-preauthorization-phase}
+### &#x200B;4. (Optional) Phase vor der Autorisierung {#mandatory-requirements-preauthorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -121,7 +125,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### 5. Genehmigungsphase {#mandatory-requirements-authorization-phase}
+### &#x200B;5. Genehmigungsphase {#mandatory-requirements-authorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -141,7 +145,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### 6. Abmeldephase {#mandatory-requirements-logout-phase}
+### &#x200B;6. Abmeldephase {#mandatory-requirements-logout-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -156,7 +160,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### 7. Parameter und Kopfzeilen {#mandatory-requirements-parameters-headers}
+### &#x200B;7. Parameter und Kopfzeilen {#mandatory-requirements-parameters-headers}
 
 <table style="table-layout:auto">
    <tr>
@@ -191,7 +195,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### 8. Umgang mit Fehlern {#mandatory-requirements-error-handling}
+### &#x200B;8. Umgang mit Fehlern {#mandatory-requirements-error-handling}
 
 <table style="table-layout:auto">
    <tr>
@@ -211,7 +215,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### 9. Prüfung {#mandatory-requirements-testing}
+### &#x200B;9. Prüfung {#mandatory-requirements-testing}
 
 <table style="table-layout:auto">
    <tr>
@@ -228,7 +232,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
 
 ## Empfohlene Verfahren {#recommended-practices}
 
-### 1. Phase der Registrierung {#recommended-practices-registration-phase}
+### &#x200B;1. Phase der Registrierung {#recommended-practices-registration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -243,7 +247,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### 2. Konfigurationsphase {#recommended-practices-configuration-phase}
+### &#x200B;2. Konfigurationsphase {#recommended-practices-configuration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -258,7 +262,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### 3. Authentifizierungsphase {#recommended-practices-authentication-phase}
+### &#x200B;3. Authentifizierungsphase {#recommended-practices-authentication-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -283,7 +287,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### 4. (Optional) Phase vor der Autorisierung {#recommended-practices-preauthorization-phase}
+### &#x200B;4. (Optional) Phase vor der Autorisierung {#recommended-practices-preauthorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -298,7 +302,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### 5. Genehmigungsphase {#recommended-practices-authorization-phase}
+### &#x200B;5. Genehmigungsphase {#recommended-practices-authorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -318,7 +322,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### 6. Abmeldephase {#recommended-practices-logout-phase}
+### &#x200B;6. Abmeldephase {#recommended-practices-logout-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -333,7 +337,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### 7. Parameter und Kopfzeilen {#recommended-practices-parameters-headers}
+### &#x200B;7. Parameter und Kopfzeilen {#recommended-practices-parameters-headers}
 
 <table style="table-layout:auto">
    <tr>
@@ -348,7 +352,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### 8. Prüfung {#recommended-practices-testing}
+### &#x200B;8. Prüfung {#recommended-practices-testing}
 
 <table style="table-layout:auto">
    <tr>
