@@ -2,10 +2,10 @@
 title: Authentifizierungssitzung mit Code abrufen
 description: REST API V2 - Authentifizierungssitzung mit Code abrufen
 exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
-source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
+source-git-commit: 92d2befd154b21abf743075c78ad617cff79b7e9
 workflow-type: tm+mt
-source-wordcount: '488'
-ht-degree: 2%
+source-wordcount: '529'
+ht-degree: 1%
 
 ---
 
@@ -163,13 +163,41 @@ ht-degree: 2%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Parameter</td>
+      <td style="background-color: #DEEBFF;"></td>
       <td>
          JSON-Objekt mit den folgenden Attributen:
-         <ul>
-            <li><b>existing</b><br/>Die vorhandenen Parameter, die bereits bereitgestellt wurden.</li>
-            <li><b>missing</b><br/>Die fehlenden Parameter, die angegeben werden müssen, um den Authentifizierungsfluss abzuschließen.</li>
-         </ul>
+         <table style="table-layout:auto">
+            <tr>
+               <th style="background-color: #EFF2F7;">Attribut</th>
+               <th style="background-color: #EFF2F7"></th>
+               <th style="background-color: #EFF2F7;"></th>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">existingParameters</td>
+               <td>Die vorhandenen Parameter, die bereits angegeben wurden.</td>
+               <td><i>required</i></td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">missingParameters</td>
+               <td>Die fehlenden Parameter, die angegeben werden müssen, um den Authentifizierungsfluss abzuschließen.</td>
+               <td>fakultativ</td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">Gerät</td>
+               <td>Die Geräteinformationen, die sich auf das eigentliche Streaming-Gerät beziehen.</td>
+               <td><i>required</i></td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">notBefore</td>
+               <td>Der Zeitstempel in Millisekunden, vor dem der Authentifizierungs-Code nicht gültig ist.</td>
+               <td><i>required</i></td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">notAfter</td>
+               <td>Der Zeitstempel in Millisekunden, nach denen der Authentifizierungs-Code nicht mehr gültig ist.</td>
+               <td><i>required</i></td>
+            </tr>
+         </table>
       </td>
       <td><i>required</i></td>
 </table>
@@ -238,12 +266,74 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=UTF-8
 
 {        
-    "parameters": {
-        "existing": {
-            "mvpd": "Cablevision",
-            "domain": "adobe.com"
-            "redirectUrl": "https://www.adobe.com"        
-        }
+    "existingParameters": {
+        "mvpd": "apassidp",
+        "domain": "adobe.com"
+        "redirectUrl": "https://www.adobe.com",
+        "serviceProvider": "REF30"        
+    },
+    "device": {
+        "type": "Desktop",
+        "model": null,
+        "version": {
+            "major": 0,
+            "minor": 0,
+            "patch": 0,
+            "profile": ""
+        },
+    "hardware": {
+      "name": null,
+      "vendor": "Apple",
+      "version": {
+        "major": 0,
+        "minor": 0,
+        "patch": 0,
+        "profile": ""
+      },
+      "manufacturer": "Apple"
+    },
+    "operatingSystem": {
+      "name": "macOS",
+      "family": "macOS",
+      "vendor": "Apple",
+      "version": {
+        "major": 10,
+        "minor": 15,
+        "patch": 7,
+        "profile": ""
+      }
+    },
+    "browser": {
+      "name": "Chrome",
+      "vendor": "Google",
+      "version": {
+        "major": 140,
+        "minor": 0,
+        "patch": 0,
+        "profile": ""
+      },
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "originalUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    },
+    "display": {
+      "width": 0,
+      "height": 0,
+      "ppi": 0,
+      "name": "DISPLAY",
+      "vendor": null,
+      "version": null,
+      "diagonalSize": null
+    },
+    "applicationId": null,
+    "connection": {
+      "ipAddress": "...",
+      "port": "55161",
+      "secure": false,
+      "type": null
+    }
+    }
+    "notBefore": "1733735289035",
+    "notAfter": "1733737089035"    
 }
 ```
 
@@ -270,13 +360,77 @@ HTTP/1.1 200 OK
 
 Content-Type: application/json;charset=UTF-8
 
-{        
-    "parameters": {
-        "existing": {
-            "mvpd": "Cablevision",
-            "domain": "adobe.com"
-        },
-        "missing": ["redirectUrl"]
+{
+  "missingParameters": [
+    "mvpd"
+  ],
+  "existingParameters": {
+    "redirectUrl": "https://adobe.com",
+    "domainName": "adobe.com",
+    "serviceProvider": "REF30"
+  },
+  "device": {
+    "type": "Desktop",
+    "model": null,
+    "version": {
+      "major": 0,
+      "minor": 0,
+      "patch": 0,
+      "profile": ""
+    },
+    "hardware": {
+      "name": null,
+      "vendor": "Apple",
+      "version": {
+        "major": 0,
+        "minor": 0,
+        "patch": 0,
+        "profile": ""
+      },
+      "manufacturer": "Apple"
+    },
+    "operatingSystem": {
+      "name": "macOS",
+      "family": "macOS",
+      "vendor": "Apple",
+      "version": {
+        "major": 10,
+        "minor": 15,
+        "patch": 7,
+        "profile": ""
+      }
+    },
+    "browser": {
+      "name": "Chrome",
+      "vendor": "Google",
+      "version": {
+        "major": 140,
+        "minor": 0,
+        "patch": 0,
+        "profile": ""
+      },
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "originalUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    },
+    "display": {
+      "width": 0,
+      "height": 0,
+      "ppi": 0,
+      "name": "DISPLAY",
+      "vendor": null,
+      "version": null,
+      "diagonalSize": null
+    },
+    "applicationId": null,
+    "connection": {
+      "ipAddress": "...",
+      "port": "3061",
+      "secure": false,
+      "type": null
+    }
+  },
+  "notBefore": "1761299929958",
+  "notAfter": "1761301729958"
 }
 ```
 
