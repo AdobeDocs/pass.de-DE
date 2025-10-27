@@ -2,9 +2,9 @@
 title: Partnerauthentifizierungsanfrage abrufen
 description: REST API V2 - Partnerauthentifizierungsanfrage abrufen
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 3efe25ddde7dfd2562932f623a2c440d4a059672
 workflow-type: tm+mt
-source-wordcount: '1252'
+source-wordcount: '1280'
 ht-degree: 0%
 
 ---
@@ -292,7 +292,7 @@ ht-degree: 0%
             <tr>
                <td style="background-color: #DEEBFF;">URL</td>
                <td>Die URL, unter der die Client-Anwendung navigieren muss.</td>
-               <td><i>required</i></td>
+               <td>fakultativ</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">Code</td>
@@ -333,6 +333,16 @@ ht-degree: 0%
                <td style="background-color: #DEEBFF;">serviceProvider</td>
                <td>Die interne eindeutige Kennung, die dem Dienstleister während des Onboarding-Prozesses zugeordnet ist.</td>
                <td><i>required</i></td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">notBefore</td>
+               <td>Der Zeitstempel in Millisekunden, vor dem der Authentifizierungs-Code nicht gültig ist.</td>
+               <td>fakultativ</td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">notAfter</td>
+               <td>Der Zeitstempel in Millisekunden, nach denen der Authentifizierungs-Code nicht mehr gültig ist.</td>
+               <td>fakultativ</td>
             </tr>
          </table>
       </td>

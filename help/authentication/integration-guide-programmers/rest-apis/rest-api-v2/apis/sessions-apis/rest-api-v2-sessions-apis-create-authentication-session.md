@@ -2,7 +2,7 @@
 title: Authentifizierungssitzung erstellen
 description: REST API V2 - Authentifizierungssitzung erstellen
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 3efe25ddde7dfd2562932f623a2c440d4a059672
 workflow-type: tm+mt
 source-wordcount: '1080'
 ht-degree: 0%
@@ -303,7 +303,7 @@ ht-degree: 0%
             <tr>
                <td style="background-color: #DEEBFF;">Code</td>
                <td>Der Authentifizierungs-Code, der auf einer sekundären Anwendung verwendet werden kann, um die Authentifizierungssitzung fortzusetzen.</td>
-               <td><i>required</i></td>
+               <td>fakultativ</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">sessionId</td>
