@@ -2,9 +2,9 @@
 title: Erstellen und Abrufen eines Profils mithilfe der Antwort zur Partnerauthentifizierung
 description: REST API V2 - Erstellen und Abrufen von Profilen mit der Antwort der Partnerauthentifizierung
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '847'
+source-wordcount: '850'
 ht-degree: 1%
 
 ---
@@ -133,7 +133,7 @@ ht-degree: 1%
       <td>
          Der von der Client-Anwendung akzeptierte Medientyp.
          <br/><br/>
-         Wenn angegeben, muss es application/json sein.
+         Wenn angegeben, muss es application/json;charset=utf-8 sein.
       </td>
       <td>fakultativ</td>
    </tr>

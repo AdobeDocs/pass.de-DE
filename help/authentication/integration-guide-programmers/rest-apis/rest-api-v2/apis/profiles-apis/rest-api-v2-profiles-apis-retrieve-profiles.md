@@ -2,9 +2,9 @@
 title: Profile abrufen
 description: REST API V2 - Profile abrufen
 exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '888'
+source-wordcount: '891'
 ht-degree: 1%
 
 ---
@@ -127,7 +127,7 @@ ht-degree: 1%
       <td>
          Der von der Client-Anwendung akzeptierte Medientyp.
          <br/><br/>
-         Wenn angegeben, muss es application/json sein.
+         Wenn angegeben, muss es application/json;charset=utf-8 sein.
       </td>
       <td>fakultativ</td>
    </tr>

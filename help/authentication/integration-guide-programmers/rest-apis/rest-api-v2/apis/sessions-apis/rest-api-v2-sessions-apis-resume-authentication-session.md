@@ -2,9 +2,9 @@
 title: Authentifizierungssitzung fortsetzen
 description: REST API V2 - Fortsetzen der Authentifizierungssitzung
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '953'
+source-wordcount: '956'
 ht-degree: 1%
 
 ---
@@ -131,7 +131,7 @@ ht-degree: 1%
       <td>
          Der von der Client-Anwendung akzeptierte Medientyp.
          <br/><br/>
-         Wenn angegeben, muss es application/json sein.
+         Wenn angegeben, muss es application/json;charset=utf-8 sein.
       </td>
       <td>fakultativ</td>
    </tr>

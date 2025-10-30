@@ -2,9 +2,9 @@
 title: Initiieren des Abmeldens für bestimmte MVPDs
 description: REST API V2 - Initiieren des Abmeldens für eine bestimmte mvpd
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1025'
+source-wordcount: '1028'
 ht-degree: 0%
 
 ---
@@ -134,7 +134,7 @@ ht-degree: 0%
       <td>
          Der von der Client-Anwendung akzeptierte Medientyp.
          <br/><br/>
-         Wenn angegeben, muss es application/json sein.
+         Wenn angegeben, muss es application/json;charset=utf-8 sein.
       </td>
       <td>fakultativ</td>
    </tr>
