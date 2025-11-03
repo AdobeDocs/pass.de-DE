@@ -2,7 +2,7 @@
 title: JavaScript SDK-Cookbook
 description: JavaScript SDK-Cookbook
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '957'
 ht-degree: 0%
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 In diesem Dokument werden die Berechtigungs-Workflows beschrieben, die die Anwendung eines Programmierers auf höherer Ebene für eine JavaScript-Integration mit dem Adobe Pass-Authentifizierungs-Service implementiert. Links zur JavaScript-API-Referenz sind überall zu finden.
 
-Beachten Sie außerdem, dass [&#x200B; Abschnitt „Verwandte &#x200B;](#related)&quot; einen
+Beachten Sie außerdem, dass [ Abschnitt „Verwandte ](#related)&quot; einen
 Link zu einem Satz von JavaScript-Code-Beispielen.
 
 ## Berechtigungsflüsse {#entitlement}
@@ -36,7 +36,7 @@ Link zu einem Satz von JavaScript-Code-Beispielen.
 
 </br>
 
-![](../../../../assets/javascript-flows.png)
+![](/help//authentication/assets/javascript-flows.png)
 
 
 ## Voraussetzungen {#prereq}
@@ -86,7 +86,7 @@ Der mvpds-Parameter ist ein Array von Anbietern, die dem Benutzer zur Verfügung
 
 - `selectedProvider(mvpd)`
 
-  **Trigger:** [`getSelectedProvider()`] (#$getSelProv Der Parameter &quot;`mvpd`&quot; enthält Informationen über den von ausgewählten Anbieter.
+  **Trigger:** [`getSelectedProvider()`]&#x200B;(#$getSelProv Der Parameter &quot;`mvpd`&quot; enthält Informationen über den von ausgewählten Anbieter.
 Der Benutzer.
 
 - `setMetadataStatus(metadata, key, arguments)`
@@ -95,7 +95,7 @@ Der Benutzer.
   Der `metadata` Parameter liefert die angeforderten spezifischen Daten, der Schlüsselparameter ist der in der `getMetadata()`Anforderung verwendete Schlüssel und der `arguments` Parameter ist dasselbe Wörterbuch, das an `getMetadata()` übergeben wurde.
 
 
-## 2. Anlauffluss
+## &#x200B;2. Anlauffluss
 
 **I. Laden Sie die AccessEnabler-JavaScript:**
 
@@ -136,7 +136,7 @@ Identität des Programmierers; übergeben Sie die `requestorID` des Programmiere
 
 </br>
 
-## 3. Authentifizierungsfluss</span>
+## &#x200B;3. Authentifizierungsfluss</span>
 
 
 **Abhängigkeit:** Erfolgreicher Aufruf an `setRequestor()` (diese Abhängigkeit gilt auch für alle nachfolgenden Aufrufe).
@@ -149,9 +149,9 @@ Rufen Sie `getAuthentication()` auf, um den Authentifizierungsstatus ODER den Tr
 - `displayProviderDialog()`Wenn der Benutzer noch nicht authentifiziert wurde
 - `setAuthenticationStatus()`, ob die Authentifizierung bereits stattgefunden hat
 
-Der Abschluss des Authentifizierungsflusses wird erreicht, wenn AccessEnabler (mit `isAuthenticated == 1` `setAuthenticationStatus()` aufruft.
+Der Abschluss des Authentifizierungsflusses wird erreicht, wenn AccessEnabler (mit `setAuthenticationStatus()``isAuthenticated == 1` aufruft.
 
-## 4. Autorisierungsfluss {#authz}
+## &#x200B;4. Autorisierungsfluss {#authz}
 
 **dependencies:**
 
@@ -175,7 +175,7 @@ AccessEnabler-Bibliothek)
 - Wenn die Validierung erfolgreich war: Anzeigen/Wiedergabe der angeforderten Medien für den Benutzer.
 - Wenn er fehlschlägt: Das AuthZ-Token war ungültig, die Medienanfrage sollte abgelehnt werden und dem Benutzer sollte eine Fehlermeldung angezeigt werden.
 
-## 5. Anzeigen des Medienflusses {#logout}
+## &#x200B;5. Anzeigen des Medienflusses {#logout}
 
 - Der Benutzer wählt die anzuzeigenden Medien aus.
    - Sind Medien geschützt?
@@ -186,7 +186,7 @@ AccessEnabler-Bibliothek)
 
 ## Konfigurieren der Besucher-ID {#visitorID}
 
-Die Konfiguration eines [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=de)-Werts ist aus analytischer Sicht sehr wichtig. Sobald ein EC VisitorID-Wert festgelegt ist, sendet die SDK diese Informationen zusammen mit jedem Netzwerkaufruf, und der Adobe Pass-Authentifizierungsdienst erfasst diese Informationen. Auf diese Weise können Sie die Analysedaten aus dem Adobe Pass-Authentifizierungs-Service mit allen anderen Analyseberichten korrelieren, die Sie möglicherweise von anderen Programmen oder Websites haben. Informationen zum Einrichten von EC visitorID finden Sie [hier](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=de).
+Die Konfiguration eines [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html)-Werts ist aus analytischer Sicht sehr wichtig. Sobald ein EC VisitorID-Wert festgelegt ist, sendet die SDK diese Informationen zusammen mit jedem Netzwerkaufruf, und der Adobe Pass-Authentifizierungsdienst erfasst diese Informationen. Auf diese Weise können Sie die Analysedaten aus dem Adobe Pass-Authentifizierungs-Service mit allen anderen Analyseberichten korrelieren, die Sie möglicherweise von anderen Programmen oder Websites haben. Informationen zum Einrichten von EC visitorID finden Sie [hier](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
 
 
 >[!NOTE]

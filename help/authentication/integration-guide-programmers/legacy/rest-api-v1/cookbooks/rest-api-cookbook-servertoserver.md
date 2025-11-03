@@ -2,7 +2,7 @@
 title: REST-API-Cookbook (Server-zu-Server)
 description: REST-API-Cookbook-Server zu Server.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1856'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 > Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
 
-## Übersicht {#overview}
+## Überblick {#overview}
 
 In diesem Dokument werden Best Practices für die Implementierung der Adobe Pass-Authentifizierung mithilfe von Server-zu-Server-Architekturen beschrieben.  Es enthält grundlegende Anforderungen, eine schrittweise Implementierung von Flüssen und allgemeine Überlegungen zu Produktionsumgebungen und zum Betrieb.
 
@@ -48,7 +48,7 @@ In einer funktionierenden Server-zu-Server-Lösung sind die folgenden Komponente
 ### Dynamische Client-Registrierung (DCR)
 
 
-Adobe Pass verwendet DCR, um die Client-Kommunikation zwischen einer Programmieranwendung oder einem Server und den Adobe Pass-Services zu sichern. Der DCR-Ablauf ist separat und in der Dokumentation [Übersicht über die dynamische Client-Registrierung](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) beschrieben.
+Adobe Pass verwendet DCR, um die Client-Kommunikation zwischen einer Programmieranwendung oder einem Server und den Adobe Pass-Services zu sichern. Der DCR-Ablauf ist separat und in der Dokumentation [Übersicht über die dynamische Client-Registrierung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) beschrieben.
 
 
 ### Authentifizierung (authN)
@@ -73,7 +73,7 @@ auf ihre MVPD, um festzustellen, ob die Benutzerin bzw. der Benutzer über ein g
 
 Das folgende Diagramm veranschaulicht den Authentifizierungsfluss:
 
-![](../../../../assets/authn-flow.png)
+![](/help//authentication/assets/authn-flow.png)
 
 ### Autorisierung (authZ)
 
@@ -86,7 +86,7 @@ Mit dem Autorisierungsfluss wird bestimmt, ob ein Benutzer berechtigt ist, auf a
 
 Das folgende Diagramm veranschaulicht den Autorisierungsfluss:
 
-![](../../../../assets/authz-flow.png)
+![](/help//authentication/assets/authz-flow.png)
 
 ### Abmelden
 
@@ -98,7 +98,7 @@ Der Anwendung zugeordnet.
 
 Das folgende Diagramm veranschaulicht den Abmeldefluss:
 
-![](../../../../assets/logout-flow.png)
+![](/help//authentication/assets/logout-flow.png)
 
 ### \[Optional\] Vorautorisierung (auch Pre-flight genannt)
 
@@ -106,7 +106,7 @@ Mit der Vorautorisierung können Sie aus einer Reihe von Ressourcen schnell ermi
 
 1. Sobald der Benutzer authentifiziert ist, kann das Streaming-Gerät den Programmierer-Service aufrufen, um den Inhalt anzufordern, zu dem der Benutzer zum Streamen berechtigt ist.
 
-1. Der Programmierer-Service sollte die Adobe Pass-API **preauthorize** mit einer Liste von Ressourcen-IDs aufrufen, bei denen es sich um eine einfache Zeichenfolge handelt, die normalerweise einen Kanal darstellt, den ein Benutzer streamen darf. *Hinweis: Derzeit ist der Aufruf&#x200B;**&#x200B;**&#x200B;preauthorize&#x200B;*** *so konfiguriert, dass die Liste auf fünf (5) Ressourcen-IDs beschränkt ist. Wenn mehr als fünf Ressourcen benötigt werden, können* Aufrufe &#x200B;**&#x200B;**&#x200B;** preauthorize *durchgeführt werden, oder der Aufruf kann so konfiguriert werden, dass er mit einer Vereinbarung der MVPDs mehr als fünf Ressourcen annimmt. Implementierungsprogramme sollten die Kosten eines*-***-***-*sowohl für MVPD-Ressourcen als auch die Antwortzeit für den Programmierer im Auge behalten und ihre Verwendung des -Aufrufs umsichtig strukturieren.*
+1. Der Programmierer-Service sollte die Adobe Pass-API **preauthorize** mit einer Liste von Ressourcen-IDs aufrufen, bei denen es sich um eine einfache Zeichenfolge handelt, die normalerweise einen Kanal darstellt, den ein Benutzer streamen darf. *Hinweis: Derzeit ist der Aufruf****preauthorize*** *so konfiguriert, dass die Liste auf fünf (5) Ressourcen-IDs beschränkt ist. Wenn mehr als fünf Ressourcen benötigt werden, können* Aufrufe ****** preauthorize *durchgeführt werden, oder der Aufruf kann so konfiguriert werden, dass er mit einer Vereinbarung der MVPDs mehr als fünf Ressourcen annimmt. Implementierungsprogramme sollten die Kosten eines*-***-***-*sowohl für MVPD-Ressourcen als auch die Antwortzeit für den Programmierer im Auge behalten und ihre Verwendung des -Aufrufs umsichtig strukturieren.*
 
 1. Der **preauthorize**-Aufruf antwortet dem Programmierer-Service mit einem JSON-Objekt, das einen TRUE- oder FALSE-Wert für jede Ressourcen-ID in der Anfrage enthält, die angibt, ob der Benutzer für den zugehörigen Kanal berechtigt ist oder nicht. *Hinweis: Wenn eine MVPD keine Antwort für eine bestimmte Ressourcen-ID bereitstellt (z. B. aufgrund von Netzwerkfehlern oder Zeitüberschreitungen), wird der Wert standardmäßig auf „FALSE“ gesetzt.*
 
@@ -114,7 +114,7 @@ Mit der Vorautorisierung können Sie aus einer Reihe von Ressourcen schnell ermi
 
 Das folgende Diagramm veranschaulicht den Vorautorisierungsfluss:
 
-![](../../../../assets/preauthz-flow.png)
+![](/help//authentication/assets/preauthz-flow.png)
 
 
 ### \[Optional\] Metadaten
@@ -130,7 +130,7 @@ Das folgende Diagramm veranschaulicht den Vorautorisierungsfluss:
 
 
 
-![](../../../../assets/user-metadata-api-preauthz.png)
+![](/help//authentication/assets/user-metadata-api-preauthz.png)
 
 
 
@@ -155,11 +155,11 @@ Infrastruktur.
 Der Programmierdienst sollte den DNS-Cache auf maximal 30 Sekunden beschränken, falls Adobe Traffic umleiten muss. Dies kann vorkommen, wenn ein Rechenzentrum nicht mehr verfügbar ist.
 
 
-Der Programmierer sollte den öffentlichen IP-Bereich der Produktionsumgebung bereitstellen. Diese werden in eine Zulassungsliste von IPs in der Adobe Pass-Infrastruktur für den Zugriff aufgenommen und von den Richtlinien für die faire API-Nutzung der Adobe verwaltet.
+Der Programmierer sollte den öffentlichen IP-Bereich der Produktionsumgebung bereitstellen. Diese werden in eine Zulassungsliste von IPs in der Adobe Pass-Infrastruktur aufgenommen, auf die zugegriffen werden kann und die von den Adobe-Richtlinien für die faire API-Nutzung verwaltet werden.
 
 ### Staging
 
-Die Staging-Umgebung kann minimal sein, sollte jedoch alle Systemkomponenten und Geschäftslogik enthalten. Es sollte ähnlich wie die Produktion funktionieren und das Testen von Releases außerhalb der Produktion ermöglichen. Idealerweise kann die Staging-Umgebung mit den Adobe Pass-Testumgebungen verbunden werden, damit sie vom Programmierer verwendet werden kann, und durch Adobe, wenn erforderlich, damit wir beim Testen und bei der Fehlerbehebung helfen können.
+Die Staging-Umgebung kann minimal sein, sollte jedoch alle Systemkomponenten und Geschäftslogik enthalten. Es sollte ähnlich wie die Produktion funktionieren und das Testen von Releases außerhalb der Produktion ermöglichen. Idealerweise kann die Staging-Umgebung mit den Adobe Pass-Testumgebungen verbunden werden, damit sie vom Programmierer und bei Bedarf von Adobe verwendet werden kann, sodass wir beim Testen und bei der Fehlerbehebung helfen können.
 
 ### Funktionale Anforderungen
 
@@ -167,13 +167,13 @@ Der Programmierdienst muss genaue Informationen zur Gerätekennung des Geräts w
 
     **X-Forwarded-For : \&lt;client\_ip\>**
     
-    Wobei \&lt;client\_ip\> die öffentliche Client-IP-Adresse ist
+    wobei \&lt;client\_ip\> die öffentliche Client-IP-Adresse ist
     
     
     
     Der Header muss bei **regcode**- und **authorize**-Aufrufen hinzugefügt werden
     
-    Beispiele: 
+    Beispiele :
     
     POST /reggie/v1/{req\_id}/regcode HTTP/1.1
     

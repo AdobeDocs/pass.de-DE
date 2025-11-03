@@ -2,7 +2,7 @@
 title: Authentifizierung mit dem OAuth 2.0-Protokoll
 description: Authentifizierung mit dem OAuth 2.0-Protokoll
 exl-id: 0c1f04fe-51dc-4b4d-88e7-66e8f4609e02
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '1088'
 ht-degree: 0%
@@ -15,9 +15,9 @@ ht-degree: 0%
 >
 >Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-## Übersicht {#overview}
+## Überblick {#overview}
 
-Obwohl SAML immer noch das Hauptprotokoll für die Authentifizierung von US-amerikanischen MVPDs und Unternehmen im Allgemeinen ist, gibt es einen klaren Trend hin zu OAuth 2.0 als primärem Authentifizierungsprotokoll. Das OAuth 2.0-Protokoll (https://tools.ietf.org/html/rfc6749) wurde hauptsächlich für Verbraucherwebsites entwickelt und schnell von Internetriesen wie Facebook, Google und Twitter übernommen.
+Obwohl SAML immer noch das Hauptprotokoll für die Authentifizierung von US-amerikanischen MVPDs und Unternehmen im Allgemeinen ist, gibt es einen klaren Trend hin zu OAuth 2.0 als primärem Authentifizierungsprotokoll. Das OAuth 2.0-Protokoll (https://tools.ietf.org/html/rfc6749) wurde hauptsächlich für Verbraucherwebsites entwickelt und von Internetriesen wie Facebook, Google und Twitter schnell übernommen.
 
 OAuth 2.0 ist äußerst erfolgreich. Dies hat Unternehmen dazu veranlasst, ihre Infrastruktur langsam zu aktualisieren, um sie zu unterstützen.
 
@@ -67,7 +67,7 @@ Im Authentifizierungsfluss kommuniziert die Adobe Pass-Authentifizierung mit der
 
 
 
-![Diagramm zum Anzeigen des Authentifizierungsflusses in der Adobe-Authentifizierung, die mit der MVPD über das in der Konfiguration ausgewählte Protokoll kommuniziert.](../assets/authn-flow.png)
+![Diagramm zum Anzeigen des Authentifizierungsflusses in der Adobe-Authentifizierung, der mit der MVPD über das in der Konfiguration ausgewählte Protokoll kommuniziert.](/help/authentication/assets/authn-flow.png)
 
 **Abbildung 1: OAuth 2.0-Authentifizierungsfluss**
 
@@ -100,7 +100,7 @@ Ein typischer Autorisierungsfluss führt einen Austausch des im AuthNToken gespe
 
 ## Migration von SAML zu OAuth 2.0 {#saml-auth2-migr}
 
-Die Migration von Integrationen von SAML zu OAuth 2.0 erfolgt durch Adobe und MVPD. Auf der Seite des Programmierers sind keine technischen Änderungen erforderlich, obwohl der Programmierer das Co-Branding auf der Anmeldeseite von MVPD überprüfen/testen sollte. Aus Sicht von MVPD sind die Endpunkte und andere Informationen, die in OAuth 2.0-Anforderungen angefordert werden, erforderlich.
+Die Migration von Integrationen von SAML zu OAuth 2.0 wird von Adobe und MVPD durchgeführt. Auf der Seite des Programmierers sind keine technischen Änderungen erforderlich, obwohl der Programmierer das Co-Branding auf der Anmeldeseite von MVPD überprüfen/testen sollte. Aus Sicht von MVPD sind die Endpunkte und andere Informationen, die in OAuth 2.0-Anforderungen angefordert werden, erforderlich.
 
 Um **SSO** beizubehalten, werden Benutzer, die bereits über ein über SAML erhaltenes Authentifizierungstoken verfügen, weiterhin als authentifiziert betrachtet und ihre Anfragen werden über die alte SAML-Integration weitergeleitet.
 
@@ -108,6 +108,6 @@ Aus technischer Sicht:
 
 1. Adobe ermöglicht eine OAuth 2.0-Integration zwischen dem Programmierer und MVPD, OHNE die SAML-Integration zu löschen.
 1. Nach der Aktivierung verwenden alle neuen Benutzer OAuth 2.0-Flüsse.
-1. Bereits authentifizierte Benutzer, die bereits über ein lokales AuthN-Token verfügen, das die SAML-Subjekt-ID enthält, werden automatisch von Adobe über die SAML-Integration weitergeleitet.
+1. Bereits authentifizierte Benutzer, die bereits über ein lokales AuthN-Token verfügen, das die SAML-Betreff-ID enthält, werden von Adobe automatisch über die SAML-Integration weitergeleitet.
 1. Für Benutzende in Schritt 3 behandelt Adobe sie nach Ablauf ihres mit SAML generierten AuthN-Tokens als neue Benutzende und verhält sich wie die Benutzenden in Schritt 2.
-1. Adobe überprüft Nutzungsmuster, um den Zeitpunkt zu bestimmen, zu dem die SAML-Integration sicher deaktiviert werden kann.
+1. Adobe überprüft die Nutzungsmuster, um den Zeitpunkt zu bestimmen, zu dem die SAML-Integration sicher deaktiviert werden kann.

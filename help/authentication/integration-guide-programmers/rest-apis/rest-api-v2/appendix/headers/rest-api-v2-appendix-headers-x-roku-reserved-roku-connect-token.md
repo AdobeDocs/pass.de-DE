@@ -1,7 +1,8 @@
 ---
 title: Kopfzeile - x-roku-reserved-roku-connect-token
 description: REST API v2 - Kopfzeile - x-roku-reserved-roku-connect-token
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+exl-id: 21016d5b-4d10-4018-a82c-f2797b2d9fb9
+source-git-commit: 2afe9ea2a814817757f1ab28484a84466da68d62
 workflow-type: tm+mt
 source-wordcount: '149'
 ht-degree: 0%
@@ -14,7 +15,7 @@ ht-degree: 0%
 >
 > Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-## Übersicht {#overview}
+## Überblick {#overview}
 
 Der <b>X-Roku-Reserved-Roku-Connect-Token</b>-Anfrage-Header enthält die eindeutige Plattformkennung als `JWS` oder `JWE`, die von einem Identitätsdienst oder einer Bibliothek abgerufen wurde, der/die außerhalb von Adobe Pass-Authentifizierungssystemen ausgeführt wird.
 
@@ -46,4 +47,4 @@ Die JSON-Web-Signatur (`JWS`) oder JSON-Web-Verschlüsselung (`JWE`), die ein si
 
 Dies ist für die folgenden Plattformen verfügbar:
 
-* [Roku SSO Cookbook (REST API v2)](../../../../features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
+* [Roku SSO Cookbook (REST API v2)](/help/premium-workflow/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)

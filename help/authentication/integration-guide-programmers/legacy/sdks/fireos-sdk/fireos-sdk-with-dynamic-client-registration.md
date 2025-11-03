@@ -2,7 +2,7 @@
 title: Amazon FireOS SDK mit dynamischer Client-Registrierung
 description: Amazon FireOS SDK mit dynamischer Client-Registrierung
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1169'
 ht-degree: 0%
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 FireOS AccessEnabler SDK for FireTV wurde geändert, um die Authentifizierung ohne Verwendung von Sitzungs-Cookies zu ermöglichen. Da immer mehr Browser den Zugriff auf Cookies einschränken, wurde eine andere Methode benötigt, um die Authentifizierung zu ermöglichen.
 
-**FireOS SDK 3.0.4** ersetzt den aktuellen Mechanismus zur App-Registrierung basierend auf der signierten Anforderer-ID und der Authentifizierung über Sitzungs-Cookies durch [Übersicht über die Dynamic Client-Registrierung](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+**FireOS SDK 3.0.4** ersetzt den aktuellen Mechanismus zur App-Registrierung basierend auf der signierten Anforderer-ID und der Authentifizierung über Sitzungs-Cookies durch [Übersicht über die Dynamic Client-Registrierung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ## API-Änderungen {#API}
@@ -54,11 +54,11 @@ FireOS AccessEnabler SDK for FireTV wurde geändert, um die Authentifizierung oh
 
 ### setRequestor
 
-**Beschreibung:** Legt die Identität des Kanals fest. Jedem Kanal wird bei der Registrierung bei der Adobe für das Adobe Pass-Authentifizierungssystem eine eindeutige ID zugewiesen. Bei SSO- und Remote-Token kann sich der Authentifizierungsstatus ändern, wenn sich die Anwendung im Hintergrund befindet. setRequestor kann erneut aufgerufen werden, wenn die Anwendung in den Vordergrund gebracht wird, um mit dem Systemstatus zu synchronisieren (rufen Sie ein Remote-Token ab, wenn SSO aktiviert ist, oder löschen Sie das lokale Token, wenn eine Abmeldung zwischenzeitlich stattgefunden hat).
+**Beschreibung:** Legt die Identität des Kanals fest. Jedem Kanal wird bei der Registrierung bei Adobe für das Adobe Pass-Authentifizierungssystem eine eindeutige ID zugewiesen. Bei SSO- und Remote-Token kann sich der Authentifizierungsstatus ändern, wenn sich die Anwendung im Hintergrund befindet. setRequestor kann erneut aufgerufen werden, wenn die Anwendung in den Vordergrund gebracht wird, um mit dem Systemstatus zu synchronisieren (rufen Sie ein Remote-Token ab, wenn SSO aktiviert ist, oder löschen Sie das lokale Token, wenn eine Abmeldung zwischenzeitlich stattgefunden hat).
 
 Die Antwort des Servers enthält eine Liste der MVPDs zusammen mit Konfigurationsinformationen, die an die Identität des Kanals angehängt sind. Die Server-Antwort wird intern vom Access Enabler-Code verwendet. Nur der Status des Vorgangs (d. h. ERFOLG/FEHLGESCHLAGEN) wird Ihrer Anwendung über den Callback setRequestorComplete() angezeigt.
 
-Wenn der Parameter *urls* nicht verwendet wird, zielt der resultierende Netzwerkaufruf auf die standardmäßige Service-Provider-URL ab: die Produktionsumgebung der Adobe-Version.
+Wenn der Parameter *urls* nicht verwendet wird, zielt der resultierende Netzwerkaufruf auf die Standard-Service-Provider-URL ab: die Produktionsumgebung der Adobe-Version.
 
 Wenn ein Wert für den Parameter *urls* angegeben wird, zielt der resultierende Netzwerkaufruf auf alle URLs ab, die im Parameter *urls* angegeben sind. Alle Konfigurationsanfragen werden gleichzeitig in separaten Threads ausgelöst. Bei der Kompilierung der Liste der MVPDs hat die erste Antwort Vorrang. Für jede MVPD in der Liste speichert Access Enabler die URL des zugehörigen Dienstleisters. Alle nachfolgenden Berechtigungsanfragen werden an die URL weitergeleitet, die mit dem Dienstleister verknüpft ist, der während der Konfigurationsphase mit dem Ziel-MVPD gepaart wurde.
 
@@ -76,8 +76,8 @@ Wenn ein Wert für den Parameter *urls* angegeben wird, zielt der resultierende 
 
 **Parameter:**
 
-- *RequestorID*: Die eindeutige ID, die dem Kanal zugeordnet ist. Übergeben Sie bei der ersten Registrierung beim Adobe Pass-Authentifizierungs-Service die eindeutige ID, die Sie per Adobe Ihrer Site zugewiesen haben.
-- *urls*: Optionaler Parameter; standardmäßig wird der Adobe-Dienstleister verwendet (http://sp.auth.adobe.com/). Mit diesem Array können Sie Endpunkte für Authentifizierungs- und Autorisierungsdienste angeben, die von Adobe bereitgestellt werden (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Damit können Sie mehrere Instanzen des Authentifizierungs-Service von Adobe Pass angeben. Dabei besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt.
+- *RequestorID*: Die eindeutige ID, die dem Kanal zugeordnet ist. Übergeben Sie die eindeutige ID, die Adobe Ihrer Site zugewiesen hat, wenn Sie sich zum ersten Mal beim Adobe Pass-Authentifizierungs-Service registrieren.
+- *urls*: Optionaler Parameter; standardmäßig wird der Adobe-Dienstleister verwendet (http://sp.auth.adobe.com/). Mit diesem Array können Sie Endpunkte für von Adobe bereitgestellte Authentifizierungs- und Autorisierungsdienste angeben (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Damit können Sie mehrere Instanzen des Authentifizierungs-Service von Adobe Pass angeben. Dabei besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt.
 
 Veraltet:
 

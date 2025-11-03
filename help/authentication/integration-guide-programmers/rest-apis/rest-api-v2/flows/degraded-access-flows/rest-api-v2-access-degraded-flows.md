@@ -2,7 +2,7 @@
 title: Heruntergestufte Zugriffsströme
 description: REST API v2 - Gestörter Zugriffsfluss
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '1615'
 ht-degree: 0%
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 Durch die Beeinträchtigung werden bestimmte Authentifizierungs- und Autorisierungsendpunkte von MVPD vorübergehend umgangen. Normalerweise initiiert der Programmierer diese Aktion, aber unabhängig davon, wer ein Degradation-Ereignis Trigger, hängt die Aktion von vorherigen Vereinbarungen mit den betroffenen MVPDs ab.
 
-Weitere Informationen zur Degradation-Funktion finden Sie in der Dokumentation [Degradation](../../../../features-premium/degraded-access/degradation-feature.md).
+Weitere Informationen zur Degradation-Funktion finden Sie in der Dokumentation [Degradation](/help/premium-workflow/degraded-access/degradation-feature.md).
 
 Aufgrund des eingeschränkten Zugriffs können Sie Abfragen für die folgenden Szenarien durchführen:
 
@@ -55,7 +55,7 @@ Bevor Sie den Authentifizierungsfluss durchführen, während die Beeinträchtigu
 
 Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss zu implementieren, während die Beeinträchtigung angewendet wird, wie im folgenden Diagramm dargestellt.
 
-![Authentifizierung durchführen, während die Beeinträchtigung angewendet wird](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-perform-authentication-while-degradation-is-applied-flow.png)
+![Authentifizierung durchführen, während die Beeinträchtigung angewendet wird](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-perform-authentication-while-degradation-is-applied-flow.png)
 
 *Authentifizierung durchführen, während die Beeinträchtigung angewendet wird*
 
@@ -63,7 +63,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss zu impl
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)Dokumentation zu „Authentifizierungssitzung erstellen“:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)Dokumentation zu „Authentifizierungssitzung erstellen“:
    > 
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd`, `domainName` und `redirectUrl`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -77,7 +77,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss zu impl
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)Dokumentation zu „Authentifizierungssitzung erstellen“.
+   > Weitere Informationen zu den [ in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)Dokumentation zu „Authentifizierungssitzung erstellen“.
    > 
    > <br/>
    > 
@@ -123,7 +123,7 @@ Bevor Sie Autorisierungsentscheidungen abrufen, während die Beeinträchtigung a
 
 Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss zu implementieren, während die Degradation angewendet wird, wie in der folgenden Abbildung dargestellt.
 
-![Abrufen von Autorisierungsentscheidungen, während eine Beeinträchtigung angewendet wird](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-authorization-decisions-while-degradation-is-applied-flow.png)
+![Abrufen von Autorisierungsentscheidungen, während eine Beeinträchtigung angewendet wird](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-authorization-decisions-while-degradation-is-applied-flow.png)
 
 *Abrufen von Autorisierungsentscheidungen, während eine Beeinträchtigung angewendet wird*
 
@@ -131,7 +131,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss zu implemen
 
    >[!IMPORTANT]
    > 
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -143,7 +143,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss zu implemen
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
    >
    > <br/>
    > 
@@ -189,7 +189,7 @@ Bevor Sie Entscheidungen zur Vorabautorisierung abrufen, während die Degradatio
 
 Führen Sie die angegebenen Schritte aus, um den Vorautorisierungsfluss zu implementieren, während der Abbau angewendet wird, wie in der folgenden Abbildung dargestellt.
 
-![Abrufen von Entscheidungen vor der Autorisierung, während eine Degradation angewendet wird](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-preauthorization-decisions-while-degradation-is-applied-flow.png)
+![Abrufen von Entscheidungen vor der Autorisierung, während eine Degradation angewendet wird](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-preauthorization-decisions-while-degradation-is-applied-flow.png)
 
 *Abrufen von Entscheidungen vor der Autorisierung, während eine Degradation angewendet wird*
 
@@ -197,7 +197,7 @@ Führen Sie die angegebenen Schritte aus, um den Vorautorisierungsfluss zu imple
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Vorabautorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Vorabautorisierungsentscheidungen mithilfe bestimmter MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -209,7 +209,7 @@ Führen Sie die angegebenen Schritte aus, um den Vorautorisierungsfluss zu imple
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Entscheidungen vor der Autorisierung mit bestimmten mvpd.
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Entscheidungen vor der Autorisierung mit bestimmten mvpd.
    >
    > <br/>
    >
@@ -263,7 +263,7 @@ Bevor Sie das Profil für eine bestimmte MVPD abrufen, während die Beeinträcht
 
 Führen Sie die angegebenen Schritte aus, um den Profilabruffluss für einen bestimmten MVPD zu implementieren, während die Degradation angewendet wird, wie im folgenden Diagramm dargestellt.
 
-![Profil abrufen, während die Degradierung angewendet wird](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-profile-while-degradation-is-applied-flow.png)
+![Profil abrufen, während die Degradierung angewendet wird](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-profile-while-degradation-is-applied-flow.png)
 
 *Profil abrufen, während die Degradierung angewendet wird*
 
@@ -271,7 +271,7 @@ Führen Sie die angegebenen Schritte aus, um den Profilabruffluss für einen bes
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `mvpd`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -283,7 +283,7 @@ Führen Sie die angegebenen Schritte aus, um den Profilabruffluss für einen bes
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [&#x200B; in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
+   > Weitere Informationen zu [ in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
    >
    > <br/>
    >

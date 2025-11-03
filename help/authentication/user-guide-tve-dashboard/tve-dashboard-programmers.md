@@ -2,7 +2,7 @@
 title: Programmierer
 description: Erfahren Sie mehr über Programmierer und ihre Konfigurationen im TVE-Dashboard.
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1139'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Nutzung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 Der **Programmierer** Abschnitt des TVE-Dashboards ermöglicht Ihnen die Anzeige und Verwaltung der Einstellungen für die [Programmierer](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#programmer), die mit Ihren Kontoberechtigungen verknüpft sind. Sie können auch [einen neuen Programmierer hinzufügen](#add-new-programmer) je nach Ihren Anforderungen.
 
@@ -22,7 +22,7 @@ Auf **Registerkarte** Programmierer“ im linken Bereich wird eine Liste vorhand
 * **Programmierer-ID**: Eine Medienunternehmen-ID im System.
 * **Kanäle**: Die Anzahl der zugehörigen Kanäle, die mit einem Programmierer verknüpft sind.
 
-![Liste der vorhandenen Programmierer](../assets/tve-dashboard/new-tve-dashboard/programmers/programmers-list-view.png)
+![Liste der vorhandenen Programmierer](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmers-list-view.png)
 
 *Liste der vorhandenen Programmierer*
 
@@ -41,13 +41,13 @@ Führen Sie diese Schritte aus, um verschiedene Einstellungen eines bestimmten P
    * [Registrierte Anwendungen](#registered-applications)
    * [Benutzerdefinierte Schemata](#custom-schemes)
 
-   ![Programmierereinstellungen](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-tabs-view.png)
+   ![Programmierereinstellungen](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-tabs-view.png)
 
    *Programmierereinstellungen*
 
 >[!IMPORTANT]
 >
-> Weitere Informationen [&#x200B; Aktivieren der Konfigurationsänderungen finden Sie unter &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md) und Push-Änderungen .
+> Weitere Informationen [ Aktivieren der Konfigurationsänderungen finden Sie unter ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md) und Push-Änderungen .
 
 ### Kanäle {#channels}
 
@@ -55,7 +55,7 @@ Auf dieser Registerkarte wird eine Liste der mit einem aktuellen Programmierer v
 
 Um einen neuen Kanal für den ausgewählten Programmierer hinzuzufügen, wählen Sie **Neuen Kanal hinzufügen** in der oberen rechten Ecke des Abschnitts **Verfügbare Kanäle** aus. Erfahren Sie [wie Sie einen neuen Kanal hinzufügen](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#add-new-channel).
 
-![Neuen Kanal hinzufügen](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-channel-button.png)
+![Neuen Kanal hinzufügen](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-channel-button.png)
 
 *Neuen Kanal hinzufügen*
 
@@ -86,7 +86,7 @@ Gehen Sie wie folgt vor, um ein neues Zertifikat hinzuzufügen.
 
 1. Wählen **oben rechts** Abschnitt **Verfügbare Zertifikate** die Option „Neues Zertifikat hinzufügen aus.
 
-   ![Neues Zertifikat hinzufügen](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-certificate-button.png)
+   ![Neues Zertifikat hinzufügen](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-certificate-button.png)
 
    *Neues Zertifikat hinzufügen*
 
@@ -112,7 +112,7 @@ Gehen Sie wie folgt vor, um ein Zertifikat zu löschen.
 
 1. Wählen Sie **Entfernen** aus.
 
-   ![Das ausgewählte Zertifikat entfernen](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-remove-certificate-button.png)
+   ![Das ausgewählte Zertifikat entfernen](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-remove-certificate-button.png)
 
    *Das ausgewählte Zertifikat entfernen*
 
@@ -122,7 +122,7 @@ Eine neue Konfigurationsänderung wurde erstellt und ist für die Server-Aktuali
 
 ### Registrierte Anwendungen {#registered-applications}
 
-Auf dieser Registerkarte wird eine Liste der registrierten Anwendungen angezeigt. Weitere Informationen zur Verwendung registrierter Anwendungen finden Sie in der Dokumentation [Übersicht über die dynamische Client-Registrierung](../integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Auf dieser Registerkarte wird eine Liste der registrierten Anwendungen angezeigt. Weitere Informationen zur Verwendung registrierter Anwendungen finden Sie in der Dokumentation [Übersicht über die dynamische Client-Registrierung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 Sie können mit registrierten Programmen die folgenden Aktionen durchführen:
 
@@ -135,7 +135,7 @@ Führen Sie diese Schritte aus, um eine neue registrierte Anwendung hinzuzufüge
 
 1. Wählen **oben rechts** Abschnitt **Registrierte Anwendungen“ die Option „Neue Anwendung**.
 
-   ![Neue Anwendung hinzufügen](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-application-button.png)
+   ![Neue Anwendung hinzufügen](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-application-button.png)
 
    *Neue Anwendung hinzufügen*
 
@@ -179,7 +179,7 @@ Führen Sie die folgenden Schritte aus, um eine Software-Erklärung herunterzula
 
 1. Wählen Sie **Herunterladen** aus.
 
-   ![Software-Erklärung herunterladen](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-download-software-statement-button.png)
+   ![Software-Erklärung herunterladen](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-download-software-statement-button.png)
 
    *Software-Erklärung herunterladen*
 
@@ -198,7 +198,7 @@ Führen Sie die folgenden Schritte aus, um ein neues benutzerdefiniertes Schema 
 
 1. Wählen Sie **Neues benutzerdefiniertes Schema erstellen** aus.
 
-   ![Neues benutzerdefiniertes Schema erstellen](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-custom-scheme-button.png)
+   ![Neues benutzerdefiniertes Schema erstellen](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-custom-scheme-button.png)
 
    *Neues benutzerdefiniertes Schema erstellen*
 
@@ -212,7 +212,7 @@ Führen Sie die folgenden Schritte aus, um eine neue Programmiererentität hinzu
 
 1. Wählen **oben rechts im Abschnitt** Programmierer“ **Programmierer** aus.
 
-   ![Einen neuen Programmierer hinzufügen](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-programmer-button.png)
+   ![Einen neuen Programmierer hinzufügen](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-programmer-button.png)
 
    *Einen neuen Programmierer hinzufügen*
 

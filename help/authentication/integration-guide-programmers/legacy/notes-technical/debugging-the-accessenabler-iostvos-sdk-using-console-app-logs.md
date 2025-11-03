@@ -2,7 +2,7 @@
 title: Debugging des AccessEnabler iOS/tvOS SDK mithilfe der Protokolle der Konsolenanwendung
 description: Debugging des AccessEnabler iOS/tvOS SDK mithilfe der Protokolle der Konsolenanwendung
 exl-id: 0dad325e-db15-4ea0-a87a-75409eaf8d46
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '576'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 > Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
 
-## Übersicht
+## Überblick
 
 In diesem Dokument sollen die Entwicklungen des iOS/tvOS SDK-Protokollierungsmechanismus von AccessEnabler erfasst und präsentiert sowie einige nützliche Details zum Debugging des AccessEnabler-Frameworks mithilfe der Protokolle der Konsolenanwendung erläutert werden.
 
@@ -50,19 +50,19 @@ Je nach den untersuchten Problemen möchten Sie möglicherweise die vom AccessEn
 
 Um eine der Protokollmeldungen des AccessEnabler-Frameworks einsehen zu können, **müssen** Sie zunächst die Optionen „Include Info Messages“ und „Include Debug Messages“ im Aktionsabschnitt der Konsolenanwendung auswählen, wie in der Abbildung unten dargestellt.
 
-![](../../../assets/include-info-debug-msg.png)
+![](/help/authentication/assets/include-info-debug-msg.png)
 
 
 Um die Funktionalität der AccessEnabler iOS/tvOS SDK zu debuggen und die AccessEnabler **Framework** Protokolle zu lesen, können Sie:
 
 * Suchen Sie in der Konsolen-App mit **Subsystem**-Option, die dem Wert von com.adobe.pass.AccessEnabler entspricht, wie in der Abbildung unten dargestellt.
 
-![](../../../assets/subsys-console-app.png)
+![](/help/authentication/assets/subsys-console-app.png)
 
 * Suchen Sie in der Konsolen-App mit **Beliebig**-Option, die Folgendes enthält
   [AccessEnabler]-Wert wie in der Abbildung unten dargestellt.
 
-![](../../../assets/any-optn-console-app.png)
+![](/help/authentication/assets/any-optn-console-app.png)
 
 Neben den beiden oben genannten Kriterien können Sie auch die Option **Kategorie** in Verbindung mit **Subsystem** oder **Beliebig (Präfix)** verwenden, um explizit nach **debug**- oder **error**-Meldungen zu suchen, die von AccessEnabler iOS/tvOS SDK ausgegeben werden.
 
@@ -80,4 +80,4 @@ Beachten Sie beim Melden eines Problems an die Adobe Pass-Authentifizierung die 
 * Versuchen Sie, die Reproduktionsschritte anzugeben.
 * Bitte versuchen, die Betriebssystemversionen und Gerätemodelle anzugeben, bei denen das Problem auftritt.
 * Bitte geben Sie die Version des AccessEnabler iOS/tvOS SDK an, bei der das Problem auftritt.
-* Versuchen Sie, alle AccessEnabler iOS/tvOS SDK-Protokollmeldungen mithilfe einer der beiden Optionen im Abschnitt [Einschließlich“ &#x200B;](#including) erfassen und anzuhängen.
+* Versuchen Sie, alle AccessEnabler iOS/tvOS SDK-Protokollmeldungen mithilfe einer der beiden Optionen im Abschnitt [Einschließlich“ ](#including) erfassen und anzuhängen.

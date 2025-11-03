@@ -2,7 +2,7 @@
 title: Kopfzeile - Adobe-subject-token
 description: REST API v2 - Kopfzeile - Adobe-Subject-Token
 exl-id: 906d88f4-3b8f-491a-ab58-8e63d3b958d8
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '166'
 ht-degree: 1%
@@ -15,7 +15,7 @@ ht-degree: 1%
 >
 > Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-## Übersicht {#overview}
+## Überblick {#overview}
 
 Der Anfrage-Header <b>Adobe-Subject-</b>Token`JWS` enthält die eindeutige Plattformkennung, die von einem Identity Service oder einer Bibliothek außerhalb von Adobe Pass-Authentifizierungssystemen abgerufen `JWE`.
 
@@ -47,10 +47,10 @@ Die JSON-Web-Signatur (`JWS`) oder JSON-Web-Verschlüsselung (`JWE`), die ein si
 
 Dies ist für die folgenden Plattformen verfügbar:
 
-* [Amazon SSO-Cookbook (REST API v2)](../../../../features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+* [Amazon SSO-Cookbook (REST API v2)](/help/premium-workflow/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
 
 ## Beispiele {#examples}
 
 Sehen Sie sich die Beispiele für die folgenden Plattformen an:
 
-* [Amazon SSO-Cookbook (REST API v2)](../../../../features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+* [Amazon SSO-Cookbook (REST API v2)](/help/premium-workflow/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)

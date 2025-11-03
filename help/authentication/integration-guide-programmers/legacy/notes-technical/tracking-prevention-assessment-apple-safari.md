@@ -2,7 +2,7 @@
 title: Tracking Prevention Assessment Apple Safari
 description: Tracking Prevention Assessment Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '1849'
 ht-degree: 0%
@@ -33,7 +33,7 @@ für die folgenden Versionen von AccessEnabler JavaScript SDK: v2 (Versionen 2.x
 
 Um diese Einschränkungen abzumildern, können Sie den Benutzer anweisen, die Datenschutzeinstellungen des Safari 10-Browsers zu ändern, und die Option &quot;**Immer zulassen** für den Eintrag &quot;**Cookies und Website-Daten**&quot; auf der Registerkarte „Datenschutz“ des Browsers unter Voreinstellungen verwenden, wie in der folgenden Abbildung dargestellt.
 
-![](../../../assets/always-allow-safari10.png)
+![](/help/authentication/assets/always-allow-safari10.png)
 
 
 ## Safari 11 {#safari11}
@@ -44,9 +44,9 @@ Um diese Einschränkungen abzumildern, können Sie den Benutzer anweisen, die Da
 >
 >Alle oben genannten Angaben aus Abschnitt Safari 10 gelten auch im Falle von Safari 11.
 
-Beginnend mit Safari 11 führt der Browser den Mechanismus [Intelligent Tracking Prevention](https://webkit.org/blog/7675/intelligent-tracking-prevention/)(ITP) ein, eine Technologie, die Heuristiken verwendet, um Website-übergreifendes Tracking zu verhindern. Diese Heuristiken beeinflussen die Art und Weise, wie Cookies von Drittanbietern bei Netzwerkaufrufen gespeichert und wiedergegeben werden, was bedeutet, dass der Safari-Browser je nach Aktivierung des ITP-Mechanismus Cookies von Drittanbietern in der Kommunikation zwischen Client und Server blockiert.
+Beginnend mit Safari 11 führt der Browser den Mechanismus [Intelligent Tracking Prevention](https://webkit.org/blog/7675/intelligent-tracking-prevention/)&#x200B;(ITP) ein, eine Technologie, die Heuristiken verwendet, um Website-übergreifendes Tracking zu verhindern. Diese Heuristiken beeinflussen die Art und Weise, wie Cookies von Drittanbietern bei Netzwerkaufrufen gespeichert und wiedergegeben werden, was bedeutet, dass der Safari-Browser je nach Aktivierung des ITP-Mechanismus Cookies von Drittanbietern in der Kommunikation zwischen Client und Server blockiert.
 
-Der Adobe Pass-Authentifizierungs-Service verwendet Cookies als Teil des Authentifizierungsprozesses und verlässt sich darauf **um zu**. In Situationen, in denen der Authentifizierungsprozess automatisch stattfindet (z. B. bei Temp Pass) oder in Implementierungen, die iFrames oder „refressless“ Funktionen verwenden, werden Adobe-Cookies als Drittanbieter-Cookies betrachtet und standardmäßig blockiert. In allen anderen Fällen verwendet Safari einen Algorithmus für maschinelles Lernen, der alle Cookies des Adobe-Authentifizierungsdienstes als Tracking-Cookies kennzeichnen kann und daher von ITP blockiert wird.
+Der Adobe Pass-Authentifizierungs-Service verwendet Cookies als Teil des Authentifizierungsprozesses und verlässt sich darauf **um zu**. In Situationen, in denen der Authentifizierungsprozess automatisch stattfindet (z. B. bei Temp Pass) oder in Implementierungen, die iFrames oder „refressless“ -Funktionen verwenden, werden die Cookies von Adobe als Drittanbieter-Cookies betrachtet und standardmäßig blockiert. In allen anderen Fällen verwendet Safari einen Algorithmus für maschinelles Lernen, der alle Cookies des Passauthentifizierungs-Service von Adobe als Tracking-Cookies kennzeichnen kann und daher von ITP blockiert wird.
 
 Abschließend kann gesagt werden, dass ein Benutzer des Safari 11-Browsers nach der Aktivierung des Intelligent Tracking Prevention-Mechanismus (ITP) möglicherweise nicht in der Lage ist, sich auf einer Website mit aktivierter Adobe Pass-Authentifizierung zu authentifizieren, insbesondere wenn der Benutzer mehrere Websites mit aktivierter Adobe Pass-Authentifizierung verwendet. Daher kann das Authentifizierungserlebnis des Benutzers unerwartet und undefiniert sein, von der Unfähigkeit zur Anmeldung bis hin zu einer kürzeren als erwarteten Authentifizierungsdauer.
 
@@ -64,12 +64,12 @@ Wenn [N130](/help/authentication/integration-guide-programmers/legacy/error-repo
 
 * Im Fall von Mac OS X High Sierra und höher: Deaktivieren Sie die Option &quot;**Prevent cross-site tracking**&quot; für den Eintrag &quot;**Website tracking**&quot; auf der Registerkarte „Datenschutz“ des Browsers unter „Voreinstellungen“, wie in der folgenden Abbildung dargestellt.
 
-  ![](../../../assets/uncheck-prvnt-cr-st-tr-safari11.png)
+  ![](/help/authentication/assets/uncheck-prvnt-cr-st-tr-safari11.png)
 
 
 * Im Fall von Mac OS X Sierra und vorherigen: Aktivieren Sie die Option &quot;**Immer zulassen** für den Eintrag &quot;**Cookies und Website-Daten**&quot; auf der Registerkarte „Datenschutz“ des Browsers unter „Voreinstellungen“, wie in der folgenden Abbildung dargestellt.
 
-  ![](../../../assets/always-allow-safari11.png)
+  ![](/help/authentication/assets/always-allow-safari11.png)
 
 ## Safari 12 {#safari12}
 
@@ -126,14 +126,14 @@ Von diesem Problem betroffene Anwendungsfälle:
 
 Zum Zeitpunkt der Veröffentlichung ist keine Abmilderung verfügbar oder möglich. Apple hat in Safari 12 (`https://webkit.org/blog/8124/introducing-storage-access-api`) eine „Speicherzugriffs-API“ eingeführt, aber die aktuelle Implementierung gilt nicht für localStorage, sondern nur für Cookies. Darüber hinaus erfordert die API eine Benutzerinteraktion, um verwendet werden zu können. Sobald Sie sie verwenden, wird der Benutzer auch mit einem Berechtigungsdialogfeld ähnlich dem folgenden aufgefordert.
 
-![](../../../assets/permission-dialog-apple.png)
+![](/help/authentication/assets/permission-dialog-apple.png)
 
 
 Zu diesem Zeitpunkt entsprechen diese Safari-Anforderungen/-Aufforderungen nicht unseren UX-Anforderungen und wir haben kein konsistentes Verhalten wie bei anderen Browsern, bei denen SSO „einfach funktioniert“, sobald wir ein Token in einer gemeinsamen lokalen Domain gespeichert haben.
 
 **Temp Pass**
 
-Um die Individualisierungsprobleme abzumildern und eine Benutzerinteraktion zu ermöglichen, empfehlen wir, **[Werbe-Temporärpass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)** interaktiv zu verwenden und mindestens eine zusätzliche Information über den Benutzer bereitzustellen (z. B. E-Mail-Adresse).
+Um die Individualisierungsprobleme abzumildern und eine Benutzerinteraktion zu ermöglichen, empfehlen wir, **[Werbe-Temporärpass](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)** interaktiv zu verwenden und mindestens eine zusätzliche Information über den Benutzer bereitzustellen (z. B. E-Mail-Adresse).
 
 ## Safari 13 {#safari13}
 
@@ -146,9 +146,9 @@ Um die Individualisierungsprobleme abzumildern und eine Benutzerinteraktion zu e
 
 Beginnend mit Safari 13 führt der Browser neue Änderungen am [Intelligent Tracking Prevention](https://webkit.org/blog/7675/intelligent-tracking-prevention/) (ITP) ein, wodurch die Heuristiken hinter dem Mechanismus beim Kennzeichnen von Drittanbieter-Cookies als Tracking-Cookies strenger werden, um Website-übergreifendes Tracking zu verhindern.
 
-Wie in den vorherigen Abschnitten beschrieben, verwendet der Adobe Pass-Authentifizierungs-Service Drittanbieter-Cookies und verlässt sich darauf als Teil der Authentifizierungsprozesse, wenn Implementierungsprogramme die AccessEnabler JavaScript SDK v2 (Versionen 2.x) und AccessEnabler JavaScript SDK v3 (Versionen 3.x) verwenden. Im Vergleich zu früheren Versionen des Safari-Browsers, als ITP nach einiger Zeit aktiv wurde, um „etwas über die Interaktion zwischen dem Benutzer und den beteiligten Parteien (Websites und Adobe des Programmierers) zu erfahren, blockiert der Safari 13-Browser von Anfang an Drittanbieter-Cookies, die in der Kommunikation zwischen Client und Server als Tracking-Cookies gelten.
+Wie in den vorherigen Abschnitten beschrieben, verwendet der Adobe Pass-Authentifizierungs-Service Drittanbieter-Cookies und verlässt sich darauf als Teil der Authentifizierungsprozesse, wenn Implementierungsprogramme die AccessEnabler JavaScript SDK v2 (Versionen 2.x) und AccessEnabler JavaScript SDK v3 (Versionen 3.x) verwenden. Im Vergleich zu früheren Versionen des Safari-Browsers, als ITP nach einiger Zeit aktiv wurde, um „etwas über die Interaktion zwischen dem Benutzer und den beteiligten Parteien (Websites von Programmierern und Adobe) zu erfahren, blockiert der Safari 13-Browser von Anfang an Drittanbieter-Cookies, die in der Kommunikation zwischen Client und Server als Tracking-Cookies gelten.
 
-Abschließend ist festzustellen, dass ein Benutzer des Safari 13-Browsers höchstwahrscheinlich nicht in der Lage sein wird, neue Authentifizierungen auf einer Website mit aktivierter Adobe Pass-Authentifizierung zu initiieren, die eine ältere Version von AccessEnabler JavaScript SDK, v2 (Version 2.x) oder v3 (Version 3.x) verwendet. Dies geschieht, weil alle erforderlichen Adobe-Cookies des Primetime-Authentifizierungsdienstes von ITP blockiert werden, sodass der Dienst die Authentifizierungsanfrage nicht erfüllen kann.
+Abschließend ist festzustellen, dass ein Benutzer des Safari 13-Browsers höchstwahrscheinlich nicht in der Lage sein wird, neue Authentifizierungen auf einer Website mit aktivierter Adobe Pass-Authentifizierung zu initiieren, die eine ältere Version von AccessEnabler JavaScript SDK, v2 (Version 2.x) oder v3 (Version 3.x) verwendet. Dies geschieht, weil alle erforderlichen Cookies des Primetime-Authentifizierungsdienstes von Adobe von ITP blockiert werden, sodass der Dienst die Authentifizierungsanfrage nicht erfüllen kann.
 
 Die AccessEnabler JavaScript SDK v4-Bibliothek (Version 4.x) verwendet keine Drittanbieter-Cookies für den Authentifizierungsprozess. Daher sind ihre Vorgänge durch die Safari 13-Änderungen in keiner Weise betroffen.
 
@@ -164,8 +164,8 @@ Wenn [N130](/help/authentication/integration-guide-programmers/legacy/error-repo
 
 * Im Fall von Mac OS X High Sierra und höher: Deaktivieren Sie die Option &quot;**Prevent cross-site tracking**&quot; für den Eintrag &quot;**Website tracking**&quot; auf der Registerkarte „Datenschutz“ des Browsers unter „Voreinstellungen“, wie in der folgenden Abbildung dargestellt.
 
-  ![](../../../assets/prvnt-cross-site-tr-safari13.png)
+  ![](/help/authentication/assets/prvnt-cross-site-tr-safari13.png)
 
 * Im Fall von Mac OS X Sierra und höher: Aktivieren Sie </span> Option &quot;**Immer zulassen** für den Eintrag &quot;**Cookies und Website-Daten**&quot; auf der Registerkarte „Datenschutz“ des Browsers unter „Voreinstellungen“, wie in der folgenden Abbildung dargestellt.
 
-  ![](../../../assets/always-allow-safari13.png)
+  ![](/help/authentication/assets/always-allow-safari13.png)

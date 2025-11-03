@@ -1,14 +1,13 @@
 ---
 title: Header - AP-Visitor-Identifier
 description: REST API v2 - Kopfzeile - AP-Visitor-Identifier
-exl-id: b4f8e2a1-9c7d-4e3a-8f5b-2d1c6e9a4b7f
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+exl-id: 216f398b-1cfa-4453-a81d-963675b33ec2
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '91'
 ht-degree: 2%
 
 ---
-
 
 # Header - AP-Visitor-Identifier {#header-ap-visitor-identifier}
 
@@ -20,7 +19,7 @@ ht-degree: 2%
 
 Der <b>AP-Visitor-Identifier</b>-Header enthält die `ECID`, die das Client-Programm benötigt, um eine Besucherin oder einen Besucher über Adobe Experience Cloud-Lösungen hinweg eindeutig zu identifizieren.
 
-Weitere Informationen zur Verwendung von ECID bei der Adobe Pass-Authentifizierung finden Sie in der Dokumentation [Verwenden der Experience Cloud-ID bei der Adobe Pass](../../../../features-premium/analytics/exp-cloud-id-authn.md).
+Weitere Informationen zur Verwendung von ECID bei der Adobe Pass-Authentifizierung finden Sie in der Dokumentation [Verwenden der Experience Cloud-ID bei der Adobe Pass](/help/authentication/integration-guide-programmers/features-standard/analytics/exp-cloud-id-authn.md).
 
 ## Syntax {#syntax}
 

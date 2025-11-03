@@ -2,7 +2,7 @@
 title: Authentifizierung starten
 description: Authentifizierung starten
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '306'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) &#x200B;](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -46,7 +46,7 @@ Startet den Authentifizierungsprozess durch Benachrichtigung über ein MVPD-Ausw
 
 | Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/Authenticate | AuthN-Modul | 1. request_id (obligatorisch)</br>2.  mso_id (obligatorisch)</br>3.  reg_code (obligatorisch)</br>4.  domain_name (obligatorisch)</br>5.  noflash=true - </br>    (Obligatorisch, Restparameter)</br>6.  no_iframe=true (obligatorisch, Restparameter)</br>7.  Zusätzliche Parameter (optional)</br>8.  redirect_url (obligatorisch) | GET | Die Anmelde-Web-App wird zur Anmeldeseite von MVPD weitergeleitet. | 302 für vollständige Umleitungsimplementierungen |
+| &lt;SP_FQDN>/api/v1/Authenticate | AuthN-Modul | &#x200B;1. request_id (obligatorisch)</br>2.  mso_id (obligatorisch)</br>3.  reg_code (obligatorisch)</br>4.  domain_name (obligatorisch)</br>5.  noflash=true - </br>    (Obligatorisch, Restparameter)</br>6.  no_iframe=true (obligatorisch, Restparameter)</br>7.  Zusätzliche Parameter (optional)</br>8.  redirect_url (obligatorisch) | GET | Die Anmelde-Web-App wird zur Anmeldeseite von MVPD weitergeleitet. | 302 für vollständige Umleitungsimplementierungen |
 
 {style="table-layout:auto"}
 
@@ -85,7 +85,7 @@ Startet den Authentifizierungsprozess durch Benachrichtigung über ein MVPD-Ausw
 >
 >Der Aufruf kann auch optionale Parameter enthalten, die andere Funktionen ermöglichen, z. B.:
 >
-> * generic\_data - Aktiviert die Verwendung von [Werbe-TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)
+> * generic\_data - Aktiviert die Verwendung von [Werbe-TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)
 >
 >```JSON
 >Example:

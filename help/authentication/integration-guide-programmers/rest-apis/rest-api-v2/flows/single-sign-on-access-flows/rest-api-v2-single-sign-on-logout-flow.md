@@ -2,7 +2,7 @@
 title: Einzelne Abmeldung - Fluss
 description: REST API v2 - Einzelne Abmeldung - Fluss
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '587'
 ht-degree: 0%
@@ -46,7 +46,7 @@ Stellen Sie vor dem Initiieren des einmaligen Abmeldens für eine bestimmte MVPD
 
 Führen Sie die angegebenen Schritte aus, um den einzelnen Abmeldefluss für eine bestimmte MVPD zu implementieren, wie in der folgenden Abbildung dargestellt.
 
-![Initiieren des einmaligen Abmeldens für eine bestimmte mvpd](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-initiate-single-logout-for-specific-mvpd-flow.png)
+![Initiieren des einmaligen Abmeldens für eine bestimmte mvpd](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-initiate-single-logout-for-specific-mvpd-flow.png)
 
 *Initiieren des einmaligen Abmeldens für eine bestimmte mvpd*
 
@@ -54,7 +54,7 @@ Führen Sie die angegebenen Schritte aus, um den einzelnen Abmeldefluss für ein
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden Sie in [&#x200B; API-Dokumentation &#x200B;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) Initiieren des Abmeldens für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden Sie in [ API-Dokumentation ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) Initiieren des Abmeldens für bestimmte MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `redirectUrl`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
@@ -80,7 +80,7 @@ Führen Sie die angegebenen Schritte aus, um den einzelnen Abmeldefluss für ein
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
+   > Weitere Informationen zu den [ in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
    > 
    > <br/>
    > 

@@ -2,7 +2,7 @@
 title: Übersicht über die dynamische Client-Registrierung
 description: Übersicht über die dynamische Client-Registrierung
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
+source-git-commit: 7ca9d8996756086a6b963c0b6d5b0bb64608ecbc
 workflow-type: tm+mt
 source-wordcount: '809'
 ht-degree: 0%
@@ -20,10 +20,10 @@ Die dynamische Client-Registrierung stellt einen Autorisierungsmechanismus dar, 
 Adobe Pass bietet einen dynamischen Client-Registrierungs-Service, der den Zugriff auf die folgenden geschützten APIs ermöglicht:
 
 * Adobe Pass Authentication Management-APIs:
-   * [Temporäre Pass-API zurücksetzen](../../features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-   * [Abbauungs-API](../../features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+   * [Temporäre Pass-API zurücksetzen](/help/premium-workflow/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+   * [Abbauungs-API](/help/premium-workflow/degraded-access/degradation-feature.md#degradation-api-access)
    * [Proxy MVPD API](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
-   * [Berechtigungs-Service-Überwachungs-API](../../features-premium/esm/entitlement-service-monitoring-api.md)
+   * [Berechtigungs-Service-Überwachungs-API](/help/premium-workflow/esm/entitlement-service-monitoring-api.md)
 * Adobe Pass Authentication REST-APIs:
    * [REST-API V2](../rest-api-v2/apis/rest-api-v2-apis-overview.md)
    * [(Legacy) REST-API v1](../../legacy/rest-api-v1/rest-api-reference.md)
@@ -114,6 +114,6 @@ Zusammenfassend lässt sich sagen, dass der dynamische Client-Registrierungs-Aut
 **Fluss**
 
 * Die Client-Anwendung muss die Client-Anmeldeinformationen abrufen, wie in der API[Dokumentation zum Abrufen von Client](apis/dynamic-client-registration-apis-retrieve-client-credentials.md)Anmeldeinformationen beschrieben.
-* Die Client-Anwendung muss das Zugriffstoken abrufen, wie in der API-Dokumentation [Zugriffstoken abrufen](apis/dynamic-client-registration-apis-retrieve-access-token.md) beschrieben.
+* Die Client-Anwendung muss das Zugriffstoken abrufen, wie in der API-Dokumentation [Zugriffstoken abrufen](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) beschrieben.
 
-Weitere Informationen zum [&#x200B; auf Adobe Pass-geschützte APIs finden &#x200B;](flows/dynamic-client-registration-flow.md) in der Dokumentation zum Dynamic Client Registration Flow . Außerdem können Sie sich diese Aufzeichnung des [Webinars](https://my.adobeconnect.com/pzkp8ujrigg1/) ansehen, die mehr Kontext bietet und eine Demo enthält.
+Weitere Informationen zum [ auf Adobe Pass-geschützte APIs finden ](flows/dynamic-client-registration-flow.md) in der Dokumentation zum Dynamic Client Registration Flow . Außerdem können Sie sich diese Aufzeichnung des [Webinars](https://my.adobeconnect.com/pzkp8ujrigg1/) ansehen, die mehr Kontext bietet und eine Demo enthält.

@@ -2,7 +2,7 @@
 title: Registrierung von iOS/tvOS-Anwendungen
 description: Registrierung von iOS/tvOS-Anwendungen
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '632'
 ht-degree: 0%
@@ -22,19 +22,19 @@ ht-degree: 0%
 
 ## Einführung {#Intro}
 
-Ab Version 3.0 der iOS/tvOS AccessEnabler SDK ändern wir den Authentifizierungsmechanismus mit Adobe-Servern. Anstatt ein öffentliches Schlüssel- und Geheimsystem zum Signieren der RequestorID zu verwenden, führen wir das Konzept einer Software-Anweisungszeichenfolge ein, mit der ein Zugriffstoken abgerufen werden kann, das später für alle Aufrufe verwendet wird, die SDK an unsere Server sendet. Zusätzlich zu einer Software-Anweisung benötigen Sie auch ein benutzerdefiniertes URL-Schema für Ihre Anwendung.
+Ab Version 3.0 des iOS/tvOS AccessEnabler SDK ändern wir den Authentifizierungsmechanismus für Adobe-Server. Anstatt ein öffentliches Schlüssel- und Geheimsystem zum Signieren der RequestorID zu verwenden, führen wir das Konzept einer Software-Anweisungszeichenfolge ein, mit der ein Zugriffstoken abgerufen werden kann, das später für alle Aufrufe verwendet wird, die SDK an unsere Server sendet. Zusätzlich zu einer Software-Anweisung benötigen Sie auch ein benutzerdefiniertes URL-Schema für Ihre Anwendung.
 
-Weitere Informationen finden Sie unter [Übersicht über die dynamische Client-Registrierung](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Weitere Informationen finden Sie unter [Übersicht über die dynamische Client-Registrierung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Was ist eine Software-Anweisung? {#Soft_state}
 
-Ein Software-Statement ist ein JWT-Token, das Informationen über Ihr Programm enthält. Jede Anwendung sollte über eine eindeutige Software-Anweisung verfügen, die von unseren Servern verwendet wird, um die Anwendung im Adobe-System zu identifizieren. Die Software-Anweisung muss bei der Initialisierung des AccessEnabler SDK übergeben werden und wird zur Registrierung der Anwendung beim Adobe verwendet. Bei der Registrierung erhält die SDK eine Client-ID und ein Client-Geheimnis, die zum Abrufen eines Zugriffs-Tokens verwendet werden. Jeder Aufruf, den SDK an unsere Server sendet, erfordert ein gültiges Zugriffstoken. Die SDK ist für die Registrierung der Anwendung, den Abruf und die Aktualisierung des Zugriffstokens verantwortlich.
+Ein Software-Statement ist ein JWT-Token, das Informationen über Ihr Programm enthält. Jede Anwendung sollte über eine eindeutige Software-Anweisung verfügen, die von unseren Servern verwendet wird, um die Anwendung im System von Adobe zu identifizieren. Die Software-Anweisung muss beim Initialisieren der AccessEnabler-SDK übergeben werden und wird zur Registrierung der Anwendung bei Adobe verwendet. Bei der Registrierung erhält die SDK eine Client-ID und ein Client-Geheimnis, die zum Abrufen eines Zugriffs-Tokens verwendet werden. Jeder Aufruf, den SDK an unsere Server sendet, erfordert ein gültiges Zugriffstoken. Die SDK ist für die Registrierung der Anwendung, den Abruf und die Aktualisierung des Zugriffstokens verantwortlich.
 
 **Hinweis:** Eine Software-Anweisung ist anwendungsspezifisch und dieselbe Software-Anweisung kann nicht für mehr als eine Anwendung verwendet werden. Bitte beachten Sie, dass die Anweisungen auf Programmierebene auch das gleiche befolgen, d.h. sie können nur für eine Anwendung verwendet werden - egal ob Einkanal oder Mehrkanal. Diese Einschränkung gilt auch für benutzerdefinierte Schemata.
 
 ## Wie erhalte ich ein Software-Statement? {#obtain}
 
-### Wenn Sie Zugriff auf das Adobe-Dashboard haben:
+### Wenn Sie Zugriff auf das TVE-Dashboard von Adobe haben:
 
 - Öffnen Sie Ihren Browser und navigieren Sie zu <https://experience.adobe.com/#/pass/authentication>
 - Navigieren Sie zu `Channels` Abschnitt und wählen Sie Ihren Kanal aus.
@@ -45,7 +45,7 @@ Ein Software-Statement ist ein JWT-Token, das Informationen über Ihr Programm e
 - Es sollte eine Liste mit allen registrierten Anwendungen angezeigt werden. Klicken Sie auf die Schaltfläche   `Download` Schaltfläche in der soeben erstellten Anwendung. Möglicherweise müssen Sie einige Minuten warten, bevor Ihre Software-Erklärung zum Download bereit ist.
 - Eine Textdatei wird heruntergeladen. Verwenden Sie den Inhalt als Software-Erklärung.
 
-Weitere Informationen finden Sie unter [Verwaltung der dynamischen Client-Registrierung](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
+Weitere Informationen finden Sie unter [Verwaltung der dynamischen Client-Registrierung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 ### Wenn Sie keinen Zugriff auf das TVE-Dashboard von Adobe haben:
 
@@ -57,7 +57,7 @@ Nachdem Sie Ihre Software-Anweisung erhalten haben, müssen Sie sie als Paramete
 
 ## Erstellen eines benutzerdefinierten URL-Schemas für Ihr Programm {#generating}
 
-### Wenn Sie Zugriff auf das Adobe-Dashboard haben:
+### Wenn Sie Zugriff auf das TVE-Dashboard von Adobe haben:
 
 - Öffnen Sie Ihren Browser und navigieren Sie zu <https://experience.adobe.com/#/pass/authentication>
 - Navigieren Sie zu `Channels` Abschnitt und wählen Sie Ihren Kanal aus.

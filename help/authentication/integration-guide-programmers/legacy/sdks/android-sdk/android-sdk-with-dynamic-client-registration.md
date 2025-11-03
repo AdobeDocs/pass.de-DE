@@ -2,7 +2,7 @@
 title: Android SDK mit dynamischer Client-Registrierung
 description: Android SDK mit dynamischer Client-Registrierung
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1301'
 ht-degree: 0%
@@ -37,12 +37,12 @@ Bei Android beschränkt die Verwendung benutzerdefinierter Chrome-Registerkarten
 
 ## Dynamische Client-Registrierung {#DCR}
 
-Android SDK v3.0+ verwendet das Verfahren Dynamic Client Registration , wie in [Übersicht über die dynamische Client-Registrierung](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) definiert.
+Android SDK v3.0+ verwendet das Verfahren Dynamic Client Registration , wie in [Übersicht über die dynamische Client-Registrierung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) definiert.
 
 
 ## Funktionsdemo {#Demo}
 
-Sehen Sie sich [dieses Webinar](https://my.adobeconnect.com/pzkp8ujrigg1/) an, das mehr Kontext der Funktion bietet und eine Demo dazu enthält, wie Sie die Software-Anweisungen mithilfe des TVE-Dashboards verwalten und wie Sie die generierten Anweisungen mit einer Demoanwendung testen können, die von Adobe im Rahmen von Android SDK bereitgestellt wird.
+Sehen Sie sich [dieses Webinar](https://my.adobeconnect.com/pzkp8ujrigg1/) an, das mehr Kontext der Funktion bietet und eine Demo dazu enthält, wie Sie die Software-Anweisungen mithilfe des TVE-Dashboards verwalten und wie Sie die generierten Anweisungen mit einer Demoanwendung testen können, die von Adobe als Teil von Android SDK bereitgestellt wird.
 
 ## API-Änderungen {#API}
 
@@ -71,11 +71,11 @@ Hinweis : Der Parameter „redirectUrl“ oder „redirect\_uri“ in „strings
 
 ### setRequestor
 
-**Beschreibung:** Legt die Identität des Kanals fest. Jedem Kanal wird bei der Registrierung bei der Adobe für das Adobe Pass-Authentifizierungssystem eine eindeutige ID zugewiesen. Bei SSO- und Remote-Token kann sich der Authentifizierungsstatus ändern, wenn sich die Anwendung im Hintergrund befindet. setRequestor kann erneut aufgerufen werden, wenn die Anwendung in den Vordergrund gebracht wird, um mit dem Systemstatus zu synchronisieren (rufen Sie ein Remote-Token ab, wenn SSO aktiviert ist, oder löschen Sie das lokale Token, wenn eine Abmeldung zwischenzeitlich stattgefunden hat).
+**Beschreibung:** Legt die Identität des Kanals fest. Jedem Kanal wird bei der Registrierung bei Adobe für das Adobe Pass-Authentifizierungssystem eine eindeutige ID zugewiesen. Bei SSO- und Remote-Token kann sich der Authentifizierungsstatus ändern, wenn sich die Anwendung im Hintergrund befindet. setRequestor kann erneut aufgerufen werden, wenn die Anwendung in den Vordergrund gebracht wird, um mit dem Systemstatus zu synchronisieren (rufen Sie ein Remote-Token ab, wenn SSO aktiviert ist, oder löschen Sie das lokale Token, wenn eine Abmeldung zwischenzeitlich stattgefunden hat).
 
 Die Antwort des Servers enthält eine Liste der MVPDs zusammen mit Konfigurationsinformationen, die an die Identität des Kanals angehängt sind. Die Server-Antwort wird intern vom Access Enabler-Code verwendet. Nur der Status des Vorgangs (d. h. ERFOLG/FEHLGESCHLAGEN) wird Ihrer Anwendung über den Callback setRequestorComplete() angezeigt.
 
-Wenn der Parameter *urls* nicht verwendet wird, zielt der resultierende Netzwerkaufruf auf die Standard-Service-Provider-URL ab: die Adobe-Release-/Produktionsumgebung.
+Wenn der Parameter *urls* nicht verwendet wird, zielt der resultierende Netzwerkaufruf auf die Standard-Service-Provider-URL ab: die Adobe Release-/Produktionsumgebung.
 
 Wenn ein Wert für den Parameter *urls* angegeben wird, zielt der resultierende Netzwerkaufruf auf alle URLs ab, die im Parameter *urls* angegeben sind. Alle Konfigurationsanfragen werden gleichzeitig in separaten Threads ausgelöst. Bei der Kompilierung der Liste der MVPDs hat die erste Antwort Vorrang. Für jede MVPD in der Liste speichert Access Enabler die URL des zugehörigen Dienstleisters. Alle nachfolgenden Berechtigungsanfragen werden an die URL weitergeleitet, die mit dem Dienstleister verknüpft ist, der während der Konfigurationsphase mit dem Ziel-MVPD gepaart wurde.
 
@@ -93,8 +93,8 @@ Wenn ein Wert für den Parameter *urls* angegeben wird, zielt der resultierende 
 
 **Parameter:**
 
-- *RequestorID*: Die eindeutige ID, die dem Kanal zugeordnet ist. Übergeben Sie die eindeutige ID, die von Adobe an Ihre Site zugewiesen wurde, wenn Sie sich zum ersten Mal beim Adobe Pass-Authentifizierungsdienst registriert haben.
-- *urls*: Optionaler Parameter; standardmäßig wird der Adobe-Dienstleister verwendet [http://sp.auth.adobe.com/](http://sp.auth.adobe.com/). Mit diesem Array können Sie Endpunkte für Authentifizierungs- und Autorisierungsdienste angeben, die von Adobe bereitgestellt werden (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Damit können Sie mehrere Instanzen des Authentifizierungs-Service von Adobe Pass angeben. Dabei besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt.
+- *RequestorID*: Die eindeutige ID, die dem Kanal zugeordnet ist. Übergeben Sie die eindeutige ID, die Adobe Ihrer Site zugewiesen hat, wenn Sie sich zum ersten Mal beim Adobe Pass-Authentifizierungs-Service registriert haben.
+- *urls*: Optionaler Parameter; standardmäßig wird der Adobe-Dienstleister verwendet [http://sp.auth.adobe.com/](http://sp.auth.adobe.com/). Mit diesem Array können Sie Endpunkte für von Adobe bereitgestellte Authentifizierungs- und Autorisierungsdienste angeben (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Damit können Sie mehrere Instanzen des Authentifizierungs-Service von Adobe Pass angeben. Dabei besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt.
 
 Veraltet:
 
@@ -136,7 +136,7 @@ Call AccessEnabler.getInstance(appContext,softwareStatement,
 redirectUrl)
 
 
-### 2. Programm konfigurieren
+### &#x200B;2. Programm konfigurieren
 
 a. setRequestor(Requestor\_id)
 

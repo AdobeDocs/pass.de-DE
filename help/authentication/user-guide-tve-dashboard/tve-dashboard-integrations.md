@@ -2,7 +2,7 @@
 title: TVE Dashboard Integrationen
 description: Erfahren Sie mehr über die Integrationen zwischen Ihren Kanälen und MVPDs und wie Sie Integrationen verwalten können.
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '2093'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Nutzung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 Der **Integrationen** des TVE-Dashboards ermöglicht die Anzeige und Verwaltung von Einstellungen für die Integrationen zwischen Kanälen und MVPDs. Sie können auch [eine neue Integration erstellen](#create-new-integration) je nach Ihren Anforderungen.
 
@@ -24,7 +24,7 @@ Auf **Registerkarte** Integrationen“ im linken Bereich wird eine Liste vorhand
 * Kanalname mit Kanal-ID
 * Anzeigename und MVPD-ID für MVPD
 
-![Liste der vorhandenen Integrationen](../assets/tve-dashboard/new-tve-dashboard/integrations/integrations-list.png)
+![Liste der vorhandenen Integrationen](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integrations-list.png)
 
 *Liste der vorhandenen Integrationen*
 
@@ -43,13 +43,13 @@ Führen Sie diese Schritte aus, um eine bestimmte Integration zu verwalten.
 
 >[!IMPORTANT]
 >
-> Weitere Informationen [&#x200B; Aktivieren der Konfigurationsänderungen finden Sie unter &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md) und Push-Änderungen .
+> Weitere Informationen [ Aktivieren der Konfigurationsänderungen finden Sie unter ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md) und Push-Änderungen .
 
 ### Endpunktauswahl {#endpoint-selection}
 
 In diesem Abschnitt können Sie die Endpunkte der für die Authentifizierungs-, Autorisierungs- und Abmeldevorgänge verwendeten MVPD aus den entsprechenden Dropdown-Menüs auswählen.
 
-![Endpunkte für Authentifizierungs-, Autorisierungs- und Abmeldevorgänge](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-endpoint-selection-panel-view.png)
+![Endpunkte für Authentifizierungs-, Autorisierungs- und Abmeldevorgänge](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-endpoint-selection-panel-view.png)
 
 *Endpunkte für Authentifizierungs-, Autorisierungs- und Abmeldevorgänge*
 
@@ -63,7 +63,7 @@ In diesem Abschnitt können Sie die Endpunkte der für die Authentifizierungs-, 
 
 ### Platform-Einstellungen {#platform-settings}
 
-In diesem Abschnitt können Sie Integrationseinstellungen für alle (Plattformen[&#x200B; anzeigen und &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md#platforms). Sie können diese Einstellungen basierend auf den einzelnen Plattformen ändern. Sie können beispielsweise die Autorisierungs-TTL-Dauer in Android anpassen, während Sie einen Standardwert für eine andere Plattform beibehalten.
+In diesem Abschnitt können Sie Integrationseinstellungen für alle (Plattformen[ anzeigen und ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md#platforms). Sie können diese Einstellungen basierend auf den einzelnen Plattformen ändern. Sie können beispielsweise die Autorisierungs-TTL-Dauer in Android anpassen, während Sie einen Standardwert für eine andere Plattform beibehalten.
 
 Jede Eigenschaft in den Platform-Einstellungen übernimmt einen von der MVPD festgelegten Standardwert, kann jedoch bei Bedarf angepasst werden.
 
@@ -87,11 +87,11 @@ Jede Eigenschaft in den Platform-Einstellungen übernimmt einen von der MVPD fes
 
 * **Nicht identifizierte Geräte**: Legen Sie Werte für Eigenschaften fest, die für alle Geräte gelten, bei denen der aktuelle Mechanismus die Plattform nicht genau identifizieren kann. Wenden Sie in solchen Fällen die restriktivsten Regeln an, die von der MVPD definiert wurden.
 
-  ![Kategorie der Plattformen und ihrer Geräte](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-menu.png)
+  ![Kategorie der Plattformen und ihrer Geräte](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-menu.png)
 
   *Kategorie der Plattformen und ihrer Geräte*
 
-Auswählen Klicken Sie <img alt= "Symbol für Vererbungskette" src="../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-inheritance-chain-icon.svg" width="25"> Symbol rechts neben jeder Eigenschaft, um die Eigenschaften zu untersuchen, die für die einzelnen oben beschriebenen Vererbungsebenen verwendet werden.
+Auswählen Klicken Sie <img alt= "Symbol für Vererbungskette" src="/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-inheritance-chain-icon.svg" width="25"> Symbol rechts neben jeder Eigenschaft, um die Eigenschaften zu untersuchen, die für die einzelnen oben beschriebenen Vererbungsebenen verwendet werden.
 
 #### Am häufigsten verwendete Geschäftsabläufe {#most-used-flows}
 
@@ -117,7 +117,7 @@ Führen Sie diese Schritte aus, um die Authentifizierungs- und Autorisierungs-TT
    >
    >Wenn Sie die Dauer von **AuthN TTL** und **AuthZ TTL** für eine Plattformkategorie oder eine bestimmte Plattform ändern möchten, wählen Sie die Plattform entsprechend aus.
 
-   ![Ändern der AuthN-TTL-AuthZ-TTL-Dauer auf allen Plattformen](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-authn-ttl-authz-ttl-properties.png)
+   ![Ändern der AuthN-TTL-AuthZ-TTL-Dauer auf allen Plattformen](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-authn-ttl-authz-ttl-properties.png)
 
    *Ändern der AuthN-TTL-AuthZ-TTL-Dauer auf allen Plattformen*
 
@@ -125,7 +125,7 @@ Führen Sie diese Schritte aus, um die Authentifizierungs- und Autorisierungs-TT
 
 1. Wählen Sie die Pfeile nach oben und unten aus, um die Dauer für die Anzahl der Tage, Stunden, Minuten und Sekunden in den **AuthN TTL**- und **AuthZ TTL**-Eigenschaften anzupassen.
 
-Die Dauer für **AuthN TTL** und **AuthZ TTL** auf allen Plattformen wird erst nach [Überprüfung und Push-Änderungen) &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
+Die Dauer für **AuthN TTL** und **AuthZ TTL** auf allen Plattformen wird erst nach [Überprüfung und Push-Änderungen) ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 **Plattform-SSO aktivieren**
 
@@ -143,7 +143,7 @@ Führen Sie diese Schritte aus, um SSO für eine bestimmte Integration und Platt
 
 1. Wählen Sie eine bestimmte Plattform oder Kategorie von Plattformen aus, für die Sie Single Sign-on unter **Plattformeinstellungen** aktivieren möchten.
 
-   ![Aktivieren von Single Sign-On für eine bestimmte Plattform](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-single-sign-on-properties.png)
+   ![Aktivieren von Single Sign-On für eine bestimmte Plattform](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-single-sign-on-properties.png)
 
    *Aktivieren von Single Sign-On für eine bestimmte Plattform*
 
@@ -157,7 +157,7 @@ Führen Sie diese Schritte aus, um SSO für eine bestimmte Integration und Platt
 
    Wenn beispielsweise sowohl die **Single Sign-On aktivieren** als auch **Platform-Berechtigung erzwingen** aktiviert sind und der Benutzer sich dafür entscheidet, Platform den Zugriff auf sein TV Provider-Abonnement zu verweigern, kann die entsprechende Anwendung (der Kanal) das von einer anderen Anwendung (dem Kanal) erhaltene Adobe Pass-Authentifizierungstoken nicht verwenden.
 
-Die **Single Sign-On**-Eigenschaft für eine ausgewählte Plattform wird erst nach ([&#x200B; und Push-Änderungen) &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
+Die **Single Sign-On**-Eigenschaft für eine ausgewählte Plattform wird erst nach ([ und Push-Änderungen) ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 **Startseite-basierte Authentifizierung aktivieren**
 
@@ -171,7 +171,7 @@ Führen Sie diese Schritte aus, um die Home-basierte Authentifizierung für OAut
 
 1. Wählen Sie unter „Plattformeinstellungen“ eine bestimmte Plattform oder Kategorie von **aus, für die Sie die Startseiten-Authentifizierung** möchten.
 
-   ![Aktivieren der Home-basierten Authentifizierung für eine bestimmte Plattform](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-attempt-hba-properties.png)
+   ![Aktivieren der Home-basierten Authentifizierung für eine bestimmte Plattform](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-attempt-hba-properties.png)
 
    *Aktivieren der Home-basierten Authentifizierung für eine bestimmte Plattform*
 
@@ -183,7 +183,7 @@ Führen Sie diese Schritte aus, um die Home-basierte Authentifizierung für OAut
 >
 >Eine Änderung der Dauer **Eigenschaft „HBA AuthN TTL** sollte vermieden werden. Dies kann zu unerwarteten Fehlern im Autorisierungsprozess führen.
 
-Die **HBA**-Eigenschaft für eine bestimmte MVPD wird erst nach den Änderungen [Überprüfung und Push-Benachrichtigung) aktiviert oder &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
+Die **HBA**-Eigenschaft für eine bestimmte MVPD wird erst nach den Änderungen [Überprüfung und Push-Benachrichtigung) aktiviert oder ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 #### Weitere Eigenschaften hinzufügen {#add-more-properties}
 
@@ -204,7 +204,7 @@ In Fällen, in denen MVPDs einer Erhöhung dieses Limits zustimmen, können Sie 
 
 **Preflight Max Resources** fügt ein neues Attribut hinzu, in dem das vereinbarte Limit mit der MVPD angegeben werden kann.
 
-![Eigenschaft für maximale Ressourcen von Preflight hinzufügen](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-preflight-max-resources-properties.png)
+![Eigenschaft für maximale Ressourcen von Preflight hinzufügen](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-preflight-max-resources-properties.png)
 
 *Eigenschaft für maximale Ressourcen von Preflight hinzufügen*
 
@@ -216,11 +216,11 @@ Für Programmieranwendungen, die ihre MVPD-Auswahl nicht erstellen möchten und 
 
 Je nach Geräteplattform und dem gewünschten Benutzererlebnis können für dieselbe MVPD unterschiedliche Werte für diese Eigenschaften verwendet werden.
 
-![Anzeigenamen oder Logo-URL-Eigenschaft hinzufügen](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-display-name-logo-url-properties.png)
+![Anzeigenamen oder Logo-URL-Eigenschaft hinzufügen](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-display-name-logo-url-properties.png)
 
 *Anzeigenamen oder Logo-URL-Eigenschaft hinzufügen*
 
-Die Eigenschaft **Anzeigename** oder **Logo-URL** wird erst nach [Überprüfung und Push-Änderungen) &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
+Die Eigenschaft **Anzeigename** oder **Logo-URL** wird erst nach [Überprüfung und Push-Änderungen) ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 **Fordern Sie einen neuen Authentifizierungsfluss beim Wechsel der App (Kanal) an**
 
@@ -228,17 +228,17 @@ Wenn Sie eine neue Authentifizierung erzwingen möchten, wenn Benutzer zwischen 
 
 Durch Hinzufügen **Auth pro Aggregator** wird die einmalige Anmeldung für den jeweiligen Kanal effektiv unterbrochen.
 
-![Authentifizierung pro Aggregator-Eigenschaft hinzufügen](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-auth-per-aggregator-properties.png)
+![Authentifizierung pro Aggregator-Eigenschaft hinzufügen](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-auth-per-aggregator-properties.png)
 
 *Authentifizierung pro Aggregator-Eigenschaft hinzufügen*
 
-Die **Auth pro Aggregator**-Eigenschaft wird erst nach [Überprüfung und Push-Änderungen) &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
+Die **Auth pro Aggregator**-Eigenschaft wird erst nach [Überprüfung und Push-Änderungen) ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 Wählen Sie nach dem Hinzufügen **Ja**, um die Eigenschaft **Auth pro Aggregator** für eine ausgewählte Integration zu aktivieren.
 
 #### Löschen von Eigenschaften {#delete-properties}
 
-Auswählen <img alt= "Schaltfläche Eigenschaft löschen" src="../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-delete-property-icon.svg" width="25"> Symbol rechts neben jeder Eigenschaft, um die nicht mehr erforderlichen Eigenschaften zu löschen.
+Auswählen <img alt= "Schaltfläche Eigenschaft löschen" src="/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-delete-property-icon.svg" width="25"> Symbol rechts neben jeder Eigenschaft, um die nicht mehr erforderlichen Eigenschaften zu löschen.
 
 >[!NOTE]
 >
@@ -267,11 +267,11 @@ Im Abschnitt Benutzermetadaten werden die folgenden Spalten angezeigt:
 >
 > Stellen Sie immer sicher **dass der ZIP**-Parameter verschlüsselt ist.
 
-Weitere Informationen zu verfügbaren Zertifikaten finden Sie in den Abschnitten [&#128279;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#available-certificates) und [Kanäle](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#available-certificates) .
+Weitere Informationen zu verfügbaren Zertifikaten finden Sie in den Abschnitten [](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#available-certificates) und [Kanäle](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#available-certificates) .
 
 **Aktiviert**: In dieser Spalte können Sie die Parameter in der API aktivieren oder deaktivieren, indem Sie **Ja** bzw. **Nein** aus dem Dropdown-Menü auswählen.
 
-![Für Benutzermetadaten verfügbare Parameter](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-user-metadata-panel-view.png)
+![Für Benutzermetadaten verfügbare Parameter](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-user-metadata-panel-view.png)
 
 *Für Benutzermetadaten verfügbare Parameter*
 
@@ -283,7 +283,7 @@ Gehen Sie wie folgt vor, um bei Ihrer aktuellen Einrichtung eine neue Integratio
 
 1. Wählen **oben rechts im Abschnitt** Integrationen **die Option Neue Integration erstellen** aus.
 
-   ![Erstellen einer neuen Integration](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-create-new-integration-button.png)
+   ![Erstellen einer neuen Integration](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-create-new-integration-button.png)
 
    *Erstellen einer neuen Integration*
 
@@ -293,7 +293,7 @@ Gehen Sie wie folgt vor, um bei Ihrer aktuellen Einrichtung eine neue Integratio
 
    Wählen Sie einen **Kanal** aus dem Dropdown **Menü Kanal auswählen**, um eine neue Integration hinzuzufügen. Nachdem Sie den Kanal ausgewählt haben, wählen Sie die erforderliche **MVPD** aus dem Dropdown-Menü **MVPD auswählen** aus, um ihn in den ausgewählten Kanal zu integrieren.
 
-   ![Kanal und MVPD auswählen](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-channel-and-mvpd-panel-view.png)
+   ![Kanal und MVPD auswählen](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-channel-and-mvpd-panel-view.png)
 
    *Kanal und MVPD auswählen*
 
@@ -305,7 +305,7 @@ Gehen Sie wie folgt vor, um bei Ihrer aktuellen Einrichtung eine neue Integratio
    >
    >Ändern Sie die Standard-Endpunkte in keinem Fluss, es sei denn, dies wird ausdrücklich von der MVPD angegeben.
 
-   ![Endpunkte auswählen](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
+   ![Endpunkte auswählen](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
 
    *Endpunkte auswählen*
 
@@ -319,13 +319,13 @@ Gehen Sie wie folgt vor, um bei Ihrer aktuellen Einrichtung eine neue Integratio
 
    Sie können beispielsweise die **AuthN TTL** oder **Partner-ID** (Kanal-ID) für Co-Branding auf der MVPD-Anmeldeseite in der folgenden Abbildung bearbeiten.
 
-   ![Zusätzliche Informationen bearbeiten](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-additional-information-panel-view.png)
+   ![Zusätzliche Informationen bearbeiten](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-additional-information-panel-view.png)
 
    *Zusätzliche Informationen bearbeiten*
 
    Wählen **oben rechts** Abschnitt **Neue Integration erstellen** die Option „Integration speichern“ aus.
 
-Eine neue Integration wird erst nach ([&#x200B; und Push-Änderungen) &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
+Eine neue Integration wird erst nach ([ und Push-Änderungen) ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 
 ## Integration deaktivieren {#disable-integration}
@@ -338,10 +338,10 @@ Gehen Sie wie folgt vor, um eine Integration zu deaktivieren:
 
 1. Deaktivieren Sie den Umschalter oben rechts in der ausgewählten Integration.
 
-   ![Integration deaktivieren](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-enabled-disabled-button.png)
+   ![Integration deaktivieren](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-enabled-disabled-button.png)
 
    *Integration deaktivieren*
 
-Die Integration wird erst nach ([&#x200B; und Push-Änderungen) &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
+Die Integration wird erst nach ([ und Push-Änderungen) ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 Nachdem die Integration deaktiviert wurde, können sich Endbenutzer nicht mehr mit der jeweiligen MVPD authentifizieren oder autorisieren.

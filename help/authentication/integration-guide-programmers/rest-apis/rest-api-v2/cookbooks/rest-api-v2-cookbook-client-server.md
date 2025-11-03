@@ -2,9 +2,9 @@
 title: REST API V2-Cookbook (Client-zu-Server)
 description: REST API V2-Cookbook (Client-zu-Server)
 exl-id: 6a5a89d2-ea54-4f9c-9505-e575ced4301c
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
-source-wordcount: '1846'
+source-wordcount: '1833'
 ht-degree: 0%
 
 ---
@@ -104,12 +104,12 @@ Die Authentifizierungsphase dient als erforderlicher Schritt für die Vorautoris
 * **Szenario 1:** Profile vorhanden sind, kann die Streaming-Anwendung in die Phase [Vorabautorisierung](#preauthorization-phase) oder [Autorisierung](#authorization-phase).
 
 
-* **Szenario 2:** Es sind keine vorhandenen Profile vorhanden. Die Streaming-Anwendung kann mit dem nächsten Schritt fortfahren, um den [&#x200B; zu authentifizieren](#step-3-authenticate-the-user).
+* **Szenario 2:** Es sind keine vorhandenen Profile vorhanden. Die Streaming-Anwendung kann mit dem nächsten Schritt fortfahren, um den [ zu authentifizieren](#step-3-authenticate-the-user).
 
 
-* **Szenario 3:** Es sind keine vorhandenen Profile vorhanden. Die Streaming-Anwendung kann fortfahren, dem Benutzer über die Funktion [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) temporären Zugriff bereitzustellen.
+* **Szenario 3:** Es sind keine vorhandenen Profile vorhanden. Die Streaming-Anwendung kann fortfahren, dem Benutzer über die Funktion [TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md) temporären Zugriff bereitzustellen.
 
-   * Dieses Szenario würde den Rahmen dieses Dokuments sprengen. Weitere Informationen finden Sie in der Dokumentation [Temporärer &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)&quot;.
+   * Dieses Szenario würde den Rahmen dieses Dokuments sprengen. Weitere Informationen finden Sie in der Dokumentation [Temporärer ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)&quot;.
 
 ### Schritt 3: Benutzer authentifizieren {#step-3-authenticate-the-user}
 
@@ -186,7 +186,7 @@ Die Phase der Vorabautorisierung ist nicht obligatorisch. Die Streaming-Anwendun
 
    * Die Streaming-Anwendung ist nicht erforderlich, um Entscheidungen vor der Autorisierung in einem persistenten Speicher zu speichern. Es wird jedoch empfohlen, Zulassungsentscheidungen im Speicher zwischenzuspeichern, um das Benutzererlebnis zu verbessern. Dadurch werden unnötige Aufrufe von Ressourcen vermieden, die bereits vorab autorisiert wurden, die Latenz verringert und die Leistung verbessert.
 
-   * Die Streaming-Anwendung kann den Grund für eine abgelehnte Vorautorisierungsentscheidung ermitteln, indem sie den [Fehlercode und die Nachricht) überprüft](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) die in der Antwort vom Vorautorisierungs-Endpunkt von Decisions enthalten sind. Diese Details bieten Einblicke in den spezifischen Grund, aus dem die Vorabautorisierungsanfrage abgelehnt wurde, und helfen, das Benutzererlebnis oder den Trigger über die erforderliche Handhabung in der Anwendung zu informieren. Stellen Sie sicher, dass ein Wiederholungsmechanismus, der zum Abrufen von Entscheidungen vor der Autorisierung implementiert ist, nicht zu einer Endlosschleife führt, wenn die Entscheidung vor der Autorisierung abgelehnt wird. Erwägen Sie, weitere Zustellversuche auf eine angemessene Anzahl zu beschränken und Ablehnungen elegant zu handhaben, indem Sie dem Benutzer klares Feedback senden.
+   * Die Streaming-Anwendung kann den Grund für eine abgelehnte Vorautorisierungsentscheidung ermitteln, indem sie den [Fehlercode und die Nachricht) überprüft](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) die in der Antwort vom Vorautorisierungs-Endpunkt von Decisions enthalten sind. Diese Details geben insight den spezifischen Grund an, aus dem die Vorabautorisierungsanfrage abgelehnt wurde. So kann das Benutzererlebnis oder der Trigger über die erforderliche Verarbeitung in der Anwendung informiert werden. Stellen Sie sicher, dass ein Wiederholungsmechanismus, der zum Abrufen von Entscheidungen vor der Autorisierung implementiert ist, nicht zu einer Endlosschleife führt, wenn die Entscheidung vor der Autorisierung abgelehnt wird. Erwägen Sie, weitere Zustellversuche auf eine angemessene Anzahl zu beschränken und Ablehnungen elegant zu handhaben, indem Sie dem Benutzer klares Feedback senden.
 
    * Aufgrund von Bedingungen, die von MVPDs auferlegt werden, kann die Streaming-Anwendung in einer einzigen API-Anfrage eine Vorabautorisierungsentscheidung für eine begrenzte Anzahl von Ressourcen erhalten, in der Regel bis zu 5. Diese maximale Anzahl von Ressourcen kann angezeigt und geändert werden, nachdem eine Vereinbarung mit MVPDs über das Adobe Pass [TVE-Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) von einem Ihrer Organisationsadministratoren oder einem in Ihrem Namen handelnden Adobe Pass-Authentifizierungsmitarbeiter getroffen wurde.
 
@@ -219,7 +219,7 @@ Die Autorisierungsphase ist obligatorisch. Die Streaming-Anwendung kann diese Ph
 
    * Die Streaming-Anwendung ist nicht erforderlich, um Autorisierungsentscheidungen in einem persistenten Speicher zu speichern.
 
-   * Die Streaming-Anwendung kann den Grund für eine Entscheidung über die verweigerte Autorisierung ermitteln, indem sie den [Fehlercode und die Nachricht](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) überprüft, die in der Antwort des Endpunkts Decisions Authorize enthalten sind. Diese Details bieten Einblicke in den spezifischen Grund, aus dem die Autorisierungsanfrage abgelehnt wurde, und helfen, das Benutzererlebnis oder den Trigger über die erforderliche Handhabung in der Anwendung zu informieren. Stellen Sie sicher, dass ein zum Abrufen von Autorisierungsentscheidungen implementierter Wiederholungsmechanismus nicht zu einer Endlosschleife führt, wenn die Autorisierungsentscheidung abgelehnt wird. Erwägen Sie, weitere Zustellversuche auf eine angemessene Anzahl zu beschränken und Ablehnungen elegant zu handhaben, indem Sie dem Benutzer klares Feedback senden.
+   * Die Streaming-Anwendung kann den Grund für eine Entscheidung über die verweigerte Autorisierung ermitteln, indem sie den [Fehlercode und die Nachricht](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) überprüft, die in der Antwort des Endpunkts Decisions Authorize enthalten sind. Diese Details geben insight den spezifischen Grund an, aus dem die Autorisierungsanfrage abgelehnt wurde. So kann das Benutzererlebnis oder der Trigger über die erforderliche Verarbeitung in der Anwendung informiert werden. Stellen Sie sicher, dass ein zum Abrufen von Autorisierungsentscheidungen implementierter Wiederholungsmechanismus nicht zu einer Endlosschleife führt, wenn die Autorisierungsentscheidung abgelehnt wird. Erwägen Sie, weitere Zustellversuche auf eine angemessene Anzahl zu beschränken und Ablehnungen elegant zu handhaben, indem Sie dem Benutzer klares Feedback senden.
 
    * Die Streaming-Anwendung ist nicht erforderlich, um ein abgelaufenes Medien-Token zu aktualisieren, während der Stream aktiv wiedergegeben wird. Wenn das Medien-Token während der Wiedergabe abläuft, sollte der Stream ununterbrochen fortgesetzt werden können. Der Client muss jedoch beim nächsten Versuch, eine Ressource abzuspielen, eine neue Autorisierungsentscheidung anfordern und ein neues Medien-Token abrufen.
 

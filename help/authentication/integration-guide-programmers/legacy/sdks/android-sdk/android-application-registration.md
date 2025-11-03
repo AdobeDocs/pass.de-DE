@@ -2,7 +2,7 @@
 title: Registrierung der Android-Anwendung
 description: Registrierung der Android-Anwendung
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 0%
@@ -21,15 +21,15 @@ ht-degree: 0%
 
 ## Einführung {#intro}
 
-Ab Version 3.0 der Android AccessEnabler SDK ändern wir den Authentifizierungsmechanismus für Adobe-Server. Anstatt ein öffentliches Schlüssel- und Geheimsystem zum Signieren der RequestorID zu verwenden, führen wir das Konzept einer Software-Anweisungszeichenfolge ein, mit der ein Zugriffstoken abgerufen werden kann, das später für alle Aufrufe verwendet wird, die SDK an unsere Server sendet. Zusätzlich zu einem Software-Statement müssen Sie auch einen Deep-Link für Ihre Applikation erstellen.
+Ab Version 3.0 von Android AccessEnabler SDK ändern wir den Authentifizierungsmechanismus für die Server von Adobe. Anstatt ein öffentliches Schlüssel- und Geheimsystem zum Signieren der RequestorID zu verwenden, führen wir das Konzept einer Software-Anweisungszeichenfolge ein, mit der ein Zugriffstoken abgerufen werden kann, das später für alle Aufrufe verwendet wird, die SDK an unsere Server sendet. Zusätzlich zu einem Software-Statement müssen Sie auch einen Deep-Link für Ihre Applikation erstellen.
 
-Weitere Informationen finden Sie unter [Übersicht über die dynamische Client-Registrierung](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Weitere Informationen finden Sie unter [Übersicht über die dynamische Client-Registrierung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Was ist eine Software-Anweisung? {#what}
 
-Ein Software-Statement ist ein JWT-Token, das Informationen über Ihr Programm enthält. Jede Anwendung sollte über eine eindeutige Software-Anweisung verfügen, die von unseren Servern zur Identifizierung der Anwendung im Adobe-System verwendet wird.
+Ein Software-Statement ist ein JWT-Token, das Informationen über Ihr Programm enthält. Jede Anwendung sollte über eine eindeutige Software-Anweisung verfügen, die von unseren Servern verwendet wird, um die Anwendung im System von Adobe zu identifizieren.
 
-Die Software-Anweisung muss übergeben werden, wenn Sie die `AccessEnabler` SDK initialisieren. Sie wird verwendet, um die Anwendung beim Adobe zu registrieren. Bei der Registrierung erhält die SDK eine Client-ID und ein Client-Geheimnis, mit denen ein Zugriffstoken abgerufen wird. Jeder Aufruf von SDK an Adobe-Server erfordert ein gültiges Zugriffstoken. Die SDK ist für die Registrierung der Anwendung, den Abruf und die Aktualisierung des Zugriffstokens verantwortlich.
+Die Software-Anweisung muss übergeben werden, wenn Sie die `AccessEnabler` SDK initialisieren. Sie wird verwendet, um die Anwendung bei Adobe zu registrieren. Bei der Registrierung erhält die SDK eine Client-ID und ein Client-Geheimnis, mit denen ein Zugriffstoken abgerufen wird. Jeder Aufruf von SDK an Adobe-Server erfordert ein gültiges Zugriffstoken. Die SDK ist für die Registrierung der Anwendung, den Abruf und die Aktualisierung des Zugriffstokens verantwortlich.
 
 >[!NOTE]
 >
@@ -39,7 +39,7 @@ Die Software-Anweisung muss übergeben werden, wenn Sie die `AccessEnabler` SDK 
 
 Im Folgenden finden Sie Möglichkeiten, wie Sie eine Software-Erklärung erhalten können.
 
-### Wenn Sie Zugriff auf das Adobe-Dashboard haben
+### Bei Zugriff auf das TVE-Dashboard von Adobe
 
 1. Öffnen Sie Ihren Browser und navigieren Sie zum [Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication).
 
@@ -61,7 +61,7 @@ Im Folgenden finden Sie Möglichkeiten, wie Sie eine Software-Erklärung erhalte
 
    Eine Textdatei wird heruntergeladen. Verwenden Sie den Inhalt als Software-Erklärung.
 
-Weitere Informationen finden Sie unter [Verwaltung der dynamischen Client-Registrierung](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
+Weitere Informationen finden Sie unter [Verwaltung der dynamischen Client-Registrierung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 ### Wenn Sie keinen Zugriff auf das TVE-Dashboard von Adobe haben
 

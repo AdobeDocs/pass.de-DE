@@ -2,9 +2,9 @@
 title: REST API V2-Cookbook (Server-zu-Server)
 description: REST API V2-Cookbook (Server-zu-Server)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
-source-wordcount: '2510'
+source-wordcount: '2497'
 ht-degree: 0%
 
 ---
@@ -177,15 +177,15 @@ Häufig gestellte Fragen
 * **Profile abrufen:** Der Programmierdienst überprüft im Auftrag der Streaming-App vorhandene Profile, indem er den Endpunkt [**/api/v2/{serviceProvider}/profiles**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) aufruft.
 
 
-* **Szenario 1:** Profile vorhanden sind, kann der Programmierer-Service mit der Phase [Vorabautorisierung](#preauthorization-phase) oder [Autorisierung) &#x200B;](#authorization-phase).
+* **Szenario 1:** Profile vorhanden sind, kann der Programmierer-Service mit der Phase [Vorabautorisierung](#preauthorization-phase) oder [Autorisierung) ](#authorization-phase).
 
 
-* **Szenario 2:** Es sind keine vorhandenen Profile vorhanden. Der Programmierer-Service kann mit dem nächsten Schritt fortfahren, um den [&#x200B; zu authentifizieren](#step-3-authenticate-the-user).
+* **Szenario 2:** Es sind keine vorhandenen Profile vorhanden. Der Programmierer-Service kann mit dem nächsten Schritt fortfahren, um den [ zu authentifizieren](#step-3-authenticate-the-user).
 
 
-* **Szenario 3:** Es sind keine vorhandenen Profile vorhanden. Der Programmierer-Service kann dem Benutzer über die Funktion [TempPass“ temporären Zugriff &#x200B;](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md).
+* **Szenario 3:** Es sind keine vorhandenen Profile vorhanden. Der Programmierer-Service kann dem Benutzer über die Funktion [TempPass“ temporären Zugriff ](/help/premium-workflow/temporary-access/temp-pass-feature.md).
 
-   * Dieses Szenario würde den Rahmen dieses Dokuments sprengen. Weitere Informationen finden Sie in der Dokumentation [Temporärer &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)&quot;.
+   * Dieses Szenario würde den Rahmen dieses Dokuments sprengen. Weitere Informationen finden Sie in der Dokumentation [Temporärer ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)&quot;.
 
 ### Schritt 3: Benutzer authentifizieren {#step-3-authenticate-the-user}
 
@@ -266,7 +266,7 @@ Häufig gestellte Fragen
 
    * Der Programmierdienst ist nicht erforderlich, um Entscheidungen vor Autorisierung in einem persistenten Speicher zu speichern. Es wird jedoch empfohlen, Zulassungsentscheidungen im Speicher zwischenzuspeichern, um das Benutzererlebnis zu verbessern. Dadurch werden unnötige Aufrufe von Ressourcen vermieden, die bereits vorab autorisiert wurden, die Latenz verringert und die Leistung verbessert.
 
-   * Der Programmierer-Service kann den Grund für eine abgelehnte Vorautorisierungsentscheidung ermitteln, indem er den [Fehlercode und die Nachricht) überprüft](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) die in der Antwort vom Endpunkt Decisions Preauthorize enthalten sind. Diese Details bieten Einblicke in den spezifischen Grund, aus dem die Vorabautorisierungsanfrage abgelehnt wurde, und helfen, das Benutzererlebnis oder den Trigger über die erforderliche Handhabung in der Anwendung zu informieren. Stellen Sie sicher, dass ein Wiederholungsmechanismus, der zum Abrufen von Entscheidungen vor der Autorisierung implementiert ist, nicht zu einer Endlosschleife führt, wenn die Entscheidung vor der Autorisierung abgelehnt wird. Erwägen Sie, weitere Zustellversuche auf eine angemessene Anzahl zu beschränken und Ablehnungen elegant zu handhaben, indem Sie dem Benutzer klares Feedback senden.
+   * Der Programmierer-Service kann den Grund für eine abgelehnte Vorautorisierungsentscheidung ermitteln, indem er den [Fehlercode und die Nachricht) überprüft](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) die in der Antwort vom Endpunkt Decisions Preauthorize enthalten sind. Diese Details geben insight den spezifischen Grund an, aus dem die Vorabautorisierungsanfrage abgelehnt wurde. So kann das Benutzererlebnis oder der Trigger über die erforderliche Verarbeitung in der Anwendung informiert werden. Stellen Sie sicher, dass ein Wiederholungsmechanismus, der zum Abrufen von Entscheidungen vor der Autorisierung implementiert ist, nicht zu einer Endlosschleife führt, wenn die Entscheidung vor der Autorisierung abgelehnt wird. Erwägen Sie, weitere Zustellversuche auf eine angemessene Anzahl zu beschränken und Ablehnungen elegant zu handhaben, indem Sie dem Benutzer klares Feedback senden.
 
    * Der Programmierer-Service kann in einer einzigen API-Anfrage eine Vorabautorisierungsentscheidung für eine begrenzte Anzahl von Ressourcen erhalten, in der Regel bis zu 5, aufgrund von Bedingungen, die von MVPDs auferlegt werden. Diese maximale Anzahl von Ressourcen kann angezeigt und geändert werden, nachdem eine Vereinbarung mit MVPDs über das Adobe Pass [TVE-Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) von einem Ihrer Organisationsadministratoren oder einem in Ihrem Namen handelnden Adobe Pass-Authentifizierungsmitarbeiter getroffen wurde.
 

@@ -2,7 +2,7 @@
 title: Glossar zur REST-API v2
 description: Glossar zur REST-API v2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '1742'
 ht-degree: 0%
@@ -23,11 +23,11 @@ Dieses Dokument enthält Definitionen für Begriffe, die bei der Integration der
 
 ## Glossarbegriffe {#glossary-terms}
 
-### Ein {#a}
+### A {#a}
 
 #### Authentifizierung {#authentication}
 
-Die Authentifizierung ist ein Prozess, der es einem Benutzer ermöglicht, seine Identität gegenüber einem [Programmierer](#programmer) nachzuweisen, um Zugriff auf geschützte Inhalte ([Ressource](#resource)) zu erhalten, nachdem das Benutzerabonnement mit der [MVPD validiert &#x200B;](#mvpd).
+Die Authentifizierung ist ein Prozess, der es einem Benutzer ermöglicht, seine Identität gegenüber einem [Programmierer](#programmer) nachzuweisen, um Zugriff auf geschützte Inhalte ([Ressource](#resource)) zu erhalten, nachdem das Benutzerabonnement mit der [MVPD validiert ](#mvpd).
 
 #### Authentifizierungs-Code {#code}
 
@@ -41,11 +41,11 @@ Synonym für den früheren Begriff verwendet Registrierungs-Code.
 
 Die Authentifizierungssitzung ist ein Adobe Pass-Authentifizierungskonzept, das Informationen zum Authentifizierungsprozess des Benutzers speichert, der von einem [Programmierprogramm](#programmer) gestartet (oder fortgesetzt) wurde, und durch einen [Authentifizierungs-Code](#code) eindeutig identifiziert wird.
 
-In der Authentifizierungssitzung kann auch angegeben werden[&#x200B; dass die &#x200B;](#programmer)-Anwendung mit dem [Autorisierungs](#authorization)-Prozess als nächste Phase des [Berechtigungs](#entitlement)-Flusses fortfahren soll, falls der Benutzer bereits authentifiziert ist.
+In der Authentifizierungssitzung kann auch angegeben werden[ dass die ](#programmer)-Anwendung mit dem [Autorisierungs](#authorization)-Prozess als nächste Phase des [Berechtigungs](#entitlement)-Flusses fortfahren soll, falls der Benutzer bereits authentifiziert ist.
 
 #### Autorisierung {#authorization}
 
-Die Autorisierung ist ein Prozess, der es einem Benutzer ermöglicht, auf geschützte Inhalte ([resource](#resource)) aus einem [Programmierer](#programmer)-Katalog zuzugreifen, der auf dem eigenen [MVPD](#mvpd)-Abonnement basiert, nachdem die Benutzerrechte mit der [MVPD validiert &#x200B;](#mvpd).
+Die Autorisierung ist ein Prozess, der es einem Benutzer ermöglicht, auf geschützte Inhalte ([resource](#resource)) aus einem [Programmierer](#programmer)-Katalog zuzugreifen, der auf dem eigenen [MVPD](#mvpd)-Abonnement basiert, nachdem die Benutzerrechte mit der [MVPD validiert ](#mvpd).
 
 ### C {#c}
 
@@ -63,7 +63,7 @@ Bei der Entscheidung handelt es sich um ein Adobe Pass-Authentifizierungskonzept
 
 Bei der Beeinträchtigung handelt es sich um eine Adobe Pass-Authentifizierungsfunktion, mit der Benutzende auch dann auf geschützte Inhalte zugreifen können, wenn bei ihrer [MVPD](#mvpd) eine Service-Unterbrechung auftritt.
 
-Weitere Informationen finden Sie in der Dokumentation [Abbaufunktion](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md).
+Weitere Informationen finden Sie in der Dokumentation [Abbaufunktion](/help/premium-workflow/degraded-access/degradation-feature.md).
 
 #### Geräte-ID {#device-id}
 
@@ -79,7 +79,7 @@ Bei der Berechtigung handelt es sich um ein Adobe Pass-Authentifizierungskonzept
 
 Der erweiterte Fehler-Code ist ein Adobe Pass-Authentifizierungskonzept, das zusätzliche Informationen zu dem bei der Verarbeitung einer Anfrage aufgetretenen Fehler bereitstellt.
 
-Weitere Informationen finden Sie in der Dokumentation [Erweiterte &#x200B;](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)).
+Weitere Informationen finden Sie in der Dokumentation [Erweiterte ](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)).
 
 ### H {#h}
 
@@ -87,7 +87,7 @@ Weitere Informationen finden Sie in der Dokumentation [Erweiterte &#x200B;](/hel
 
 Bei der Home-Based Authentication (HBA) handelt es sich um den Prozess, bei dem einem Verbraucher automatisch Zugriff auf [TV Everywhere (TVE)-](#tve) auf ausgewählten Geräten gewährt wird, die mit seinem Heimnetzwerk verbunden sind, das Teil des Speicherorts im Abonnementvertrag ist.
 
-### Ich {#i}
+### I {#i}
 
 #### Identitätsanbieter {#identity-provider}
 
@@ -105,15 +105,15 @@ Die Abmeldung ist ein Prozess, der es einem Benutzer ermöglicht, sein authentif
 
 #### Medien-Token {#media-token}
 
-Das Medien-Token ist ein Token, das von der Adobe Pass-Authentifizierung als Ergebnis einer Autorisierung ([) generiert &#x200B;](#decision), um Zugriff auf geschützte Inhalte zu gewähren.
+Das Medien-Token ist ein Token, das von der Adobe Pass-Authentifizierung als Ergebnis einer Autorisierung ([) generiert ](#decision), um Zugriff auf geschützte Inhalte zu gewähren.
 
-Das Medien-Token wird an den [Programmierer](#programmer) übergeben, der es dann validiert, um die Sicherheit des Zugriffs für diese [Ressource“ &#x200B;](#resource).
+Das Medien-Token wird an den [Programmierer](#programmer) übergeben, der es dann validiert, um die Sicherheit des Zugriffs für diese [Ressource“ ](#resource).
 
 Synonym für den früheren Begriff verwendet Short Authorization Token.
 
 #### Medien-Token-Verifizierer {#media-token-verifier}
 
-Der Media Token Verifier ist eine von der Adobe Pass-Authentifizierung verteilte Bibliothek, die für die Überprüfung der Authentizität eines [Medien-Tokens“ &#x200B;](#media-token) ist.
+Der Media Token Verifier ist eine von der Adobe Pass-Authentifizierung verteilte Bibliothek, die für die Überprüfung der Authentizität eines [Medien-Tokens“ ](#media-token) ist.
 
 Weitere Informationen finden Sie in der Dokumentation [Media Token Verifier](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier) .
 
@@ -121,7 +121,7 @@ Weitere Informationen finden Sie in der Dokumentation [Media Token Verifier](/he
 
 Der Multichannel Video Programming Distributor (MVPD) ist ein Unternehmen, das Verbrauchern Fernsehdienste über Kabel-, Satelliten- oder Internet-basierte Dienste anbietet.
 
-Die MVPD wird durch einen eindeutigen Wert identifiziert, der während des Onboarding-Prozesses zwischen der MVPD und der Adobe definiert wird.
+Die MVPD wird durch einen eindeutigen Wert identifiziert, der während des Onboarding-Prozesses zwischen der MVPD und Adobe definiert wird.
 
 Synonym für [TV Provider](#tv-provider) und [Identity Provider](#identity-provider).
 
@@ -129,19 +129,19 @@ Synonym für [TV Provider](#tv-provider) und [Identity Provider](#identity-provi
 
 #### Teilhaber {#partner}
 
-Der Partner ist ein Unternehmen, das einem Programmierer einen Service oder ein Framework [, &#x200B;](#programmer) ein Single Sign-on-Benutzererlebnis zu ermöglichen.
+Der Partner ist ein Unternehmen, das einem Programmierer einen Service oder ein Framework [, ](#programmer) ein Single Sign-on-Benutzererlebnis zu ermöglichen.
 
-Der Partner wird durch einen eindeutigen Wert (z. B. „apple„) identifiziert, der während des Onboarding-Prozesses zwischen dem Partner und der Adobe definiert wird.
+Der Partner wird durch einen eindeutigen Wert (z. B. „apple„) identifiziert, der während des Onboarding-Prozesses zwischen dem Partner und Adobe definiert wird.
 
 #### Vorautorisierung {#preauthorization}
 
-Die Vorautorisierung ist ein Prozess, der es einem Benutzer ermöglicht, eine Teilmenge von [Ressourcen](#resource) aus einem [Programmierer](#programmer)-Katalog in der Vorschau anzuzeigen, auf den er zugreifen darf, nachdem er die Benutzerrechte mit der [MVPD validiert &#x200B;](#mvpd).
+Die Vorautorisierung ist ein Prozess, der es einem Benutzer ermöglicht, eine Teilmenge von [Ressourcen](#resource) aus einem [Programmierer](#programmer)-Katalog in der Vorschau anzuzeigen, auf den er zugreifen darf, nachdem er die Benutzerrechte mit der [MVPD validiert ](#mvpd).
 
 Synonym für [Preflight](#preflight).
 
 #### vor dem Flug {#preflight}
 
-Der Preflight ist ein Prozess, der es einem Benutzer ermöglicht, eine Teilmenge von [Ressourcen](#resource) aus einem [Programmierer](#programmer)-Katalog in der Vorschau anzuzeigen, auf den er zugreifen darf, nachdem er die Benutzerrechte mit der [MVPD validiert &#x200B;](#mvpd).
+Der Preflight ist ein Prozess, der es einem Benutzer ermöglicht, eine Teilmenge von [Ressourcen](#resource) aus einem [Programmierer](#programmer)-Katalog in der Vorschau anzuzeigen, auf den er zugreifen darf, nachdem er die Benutzerrechte mit der [MVPD validiert ](#mvpd).
 
 Synonym für [Vorabautorisierung](#preauthorization).
 
@@ -167,7 +167,7 @@ Die Proxy-MVPD ist ein Unternehmen, das Identitätsdienste für andere MVPDs ber
 
 #### Proxy-MVPD {#proxied-mvpd}
 
-Der Proxy-MVPD ist ein Unternehmen, das keine direkte Integration mit der Adobe Pass-Authentifizierung hat, aber über einen [Proxy-MVPD) &#x200B;](#proxy-mvpd) wird.
+Der Proxy-MVPD ist ein Unternehmen, das keine direkte Integration mit der Adobe Pass-Authentifizierung hat, aber über einen [Proxy-MVPD) ](#proxy-mvpd) wird.
 
 #### Platform-Identität {#platform-identity}
 
@@ -185,7 +185,7 @@ Die Ressource wird durch einen eindeutigen Wert identifiziert, der zwischen dem 
 
 Weitere Informationen finden Sie in der Dokumentation [Geschützte Ressourcen](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources) .
 
-### S {#s}
+### s {#s}
 
 #### SAML {#saml}
 
@@ -205,9 +205,9 @@ Weitere Informationen finden Sie in der Dokumentation [Single Sign-on using Serv
 
 #### Dienstleister {#service-provider}
 
-Der Dienstleister ist ein Kanal (eine Marke), der/die einem [Programmierer) &#x200B;](#programmer).
+Der Dienstleister ist ein Kanal (eine Marke), der/die einem [Programmierer) ](#programmer).
 
-Der Dienstleister wird durch einen eindeutigen Wert identifiziert, der während des Onboarding-Prozesses zwischen dem Programmierer und dem Adobe definiert wird.
+Der Dienstleister wird durch einen eindeutigen Wert identifiziert, der während des Onboarding-Prozesses zwischen dem Programmierer und Adobe definiert wird.
 
 Synonym für den früheren Begriff „Antragsteller-ID“.
 
@@ -227,15 +227,15 @@ Single Sign-On (SSO) ist ein Prozess, der es einem Benutzer ermöglicht, sich ei
 
 #### TempPass Basic {#temp-pass-basic}
 
-Der einfache TempPass ist eine Adobe Pass-Authentifizierungsfunktion, mit der ein Benutzer für eine begrenzte Zeit auf geschützte Inhalte zugreifen kann, ohne sich mit einer [MVPD authentifizieren zu &#x200B;](#mvpd).
+Der einfache TempPass ist eine Adobe Pass-Authentifizierungsfunktion, mit der ein Benutzer für eine begrenzte Zeit auf geschützte Inhalte zugreifen kann, ohne sich mit einer [MVPD authentifizieren zu ](#mvpd).
 
-Weitere Informationen finden Sie in der Dokumentation [Basic TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#basic-temp-pass).
+Weitere Informationen finden Sie in der Dokumentation [Basic TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md#basic-temp-pass).
 
 #### TempPass-Werbeaktion {#temp-pass-promotional}
 
-Der Promotion-TempPass ist eine Adobe Pass-Authentifizierungsfunktion, die es einem Benutzer ermöglicht, für eine maximale Anzahl von Ressourcen und für einen begrenzten Zeitraum auf geschützte Inhalte zuzugreifen, ohne sich bei einer [MVPD authentifizieren zu &#x200B;](#mvpd).
+Der Promotion-TempPass ist eine Adobe Pass-Authentifizierungsfunktion, die es einem Benutzer ermöglicht, für eine maximale Anzahl von Ressourcen und für einen begrenzten Zeitraum auf geschützte Inhalte zuzugreifen, ohne sich bei einer [MVPD authentifizieren zu ](#mvpd).
 
-Weitere Informationen finden Sie in der Dokumentation [Promotion TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass).
+Weitere Informationen finden Sie in der Dokumentation [Promotion TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass).
 
 #### TTL {#ttl}
 
@@ -249,7 +249,7 @@ Der TV Everywhere (TVE) ist eine Nische in der Branche, in der Verbraucher auf i
 
 #### TVE-Dashboard {#tve-dashboard}
 
-Das TV Everywhere-Dashboard (TVE) ist ein Adobe Pass-Authentifizierungstool, das [Programmierern“ zur &#x200B;](#programmer) von Konfiguration und Daten bereitgestellt wird.
+Das TV Everywhere-Dashboard (TVE) ist ein Adobe Pass-Authentifizierungstool, das [Programmierern“ zur ](#programmer) von Konfiguration und Daten bereitgestellt wird.
 
 Weitere Informationen finden Sie in der Dokumentation [TVE Dashboard User Guide](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md).
 
@@ -261,7 +261,7 @@ Der TV-Anbieter wird durch einen eindeutigen Wert identifiziert, der beim Onboar
 
 Synonym für [MVPD](#mvpd) und [Identitätsanbieter](#identity-provider).
 
-### U-{#u}
+### U {#u}
 
 #### Benutzeragent {#user-agent}
 
@@ -277,7 +277,7 @@ Die Benutzermetadaten beziehen sich auf benutzerspezifische Attribute (z. B. Pos
 
 Weitere Informationen finden Sie in der Dokumentation [Benutzermetadaten](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) .
 
-### v {#v}
+### V {#v}
 
 #### VSA {#vsa}
 

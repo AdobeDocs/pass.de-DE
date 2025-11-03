@@ -2,7 +2,7 @@
 title: Grundlegende Profile - Sekundäre Anwendung - Fluss
 description: REST API v2 - Grundprofile - Sekundäre Anwendung - Fluss
 exl-id: 1fcefcfa-7534-4b85-b3b5-df513685d66b
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '418'
 ht-degree: 0%
@@ -41,7 +41,7 @@ Bevor Sie das Profil für einen bestimmten Authentifizierungs-Code abrufen, stel
 
 Führen Sie die angegebenen Schritte aus, um den einfachen Profilabruffluss für einen bestimmten Authentifizierungs-Code zu implementieren, der in einer sekundären Anwendung ausgeführt wird, wie im folgenden Diagramm dargestellt.
 
-![Profil für bestimmten Code abrufen](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-secondary-application-for-specific-code.png)
+![Profil für bestimmten Code abrufen](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-secondary-application-for-specific-code.png)
 
 *Profil für bestimmten Code abrufen*
 
@@ -49,7 +49,7 @@ Führen Sie die angegebenen Schritte aus, um den einfachen Profilabruffluss für
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)Dokumentation zum Abrufen von Profilen für bestimmten Code:
+   > Weitere Informationen zu folgenden [ finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)Dokumentation zum Abrufen von Profilen für bestimmten Code:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `code`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`
@@ -61,7 +61,7 @@ Führen Sie die angegebenen Schritte aus, um den einfachen Profilabruffluss für
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [&#x200B; in einer Profilantwort bereitgestellten Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)Dokumentation zum Abrufen von Profilen für bestimmten Code.
+   > Weitere Informationen zu [ in einer Profilantwort bereitgestellten Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)Dokumentation zum Abrufen von Profilen für bestimmten Code.
    > 
    > <br/>
    > 

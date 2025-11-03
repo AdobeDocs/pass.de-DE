@@ -2,7 +2,7 @@
 title: Temporäre Zugriffsflüsse
 description: REST API v2 - Temporäre Zugriffsflüsse
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '3223'
 ht-degree: 0%
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 Mit TempPass können Programmierer temporären Zugriff auf ihre geschützten Inhalte gewähren, ohne die Benutzer zur Authentifizierung mit einem gültigen MVPD-Konto aufzufordern.
 
-Weitere Informationen zur TempPass-Funktion finden Sie in der Dokumentation [TempPass](../../../../features-premium/temporary-access/temp-pass-feature.md).
+Weitere Informationen zur TempPass-Funktion finden Sie in der Dokumentation [TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md).
 
 Temporäre Zugriffsflüsse ermöglichen die Abfrage für die folgenden Szenarien:
 
@@ -58,7 +58,7 @@ Stellen Sie vor dem Abrufen von Autorisierungsentscheidungen mit Basic TempPass 
 
 Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss mit einfachem TempPass zu implementieren, wie im folgenden Diagramm dargestellt.
 
-![Abrufen von Autorisierungsentscheidungen mit einfachem TempPass](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-using-basic-temppass-flow.png)
+![Abrufen von Autorisierungsentscheidungen mit einfachem TempPass](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-using-basic-temppass-flow.png)
 
 *Abrufen von Autorisierungsentscheidungen mit einfachem TempPass*
 
@@ -66,7 +66,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss mit einfach
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    > 
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -78,7 +78,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss mit einfach
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
    >
    > <br/>
    > 
@@ -127,7 +127,7 @@ Stellen Sie vor dem Abrufen von Autorisierungsentscheidungen mit dem Werbe-TempP
 
 Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss mithilfe von Promotion-TempPass zu implementieren, wie im folgenden Diagramm dargestellt.
 
-![Abrufen von Autorisierungsentscheidungen mithilfe von Werbe-TempPass](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-using-promotional-temppass-flow.png)
+![Abrufen von Autorisierungsentscheidungen mithilfe von Werbe-TempPass](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-using-promotional-temppass-flow.png)
 
 *Abrufen von Autorisierungsentscheidungen mithilfe von Werbe-TempPass*
 
@@ -135,7 +135,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss mithilfe vo
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -155,7 +155,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss mithilfe vo
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
    > 
    > <br/>
    > 
@@ -205,7 +205,7 @@ Bevor Sie eine maximale Anzahl von Ressourcen mit dem Werbe-TempPass verbrauchen
 
 Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementieren, wenn Sie eine maximale Anzahl von Ressourcen mit dem Werbe-TempPass verbrauchen, wie im folgenden Diagramm dargestellt.
 
-![Verwenden Sie die maximale Anzahl von Ressourcen mit dem Werbe-TempPass](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-consume-maximum-number-of-resources-using-promotional-temppass-flow.png)
+![Verwenden Sie die maximale Anzahl von Ressourcen mit dem Werbe-TempPass](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-consume-maximum-number-of-resources-using-promotional-temppass-flow.png)
 
 *Verwenden Sie die maximale Anzahl von Ressourcen mit dem Werbe-TempPass*
 
@@ -213,7 +213,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `mvpd`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -229,7 +229,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [&#x200B; in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
+   > Weitere Informationen zu [ in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
    > 
    > <br/>
    > 
@@ -259,7 +259,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!IMPORTANT]
    > 
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -279,7 +279,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
    > 
    > <br/>
    > 
@@ -307,7 +307,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -327,7 +327,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
    > 
    > <br/>
    > 
@@ -379,7 +379,7 @@ Stellen Sie vor dem Abrufen von Autorisierungsentscheidungen bei Ablauf des Stan
 
 Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementieren, wenn der Standard- oder Promotion-TempPass abläuft, wie in der folgenden Abbildung dargestellt.
 
-![Abrufen von Autorisierungsentscheidungen bei Ablauf von Standard- oder Promotion-TempPass](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires-flow.png)
+![Abrufen von Autorisierungsentscheidungen bei Ablauf von Standard- oder Promotion-TempPass](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires-flow.png)
 
 *Abrufen von Autorisierungsentscheidungen bei Ablauf von Standard- oder Promotion-TempPass*
 
@@ -387,7 +387,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    > 
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -407,7 +407,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
    > 
    > <br/>
    > 
@@ -462,7 +462,7 @@ Stellen Sie vor dem Abrufen des Profils für Basic TempPass sicher, dass die fol
 
 Führen Sie die angegebenen Schritte aus, um den Fluss zum Abrufen von Profilen für einfache TempPass zu implementieren, wie im folgenden Diagramm dargestellt.
 
-![Profil für einfachen TempPass abrufen](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-profile-for-basic-temppass-flow.png)
+![Profil für einfachen TempPass abrufen](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-profile-for-basic-temppass-flow.png)
 
 *Profil für einfachen TempPass abrufen*
 
@@ -470,7 +470,7 @@ Führen Sie die angegebenen Schritte aus, um den Fluss zum Abrufen von Profilen 
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
    > 
    > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `mvpd`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -482,7 +482,7 @@ Führen Sie die angegebenen Schritte aus, um den Fluss zum Abrufen von Profilen 
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [&#x200B; in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
+   > Weitere Informationen zu [ in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
    > 
    > <br/>
    > 
@@ -533,7 +533,7 @@ Stellen Sie vor dem Abrufen des Profils für den Werbe-TempPass sicher, dass die
 
 Führen Sie die angegebenen Schritte aus, um den Fluss zum Abrufen von Profilen für den Werbe-TempPass zu implementieren, wie in der folgenden Abbildung dargestellt.
 
-![Profil für Werbe-TempPass abrufen](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-profile-for-promotional-temppass-flow.png)
+![Profil für Werbe-TempPass abrufen](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-profile-for-promotional-temppass-flow.png)
 
 *Profil für Werbe-TempPass abrufen*
 
@@ -541,7 +541,7 @@ Führen Sie die angegebenen Schritte aus, um den Fluss zum Abrufen von Profilen 
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
    > 
    > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `mvpd`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -553,7 +553,7 @@ Führen Sie die angegebenen Schritte aus, um den Fluss zum Abrufen von Profilen 
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [&#x200B; in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
+   > Weitere Informationen zu [ in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
    > 
    > <br/>
    > 

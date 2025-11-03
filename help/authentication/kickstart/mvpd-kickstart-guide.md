@@ -2,7 +2,7 @@
 title: Schnellstartanleitung für MVPD
 description: Schnellstartanleitung für MVPD
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '934'
 ht-degree: 0%
@@ -19,7 +19,7 @@ Dieses Schnellstartanleitung ist für Multichannel Video Programming Distributor
 
 In diesem Dokument werden die wichtigsten ersten Schritte für einen reibungslosen und effizienten Start des Integrationsprozesses beschrieben. Sie soll die Erwartungen verdeutlichen und Anleitungen dazu geben, wie wir mit Partnern zusammenarbeiten werden, um erfolgreiche Integrationen zu erreichen.
 
-Adobe bietet eine Reihe von Ressourcen, die Sie bei der Integration mit der Adobe Pass-Authentifizierung unterstützen. Bitte beachten Sie die **„You will provide“** und **&quot;Adobe will provide“** Erwähnungen aus jedem folgenden Abschnitt.
+Adobe bietet eine Reihe von Ressourcen, die Ihnen bei der Integration mit der Adobe Pass-Authentifizierung helfen. Bitte beachten Sie die **„Sie geben Folgendes an** und **&quot;Adobe stellt Folgendes bereit** in jedem folgenden Abschnitt.
 
 >[!CAUTION]
 >
@@ -33,9 +33,9 @@ Adobe bietet eine Reihe von Ressourcen, die Sie bei der Integration mit der Adob
 
 Der Einrichtungsprozess umfasst unter anderem die folgenden Schritte:
 
-![Adobe® Authentifizierungs-Integrationsprozess erfolgreich](../assets/mvpd-int-lifecycle.png)
+Integrationsprozess für die ![Adobe®-Pass-Authentifizierung](/help/authentication/assets/mvpd-int-lifecycle.png)
 
-*Adobe® Authentifizierungs-Integrationsprozess erfolgreich*
+Integrationsprozess für die *Adobe®-Pass-Authentifizierung*
 
 ### Start {#kickoff}
 
@@ -63,11 +63,11 @@ Der Einrichtungsprozess umfasst unter anderem die folgenden Schritte:
 
 * **Staging-Umgebung - Metadaten**
 
-  Adobe-SP-Metadaten können unter https://sp.auth-staging.adobe.com/sp/metadata abgerufen werden.
+  Die SP-Metadaten von Adobe können unter https://sp.auth-staging.adobe.com/sp/metadata abgerufen werden.
 
 * **Metadaten der Produktionsumgebung**
 
-  Adobe-SP-Metadaten können unter https://sp.auth.adobe.com/sp/metadata abgerufen werden.
+  Die SP-Metadaten von Adobe können unter https://sp.auth.adobe.com/sp/metadata abgerufen werden.
 
 **Sie geben während** Phase des Metadatenaustauschs Folgendes an:
 
@@ -81,17 +81,17 @@ Der Einrichtungsprozess umfasst unter anderem die folgenden Schritte:
 
 ### Konnektivität {#connectivity}
 
-auf die Zulassungsliste setzen **Sie bieten** Möglichkeit, IPs von Adobe zu übertragen, da für die Adobe Pass-Authentifizierung Firewalls erforderlich sind, um den Traffic über die Ports 80 und 443 zuzulassen, damit der Zugriff auf eingeschränkte Ressourcen sowohl während des Authentifizierungs- als auch während des Autorisierungsprozesses ermöglicht wird.
+**Sie stellen eine** zur Zulassungsliste von IPs von Adobe bereit, da für die Adobe Pass-Authentifizierung Firewalls erforderlich sind, die den Traffic über die Ports 80 und 443 zulassen, um den Zugriff auf eingeschränkte Ressourcen sowohl während des Authentifizierungs- als auch während des Autorisierungsprozesses zu ermöglichen.
 
 **Sie stellen** Bereitstellung im Staging-Profil bereit, um die Verbindung zu testen.
 
 ### Entwicklung {#development}
 
-**Adobe wird dem Engineering Zeit**, eng mit MVPD zusammenzuarbeiten, um sicherzustellen, dass die technische Integration korrekt eingerichtet ist. Dieser Prozess umfasst die Entwicklung von benutzerdefiniertem Code, der auf die spezifischen Anforderungen von MVPD zugeschnitten ist.
+**Adobe gewährt dem Engineering** Zeit, eng mit MVPD zusammenzuarbeiten, um sicherzustellen, dass die technische Integration korrekt eingerichtet ist. Dieser Prozess umfasst die Entwicklung von benutzerdefiniertem Code, der auf die spezifischen Anforderungen von MVPD zugeschnitten ist.
 
 ### Staging-Bereitstellung {#deployment-staging}
 
-**Adobe stellt einen Build** den erforderlichen Code-Updates bereit, der zuerst in der PRE-QUAL-Staging-Umgebung bereitgestellt wird. In dieser Phase werden auch die erforderlichen Konfigurationsänderungen implementiert, um die MVPD zu Testzwecken mit dem `TestDistributors`-Dienstleister zu integrieren.
+**Adobe stellt einen Build** den erforderlichen Code-Aktualisierungen bereit, der zuerst in der PRE-QUAL-Staging-Umgebung bereitgestellt wird. In dieser Phase werden auch die erforderlichen Konfigurationsänderungen implementiert, um die MVPD zu Testzwecken mit dem `TestDistributors`-Dienstleister zu integrieren.
 
 **Sie und Adobe stellen** Qualitätssicherung (QA) Zeit zur Verfügung, um sicherzustellen, dass die Integration in der STAGING-Umgebung von PRE-QUAL erfolgreich getestet wurde. Nach dieser Phase wird die MVPD in die Staging-Umgebung der Version verschoben, um sie mit einem tatsächlichen Programmierer weiter zu testen.
 
@@ -99,15 +99,15 @@ auf die Zulassungsliste setzen **Sie bieten** Möglichkeit, IPs von Adobe zu üb
 
 **Sie stellen** Bereitstellung im Produktionsprofil bereit, um die Konnektivität zu testen.
 
-**Adobe stellt einen Build** den erforderlichen Code-Updates bereit, der in der Pre-QUAL-Produktionsumgebung bereitgestellt wird.
+**Adobe stellt** Build mit den erforderlichen Code-Aktualisierungen bereit, die in der Pre-QUAL-Produktionsumgebung bereitgestellt werden.
 
-**Sie und Adobe stellen** Qualitätssicherung (QA) Zeit zur Verfügung, um sicherzustellen, dass die Integration anhand des Produktionsprofils erfolgreich getestet wurde. Wenn zu diesem Zeitpunkt alles in Ordnung ist, kann Adobe die Integration in die RELEASE-Produktionsumgebung („Live„) verschieben, die für alle Benutzerinnen und Benutzer verfügbar ist.
+**Sie und Adobe stellen** Qualitätssicherung (QA) Zeit zur Verfügung, um sicherzustellen, dass die Integration mithilfe des Produktionsprofils erfolgreich getestet wurde. Wenn zu diesem Zeitpunkt alles in Ordnung ist, kann Adobe die Integration in die RELEASE-Produktionsumgebung („Live„) verschieben, die für alle Benutzenden verfügbar ist.
 
 >[!IMPORTANT]
 >
-> Sobald die Integration in der RELEASE-Produktionsumgebung verfügbar ist, ist es von größter Bedeutung, ein optimales Kundenerlebnis aufrechtzuerhalten. Um Serverausfallszenarien effektiv zu beheben, müssen MVPDs eine detaillierte Eskalationsvorgangsdokumentation für das Adobe bereitstellen, um solche Probleme zu beheben.
+> Sobald die Integration in der RELEASE-Produktionsumgebung verfügbar ist, ist es von größter Bedeutung, ein optimales Kundenerlebnis aufrechtzuerhalten. Um Serverausfallszenarien effektiv zu beheben, müssen MVPDs Adobe eine detaillierte Dokumentation zu Eskalationsverfahren bereitstellen, um solche Probleme zu beheben.
 >
-> Im Gegenzug stellt Adobe sicher, dass MVPDs die neueste Version des Adobe Pass-Authentifizierungs-Eskalationsprozesses erhalten, um eine optimierte Problembehebung zu ermöglichen.
+> Im Gegenzug stellt Adobe sicher, dass MVPDs die neueste Version des Adobe Pass-Authentifizierungs-Eskalationsprozesses erhalten, um die Problembehebung zu optimieren.
 
 ## Zugriff auf Umgebungen {#access-environments}
 
@@ -121,7 +121,7 @@ auf die Zulassungsliste setzen **Sie bieten** Möglichkeit, IPs von Adobe zu üb
 
   Die RELEASE-Umgebung hostet den aktuellen (stabilen) Produktions-Build.
 
-Weitere Informationen zur Verwendung dieser Umgebungen finden Sie in der Dokumentation [Grundlagen zu den Adobe](/help/authentication/notes-technical/environments/understanding-the-adobe-environments.md)Umgebungen.
+Weitere Informationen zur Verwendung dieser Umgebungen finden Sie in der Dokumentation [Grundlagen zu den Adobe-Umgebungen](/help/authentication/notes-technical/environments/understanding-the-adobe-environments.md).
 
 >[!IMPORTANT]
 > 
@@ -135,9 +135,9 @@ Das Adobe Pass-Authentifizierungsteam steht zur Verfügung, um alle Fragen oder 
 
 ## Zugriff auf die Dokumentation {#access-documentation}
 
-**Adobe bietet** Zugriff auf unsere öffentliche Dokumentation über [Adobe Experience League](https://experienceleague.adobe.com/de/docs/pass/authentication/home).
+**Adobe bietet** Zugriff auf unsere öffentliche Dokumentation über [Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home).
 
-Das Adobe Pass-Authentifizierungsteam bietet unter dem Abschnitt [Integrationshandbuch für MVPDs“ eine umfassende Dokumentation &#x200B;](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md) verfügbaren Funktionen und Workflows. Links zu detaillierten Informationen zu den einzelnen Themen finden Sie im Inhaltsverzeichnis unter diesem Abschnitt .
+Das Adobe Pass-Authentifizierungsteam bietet unter dem Abschnitt [Integrationshandbuch für MVPDs“ eine umfassende Dokumentation ](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md) verfügbaren Funktionen und Workflows. Links zu detaillierten Informationen zu den einzelnen Themen finden Sie im Inhaltsverzeichnis unter diesem Abschnitt .
 
 ## Zugriff auf das Test-Tool {#access-testing-tool}
 

@@ -2,7 +2,7 @@
 title: REST-API-Cookbook (Client-zu-Server)
 description: REST-API-Cookbook-Client an Server.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '886'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 > Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
 
-## Übersicht {#overview}
+## Überblick {#overview}
 
 Dieses Dokument enthält Schritt-für-Schritt-Anweisungen für das Entwicklungsteam eines Programmierers zur Integration eines „intelligenten Geräts“ (Spielkonsole, Smart-TV-App, Set-Top-Box usw.) in die Adobe Pass-Authentifizierung mithilfe von REST-API-Services. Dieser Client-zu-Server-Ansatz, bei dem REST-APIs anstelle einer Client-SDK verwendet werden, ermöglicht eine breitere Unterstützung verschiedener Plattformen, für die die Entwicklung einer erheblichen Anzahl eindeutiger SDKs nicht möglich wäre. Einen umfassenden technischen Überblick über die Funktionsweise der Clientless-Lösung finden Sie unter [Clientless-technische Übersicht](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md).
 
@@ -49,12 +49,12 @@ In einer funktionierenden Client-zu-Server-Lösung sind die folgenden Komponente
 
 ### Dynamische Client-Registrierung (DCR)
 
-Adobe Pass verwendet DCR, um die Client-Kommunikation zwischen einer Programmieranwendung oder einem Server und den Adobe Pass-Services zu sichern. Der DCR-Ablauf ist separat und wird in der Dokumentation [Übersicht über die dynamische Client-Registrierung](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) beschrieben.
+Adobe Pass verwendet DCR, um die Client-Kommunikation zwischen einer Programmieranwendung oder einem Server und den Adobe Pass-Services zu sichern. Der DCR-Ablauf ist separat und wird in der Dokumentation [Übersicht über die dynamische Client-Registrierung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) beschrieben.
 
 
 ### Mobile-App-Flüsse für Streaming (intelligente Geräte)
 
-![](../../../../assets/smart-device-app-flow.png)
+![](/help//authentication/assets/smart-device-app-flow.png)
 
 #### Anlauffluss
 
@@ -119,7 +119,7 @@ Benutzer.
 
 ### AuthN-Programmfluss (2. Bildschirm)
 
-![](../../../../assets/secnd-screen-authn-flow.png)
+![](/help//authentication/assets/secnd-screen-authn-flow.png)
 
 1. Erstellt eine Liste der MVPDs für diesen Benutzer. Beispiel: [`<SP_FQDN>/api/v1/config/[requestorID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)
 
@@ -148,4 +148,4 @@ Bei TempPass- und Promotion-TempPass-Implementierungen, bei denen der Benutzer k
 **Um diese API verwenden zu können, muss die Streaming-App sicherstellen, dass die Geräte-ID, da sie für die Identifizierung des Tokens verwendet wird, zusammen mit den optionalen zusätzlichen Daten eindeutig ist.**
 
 
-![](../../../../assets/temp-pass-promo-temppass.png)
+![](/help//authentication/assets/temp-pass-promo-temppass.png)

@@ -2,7 +2,7 @@
 title: Amazon FireOS-Integrations-Cookbook
 description: Amazon FireOS-Integrations-Cookbook
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '1447'
 ht-degree: 0%
@@ -30,7 +30,7 @@ Die Lösung für die Berechtigung zur Adobe Pass-Authentifizierung für Amazon F
 
 - Die Domain der Benutzeroberfläche : Dies ist die Anwendungsebene der oberen Ebene, die die Benutzeroberfläche implementiert und die von der `AccessEnabler`-Bibliothek bereitgestellten Services verwendet, um Zugriff auf eingeschränkte Inhalte zu gewähren.
 - Die `AccessEnabler` Domain - hier werden die Berechtigungs-Workflows in der Form von implementiert:
-   - Netzwerkaufrufe an Adobe-Backend-Server
+   - Netzwerkaufrufe an die Backend-Server von Adobe
    - Geschäftslogikregeln in Bezug auf die Authentifizierungs- und Autorisierungs-Workflows
    - Verwaltung verschiedener Ressourcen und Verarbeitung des Workflow-Status (z. B. des Token-Cache)
 
@@ -107,7 +107,7 @@ Der `event` Parameter gibt an, welches Berechtigungsereignis aufgetreten ist. De
       - Der `authorizedResources` Parameter stellt die Ressourcen dar, die der Benutzer anzeigen darf.
 
 
-![](../../../../assets/android-entitlement-flows.png)
+![](/help//authentication/assets/android-entitlement-flows.png)
 
 
 ### B. Anlauffluss {#startup_flow}
@@ -144,7 +144,7 @@ Der `event` Parameter gibt an, welches Berechtigungsereignis aufgetreten ist. De
 
    **Trigger:**
 
-   - Der Rückruf setAuthenticationStatus() , wenn der Benutzer bereits authentifiziert ist.  Fahren Sie in diesem Fall direkt mit dem [Autorisierungsfluss“ &#x200B;](#authz_flow).
+   - Der Rückruf setAuthenticationStatus() , wenn der Benutzer bereits authentifiziert ist.  Fahren Sie in diesem Fall direkt mit dem [Autorisierungsfluss“ ](#authz_flow).
    - Der Rückruf displayProviderDialog() , wenn der Benutzer noch nicht authentifiziert ist.
 
 1. Zeigen Sie dem Benutzer die Liste der an `displayProviderDialog()` gesendeten Anbieter.
