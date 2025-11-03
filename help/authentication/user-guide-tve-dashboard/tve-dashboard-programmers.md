@@ -47,7 +47,7 @@ Führen Sie diese Schritte aus, um verschiedene Einstellungen eines bestimmten P
 
 >[!IMPORTANT]
 >
-> Weitere Informationen [ Aktivieren der Konfigurationsänderungen finden Sie unter ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md) und Push-Änderungen .
+> Weitere Informationen [&#x200B; Aktivieren der Konfigurationsänderungen finden Sie unter &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md) und Push-Änderungen .
 
 ### Kanäle {#channels}
 

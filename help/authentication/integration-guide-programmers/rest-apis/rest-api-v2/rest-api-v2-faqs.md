@@ -95,7 +95,7 @@ Die Client-Anwendung sollte die Konfigurationsantwortinformationen in einem Arbe
 
 Die Client-Anwendung kann ihre eigene Liste von MVPDs verwalten, erfordert jedoch, dass die MVPD-IDs mit der Adobe Pass-Authentifizierung synchronisiert bleiben. Es wird daher empfohlen, die von der Adobe Pass-Authentifizierung bereitgestellte Konfiguration zu verwenden, um sicherzustellen, dass die Liste aktuell und korrekt ist.
 
-Die Client-Anwendung erhält einen [Fehler](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2) von der Adobe Pass-Authentifizierungs-REST-API V2, wenn die angegebene MVPD-Kennung ungültig ist oder keine aktive Integration mit dem angegebenen [Dienstleister“ ](rest-api-v2-glossary.md#service-provider).
+Die Client-Anwendung erhält einen [Fehler](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2) von der Adobe Pass-Authentifizierungs-REST-API V2, wenn die angegebene MVPD-Kennung ungültig ist oder keine aktive Integration mit dem angegebenen [Dienstleister“ &#x200B;](rest-api-v2-glossary.md#service-provider).
 
 #### &#x200B;7. Kann die Client-Anwendung die Liste der MVPDs filtern? {#configuration-phase-faq7}
 
@@ -190,7 +190,7 @@ Die Client-Anwendung kann den vom Benutzer in eine sekundäre (Bildschirm-)Anwen
 
 Die Client-Anwendung erhält einen [Fehler](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2), wenn der angegebene Authentifizierungscode falsch eingegeben wurde oder wenn die Authentifizierungssitzung abgelaufen ist.
 
-Weitere Informationen finden Sie in den Dokumenten [Fortsetzen der Authentifizierungssitzung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md) und [Abrufen der ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)).
+Weitere Informationen finden Sie in den Dokumenten [Fortsetzen der Authentifizierungssitzung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md) und [Abrufen der &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)).
 
 #### &#x200B;6. Wie kann die Client-Anwendung erkennen, ob der Benutzer bereits authentifiziert ist? {#authentication-phase-faq6}
 
@@ -223,7 +223,7 @@ Weitere Informationen finden Sie in den folgenden Dokumenten:
 
 Das Profil ist für einen begrenzten Zeitraum gültig, der bei der Abfrage durch den `notAfter` Zeitstempel angegeben wird. Dies gibt an, wie lange der Benutzer über eine gültige Authentifizierung verfügt, bevor er die Authentifizierungsphase erneut durchlaufen muss.
 
-Dieser begrenzte Zeitraum, der als Authentifizierung (authN) [TTL](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#ttl) bezeichnet wird, kann über das Adobe Pass [TVE-Dashboard ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) von einem Ihrer Organisationsadministratoren oder einem in Ihrem Namen handelnden Adobe Pass-Authentifizierungsbeauftragten angezeigt und geändert werden.
+Dieser begrenzte Zeitraum, der als Authentifizierung (authN) [TTL](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#ttl) bezeichnet wird, kann über das Adobe Pass [TVE-Dashboard &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) von einem Ihrer Organisationsadministratoren oder einem in Ihrem Namen handelnden Adobe Pass-Authentifizierungsbeauftragten angezeigt und geändert werden.
 
 Weitere Informationen finden Sie in der Dokumentation [TVE Dashboard Integrations-Benutzerhandbuch](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
 
@@ -259,7 +259,7 @@ Jeder Endpunkt eignet sich für einen bestimmten Anwendungsfall wie folgt:
 | [Profile-Endpunkt für bestimmte MVPD-API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | Rufen Sie das Benutzerprofil ab, das mit einer bestimmten MVPD verknüpft ist. | **Der Benutzer kehrt nach der Authentifizierung bei einem vorherigen Besuch zur Client-Anwendung zurück**<br/><br/> In diesem Fall muss die zuvor ausgewählte MVPD-Kennung des Benutzers in einem persistenten Speicher zwischengespeichert sein.<br/><br/>Daher wird eine einzige Anfrage gesendet, um das Benutzerprofil für diese spezifische MVPD abzurufen. |
 | [Profile-Endpunkt für bestimmte (Authentifizierungs) Code-API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | Rufen Sie das Benutzerprofil ab, das mit einem bestimmten Authentifizierungs-Code verknüpft ist. | **Benutzer initiiert den Authentifizierungsprozess**<br/><br/> In diesem Szenario muss die Client-Anwendung feststellen, ob der Benutzer die Authentifizierung erfolgreich abgeschlossen hat, und muss seine Profilinformationen abrufen.<br/><br/>Daher wird ein Abrufmechanismus gestartet, um das mit dem Authentifizierungs-Code verknüpfte Benutzerprofil abzurufen. |
 
-Weitere Informationen finden Sie in den Dokumenten [Fluss „Grundlegende Profile“, der in der ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md) ausgeführt wird[ und „Fluss „Grundlegende Profile“, der in der sekundären Anwendung ausgeführt ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)).
+Weitere Informationen finden Sie in den Dokumenten [Fluss „Grundlegende Profile“, der in der &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md) ausgeführt wird[&#x200B; und „Fluss „Grundlegende Profile“, der in der sekundären Anwendung ausgeführt &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)).
 
 Der SSO-Endpunkt Profile erfüllt einen anderen Zweck. Er bietet der Client-Anwendung die Möglichkeit, ein Benutzerprofil mithilfe der Antwort der Partnerauthentifizierung zu erstellen und es in einem einzigen, einmaligen Vorgang abzurufen.
 
@@ -309,7 +309,7 @@ Um Effizienz zu gewährleisten und unnötige Anfragen zu vermeiden, muss die Cli
 
 **Authentifizierung wird innerhalb der primären (Bildschirm-)Anwendung durchgeführt**
 
-Die primäre (Streaming-)Anwendung sollte den Abfragevorgang starten, wenn die Benutzerin oder der Benutzer die endgültige Zielseite erreicht, nachdem die Browser-Komponente die in der Endpunktanforderung `redirectUrl`Sitzungen[ für den ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) angegebene URL geladen hat.
+Die primäre (Streaming-)Anwendung sollte den Abfragevorgang starten, wenn die Benutzerin oder der Benutzer die endgültige Zielseite erreicht, nachdem die Browser-Komponente die in der Endpunktanforderung `redirectUrl`Sitzungen[&#x200B; für den &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) angegebene URL geladen hat.
 
 **Authentifizierung wird in einer sekundären (Bildschirm-)Anwendung durchgeführt**
 
@@ -341,7 +341,7 @@ Um die Effizienz zu gewährleisten und unnötige Anfragen zu vermeiden, muss die
 
 #### &#x200B;17. Wie viele Abrufanfragen kann die Client-Anwendung maximal senden? {#authentication-phase-faq17}
 
-Die Client-Anwendung muss die aktuellen Beschränkungen einhalten, die vom Adobe Pass-Authentifizierungsmechanismus ([) definiert ](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-limits).
+Die Client-Anwendung muss die aktuellen Beschränkungen einhalten, die vom Adobe Pass-Authentifizierungsmechanismus ([) definiert &#x200B;](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-limits).
 
 Die Fehlerbehandlung in der Client-Anwendung muss den Fehlercode [429: Zu viele Anfragen](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-response) verarbeiten können, der angibt, dass die Client-Anwendung die maximal zulässige Anzahl von Anfragen überschritten hat.
 
@@ -372,7 +372,7 @@ Zusammenfassend lässt sich sagen, dass dadurch trotz temporärer Service-Unterb
 
 Da Ihr Unternehmen beabsichtigt, die Premium-Funktion zur Beeinträchtigung zu verwenden, muss die Client-Anwendung eingeschränkte Zugriffsflüsse handhaben, die beschreiben, wie sich REST-API-v2-Endpunkte in solchen Szenarien verhalten.
 
-Weitere Informationen finden Sie in der Dokumentation [Gestörte ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)&quot;.
+Weitere Informationen finden Sie in der Dokumentation [Gestörte &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)&quot;.
 
 #### &#x200B;20. Wie sollte die Client-Anwendung den temporären Zugriff verwalten? {#authentication-phase-faq20}
 
@@ -414,7 +414,7 @@ Die Vorautorisierungsphase ist nicht obligatorisch. Die Client-Anwendung kann di
 
 #### &#x200B;3. Was ist eine Entscheidung vor der Zulassung? {#preauthorization-phase-faq3}
 
-Die Vorautorisierung ist ein Begriff, der in der [Glossar](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#preauthorization)-Dokumentation definiert ist, während der Entscheidungsbegriff auch im [Glossar) ](rest-api-v2-glossary.md#decision) ist.
+Die Vorautorisierung ist ein Begriff, der in der [Glossar](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#preauthorization)-Dokumentation definiert ist, während der Entscheidungsbegriff auch im [Glossar) &#x200B;](rest-api-v2-glossary.md#decision) ist.
 
 Die Vorautorisierungsentscheidung speichert Informationen zum Abfrageergebnis des MVPD-Vorautorisierungsprozesses, die vom Endpunkt Decisions Preauthorize abgerufen werden können.
 
@@ -484,7 +484,7 @@ Die Autorisierungsphase ist obligatorisch. Die Client-Anwendung kann diese Phase
 
 #### &#x200B;3. Was ist eine Zulassungsentscheidung und wie lange ist sie gültig? {#authorization-phase-faq3}
 
-Der Begriff Autorisierung ist in der [Glossar](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#authorization)-Dokumentation definiert, während der Begriff Entscheidung auch im [Glossar) ](rest-api-v2-glossary.md#decision) ist.
+Der Begriff Autorisierung ist in der [Glossar](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#authorization)-Dokumentation definiert, während der Begriff Entscheidung auch im [Glossar) &#x200B;](rest-api-v2-glossary.md#decision) ist.
 
 Die Autorisierungsentscheidung speichert Informationen zum Abfrageergebnis des MVPD-Autorisierungsprozesses, die vom Entscheidungsautorisierungs-Endpunkt abgerufen werden können.
 
@@ -497,7 +497,7 @@ Weitere Informationen finden Sie in den folgenden Dokumenten:
 
 Die Autorisierungsentscheidung ist für einen begrenzten und kurzen Zeitraum gültig, der zum Zeitpunkt der Ausgabe angegeben ist. Dabei wird die Zeit angegeben, die von der Adobe Pass-Authentifizierung zwischengespeichert wird, bevor die MVPD erneut abgefragt werden muss.
 
-Dieser begrenzte Zeitraum, der als Autorisierung (authZ) [TTL](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#ttl) bezeichnet wird, kann über das Adobe Pass [TVE-Dashboard ](rest-api-v2-glossary.md#tve-dashboard) von einem Ihrer Organisationsadministratoren oder einem in Ihrem Namen handelnden Adobe Pass-Authentifizierungsbeauftragten angezeigt und geändert werden.
+Dieser begrenzte Zeitraum, der als Autorisierung (authZ) [TTL](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#ttl) bezeichnet wird, kann über das Adobe Pass [TVE-Dashboard &#x200B;](rest-api-v2-glossary.md#tve-dashboard) von einem Ihrer Organisationsadministratoren oder einem in Ihrem Namen handelnden Adobe Pass-Authentifizierungsbeauftragten angezeigt und geändert werden.
 
 Weitere Informationen finden Sie in der Dokumentation [TVE Dashboard Integrations-Benutzerhandbuch](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
 
@@ -534,7 +534,7 @@ Weitere Informationen finden Sie in den folgenden Dokumenten:
 
 Ja.
 
-Die Client-Anwendung muss das Medien-Token validieren, bevor die Wiedergabe des Ressourcen-Streams gestartet wird. Diese Validierung sollte mit dem „Media [ Verifier“ durchgeführt ](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier). Durch die Überprüfung der `serializedToken` aus der zurückgegebenen `token` verhindert die Client-Anwendung nicht autorisierten Zugriff, wie z. B. das Stream-Ripping, und stellt sicher, dass nur ordnungsgemäß autorisierte Benutzer den Inhalt wiedergeben können.
+Die Client-Anwendung muss das Medien-Token validieren, bevor die Wiedergabe des Ressourcen-Streams gestartet wird. Diese Validierung sollte mit dem „Media [&#x200B; Verifier“ durchgeführt &#x200B;](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier). Durch die Überprüfung der `serializedToken` aus der zurückgegebenen `token` verhindert die Client-Anwendung nicht autorisierten Zugriff, wie z. B. das Stream-Ripping, und stellt sicher, dass nur ordnungsgemäß autorisierte Benutzer den Inhalt wiedergeben können.
 
 #### &#x200B;8. Soll die Client-Anwendung während der Wiedergabe ein abgelaufenes Medien-Token aktualisieren? {#authorization-phase-faq8}
 
@@ -640,7 +640,7 @@ Die [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis
 
 Wenn der Header [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md) fehlt oder falsche Werte enthält, kann die Anfrage als von einer `unknown` Plattform stammend klassifiziert werden.
 
-Dies kann dazu führen, dass die Anfrage als unsicher behandelt wird und restriktiveren Regeln unterliegt, wie z. B. kürzeren Authentifizierungs-TTLs. Darüber hinaus sind einige Felder, wie die `connectionIp` und `connectionPort` des Streaming-Geräts, für Funktionen wie die „Home Base Authentication[ von Spectrum ](/help/premium-workflow/hba-access/home-based-authentication.md).
+Dies kann dazu führen, dass die Anfrage als unsicher behandelt wird und restriktiveren Regeln unterliegt, wie z. B. kürzeren Authentifizierungs-TTLs. Darüber hinaus sind einige Felder, wie die `connectionIp` und `connectionPort` des Streaming-Geräts, für Funktionen wie die „Home Base Authentication[&#x200B; von Spectrum &#x200B;](/help/premium-workflow/hba-access/home-based-authentication.md).
 
 Selbst wenn die Anfrage im Auftrag eines Geräts von einem Server stammt, muss der [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)-Header-Wert die tatsächlichen Streaming-Geräteinformationen widerspiegeln.
 
@@ -661,7 +661,7 @@ Sie können die REST-API V2 über unsere spezielle [Adobe Developer](https://dev
 
 Um mit [REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/) zu interagieren, müssen Sie den [Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)-Header mit einem `Bearer` Zugriffstoken einfügen, das über die [DCR-API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/).
 
-Für die Verwendung der [DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/) ist eine Software-Anweisung mit dem REST API V2-Umfang erforderlich. Weitere Informationen finden Sie in den häufig gestellten [ zur Dynamic Client-Registrierung (DCR](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md).
+Für die Verwendung der [DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/) ist eine Software-Anweisung mit dem REST API V2-Umfang erforderlich. Weitere Informationen finden Sie in den häufig gestellten [&#x200B; zur Dynamic Client-Registrierung (DCR](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md).
 
 #### &#x200B;2. Kann ich REST API V2-Anfragen und -Antworten mithilfe eines API-Entwicklungs-Tools mit OpenAPI-Unterstützung durchsuchen? {#misc-faq2}
 
@@ -687,7 +687,7 @@ Die Client-Programme, die zur REST API V2 migrieren, sollten das neue Test-Tool 
 
 Um mit [REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/) zu interagieren, müssen Sie den [Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)-Header mit einem `Bearer` Zugriffstoken einfügen, das über die [DCR-API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/).
 
-Für die Verwendung der [DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/) ist eine Software-Anweisung mit dem REST API V2-Umfang erforderlich. Weitere Informationen finden Sie in den häufig gestellten [ zur Dynamic Client-Registrierung (DCR](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md).
+Für die Verwendung der [DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/) ist eine Software-Anweisung mit dem REST API V2-Umfang erforderlich. Weitere Informationen finden Sie in den häufig gestellten [&#x200B; zur Dynamic Client-Registrierung (DCR](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md).
 
 +++
 
@@ -735,7 +735,7 @@ Ja.
 
 Die Client-Programme, die zur REST API V2 migrieren, profitieren standardmäßig automatisch von dieser Funktion und bieten detailliertere und präzisere Fehlerinformationen.
 
-Weitere Informationen finden Sie in der Dokumentation [Erweiterte ](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)).
+Weitere Informationen finden Sie in der Dokumentation [Erweiterte &#x200B;](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)).
 
 #### &#x200B;5. Benötigen bestehende Integrationen bei der Migration auf REST API V2 Konfigurationsänderungen? {#migration-faq5}
 

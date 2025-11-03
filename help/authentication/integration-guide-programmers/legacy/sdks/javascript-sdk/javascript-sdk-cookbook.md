@@ -23,7 +23,7 @@ ht-degree: 0%
 
 In diesem Dokument werden die Berechtigungs-Workflows beschrieben, die die Anwendung eines Programmierers auf höherer Ebene für eine JavaScript-Integration mit dem Adobe Pass-Authentifizierungs-Service implementiert. Links zur JavaScript-API-Referenz sind überall zu finden.
 
-Beachten Sie außerdem, dass [ Abschnitt „Verwandte ](#related)&quot; einen
+Beachten Sie außerdem, dass [&#x200B; Abschnitt „Verwandte &#x200B;](#related)&quot; einen
 Link zu einem Satz von JavaScript-Code-Beispielen.
 
 ## Berechtigungsflüsse {#entitlement}
@@ -149,7 +149,7 @@ Rufen Sie `getAuthentication()` auf, um den Authentifizierungsstatus ODER den Tr
 - `displayProviderDialog()`Wenn der Benutzer noch nicht authentifiziert wurde
 - `setAuthenticationStatus()`, ob die Authentifizierung bereits stattgefunden hat
 
-Der Abschluss des Authentifizierungsflusses wird erreicht, wenn AccessEnabler (mit `setAuthenticationStatus()``isAuthenticated == 1` aufruft.
+Der Abschluss des Authentifizierungsflusses wird erreicht, wenn AccessEnabler (mit `setAuthenticationStatus()` `isAuthenticated == 1` aufruft.
 
 ## &#x200B;4. Autorisierungsfluss {#authz}
 

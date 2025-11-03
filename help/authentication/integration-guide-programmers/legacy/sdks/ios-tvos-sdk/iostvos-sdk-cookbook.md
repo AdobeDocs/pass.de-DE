@@ -48,7 +48,7 @@ Die Netzwerkaktivität des AccessEnabler erfolgt in einem eigenen Thread, sodass
 
 ## Konfigurieren des Experience Cloud ID-Service (Besucher-ID) {#visitorIDSetup}
 
-Die Konfiguration des Werts [ ](https://experienceleague.adobe.com/docs/id-service/using/home.html)Experience Cloud ID[!DNL Analytics] ist wichtig. Nachdem ein `visitorID` festgelegt wurde, sendet die SDK diese Informationen zusammen mit jedem Netzwerkaufruf, und der [!DNL Adobe Pass]-Authentifizierungsserver erfasst diese Informationen. Sie können die Analysen aus dem Adobe Pass-Authentifizierungs-Service mit allen anderen Analyseberichten korrelieren, die Sie möglicherweise von anderen Anwendungen oder Websites haben. Informationen zum Einrichten von visitorID finden Sie [hier](#setOptions).
+Die Konfiguration des Werts [&#x200B; &#x200B;](https://experienceleague.adobe.com/docs/id-service/using/home.html)Experience Cloud ID[!DNL Analytics] ist wichtig. Nachdem ein `visitorID` festgelegt wurde, sendet die SDK diese Informationen zusammen mit jedem Netzwerkaufruf, und der [!DNL Adobe Pass]-Authentifizierungsserver erfasst diese Informationen. Sie können die Analysen aus dem Adobe Pass-Authentifizierungs-Service mit allen anderen Analyseberichten korrelieren, die Sie möglicherweise von anderen Anwendungen oder Websites haben. Informationen zum Einrichten von visitorID finden Sie [hier](#setOptions).
 
 ## Berechtigungsflüsse {#entitlement}
 
@@ -130,7 +130,7 @@ ist berechtigt, Folgendes anzuzeigen.
    a. Rufen Sie [`init`](#$init) auf, um eine einzelne Instanz von Adobe Pass Authentication AccessEnabler zu erstellen.
    * **Abhängigkeit:** Native iOS/tvOS-Bibliothek für die Adobe Pass-Authentifizierung (AccessEnabler)
 
-   b. Rufen Sie `setRequestor()` auf, um die Identität des Programmierers festzulegen, übergeben Sie die `requestorID` des Programmierers und (optional) ein Array von Adobe Pass-Authentifizierungsendpunkten. Bei tvOS müssen Sie auch den öffentlichen Schlüssel und das Geheimnis angeben. Weitere Informationen finden [ in der ](#create_dev)-Dokumentation .
+   b. Rufen Sie `setRequestor()` auf, um die Identität des Programmierers festzulegen, übergeben Sie die `requestorID` des Programmierers und (optional) ein Array von Adobe Pass-Authentifizierungsendpunkten. Bei tvOS müssen Sie auch den öffentlichen Schlüssel und das Geheimnis angeben. Weitere Informationen finden [&#x200B; in der &#x200B;](#create_dev)-Dokumentation .
 
    * **Abhängigkeit:** gültige Adobe Pass-Authentifizierungsanforderungs-ID (mit Ihrem Adobe Pass-Authentifizierungskonto arbeiten)
 Manager (um dies zu arrangieren).
@@ -162,7 +162,7 @@ authentifiziert.
 
    **Trigger:**
 
-   * Der [setAuthenticationStatus()](#$setAuthNStatus)-Rückruf, wenn der Benutzer bereits authentifiziert ist. Fahren Sie in diesem Fall direkt mit dem [Autorisierungsfluss“ ](#authz_flow).
+   * Der [setAuthenticationStatus()](#$setAuthNStatus)-Rückruf, wenn der Benutzer bereits authentifiziert ist. Fahren Sie in diesem Fall direkt mit dem [Autorisierungsfluss“ &#x200B;](#authz_flow).
 
    * Der [displayProviderDialog()](#$dispProvDialog) Rückruf, wenn der Benutzer noch nicht authentifiziert ist.
 
