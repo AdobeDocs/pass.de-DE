@@ -48,7 +48,7 @@ Die Netzwerkaktivität des AccessEnabler erfolgt in einem eigenen Thread, sodass
 
 ## Konfigurieren des Experience Cloud ID-Service (Besucher-ID) {#visitorIDSetup}
 
-Die Konfiguration des Werts [&#x200B; &#x200B;](https://experienceleague.adobe.com/docs/id-service/using/home.html)Experience Cloud ID[!DNL Analytics] ist wichtig. Nachdem ein `visitorID` festgelegt wurde, sendet die SDK diese Informationen zusammen mit jedem Netzwerkaufruf, und der [!DNL Adobe Pass]-Authentifizierungsserver erfasst diese Informationen. Sie können die Analysen aus dem Adobe Pass-Authentifizierungs-Service mit allen anderen Analyseberichten korrelieren, die Sie möglicherweise von anderen Anwendungen oder Websites haben. Informationen zum Einrichten von visitorID finden Sie [hier](#setOptions).
+Die Konfiguration des Werts [&#x200B; &#x200B;](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=de)Experience Cloud ID[!DNL Analytics] ist wichtig. Nachdem ein `visitorID` festgelegt wurde, sendet die SDK diese Informationen zusammen mit jedem Netzwerkaufruf, und der [!DNL Adobe Pass]-Authentifizierungsserver erfasst diese Informationen. Sie können die Analysen aus dem Adobe Pass-Authentifizierungs-Service mit allen anderen Analyseberichten korrelieren, die Sie möglicherweise von anderen Anwendungen oder Websites haben. Informationen zum Einrichten von visitorID finden Sie [hier](#setOptions).
 
 ## Berechtigungsflüsse {#entitlement}
 
