@@ -30,7 +30,7 @@ Als neue Funktion bietet das neue Android-Betriebssystem [granulare Kontrolle ü
 >Die unten beschriebenen Änderungen betreffen **nur Programme, die speziell für Android 6.0 entwickelt wurden** (targetSdkVersion=23). Sie wirken sich nicht auf ältere Anwendungen aus, die beim Upgrade auf Android 6.0 bereits auf dem Benutzergerät installiert sind.
 
 
-Insbesondere für Apps, die in Android Studio mit [API Level 23](http://developer.android.com/sdk/api_diff/23/changes.html) entwickelt wurden und die die Adobe Pass-Authentifizierungs-SDK verwenden, muss der Entwickler benutzerdefinierten Code schreiben (siehe Code-Snippet unten), [&#x200B; den Trigger für das Dialogfeld „Berechtigungen zulassen/verweigern“](https://developer.android.com/training/permissions/requesting.html).
+Insbesondere für Apps, die in Android Studio mit [API Level 23](http://developer.android.com/sdk/api_diff/23/changes.html) entwickelt wurden und die die Adobe Pass-Authentifizierungs-SDK verwenden, muss der Entwickler benutzerdefinierten Code schreiben (siehe Code-Snippet unten), [ den Trigger für das Dialogfeld „Berechtigungen zulassen/verweigern“](https://developer.android.com/training/permissions/requesting.html).
 
 Im Folgenden finden Sie den Code-Auszug, der zum Anfordern des Schreibzugriffs auf den externen Speicher des Geräts verwendet wird:
 

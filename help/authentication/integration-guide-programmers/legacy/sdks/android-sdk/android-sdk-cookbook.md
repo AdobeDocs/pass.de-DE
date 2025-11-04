@@ -149,7 +149,7 @@ Android Library (AccessEnabler)
 
 1. Rufen Sie [`getAuthentication()`](#$getAuthN) auf, um den Authentifizierungsfluss zu initiieren oder um eine Bestätigung zu erhalten, dass der Benutzer bereits authentifiziert ist.\
    **Trigger:**
-   - Der Rückruf setAuthenticationStatus() , wenn der Benutzer bereits authentifiziert ist.  Fahren Sie in diesem Fall direkt mit dem [Autorisierungsfluss“ &#x200B;](#authz_flow).
+   - Der Rückruf setAuthenticationStatus() , wenn der Benutzer bereits authentifiziert ist.  Fahren Sie in diesem Fall direkt mit dem [Autorisierungsfluss“ ](#authz_flow).
    - Der Rückruf displayProviderDialog() , wenn der Benutzer noch nicht authentifiziert ist.
 
 1. Zeigen Sie dem Benutzer die Liste der an `displayProviderDialog()` gesendeten Anbieter.
@@ -221,6 +221,6 @@ Fluss.
 
 ### Benutzerflüsse für die Anmeldung mit mehreren MVPDs und die Abmeldung {#user_flows}
 
-[Hier &#x200B;](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AndroidSSOUserFlows.pdf) Sie ein Dokument, das das Verhalten bei der Verwendung mehrerer MVPDs beschreibt und beschreibt, was passiert, wenn sich der Benutzer von einer Anwendung abmeldet.
+[Hier ](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AndroidSSOUserFlows.pdf) Sie ein Dokument, das das Verhalten bei der Verwendung mehrerer MVPDs beschreibt und beschreibt, was passiert, wenn sich der Benutzer von einer Anwendung abmeldet.
 
 Das beschriebene Verhalten ist bei Verwendung der Android SDK-Version >= 2.0.0 verfügbar.

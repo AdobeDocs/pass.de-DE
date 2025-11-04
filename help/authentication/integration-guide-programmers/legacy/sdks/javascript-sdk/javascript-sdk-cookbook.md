@@ -23,7 +23,7 @@ ht-degree: 0%
 
 In diesem Dokument werden die Berechtigungs-Workflows beschrieben, die die Anwendung eines Programmierers auf höherer Ebene für eine JavaScript-Integration mit dem Adobe Pass-Authentifizierungs-Service implementiert. Links zur JavaScript-API-Referenz sind überall zu finden.
 
-Beachten Sie außerdem, dass [&#x200B; Abschnitt „Verwandte &#x200B;](#related)&quot; einen
+Beachten Sie außerdem, dass [ Abschnitt „Verwandte ](#related)&quot; einen
 Link zu einem Satz von JavaScript-Code-Beispielen.
 
 ## Berechtigungsflüsse {#entitlement}
@@ -149,7 +149,7 @@ Rufen Sie `getAuthentication()` auf, um den Authentifizierungsstatus ODER den Tr
 - `displayProviderDialog()`Wenn der Benutzer noch nicht authentifiziert wurde
 - `setAuthenticationStatus()`, ob die Authentifizierung bereits stattgefunden hat
 
-Der Abschluss des Authentifizierungsflusses wird erreicht, wenn AccessEnabler (mit `setAuthenticationStatus()` `isAuthenticated == 1` aufruft.
+Der Abschluss des Authentifizierungsflusses wird erreicht, wenn AccessEnabler (mit `setAuthenticationStatus()``isAuthenticated == 1` aufruft.
 
 ## &#x200B;4. Autorisierungsfluss {#authz}
 
@@ -186,7 +186,7 @@ AccessEnabler-Bibliothek)
 
 ## Konfigurieren der Besucher-ID {#visitorID}
 
-Die Konfiguration eines [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=de)-Werts ist aus analytischer Sicht sehr wichtig. Sobald ein EC VisitorID-Wert festgelegt ist, sendet die SDK diese Informationen zusammen mit jedem Netzwerkaufruf, und der Adobe Pass-Authentifizierungsdienst erfasst diese Informationen. Auf diese Weise können Sie die Analysedaten aus dem Adobe Pass-Authentifizierungs-Service mit allen anderen Analyseberichten korrelieren, die Sie möglicherweise von anderen Programmen oder Websites haben. Informationen zum Einrichten von EC visitorID finden Sie [hier](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=de).
+Die Konfiguration eines [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html)-Werts ist aus analytischer Sicht sehr wichtig. Sobald ein EC VisitorID-Wert festgelegt ist, sendet die SDK diese Informationen zusammen mit jedem Netzwerkaufruf, und der Adobe Pass-Authentifizierungsdienst erfasst diese Informationen. Auf diese Weise können Sie die Analysedaten aus dem Adobe Pass-Authentifizierungs-Service mit allen anderen Analyseberichten korrelieren, die Sie möglicherweise von anderen Programmen oder Websites haben. Informationen zum Einrichten von EC visitorID finden Sie [hier](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
 
 
 >[!NOTE]

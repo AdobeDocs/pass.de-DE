@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## Kontext
 
-Der von der Clientless-API `deviceType` Parameter wird, sofern vorhanden, in Adobe Pass-Authentifizierungsmetriken verwendet, die über die [Überwachung des Berechtigungsdienstes“ verfügbar gemacht &#x200B;](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md).
+Der von der Clientless-API `deviceType` Parameter wird, sofern vorhanden, in Adobe Pass-Authentifizierungsmetriken verwendet, die über die [Überwachung des Berechtigungsdienstes“ verfügbar gemacht ](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md).
 
 Da die Verbindung zwischen dem `deviceType` Parameter und seinen **Vorteilen** in der Adobe Pass-Authentifizierungsmetrik ursprünglich nicht angegeben wurde, umfasst dieser technische Hinweis das Hinzufügen weiterer Informationen dazu.
 
@@ -35,14 +35,14 @@ Der `deviceType` Parameter war seit der ersten Version in der Clientless-API vor
 
 >[!IMPORTANT]
 >
->Wenn der Parameter `deviceType` richtig festgelegt ist, hat er in der Überwachung des Berechtigungs-Service **folgenden**: Er bietet Metriken, die bei Verwendung von [&#x200B; (nach Gerätetyp &#x200B;](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#clientless_device_type)) sind, sodass verschiedene Arten der Analyse für z. B. Roku, AppleTV, Xbox usw. durchgeführt werden können.
+>Wenn der Parameter `deviceType` richtig festgelegt ist, hat er in der Überwachung des Berechtigungs-Service **folgenden**: Er bietet Metriken, die bei Verwendung von [ (nach Gerätetyp ](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#clientless_device_type)) sind, sodass verschiedene Arten der Analyse für z. B. Roku, AppleTV, Xbox usw. durchgeführt werden können.
 
 
-Weitere Informationen zur API zur Überwachung des Berechtigungs-Service finden Sie in der [Aufschlüsselungsstruktur, &#x200B;](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#esm_dimensions) (Ressourcen), die in ESM 2.0 verfügbar ist.
+Weitere Informationen zur API zur Überwachung des Berechtigungs-Service finden Sie in der [Aufschlüsselungsstruktur, ](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#esm_dimensions) (Ressourcen), die in ESM 2.0 verfügbar ist.
 
 >[!NOTE]
 >
->Der Inhalt dieser technischen Anmerkung wurde auch der &quot;[-API“ &#x200B;](#clientless_device_type).
+>Der Inhalt dieser technischen Anmerkung wurde auch der &quot;[-API“ ](#clientless_device_type).
 
 
 

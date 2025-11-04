@@ -309,7 +309,7 @@ Beispiel:
 **Beschreibung:** Rufen Sie diese Funktion auf, wenn Benutzende eine MVPD aus Ihrer Anbieterauswahl-Benutzeroberfläche ausgewählt haben, um die Anbieterauswahl an den Access Enabler zu senden, oder rufen Sie diese Funktion mit einem Null-Parameter auf, falls Benutzende Ihre Anbieterauswahl-Benutzeroberfläche verworfen haben, ohne einen Anbieter auszuwählen.
 
 **Callbacks
-trigger:**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+trigger:**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +415,7 @@ Sie müssen diese Callbacks implementieren, um die Antworten auf Ihre asynchrone
 
 **Beschreibung:** Implementieren Sie diesen Callback, wenn der Benutzer einen MVPD ausgewählt hat, für den ein iFrame erforderlich ist, in dem die Benutzeroberfläche für die Authentifizierungs-Anmeldeseite angezeigt werden soll.
 
-**Ausgelöst durch:**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Ausgelöst durch:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Zurück zum Anfang](#top)
 

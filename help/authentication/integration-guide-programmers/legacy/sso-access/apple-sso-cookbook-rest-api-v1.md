@@ -21,7 +21,7 @@ ht-degree: 0%
 
 Die Adobe Pass-Authentifizierungs-REST-API V1 unterstützt das Partner Single Sign-On (SSO) für Endbenutzer von Client-Anwendungen, die auf iOS, iPadOS oder tvOS ausgeführt werden.
 
-Dieses Dokument dient als Erweiterung der vorhandenen REST API V1-Dokumentation, die Sie ([) &#x200B;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md).
+Dieses Dokument dient als Erweiterung der vorhandenen REST API V1-Dokumentation, die Sie ([) ](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md).
 
 ## Cookbook {#apple-sso-cookbook-rest-api-v1-cookbook}
 
@@ -39,7 +39,7 @@ Um von dem Apple SSO-Benutzererlebnis zu profitieren, muss die Anwendung das von
 
 >[!TIP]
 >
-> **<u>Profi-Tipp:</u>** Es wird empfohlen, die Berechtigung des Benutzers anzufordern, wenn die Anwendung in den Vordergrundstatus wechselt, da die Anwendung jederzeit auf die Abonnementinformationen [Zugriffsberechtigung“ &#x200B;](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) Benutzers prüfen kann, bevor eine Benutzerauthentifizierung erforderlich wird.
+> **<u>Profi-Tipp:</u>** Es wird empfohlen, die Berechtigung des Benutzers anzufordern, wenn die Anwendung in den Vordergrundstatus wechselt, da die Anwendung jederzeit auf die Abonnementinformationen [Zugriffsberechtigung“ ](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) Benutzers prüfen kann, bevor eine Benutzerauthentifizierung erforderlich wird.
 
 ### Authentifizierung {#apple-sso-cookbook-rest-api-v1-authentication}
 
@@ -61,7 +61,7 @@ Um von dem Apple SSO-Benutzererlebnis zu profitieren, muss die Anwendung das von
 
 >[!TIP]
 >
-> **<u>Tipp:</u>** Implementieren Sie dies über den API-Service zur Authentifizierung [Authentifizierungstoken &#x200B;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md) Adobe Pass.
+> **<u>Tipp:</u>** Implementieren Sie dies über den API-Service zur Authentifizierung [Authentifizierungstoken ](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md) Adobe Pass.
 
 #### Schritt: „Ist der Benutzer über Partner-SSO angemeldet?“ {#step2}
 
@@ -135,7 +135,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Tipp:</u>** Implementieren Sie dies über den API-Service zur Adobe Pass-Authentifizierung [Bereitstellung &#x200B;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md) MVPD-Liste .
+> **<u>Tipp:</u>** Implementieren Sie dies über den API-Service zur Adobe Pass-Authentifizierung [Bereitstellung ](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md) MVPD-Liste .
 
 >[!TIP]
 >
@@ -148,7 +148,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 > **<u>Tipp</u>** Implementieren Sie dies über das [Video-Abonnementkonto-Framework](https://developer.apple.com/documentation/videosubscriberaccount).
 
 * Die Anwendung muss die Abonnementinformationen des Benutzers auf [Zugriffsberechtigung](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) überprüfen und nur fortfahren, wenn der Benutzer dies zulässt.
-* Die Anwendung muss einen &quot;[&quot; für &#x200B;](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate) VSAccountManager bereitstellen.
+* Die Anwendung muss einen &quot;[&quot; für ](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate) VSAccountManager bereitstellen.
 * Der Antrag müsste eine [Anfrage](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) für Abonnentenkontoinformationen einreichen.
 * Die Anwendung muss warten und die [Metadaten](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata)-Informationen verarbeiten.
 
@@ -255,7 +255,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Profi-Tipp:</u>** Beachten Sie das Code-Fragment aus dem [&#x200B; Schritt „Initiieren des Partner-SSO-Workflows mit der Adobe-Konfiguration](#step4) . Die Benutzeranmeldung ist erfolgreich, wenn die *`vsaMetadata!.accountProviderIdentifier`* einen gültigen Wert enthält und das aktuelle Datum den *`vsaMetadata!.authenticationExpirationDate`* nicht überschritten hat.
+> **<u>Profi-Tipp:</u>** Beachten Sie das Code-Fragment aus dem [ Schritt „Initiieren des Partner-SSO-Workflows mit der Adobe-Konfiguration](#step4) . Die Benutzeranmeldung ist erfolgreich, wenn die *`vsaMetadata!.accountProviderIdentifier`* einen gültigen Wert enthält und das aktuelle Datum den *`vsaMetadata!.authenticationExpirationDate`* nicht überschritten hat.
 
 #### Schritt „Profilanfrage von Adobe für die ausgewählte MVPD abrufen“ {#step6}
 
@@ -352,7 +352,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Profi-Tipp:</u>** Beachten Sie das Code-Fragment aus dem [&#x200B; Schritt „Leiten Sie die Adobe-Anfrage an Partner-SSO weiter, um das Profil zu erhalten](#step7) . Dieser *`vsaMetadata!.samlAttributeQueryResponse!`* stellt den *`SAMLResponse`* dar, der an den [Token Exchange](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md) übergeben werden muss und vor dem Aufruf eine Zeichenfolgenmanipulation und -codierung erfordert (*Base64*-codiert und *URL*-codiert).
+> **<u>Profi-Tipp:</u>** Beachten Sie das Code-Fragment aus dem [ Schritt „Leiten Sie die Adobe-Anfrage an Partner-SSO weiter, um das Profil zu erhalten](#step7) . Dieser *`vsaMetadata!.samlAttributeQueryResponse!`* stellt den *`SAMLResponse`* dar, der an den [Token Exchange](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md) übergeben werden muss und vor dem Aufruf eine Zeichenfolgenmanipulation und -codierung erfordert (*Base64*-codiert und *URL*-codiert).
 
 #### Schritt: „Wird das Adobe-Token erfolgreich generiert?“ {#step9}
 
@@ -364,16 +364,16 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Tipp:</u>** Implementieren Sie dies über die API-Services [&#x200B; Adobe Pass-Authentifizierung Registrierungs-Code](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md), [Authentifizierung &#x200B;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) und [Authentifizierungstoken abrufen](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) oder [Authentifizierungstoken überprüfen](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md) .
+> **<u>Tipp:</u>** Implementieren Sie dies über die API-Services [ Adobe Pass-Authentifizierung Registrierungs-Code](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md), [Authentifizierung ](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) und [Authentifizierungstoken abrufen](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) oder [Authentifizierungstoken überprüfen](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md) .
 
 >[!TIP]
 >
 > **<u>Profi-Tipp</u>** Führen Sie die folgenden Schritte für die tvOS-Implementierung(en) aus.
 
 * Die Anwendung müsste [einen Registrierungscode abrufen](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) und ihn dem Endbenutzer auf dem 1. Gerät (Bildschirm) präsentieren.
-* Die Anwendung müsste auf dem 1[&#x200B; Gerät (Bildschirm) nach Erhalt des Registrierungs](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)Codes mit der Abfrage beginnen, um den Authentifizierungsstatus zu bestätigen.
+* Die Anwendung müsste auf dem 1[ Gerät (Bildschirm) nach Erhalt des Registrierungs](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)Codes mit der Abfrage beginnen, um den Authentifizierungsstatus zu bestätigen.
 * Eine andere Anwendung müsste [Authentifizierung initiieren](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) auf einem zweiten Gerät (Bildschirm), wenn der Registrierungs-Code verwendet wird.
-* Die Anwendung muss den [&#x200B; (Polling](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) auf dem ersten Gerät (Bildschirm) stoppen, wenn das Authentifizierungs-Token generiert wird.
+* Die Anwendung muss den [ (Polling](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) auf dem ersten Gerät (Bildschirm) stoppen, wenn das Authentifizierungs-Token generiert wird.
 
 >[!TIP]
 >
@@ -381,8 +381,8 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 * Die Anwendung muss [einen Registrierungs-Code erhalten](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) der dem Endbenutzer nicht auf dem ersten Gerät (Bildschirm) angezeigt werden sollte.
 * Die Anwendung müsste [Authentifizierung initiieren](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) auf dem ersten Gerät (Bildschirm) mithilfe des Registrierungs-Codes und einer [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)- oder [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)-Komponente.
-* Die Anwendung muss auf dem 1. Gerät ([) mit dem Abruf beginnen, um den Authentifizierungsstatus zu &#x200B;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md), nachdem die Komponente [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) oder [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) geschlossen wurde.
-* Die Anwendung muss den [&#x200B; (Polling](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) auf dem ersten Gerät (Bildschirm) stoppen, wenn das Authentifizierungs-Token generiert wird.
+* Die Anwendung muss auf dem 1. Gerät ([) mit dem Abruf beginnen, um den Authentifizierungsstatus zu ](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md), nachdem die Komponente [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) oder [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) geschlossen wurde.
+* Die Anwendung muss den [ (Polling](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) auf dem ersten Gerät (Bildschirm) stoppen, wenn das Authentifizierungs-Token generiert wird.
 
 #### Schritt: „Fortfahren mit Autorisierungsflüssen“ {#step11}
 
@@ -402,7 +402,7 @@ Das [Video Subscriber Account Framework](https://developer.apple.com/documentati
 >
 > **<u>Profi-Tipp</u>** Führen Sie die folgenden Schritte für die tvOS-Implementierung(en) aus.
 
-* Die Anwendung muss mithilfe von &quot;*tokenSource“ (Benutzermetadaten) aus dem Adobe Pass-Authentifizierungsdienst feststellen, ob die Authentifizierung als Ergebnis einer Anmeldung über* Partner-SSO erfolgt [&#x200B; &#x200B;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md).
+* Die Anwendung muss mithilfe von &quot;*tokenSource“ (Benutzermetadaten) aus dem Adobe Pass-Authentifizierungsdienst feststellen, ob die Authentifizierung als Ergebnis einer Anmeldung über* Partner-SSO erfolgt [ ](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md).
 * Die Anwendung muss den Benutzer anweisen/auffordern, sich explizit von *`Settings -> Accounts -> TV Provider`* unter tvOS abzumelden **nur**, wenn der *„tokenSource“* Wert &quot;*Apple&quot; entspricht.*
 * Die Anwendung müsste [Abmelden) vom Adobe Pass-Authentifizierungs](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)Service über einen direkten HTTP-Aufruf starten. Dies würde die Sitzungsbereinigung auf MVPD-Seite nicht erleichtern.
 
@@ -410,6 +410,6 @@ Das [Video Subscriber Account Framework](https://developer.apple.com/documentati
 >
 > **<u>Profi-Tipp</u>** Führen Sie die folgenden Schritte für die Implementierung(en) von iOS/iPadOS aus.
 
-* Die Anwendung muss mithilfe von &quot;*tokenSource“ (Benutzermetadaten) aus dem Adobe Pass-Authentifizierungsdienst feststellen, ob die Authentifizierung als Ergebnis einer Anmeldung über* Partner-SSO erfolgt [&#x200B; &#x200B;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md).
+* Die Anwendung muss mithilfe von &quot;*tokenSource“ (Benutzermetadaten) aus dem Adobe Pass-Authentifizierungsdienst feststellen, ob die Authentifizierung als Ergebnis einer Anmeldung über* Partner-SSO erfolgt [ ](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md).
 * Die Anwendung müsste den Benutzer anweisen/auffordern, sich explizit von *`Settings -> TV Provider`* auf iOS/iPadOS abzumelden **nur** wenn der *„tokenSource“* Wert *&quot;Apple&quot;*.
-* Die Anwendung müsste [Abmelden) vom Adobe Pass-Authentifizierungsdienst &#x200B;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md) einer [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)- oder [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)-Komponente initiieren. Dies würde die Sitzungsbereinigung auf MVPD-Seite erleichtern.
+* Die Anwendung müsste [Abmelden) vom Adobe Pass-Authentifizierungsdienst ](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md) einer [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)- oder [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)-Komponente initiieren. Dies würde die Sitzungsbereinigung auf MVPD-Seite erleichtern.
