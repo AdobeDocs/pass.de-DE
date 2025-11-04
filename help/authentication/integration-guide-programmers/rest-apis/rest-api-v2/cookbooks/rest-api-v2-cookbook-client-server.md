@@ -104,12 +104,12 @@ Die Authentifizierungsphase dient als erforderlicher Schritt für die Vorautoris
 * **Szenario 1:** Profile vorhanden sind, kann die Streaming-Anwendung in die Phase [Vorabautorisierung](#preauthorization-phase) oder [Autorisierung](#authorization-phase).
 
 
-* **Szenario 2:** Es sind keine vorhandenen Profile vorhanden. Die Streaming-Anwendung kann mit dem nächsten Schritt fortfahren, um den [ zu authentifizieren](#step-3-authenticate-the-user).
+* **Szenario 2:** Es sind keine vorhandenen Profile vorhanden. Die Streaming-Anwendung kann mit dem nächsten Schritt fortfahren, um den [&#x200B; zu authentifizieren](#step-3-authenticate-the-user).
 
 
 * **Szenario 3:** Es sind keine vorhandenen Profile vorhanden. Die Streaming-Anwendung kann fortfahren, dem Benutzer über die Funktion [TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md) temporären Zugriff bereitzustellen.
 
-   * Dieses Szenario würde den Rahmen dieses Dokuments sprengen. Weitere Informationen finden Sie in der Dokumentation [Temporärer ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)&quot;.
+   * Dieses Szenario würde den Rahmen dieses Dokuments sprengen. Weitere Informationen finden Sie in der Dokumentation [Temporärer &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)&quot;.
 
 ### Schritt 3: Benutzer authentifizieren {#step-3-authenticate-the-user}
 

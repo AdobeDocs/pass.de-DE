@@ -20,9 +20,9 @@ ht-degree: 0%
 > Stellen Sie vor der Verwendung der Degradation API sicher, dass die folgenden Voraussetzungen erfüllt sind:
 >
 > * Rufen Sie die Client-Anmeldeinformationen ab, wie in der API[Dokumentation zum Abrufen von Client](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)Anmeldeinformationen beschrieben.
-> * Rufen Sie das Zugriffstoken ab, wie in der API[Dokumentation zum Abrufen des Zugriffstokens ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+> * Rufen Sie das Zugriffstoken ab, wie in der API[Dokumentation zum Abrufen des Zugriffstokens &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 >
-> Weitere Informationen zum Erstellen einer registrierten [ und zum Herunterladen der Software-Anweisung finden ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) in der Dokumentation Übersicht zur Dynamic Client-Registrierung .
+> Weitere Informationen zum Erstellen einer registrierten [&#x200B; und zum Herunterladen der Software-Anweisung finden &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) in der Dokumentation Übersicht zur Dynamic Client-Registrierung .
 
 ## API-Übersicht {#api-overview}
 

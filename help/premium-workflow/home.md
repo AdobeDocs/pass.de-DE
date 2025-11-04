@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Achten Sie darauf, über die neuesten Adobe Pass-Produktankündigungen und Stilllegungszeitpläne auf der Seite [Produktankündigungen“ auf dem Laufenden ](/help/authentication/product-announcements.md) bleiben.
+> Achten Sie darauf, über die neuesten Adobe Pass-Produktankündigungen und Stilllegungszeitpläne auf der Seite [Produktankündigungen“ auf dem Laufenden &#x200B;](/help/authentication/product-announcements.md) bleiben.
 
 [!UICONTROL Premium Workflow] von Adobe Pass bietet eine Reihe robuster Tools zur Verbesserung der Authentifizierungs- und Streaming-Zuverlässigkeit. Erhalten Sie mit [!UICONTROL Entitlement Service Monitoring] Echtzeitsicht, stellen Sie mit der Smart Degradation API die Betriebszeit sicher und bieten Sie einen flexiblen Zugriff über [!UICONTROL TempPass].
 
