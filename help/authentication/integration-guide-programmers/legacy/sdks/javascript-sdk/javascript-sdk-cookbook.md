@@ -186,7 +186,7 @@ AccessEnabler-Bibliothek)
 
 ## Konfigurieren der Besucher-ID {#visitorID}
 
-Die Konfiguration eines [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html)-Werts ist aus analytischer Sicht sehr wichtig. Sobald ein EC VisitorID-Wert festgelegt ist, sendet die SDK diese Informationen zusammen mit jedem Netzwerkaufruf, und der Adobe Pass-Authentifizierungsdienst erfasst diese Informationen. Auf diese Weise können Sie die Analysedaten aus dem Adobe Pass-Authentifizierungs-Service mit allen anderen Analyseberichten korrelieren, die Sie möglicherweise von anderen Programmen oder Websites haben. Informationen zum Einrichten von EC visitorID finden Sie [hier](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
+Die Konfiguration eines [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=de)-Werts ist aus analytischer Sicht sehr wichtig. Sobald ein EC VisitorID-Wert festgelegt ist, sendet die SDK diese Informationen zusammen mit jedem Netzwerkaufruf, und der Adobe Pass-Authentifizierungsdienst erfasst diese Informationen. Auf diese Weise können Sie die Analysedaten aus dem Adobe Pass-Authentifizierungs-Service mit allen anderen Analyseberichten korrelieren, die Sie möglicherweise von anderen Programmen oder Websites haben. Informationen zum Einrichten von EC visitorID finden Sie [hier](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=de).
 
 
 >[!NOTE]
