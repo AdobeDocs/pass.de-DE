@@ -144,7 +144,7 @@ Der `event` Parameter gibt an, welches Berechtigungsereignis aufgetreten ist. De
 
    **Trigger:**
 
-   - Der Rückruf setAuthenticationStatus() , wenn der Benutzer bereits authentifiziert ist.  Fahren Sie in diesem Fall direkt mit dem [Autorisierungsfluss“ ](#authz_flow).
+   - Der Rückruf setAuthenticationStatus() , wenn der Benutzer bereits authentifiziert ist.  Fahren Sie in diesem Fall direkt mit dem [Autorisierungsfluss“ &#x200B;](#authz_flow).
    - Der Rückruf displayProviderDialog() , wenn der Benutzer noch nicht authentifiziert ist.
 
 1. Zeigen Sie dem Benutzer die Liste der an `displayProviderDialog()` gesendeten Anbieter.

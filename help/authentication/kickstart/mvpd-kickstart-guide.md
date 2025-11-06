@@ -137,7 +137,7 @@ Das Adobe Pass-Authentifizierungsteam steht zur Verfügung, um alle Fragen oder 
 
 **Adobe bietet** Zugriff auf unsere öffentliche Dokumentation über [Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home).
 
-Das Adobe Pass-Authentifizierungsteam bietet unter dem Abschnitt [Integrationshandbuch für MVPDs“ eine umfassende Dokumentation ](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md) verfügbaren Funktionen und Workflows. Links zu detaillierten Informationen zu den einzelnen Themen finden Sie im Inhaltsverzeichnis unter diesem Abschnitt .
+Das Adobe Pass-Authentifizierungsteam bietet unter dem Abschnitt [Integrationshandbuch für MVPDs“ eine umfassende Dokumentation &#x200B;](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md) verfügbaren Funktionen und Workflows. Links zu detaillierten Informationen zu den einzelnen Themen finden Sie im Inhaltsverzeichnis unter diesem Abschnitt .
 
 ## Zugriff auf das Test-Tool {#access-testing-tool}
 

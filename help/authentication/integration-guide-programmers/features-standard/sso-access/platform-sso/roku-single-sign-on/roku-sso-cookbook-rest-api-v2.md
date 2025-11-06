@@ -27,7 +27,7 @@ Die Adobe Pass-Authentifizierung arbeitet mit Roku zusammen, um das Benutzererle
 
 Bevor Sie mit dem Roku-Single-Sign-on unter Verwendung von Platform-Identitätsflüssen fortfahren, stellen Sie sicher, dass Roku SSO aktiviert ist. Roku SSO ist standardmäßig aktiviert, es sei denn, die Programmierer- oder MVPD-Anfrage für SSO wird deaktiviert.
 
-Jeder Programmierer kann das Single Sign-On (SSO) auf der Roku-Plattform für bestimmte Integrationen über das [ Adobe Pass TVE Dashboard aktivieren oder ](https://experience.adobe.com/pass/authentication).
+Jeder Programmierer kann das Single Sign-On (SSO) auf der Roku-Plattform für bestimmte Integrationen über das [&#x200B; Adobe Pass TVE Dashboard aktivieren oder &#x200B;](https://experience.adobe.com/pass/authentication).
 
 ### Workflow {#workflow}
 
