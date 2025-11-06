@@ -15,7 +15,7 @@ Weitere Informationen finden Sie in der [Online](http://docs.adobeptime.io/cm-ap
 
 ## Zweck und Voraussetzungen {#purpose-prerequisites}
 
-Dieses Dokument unterstützt Anwendungsentwickler bei der Verwendung unserer Swagger-API-Spezifikation bei der Implementierung einer Integration mit der gleichzeitigen Überwachung. Es wird dringend empfohlen, dass der Leser ein früheres Verständnis der vom Service definierten Konzepte hat, bevor er diese Richtlinie befolgt. Um dieses Verständnis zu erhalten, ist ein Überblick über die [Produktdokumentation) ](/help/concurrency-monitoring/cm-home.md) die „Swagger [&quot;-](http://docs.adobeptime.io/cm-api-v2/) erforderlich.
+Dieses Dokument unterstützt Anwendungsentwickler bei der Verwendung unserer Swagger-API-Spezifikation bei der Implementierung einer Integration mit der gleichzeitigen Überwachung. Es wird dringend empfohlen, dass der Leser ein früheres Verständnis der vom Service definierten Konzepte hat, bevor er diese Richtlinie befolgt. Um dieses Verständnis zu erhalten, ist ein Überblick über die [Produktdokumentation) &#x200B;](/help/concurrency-monitoring/cm-home.md) die „Swagger [&quot;-](http://docs.adobeptime.io/cm-api-v2/) erforderlich.
 
 
 ## Einführung {#api-overview-intro}

@@ -29,4 +29,4 @@ Veröffentlichungsdatum: **01/26/2024**
 
 ## Versionspaket {#release-package-384}
 
-Sie können iOS/tvOS SDK v3.8.4 von ([) ](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-tvOS-Native-AccessEnabler-Library).
+Sie können iOS/tvOS SDK v3.8.4 von ([) &#x200B;](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-tvOS-Native-AccessEnabler-Library).

@@ -33,7 +33,7 @@ Beginnen Sie mit diesem Abschnitt, wenn Sie an einem Programm arbeiten, das die 
 
 #### &#x200B;1. Was ist der Zweck der Registrierungsphase? {#rest-api-v2-access-faq1}
 
-In der Registrierungsphase wird die Client-Anwendung über den DCR-Prozess (Dynamic Client Registration[ für die Adobe Pass-Authentifizierung ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#dcr).
+In der Registrierungsphase wird die Client-Anwendung über den DCR-Prozess (Dynamic Client Registration[&#x200B; für die Adobe Pass-Authentifizierung &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#dcr).
 
 Für den Prozess der dynamischen Client-Registrierung (DCR) muss die Client-Anwendung ein Paar von Client-Anmeldeinformationen abrufen und ein Zugriffstoken als Endziel der Registrierungsphase abrufen.
 
@@ -47,7 +47,7 @@ Die Registrierungsphase ist obligatorisch, aber die Client-Anwendung kann diese 
 
 Die Software-Anweisung ist ein Begriff, der in der Dokumentation [Glossar](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#software-statement) definiert ist.
 
-Die Software-Anweisung besteht aus einem JSON Web Token (JWT), das von einem Ihrer Organisationsadministratoren oder einem in Ihrem Namen handelnden Adobe Pass-Authentifizierungsmitarbeiter [ Adobe Pass ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)TVE Dashboard) generiert und heruntergeladen werden kann.
+Die Software-Anweisung besteht aus einem JSON Web Token (JWT), das von einem Ihrer Organisationsadministratoren oder einem in Ihrem Namen handelnden Adobe Pass-Authentifizierungsmitarbeiter [&#x200B; Adobe Pass &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)TVE Dashboard) generiert und heruntergeladen werden kann.
 
 Die Software-Erklärung ist für einen unbegrenzten Zeitraum gültig, Sie können jedoch einen Adobe Pass-Authentifizierungsbeauftragten bitten, sie jederzeit zu widerrufen.
 
@@ -149,7 +149,7 @@ Um die registrierten Anwendungen (Software-Anweisungen) zu unterscheiden, die in
 
 #### &#x200B;2. Kann die Client-Anwendung die vorhandenen benutzerdefinierten Schemata wiederverwenden? {#rest-api-v2-migration-faq2}
 
-Die Client-Anwendung kann die vorhandenen benutzerdefinierten Schemata wiederverwenden, die über das Adobe Pass-[TVE-Dashboard) generiert ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard).
+Die Client-Anwendung kann die vorhandenen benutzerdefinierten Schemata wiederverwenden, die über das Adobe Pass-[TVE-Dashboard) generiert &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard).
 
 Weitere Informationen finden Sie in der Dokumentation [TVE Dashboard Channels User Guide](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#custom-schemes) oder [TVE Dashboard Programmers User Guide](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#custom-schemes).
 

@@ -156,4 +156,4 @@ Anfragen.
 <http://www.charlesproxy.com/documentation/configuration/browser-and-system-configuration>
 
 
-Navigieren Sie von [ Android-Gerät ](http://charlesproxy.com/charles.crt)Charles proxy“.
+Navigieren Sie von [&#x200B; Android-Gerät &#x200B;](http://charlesproxy.com/charles.crt)Charles proxy“.

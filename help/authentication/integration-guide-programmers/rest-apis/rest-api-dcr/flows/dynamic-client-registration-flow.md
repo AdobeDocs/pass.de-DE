@@ -46,7 +46,7 @@ Führen Sie die angegebenen Schritte aus, um auf Adobe Pass Protected APIs zuzug
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [ in der API](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#request)Dokumentation zum Abrufen von Client-Anmeldeinformationen:
+   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#request)Dokumentation zum Abrufen von Client-Anmeldeinformationen:
    >
    > * Alle _erforderlichen_ Parameter wie `software_statement`
    > * Alle _erforderlichen_ Kopfzeilen wie `Content-Type`, `X-Device-Info`
@@ -56,7 +56,7 @@ Führen Sie die angegebenen Schritte aus, um auf Adobe Pass Protected APIs zuzug
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [ in einer Antwort zum Abrufen von Client](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#success)Anmeldeinformationen finden Sie in der API-Dokumentation.
+   > Weitere Informationen zu den [&#x200B; in einer Antwort zum Abrufen von Client](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#success)Anmeldeinformationen finden Sie in der API-Dokumentation.
    >
    > <br/>
    >
@@ -76,7 +76,7 @@ Führen Sie die angegebenen Schritte aus, um auf Adobe Pass Protected APIs zuzug
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [ in der API](../apis/dynamic-client-registration-apis-retrieve-access-token.md#request)Dokumentation zum Abrufen von Zugriffstoken:
+   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../apis/dynamic-client-registration-apis-retrieve-access-token.md#request)Dokumentation zum Abrufen von Zugriffstoken:
    >
    > * Alle _erforderlichen_ Parameter wie `client_id`, `client_secret` und `grant_type`
    > * Alle _erforderlichen_ Kopfzeilen wie `Content-Type`, `X-Device-Info`
@@ -86,7 +86,7 @@ Führen Sie die angegebenen Schritte aus, um auf Adobe Pass Protected APIs zuzug
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [ in einer Zugriffstoken-Antwort bereitgestellten Informationen finden ](../apis/dynamic-client-registration-apis-retrieve-access-token.md#success) in der API-Dokumentation zum Abrufen von Zugriffstoken .
+   > Weitere Informationen zu den [&#x200B; in einer Zugriffstoken-Antwort bereitgestellten Informationen finden &#x200B;](../apis/dynamic-client-registration-apis-retrieve-access-token.md#success) in der API-Dokumentation zum Abrufen von Zugriffstoken .
    >
    > <br/>
    >

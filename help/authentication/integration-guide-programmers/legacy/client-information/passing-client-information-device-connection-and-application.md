@@ -116,7 +116,7 @@ Die AccessEnabler iOS/tvOS SDK unterstützt **Überschreiben des gesamten** Clie
 
 Die `AccessEnabler` Android/FireOS-SDK erstellt standardmäßig ein JSON-Objekt mit Client-Informationen, das an die Adobe Pass-Authentifizierungsdienste übergeben wird, sofern es nicht überschrieben wird.
 
-Die `AccessEnabler` Android/FireOS-SDK unterstützt **Überschreiben des gesamten** Client-Informations-JSON-Objekts durch den [-Parameter ](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)setOptions[s/](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)setOptions`device_info`.
+Die `AccessEnabler` Android/FireOS-SDK unterstützt **Überschreiben des gesamten** Client-Informations-JSON-Objekts durch den [-Parameter &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)setOptions[s/](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)setOptions`device_info`.
 
 >[!NOTE]
 >

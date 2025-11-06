@@ -80,4 +80,4 @@ Beachten Sie beim Melden eines Problems an die Adobe Pass-Authentifizierung die 
 * Versuchen Sie, die Reproduktionsschritte anzugeben.
 * Bitte versuchen, die Betriebssystemversionen und Gerätemodelle anzugeben, bei denen das Problem auftritt.
 * Bitte geben Sie die Version des AccessEnabler iOS/tvOS SDK an, bei der das Problem auftritt.
-* Versuchen Sie, alle AccessEnabler iOS/tvOS SDK-Protokollmeldungen mithilfe einer der beiden Optionen im Abschnitt [Einschließlich“ ](#including) erfassen und anzuhängen.
+* Versuchen Sie, alle AccessEnabler iOS/tvOS SDK-Protokollmeldungen mithilfe einer der beiden Optionen im Abschnitt [Einschließlich“ &#x200B;](#including) erfassen und anzuhängen.

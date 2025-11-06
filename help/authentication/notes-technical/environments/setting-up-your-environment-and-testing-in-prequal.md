@@ -101,7 +101,7 @@ Addresses:  52.26.79.43
 
 **Dies ist ein einfacher Schritt:**
 
-* Laden Sie [Umgebung für Berechtigungen ](https://entitlement-prequal.auth.adobe.com/environment.html) und [Berechtigung](https://entitlement.auth.adobe.com/environment.html). Sie sollten dieselbe Antwort zurückgeben.
+* Laden Sie [Umgebung für Berechtigungen &#x200B;](https://entitlement-prequal.auth.adobe.com/environment.html) und [Berechtigung](https://entitlement.auth.adobe.com/environment.html). Sie sollten dieselbe Antwort zurückgeben.
 
 
 ## SCHRITT 4.  Durchführen eines einfachen Authentifizierungs-/Autorisierungsflusses über die Website des Programmierers {#peform-a-simple-auth-flow}
