@@ -2,7 +2,7 @@
 title: Übersicht über die dynamische Client-Registrierung
 description: Übersicht über die dynamische Client-Registrierung
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '809'
 ht-degree: 0%
@@ -116,4 +116,4 @@ Zusammenfassend lässt sich sagen, dass der dynamische Client-Registrierungs-Aut
 * Die Client-Anwendung muss die Client-Anmeldeinformationen abrufen, wie in der API[Dokumentation zum Abrufen von Client](apis/dynamic-client-registration-apis-retrieve-client-credentials.md)Anmeldeinformationen beschrieben.
 * Die Client-Anwendung muss das Zugriffstoken abrufen, wie in der API-Dokumentation [Zugriffstoken abrufen](apis/dynamic-client-registration-apis-retrieve-access-token.md) beschrieben.
 
-Weitere Informationen zum [&#x200B; auf Adobe Pass-geschützte APIs finden &#x200B;](flows/dynamic-client-registration-flow.md) in der Dokumentation zum Dynamic Client Registration Flow . Außerdem können Sie sich diese Aufzeichnung des [Webinars](https://my.adobeconnect.com/pzkp8ujrigg1/) ansehen, die mehr Kontext bietet und eine Demo enthält.
+Weitere Informationen zum [ auf Adobe Pass-geschützte APIs finden ](flows/dynamic-client-registration-flow.md) in der Dokumentation zum Dynamic Client Registration Flow . Außerdem können Sie sich diese Aufzeichnung des [Webinars](https://my.adobeconnect.com/pzkp8ujrigg1/) ansehen, die mehr Kontext bietet und eine Demo enthält.

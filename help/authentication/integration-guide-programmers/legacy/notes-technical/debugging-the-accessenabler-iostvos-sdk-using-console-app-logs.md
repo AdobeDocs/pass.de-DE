@@ -2,7 +2,7 @@
 title: Debugging des AccessEnabler iOS/tvOS SDK mithilfe der Protokolle der Konsolenanwendung
 description: Debugging des AccessEnabler iOS/tvOS SDK mithilfe der Protokolle der Konsolenanwendung
 exl-id: 0dad325e-db15-4ea0-a87a-75409eaf8d46
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '576'
 ht-degree: 0%
@@ -80,4 +80,4 @@ Beachten Sie beim Melden eines Problems an die Adobe Pass-Authentifizierung die 
 * Versuchen Sie, die Reproduktionsschritte anzugeben.
 * Bitte versuchen, die Betriebssystemversionen und Gerätemodelle anzugeben, bei denen das Problem auftritt.
 * Bitte geben Sie die Version des AccessEnabler iOS/tvOS SDK an, bei der das Problem auftritt.
-* Versuchen Sie, alle AccessEnabler iOS/tvOS SDK-Protokollmeldungen mithilfe einer der beiden Optionen im Abschnitt [Einschließlich“ &#x200B;](#including) erfassen und anzuhängen.
+* Versuchen Sie, alle AccessEnabler iOS/tvOS SDK-Protokollmeldungen mithilfe einer der beiden Optionen im Abschnitt [Einschließlich“ ](#including) erfassen und anzuhängen.

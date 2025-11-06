@@ -2,7 +2,7 @@
 title: Adobe Pass-Authentifizierung und das neue Android 6-Berechtigungsmodell „Marshmallow“
 description: Adobe Pass-Authentifizierung und das neue Android 6-Berechtigungsmodell „Marshmallow“
 exl-id: 3c96769e-b25b-48ab-bb74-40f13d4e5a84
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '503'
 ht-degree: 0%
@@ -30,7 +30,7 @@ Als neue Funktion bietet das neue Android-Betriebssystem [granulare Kontrolle ü
 >Die unten beschriebenen Änderungen betreffen **nur Programme, die speziell für Android 6.0 entwickelt wurden** (targetSdkVersion=23). Sie wirken sich nicht auf ältere Anwendungen aus, die beim Upgrade auf Android 6.0 bereits auf dem Benutzergerät installiert sind.
 
 
-Insbesondere für Apps, die in Android Studio mit [API Level 23](http://developer.android.com/sdk/api_diff/23/changes.html) entwickelt wurden und die die Adobe Pass-Authentifizierungs-SDK verwenden, muss der Entwickler benutzerdefinierten Code schreiben (siehe Code-Snippet unten), [&#x200B; den Trigger für das Dialogfeld „Berechtigungen zulassen/verweigern“](https://developer.android.com/training/permissions/requesting.html).
+Insbesondere für Apps, die in Android Studio mit [API Level 23](http://developer.android.com/sdk/api_diff/23/changes.html) entwickelt wurden und die die Adobe Pass-Authentifizierungs-SDK verwenden, muss der Entwickler benutzerdefinierten Code schreiben (siehe Code-Snippet unten), [ den Trigger für das Dialogfeld „Berechtigungen zulassen/verweigern“](https://developer.android.com/training/permissions/requesting.html).
 
 Im Folgenden finden Sie den Code-Auszug, der zum Anfordern des Schreibzugriffs auf den externen Speicher des Geräts verwendet wird:
 

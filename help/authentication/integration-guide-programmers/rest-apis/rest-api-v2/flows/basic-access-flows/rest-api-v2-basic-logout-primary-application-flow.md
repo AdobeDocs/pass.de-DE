@@ -2,7 +2,7 @@
 title: Einfache Abmeldung - Primäre Anwendung - Fluss
 description: REST API v2 - Einfache Abmeldung - Primäre Anwendung - Fluss
 exl-id: 21dbff4a-0d69-4f81-b04f-e99d743c35b3
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
@@ -61,7 +61,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Abmeldefluss für
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden Sie in [&#x200B; API-Dokumentation &#x200B;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) Initiieren des Abmeldens für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden Sie in [ API-Dokumentation ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) Initiieren des Abmeldens für bestimmte MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `redirectUrl`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
@@ -78,7 +78,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Abmeldefluss für
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
+   > Weitere Informationen zu den [ in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
    > 
    > <br/>
    > 
@@ -127,7 +127,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Abmeldefluss für
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden Sie in [&#x200B; API-Dokumentation &#x200B;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) Initiieren des Abmeldens für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden Sie in [ API-Dokumentation ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) Initiieren des Abmeldens für bestimmte MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `redirectUrl`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
@@ -144,7 +144,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Abmeldefluss für
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
+   > Weitere Informationen zu den [ in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
    > 
    > <br/>
    > 

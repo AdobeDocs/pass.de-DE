@@ -2,7 +2,7 @@
 title: Header - Autorisierung
 description: REST API v2 - Kopfzeile - Autorisierung
 exl-id: 86917d7e-ffd9-4d34-8f9c-5a50083f85e6
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '118'
 ht-degree: 1%
@@ -42,7 +42,7 @@ Weitere Informationen zum Mechanismus für den Zugriff auf Adobe Pass-geschützt
 
 <b>&lt;access_token></b>
 
-Der Wert des Zugriffstokens ist ein undurchsichtiger Wert mit einer begrenzten Lebensdauer (z. B. 24 Stunden), der von Adobe Pass abgerufen werden muss, wie in der API-Dokumentation zum [&#x200B; des Zugriffstokens &#x200B;](../../../rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+Der Wert des Zugriffstokens ist ein undurchsichtiger Wert mit einer begrenzten Lebensdauer (z. B. 24 Stunden), der von Adobe Pass abgerufen werden muss, wie in der API-Dokumentation zum [ des Zugriffstokens ](../../../rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 
 ## Beispiele {#examples}
 

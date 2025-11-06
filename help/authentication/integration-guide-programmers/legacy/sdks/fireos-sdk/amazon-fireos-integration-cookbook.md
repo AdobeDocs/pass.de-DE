@@ -2,7 +2,7 @@
 title: Amazon FireOS-Integrations-Cookbook
 description: Amazon FireOS-Integrations-Cookbook
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1447'
 ht-degree: 0%
@@ -144,7 +144,7 @@ Der `event` Parameter gibt an, welches Berechtigungsereignis aufgetreten ist. De
 
    **Trigger:**
 
-   - Der Rückruf setAuthenticationStatus() , wenn der Benutzer bereits authentifiziert ist.  Fahren Sie in diesem Fall direkt mit dem [Autorisierungsfluss“ &#x200B;](#authz_flow).
+   - Der Rückruf setAuthenticationStatus() , wenn der Benutzer bereits authentifiziert ist.  Fahren Sie in diesem Fall direkt mit dem [Autorisierungsfluss“ ](#authz_flow).
    - Der Rückruf displayProviderDialog() , wenn der Benutzer noch nicht authentifiziert ist.
 
 1. Zeigen Sie dem Benutzer die Liste der an `displayProviderDialog()` gesendeten Anbieter.
