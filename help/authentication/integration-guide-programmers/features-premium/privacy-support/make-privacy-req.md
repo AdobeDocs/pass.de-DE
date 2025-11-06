@@ -239,7 +239,7 @@ In der **Privacy Service-API** Dokumentation wird ausführlich beschrieben, wie 
 **Visualisieren von API-Aufrufen mit Postman (einer kostenlosen Software von Drittanbietern):**
 
 * [Privacy Service-API-Postman-Sammlung auf GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
-* [Videoanleitung zum Erstellen der Postman-Umgebung](https://video.tv.adobe.com/v/28832)
+* [Videoanleitung zum Erstellen der Postman-Umgebung](https://video.tv.adobe.com/v/31575?captions=ger)
 * [Schritte zum Importieren von Umgebungen und Sammlungen in Postman](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
 
