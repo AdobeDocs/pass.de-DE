@@ -26,10 +26,10 @@ Veröffentlichungsdatum: **09/19/2023**
 ## Versionsübersicht {#release-overview-373}
 
 * Änderungen an der Unterstützung von Android 14 und Programmen für API-Ebene 34
-   * Für [Android 14 Runtime-registrierte Rundfunk-Empfänger erforderliche Markierung &#x200B;](https://developer.android.com/about/versions/14/behavior-changes-14#runtime-receivers-exported).
+   * Für [Android 14 Runtime-registrierte Rundfunk-Empfänger erforderliche Markierung ](https://developer.android.com/about/versions/14/behavior-changes-14#runtime-receivers-exported).
 * Korrektur: ChromeCustomTabs werden für die MVPD-Anmeldung auf der Emulator-API 32+ nicht geöffnet
    * Hinweis: Eine Problemumgehung für SDK &lt;3.7.3 besteht darin, die Chrome-App im Emulator zu öffnen und die Einrichtung abzuschließen, bevor versucht wird, eine MVPD-Anmeldung durchzuführen
 
 ## Versionspaket {#release-package-373}
 
-Sie können Android SDK v3.7.3 von ([) &#x200B;](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library).
+Sie können Android SDK v3.7.3 von ([) ](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library).

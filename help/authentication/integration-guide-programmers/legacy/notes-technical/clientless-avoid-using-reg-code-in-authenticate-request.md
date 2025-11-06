@@ -37,7 +37,7 @@ Wenn die `/authenticate` Anfrage wie folgt aufgebaut ist…
 ```
 
 
-…es wird vom IE-Browser wie unten interpretiert und in diesem Format an Adobe gesendet:
+… wird er vom IE-Browser wie unten interpretiert und in diesem Format an Adobe gesendet:
 
 
 ```
@@ -63,4 +63,4 @@ Eine der folgenden Optionen sollte dieses Problem lösen:
 
 1. Normalisieren Sie `&reg_code` wie mit `&amp;reg_code`.
 
-1. Adobe könnte eine neue Funktion einführen, um als Reaktion auf einen Authentifizierungsaufruf einen Fehlercode zurück an den 2. Bildschirm zu senden, wenn die Erstellung des AuthN-Tokens fehlgeschlagen ist.
+1. Adobe könnte eine neue Funktion einführen, um als Reaktion auf einen Authentifizierungsaufruf einen Fehler-Code zurück an den 2. Bildschirm zu senden, wenn die Erstellung des AuthN-Tokens fehlgeschlagen ist.

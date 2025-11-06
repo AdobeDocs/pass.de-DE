@@ -2,7 +2,7 @@
 title: TVE-Dashboard-Umgebungen
 description: Machen Sie sich mit der Verwendung und Funktionsweise verschiedener Umgebungen im TVE-Dashboard vertraut.
 exl-id: 591becb8-2f6c-46e0-b108-c64e6df69f89
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '346'
 ht-degree: 0%
@@ -60,7 +60,7 @@ Führen Sie die Schritte aus, um zwischen TVE-Dashboard-Umgebungen für die Adob
 
 1. Wählen Sie die gewünschte Staging- oder Produktionsumgebung aus **Dropdown** Menü „Umgebung“ oben im linken Bedienfeld.
 
-   ![TVE Dashboard Environments Dropdown](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-environment-menu.png)
+   ![TVE Dashboard Environments Dropdown](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-environment-menu.png)
 
    *Das Dropdown-Menü TVE Dashboard-Umgebung für die Adobe Pass-Authentifizierung*
 

@@ -105,7 +105,7 @@ Hier finden Sie ein Beispiel für eine SAML-Anfrage für den passiven Authentifi
 </saml2p:AuthnRequest>
 ```
 
-## Verfahrensregeln
+## Geschäftsregeln
 
 MVPDs verfügen über bestimmte Einschränkungen der SSO-Scoping-Domain. Beispielsweise könnten einige MVPDs nur einige Domains zulassen (SSO für dasselbe Medienunternehmen, aber nicht firmenübergreifend).
 Bei einigen MVPDs müssen möglicherweise andere Authentifizierungsregeln durchgesetzt werden. Beispielsweise können MVPDs unterschiedliche Authentifizierungs-TTLs pro verschiedenen Netzwerken haben. Außerdem können MVPDs die Authentifizierung zu Hause für einige Netzwerke ermöglichen, für andere jedoch nicht (Anwendungsfälle für die elterliche Kontrolle sind hier stark vertreten).

@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Nutzung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
 Das [[!DNL Adobe] Pass TVE Dashboard](https://experience.adobe.com/pass/authentication) ist ein Tool für Kunden (Programmierer), die mit der Adobe Pass-Authentifizierung ihre Konfiguration und Daten verwalten. Dieses Self-Service-Dashboard ermöglicht eine Reihe von Funktionen, z. B.:
 
@@ -48,7 +48,7 @@ Die Adobe Pass-Authentifizierung bietet die folgenden Abschnitte im TVE-Dashboar
 
 ## Ressourcen {#resources-tve-dashboard}
 
-Adobe schlägt vor, die folgenden Ressourcen zu verwenden, um die Abläufe und Funktionen gründlich zu verstehen und Ihnen dabei zu helfen, sich mit der in diesem Handbuch verwendeten Terminologie vertraut zu machen:
+Adobe empfiehlt, die folgenden Ressourcen zu verwenden, um die Abläufe und Funktionen gründlich zu verstehen und Ihnen dabei zu helfen, sich mit der in diesem Handbuch verwendeten Terminologie vertraut zu machen:
 
 * [Technisches Papier zu TVE](/help/authentication/kickstart/technical-paper.md)
 * [Anleitung für Programmierer](/help/authentication/kickstart/programmer-kickstart-guide.md)

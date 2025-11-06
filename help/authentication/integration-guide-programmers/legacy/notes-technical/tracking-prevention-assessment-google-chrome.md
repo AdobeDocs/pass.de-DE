@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 > Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
 
-## Übersicht
+## Überblick
 
 In diesem Dokument werden nützliche Ressourcen zusammengefasst und die bevorstehenden Änderungen bewertet, die Google Chrome im Rahmen seiner Initiative zur schrittweisen Abschaffung von Drittanbieter-Cookies plant.
 

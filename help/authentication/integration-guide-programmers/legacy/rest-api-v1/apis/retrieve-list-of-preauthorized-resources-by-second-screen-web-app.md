@@ -4,7 +4,7 @@ description: Abrufen der Liste der vorab autorisierten Ressourcen durch die Web-
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
 source-git-commit: 1c357b918fa4f6d4b92a9055de018c55ee5861e0
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '273'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) &#x200B;](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -46,7 +46,7 @@ Es gibt zwei Sätze von APIs: einen Satz für die Streaming-App oder den Program
 
 | Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/preauthorize/{registration code} | AuthN-Modul | 1. Registrierungs-Code </br>    (Pfadkomponente)</br>2.  Antragsteller (obligatorisch)</br>3.  Ressource (obligatorisch) | GET | XML oder JSON mit einzelnen Entscheidungen vor der Autorisierung oder Fehlerdetails. Siehe Beispiele unten. | 200 - </br></br>400 - Fehlerhafte Anfrage</br></br>401 - Nicht autorisiert</br></br>405 - Methode nicht zulässig </br></br>412 - Voraussetzung fehlgeschlagen</br></br>500 - Interner Server-Fehler |
+| &lt;SP_FQDN>/api/v1/preauthorize/{registration code} | AuthN-Modul | &#x200B;1. Registrierungs-Code </br>    (Pfadkomponente)</br>2.  Antragsteller (obligatorisch)</br>3.  Ressource (obligatorisch) | GET | XML oder JSON mit einzelnen Entscheidungen vor der Autorisierung oder Fehlerdetails. Siehe Beispiele unten. | 200 - </br></br>400 - Fehlerhafte Anfrage</br></br>401 - Nicht autorisiert</br></br>405 - Methode nicht zulässig </br></br>412 - Voraussetzung fehlgeschlagen</br></br>500 - Interner Server-Fehler |
 
 
 

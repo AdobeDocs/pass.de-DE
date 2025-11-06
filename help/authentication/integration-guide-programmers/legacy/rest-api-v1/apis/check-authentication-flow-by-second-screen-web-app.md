@@ -4,7 +4,7 @@ description: Überprüfen des Authentifizierungsflusses durch die Web-App auf de
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '234'
+source-wordcount: '232'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) &#x200B;](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -44,7 +44,7 @@ Diese API sollte von der Web-Anwendung für die Anmeldung am zweiten Bildschirm 
 
 | Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{registration code} | Web-App anmelden | 1. Registrierungs-Code </br>    (Pfadkomponente)</br>2.  Antragsteller-</br>    (Obligatorisch) | GET | XML oder JSON mit Fehlerdetails, wenn nicht erfolgreich. | 200 - Erfolg   </br>403 - Verboten |
+| SP_FQDN/api/v1/checkauthn/{registration code} | Web-App anmelden | &#x200B;1. Registrierungs-Code </br>    (Pfadkomponente)</br>2.  Antragsteller-</br>    (Obligatorisch) | GET | XML oder JSON mit Fehlerdetails, wenn nicht erfolgreich. | 200 - Erfolg   </br>403 - Verboten |
 
 </br>
 

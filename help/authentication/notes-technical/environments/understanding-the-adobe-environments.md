@@ -19,7 +19,7 @@ Die offizielle Dokumentation, die die Adobe-Umgebungen beschreibt, ist verfügba
 
 Die Adobe-Umgebungen, zusammengefasst in wenigen Worten:
 
-Adobe hat zwei Umgebungen **(**) und **Version**.
+Adobe verfügt über zwei Umgebungen **(**) und **Version**.
 
 * In der Umgebung für die Vorqualifizierung bereiten wir den neuen Build für die Veröffentlichung vor.
 

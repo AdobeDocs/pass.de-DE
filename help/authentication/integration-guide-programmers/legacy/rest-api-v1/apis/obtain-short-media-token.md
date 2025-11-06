@@ -21,7 +21,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) &#x200B;](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -43,7 +43,7 @@ Ruft das kurze Medien-Token ab.
 
 | Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/mediatoken</br></br> oder</br></br>&lt;SP_FQDN>/api/v1/tokens/media</br></br>Beispiel:</br></br>&lt;SP_FQDN>/api/v1/tokens/media | Streaming-App</br></br>oder</br></br>Programmierer-Service | 1. Antragsteller (obligatorisch)</br>2.  deviceId (obligatorisch)</br>3.  Ressource (obligatorisch)</br>4.  device_info/X-device-info (obligatorisch)</br>5.  _deviceType_</br> 6.  _deviceUser_ (veraltet)</br>7.  _appId_ (veraltet) | GET | XML oder JSON mit einem Base64-kodierten Medien-Token oder Fehlerdetails, wenn der Vorgang nicht erfolgreich war. | 200 - Erfolg </br>403 - Kein Erfolg |
+| &lt;SP_FQDN>/api/v1/mediatoken</br></br> oder</br></br>&lt;SP_FQDN>/api/v1/tokens/media</br></br>Beispiel:</br></br>&lt;SP_FQDN>/api/v1/tokens/media | Streaming-App</br></br>oder</br></br>Programmierer-Service | &#x200B;1. Antragsteller (obligatorisch)</br>2.  deviceId (obligatorisch)</br>3.  Ressource (obligatorisch)</br>4.  device_info/X-device-info (obligatorisch)</br>5.  _deviceType_</br> 6.  _deviceUser_ (veraltet)</br>7.  _appId_ (veraltet) | GET | XML oder JSON mit einem Base64-kodierten Medien-Token oder Fehlerdetails, wenn der Vorgang nicht erfolgreich war. | 200 - Erfolg </br>403 - Kein Erfolg |
 
 {style="table-layout:auto"}
 
@@ -102,4 +102,4 @@ Ruft das kurze Medien-Token ab.
 
 ### Kompatibilität der Media Verification Library
 
-Das aus dem Aufruf „Kurzmedientoken abrufen“ `serializedToken` Feld ist ein Base64-kodiertes Token, das mit der Adobe Medien-Verifizierungsbibliothek verifiziert werden kann.
+Das Feld, das vom Aufruf „Kurzmedientoken abrufen“ `serializedToken` wird, ist ein Base64-kodiertes Token, das mit der Adobe Media Verification Library verifiziert werden kann.

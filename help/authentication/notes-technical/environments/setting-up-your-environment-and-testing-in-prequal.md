@@ -4,26 +4,26 @@ description: Einrichten der Umgebung und Testen in Pre-Qual
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
 source-git-commit: ca95bc45027410becf8987154c7c9f8bb8c2d5f8
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '476'
 ht-degree: 0%
 
 ---
 
-# Einrichten der Umgebung und Testen in der Qualitur{#setting-up-your-environment-and-testing-in-prequal}
+# Einrichten der Umgebung und Testen in Pre-Qual{#setting-up-your-environment-and-testing-in-prequal}
 
 >[!NOTE]
 >
->Die Inhalte auf dieser Seite werden nur zu Informationszwecken zur Verfügung gestellt. Für die Verwendung dieser API ist eine aktuelle Lizenz von Adobe Systems erforderlich. Eine unbefugte Nutzung ist nicht gestattet.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Der Zweck dieses technischen Hinweises besteht darin, unseren Partnern bei der Einrichtung ihrer Umgebung zu helfen und Beginn eine neue Build zu testen, die auf dem Adobe Systems Präqualifikations-Umgebung bereitgestellt wird.
+Diese technische Anmerkung soll unseren Partnern beim Einrichten ihrer Umgebung helfen und mit dem Testen eines neuen Builds beginnen, der in der Adobe-Umgebung vor der Qualifizierung bereitgestellt wird.
 
-Da es zwei Build Varianten gibt: ***Produktion*** und ***Staging***, werden wir in diesem Dokument auf das Produktions-Setup konzentrieren mit der Erwähnung, dass alle Schritte für das Staging gleich sind, nur die URLs sind unterschiedlich.
+Da es zwei Build-Varianten gibt: ***Produktion*** und ***Staging***, konzentrieren wir uns in diesem Dokument auf die Produktionseinrichtung mit dem Hinweis, dass alle Schritte für das Staging gleich sind, nur die URLs sind unterschiedlich.
 
-In den Schritten 1 und 2 wird die Test Umgebung auf einer der Prüfmaschinen eingerichtet, in Schritt 3 wird der grundlegende Ablauf überprüft und in den Schritten 4 und 5 werden einige Prüfrichtlinien vorgestellt.
+In den Schritten 1 und 2 wird die Testumgebung auf einem der Testgeräte eingerichtet. In Schritt 3 wird der Grundfluss überprüft, und in den Schritten 4 und 5 werden einige Testrichtlinien vorgestellt.
 
 >[!IMPORTANT]
 >
-> Es ist sehr wichtig, die Schritte 1 und 2 jedes Mal auszuführen, wenn Sie Ihre Test-Umgebung ändern möchten (Wechsel von Staging- zu Produktions-Profil oder umgekehrt)
+> Es ist sehr wichtig, die Schritte 1 und 2 jedes Mal auszuführen, wenn Sie Ihre Testumgebung ändern möchten (vom Staging zum Produktionsprofil oder umgekehrt)
 
 
 ## SCHRITT 1. Problemlösendes Übergeben der Domain an eine IP {#resolving-pass-domain-to-an-ip}
@@ -77,18 +77,18 @@ Addresses:  52.26.79.43
 
 >[!NOTE]
 >
->Domänen wurden von der Antwort ausgeschlossen, da sie nicht relevant sind und sich von User zu User unterscheiden können.
+>Domains werden von der Antwort ausgeschlossen, da sie nicht relevant sind und sich von Benutzer zu Benutzer unterscheiden können.
 
 >[!IMPORTANT]
 >
-> Diese IP-Adressen können sich in Zukunft ändern und sind möglicherweise für Benutzer in verschiedenen geografischen Regionen nicht gleich.
+> Diese IP-Adressen können sich in Zukunft ändern und sind für Benutzende in verschiedenen geografischen Regionen möglicherweise nicht mehr identisch.
 
 
-## SCHRITT 2.  Fälschung der Präqualifikation Umgebung zur Produktion {#spoofing-the-prequalification-environment}
+## SCHRITT 2.  Spoofing der Umgebung für die Vorqualifizierung zur Produktion {#spoofing-the-prequalification-environment}
 
-* Bearbeiten die *Datei c:\\windows\\System32\\drivers\\etc\\hosts* (unter Windows) bzw *. /etc/hosts* (unter Macintosh/Linux/Android) und fügen Sie Folgendes hinzu:
+* Bearbeiten Sie die Datei *c:\\windows\\System32\\drivers\\etc\\hosts* (unter Windows) oder */etc/hosts* (unter Macintosh/Linux/Android) und fügen Sie Folgendes hinzu:
 
-* Spoof-Produktion Profil
+* Testproduktionsprofil
    * 52.13.71.11 sp.auth.adobe.com api.auth.adobe.com
    * 54.190.212.171 entitlement.auth.adobe.com
 
@@ -97,16 +97,16 @@ Addresses:  52.26.79.43
 * Sobald das Spoofing eingerichtet ist, können Sie einfach die regulären URLs für die Produktions- und Staging-Profile verwenden: (d. h. `http://sp.auth-staging.adobe.com` und `http://entitlement.auth-staging.adobe.com`, und Sie werden tatsächlich die *Präqualifikationsumgebung/-produktion* des neuen Builds erreichen.
 
 
-## SCHRITT 3.  Vergewissern Sie sich, dass Sie auf die richtige Umgebung zeigen {#Verify-you-are-pointing-to-the-right-environment}
+## SCHRITT 3.  Stellen Sie sicher, dass Sie auf die richtige Umgebung verweisen {#Verify-you-are-pointing-to-the-right-environment}
 
 **Dies ist ein einfacher Schritt:**
 
-* Ladeberechtigung [entspricht Umgebung](https://entitlement-prequal.auth.adobe.com/environment.html) und [Berechtigung](https://entitlement.auth.adobe.com/environment.html). Sie sollten dieselbe Antwort zurückgeben.
+* Laden Sie [Umgebung für Berechtigungen ](https://entitlement-prequal.auth.adobe.com/environment.html) und [Berechtigung](https://entitlement.auth.adobe.com/environment.html). Sie sollten dieselbe Antwort zurückgeben.
 
 
-## SCHRITT 4.  Durchführen einer einfachen Authentifizierung/eines Autorisierung-Flows über die Website des Programmierers {#peform-a-simple-auth-flow}
+## SCHRITT 4.  Durchführen eines einfachen Authentifizierungs-/Autorisierungsflusses über die Website des Programmierers {#peform-a-simple-auth-flow}
 
-* Für diesen Schritt sind die Website-Adresse des Programmierers und einige gültige MVPD-Anmeldeinformationen erforderlich (eine User, dass es authentifiziert und autorisiert ist).
+* Dieser Schritt erfordert die Website-Adresse des Programmierers und einige gültige MVPD-Anmeldeinformationen (einen Benutzer, der authentifiziert und autorisiert ist).
 
 ## SCHRITT 5.  Durchführen von Szenario-Tests mithilfe der Websites des Programmierers {#perform-scenario-testing-using-programmer-website}
 
@@ -117,4 +117,4 @@ Addresses:  52.26.79.43
 
 * Wenn Sie sich eingehender mit dem Testen der Adobe Pass-Authentifizierung befassen möchten, empfehlen wir die Verwendung der [API-Test-Site](http://entitlement-prequal.auth.adobe.com/apitest/api.html).
 
-Weitere Informationen zur API-Test-Site finden Sie auf [der Test Authentication- und Autorisierungs-Flows mithilfe der API Test-Site](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md) von Adobe Systems.
+Weitere Informationen zur API-Test-Site finden Sie unter [Testen von Authentifizierungs- und Autorisierungsflüssen mithilfe der Adobe-API-Test-Site](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md).

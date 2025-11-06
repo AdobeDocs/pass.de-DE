@@ -26,7 +26,7 @@ ht-degree: 0%
 
    1. Antragsteller-ID: z. B. netgeo, CNN usw.
 
-1. Adobe erstellt X509-Zertifikate und konfiguriert den privaten Schlüssel und das Kennwort an seinem Ende.
+1. Adobe erstellt X509-Zertifikate und konfiguriert den privaten Schlüssel und das Kennwort am Ende.
 
 1. Adobe stellt das öffentliche Zertifikat (des X509-Zertifikats) dem Programmierer im Ticket oder per E-Mail zur Verfügung.
 

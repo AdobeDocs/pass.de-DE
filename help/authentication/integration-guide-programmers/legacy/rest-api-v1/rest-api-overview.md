@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 > Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
 
-## Übersicht {#over}
+## Überblick {#over}
 
 Die Adobe Pass-Authentifizierungs-REST-API bietet direkten Zugriff auf die Authentifizierungs- und Autorisierungsdienste von TV Everywhere (TVE). Diese API unterstützt zwei primäre Architekturen: Server-zu-Server oder verbundene Geräte (z. B. Spielekonsolen, Smart-TVs, Set-Top-Boxen usw.), die keine Webbrowsing-Funktionen haben.
 
@@ -100,8 +100,8 @@ Folgendes gilt sowohl für Server-zu-Server- als auch für Connected Device-Anwe
 
 1. Im Rahmen unserer neuen One-API-Initiative planen wir, diese Einschränkung zu beheben und in der Lage zu sein, Regeln pro Plattform basierend auf der Gerätekennung anzuwenden.
 
-2. Adobe arbeitet weiterhin mit allen gängigen Plattformen zusammen, um Platform SSO zu implementieren, das mit unserer REST-API verwendet werden kann. Unsere One-API-Initiative bietet SSO-Unterstützung zwischen Apps, die mit nativen SDKs implementiert wurden, und Apps, die mit der REST-API implementiert wurden.
+2. Adobe arbeitet weiterhin mit allen Hauptplattformen zusammen, um Platform SSO zu implementieren, das mit unserer REST-API verwendet werden kann. Unsere One-API-Initiative bietet SSO-Unterstützung zwischen Apps, die mit nativen SDKs implementiert wurden, und Apps, die mit der REST-API implementiert wurden.
 
 ## Mindestanforderungen an das Gerät {#min_reqs}
 
-Um die Adobe Pass-Authentifizierungs-REST-API verwenden zu können, müssen Geräte die technischen Mindestanforderungen erfüllen oder überschreiten, die im Abschnitt REST-API des Dokuments [Adobe Pass-Authentifizierungsplattform / Geräte-/Tools-Anforderungen aufgeführt &#x200B;](#general_clientless_reqs).
+Um die Adobe Pass-Authentifizierungs-REST-API verwenden zu können, müssen Geräte die technischen Mindestanforderungen erfüllen oder überschreiten, die im Abschnitt REST-API des Dokuments [Adobe Pass-Authentifizierungsplattform / Geräte-/Tools-Anforderungen aufgeführt ](#general_clientless_reqs).

@@ -7,7 +7,7 @@ ht-degree: 0%
 ---
 # MIT-Lizenz
 
-© Copyright 2021 Adobe. All rights reserved Durchsuchen.
+© Copyright 2021 Adobe. Alle Rechte vorbehalten.
 
 Jede Person, die eine Kopie dieser Software und der dazugehörigen Dokumentationsdateien (die „Software„) erhält, wird hiermit unentgeltlich ermächtigt, die Software uneingeschränkt zu nutzen, einschließlich der Rechte zum Verwenden, Kopieren, Ändern, Zusammenführen, Veröffentlichen, Verteilen, Unterlizenzieren und/oder Verkaufen der Software, und Personen, denen die Software bereitgestellt wird, dies zu gestatten, sofern folgende Bedingungen erfüllt sind:
 

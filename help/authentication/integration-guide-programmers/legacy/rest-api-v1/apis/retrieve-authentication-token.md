@@ -21,7 +21,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) &#x200B;](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -43,7 +43,7 @@ Ruft das Authentifizierungs-Token (AuthN) ab.
 
 | Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/tokens/authn</br></br>Beispiel: </br></br>&lt;SP_FQDN>/api/v1/tokens/authn | Streaming-App</br></br>oder</br></br>Programmierer-Service | 1. Antragsteller (obligatorisch)</br>2.  deviceId (obligatorisch)</br>3.  device_info/X-device-info (obligatorisch)</br>4.  _deviceType_ (veraltet)</br>5.  _deviceUser_ (veraltet)</br>6.  _appId_ (veraltet) | GET | XML oder JSON mit Authentifizierungsinformationen oder Fehlerdetails, falls nicht erfolgreich. | 200 - Erfolg.  </br>404 - Token nicht gefunden </br>410 - Token abgelaufen |
+| &lt;SP_FQDN>/api/v1/tokens/authn</br></br>Beispiel: </br></br>&lt;SP_FQDN>/api/v1/tokens/authn | Streaming-App</br></br>oder</br></br>Programmierer-Service | &#x200B;1. Antragsteller (obligatorisch)</br>2.  deviceId (obligatorisch)</br>3.  device_info/X-device-info (obligatorisch)</br>4.  _deviceType_ (veraltet)</br>5.  _deviceUser_ (veraltet)</br>6.  _appId_ (veraltet) | GET | XML oder JSON mit Authentifizierungsinformationen oder Fehlerdetails, falls nicht erfolgreich. | 200 - Erfolg.  </br>404 - Token nicht gefunden </br>410 - Token abgelaufen |
 
 {style="table-layout:auto"}
 

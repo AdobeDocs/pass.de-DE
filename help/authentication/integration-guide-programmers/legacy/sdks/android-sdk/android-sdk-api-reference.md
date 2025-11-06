@@ -23,7 +23,7 @@ ht-degree: 0%
 
 In diesem Dokument werden die Methoden und Callbacks beschrieben, die von der Android SDK für die Adobe Pass-Authentifizierung bereitgestellt werden, welche von der Adobe Pass-Authentifizierungsversion 1.7 und höher unterstützt wird. Die hier beschriebenen Methoden und Callback-Funktionen sind in den Header-Dateien AccessEnabler.h und EntitlementDelegate.h definiert.
 
-Die neueste Android AccessEnabler-SDK finden Sie [&#128279;](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library) https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library.
+Die neueste Android AccessEnabler-SDK finden Sie [ ](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library)https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library.
 
 
 **Hinweis:** Das Adobe Pass-Authentifizierungsteam empfiehlt die Verwendung nur von (öffentlichen *Adobe Pass-*:
@@ -86,7 +86,7 @@ Die neueste Android AccessEnabler-SDK finden Sie [&#128279;](https://tve.zendesk
 
 Die Antwort des Servers enthält eine Liste der MVPDs zusammen mit Konfigurationsinformationen, die an die Identität des Programmierers angehängt sind. Die Server-Antwort wird intern vom Access Enabler-Code verwendet. Nur der Status des Vorgangs (d. h. ERFOLG/FEHLGESCHLAGEN) wird Ihrer Anwendung über den Callback setRequestorComplete() angezeigt.
 
-Wenn der Parameter *urls* nicht verwendet wird, zielt der resultierende Netzwerkaufruf auf die Standard-Service-Provider-URL ab: die Adobe-Release-/Produktionsumgebung.
+Wenn der Parameter *urls* nicht verwendet wird, zielt der resultierende Netzwerkaufruf auf die Standard-Service-Provider-URL ab: die Adobe Release-/Produktionsumgebung.
 
 Wenn ein Wert für den Parameter *urls* angegeben wird, zielt der resultierende Netzwerkaufruf auf alle URLs ab, die im Parameter *urls* angegeben sind. Alle Konfigurationsanfragen werden gleichzeitig in separaten Threads ausgelöst. Bei der Kompilierung der Liste der MVPDs hat die erste Antwort Vorrang. Für jede MVPD in der Liste speichert Access Enabler die URL des zugehörigen Dienstleisters. Alle nachfolgenden Berechtigungsanfragen werden an die URL weitergeleitet, die mit dem Dienstleister verknüpft ist, der während der Konfigurationsphase mit dem Ziel-MVPD gepaart wurde.
 
@@ -105,11 +105,11 @@ Wenn ein Wert für den Parameter *urls* angegeben wird, zielt der resultierende 
 
 **Parameter:**
 
-- *RequestorID*: Die eindeutige ID, die dem Programmierer zugeordnet ist. Übergeben Sie die eindeutige ID, die von Adobe an Ihre Site zugewiesen wurde, wenn Sie sich zum ersten Mal beim Adobe Pass-Authentifizierungsdienst registriert haben.
+- *RequestorID*: Die eindeutige ID, die dem Programmierer zugeordnet ist. Übergeben Sie die eindeutige ID, die Adobe Ihrer Site zugewiesen hat, wenn Sie sich zum ersten Mal beim Adobe Pass-Authentifizierungs-Service registriert haben.
 
 - *signedRequestorID*: Eine Kopie der Anforderer-ID, die mit Ihrem privaten Schlüssel digital signiert ist. <!--For more details. see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
 
-- *urls*: Optionaler Parameter; standardmäßig wird der Adobe-Dienstleister verwendet (http://sp.auth.adobe.com/). Mit diesem Array können Sie Endpunkte für Authentifizierungs- und Autorisierungsdienste angeben, die von Adobe bereitgestellt werden (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Damit können Sie mehrere Instanzen des Authentifizierungs-Service von Adobe Pass angeben. Dabei besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt.
+- *urls*: Optionaler Parameter; standardmäßig wird der Adobe-Dienstleister verwendet (http://sp.auth.adobe.com/). Mit diesem Array können Sie Endpunkte für von Adobe bereitgestellte Authentifizierungs- und Autorisierungsdienste angeben (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Damit können Sie mehrere Instanzen des Authentifizierungs-Service von Adobe Pass angeben. Dabei besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt.
 
 **Ausgelöste Callbacks:** `setRequestorComplete()`
 
@@ -706,7 +706,7 @@ Der Access Enabler-Trigger führt einen zusätzlichen Callback aus, der nicht un
 
 >[!WARNING]
 >
-> Der Gerätetyp und das Betriebssystem werden mithilfe einer öffentlichen Java-Bibliothek ([http://java.net/projects/user-agent-utils](http://java.net/projects/user-agent-utils)) und der Benutzeragenten-Zeichenfolge abgeleitet. Beachten Sie, dass diese Informationen nur als grobe Methode zur Unterteilung der Betriebsmetriken in Gerätekategorien bereitgestellt werden, aber dass Adobe keine Verantwortung für falsche Ergebnisse übernehmen kann. Bitte verwenden Sie die neue Funktion entsprechend.
+> Der Gerätetyp und das Betriebssystem werden mithilfe einer öffentlichen Java-Bibliothek ([http://java.net/projects/user-agent-utils](http://java.net/projects/user-agent-utils)) und der Benutzeragenten-Zeichenfolge abgeleitet. Beachten Sie, dass diese Informationen nur als grobe Möglichkeit bereitgestellt werden, Betriebsmetriken in Gerätekategorien aufzuschlüsseln, aber dass Adobe keine Verantwortung für falsche Ergebnisse übernehmen kann. Bitte verwenden Sie die neue Funktion entsprechend.
 
 
 - Mögliche Werte für den Gerätetyp:

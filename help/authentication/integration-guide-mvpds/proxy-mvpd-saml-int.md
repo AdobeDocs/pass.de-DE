@@ -4,7 +4,7 @@ description: SAML-Integration von Proxy MVPD
 exl-id: 6c83e703-d8cd-476b-8514-05b8230902be
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
-source-wordcount: '711'
+source-wordcount: '700'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-## Übersicht {#overview-proxy-mvpd-saml-int}
+## Überblick {#overview-proxy-mvpd-saml-int}
 
 In diesem Dokument wird der SAML-Authentifizierungsfluss für Proxy-Integrationen beschrieben.  Diese Flüsse sind davon abhängig, dass in der Adobe Pass-Authentifizierungsserver-Konfiguration Proxy-Konfigurationsdaten vorhanden sind. Die Proxy-MVPD übergibt ihre Proxy-Konfigurationsdaten über den Proxy-Webservice der Adobe Pass-Authentifizierung an den Adobe Pass-Authentifizierungsserver.
 
@@ -41,7 +41,7 @@ Bei einem integrierten MVPD-Proxy erfolgt die Integration zwischen der Adobe Pas
 
 Damit die Adobe Pass-Authentifizierung in einen Proxy-MVPD integriert werden kann, ist Folgendes erforderlich:
 
-* Ein Proxy MVPD stellt eine Liste von MVPDs bereit, die per Push an den Adobe-Proxy-Webservice übertragen werden
+* Eine von MVPD bereitgestellte Proxy-Liste von Proxy-MVPDs, die an den Adobe Proxy-Webservice gesendet werden
 
 * SAML-Metadaten für den übergeordneten MVPD-Proxy
 

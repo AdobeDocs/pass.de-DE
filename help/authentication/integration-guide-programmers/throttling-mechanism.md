@@ -40,7 +40,7 @@ Der vorgeschlagene Drosselungsmechanismus verwendet die identifizierten Geräte 
 
 Server-zu-Server-Implementierungen müssen die IP-Adressen ihrer Clients unter Verwendung des Header-Mechanismus „X-Forwarded-For“ weiterleiten.
 
-Weitere Informationen zum Übergeben der Kopfzeile „X-Forwarded-For“ finden [&#x200B; hier](legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md).
+Weitere Informationen zum Übergeben der Kopfzeile „X-Forwarded-For“ finden [ hier](legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md).
 
 ### Tatsächliche Grenzwerte und Endpunkte {#throttling-mechanism-limits}
 
@@ -136,7 +136,7 @@ p3p: CP="NOI DSP COR CURa ADMa DEVa OUR BUS IND UNI COM NAV STA"
 
 Kunden, die eine benutzerdefinierte Implementierung verwenden (einschließlich Server-zu-Server-Implementierungen), um mit der Pass Authentication API zu interagieren, sollten sicherstellen, dass sie ihre Benutzer-IP-Adresse erfassen und korrekt weiterleiten können, indem sie den X-Forwarded-For-Header verwenden, um die Authentifizierungs-API weiter zu übergeben.
 
-Weitere Informationen [&#x200B; Sie &#x200B;](legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md)hier).
+Weitere Informationen [ Sie ](legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md)hier).
 
 ### Reaktion auf neuen Antwort-Code
 

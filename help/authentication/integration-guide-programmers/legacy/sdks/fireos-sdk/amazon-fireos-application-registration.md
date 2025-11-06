@@ -2,7 +2,7 @@
 title: Registrierung der Amazon FireOS-Anwendung
 description: Registrierung der Amazon FireOS-Anwendung
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 0%
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 Ab Version 3.0 der FireOS AccessEnabler SDK ändern wir den Authentifizierungsmechanismus mit den Servern von Adobe. Anstatt ein öffentliches Schlüssel- und Geheimsystem zum Signieren der RequestorID zu verwenden, führen wir das Konzept einer Software-Anweisungszeichenfolge ein, mit der ein Zugriffstoken abgerufen werden kann, das später für alle Aufrufe verwendet wird, die SDK an unsere Server sendet. Zusätzlich zu einer Software-Erklärung müssen Sie auch einen Deep-Link für Ihre Anwendung erstellen.
 
-Weitere Informationen finden Sie unter [Übersicht über die dynamische Client-Registrierung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Weitere Informationen finden Sie unter [Übersicht über die dynamische Client-Registrierung](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Was ist eine Software-Anweisung? {#what}
 
@@ -59,7 +59,7 @@ Ein Software-Statement ist ein JWT-Token, das Informationen über Ihr Programm e
 
    Eine Textdatei wird heruntergeladen. Verwenden Sie den Inhalt als Software-Erklärung.
 
-Weitere Informationen finden Sie unter [Verwaltung der dynamischen Client-Registrierung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
+Weitere Informationen finden Sie unter [Verwaltung der dynamischen Client-Registrierung](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 ### Wenn Sie keinen Zugriff auf das TVE-Dashboard von Adobe haben:
 

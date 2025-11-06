@@ -1,6 +1,6 @@
 ---
-title: Testen von Authentifizierungs- und Autorisierungsflüssen mithilfe der Test-Site der Adobe-API
-description: Testen von Authentifizierungs- und Autorisierungsflüssen mithilfe der Test-Site der Adobe-API
+title: Testen von Authentifizierungs- und Autorisierungsflüssen mithilfe der Adobe-API-Test-Site
+description: Testen von Authentifizierungs- und Autorisierungsflüssen mithilfe der Adobe-API-Test-Site
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
 source-git-commit: 65475d6da7a1b25cb2d8ebd6229a7cb360c7ab4a
 workflow-type: tm+mt

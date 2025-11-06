@@ -30,7 +30,7 @@ Der Upgrade-Pfad für eine Anwendung, die die neue AccessEnabler-Version 3.7.0 v
 Bei Implementierern können einige der unten beschriebenen Einschränkungen auftreten.
 
 
-1. Reguläres (Adobe) SSO funktioniert nicht zwischen einer Anwendung mit AccessEnabler Version 3.7.0 und einer Anwendung mit AccessEnabler Version/s unter 3.7.0, auch nicht bei Anwendungen, die vom gleichen Anbieter entwickelt wurden.
+1. Reguläres (Adobe) SSO funktioniert nicht zwischen einer Anwendung mit AccessEnabler Version 3.7.0 und einer Anwendung mit AccessEnabler Version/en unter 3.7.0, auch nicht bei Anwendungen, die vom gleichen Anbieter entwickelt wurden.
 
    >[!IMPORTANT]
    >
@@ -38,7 +38,7 @@ Bei Implementierern können einige der unten beschriebenen Einschränkungen auft
    >
    >* Reguläres (Adobe) SSO funktioniert weiterhin, wenn beide Anwendungen vom gleichen Anbieter entwickelt werden und AccessEnabler-Versionen unter 3.7.0 verwenden!
    >
-   >* Das reguläre (Adobe) SSO funktioniert, wenn beide Anwendungen vom gleichen Anbieter entwickelt wurden und AccessEnabler Version 3.7.0 verwenden!
+   >* Das reguläre SSO (Adobe) funktioniert, wenn beide Anwendungen vom gleichen Anbieter entwickelt wurden und AccessEnabler Version 3.7.0 verwenden!
 
 
 1. Wenn eine Anwendung mit AccessEnabler Version 3.7.0 auf eine niedrigere Version von AccessEnabler heruntergestuft wird, werden neu generierte Token nicht migriert. Daher können Endbenutzende den Verlust von Authentifizierungs-/Autorisierungssitzungen erleben, ohne dies zu erwarten.

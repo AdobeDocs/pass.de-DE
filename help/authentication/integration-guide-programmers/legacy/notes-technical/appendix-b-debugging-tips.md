@@ -34,7 +34,7 @@ Er ist browsersicher, aber in Firefox: „Tools“ -\> „Aktuelle Historie lös
 
 ## Löschen des LSO-Cache {#clearing-lsos-cache}
 
-Zugriff auf die [Flash Player-Hilfe](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
+Rufen Sie die [Flash Player Hilfe](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html) auf.
 
 Wählen Sie die ```entitlement.\*``` aus (abhängig davon, was getestet wird) und klicken Sie auf „Website löschen“.
 

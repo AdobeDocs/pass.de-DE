@@ -2,7 +2,7 @@
 title: Grundlegende Profile - Primäre Anwendung - Fluss
 description: REST API v2 - Grundprofile - Primäre Anwendung - Fluss
 exl-id: 19ddf382-9a32-4b94-aa84-7611c0e1780e
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
 source-wordcount: '974'
 ht-degree: 0%
@@ -43,7 +43,7 @@ Bevor Sie Profile abrufen, stellen Sie sicher, dass die folgenden Voraussetzunge
 
 Führen Sie die angegebenen Schritte aus, um den grundlegenden Profilabruffluss in einer primären Anwendung zu implementieren, wie im folgenden Diagramm dargestellt.
 
-![Profile abrufen](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profiles-within-primary-application.png)
+![Profile abrufen](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profiles-within-primary-application.png)
 
 *Profile abrufen*
 
@@ -51,7 +51,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Profilabruffluss 
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)Dokumentation zum Abrufen von Profilen:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)Dokumentation zum Abrufen von Profilen:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
@@ -63,7 +63,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Profilabruffluss 
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Profilantwort bereitgestellten Informationen finden &#x200B;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) in der API-Dokumentation zum Abrufen von Profilen .
+   > Weitere Informationen zu den [ in einer Profilantwort bereitgestellten Informationen finden ](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) in der API-Dokumentation zum Abrufen von Profilen .
    > 
    > <br/>
    > 
@@ -91,7 +91,7 @@ Bevor Sie das Profil für eine bestimmte MVPD abrufen, stellen Sie sicher, dass 
 
 Führen Sie die angegebenen Schritte aus, um den grundlegenden Profilabruffluss für eine bestimmte MVPD zu implementieren, der in einer primären Anwendung ausgeführt wird, wie in der folgenden Abbildung dargestellt.
 
-![Profil für bestimmte MVPD abrufen](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-primary-application-for-specific-mvpd.png)
+![Profil für bestimmte MVPD abrufen](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-primary-application-for-specific-mvpd.png)
 
 *Profil für bestimmte MVPD abrufen*
 
@@ -99,7 +99,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Profilabruffluss 
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `mvpd`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
@@ -111,7 +111,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Profilabruffluss 
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [&#x200B; in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
+   > Weitere Informationen zu [ in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
    > 
    > <br/>
    > 
@@ -140,7 +140,7 @@ Bevor Sie das Profil für einen bestimmten Authentifizierungs-Code abrufen, stel
 
 Führen Sie die angegebenen Schritte aus, um den einfachen Profilabruffluss für einen bestimmten Authentifizierungs-Code zu implementieren, der in einer primären Anwendung ausgeführt wird, wie im folgenden Diagramm dargestellt.
 
-![Profil für bestimmten Code abrufen](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-primary-application-for-specific-code.png)
+![Profil für bestimmten Code abrufen](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-primary-application-for-specific-code.png)
 
 *Profil für bestimmten Code abrufen*
 
@@ -148,7 +148,7 @@ Führen Sie die angegebenen Schritte aus, um den einfachen Profilabruffluss für
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)Dokumentation zum Abrufen von Profilen für bestimmten Code:
+   > Weitere Informationen zu folgenden [ finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)Dokumentation zum Abrufen von Profilen für bestimmten Code:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `code`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`
@@ -160,7 +160,7 @@ Führen Sie die angegebenen Schritte aus, um den einfachen Profilabruffluss für
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [&#x200B; in einer Profilantwort bereitgestellten Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)Dokumentation zum Abrufen von Profilen für bestimmten Code.
+   > Weitere Informationen zu [ in einer Profilantwort bereitgestellten Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)Dokumentation zum Abrufen von Profilen für bestimmten Code.
    > 
    > <br/>
    > 

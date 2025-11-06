@@ -78,7 +78,7 @@ Beim ersten Besuch eines Benutzers bei einem Programmierer-Programm (TVE) folgt 
 In den folgenden Schritten werden die allgemeinen Schritte für den Fall einer SAML-Integration beschrieben:
 
 1. **Laden der Anwendung (Website) des Programmierers**\
-   Der/die Benutzende navigiert zur Programmieranwendung (Website), die die Adobe Pass-Authentifizierung ([-API V2) &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md).
+   Der/die Benutzende navigiert zur Programmieranwendung (Website), die die Adobe Pass-Authentifizierung ([-API V2) ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md).
 
 1. **Geschützte Inhaltsanfrage**\
    Wenn Benutzende versuchen, auf geschützte Inhalte zuzugreifen, zeigt die Anwendung des Programmierers eine Liste von MVPDs an, aus denen die Benutzenden auswählen können.

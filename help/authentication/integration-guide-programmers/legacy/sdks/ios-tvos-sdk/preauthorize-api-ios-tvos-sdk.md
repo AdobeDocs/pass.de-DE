@@ -173,7 +173,7 @@ In diesem Abschnitt wird die JSON-Struktur einiger möglicher PreauthorizeRespon
 
 >[!IMPORTANT]
 >
->Die Liste möglicher zusätzlicher Fehler, die über die erweiterte Fehlerberichterstattungsfunktion abgerufen werden, ist unter [Erweiterte Fehlerberichterstattung“ &#x200B;](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md).
+>Die Liste möglicher zusätzlicher Fehler, die über die erweiterte Fehlerberichterstattungsfunktion abgerufen werden, ist unter [Erweiterte Fehlerberichterstattung“ ](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md).
 
 #### Erfolgreich
 
@@ -239,7 +239,7 @@ Einer oder mehreren Ressourcen wird eine Entscheidung zur Vorabautorisierung ver
                    "code" : "authorization_denied_by_mvpd",
                    "message" : "User not authorized",
                    "details" : "Your subscription package does not include the "TestStream3" channel.",
-                   "helpUrl" : "https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=de",
+                   "helpUrl" : "https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                    "trace" : "0453f8c8-167a-4429-8784-cd32cfeaee58",
                    "action" : "none"
                 }
@@ -267,7 +267,7 @@ Adobe Pass-Authentifizierungsdienste haben beim Verarbeiten der Vorabautorisieru
             "code" : "bad_request",
             "message": "Missing required parameter : deviceId",
             "details": "",
-            "helpUrl" : "https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=de",
+            "helpUrl" : "https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/error-reportn/enhanced-error-codes.html",
             "trace" : "9f115e1c-0158-4a41-8805-9f68923f3646",
             "action" : "none"
         }

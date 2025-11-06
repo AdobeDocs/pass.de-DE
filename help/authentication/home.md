@@ -4,7 +4,7 @@ description: Willkommen bei Adobe&reg; Pass Authentication
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
 source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
 workflow-type: tm+mt
-source-wordcount: '419'
+source-wordcount: '414'
 ht-degree: 0%
 
 ---
@@ -23,12 +23,12 @@ Für Programmierer stellt die Adobe Pass-Authentifizierung den sicheren Zugriff 
 
 Als SaaS-Lösung (Software as a Service) beschleunigt die Adobe Pass-Authentifizierung die Markteinführung, mindert Betrugsrisiken und ermöglicht den nahtlosen plattformübergreifenden Zugriff auf Inhalte. So wird sichergestellt, dass die richtigen Betrachter mühelos die richtigen Inhalte erhalten.
 
-## ?? Community und Updates
+## 📢 Community und Updates
 
 * [Produktankündigungen](/help/authentication/product-announcements.md)\
   Bleiben Sie über die neuesten Produktankündigungen zur Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf dem Laufenden.
 
-## ❓-Support und Fehlerbehebung
+## ❓ Support und Fehlerbehebung
 
 * [Zendesk-Support-Portal](https://tve.zendesk.com/home)\
   Melden Sie sich an, um auf Tickets zuzugreifen, Abfragen zu senden oder die Wissensdatenbank aufzurufen.
@@ -42,7 +42,7 @@ Häufig gestellte Fragen zu den Verfahren zur Unterstützung der Adobe Pass-Auth
 * [HÄUFIG GESTELLTE FRAGEN ZUR REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md)\
   Häufig gestellte Fragen zur Adobe Pass Authentication REST API v2.
 
-## ?? Dokumentation
+## 📄 Dokumentation
 
 **Für Programmierer:**
 
@@ -62,7 +62,7 @@ Häufig gestellte Fragen zu den Verfahren zur Unterstützung der Adobe Pass-Auth
 
 *Suchen Sie mithilfe der Suchleiste oben auf der Seite nach bestimmten Themen oder navigieren Sie durch das Menü links.*
 
-## ??️ Tools und Bibliotheken
+## 🛠️ Tools und Bibliotheken
 
 * [Adobe Developer-Website](https://developer.adobe.com/adobe-pass/)\
   Rufen Sie die Adobe Developer-Website auf, um Adobe Pass Authentication REST-APIs auszuprobieren.
@@ -70,7 +70,7 @@ Häufig gestellte Fragen zu den Verfahren zur Unterstützung der Adobe Pass-Auth
 * [Media Token Verifier](https://tve.zendesk.com/hc/en-us/articles/204963159-Media-Token-Verifier-library)\
   Integrieren Sie die Bibliothek, die von der Adobe Pass-Authentifizierung generierte Medien-Token validiert.
 
-## ?? Kontakt
+## 📧
 
 * [Adobe-Support kontaktieren](mailto:tve-support@adobe.com)\
   Wenn Sie weitere Hilfe benötigen oder geschäftliche Fragen haben, wenden Sie sich per E-Mail an das Adobe-Supportteam.

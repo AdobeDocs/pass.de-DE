@@ -4,7 +4,7 @@ description: Zugriff auf Enabler Android SDK Single Sign-On (SSO) für Android 1
 exl-id: dedade15-c451-4757-b684-d3728e11dd87
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '402'
+source-wordcount: '401'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 > Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
 
-## Übersicht
+## Überblick
 
 Single Sign-On (SSO) zwischen Apps mit Adobe Pass-Authentifizierung ist auf Geräten mit Android OS über Access Enabler Android SDK verfügbar. Um Single Sign-On (SSO) auf Android-Geräten anbieten zu können, verwenden Access Enabler Android SDK Version 3.2.1 (neueste Version) und frühere Versionen eine freigegebene Datenbankdatei, die in einer Android-Speicherimplementierung gespeichert ist, auf die alle Apps mit Adobe Pass-Authentifizierung zugreifen können.
 
@@ -29,11 +29,11 @@ Infolge dieser Änderungen können das Single Sign-On (SSO), das von Access Enab
 
 ## Verhalten
 
-Je nach **[!UICONTROL target SDK level]** Ihrer App oder der Verwendung des Manifestattributs **android:requestLegacyExternalStorage** verhält sich das von Access Enabler Android Version 3.2.1 SDK (neueste Version) und früheren Versionen angebotene Single Sign-On (SSO) derzeit wie folgt:
+Je nach **[!UICONTROL target SDK level]** Ihrer App oder der Verwendung des Manifestattributs **android:requestLegacyExternalStorage** verhält sich das Single Sign-On (SSO), das von Access Enabler Android Version 3.2.1 SDK (neueste Version) und früheren Versionen angeboten wird, derzeit wie folgt:
 
 - Ihre App für **Android 9 (API-Ebene 28)** oder niedriger **-\>** Single Sign-On (SSO) **funktioniert**
-- Ihre App ist für **Android 10** **(API-Ebene 29)** vorgesehen und **&#x200B;**&#x200B;den Wert von **requestLegacyExternalStorage in der Manifestdatei**-\>**&#x200B;** SSO (Single Sign-On) Ihrer App auf **gesetzt**
-- Ihre App ist für **Android 10** **(API-Ebene 29)** vorgesehen und **&#x200B;**&#x200B;den Wert von **requestLegacyExternalStorage in der Manifestdatei**-\>**SSO (Single Sign-On) Ihrer App auf** nicht **festgelegt**
+- Ihre App ist für **Android 10** **(API-Ebene 29)** vorgesehen und **** den Wert von **requestLegacyExternalStorage in der Manifestdatei**-\>**** SSO (Single Sign-On) Ihrer App auf **gesetzt**
+- Ihre App ist für **Android 10** **(API-Ebene 29)** vorgesehen und **** den Wert von **requestLegacyExternalStorage in der Manifestdatei**-\>**SSO (Single Sign-On) Ihrer App auf** nicht **festgelegt**
 
 >[!TIP]
 >

@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 > Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-## Übersicht {#overview}
+## Überblick {#overview}
 
 Der <b>AP-Device-Identifier</b>-Anforderungsheader enthält die Streaming-Gerätekennung, wie sie von der Client-Anwendung erstellt wurde.
 
@@ -83,7 +83,7 @@ AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMW
 >
 > Die Dokumentationsressourcen sind nicht vollständig und erfordern möglicherweise zusätzliche Änderungen, um in Ihrem Projekt zu funktionieren.
 > 
-> Unabhängig von Ihrer tatsächlichen Implementierung muss die `AP-Device-Identifier`-Kopfzeile einen Wert enthalten, der wie im Abschnitt „Anweisungen[&#x200B; beschrieben &#x200B;](#directives).
+> Unabhängig von Ihrer tatsächlichen Implementierung muss die `AP-Device-Identifier`-Kopfzeile einen Wert enthalten, der wie im Abschnitt „Anweisungen[ beschrieben ](#directives).
 
 ### Browser {#browsers}
 
@@ -113,7 +113,7 @@ _(*) Es wird empfohlen, eine SHA-256-Hash-Funktion auf den vom Betriebssystem an
 
 #### tvOS {#tvos}
 
-Informationen zum Erstellen des `AP-Device-Identifier`-Headers für Geräte, auf [&#x200B; „tvOS](https://developer.apple.com/documentation/tvos-release-notes) ausgeführt wird, finden Sie in den folgenden Dokumenten:
+Informationen zum Erstellen des `AP-Device-Identifier`-Headers für Geräte, auf [ „tvOS](https://developer.apple.com/documentation/tvos-release-notes) ausgeführt wird, finden Sie in den folgenden Dokumenten:
 
 * Apple-Entwicklerdokumentation für [identifierForVendor](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor).
 
@@ -121,7 +121,7 @@ _(*) Es wird empfohlen, eine SHA-256-Hash-Funktion auf den vom Betriebssystem an
 
 #### Betriebssystem auslösen {#fireos}
 
-Informationen zum Erstellen des `AP-Device-Identifier`-Headers für Geräte, auf [&#x200B; „Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html) ausgeführt wird, finden Sie in den folgenden Dokumenten:
+Informationen zum Erstellen des `AP-Device-Identifier`-Headers für Geräte, auf [ „Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html) ausgeführt wird, finden Sie in den folgenden Dokumenten:
 
 * Entwicklerdokumentation für Android für [ANDROID_ID](https://developer.android.com/reference/android/provider/Settings.Secure#ANDROID_ID).
 
@@ -129,7 +129,7 @@ _(*) Es wird empfohlen, eine SHA-256-Hash-Funktion auf den vom Betriebssystem an
 
 #### Roku OS {#rokuos}
 
-Informationen zum Erstellen des `AP-Device-Identifier`-Headers für Geräte, auf [&#x200B; (Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md) ausgeführt wird, finden Sie in den folgenden Dokumenten:
+Informationen zum Erstellen des `AP-Device-Identifier`-Headers für Geräte, auf [ (Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md) ausgeführt wird, finden Sie in den folgenden Dokumenten:
 
 * Roku-Entwicklerdokumentation für [GetChannelClientId](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string).
 

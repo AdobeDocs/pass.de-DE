@@ -4,7 +4,7 @@ description: Drosselmechanismus
 exl-id: 15236570-1a75-42fb-9bba-0e2d7a59c9f6
 source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
-source-wordcount: '624'
+source-wordcount: '614'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 ## Einführung {#introduction}
 
-Adobe muss in seiner Rolle als Auftragsverarbeiter geeignete Maßnahmen ergreifen, um sicherzustellen, dass die Benutzer unserer Kunden die Ressourcen gerecht verwenden und der Service nicht mit unnötigen API-Anfragen überschwemmt wird. Dazu haben wir einen Drosselungsmechanismus eingerichtet.
+Adobe muss in seiner Rolle als Auftragsverarbeiter geeignete Maßnahmen ergreifen, um sicherzustellen, dass die Benutzer unserer Kunden die Ressourcen gerecht nutzen und der Service nicht mit unnötigen API-Anfragen überschwemmt wird. Dazu haben wir einen Drosselungsmechanismus eingerichtet.
 Eine Anwendung zur Überwachung gleichzeitiger Nutzung kann von mehreren Benutzern verwendet werden, und ein Benutzer kann mehrere Sitzungen haben. Daher sind für den Service Limits für die Anzahl der akzeptierten Aufrufe pro Benutzer/Sitzung innerhalb eines bestimmten Zeitintervalls konfiguriert.
 Wenn das Limit erreicht wurde, werden die Anfragen mit einem bestimmten Antwortstatus markiert (HTTP 429: Zu viele Anfragen). Jeder nachfolgende Aufruf, der nach Eingang einer „429-zu-viele-Anfragen“-Antwort erfolgt, sollte mit mindestens einer Minute Abkühlzeit erfolgen, um sicherzustellen, dass eine gültige Geschäftsantwort eingeht.
 
@@ -23,7 +23,7 @@ Der Mechanismus bestimmt die maximale Anzahl akzeptierter Aufrufe für jeden Gle
 Sobald diese maximale Anzahl von Anrufen erreicht ist, wird unser Service mit „429 Zu viele Anfragen“ antworten. Die 429-Antwort-Kopfzeile „Expires“ enthält den Zeitstempel, wann der nächste Aufruf als gültig betrachtet würde oder wann die Drosselung abläuft. Derzeit läuft die Drosselung nach einer ab   Minute ab der ersten Antwort von 429.
 
 Die mit Einschränkungen konfigurierten Endpunkte sind:
-1. Erstellen Sie eine neue Sitzung: POST /sessions/{idp}/{subject}
+1. Neue Sitzung erstellen: POST /sessions/{idp}/{subject}
 2. Heartbeat-Aufruf: POST /sessions/{idp}/{subject}/{sessionId}
 3. Beenden einer Sitzung: DELETE /sessions/{idp}/{subject}/{sessionId}
 

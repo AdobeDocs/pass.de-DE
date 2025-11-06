@@ -15,7 +15,7 @@ ht-degree: 2%
 >
 > Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-## Übersicht {#overview}
+## Überblick {#overview}
 
 Der <b>AP-TempPass-Identity</b>-Anfrage-Header enthält die Informationen zur Benutzeridentität, die zum Erreichen des Werbe-TempPass verwendet werden.
 

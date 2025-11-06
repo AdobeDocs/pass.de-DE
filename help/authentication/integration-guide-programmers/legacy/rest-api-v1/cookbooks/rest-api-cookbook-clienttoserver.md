@@ -2,7 +2,7 @@
 title: REST-API-Cookbook (Client-zu-Server)
 description: REST-API-Cookbook-Client an Server.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
 source-wordcount: '886'
 ht-degree: 0%
@@ -49,12 +49,12 @@ In einer funktionierenden Client-zu-Server-Lösung sind die folgenden Komponente
 
 ### Dynamische Client-Registrierung (DCR)
 
-Adobe Pass verwendet DCR, um die Client-Kommunikation zwischen einer Programmieranwendung oder einem Server und den Adobe Pass-Services zu sichern. Der DCR-Ablauf ist separat und wird in der Dokumentation [Übersicht über die dynamische Client-Registrierung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) beschrieben.
+Adobe Pass verwendet DCR, um die Client-Kommunikation zwischen einer Programmieranwendung oder einem Server und den Adobe Pass-Services zu sichern. Der DCR-Ablauf ist separat und wird in der Dokumentation [Übersicht über die dynamische Client-Registrierung](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) beschrieben.
 
 
 ### Mobile-App-Flüsse für Streaming (intelligente Geräte)
 
-![](/help//authentication/assets/smart-device-app-flow.png)
+![](../../../../assets/smart-device-app-flow.png)
 
 #### Anlauffluss
 
@@ -119,7 +119,7 @@ Benutzer.
 
 ### AuthN-Programmfluss (2. Bildschirm)
 
-![](/help//authentication/assets/secnd-screen-authn-flow.png)
+![](../../../../assets/secnd-screen-authn-flow.png)
 
 1. Erstellt eine Liste der MVPDs für diesen Benutzer. Beispiel: [`<SP_FQDN>/api/v1/config/[requestorID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)
 
@@ -148,4 +148,4 @@ Bei TempPass- und Promotion-TempPass-Implementierungen, bei denen der Benutzer k
 **Um diese API verwenden zu können, muss die Streaming-App sicherstellen, dass die Geräte-ID, da sie für die Identifizierung des Tokens verwendet wird, zusammen mit den optionalen zusätzlichen Daten eindeutig ist.**
 
 
-![](/help//authentication/assets/temp-pass-promo-temppass.png)
+![](../../../../assets/temp-pass-promo-temppass.png)

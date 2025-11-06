@@ -27,13 +27,13 @@ In diesem Dokument werden die Informationen beschrieben, die zum Integrieren des
 
 ## Hochrangige Architektur und Integration auf Betriebssystemebene {#high}
 
-Um Single Sign On zwischen den Anwendungen von TV Everywhere auf der Amazon fireTV-Plattform zu erreichen und das Gesamterlebnis auf dieser Plattform zu verbessern, haben wir uns entschieden, unser Core-SDK auf der Ebene des fireTV-Betriebssystems zu integrieren. Programmierer müssen mit einer Stub-Bibliothek kompilieren, die von Adobe bereitgestellt wird. Die eigentliche Funktionalität wird von der Adobe-Bibliothek bereitgestellt, die sich im FireTV-Betriebssystem von Amazon befindet.
+Um Single Sign On zwischen den Anwendungen von TV Everywhere auf der Amazon fireTV-Plattform zu erreichen und das Gesamterlebnis auf dieser Plattform zu verbessern, haben wir uns entschieden, unser Core-SDK auf der Ebene des fireTV-Betriebssystems zu integrieren. Programmierer müssen mit einer von Adobe bereitgestellten Stub-Bibliothek kompilieren. Die eigentliche Funktionalität wird von der Adobe-Bibliothek bereitgestellt, die in Amazons FireTV-Betriebssystem vorhanden ist.
 
 Bis Amazon einen FireTV-Simulator bereitstellt, der unsere Bibliothek auf Betriebssystemebene enthält, ist die Entwicklung nur mit echten FireTV-Geräten möglich.
 
 ## Vorteile {#bene}
 
-* Single Sign On zwischen allen Adobe-gestützten TV Everywhere-Anwendungen auf der Amazon fireTV-Plattform mit allen integrierten MVPDs.
+* Single Sign On zwischen allen Adobe-gestützten TV Everywhere-Anwendungen auf der Amazon FireTV-Plattform mit allen integrierten MVPDs.
 * Möglichkeit, von HBA zu profitieren (mit unterstützten MVPDs).
 * Möglichkeit zur Verwendung der neuesten FireTV-SDK, ohne dass Ihre Programme bei jeder Veröffentlichung einer neuen SDK-Version aktualisiert werden müssen.
 * Alle TVE-Anwendungen profitieren von der Verwendung der freigegebenen Systembibliothek, da keine lokale Kopie der AccessEnabler-Bibliothek mehr erforderlich ist. Dadurch wird auch sichergestellt, dass alle Anwendungen dieselbe SDK-Version verwenden.

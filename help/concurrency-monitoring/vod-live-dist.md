@@ -15,7 +15,7 @@ ht-degree: 0%
 
 
 
-**A:** Parallelitätsüberwachung kann nicht direkt zwischen Live-Inhalten und Video-on-Demand (VOD) unterscheiden. Der Video-Player muss den Typ des abgespielten Inhalts kennen und diese Informationen während des [Sitzungsinitialisierungsaufrufs) senden &#x200B;](/help/concurrency-monitoring/cm-api-overview.md#session-initial)erforderlich für die gleichzeitige Überwachung). Der reguläre Workflow sieht wie folgt aus:
+**A:** Parallelitätsüberwachung kann nicht direkt zwischen Live-Inhalten und Video-on-Demand (VOD) unterscheiden. Der Video-Player muss den Typ des abgespielten Inhalts kennen und diese Informationen während des [Sitzungsinitialisierungsaufrufs) senden ](/help/concurrency-monitoring/cm-api-overview.md#session-initial)erforderlich für die gleichzeitige Überwachung). Der reguläre Workflow sieht wie folgt aus:
 
 1. Die Kundinnen und Kunden der Parallelitätsüberwachung definieren einen Satz von Metadaten, für die Regeln implementiert werden sollen (z. B. content-type=live|vod, device-type=mobile|console|desktop).
 1. Das Team für Parallelitätsüberwachung implementiert die gewünschte Richtlinie. Beispiel:

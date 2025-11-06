@@ -15,7 +15,7 @@ Weitere Informationen finden Sie in der [Online](http://docs.adobeptime.io/cm-ap
 
 ## Zweck und Voraussetzungen {#purpose-prerequisites}
 
-Dieses Dokument unterstützt Anwendungsentwickler bei der Verwendung unserer Swagger-API-Spezifikation bei der Implementierung einer Integration mit der gleichzeitigen Überwachung. Es wird dringend empfohlen, dass der Leser ein früheres Verständnis der vom Service definierten Konzepte hat, bevor er diese Richtlinie befolgt. Um dieses Verständnis zu erhalten, ist ein Überblick über die [Produktdokumentation) &#x200B;](/help/concurrency-monitoring/cm-home.md) die „Swagger [&quot;-](http://docs.adobeptime.io/cm-api-v2/) erforderlich.
+Dieses Dokument unterstützt Anwendungsentwickler bei der Verwendung unserer Swagger-API-Spezifikation bei der Implementierung einer Integration mit der gleichzeitigen Überwachung. Es wird dringend empfohlen, dass der Leser ein früheres Verständnis der vom Service definierten Konzepte hat, bevor er diese Richtlinie befolgt. Um dieses Verständnis zu erhalten, ist ein Überblick über die [Produktdokumentation) ](/help/concurrency-monitoring/cm-home.md) die „Swagger [&quot;-](http://docs.adobeptime.io/cm-api-v2/) erforderlich.
 
 
 ## Einführung {#api-overview-intro}
@@ -25,7 +25,7 @@ Während des Entwicklungsprozesses stellt die öffentliche Swagger-Dokumentation
 Reichen Sie ein Ticket in [Zendesk](mailto:tve-support@adobe.com) ein, um Ihr Unternehmen und Ihre Anträge bei der Parallelitätsüberwachung zu registrieren. Adobe weist jeder Entität eine Anwendungs-ID zu. In diesem Handbuch verwenden wir zwei Referenzanwendungen mit den IDs **demo-app** und **demo-app-2** die sich unter dem Mandanten-Adobe befinden.
 
 
-## Anwendungsbeispiele {#api-use-case}
+## Anwendungsszenarien {#api-use-case}
 
 Der erste Schritt beim Testen eines Flusses mit Swagger besteht darin, die Anwendungs-ID oben rechts auf der Seite einzugeben, wie in diesem Fall:
 
@@ -60,7 +60,7 @@ Der Sitzungsinitialisierungsaufruf wird von einer Anwendung ausgeführt, nachdem
 
 Es ist nicht erforderlich, beim ersten Aufruf einen Beendigungs-Code anzugeben, da wir keine anderen aktiven Streams haben. Und kein Metadatenattribut, da vom Aufruf zum Abrufen von Metadaten keines zurückgegeben wurde.
 
-Die Parameter **subject** und **idp** sind obligatorisch. Sie werden als URI-Pfadvariablen angegeben. Sie können die Parameter **subject** und **idp** abrufen, indem Sie die Metadatenfelder **mvpd** und **upstreamUserID** aus der Adobe Pass-Authentifizierung aufrufen. Siehe auch die [Übersicht über Metadaten-APIs](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=de#). In diesem Beispiel geben wir den Wert „12345“ als Betreff und „adobe“ als Identitätsanbieter an.
+Die Parameter **subject** und **idp** sind obligatorisch. Sie werden als URI-Pfadvariablen angegeben. Sie können die Parameter **subject** und **idp** abrufen, indem Sie die Metadatenfelder **mvpd** und **upstreamUserID** aus der Adobe Pass-Authentifizierung aufrufen. Siehe auch die [Übersicht über Metadaten-APIs](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=en#). In diesem Beispiel geben wir den Wert „12345“ als Betreff und „adobe“ als Identitätsanbieter an.
 
 
 ![](assets/session-init-params-frstapp.png)

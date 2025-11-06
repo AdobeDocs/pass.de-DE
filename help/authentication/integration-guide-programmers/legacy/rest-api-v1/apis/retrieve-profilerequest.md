@@ -4,7 +4,7 @@ description: Platform-SSO-Profilanfrage abrufen
 exl-id: 44fd4e26-4d9a-4607-ac2c-b85d848f5fc6
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '212'
+source-wordcount: '210'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) &#x200B;](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -44,7 +44,7 @@ Diese Ressource erzeugt Profilanfragen für eine Anforderer-ID und ein MVPD-Tupe
 
 | Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/{requestor}/profile-requests/{mvpd} | Streaming-App</br></br>oder</br></br>Programmierer-Service | 1. Anforderer (Pfadparameter)</br>2. mvpd (Pfadparameter)</br>3. deviceType (Obligatorisch) | GET | Der Content-Typ der Antwort lautet application/octet-stream, da die tatsächliche Payload für die Client-Anwendung undurchsichtig ist.</br></br>Die Antwort sollte von der Anwendung zum Abrufen eines Profil-SSO an </br></br> Platform-SSO-Engine weitergeleitet werden. | 200 - Erfolg   </br>400 - Fehlerhafte Anfrage |
+| &lt;SP_FQDN>/api/v1/{requestor}/profile-requests/{mvpd} | Streaming-App</br></br>oder</br></br>Programmierer-Service | &#x200B;1. Anforderer (Pfadparameter)</br>2. mvpd (Pfadparameter)</br>3. deviceType (Obligatorisch) | GET | Der Content-Typ der Antwort lautet application/octet-stream, da die tatsächliche Payload für die Client-Anwendung undurchsichtig ist.</br></br>Die Antwort sollte von der Anwendung zum Abrufen eines Profil-SSO an </br></br> Platform-SSO-Engine weitergeleitet werden. | 200 - Erfolg   </br>400 - Fehlerhafte Anfrage |
 
 
 | Eingabeparameter | Beschreibung |

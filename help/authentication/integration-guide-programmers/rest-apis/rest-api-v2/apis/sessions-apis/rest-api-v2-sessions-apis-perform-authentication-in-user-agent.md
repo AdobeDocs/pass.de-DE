@@ -142,7 +142,7 @@ Die erfolgreiche Antwort besteht aus einer oder mehreren Weiterleitungen bis zum
 
 ## Beispiele {#samples}
 
-### 1. Authentifizierung im Benutzeragenten durchführen
+### &#x200B;1. Authentifizierung im Benutzeragenten durchführen
 
 >[!BEGINTABS]
 

@@ -79,7 +79,7 @@ Die neueste Amazon FireOS AccessEnabler-SDK finden Sie in der <https://tve.zende
 - *appContext*: Anwendungskontext des Amazon Fire OS.
 - softwareStatement
 - redirectUrl : Im Fall von FireOS wird der Parameterwert ignoriert und auf Standard gesetzt: adobepass://android.app
-- env_url: Für Tests mit der Adobe-Staging-Umgebung kann env\_url auf „sp.auth-staging.adobe.com“ festgelegt werden
+- ENV_URL: Für Tests mit der Adobe-Staging-Umgebung kann ENV\_url auf „sp.auth-staging.adobe.com“ festgelegt werden
 
 **Veraltet:**
 
@@ -95,7 +95,7 @@ Die neueste Amazon FireOS AccessEnabler-SDK finden Sie in der <https://tve.zende
 
 Die Antwort des Servers enthält eine Liste der MVPDs zusammen mit Konfigurationsinformationen, die an die Identität des Programmierers angehängt sind. Die Server-Antwort wird intern vom Access Enabler-Code verwendet. Nur der Status des Vorgangs (d. h. ERFOLG/FEHLGESCHLAGEN) wird Ihrer Anwendung über den Callback setRequestorComplete() angezeigt.
 
-Wenn der Parameter *urls* nicht verwendet wird, zielt der resultierende Netzwerkaufruf auf die Standard-Service-Provider-URL ab: die Adobe-Release-/Produktionsumgebung.
+Wenn der Parameter *urls* nicht verwendet wird, zielt der resultierende Netzwerkaufruf auf die Standard-Service-Provider-URL ab: die Adobe Release-/Produktionsumgebung.
 
 Wenn ein Wert für den Parameter *urls* angegeben wird, zielt der resultierende Netzwerkaufruf auf alle URLs ab, die im Parameter *urls* angegeben sind. Alle Konfigurationsanfragen werden gleichzeitig in separaten Threads ausgelöst. Bei der Kompilierung der Liste der MVPDs hat die erste Antwort Vorrang. Für jede MVPD in der Liste speichert Access Enabler die URL des zugehörigen Dienstleisters. Alle nachfolgenden Berechtigungsanfragen werden an die URL weitergeleitet, die mit dem Dienstleister verknüpft ist, der während der Konfigurationsphase mit dem Ziel-MVPD gepaart wurde.
 
@@ -116,8 +116,8 @@ Wenn ein Wert für den Parameter *urls* angegeben wird, zielt der resultierende 
 
 **Parameter:**
 
-- *RequestorID*: Die eindeutige ID, die dem Programmierer zugeordnet ist. Übergeben Sie die eindeutige ID, die von Adobe an Ihre Site zugewiesen wurde, wenn Sie sich zum ersten Mal beim Adobe Pass-Authentifizierungsdienst registriert haben.
-- *urls*: Optionaler Parameter; standardmäßig wird der Adobe-Dienstleister verwendet (http://sp.auth.adobe.com/). Mit diesem Array können Sie Endpunkte für Authentifizierungs- und Autorisierungsdienste angeben, die von Adobe bereitgestellt werden (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Damit können Sie mehrere Instanzen des Authentifizierungs-Service von Adobe Pass angeben. Dabei besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt.
+- *RequestorID*: Die eindeutige ID, die dem Programmierer zugeordnet ist. Übergeben Sie die eindeutige ID, die Adobe Ihrer Site zugewiesen hat, wenn Sie sich zum ersten Mal beim Adobe Pass-Authentifizierungs-Service registriert haben.
+- *urls*: Optionaler Parameter; standardmäßig wird der Adobe-Dienstleister verwendet (http://sp.auth.adobe.com/). Mit diesem Array können Sie Endpunkte für von Adobe bereitgestellte Authentifizierungs- und Autorisierungsdienste angeben (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Damit können Sie mehrere Instanzen des Authentifizierungs-Service von Adobe Pass angeben. Dabei besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt.
 
 **Ausgelöste Callbacks:** `setRequestorComplete()`
 
@@ -175,7 +175,7 @@ Die Werte werden unabhängig vom aktuellen Fluss (Authentifizierung/Autorisierun
 
 - *options*: Eine Zuordnung\&lt;String, String\> mit globalen SDK-Optionen. Derzeit stehen die folgenden Optionen zur Verfügung:
    - **applicationProfile** - Kann verwendet werden, um Server-Konfigurationen basierend auf diesem Wert vorzunehmen.
-   - **ap\_vi** - Der Experience Cloud-ID-Dienst. Dieser Wert kann später für erweiterte Analyseberichte verwendet werden.
+   - **ap\_vi** - Der Experience Cloud ID-Service. Dieser Wert kann später für erweiterte Analyseberichte verwendet werden.
    - **device\_info** - Geräteinformationen, wie in **Cookbook für Geräteinformationen übergeben**
 
 </br>
@@ -260,7 +260,7 @@ Nachdem der Benutzer die gewünschte MVPD ausgewählt hat, muss die Upper-Layer-
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**Verfügbarkeit:**&#x200B;v 1.0+
+**Verfügbarkeit:**v 1.0+
 
 **Parameter:** none
 
@@ -355,7 +355,7 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**Verfügbarkeit:**&#x200B;v 1.0+
+**Verfügbarkeit:**v 1.0+
 
 **Parameter:** Der `resources` ist ein Array von Ressourcen, für die der Benutzer bereits berechtigt ist, sie anzuzeigen.
 
@@ -427,7 +427,7 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**Verfügbarkeit:**&#x200B;v 1.0+
+**Verfügbarkeit:**v 1.0+
 
 **Parameter:**
 
@@ -625,7 +625,7 @@ Der Access Enabler-Trigger führt einen zusätzlichen Callback aus, der nicht un
 
 >[!WARNING]
 >
-> Der Gerätetyp und das Betriebssystem werden mithilfe einer öffentlichen Java-Bibliothek (http://java.net/projects/user-agent-utils) und der Benutzeragenten-Zeichenfolge abgeleitet. Beachten Sie, dass diese Informationen nur als grobe Methode zur Unterteilung der Betriebsmetriken in Gerätekategorien bereitgestellt werden, aber dass Adobe keine Verantwortung für falsche Ergebnisse übernehmen kann. Bitte verwenden Sie die neue Funktion entsprechend.
+> Der Gerätetyp und das Betriebssystem werden mithilfe einer öffentlichen Java-Bibliothek (http://java.net/projects/user-agent-utils) und der Benutzeragenten-Zeichenfolge abgeleitet. Beachten Sie, dass diese Informationen nur als grobe Möglichkeit bereitgestellt werden, Betriebsmetriken in Gerätekategorien aufzuschlüsseln, aber dass Adobe keine Verantwortung für falsche Ergebnisse übernehmen kann. Bitte verwenden Sie die neue Funktion entsprechend.
 
 - Mögliche Werte für den Gerätetyp:
    - `computer`

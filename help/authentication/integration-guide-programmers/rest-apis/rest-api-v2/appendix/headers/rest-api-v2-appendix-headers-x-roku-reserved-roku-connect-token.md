@@ -2,7 +2,7 @@
 title: Kopfzeile - x-roku-reserved-roku-connect-token
 description: REST API v2 - Kopfzeile - x-roku-reserved-roku-connect-token
 exl-id: 21016d5b-4d10-4018-a82c-f2797b2d9fb9
-source-git-commit: 2afe9ea2a814817757f1ab28484a84466da68d62
+source-git-commit: 560cdcdabb3d507121912938d687a47020e85293
 workflow-type: tm+mt
 source-wordcount: '149'
 ht-degree: 0%
@@ -47,4 +47,4 @@ Die JSON-Web-Signatur (`JWS`) oder JSON-Web-Verschlüsselung (`JWE`), die ein si
 
 Dies ist für die folgenden Plattformen verfügbar:
 
-* [Roku SSO Cookbook (REST API v2)](/help/premium-workflow/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
+* [Roku SSO Cookbook (REST API v2)](../../../../features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)

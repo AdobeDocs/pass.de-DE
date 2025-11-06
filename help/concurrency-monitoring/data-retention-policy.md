@@ -5,7 +5,7 @@ exl-id: aa7d2d5e-9a8b-404b-874c-9e5923417784
 source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
 source-wordcount: '298'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -30,7 +30,7 @@ Eine Richtlinie zur Datenaufbewahrung bestimmt, wie lange Adobe die Kundendaten 
 
 ## Datenerfassung {#data-collection}
 
-*Clickstream-Daten* stellen Daten dar, die von Kundinnen und Kunden in den Sitzungs-Heartbeats freigegeben werden (z. B. subjectID, mvpdName und Metadaten). Alle benutzerdefinierten Metadatenfelder werden in den [Standard-Metadatenattributen“ &#x200B;](/help/concurrency-monitoring/standard-metadata-attributes.md).
+*Clickstream-Daten* stellen Daten dar, die von Kundinnen und Kunden in den Sitzungs-Heartbeats freigegeben werden (z. B. subjectID, mvpdName und Metadaten). Alle benutzerdefinierten Metadatenfelder werden in den [Standard-Metadatenattributen“ ](/help/concurrency-monitoring/standard-metadata-attributes.md).
 
 ## Kundentypen {#customer-types}
 

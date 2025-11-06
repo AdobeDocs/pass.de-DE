@@ -2,7 +2,7 @@
 title: Änderungsprotokoll
 description: Wissen, wie ein Administrator die Konfigurationsänderungen im TVE-Dashboard überwachen kann.
 exl-id: 9b53a61b-679f-491e-90f3-5d827e21b32c
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '270'
 ht-degree: 0%
@@ -30,7 +30,7 @@ Gehen Sie wie folgt vor, um Änderungen zu vergleichen:
 
 1. Wählen Sie zwei Konfigurationsänderungen aus der Liste aus, die Sie vergleichen möchten.
 
-   ![Konfigurationsänderungen vergleichen](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-changes-compare-button.png)
+   ![Konfigurationsänderungen vergleichen](../assets/tve-dashboard/new-tve-dashboard/review/review-changes-compare-button.png)
 
    *Konfigurationsänderungen vergleichen*
 
@@ -42,12 +42,12 @@ Gehen Sie wie folgt vor, um Änderungen zu vergleichen:
 
 1. Klicken Sie **Anzeigen**, um auf die geänderten Werte zuzugreifen.
 
-   ![Konfigurationsänderungen anzeigen](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-changes-view-button.png)
+   ![Konfigurationsänderungen anzeigen](../assets/tve-dashboard/new-tve-dashboard/review/review-changes-view-button.png)
 
    *Konfigurationsänderungen anzeigen*
 
 Im Folgenden finden Sie ein Beispiel für eine Änderung, die an der ausgewählten Konfiguration vorgenommen wurde. Sie können den Unterschied zwischen den alten und neuen Werten innerhalb der Änderung anzeigen.
 
-![Alter und neuer Wert](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-change-modal-view.png)
+![Alter und neuer Wert](../assets/tve-dashboard/new-tve-dashboard/review/review-change-modal-view.png)
 
 *Alter und neuer Wert*

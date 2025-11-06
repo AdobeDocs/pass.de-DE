@@ -2,7 +2,7 @@
 title: Versionshinweise zur Adobe Pass-Authentifizierung 2.70
 description: Versionshinweise zur Adobe Pass-Authentifizierung 2.70
 exl-id: 81713f8e-bc51-4057-9b00-6a2d6c83cd02
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
 source-wordcount: '136'
 ht-degree: 0%
@@ -35,7 +35,7 @@ Veröffentlichungsdatum: **04/23/2024 - 04/25/2024**
 * Behobene Sicherheitslücken.
 * Verbesserungen am Degradation API-Service.
    * Verwenden Sie DCR als Sicherheitsmechanismus für die Degradation-API.
-   * Weitere Informationen finden Sie hier: [Abbaufunktion](/help/premium-workflow/degraded-access/degradation-feature.md)
+   * Weitere Informationen finden Sie hier: [Abbaufunktion](../integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
 
 #### REST-APIs
 

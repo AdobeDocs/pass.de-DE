@@ -2,7 +2,7 @@
 title: Abrufen der Konfiguration für einen bestimmten Dienstleister
 description: REST API V2 - Abrufen der Konfiguration für einen bestimmten Dienstleister
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: 1c96904f67507ad127c29628963d74a9fb010e99
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
 source-wordcount: '728'
 ht-degree: 1%
@@ -229,7 +229,7 @@ ht-degree: 1%
                         <li><b>id</b><br/>Die interne eindeutige Kennung, die dem Identitätsanbieter während des Onboarding-Prozesses zugeordnet ist.</li>
                         <li><b>displayName</b><br/>Der kommerzielle (Marken-)Name, der dem Identitätsanbieter während des Onboarding-Prozesses zugeordnet ist.</li>
                         <li><b>logoUrl</b><br>Die URL, von der das mit dem Identitätsanbieter verknüpfte Logo heruntergeladen werden soll.</li>
-                        <li><b>isTempPass</b><br/>Das Flag, das angibt, ob die MVPD für die Bereitstellung der Funktionen <a href="/help/premium-workflow/temporary-access/temp-pass-feature.md">TempPass</a> ausgelegt ist.</li>
+                        <li><b>isTempPass</b><br/>Das Flag, das angibt, ob die MVPD für die Bereitstellung der Funktionen <a href="../../../../features-premium/temporary-access/temp-pass-feature.md">TempPass</a> ausgelegt ist.</li>
                         <li><b>isProxy</b><br/>Das Flag, das angibt, ob die MVPD eine Proxy-MVPD ist.</li>
                         <li><b>boardingStatus</b><br/>Der Status, der angibt, ob der Identitätsanbieter von der Streaming-Geräteplattform für Single-Sign-On-Flüsse integriert wird.</li>
                         <li><b>platformMappingId</b><br/>Die interne eindeutige Kennung, die dem Identitätsanbieter von der Streaming-Geräteplattform für Single-Sign-On-Flüsse zugeordnet ist.</li>

@@ -21,7 +21,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) &#x200B;](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -43,7 +43,7 @@ Ermöglicht den „Austausch“ eines Platform SSO-Profils gegen ein Adobe-Token
 
 | Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/tokens/authn | Streaming-App</br></br>oder</br></br>Programmierer-Service | 1. Antragsteller (obligatorisch)</br>    </br>2.  deviceId (obligatorisch)</br>    </br>3.  MVPD (obligatorisch)</br>    </br>4.  deviceType (Obligatorisch)</br>    </br>5.  SAMLReantwort (obligatorisch)</br>    </br>6.  deviceUser (veraltet)</br>    </br>7.  appId (veraltet) | POST | Die erfolgreiche Antwort lautet 204 Kein Inhalt. Dies bedeutet, dass das Token erfolgreich erstellt wurde und für die Autorisierungsflüsse verwendet werden kann. | 204 - Kein Inhalt   </br>400 - Fehlerhafte Anfrage |
+| &lt;SP_FQDN>/api/v1/tokens/authn | Streaming-App</br></br>oder</br></br>Programmierer-Service | &#x200B;1. Antragsteller (obligatorisch)</br>    </br>2.  deviceId (obligatorisch)</br>    </br>3.  MVPD (obligatorisch)</br>    </br>4.  deviceType (Obligatorisch)</br>    </br>5.  SAMLReantwort (obligatorisch)</br>    </br>6.  deviceUser (veraltet)</br>    </br>7.  appId (veraltet) | POST | Die erfolgreiche Antwort lautet 204 Kein Inhalt. Dies bedeutet, dass das Token erfolgreich erstellt wurde und für die Autorisierungsflüsse verwendet werden kann. | 204 - Kein Inhalt   </br>400 - Fehlerhafte Anfrage |
 
 
 | Eingabeparameter | Beschreibung |

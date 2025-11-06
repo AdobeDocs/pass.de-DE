@@ -2,7 +2,7 @@
 title: Integrationshandbuch für Programmierer
 description: Integrationshandbuch für Programmierer
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: 7ca9d8996756086a6b963c0b6d5b0bb64608ecbc
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '2119'
 ht-degree: 0%
@@ -28,13 +28,13 @@ Bevor Sie Zugriff auf geschützte Inhalte gewähren, müssen Sie feststellen, ob
 
 Für Programmierer ist die Bestimmung von Berechtigungen nicht immer einfach. MVPDs sind die Verwahrer der Identifizierungsdaten und Zugriffsberechtigungen ihrer Kunden. Erschwerend kommt hinzu, dass Programmierer und Zuschauer eine Vielzahl von MVPDs abonnieren können, von denen jedes mit einzigartigen Systemen arbeitet. Aufgrund dieser Komplexität ist die Überprüfung von Berechtigungen sowohl technisch schwierig als auch ressourcenintensiv.
 
-![Benutzerberechtigungen, die direkt vom Programmierer bestimmt werden](/help/authentication/assets/user-ent-by-progr.png){align="center"}
+![Benutzerberechtigungen, die direkt vom Programmierer bestimmt werden](../assets/user-ent-by-progr.png){align="center"}
 
 *Benutzerberechtigungen, die direkt vom Programmierer bestimmt werden*
 
 Die Adobe Pass-Authentifizierung erleichtert auf sichere Weise Berechtigungstransaktionen zwischen Programmierern und MVPDs, wodurch die Bereitstellung geschützter Inhalte für geeignete Betrachter schnell, einfach und sicher ist.
 
-![Benutzerberechtigung vermittelt durch Adobe Pass-Authentifizierung](/help/authentication/assets/user-ent-mediatedby-authn.png){align="center"}
+![Benutzerberechtigung vermittelt durch Adobe Pass-Authentifizierung](../assets/user-ent-mediatedby-authn.png){align="center"}
 
 *Benutzerberechtigung vermittelt durch Adobe Pass-Authentifizierung*
 
@@ -47,11 +47,11 @@ Für Programmierer stellt die Adobe Pass-Authentifizierung APIs als Teil einer *
    * [REST-API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * Premium Adobe Pass-Authentifizierungs-APIs:
-   * [Temporäre Pass-API zurücksetzen](/help/premium-workflow/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [TempPass-Funktion](/help/premium-workflow/temporary-access/temp-pass-feature.md)
-   * [Abbauungs-API](/help/premium-workflow/degraded-access/degradation-feature.md#degradation-api-access)
-      * [Abbaumerkmal](/help/premium-workflow/degraded-access/degradation-feature.md)
-   * [Berechtigungs-Service-Überwachungs-API](/help/premium-workflow/esm/entitlement-service-monitoring-api.md)
+   * [Temporäre Pass-API zurücksetzen](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [TempPass-Funktion](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+   * [Abbauungs-API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+      * [Abbaumerkmal](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+   * [Berechtigungs-Service-Überwachungs-API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 ### Anwendungsfälle {#use-cases}
 
@@ -72,7 +72,7 @@ In diesem Abschnitt werden die von der Adobe Pass-Authentifizierung unterstützt
 | **Phase** | **Priorität** | **Anwendungsfall** | **Dokumente** |
 |----------------------|--------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Authentifizierung** | **Hoch** | Authentifizierung | Weitere Informationen finden Sie in den Dokumenten, die im Abschnitt [Authentifizierungsphase](#authentication-phase) zusammengefasst sind. |
-|                      | **Hoch** | Home-Based Authentication (HBA) | Weitere Informationen finden Sie unter [Home-Based Authentication](/help/premium-workflow/hba-access/home-based-authentication.md). |
+|                      | **Hoch** | Home-Based Authentication (HBA) | Weitere Informationen finden Sie unter [Home-Based Authentication](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md). |
 |                      | **Hoch** | Single Sign-On (SSO) | Weitere Informationen finden Sie in den aggregierten Dokumenten im Abschnitt [Single Sign-On (SSO](#sso) . |
 |                      | **Hoch** | MVPD auswählen | Weitere Informationen finden Sie in den Dokumenten, die im Abschnitt [Konfigurationsphase](#configuration-phase) zusammengefasst sind. |
 |                      | **Medium** | Anmeldeseite für MVPD mit Markenbezeichnungen | Ermöglicht es MVPDs, Anmeldeseiten mit einem Branding zu versehen, das für den Programmierer oder Dienstleister spezifisch ist, einschließlich Unterstützung für standardmäßige Spracheinstellungen. |
@@ -114,7 +114,7 @@ Um eine detaillierte Untersuchung des Berechtigungsflusses und seiner Phasen zu 
 
 ### Registrierungsphase {#registration-phase}
 
-In der Registrierungsphase wird die Client-Anwendung über den DCR-Prozess (Dynamic Client Registration[&#x200B; für die Adobe Pass-Authentifizierung &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+In der Registrierungsphase wird die Client-Anwendung über den DCR-Prozess (Dynamic Client Registration[ für die Adobe Pass-Authentifizierung ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 Für den Prozess der dynamischen Client-Registrierung (DCR) muss die Client-Anwendung ein Paar von Client-Anmeldeinformationen abrufen und ein Zugriffstoken als Endziel der Registrierungsphase abrufen.
 
@@ -129,7 +129,7 @@ Für den Prozess der dynamischen Client-Registrierung (DCR) muss die Client-Anwe
 
 **FAQs**
 
-* [Häufig gestellte Fragen zur &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#registration-phase-faqs-general).
+* [Häufig gestellte Fragen zur ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#registration-phase-faqs-general).
 
 ### Konfigurationsphase {#configuration-phase}
 
@@ -143,7 +143,7 @@ Die Konfigurationsphase dient als erforderlicher Schritt für die Authentifizier
 
 **FAQs**
 
-* [Häufig gestellte Fragen zur &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#configuration-phase-faqs-general).
+* [Häufig gestellte Fragen zur ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#configuration-phase-faqs-general).
 
 >[!TIP]
 >
@@ -162,7 +162,7 @@ Bei erfolgreicher Authentifizierung wird ein Profil generiert, das mit der Anwen
 In den folgenden Schritten werden die allgemeinen Schritte für den Fall einer SAML-Integration beschrieben:
 
 1. **Laden der Anwendung (Website) des Programmierers**\
-   Der/die Benutzende navigiert zur Programmieranwendung (Website), die die Adobe Pass-Authentifizierung ([-API V2) &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md).
+   Der/die Benutzende navigiert zur Programmieranwendung (Website), die die Adobe Pass-Authentifizierung ([-API V2) ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md).
 
 1. **Geschützte Inhaltsanfrage**\
    Wenn Benutzende versuchen, auf geschützte Inhalte zuzugreifen, zeigt die Anwendung des Programmierers eine Liste von MVPDs an, aus denen die Benutzenden auswählen können.

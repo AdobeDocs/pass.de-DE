@@ -4,7 +4,7 @@ description: Migrationshandbuch für iOS/tvOS v3.x
 exl-id: 4c43013c-40af-48b7-af26-0bd7f8df2bdb
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '582'
+source-wordcount: '581'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 0%
 > **Hinweise:**
 >
 > - Ab iOS SDK Version 3.1 können Implementierungsprogramme jetzt WKWebView oder UIWebView austauschbar verwenden. Da UIWebView veraltet ist, sollten Apps zu WKWebView migriert werden, um Probleme mit zukünftigen iOS-Versionen zu vermeiden.
-> - Beachten Sie, dass die Migration einfach einen Wechsel der UIWebView-Klasse mit WKWebView bedeuten würde. Es gibt keine spezifischen Aufgaben in Bezug auf Adobe AccessEnabler.
+> - Beachten Sie, dass die Migration einfach einen Wechsel der UIWebView-Klasse mit WKWebView bedeuten würde. Es gibt keine spezielle Arbeit in Bezug auf Adobe AccessEnabler.
 
 </br>
 
@@ -72,7 +72,7 @@ Nachdem Sie das benutzerdefinierte URL-Schema abgerufen haben, müssen Sie es de
 
 ## Abfangen von Aufrufen im benutzerdefinierten URL-Schema {#intercept}
 
-Dies gilt nur, wenn Ihre Anwendung zuvor die manuelle Verarbeitung des Safari View Controllers (SVC) über den [&#128279;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md) setOptions(\[„handleSVC“:true“\]) aktiviert hat, und für bestimmte MVPDs, für die Safari View Controller (SVC) erforderlich ist. Daher müssen die URLs der Authentifizierungs- und Abmelde-Endpunkte durch einen SFSafariViewController anstelle eines UIWebView/WKWebView Controllers geladen werden.
+Dies gilt nur, wenn Ihre Anwendung zuvor die manuelle Verarbeitung des Safari View Controllers (SVC) über den [setOptions(\[„handleSVC“:true ](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)&quot;\]) aktiviert hat, und für bestimmte MVPDs, für die Safari View Controller (SVC) erforderlich ist. Daher müssen die URLs der Authentifizierungs- und Abmelde-Endpunkte durch einen SFSafariViewController anstelle eines UIWebView/WKWebView Controllers geladen werden.
 
 Während der Authentifizierungs- und Abmeldevorgänge muss die Anwendung die Aktivität des `SFSafariViewController `Controllers überwachen, während mehrere Weiterleitungen durchlaufen werden. Ihre Anwendung muss den Zeitpunkt erkennen, zu dem sie eine bestimmte benutzerdefinierte URL lädt, die von Ihrer `application's custom URL scheme` definiert wird (z. B.`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com)`. Wenn der Controller diese spezifische benutzerdefinierte URL lädt, muss die Anwendung die `SFSafariViewController` schließen und die Methode &quot;`handleExternalURL:url `&quot; von AccessEnabler aufrufen.
 

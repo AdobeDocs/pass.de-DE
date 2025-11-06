@@ -22,7 +22,7 @@ Die gleichzeitige Überwachung der Nutzung (CMU) wird als WOLAP-Projekt (Web-bas
 
 >[!NOTE]
 >
->Die CMU-API ist nicht allgemein verfügbar. Bei Fragen zur Verfügbarkeit wenden Sie sich an Ihren Adobe-Support.
+>Die CMU-API ist nicht allgemein verfügbar. Bei Fragen zur Verfügbarkeit wenden Sie sich an den Adobe-Support.
 
 Die CMU-API bietet eine hierarchische Ansicht der zugrunde liegenden OLAP-Cubes. Jede Ressource ([Dimension](/help/concurrency-monitoring/cm-usage-reports.md#dimensions-2-filter-metrics) in der Dimensionshierarchie, zugeordnet als URL-Pfadsegment) generiert Berichte mit (aggregierten) [Metriken](/help/concurrency-monitoring/cm-usage-reports.md#monitor-metrics) für die aktuelle Auswahl. Jede Ressource verweist auf ihre übergeordnete Ressource (für die Aufschlüsselung) und ihre Unterressourcen (für die Aufschlüsselung). Slicing und Dicing werden über Abfragezeichenfolgen-Parameter erreicht, die Dimensionen an bestimmte Werte oder Bereiche anheften.
 
@@ -36,7 +36,7 @@ Die verfügbaren URL-Pfade sind über in der Antwort enthaltene Links auffindbar
 
 Die folgenden Drilldown-Bäume veranschaulichen die in CMU 2.0 verfügbaren Dimensionen (Ressourcen):
 
-**Dimensionen für CM-Mandanten verfügbar**
+**Für CM-Mandanten verfügbare Dimensionen**
 
 ![](assets/new_breakdown.png)
 
@@ -99,7 +99,7 @@ CMU API Reservierte Abfragezeichenfolgen-Parameter:
 | anfangen | Ja | Startzeit für den Bericht als ISO8601; der Server füllt den verbleibenden Teil aus, wenn nur ein Präfix angegeben wird: z. B. führt start=2012 zu start=2012-01-01:00:00:00 | Wird vom Server im Self-Link gemeldet. Der Server versucht, basierend auf der ausgewählten Zeitgranularität angemessene Standardwerte bereitzustellen | start=2012-07-15 |
 
 
-Die einzige verfügbare HTTP-Methode ist derzeit GET. Unterstützung für OPTIONS-/HEAD-Methoden kann in zukünftigen Versionen bereitgestellt werden.
+Die einzige derzeit verfügbare HTTP-Methode ist GET. Unterstützung für OPTIONS-/HEAD-Methoden kann in zukünftigen Versionen bereitgestellt werden.
 
 
 

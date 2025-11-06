@@ -4,7 +4,7 @@ description: Anmeldeseite
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '516'
+source-wordcount: '509'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) &#x200B;](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 &lt;REGGIE_FQDN>:
 
@@ -43,7 +43,7 @@ Gibt den zufällig generierten Registrierungs-Code und den Anmeldeseiten-URI zur
 
 | Endpunkt | Called <br>by | Eingabe   <br>Parameter | HTTP <br>Methode | Antwort | HTTP <br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Beispiel:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Streaming-App<br>oder<br>Programmierer-Service | 1. <br>    (Pfadkomponente)<br>2.  deviceId (gehasht)   <br>    (mandatory)<br>3.  device_info/X-device-info (obligatorisch)<br>4.  mvpd (optional)<br>5.  TTL (optional)<br> | POST | XML oder JSON mit einem Registrierungs-Code und Informationen oder Fehlerdetails, falls nicht erfolgreich. Siehe Beispiele unten. | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Beispiel:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Streaming-App<br>oder<br>Programmierer-Service | &#x200B;1. <br>    (Pfadkomponente)<br>2.  deviceId (gehasht)   <br>    (mandatory)<br>3.  device_info/X-device-info (obligatorisch)<br>4.  mvpd (optional)<br>5.  TTL (optional)<br> | POST | XML oder JSON mit einem Registrierungs-Code und Informationen oder Fehlerdetails, falls nicht erfolgreich. Siehe Beispiele unten. | 201 |
 
 {style="table-layout:auto"}
 
@@ -81,7 +81,7 @@ Gibt den zufällig generierten Registrierungs-Code und den Anmeldeseiten-URI zur
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20
 >```
 >
-><br>
+<br>
 
 ### Antwort-JSON
 
@@ -122,12 +122,12 @@ Gibt den zufällig generierten Registrierungs-Code und den Anmeldeseiten-URI zur
 | Erzeugt | Zeitstempel der Erstellung des Registrierungs-Codes (in Millisekunden seit dem 1. Januar 1970 GMT) |
 | Expires | Zeitstempel, wann der Registrierungscode abläuft (in Millisekunden seit dem 1. Januar 1970 GMT) |
 | deviceId | Eindeutige Base64-Geräte-ID |
-| info:deviceId | Base64-Gerätetyp |
-| info:deviceInfo | Base64 Normalisierte Geräteinformationen basieren auf Informationen, die von Benutzeragenten, X-Device-Info oder device_info empfangen wurden |
-| info:userAgent | Von der Anwendung gesendeter Benutzeragent |
-| info:originalUserAgent | Von der Anwendung gesendeter Benutzeragent |
-| info:authorizationType | OAUTH2 für Aufrufe mit DCR |
-| info:sourceApplicationInformation | Anwendungsinformationen wie im DCR konfiguriert |
+| Info:deviceId | Base64-Gerätetyp |
+| Info:deviceInfo | Base64 Normalisierte Geräteinformationen basieren auf Informationen, die von Benutzeragenten, X-Device-Info oder device_info empfangen wurden |
+| Info:userAgent | Von der Anwendung gesendeter Benutzeragent |
+| Info:originalUserAgent | Von der Anwendung gesendeter Benutzeragent |
+| Info:authorizationType | OAUTH2 für Aufrufe mit DCR |
+| Info:sourceApplicationInformation | Anwendungsinformationen wie im DCR konfiguriert |
 
 {style="table-layout:auto"}
 

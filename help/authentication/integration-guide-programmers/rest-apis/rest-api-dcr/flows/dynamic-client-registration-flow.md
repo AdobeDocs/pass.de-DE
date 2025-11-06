@@ -2,7 +2,7 @@
 title: Dynamischer Client-Registrierungsfluss
 description: Dynamischer Client-Registrierungsfluss
 exl-id: d881cf0a-de09-4b1d-a094-d5490f944796
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '564'
 ht-degree: 0%
@@ -25,8 +25,8 @@ ht-degree: 0%
 
 Stellen Sie vor dem Zugriff auf Adobe Pass Protected APIs sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
-* Ein Kundenbetreuer muss eine registrierte Anwendung erstellen, wie im Abschnitt [Verwalten registrierter Anwendungen](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#manage-registered-applications) beschrieben.
-* Ein Kundenbetreuer muss eine Software-Anweisung herunterladen und einbetten, wie im Abschnitt [Software-Anweisungen verwalten](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#manage-software-statements) beschrieben.
+* Ein Kundenbetreuer muss eine registrierte Anwendung erstellen, wie im Abschnitt [Verwalten registrierter Anwendungen](../dynamic-client-registration-overview.md#manage-registered-applications) beschrieben.
+* Ein Kundenbetreuer muss eine Software-Anweisung herunterladen und einbetten, wie im Abschnitt [Software-Anweisungen verwalten](../dynamic-client-registration-overview.md#manage-software-statements) beschrieben.
 
 >[!IMPORTANT]
 >
@@ -38,7 +38,7 @@ Stellen Sie vor dem Zugriff auf Adobe Pass Protected APIs sicher, dass die folge
 
 Führen Sie die angegebenen Schritte aus, um auf Adobe Pass Protected APIs zuzugreifen, wie im folgenden Diagramm dargestellt.
 
-![Zugriff auf Adobe Pass-geschützte APIs](/help//authentication/assets/dcr-api/dcr-api-access-adobe-pass-protected-apis.png)
+![Zugriff auf Adobe Pass-geschützte APIs](../../../../assets/dcr-api/dcr-api-access-adobe-pass-protected-apis.png)
 
 *Zugriff auf Adobe Pass-geschützte APIs*
 
@@ -46,7 +46,7 @@ Führen Sie die angegebenen Schritte aus, um auf Adobe Pass Protected APIs zuzug
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#request)Dokumentation zum Abrufen von Client-Anmeldeinformationen:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#request)Dokumentation zum Abrufen von Client-Anmeldeinformationen:
    >
    > * Alle _erforderlichen_ Parameter wie `software_statement`
    > * Alle _erforderlichen_ Kopfzeilen wie `Content-Type`, `X-Device-Info`
@@ -56,7 +56,7 @@ Führen Sie die angegebenen Schritte aus, um auf Adobe Pass Protected APIs zuzug
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Antwort zum Abrufen von Client](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#success)Anmeldeinformationen finden Sie in der API-Dokumentation.
+   > Weitere Informationen zu den [ in einer Antwort zum Abrufen von Client](../apis/dynamic-client-registration-apis-retrieve-client-credentials.md#success)Anmeldeinformationen finden Sie in der API-Dokumentation.
    >
    > <br/>
    >
@@ -76,7 +76,7 @@ Führen Sie die angegebenen Schritte aus, um auf Adobe Pass Protected APIs zuzug
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#request)Dokumentation zum Abrufen von Zugriffstoken:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../apis/dynamic-client-registration-apis-retrieve-access-token.md#request)Dokumentation zum Abrufen von Zugriffstoken:
    >
    > * Alle _erforderlichen_ Parameter wie `client_id`, `client_secret` und `grant_type`
    > * Alle _erforderlichen_ Kopfzeilen wie `Content-Type`, `X-Device-Info`
@@ -86,7 +86,7 @@ Führen Sie die angegebenen Schritte aus, um auf Adobe Pass Protected APIs zuzug
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Zugriffstoken-Antwort bereitgestellten Informationen finden &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#success) in der API-Dokumentation zum Abrufen von Zugriffstoken .
+   > Weitere Informationen zu den [ in einer Zugriffstoken-Antwort bereitgestellten Informationen finden ](../apis/dynamic-client-registration-apis-retrieve-access-token.md#success) in der API-Dokumentation zum Abrufen von Zugriffstoken .
    >
    > <br/>
    >
@@ -96,7 +96,7 @@ Führen Sie die angegebenen Schritte aus, um auf Adobe Pass Protected APIs zuzug
    >
    > <br/>
    >
-   > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der API-Dokumentation [Zugriffstoken abrufen](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#error) bereitstellt.
+   > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der API-Dokumentation [Zugriffstoken abrufen](../apis/dynamic-client-registration-apis-retrieve-access-token.md#error) bereitstellt.
 
    >[!TIP]
    >

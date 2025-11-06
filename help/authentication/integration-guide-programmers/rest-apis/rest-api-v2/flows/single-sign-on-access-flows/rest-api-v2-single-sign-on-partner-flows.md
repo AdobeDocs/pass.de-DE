@@ -2,7 +2,7 @@
 title: Single Sign-On - Partner - Flüsse
 description: REST API v2 - Single Sign-On - Partner - Flüsse
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
 source-wordcount: '1468'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Weitere Informationen zu `AP-Partner-Framework-Status` Kopfzeile finden Sie in d
 
 Die Adobe Pass-Authentifizierungs-REST-API V2 unterstützt das Partner Single Sign-On (SSO) für Endbenutzer von Client-Anwendungen, die auf iOS, iPadOS oder tvOS ausgeführt werden.
 
-Weitere Informationen zu Single Sign-on (SSO) für die Apple-Plattform finden Sie in der Dokumentation zum [Apple SSO Cookbook (REST API V2)](/help/premium-workflow/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md).
+Weitere Informationen zu Single Sign-on (SSO) für die Apple-Plattform finden Sie in der Dokumentation zum [Apple SSO Cookbook (REST API V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md).
 
 ## Partnerauthentifizierungsanfrage abrufen {#retrieve-partner-authentication-request}
 
@@ -59,7 +59,7 @@ Stellen Sie vor dem Abrufen der Partnerauthentifizierungsanfrage sicher, dass di
 
 Führen Sie die angegebenen Schritte aus, um die Partnerauthentifizierungsanfrage abzurufen, wie im folgenden Diagramm dargestellt.
 
-![Partnerauthentifizierungsanfrage abrufen](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-partner-authentication-request-flow.png)
+![Partnerauthentifizierungsanfrage abrufen](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-partner-authentication-request-flow.png)
 
 *Partnerauthentifizierungsanfrage abrufen*
 
@@ -74,7 +74,7 @@ Führen Sie die angegebenen Schritte aus, um die Partnerauthentifizierungsanfrag
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)Dokumentation zum Abrufen von Partnerauthentifizierungsanfragen:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)Dokumentation zum Abrufen von Partnerauthentifizierungsanfragen:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `partner`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` und `AP-Partner-Framework-Status`
@@ -92,7 +92,7 @@ Führen Sie die angegebenen Schritte aus, um die Partnerauthentifizierungsanfrag
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)Dokumentation zum Abrufen der Partnerauthentifizierungsanfrage .
+   > Weitere Informationen zu den [ in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)Dokumentation zum Abrufen der Partnerauthentifizierungsanfrage .
    > 
    > <br/>
    > 
@@ -173,7 +173,7 @@ Stellen Sie vor dem Abrufen des Profils mit einer Antwort der Partnerauthentifiz
 
 Führen Sie die angegebenen Schritte aus, um den Profilabruffluss mithilfe einer Partnerauthentifizierungsantwort zu implementieren, wie im folgenden Diagramm dargestellt.
 
-![Erstellen und Abrufen von Profilen mithilfe der Antwort zur Partnerauthentifizierung](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
+![Erstellen und Abrufen von Profilen mithilfe der Antwort zur Partnerauthentifizierung](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
 
 *Authentifiziertes Profil mithilfe einer Antwort der Partnerauthentifizierung erstellen und abrufen*
 
@@ -188,7 +188,7 @@ Führen Sie die angegebenen Schritte aus, um den Profilabruffluss mithilfe einer
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der API-Dokumentation &#x200B;](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort:
+   > Weitere Informationen zu folgenden [ finden Sie in der API-Dokumentation ](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `partner` und `SAMLResponse`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` und `AP-Partner-Framework-Status`
@@ -208,7 +208,7 @@ Führen Sie die angegebenen Schritte aus, um den Profilabruffluss mithilfe einer
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [&#x200B; in einer Profilantwort enthaltenen Informationen finden Sie in der API](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)Dokumentation Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort .
+   > Weitere Informationen zu [ in einer Profilantwort enthaltenen Informationen finden Sie in der API](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)Dokumentation Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort .
    > 
    > <br/>
    > 

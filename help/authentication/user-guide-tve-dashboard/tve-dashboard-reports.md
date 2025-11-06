@@ -2,7 +2,7 @@
 title: Berichte
 description: Erfahren Sie, wie die Daten in TVE-Dashboard-Berichten aggregiert werden.
 exl-id: d8ba48de-d743-4dc2-866c-7d6e3ff94773
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Der Abschnitt **Berichte** im TVE-Dashboard bietet Zugriff auf aggregierte Daten für AuthN-TTL-, AuthZ-TTL- und SSO-Berichte. Diese Berichte enthalten Ihre Kanalintegrationen mit verschiedenen MVPDs in allen [Plattformen](#platforms).
 
-Mit Berichten können Sie Daten filtern und Einblicke über ([&#x200B; Kanäle oder MVPDs) &#x200B;](#selecting-specific-channels-mvpds). Sie können Berichte auch zur weiteren Analyse in eine CSV-Datei exportieren.
+Mit Berichten können Sie Daten filtern und Einblicke über ([ Kanäle oder MVPDs) ](#selecting-specific-channels-mvpds). Sie können Berichte auch zur weiteren Analyse in eine CSV-Datei exportieren.
 
 ## Anzeigen von Berichten {#view-reports}
 
@@ -29,17 +29,17 @@ Führen Sie diese Schritte aus, um einen bestimmten Bericht anzuzeigen.
    * [AuthZ-TTL-Berichte](#authz-ttl-reports)
    * [SSO-Berichte](#sso-reports)
 
-   ![Berichtstyp](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-tabs-view.png)
+   ![Berichtstyp](../assets/tve-dashboard/new-tve-dashboard/reports/reports-tabs-view.png)
 
    *Berichtstyp*
 
 ### AuthNr TTL-Berichte {#authn-ttl-reports}
 
-Die AuthN-TTL-Berichte, auch als TTL (Authentication Time-To-Live) bezeichnet, zeigen die Dauer an, für die Authentifizierungs-Token für Ihre Kanalintegrationen mit verschiedenen MVPDs auf allen [Plattformen) konfiguriert &#x200B;](#platforms). Mit diesen Berichten können Sie überprüfen, wie lange ein Benutzer für eine bestimmte MVPD und Plattform authentifiziert bleibt. Die Werte für die Dauer werden in benutzerfreundlichen Formaten angezeigt, wie **Tage**, **Stunden**, **Minuten** und **Sekunden**. Die Tabelle AuthN TTL-Berichte bietet horizontalen und vertikalen Bildlauf, um verschiedene Bildschirmgrößen zu ermöglichen.
+Die AuthN-TTL-Berichte, auch als TTL (Authentication Time-To-Live) bezeichnet, zeigen die Dauer an, für die Authentifizierungs-Token für Ihre Kanalintegrationen mit verschiedenen MVPDs auf allen [Plattformen) konfiguriert ](#platforms). Mit diesen Berichten können Sie überprüfen, wie lange ein Benutzer für eine bestimmte MVPD und Plattform authentifiziert bleibt. Die Werte für die Dauer werden in benutzerfreundlichen Formaten angezeigt, wie **Tage**, **Stunden**, **Minuten** und **Sekunden**. Die Tabelle AuthN TTL-Berichte bietet horizontalen und vertikalen Bildlauf, um verschiedene Bildschirmgrößen zu ermöglichen.
 
-Sie können auch Daten für (bestimmte Kanäle [&#x200B; MVPDs) anzeigen und &#x200B;](#selecting-specific-channels-mvpds).
+Sie können auch Daten für (bestimmte Kanäle [ MVPDs) anzeigen und ](#selecting-specific-channels-mvpds).
 
-![Exportieren von AuthN-TTL-Berichten](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-authn-ttl-export-button.png)
+![Exportieren von AuthN-TTL-Berichten](../assets/tve-dashboard/new-tve-dashboard/reports/reports-authn-ttl-export-button.png)
 
 *Exportieren von AuthN-TTL-Berichten*
 
@@ -51,11 +51,11 @@ Wählen Sie **Berichte exportieren**, um die Daten als CSV-Datei auf Ihrem lokal
 
 ### AuthZ-TTL-Berichte {#authz-ttl-reports}
 
-Die AuthZ-TTL-Berichte, auch als Autorisierungs-Time-To-Live (TTL) bezeichnet, zeigen die Dauer des Autorisierungs-Tokens an, das für Ihre Kanalintegrationen mit verschiedenen MVPDs in allen [Plattformen) konfiguriert &#x200B;](#platforms). Mit diesen Berichten können Sie überprüfen, wie lange ein Benutzer berechtigt bleibt, Inhalte für eine bestimmte MVPD und Plattform zu beobachten. Die Werte für die Dauer werden in benutzerfreundlichen Formaten angezeigt, wie **Tage**, **Stunden**, **Minuten** und **Sekunden**. Die Tabelle AuthZ TTL-Berichte bietet horizontalen und vertikalen Bildlauf, um verschiedene Bildschirmgrößen zu ermöglichen.
+Die AuthZ-TTL-Berichte, auch als Autorisierungs-Time-To-Live (TTL) bezeichnet, zeigen die Dauer des Autorisierungs-Tokens an, das für Ihre Kanalintegrationen mit verschiedenen MVPDs in allen [Plattformen) konfiguriert ](#platforms). Mit diesen Berichten können Sie überprüfen, wie lange ein Benutzer berechtigt bleibt, Inhalte für eine bestimmte MVPD und Plattform zu beobachten. Die Werte für die Dauer werden in benutzerfreundlichen Formaten angezeigt, wie **Tage**, **Stunden**, **Minuten** und **Sekunden**. Die Tabelle AuthZ TTL-Berichte bietet horizontalen und vertikalen Bildlauf, um verschiedene Bildschirmgrößen zu ermöglichen.
 
-Sie können die Daten auch für ([&#x200B; Kanäle oder MVPDs) anzeigen und &#x200B;](#selecting-specific-channels-mvpds).
+Sie können die Daten auch für ([ Kanäle oder MVPDs) anzeigen und ](#selecting-specific-channels-mvpds).
 
-![Exportieren von AuthZ-TTL-Berichten](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-authz-ttl-export-button.png)
+![Exportieren von AuthZ-TTL-Berichten](../assets/tve-dashboard/new-tve-dashboard/reports/reports-authz-ttl-export-button.png)
 
 *Exportieren von AuthZ-TTL-Berichten*
 
@@ -67,11 +67,11 @@ Wählen Sie **Berichte exportieren**, um die Daten als CSV-Datei auf Ihrem lokal
 
 ### SSO-Berichte {#sso-reports}
 
-Die SSO-Berichte, auch als Single Sign-On bezeichnet, zeigen den Single Sign-On-Status an, der für Ihre Kanalintegrationen mit verschiedenen MVPDs über alle [Plattformen hinweg konfiguriert &#x200B;](#platforms). Diese Berichte ermöglichen es Ihnen, das erwartete SSO-Erlebnis für die Benutzerauthentifizierung für eine bestimmte MVPD und Plattform zu überprüfen. Die Werte werden in benutzerfreundlichen Formaten angezeigt, wie **SSO deaktiviert**, **SSO aktiviert** und **SSO unsicher**. Die Tabelle SSO-Berichte bietet horizontalen und vertikalen Bildlauf für verschiedene Bildschirmgrößen.
+Die SSO-Berichte, auch als Single Sign-On bezeichnet, zeigen den Single Sign-On-Status an, der für Ihre Kanalintegrationen mit verschiedenen MVPDs über alle [Plattformen hinweg konfiguriert ](#platforms). Diese Berichte ermöglichen es Ihnen, das erwartete SSO-Erlebnis für die Benutzerauthentifizierung für eine bestimmte MVPD und Plattform zu überprüfen. Die Werte werden in benutzerfreundlichen Formaten angezeigt, wie **SSO deaktiviert**, **SSO aktiviert** und **SSO unsicher**. Die Tabelle SSO-Berichte bietet horizontalen und vertikalen Bildlauf für verschiedene Bildschirmgrößen.
 
-Sie können auch Daten für (bestimmte Kanäle [&#x200B; MVPDs) anzeigen und &#x200B;](#selecting-specific-channels-mvpds).
+Sie können auch Daten für (bestimmte Kanäle [ MVPDs) anzeigen und ](#selecting-specific-channels-mvpds).
 
-![Exportieren von SSO-Berichten](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-sso-export-button.png)
+![Exportieren von SSO-Berichten](../assets/tve-dashboard/new-tve-dashboard/reports/reports-sso-export-button.png)
 
 *Exportieren von SSO-Berichten*
 
@@ -87,7 +87,7 @@ Wählen Sie **Berichte exportieren**, um die Daten als CSV-Datei auf Ihrem lokal
 
 ## Plattformen {#platforms}
 
-Die [AuthN-TTL](#authn-ttl-reports)Berichte, [AuthZ-TTL-Berichte](#authz-ttl-reports) und [SSO-Berichte &#x200B;](#sso-reports) Daten über verschiedene Plattformen hinweg dar, z. B.:
+Die [AuthN-TTL](#authn-ttl-reports)Berichte, [AuthZ-TTL-Berichte](#authz-ttl-reports) und [SSO-Berichte ](#sso-reports) Daten über verschiedene Plattformen hinweg dar, z. B.:
 
 * **Desktop**: Zeigt Werte an, die über die Adobe Pass-Authentifizierung JavaScript SDK auf die Programmierimplementierungen angewendet werden.
 
@@ -111,7 +111,7 @@ Die [AuthN-TTL](#authn-ttl-reports)Berichte, [AuthZ-TTL-Berichte](#authz-ttl-rep
 
 * **Platform nicht identifiziert**: Zeigt Werte an, die auf Programmierimplementierungen angewendet werden, wenn die Adobe Pass-Authentifizierungsdienste einen unbekannten Gerätetyp erkennen.
 
-Weitere Informationen zum Freigeben des gewünschten Gerätetyps, z. B. **Roku** mit Adobe Pass-Authentifizierungs-REST-APIs oder SDKs, finden Sie im Abschnitt zum [&#x200B; von Client-Informationen](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md).
+Weitere Informationen zum Freigeben des gewünschten Gerätetyps, z. B. **Roku** mit Adobe Pass-Authentifizierungs-REST-APIs oder SDKs, finden Sie im Abschnitt zum [ von Client-Informationen](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md).
 
 >[!IMPORTANT]
 >
@@ -119,7 +119,7 @@ Weitere Informationen zum Freigeben des gewünschten Gerätetyps, z. B. **Roku**
 
 ## Auswählen bestimmter Kanäle und MVPDs {#selecting-specific-channels-mvpds}
 
-Die Berichte [AuthN TTL](#authn-ttl-reports), [AuthZ TTL](#authz-ttl-reports) und [SSO &#x200B;](#sso-reports) standardmäßig Daten für **Alle Kanäle**-Integrationen mit **Alle MVPDs**.
+Die Berichte [AuthN TTL](#authn-ttl-reports), [AuthZ TTL](#authz-ttl-reports) und [SSO ](#sso-reports) standardmäßig Daten für **Alle Kanäle**-Integrationen mit **Alle MVPDs**.
 
 >[!NOTE]
 >
@@ -129,7 +129,7 @@ So generieren Sie einen Bericht für bestimmte Kanäle:
 
 1. Wählen Sie **Dropdown** Menü „Enthaltene Kanäle“ oben im ausgewählten Bericht.
 
-   ![Dropdown-Menü „Enthaltene Kanäle“](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-included-channels-menu.png)
+   ![Dropdown-Menü „Enthaltene Kanäle“](../assets/tve-dashboard/new-tve-dashboard/reports/reports-included-channels-menu.png)
 
    *Dropdown-Menü „Enthaltene Kanäle“*
 
@@ -145,7 +145,7 @@ So erstellen Sie einen Bericht für bestimmte MVPDs:
 
 1. Wählen Sie **Dropdown** Menü „Enthaltene MVPDs“ oben im ausgewählten Bericht aus.
 
-   ![Enthaltenes MVPDs-Dropdown-Menü](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-included-mvpds-menu.png)
+   ![Enthaltenes MVPDs-Dropdown-Menü](../assets/tve-dashboard/new-tve-dashboard/reports/reports-included-mvpds-menu.png)
 
    *Enthaltenes MVPDs-Dropdown-Menü*
 

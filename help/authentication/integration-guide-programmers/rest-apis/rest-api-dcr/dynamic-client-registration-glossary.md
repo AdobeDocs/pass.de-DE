@@ -1,7 +1,8 @@
 ---
 title: Glossar zur dynamischen Client-Registrierung (DCR)
 description: Glossar zur dynamischen Client-Registrierung (DCR)
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+exl-id: 4ce67fa5-b0e5-4967-b83d-c682426d9329
+source-git-commit: ae02f53afc58b7d31f57bcc1e4dd1328f12abc3e
 workflow-type: tm+mt
 source-wordcount: '299'
 ht-degree: 0%
@@ -22,17 +23,17 @@ In diesem Dokument finden Sie Definitionen für Begriffe, die bei der Integratio
 
 ## Glossarbegriffe {#glossary-terms}
 
-### Ein {#a}
+### A {#a}
 
 #### Zugriffstoken {#access-token}
 
-Das Zugriffstoken ist ein Token, das von der Adobe Pass-Authentifizierung als Ergebnis des [Dynamische Client-Registrierung (DCR)) generiert &#x200B;](#dcr), um den Zugriff auf geschützte APIs sicherzustellen.
+Das Zugriffstoken ist ein Token, das von der Adobe Pass-Authentifizierung als Ergebnis des [Dynamische Client-Registrierung (DCR)) generiert ](#dcr), um den Zugriff auf geschützte APIs sicherzustellen.
 
 ### C {#c}
 
 #### Client-Anmeldedaten {#client-credentials}
 
-Die Client-Anmeldeinformationen sind ein Satz eindeutiger Werte, die während des [Dynamischen Client-Registrierungsprozesses (DCR)](#dcr) generiert werden und zum Abrufen eines [Zugriffstokens“ verwendet &#x200B;](#access-token).
+Die Client-Anmeldeinformationen sind ein Satz eindeutiger Werte, die während des [Dynamischen Client-Registrierungsprozesses (DCR)](#dcr) generiert werden und zum Abrufen eines [Zugriffstokens“ verwendet ](#access-token).
 
 #### Benutzerdefiniertes Schema {#custom-scheme}
 
@@ -54,7 +55,7 @@ Weitere Informationen finden Sie in der Dokumentation [Übersicht über die Dyna
 
 Die registrierte Anwendung ist ein Adobe Pass-Authentifizierungskonzept, das Informationen über die [Programmierer](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#programmer)-Anwendung speichert, die zum Fortfahren mit dem [Dynamic Client Registration (DCR)-](#dcr) erforderlich sind.
 
-### S {#s}
+### s {#s}
 
 #### Software-Anweisung {#software-statement}
 

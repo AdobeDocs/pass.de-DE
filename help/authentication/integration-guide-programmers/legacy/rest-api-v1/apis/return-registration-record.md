@@ -21,7 +21,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) &#x200B;](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -49,7 +49,7 @@ Gibt einen Registrierungs-Code-Eintrag mit Registrierungs-Code-UUID, Registrieru
 
 | Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Beispiel:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestId/regcode/TJJCFK?format=xml | Streaming-App</br></br>oder</br></br>Programmierer-Service | 1. </br>    (Pfadkomponente)</br>2.  Registrierungs-Code </br>    (Pfadkomponente) | GET | XML oder JSON mit Registrierungs-Code und Informationen. Siehe Schema und Beispiel unten. | 200 |
+| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Beispiel:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestId/regcode/TJJCFK?format=xml | Streaming-App</br></br>oder</br></br>Programmierer-Service | &#x200B;1. </br>    (Pfadkomponente)</br>2.  Registrierungs-Code </br>    (Pfadkomponente) | GET | XML oder JSON mit Registrierungs-Code und Informationen. Siehe Schema und Beispiel unten. | 200 |
 
 {style="table-layout:auto"}
 

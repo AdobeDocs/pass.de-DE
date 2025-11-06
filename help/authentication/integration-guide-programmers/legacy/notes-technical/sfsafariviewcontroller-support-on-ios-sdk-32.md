@@ -4,7 +4,7 @@ description: Unterstützung von SFSafariViewController auf iOS SDK 3.2+
 exl-id: 6691550f-c36f-4fae-aa77-082ca7d8a60a
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '436'
+source-wordcount: '432'
 ht-degree: 0%
 
 ---
@@ -54,7 +54,7 @@ Um SVC manuell verwalten zu können, muss das Implementierungsprogramm die folge
    ***Hinweise:***
 
    - *Sie können den SFSafariViewController beliebig anpassen. Beispielsweise können Sie unter iOS 11+ die Bezeichnung „Fertig“ in „Abbrechen“ ändern.*
-   - *Um das svc schließen zu können, benötigen Sie einen Verweis darauf. Erstellen Sie es nicht im Bereich von „navigateToUrl **useSVC***
+   - *Um das svc schließen zu können, benötigen Sie einen Verweis darauf. Erstellen Sie es nicht im Gültigkeitsbereich von **navigateToUrl:useSVC***
    - *Verwenden Sie Ihren eigenen Ansichtscontroller für „myController“*
 
 

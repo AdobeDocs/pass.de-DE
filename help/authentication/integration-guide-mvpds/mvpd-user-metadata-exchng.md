@@ -35,7 +35,7 @@ Wichtige Punkte zu Benutzermetadaten:
 * Die Adobe Pass-Authentifizierung speichert die Metadatenwerte in den AuthN- und AuthZ-Token
 * Die Adobe Pass-Authentifizierung kann Werte für MVPDs normalisieren, die Benutzermetadaten in verschiedenen Formaten bereitstellen
 * Einige Parameter können mit dem Programmierschlüssel verschlüsselt werden
-* Bestimmte Werte werden per Adobe über eine Konfigurationsänderung zur Verfügung gestellt
+* Bestimmte Werte werden von Adobe über eine Konfigurationsänderung bereitgestellt
 
 >[!NOTE]
 >
@@ -68,7 +68,7 @@ var resource = '<rss version="2.0" xmlns:media="http://video.search.yahoo.com/mr
 getAuthorization(resource);
 ```
 
-Die Adobe Pass-Authentifizierung unterstützt tatsächlich eine detailliertere Autorisierung bis hin zur Asset-Ebene, wenn sie sowohl von MVPD als auch vom Programmierer unterstützt wird. Die Ressource und ihre Metadaten sind für das Adobe undurchsichtig. Ziel ist es, ein Standardformat für die normalisierte Angabe der Ressourcen-ID und der Metadaten zu erstellen, um Ressourcen-IDs an verschiedene MVPDs zu senden.
+Die Adobe Pass-Authentifizierung unterstützt tatsächlich eine detailliertere Autorisierung bis hin zur Asset-Ebene, wenn sie sowohl von MVPD als auch vom Programmierer unterstützt wird. Die Ressource und ihre Metadaten sind für Adobe undurchsichtig. Ziel ist es, ein Standardformat für die normalisierte Angabe der Ressourcen-ID und der Metadaten zu erstellen, um Ressourcen-IDs an verschiedene MVPDs zu senden.
 
 >[!NOTE]
 >

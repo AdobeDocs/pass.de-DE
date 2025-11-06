@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 > Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
 
-## Übersicht {#overview}
+## Überblick {#overview}
 
 Bei Web-Anwendungen müssen Sie einige verschiedene mögliche Szenarien für die Authentifizierung und das Abmelden von Benutzern berücksichtigen.  Bei MVPDs müssen sich Benutzer zur Authentifizierung auf der MVPD-Webseite anmelden, wobei die folgenden zusätzlichen Faktoren eine Rolle spielen:
 
@@ -59,7 +59,7 @@ Es gibt auch die Situation, dass der Benutzer den Authentifizierungsfluss expliz
 
 1. **Vollständige Seitenumleitung -** Wenn die Anmeldeseite geschlossen ist, muss der Benutzer erneut zur Website des Programmierers navigieren und den gesamten Fluss von Anfang an starten. In diesem Szenario ist keine explizite Aktion seitens des Programmierers erforderlich.
 1. **iFrame -** Es wird empfohlen, den iFrame in einem `div` (oder einer ähnlichen UI-Komponente) zu hosten, an den eine Schaltfläche Schließen angehängt ist. Wenn der Benutzer die Schaltfläche Schließen drückt, zerstört der Programmierer den iFrame zusammen mit der zugehörigen Benutzeroberfläche und führt `setSelectedProvider(null)` durch. Dieser Aufruf ermöglicht dem AccessEnabler, seinen internen Status zu löschen, und ermöglicht es dem Benutzer, einen nachfolgenden Authentifizierungsfluss zu initiieren. `setAuthenticationStatus` und `sendTrackingData(AUTHENTICATION_DETECTION...)` werden ausgelöst, um einen fehlgeschlagenen Authentifizierungsfluss zu signalisieren (sowohl auf `getAuthentication` als auch auf `getAuthorization`).
-1. **Popup -** Einige Browser können das Fensterschließungsereignis nicht genau erkennen, sodass hier ein anderer Ansatz gewählt werden muss (im Gegensatz zum iFrame-Fluss oben). Adobe empfiehlt, dass der Programmierer einen Timer initialisiert, der regelmäßig überprüft, ob das Anmelde-Popup vorhanden ist. Wenn das Fenster nicht vorhanden ist, kann der Programmierer sicherstellen, dass der Benutzer den Anmeldefluss manuell abgebrochen hat, und der Programmierer kann mit dem Aufruf von `setSelectedProvider(null)` fortfahren. Die ausgelösten Callbacks sind die gleichen wie im obigen Fluss 2.
+1. **Popup -** Einige Browser können das Fensterschließungsereignis nicht genau erkennen, sodass hier ein anderer Ansatz gewählt werden muss (im Gegensatz zum iFrame-Fluss oben). Adobe empfiehlt, dass der Programmierer einen Zeitgeber initialisiert, der regelmäßig überprüft, ob das Anmelde-Popup vorhanden ist. Wenn das Fenster nicht vorhanden ist, kann der Programmierer sicherstellen, dass der Benutzer den Anmeldefluss manuell abgebrochen hat, und der Programmierer kann mit dem Aufruf von `setSelectedProvider(null)` fortfahren. Die ausgelösten Callbacks sind die gleichen wie im obigen Fluss 2.
 
 </br>
 
@@ -118,7 +118,7 @@ Dies sind die Flüsse zum Abbrechen der Authentifizierung:
 
 1. **Browser-Registerkarte -** Da die Registerkarte im Wesentlichen ein neues Fenster ist, hat die Erfassung ihres Close-Ereignisses die gleichen Einschränkungen, die in Szenario 3 der alten Authentifizierungsflüsse erläutert wurden. Außerdem ist hier der Timer-Ansatz nicht möglich, da nicht zwischen einem manuell vom Benutzer geschlossenen Tab und einem automatisch am Ende des Login-Flusses geschlossenen Tab unterschieden werden kann. Die Lösung besteht darin, dass der AccessEnabler „stumm“ bleibt (es werden keine Callbacks ausgelöst), wenn der Benutzer den Fluss abbricht. Außerdem ist der Programmierer nicht verpflichtet, bestimmte Aktionen durchzuführen. Der Benutzer kann einen weiteren Authentifizierungsfluss initiieren, ohne den Fehler „Fehler bei mehreren Authentifizierungsanfragen“ zu erhalten (dieser Fehler wurde in AccessEnabler für die Hintergrundanmeldung deaktiviert).
 
-1. **iFrame -** Der Programmierer kann den in Szenario 2 beschriebenen Ansatz aus den alten Authentifizierungsflüssen verwenden (Erstellen der Wrapper-Benutzeroberfläche aus dem iFrame und der zugehörigen Schaltfläche Schließen , die Trigger `setSelectedProvider(null)`. Obwohl dieser Ansatz keine zwingende Voraussetzung mehr ist (mehrere Authentifizierungsflüsse sind für die Hintergrundanmeldung zulässig, wie in Szenario 1 oben erörtert), wird er dennoch von Adobe empfohlen.
+1. **iFrame -** Der Programmierer kann den in Szenario 2 beschriebenen Ansatz aus den alten Authentifizierungsflüssen verwenden (Erstellen der Wrapper-Benutzeroberfläche aus dem iFrame und der zugehörigen Schaltfläche Schließen , die Trigger `setSelectedProvider(null)`. Obwohl dieser Ansatz keine zwingende Voraussetzung mehr ist (mehrere Authentifizierungsflüsse sind für die Hintergrundanmeldung zulässig, wie in Szenario 1 oben erörtert), wird er weiterhin von Adobe empfohlen.
 
 1. **Popup -** Dieser Vorgang ist identisch mit dem Fluss auf der Registerkarte „Browser“ oben.
 

@@ -2,7 +2,7 @@
 title: JavaScript SDK API-Referenz
 description: JavaScript SDK API-Referenz
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '2883'
 ht-degree: 0%
@@ -51,7 +51,7 @@ Diese Funktionen initiieren Anfragen zur Interaktion mit einer MVPD. Alle Aufruf
 
 - *options* - Ein JSON-Objekt, das den Wert der Anwendungs-ID, den Wert der Besucher-ID, die Einstellungen ohne Aktualisierung (Anmeldung im Hintergrund) und die Einstellungen für MVPD (iFrame) enthält. Alle Werte sind optional.
    1. Wenn angegeben, wird die Besucher-ID von Experience Cloud für alle Netzwerkaufrufe gemeldet, die von der Bibliothek ausgeführt werden. Der Wert kann später für erweiterte Analyseberichte verwendet werden.
-   2. Wenn die eindeutige Kennung der Anwendung -`applicationId` angegeben ist, wird der Wert allen nachfolgenden Aufrufen hinzugefügt, die von der Anwendung als Teil der HTTP-Kopfzeile „X-Device-Info“ durchgeführt werden. Dieser Wert kann später mithilfe der richtigen Abfrage aus [ESM](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md)-Berichten abgerufen werden.
+   2. Wenn die eindeutige Kennung der Anwendung -`applicationId` angegeben ist, wird der Wert allen nachfolgenden Aufrufen hinzugefügt, die von der Anwendung als Teil der HTTP-Kopfzeile „X-Device-Info“ durchgeführt werden. Dieser Wert kann später mithilfe der richtigen Abfrage aus [ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)-Berichten abgerufen werden.
 
   **Hinweis:** Bei allen JSON-Schlüsseln wird zwischen Groß- und Kleinschreibung unterschieden.
 
@@ -309,7 +309,7 @@ Beispiel:
 **Beschreibung:** Rufen Sie diese Funktion auf, wenn Benutzende eine MVPD aus Ihrer Anbieterauswahl-Benutzeroberfläche ausgewählt haben, um die Anbieterauswahl an den Access Enabler zu senden, oder rufen Sie diese Funktion mit einem Null-Parameter auf, falls Benutzende Ihre Anbieterauswahl-Benutzeroberfläche verworfen haben, ohne einen Anbieter auszuwählen.
 
 **Callbacks
-trigger:**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+trigger:**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +415,7 @@ Sie müssen diese Callbacks implementieren, um die Antworten auf Ihre asynchrone
 
 **Beschreibung:** Implementieren Sie diesen Callback, wenn der Benutzer einen MVPD ausgewählt hat, für den ein iFrame erforderlich ist, in dem die Benutzeroberfläche für die Authentifizierungs-Anmeldeseite angezeigt werden soll.
 
-**Ausgelöst durch:**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Ausgelöst durch:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Zurück zum Anfang](#top)
 

@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-## Übersicht {#content-metadat-exchange-overview}
+## Überblick {#content-metadat-exchange-overview}
 
 Auf dieser Seite werden zwei Standardimplementierungen beschrieben, die von der Adobe Pass-Authentifizierung verwendet werden, um strukturierte Daten über die Autorisierungsanfrage an MVPDs zu senden.  Die strukturierten Daten stellen die Ressource (den Programmierer) dar, die die Anfrage stellt, und möglicherweise zusätzliche Daten wie die Inhaltsbewertung.
 

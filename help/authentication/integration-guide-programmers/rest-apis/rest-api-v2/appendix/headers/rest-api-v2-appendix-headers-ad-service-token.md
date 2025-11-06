@@ -15,7 +15,7 @@ ht-degree: 1%
 >
 > Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-## Übersicht {#overview}
+## Überblick {#overview}
 
 Der <b>AD-Service-Token</b>-Anforderungsheader enthält die eindeutige Benutzerkennung, die von einem Identity Service abgerufen `JWS`, der außerhalb von Adobe Pass-Authentifizierungssystemen ausgeführt wird.
 

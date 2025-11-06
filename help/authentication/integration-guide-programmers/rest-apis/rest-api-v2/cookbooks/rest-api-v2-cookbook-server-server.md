@@ -2,7 +2,7 @@
 title: REST API V2-Cookbook (Server-zu-Server)
 description: REST API V2-Cookbook (Server-zu-Server)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '2497'
 ht-degree: 0%
@@ -177,15 +177,15 @@ Häufig gestellte Fragen
 * **Profile abrufen:** Der Programmierdienst überprüft im Auftrag der Streaming-App vorhandene Profile, indem er den Endpunkt [**/api/v2/{serviceProvider}/profiles**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) aufruft.
 
 
-* **Szenario 1:** Profile vorhanden sind, kann der Programmierer-Service mit der Phase [Vorabautorisierung](#preauthorization-phase) oder [Autorisierung) &#x200B;](#authorization-phase).
+* **Szenario 1:** Profile vorhanden sind, kann der Programmierer-Service mit der Phase [Vorabautorisierung](#preauthorization-phase) oder [Autorisierung) ](#authorization-phase).
 
 
-* **Szenario 2:** Es sind keine vorhandenen Profile vorhanden. Der Programmierer-Service kann mit dem nächsten Schritt fortfahren, um den [&#x200B; zu authentifizieren](#step-3-authenticate-the-user).
+* **Szenario 2:** Es sind keine vorhandenen Profile vorhanden. Der Programmierer-Service kann mit dem nächsten Schritt fortfahren, um den [ zu authentifizieren](#step-3-authenticate-the-user).
 
 
-* **Szenario 3:** Es sind keine vorhandenen Profile vorhanden. Der Programmierer-Service kann dem Benutzer über die Funktion [TempPass“ temporären Zugriff &#x200B;](/help/premium-workflow/temporary-access/temp-pass-feature.md).
+* **Szenario 3:** Es sind keine vorhandenen Profile vorhanden. Der Programmierer-Service kann dem Benutzer über die Funktion [TempPass“ temporären Zugriff ](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md).
 
-   * Dieses Szenario würde den Rahmen dieses Dokuments sprengen. Weitere Informationen finden Sie in der Dokumentation [Temporärer &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)&quot;.
+   * Dieses Szenario würde den Rahmen dieses Dokuments sprengen. Weitere Informationen finden Sie in der Dokumentation [Temporärer ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)&quot;.
 
 ### Schritt 3: Benutzer authentifizieren {#step-3-authenticate-the-user}
 

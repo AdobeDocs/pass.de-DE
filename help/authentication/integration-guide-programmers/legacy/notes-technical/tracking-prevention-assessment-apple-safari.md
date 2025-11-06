@@ -2,7 +2,7 @@
 title: Tracking Prevention Assessment Apple Safari
 description: Tracking Prevention Assessment Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '1849'
 ht-degree: 0%
@@ -33,7 +33,7 @@ für die folgenden Versionen von AccessEnabler JavaScript SDK: v2 (Versionen 2.x
 
 Um diese Einschränkungen abzumildern, können Sie den Benutzer anweisen, die Datenschutzeinstellungen des Safari 10-Browsers zu ändern, und die Option &quot;**Immer zulassen** für den Eintrag &quot;**Cookies und Website-Daten**&quot; auf der Registerkarte „Datenschutz“ des Browsers unter Voreinstellungen verwenden, wie in der folgenden Abbildung dargestellt.
 
-![](/help/authentication/assets/always-allow-safari10.png)
+![](../../../assets/always-allow-safari10.png)
 
 
 ## Safari 11 {#safari11}
@@ -64,12 +64,12 @@ Wenn [N130](/help/authentication/integration-guide-programmers/legacy/error-repo
 
 * Im Fall von Mac OS X High Sierra und höher: Deaktivieren Sie die Option &quot;**Prevent cross-site tracking**&quot; für den Eintrag &quot;**Website tracking**&quot; auf der Registerkarte „Datenschutz“ des Browsers unter „Voreinstellungen“, wie in der folgenden Abbildung dargestellt.
 
-  ![](/help/authentication/assets/uncheck-prvnt-cr-st-tr-safari11.png)
+  ![](../../../assets/uncheck-prvnt-cr-st-tr-safari11.png)
 
 
 * Im Fall von Mac OS X Sierra und vorherigen: Aktivieren Sie die Option &quot;**Immer zulassen** für den Eintrag &quot;**Cookies und Website-Daten**&quot; auf der Registerkarte „Datenschutz“ des Browsers unter „Voreinstellungen“, wie in der folgenden Abbildung dargestellt.
 
-  ![](/help/authentication/assets/always-allow-safari11.png)
+  ![](../../../assets/always-allow-safari11.png)
 
 ## Safari 12 {#safari12}
 
@@ -126,14 +126,14 @@ Von diesem Problem betroffene Anwendungsfälle:
 
 Zum Zeitpunkt der Veröffentlichung ist keine Abmilderung verfügbar oder möglich. Apple hat in Safari 12 (`https://webkit.org/blog/8124/introducing-storage-access-api`) eine „Speicherzugriffs-API“ eingeführt, aber die aktuelle Implementierung gilt nicht für localStorage, sondern nur für Cookies. Darüber hinaus erfordert die API eine Benutzerinteraktion, um verwendet werden zu können. Sobald Sie sie verwenden, wird der Benutzer auch mit einem Berechtigungsdialogfeld ähnlich dem folgenden aufgefordert.
 
-![](/help/authentication/assets/permission-dialog-apple.png)
+![](../../../assets/permission-dialog-apple.png)
 
 
 Zu diesem Zeitpunkt entsprechen diese Safari-Anforderungen/-Aufforderungen nicht unseren UX-Anforderungen und wir haben kein konsistentes Verhalten wie bei anderen Browsern, bei denen SSO „einfach funktioniert“, sobald wir ein Token in einer gemeinsamen lokalen Domain gespeichert haben.
 
 **Temp Pass**
 
-Um die Individualisierungsprobleme abzumildern und eine Benutzerinteraktion zu ermöglichen, empfehlen wir, **[Werbe-Temporärpass](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)** interaktiv zu verwenden und mindestens eine zusätzliche Information über den Benutzer bereitzustellen (z. B. E-Mail-Adresse).
+Um die Individualisierungsprobleme abzumildern und eine Benutzerinteraktion zu ermöglichen, empfehlen wir, **[Werbe-Temporärpass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)** interaktiv zu verwenden und mindestens eine zusätzliche Information über den Benutzer bereitzustellen (z. B. E-Mail-Adresse).
 
 ## Safari 13 {#safari13}
 
@@ -164,8 +164,8 @@ Wenn [N130](/help/authentication/integration-guide-programmers/legacy/error-repo
 
 * Im Fall von Mac OS X High Sierra und höher: Deaktivieren Sie die Option &quot;**Prevent cross-site tracking**&quot; für den Eintrag &quot;**Website tracking**&quot; auf der Registerkarte „Datenschutz“ des Browsers unter „Voreinstellungen“, wie in der folgenden Abbildung dargestellt.
 
-  ![](/help/authentication/assets/prvnt-cross-site-tr-safari13.png)
+  ![](../../../assets/prvnt-cross-site-tr-safari13.png)
 
 * Im Fall von Mac OS X Sierra und höher: Aktivieren Sie </span> Option &quot;**Immer zulassen** für den Eintrag &quot;**Cookies und Website-Daten**&quot; auf der Registerkarte „Datenschutz“ des Browsers unter „Voreinstellungen“, wie in der folgenden Abbildung dargestellt.
 
-  ![](/help/authentication/assets/always-allow-safari13.png)
+  ![](../../../assets/always-allow-safari13.png)

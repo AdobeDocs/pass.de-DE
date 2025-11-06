@@ -17,13 +17,13 @@ ht-degree: 0%
 
 
 
-## Übersicht {#usage-rep-overview}
+## Überblick {#usage-rep-overview}
 
-Der Service **Nutzungsberichte zur gleichzeitigen Überwachung** ist über eine REST-API verfügbar, die Einblicke in die gleichzeitige Nutzung bietet, wie von den Programmen des Kunden berichtet.
+Der Service **Nutzungsberichte zur gleichzeitigen Überwachung** ist über eine REST-API verfügbar, die insight zur gleichzeitigen Nutzung bereitstellt, wie von den Programmen des Kunden gemeldet.
 
 ## Voraussetzungen {#usage-rep-prerequisites}
 
-Um auf das Produkt „Nutzungsberichte zur Parallelitätsüberwachung“ zugreifen zu können, muss sich ein Kunde zunächst an das [Supportteam“ wenden &#x200B;](mailto:tve-support@adobe.com) führt die erforderlichen Schritte aus, um Ihnen Zugriff auf das API-Produkt zu ermöglichen. Weitere Informationen finden Sie unter [CMU-API-Zugriff](/help/concurrency-monitoring/cmu-api-access.md).
+Um auf das Produkt „Nutzungsberichte zur Parallelitätsüberwachung“ zugreifen zu können, muss sich ein Kunde zunächst an das [Supportteam“ wenden ](mailto:tve-support@adobe.com) führt die erforderlichen Schritte aus, um Ihnen Zugriff auf das API-Produkt zu ermöglichen. Weitere Informationen finden Sie unter [CMU-API-Zugriff](/help/concurrency-monitoring/cmu-api-access.md).
 
 ## Allgemeine Berichtsmetriken und Aufschlüsselungen {#general-rep-metrics-breakdown}
 
@@ -53,7 +53,7 @@ Um auf das Produkt „Nutzungsberichte zur Parallelitätsüberwachung“ zugreif
 
 ### Benutzende von Nutzungsberichten können die oben aufgeführten Metriken nach den folgenden Dimensionen filtern: {#dimensions-2-filter-metrics}
 
-| Name der Dimension | Beschreibung |
+| Dimension-Name | Beschreibung |
 |:---------------|:------------------------------------------------------------------------------------------------------------------|
 | Jahr | Das 4-stellige Jahr |
 | Monat | Der Monat des Jahres (1-12) |
@@ -74,13 +74,13 @@ Der Hauptzweck dieses Berichts besteht darin, Ihnen zu helfen, die Auswirkungen 
 
 ### Usage Reports : Benutzer können die folgenden Metriken überwachen: {#metrics-usage-rep-users}
 
-| Name der Dimension | Beschreibung |
+| Dimension-Name | Beschreibung |
 |:---|:---|
 | Benutzer | Anzahl der Benutzer, die jede Parallelitäts-/Aktivitätsebene erreicht haben |
 
 ### Benutzende von Nutzungsberichten können die oben aufgeführten Metriken nach den folgenden Dimensionen filtern: {#dimensions-to-filter-metrics}
 
-| Name der Dimension | Beschreibung |
+| Dimension-Name | Beschreibung |
 |:---|:---|
 | Jahr | Das 4-stellige Jahr |
 | Monat | Der Monat des Jahres (1-12) |
@@ -93,4 +93,4 @@ Der Hauptzweck dieses Berichts besteht darin, Ihnen zu helfen, die Auswirkungen 
 
 Um eine optimale Datengenauigkeit zu erzielen, empfehlen wir die auf dieser Seite vorgestellten Berichte [Beispiele für CMU-Berichte](/help/concurrency-monitoring/cm-usage-reports-examples.md)
 
-[^1]: Minimal verfügbare Berichte sind standardmäßig nicht verfügbar. Bitte wenden Sie sich an das [&#x200B; (Support-Team](mailto:tve-support@adobe.com), um sie anzufordern.
+[^1]: Minimal verfügbare Berichte sind standardmäßig nicht verfügbar. Bitte wenden Sie sich an das [ (Support-Team](mailto:tve-support@adobe.com), um sie anzufordern.

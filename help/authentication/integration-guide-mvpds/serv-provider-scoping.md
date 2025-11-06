@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-## Übersicht {#overview}
+## Überblick {#overview}
 
 Die Standardimplementierung einer Adobe Pass-Authentifizierungsintegration mit einem MVPD basiert auf der **OLCA-Spezifikation**. Im Abschnitt Authentifizierungsanforderungen der OLCA-Spezifikation (6.5, Subjekt-ID) wird angegeben, dass es möglich ist, den Umfang des Service Providers (SP) für die Subjekt-ID anzugeben. (Die Betreffkennung ist die verschleierte Benutzer-ID, die MVPD an den SP zurückgibt.)  In einer Adobe Pass-Authentifizierungsintegration ist es erforderlich, dass MVPDs den Umfang der SP-Authentifizierungsanfragen aktivieren.
 

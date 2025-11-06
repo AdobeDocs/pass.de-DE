@@ -2,7 +2,7 @@
 title: REST-API-Cookbook (Server-zu-Server)
 description: REST-API-Cookbook-Server zu Server.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1856'
 ht-degree: 0%
@@ -48,7 +48,7 @@ In einer funktionierenden Server-zu-Server-Lösung sind die folgenden Komponente
 ### Dynamische Client-Registrierung (DCR)
 
 
-Adobe Pass verwendet DCR, um die Client-Kommunikation zwischen einer Programmieranwendung oder einem Server und den Adobe Pass-Services zu sichern. Der DCR-Ablauf ist separat und in der Dokumentation [Übersicht über die dynamische Client-Registrierung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) beschrieben.
+Adobe Pass verwendet DCR, um die Client-Kommunikation zwischen einer Programmieranwendung oder einem Server und den Adobe Pass-Services zu sichern. Der DCR-Ablauf ist separat und in der Dokumentation [Übersicht über die dynamische Client-Registrierung](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) beschrieben.
 
 
 ### Authentifizierung (authN)
@@ -73,7 +73,7 @@ auf ihre MVPD, um festzustellen, ob die Benutzerin bzw. der Benutzer über ein g
 
 Das folgende Diagramm veranschaulicht den Authentifizierungsfluss:
 
-![](/help//authentication/assets/authn-flow.png)
+![](../../../../assets/authn-flow.png)
 
 ### Autorisierung (authZ)
 
@@ -86,7 +86,7 @@ Mit dem Autorisierungsfluss wird bestimmt, ob ein Benutzer berechtigt ist, auf a
 
 Das folgende Diagramm veranschaulicht den Autorisierungsfluss:
 
-![](/help//authentication/assets/authz-flow.png)
+![](../../../../assets/authz-flow.png)
 
 ### Abmelden
 
@@ -98,7 +98,7 @@ Der Anwendung zugeordnet.
 
 Das folgende Diagramm veranschaulicht den Abmeldefluss:
 
-![](/help//authentication/assets/logout-flow.png)
+![](../../../../assets/logout-flow.png)
 
 ### \[Optional\] Vorautorisierung (auch Pre-flight genannt)
 
@@ -106,7 +106,7 @@ Mit der Vorautorisierung können Sie aus einer Reihe von Ressourcen schnell ermi
 
 1. Sobald der Benutzer authentifiziert ist, kann das Streaming-Gerät den Programmierer-Service aufrufen, um den Inhalt anzufordern, zu dem der Benutzer zum Streamen berechtigt ist.
 
-1. Der Programmierer-Service sollte die Adobe Pass-API **preauthorize** mit einer Liste von Ressourcen-IDs aufrufen, bei denen es sich um eine einfache Zeichenfolge handelt, die normalerweise einen Kanal darstellt, den ein Benutzer streamen darf. *Hinweis: Derzeit ist der Aufruf&#x200B;**&#x200B;**&#x200B;preauthorize&#x200B;*** *so konfiguriert, dass die Liste auf fünf (5) Ressourcen-IDs beschränkt ist. Wenn mehr als fünf Ressourcen benötigt werden, können* Aufrufe &#x200B;**&#x200B;**&#x200B;** preauthorize *durchgeführt werden, oder der Aufruf kann so konfiguriert werden, dass er mit einer Vereinbarung der MVPDs mehr als fünf Ressourcen annimmt. Implementierungsprogramme sollten die Kosten eines*-***-***-*sowohl für MVPD-Ressourcen als auch die Antwortzeit für den Programmierer im Auge behalten und ihre Verwendung des -Aufrufs umsichtig strukturieren.*
+1. Der Programmierer-Service sollte die Adobe Pass-API **preauthorize** mit einer Liste von Ressourcen-IDs aufrufen, bei denen es sich um eine einfache Zeichenfolge handelt, die normalerweise einen Kanal darstellt, den ein Benutzer streamen darf. *Hinweis: Derzeit ist der Aufruf****preauthorize*** *so konfiguriert, dass die Liste auf fünf (5) Ressourcen-IDs beschränkt ist. Wenn mehr als fünf Ressourcen benötigt werden, können* Aufrufe ****** preauthorize *durchgeführt werden, oder der Aufruf kann so konfiguriert werden, dass er mit einer Vereinbarung der MVPDs mehr als fünf Ressourcen annimmt. Implementierungsprogramme sollten die Kosten eines*-***-***-*sowohl für MVPD-Ressourcen als auch die Antwortzeit für den Programmierer im Auge behalten und ihre Verwendung des -Aufrufs umsichtig strukturieren.*
 
 1. Der **preauthorize**-Aufruf antwortet dem Programmierer-Service mit einem JSON-Objekt, das einen TRUE- oder FALSE-Wert für jede Ressourcen-ID in der Anfrage enthält, die angibt, ob der Benutzer für den zugehörigen Kanal berechtigt ist oder nicht. *Hinweis: Wenn eine MVPD keine Antwort für eine bestimmte Ressourcen-ID bereitstellt (z. B. aufgrund von Netzwerkfehlern oder Zeitüberschreitungen), wird der Wert standardmäßig auf „FALSE“ gesetzt.*
 
@@ -114,7 +114,7 @@ Mit der Vorautorisierung können Sie aus einer Reihe von Ressourcen schnell ermi
 
 Das folgende Diagramm veranschaulicht den Vorautorisierungsfluss:
 
-![](/help//authentication/assets/preauthz-flow.png)
+![](../../../../assets/preauthz-flow.png)
 
 
 ### \[Optional\] Metadaten
@@ -130,7 +130,7 @@ Das folgende Diagramm veranschaulicht den Vorautorisierungsfluss:
 
 
 
-![](/help//authentication/assets/user-metadata-api-preauthz.png)
+![](../../../../assets/user-metadata-api-preauthz.png)
 
 
 

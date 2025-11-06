@@ -94,7 +94,7 @@ ht-degree: 0%
 
 ## Subjekt {#subj-defn}
 
-* Der Verbraucher der (Video-)Inhalte über das Internet. Wir vermeiden bewusst den Begriff _&#x200B;**Benutzer**&#x200B;_, da die gleichzeitige Überwachung normalerweise MVPD-Konto-IDs betrifft (bei denen mehrere tatsächliche Benutzende denselben Vertrag teilen, z. B. Familienmitglieder eines Haushalts).
+* Der Verbraucher der (Video-)Inhalte über das Internet. Wir vermeiden bewusst den Begriff _**Benutzer**_, da die gleichzeitige Überwachung normalerweise MVPD-Konto-IDs betrifft (bei denen mehrere tatsächliche Benutzende denselben Vertrag teilen, z. B. Familienmitglieder eines Haushalts).
 
 * Für jeden Stream kann das Subjekt mit Attributen erweitert werden, die sich auf die tatsächliche Person beziehen, die den Service verwendet, auf ihr netzwerkgebundenes Gerät und so weiter.
 

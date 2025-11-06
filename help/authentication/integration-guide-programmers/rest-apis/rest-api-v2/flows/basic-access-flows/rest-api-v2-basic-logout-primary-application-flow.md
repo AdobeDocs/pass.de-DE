@@ -2,7 +2,7 @@
 title: Einfache Abmeldung - Primäre Anwendung - Fluss
 description: REST API v2 - Einfache Abmeldung - Primäre Anwendung - Fluss
 exl-id: 21dbff4a-0d69-4f81-b04f-e99d743c35b3
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
@@ -53,7 +53,7 @@ Bevor Sie mit dem Abmelden für eine bestimmte MVPD mit einem Abmeldeendpunkt be
 
 Führen Sie die angegebenen Schritte aus, um den grundlegenden Abmeldefluss für eine bestimmte MVPD mit einem Abmelde-Endpunkt zu implementieren, der in einer primären Anwendung ausgeführt wird, wie im folgenden Diagramm dargestellt.
 
-![Initiieren des Abmeldens für bestimmte MVPDs mit dem Abmeldeendpunkt](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-with-logout-endpoint.png)
+![Initiieren des Abmeldens für bestimmte MVPDs mit dem Abmeldeendpunkt](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-with-logout-endpoint.png)
 
 *Initiieren des Abmeldens für bestimmte MVPDs mit dem Abmeldeendpunkt*
 
@@ -61,7 +61,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Abmeldefluss für
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden Sie in [&#x200B; API-Dokumentation &#x200B;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) Initiieren des Abmeldens für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden Sie in [ API-Dokumentation ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) Initiieren des Abmeldens für bestimmte MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `redirectUrl`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
@@ -78,7 +78,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Abmeldefluss für
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
+   > Weitere Informationen zu den [ in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
    > 
    > <br/>
    > 
@@ -119,7 +119,7 @@ Bevor Sie mit dem Abmelden für eine bestimmte MVPD ohne Abmeldeendpunkt beginne
 
 Führen Sie die angegebenen Schritte aus, um den grundlegenden Abmeldefluss für einen bestimmten MVPD ohne Abmeldeendpunkt in einer Primäranwendung zu implementieren, wie im folgenden Diagramm dargestellt.
 
-![Initiieren der Abmeldung für eine bestimmte mvpd ohne Abmeldeendpunkt](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-without-logout-endpoint.png)
+![Initiieren der Abmeldung für eine bestimmte mvpd ohne Abmeldeendpunkt](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-without-logout-endpoint.png)
 
 *Initiieren der Abmeldung für eine bestimmte mvpd ohne Abmeldeendpunkt*
 
@@ -127,7 +127,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Abmeldefluss für
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden Sie in [&#x200B; API-Dokumentation &#x200B;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) Initiieren des Abmeldens für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden Sie in [ API-Dokumentation ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) Initiieren des Abmeldens für bestimmte MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `redirectUrl`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
@@ -144,7 +144,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Abmeldefluss für
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
+   > Weitere Informationen zu den [ in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
    > 
    > <br/>
    > 

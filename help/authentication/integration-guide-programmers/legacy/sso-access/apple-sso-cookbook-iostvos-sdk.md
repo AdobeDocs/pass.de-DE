@@ -4,7 +4,7 @@ description: Apple SSO-Cookbook (iOS/tvOS SDK)
 exl-id: 2d59cd33-ccfd-41a8-9697-1ace3165bc44
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1834'
+source-wordcount: '1832'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 Der Adobe Pass Authentication AccessEnabler iOS/tvOS SDK unterstützt das Partner Single Sign-On (SSO) für Endbenutzer von Client-Anwendungen, die auf iOS, iPadOS oder tvOS ausgeführt werden.
 
-Dieses Dokument dient als Erweiterung der bestehenden Dokumentation zu AccessEnabler iOS/tvOS SDK, die Sie ([) &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md).
+Dieses Dokument dient als Erweiterung der bestehenden Dokumentation zu AccessEnabler iOS/tvOS SDK, die Sie ([) ](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md).
 
 ## Cookbook {#apple-sso-cookbook-iostvos-sdk-cookbook}
 
@@ -37,11 +37,11 @@ Um von dem Apple SSO-Benutzererlebnis zu profitieren, muss die Anwendung den Acc
 
 >[!TIP]
 >
-> **<u>Profi-Tipp:</u>** Wir empfehlen, Benutzern, die sich weigern, Berechtigungen für den Zugriff auf Abonnementinformationen zu erteilen, Anreize zu bieten, indem sie die Vorteile des Apple-Single-Sign-On-Benutzererlebnisses erklären. Beachten Sie jedoch, dass die Benutzenden ihre Entscheidung ändern können, indem sie zu den Anwendungseinstellungen gehen (Zugriff auf TV-Anbieter) oder auf iOS und iPadOS oder *`Settings -> Accounts -> TV Provider`* auf tvOS *`Settings -> TV Provider`*.
+> **<u>Profi-Tipp:</u>** Wir empfehlen, Benutzern, die sich weigern, Berechtigungen für den Zugriff auf Abonnementinformationen zu erteilen, Anreize zu bieten, indem sie die Vorteile des Apple-Single-Sign-On-Benutzererlebnisses erklären. Beachten Sie jedoch, dass die Benutzenden ihre Entscheidung ändern können, indem sie zu den Anwendungseinstellungen gehen (Zugriff auf TV-Anbieter) oder auf iOS und iPadOS oder *`Settings -> TV Provider`* auf tvOS *`Settings -> Accounts -> TV Provider`*.
 
 >[!TIP]
 >
-> **<u>Profi-Tipp:</u>** Die Streaming-Anwendung kann die Berechtigung des Benutzers anfordern, wenn die Anwendung in den Vordergrundstatus wechselt, da die Anwendung jederzeit auf die Abonnementinformationen des [&#128279;](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) zugreifen Berechtigung für den Zugriff) kann, bevor eine Benutzerauthentifizierung erforderlich wird.
+> **<u>Profi-Tipp:</u>** Die Streaming-Anwendung kann die Berechtigung des Benutzers anfordern, wenn die Anwendung in den Vordergrundstatus wechselt, da die Anwendung jederzeit auf die Abonnementinformationen des [ zugreifen ](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus)Berechtigung für den Zugriff) kann, bevor eine Benutzerauthentifizierung erforderlich wird.
 
 >[!TIP]
 >
@@ -95,7 +95,7 @@ Um von dem Apple SSO-Benutzererlebnis zu profitieren, muss die Anwendung den Acc
 >
 > **<u>Tipp</u>** Führen Sie für die Implementierung(en) von iOS/iPadOS/tvOS die folgenden Schritte aus.
 
-1. Die Anwendung müsste [&#x200B; AccessEnabler](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#initsoftwarestatement-initwithsoftwarestatement) iOS/tvOS SDK initialisieren.
+1. Die Anwendung müsste [ AccessEnabler](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#initsoftwarestatement-initwithsoftwarestatement) iOS/tvOS SDK initialisieren.
 
 
 1. Die Anwendung müsste [die aktuelle Anfordererkennung festlegen](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setrequestorrequestorid-setrequestorrequestoridserviceproviders-setreqv3).
@@ -111,9 +111,9 @@ Um von dem Apple SSO-Benutzererlebnis zu profitieren, muss die Anwendung den Acc
    * Die Berechtigung des TV-Anbieters des Benutzers für die Anwendung wird gewährt.
    * Der Benutzer ist auf der Systemebene des Geräts bei seinem TV-Anbieterkonto angemeldet.
    * AccessEnabler iOS/tvOS SDK hat die TV Provider-Kennung des Benutzers aus dem Video-Abonnementkonto-Framework erhalten.
-   * Die Integration des TV-Anbieters des Benutzers mit der Anwendung wird über das Adobe Primetime TVE-Dashboard aktiviert.
-   * Das Single Sign-On des TV-Anbieters des Benutzers mit der Anwendung wird über das Adobe Primetime TVE-Dashboard aktiviert.
-   * Der TV-Anbieter des Benutzers wird nicht über das Adobe Primetime TVE-Dashboard beeinträchtigt.
+   * Die Integration des TV-Anbieters des Benutzers mit dem Programm wird über das Adobe Primetime TV Dashboard aktiviert.
+   * Das Single Sign-On des TV-Anbieters des Benutzers mit der Anwendung wird über das Adobe Primetime TV Dashboard aktiviert.
+   * Der TV-Anbieter des Benutzers wird nicht über das Adobe Primetime TV Dashboard beeinträchtigt.
    * AccessEnabler iOS/tvOS SDK erhielt vom Videoabonnentenkonto-Framework eine SAML-Antwort des TV-Anbieters des Benutzers.
 
    **<u>Profi-Tipp:</u>** In diesem zweiten Schritt werden außer dem Callback [setRequestorComplete](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setrequestorcomplete-setreqcomplete) keine weiteren Callbacks Trigger, da die Authentifizierung nicht explizit von der Anwendung initiiert wurde.
@@ -138,8 +138,8 @@ Beim Framework ist ein Fehler aufgetreten.
 
    * Der Benutzer ist nicht auf der Systemebene des Geräts oder über einen regulären Authentifizierungsfluss bei seinem TV-Anbieter-Konto angemeldet.
    * Der Benutzer wird auf der Systemebene des Geräts oder über einen regulären Authentifizierungsfluss bei seinem TV-Anbieter-Konto angemeldet, aber die TTL des TV-Anbieter-Authentifizierungstokens des Benutzers wurde bestanden.
-   * Die Benutzerin bzw. der Benutzer wird auf Systemebene des Geräts oder über einen regulären Authentifizierungsfluss bei ihrem TV-Anbieter-Konto angemeldet. Die TV-Anbieter-Integration der Benutzerin bzw. des Benutzers in die Anwendung wird jedoch über das Adobe Primetime TVE-Dashboard deaktiviert.
-   * Die Benutzerin bzw. der Benutzer wird auf Systemebene des Geräts bei ihrem TV-Anbieterkonto angemeldet, aber das einmalige Anmelden der Benutzerin bzw. des TV-Anbieters mit der Anwendung wird über das Adobe Primetime TVE-Dashboard deaktiviert.
+   * Der Benutzer wird auf Systemebene des Geräts oder über einen regulären Authentifizierungsfluss bei seinem TV-Anbieter-Konto angemeldet, aber die Integration des TV-Anbieters des Benutzers mit der Anwendung wird über das Adobe Primetime TV Dashboard deaktiviert.
+   * Der Benutzer wird auf Systemebene des Geräts bei seinem TV-Anbieter-Konto angemeldet, aber das einmalige Anmelden des TV-Anbieters des Benutzers bei der Anwendung ist über das Adobe Primetime TV Dashboard deaktiviert.
    * Der Benutzer wird auf Systemebene des Geräts bei seinem TV-Anbieter-Konto angemeldet, aber die TV-Anbieter-Berechtigung des Benutzers wird für die Anwendung verweigert.
    * Der Benutzer ist auf der Systemebene des Geräts bei seinem TV-Anbieter-Konto angemeldet, aber die Berechtigung des Benutzers für den TV-Anbieter für die Anwendung ist unbestimmt.
    * Der Benutzer ist auf der Systemebene des Geräts bei seinem TV-Anbieterkonto angemeldet, aber bei der Kommunikation zwischen dem AccessEnabler iOS/tvOS SDK und dem Video-Teilnehmerkonto-Framework ist ein Fehler aufgetreten.
@@ -149,7 +149,7 @@ Beim Framework ist ein Fehler aufgetreten.
 
 1. Die Anwendung müsste [die Authentifizierung initialisieren](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getauthentication-getauthenticationwithdata-getauthn) falls die vorherige Prüfung des Authentifizierungsstatus den [*setAuthenticationStatus*](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus)-Rückruf mit *status* gleich 0 ausgelöst hat.
 
-   **<u>Profi-Tipp:</u>** Implementieren Sie eine der folgenden AccessEnabler iOS/tvOS SDK API [getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN) oder [getAuthentication:filter](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN_filter).
+   **<u>Profi-Tipp</u>** Implementieren Sie eine der folgenden AccessEnabler iOS/tvOS SDK API [getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN) oder [getAuthentication:filter](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN_filter).
 
    **Wichtig:** Dieser vierte Schritt kann einen Trigger [erweiterten Fehlercode](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md) enthalten, der spezifisch für den Apple SSO-Workflow ist, falls **einer der folgenden Punkte zutrifft**:
 
@@ -162,25 +162,25 @@ Beim Framework ist ein Fehler aufgetreten.
 
    **Wichtig:** Dieser vierte Schritt würde auf den regulären Authentifizierungsfluss zurückgreifen, indem der [displayProviderDialog](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#dispProvDialog)-Rückruf und **einer** der oben [erweiterten Fehler-Codes](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md) ausgelöst werden, falls **einer der oben genannten wahr ist**.
 
-   **Wichtig:** Dieser vierte Schritt würde auf den regulären Authentifizierungsfluss zurückgreifen, indem der [navigateToUrl](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2url)- oder [navigateToUrl:useSVC](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2urlSVC)-Rückruf und **none** der [erweiterten Fehlercodes](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md) ausgelöst wird, falls der Benutzer einen TV-Anbieter ausgewählt hat, der Apple SSO nicht unterstützt, aber in der Apple MVPD-Auswahl vorhanden ist.
+   **Wichtig:** Dieser vierte Schritt würde auf den regulären Authentifizierungsfluss zurückgreifen, indem der [navigateToUrl](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2url)- oder [navigateToUrl:useSVC](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2urlSVC)-Rückruf und **none** der oben [erweiterten Fehlercodes](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md) ausgelöst wird, falls der Benutzer einen TV-Anbieter ausgewählt hat, der Apple SSO nicht unterstützt, aber in der Apple MVPD-Auswahl vorhanden ist.
 
    **<u>Profi-Tipp:</u>** Die AccessEnabler iOS/tvOS SDK ruft die API [setSelectedProvider](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setSelProv) im Hintergrund auf, falls der Benutzer einen TV-Anbieter ausgewählt hat, der Apple SSO nicht unterstützt, aber in der Apple MVPD-Auswahl vorhanden ist.
 
-   **Wichtig:** Dieser vierte Schritt würde versuchen, das Apple-SSO-Profil im Hintergrund gegen ein Adobe-Authentifizierungstoken einzutauschen, falls **alle oben genannten Punkte falsch sind** und **alle folgenden Punkte zutreffen**:
+   **Wichtig:** Dieser vierte Schritt würde versuchen, das Apple SSO-Profil im Hintergrund gegen ein Adobe-Authentifizierungstoken einzutauschen, falls **alle oben genannten Werte** sind und **alle folgenden Werte zutreffen**:
 
    * Die Berechtigung des TV-Anbieters des Benutzers für die Anwendung wird gewährt.
    * Der Benutzer ist auf der Systemebene des Geräts bei seinem TV-Anbieterkonto angemeldet bzw. meldet sich derzeit an.
    * AccessEnabler iOS/tvOS SDK hat die TV Provider-Kennung des Benutzers aus dem Video-Abonnementkonto-Framework erhalten.
-   * Die Integration des TV-Anbieters des Benutzers mit der Anwendung wird über das Adobe Primetime TVE-Dashboard aktiviert.
-   * Das Single Sign-On des TV-Anbieters des Benutzers mit der Anwendung wird über das Adobe Primetime TVE-Dashboard aktiviert.
-   * Der TV-Anbieter des Benutzers wird nicht über das Adobe Primetime TVE-Dashboard beeinträchtigt.
+   * Die Integration des TV-Anbieters des Benutzers mit dem Programm wird über das Adobe Primetime TV Dashboard aktiviert.
+   * Das Single Sign-On des TV-Anbieters des Benutzers mit der Anwendung wird über das Adobe Primetime TV Dashboard aktiviert.
+   * Der TV-Anbieter des Benutzers wird nicht über das Adobe Primetime TV Dashboard beeinträchtigt.
    * AccessEnabler iOS/tvOS SDK erhielt vom Videoabonnentenkonto-Framework eine SAML-Antwort des TV-Anbieters des Benutzers.
 
    **<u>Profi-Tipp:</u>** Dieser vierte Schritt führt unabhängig vom Ergebnis des [*statusStatus*](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setAuthNStatus) *zu einem Trigger,* die Authentifizierung explizit von der Anwendung initiiert wurde.
 
 ### Metadaten {#apple-sso-cookbook-iostvos-sdk-metadata}
 
-Die Anwendung hat die Möglichkeit, mithilfe der API &quot;*tokenSource“ (Benutzermetadaten) aus der AccessEnabler iOS SDK/tvOS-* zu ermitteln, ob die Authentifizierung als Ergebnis [&#x200B; Anmeldung über &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getMeta) Partner-SSO erfolgt ist oder nicht.
+Die Anwendung hat die Möglichkeit, mithilfe der API &quot;*tokenSource“ (Benutzermetadaten) aus der AccessEnabler iOS SDK/tvOS-* zu ermitteln, ob die Authentifizierung als Ergebnis [ Anmeldung über ](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getMeta) Partner-SSO erfolgt ist oder nicht.
 
 ```swift
     ...
@@ -200,12 +200,12 @@ Das [Video Subscriber Account Framework](https://developer.apple.com/documentati
 >
 > **<u>Profi-Tipp</u>** Führen Sie die folgenden Schritte für die tvOS-Implementierung(en) aus.
 
-* Die Anwendung müsste [Abmelden) &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#logout) AccessEnabler iOS/tvOS SDK starten. Dies würde die Sitzungsbereinigung auf MVPD-Seite nicht erleichtern.
-* Die Anwendung muss den Benutzer anweisen/auffordern, sich nur im Falle eines Auslösens des Status-Codes [*VSA203* explizit von *`Settings -> Accounts -> TV Provider`* auf tvOS abzumelden](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md).
+* Die Anwendung müsste [Abmelden) ](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#logout) AccessEnabler iOS/tvOS SDK starten. Dies würde die Sitzungsbereinigung auf MVPD-Seite nicht erleichtern.
+* Die Anwendung muss den Benutzer anweisen/auffordern, sich nur im Falle eines Auslösens des Status-Codes *`Settings -> Accounts -> TV Provider`* VSA203 [*explizit von* auf tvOS abzumelden](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md).
 
 >[!TIP]
 >
 > **<u>Profi-Tipp</u>** Führen Sie die folgenden Schritte für die Implementierung(en) von iOS/iPadOS aus.
 
-* Die Anwendung müsste [Abmelden) &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#logout) AccessEnabler iOS/tvOS SDK starten. Dies würde die Sitzungsbereinigung auf MVPD-Seite erleichtern.
+* Die Anwendung müsste [Abmelden) ](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#logout) AccessEnabler iOS/tvOS SDK starten. Dies würde die Sitzungsbereinigung auf MVPD-Seite erleichtern.
 * Die Anwendung müsste den Benutzer nur dann anweisen/auffordern, sich explizit von *`Settings -> TV Provider`* auf iOS/iPadOS abzumelden, wenn der [*VSA203*-Statuscode ausgelöst wird](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md).

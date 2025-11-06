@@ -1,5 +1,5 @@
 ---
-title: Anwendungsbeispiele
+title: Anwendungsszenarien
 description: Anwendungsfälle bei der Überwachung von gleichzeitigen Aufrufen.
 exl-id: 6cc30bb6-e985-4d9a-9f99-a7f04ae8deb7
 source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2

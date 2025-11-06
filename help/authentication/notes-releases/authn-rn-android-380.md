@@ -1,7 +1,8 @@
 ---
 title: Versionshinweise zur Adobe Pass-Authentifizierung für Android 3.8.0
 description: Versionshinweise zur Adobe Pass-Authentifizierung für Android 3.8.0
-source-git-commit: f7db5b71723c02b2924e73105769ab5b22e05bca
+exl-id: ad020b9a-61ad-492f-9522-d0e7a668196a
+source-git-commit: c9958a17ad9dfb518bab1d24087c85fdcb6fd057
 workflow-type: tm+mt
 source-wordcount: '140'
 ht-degree: 0%
@@ -30,4 +31,4 @@ Es werden jedoch keine kritischen Informationen gespeichert und die Wahrscheinli
 
 ## Versionspaket {#release-package-380}
 
-Sie können Android SDK v3.8.0 von ([) &#x200B;](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library).
+Sie können Android SDK v3.8.0 von ([) ](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library).

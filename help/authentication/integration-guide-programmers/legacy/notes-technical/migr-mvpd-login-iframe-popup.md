@@ -4,7 +4,7 @@ description: Migrieren der MVPD-Anmeldeseite von iFrame zu Popup
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '708'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ Da bereits eine iFrame-Implementierung vorhanden ist, enthält der erste Teil de
 
 ## MVPD-Auswahl mit Anmeldeseite in einem iFrame {#mvpd-pickr-iframe}
 
-Frühere Codebeispiele zeigten eine HTML-Seite, die das &lt;div>-Tag enthält, an dem der iFrame zusammen mit der Schaltfläche iFrame schließen erstellt werden soll:
+Frühere Code-Beispiele haben eine HTML-Seite gezeigt, die das Tag &lt;div> enthält, in dem der iFrame zusammen mit der Schaltfläche iFrame schließen erstellt werden soll:
 
 ```HTML
 <body> 
@@ -109,7 +109,7 @@ function setSelectedProvider(providerID) {
 
 ## MVPD-Auswahl mit Anmeldeseite in einem Popup-Fenster {#mvpd-pickr-popup}
 
-Da wir keinen **iFrame** mehr verwenden, enthält der HTML-Code weder den iFrame noch die Taste zum Schließen des iFrames. Das div, das zuvor den iFrame **mvpddiv**) enthielt, wird beibehalten und für Folgendes verwendet:
+Da wir keinen **iFrame** mehr verwenden, enthält der HTML-Code weder den iFrame noch die Schaltfläche zum Schließen des iFrames. Das div, das zuvor den iFrame **mvpddiv**) enthielt, wird beibehalten und für Folgendes verwendet:
 
 * um den Benutzer darüber zu informieren, dass die Anmeldeseite von MVPD bereits geöffnet ist, wenn der Popup-Fokus verloren geht
 * So geben Sie einen Link an, um den Fokus wieder auf das Popup zu legen
@@ -183,7 +183,7 @@ function displayProviderDialog(providers) {
 }
 ```
 
-Nachdem der/die Benutzende eine MVPD aus der Auswahl ausgewählt hat, muss das Popup erstellt werden. Einige Browser blockieren das Popup möglicherweise, wenn es mit „about:blank“ oder mit einer Seite erstellt wurde, die sich in einer anderen Domain befindet. Daher wird empfohlen, es mit dem Host-Namen zu öffnen, von dem aus der AccessEnabler geladen wird.
+Nachdem der/die Benutzende eine MVPD aus der Auswahl ausgewählt hat, muss das Popup erstellt werden. Einige Browser blockieren das Popup möglicherweise, wenn es mit „about“ :blank einer Seite erstellt wurde, die sich in einer anderen Domain befindet. Daher wird empfohlen, es mit dem Host-Namen zu öffnen, von dem aus der AccessEnabler geladen wird.
 
 In der iFrame-Implementierung erfolgte das Zurücksetzen des Authentifizierungsflusses durch die Schaltfläche btnCloseIframe und die JavaScript-Funktion closeIframeAction(), aber jetzt ist das Dekorieren des iFrames nicht mehr möglich. Dasselbe Verhalten wird also erreicht, indem darauf geachtet wird, wann das Popup geschlossen wird (entweder durch den Benutzer oder durch Beenden des Authentifizierungsflusses). Es wurde ein Code-Fragment hinzugefügt, das auch für den Fall hilfreich ist, dass der Benutzer den Fokus des Popup-Fensters verliert:
 

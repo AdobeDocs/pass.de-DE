@@ -95,7 +95,7 @@ Mit Remote Map können Sie eine „eingehende“ Anfrage an einen anderen Endpun
 
 <http://www.charlesproxy.com/documentation/proxying/reverse-proxy/>
 
-## Mobiltelefon {#mobile}
+## Mobile {#mobile}
 
 ### Verwenden von Charles auf einem iOS-Gerät (iPhone/iPad) {#use-charles-on-an-ios-device-(iphone-/-ipad)}
 
@@ -156,4 +156,4 @@ Anfragen.
 <http://www.charlesproxy.com/documentation/configuration/browser-and-system-configuration>
 
 
-Navigieren Sie von [&#x200B; Android-Gerät &#x200B;](http://charlesproxy.com/charles.crt)Charles proxy“.
+Navigieren Sie von [ Android-Gerät ](http://charlesproxy.com/charles.crt)Charles proxy“.

@@ -38,7 +38,7 @@ Nach der Erstellung des Tickets werden die folgenden Informationen zur Verwendun
 
 | Typ | Beschreibung | Beispielwert | Standardwert |
 | --- | --- | --- | --- |
-| Endpunkt | der Endpunkt für das Adobe-Parallelitätsmonitoring | http://streams.adobeprimetime.com/v1/ | http://streams.adobeprimetime.com/v1/ |
+| Endpunkt | Der Endpunkt für die Adobe-Parallelitätsüberwachung | http://streams.adobeprimetime.com/v1/ | http://streams.adobeprimetime.com/v1/ |
 | applicationId | iPhone-App-ID | iPhone54-75b4-431b-adb2-eb6b9e546013 | - |
 | applicationId | iPad-App-ID | iPad5d54-75b4-431b-adb2-eb6b9e546013 | - |
 | applicationId | App-ID der Website | website4-75b4-431b-adb2-eb6b9e546013 | - |

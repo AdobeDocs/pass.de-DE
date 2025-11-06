@@ -21,13 +21,13 @@ ht-degree: 0%
 
 </br>
 
-## Übersicht
+## Überblick
 
 Single Sign-On (SSO) zwischen Apps mit Adobe Pass-Authentifizierung funktioniert je nach Betriebssystem auf unterschiedliche Weise.
 
 In diesem Dokument wird **SSO auf iOS** bei Verwendung des Adobe Pass Authentication **Access Enabler** behandelt.
 
-**Access Enabler** **1.10** ist die neueste Version der nativen Adobe Pass Authentication iOS SDK. Adobe empfiehlt dringend, zu dieser Version zu wechseln, anstatt bei einer älteren Version zu bleiben. Wenn Sie eine ältere Version von Access Enabler verwenden, können Sie die neueste Version ([) &#x200B;](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library).
+**Access Enabler** **1.10** ist die neueste Version der nativen Adobe Pass Authentication iOS SDK. Adobe empfiehlt dringend, zu dieser Version zu wechseln, anstatt bei einer älteren Version zu bleiben. Wenn Sie eine ältere Version von Access Enabler verwenden, können Sie die neueste Version ([) ](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library).
 
 SSO auf iOS wird durch die folgenden Bedingungen bestimmt:
 

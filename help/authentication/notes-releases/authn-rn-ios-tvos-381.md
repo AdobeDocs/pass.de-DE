@@ -29,4 +29,4 @@ Ergänzt interne Architekturverbesserungen für die Speicherverwaltungslösung.
 
 ## Versionspaket {#release-package-381}
 
-Sie können iOS/tvOS SDK v3.8.1 von ([) &#x200B;](https://tve.zendesk.com/hc/en-us/articles/204963209).
+Sie können iOS/tvOS SDK v3.8.1 von ([) ](https://tve.zendesk.com/hc/en-us/articles/204963209).

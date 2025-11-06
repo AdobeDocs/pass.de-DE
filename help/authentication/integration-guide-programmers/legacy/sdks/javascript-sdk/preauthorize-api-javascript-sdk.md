@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 > Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](/help/authentication/product-announcements.md) auf dem Laufenden zu bleiben.
 
-## Übersicht {#preauth-overview}
+## Überblick {#preauth-overview}
 
 Die Methode der Vorabautorisierungs-API muss von Anwendungen verwendet werden, um Vorabautorisierungsentscheidungen für eine oder mehrere Ressourcen zu erhalten. Die Anfrage zur Vorabautorisierung der API sollte für Benutzeroberflächen-Hinweise und/oder die Inhaltsfilterung verwendet werden. Eine Autorisierungs-API-Anfrage muss tatsächlich erfolgen, bevor der Benutzerzugriff auf die angegebenen Ressourcen zugelassen wird.
 
@@ -102,7 +102,7 @@ public func build() -> PreauthorizeRequest
 * Rückgabe: Zusätzliche Statusinformationen (Status) im Falle eines Fehlers.
 * Kann einen `null` Wert enthalten.
 
-#### öffentliche Entscheidungen: []; {#public-decisions}
+#### öffentliche Entscheidungen: Beschluss[]; {#public-decisions}
 
 * Gibt zurück: Die Liste der Entscheidungen vor Autorisierung. Eine Entscheidung für jede Ressource.
 * Im Falle eines Fehlers kann die Liste leer sein.
@@ -255,22 +255,22 @@ accessEnablerApi.preauthorize(request, callback);
 
     &quot;JavaScript
     
-    &lbrace;
-    „decisions“: &lbrack;
-    &lbrace;
+    {
+    „decisions“: [
+    {
     „id“: „RES01“,
     „authorized“: true
-    &rbrace;,
-    &lbrace;
+    },
+    {
     „id“: „RES02“,
     „authorized“: false
-    &rbrace;,
-    &lbrace;
+    },
+    {
     „id“: „RES03“,
     „authorized“: true
-    &rbrace;
-    &rbrack;
-    &rbrace;
+    }
+    ]
+    }
     
     &quot;
 
@@ -282,27 +282,27 @@ accessEnablerApi.preauthorize(request, callback);
     <td>
 
     &quot;JavaScript
-    &lbrace;
-    „decisions“: &lbrack;
-    &lbrace;
+    {
+    „decisions“: [
+    {
     „id“: „RES01“,
     „authorized“: true
-    &rbrace;,
-    &lbrace;
+    },
+    {
     „id“: „RES02“,
     „authorized“: false,
-    „error“: &lbrace;
+    „error“: {
     „status“: 403,
     „code“: „preauthorization_denied_by_mvpd“,
     „message“: „Die MVPD hat eine \„Deny\&quot;-Entscheidung zurückgegeben, wenn eine Vorabautorisierung für die angegebene Ressource angefordert wird.“,
     „helpUrl“: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     „action“: „none“
-    &rbrace;
-    &rbrace;,
-    &lbrace;
+    }
+    },
+    {
     „id“: „RES03“,
     „authorized“: true
-    &rbrace;
+    }
     &quot;
      
     
@@ -329,22 +329,22 @@ accessEnablerApi.preauthorize(request, callback);
 
     &quot;JavaScript
     
-    &lbrace;
-    „decisions“: &lbrack;
-    &lbrace;
+    {
+    „decisions“: [
+    {
     „id“: „RES01“,
     „authorized“: false
-    &rbrace;,
-    &lbrace;
+    },
+    {
     „id“: „RES02“,
     „authorized“: false
-    &rbrace;,
-    &lbrace;
+    },
+    {
     „id“: „RES03“,
     „authorized“: false
-    &rbrace;
-    &rbrack;
-    &rbrace;
+    }
+    ]
+    }
     
     &quot;
 
@@ -357,28 +357,28 @@ accessEnablerApi.preauthorize(request, callback);
 
     &quot;JavaScript
     
-    &lbrace;
-    „decisions“: &lbrack;
-    &lbrace;
+    {
+    „decisions“: [
+    {
     „id“: „RES01“,
     „authorized“: false,
-    „error“: &lbrace;
+    „error“: {
     „status“: 403,
     „code“: „preauthorization_denied_by_mvpd“,
     „message“: „Die MVPD hat eine \„deny\&quot;-Entscheidung zurückgegeben, wenn sie eine Vorabautorisierung für die angegebene Ressource anfordert.“,
     „helpUrl“: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     „action“: „none“
-    &rbrace;
-    &rbrace;,
-    &lbrace;
+    }
+    },
+    {
     „id“: „RES02“,
     „authorized“: false,
-    „error“: &lbrace;
+    „error“: {
     „status“: 403,
     „code“: „preauthorization_denied_by_mvpd“,message“: „Die MVPD hat bei der Anforderung einer Vorabautorisierung für die angegebene Ressource eine \„deny\&quot;-Entscheidung zurückgegeben.“,HelpUrl“: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
-    &quot;,Aktion“: „none„id&rbrace;&rbrace;,
-    „code“:RES03,0„authorized“: „false,error“: &lbrace;
-    „status“: &lbrace;403,
+    &quot;,Aktion“: „none„id}},
+    „code“:RES03,0„authorized“: „false,error“: {
+    „status“: {403,
      
      
      
@@ -390,10 +390,10 @@ accessEnablerApi.preauthorize(request, callback);
     „code“: „maximum_execution_time“: &quot;.“„überstiegen“ wurde nicht in der maximal zulässigen Zeit abgeschlossen. Das Problem kann möglicherweise durch Wiederholen der Anfrage behoben werden.“,
     „helpUrl“: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     „action“: „retry“
-    &rbrace;
-    &rbrace;
-    &rbrack;
-    &rbrace;
+    }
+    }
+    ]
+    }
     
     &quot;
 
@@ -417,17 +417,17 @@ accessEnablerApi.preauthorize(request, callback);
     <td>
 
     &quot;JavaScript
-    &lbrace;
-    „status“: &lbrace;
+    {
+    „status“: {
     „status“: 400,
     „code“: „internal_error“,
     „message“: „Die Anfrage ist aufgrund eines internen Fehlers fehlgeschlagen.“,
     „details“: „Erforderlicher String[]-Parameter „resource“ ist nicht vorhanden“,
     „helpUrl“: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     „action“: „none“
-    &rbrace;,
+    },
     „decisions“: []
-    &rbrace;
+    }
     &quot;
 
 </td>
@@ -450,16 +450,16 @@ accessEnablerApi.preauthorize(request, callback);
     <td>
 
     &quot;JavaScript
-    &lbrace;
-    „status“: &lbrace;
+    {
+    „status“: {
     „status“: 412,
     „code“: „missing_resource“,
     „message“: „Der Ressourcenparameter fehlt“,
     „helpUrl“: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     „action“: „none“
-    &rbrace;,
+    },
     „decisions“: []
-    &rbrace;
+    }
     &quot;
 
 </td>
@@ -482,32 +482,32 @@ accessEnablerApi.preauthorize(request, callback);
     <td>
 
     &quot;JavaScript
-    &lbrace;
-    „decisions“: &lbrack;
-    &lbrace;
+    {
+    „decisions“: [
+    {
     „id“: „RES01“,
     „authorized“: false,
-    „error“: &lbrace;
+    „error“: {
     „status“: 403,
     „code“: „network_received_error“,
     „message“: „Beim Abrufen der Antwort vom zugehörigen Partnerdienst ist ein Lesefehler aufgetreten. Ein Wiederholen der Anfrage kann das Problem möglicherweise beheben.“,
     „helpUrl“: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     „action“: „retry“
-    &rbrace;
-    &rbrace;,
-    &lbrace;
+    }
+    },
+    {
     „id“: „RES02“,
     „authorized“: false,
-    „error“: &lbrace;
+    „error“: {
     „status“: 403,
     „code“: „network_received_error“,
     „message“: „Beim Abrufen der Antwort vom zugehörigen Partner-Service ist ein Lesefehler aufgetreten. Das Problem kann möglicherweise durch Wiederholen der Anfrage behoben werden.“,
     „helpUrl“: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     „action“: „retry“
-    &rbrace;
-    &rbrace;
-    &rbrack;
-    &rbrace;
+    }
+    }
+    ]
+    }
     &quot;
 
 </td>
@@ -530,15 +530,15 @@ accessEnablerApi.preauthorize(request, callback);
     <td>
 
     &quot;JavaScript
-    &lbrace;
-    „status“: &lbrace;
+    {
+    „status“: {
     „status“: 0,
     „code“: „authentication_session_missing“,
     „message“: „Die mit dieser Anfrage verknüpfte Authentifizierungssitzung konnte nicht abgerufen werden. Die Benutzerin bzw. der Benutzer muss sich erneut mit einer unterstützten MVPD authentifizieren, um fortfahren zu können.“,
     „Aktion“: „Authentifizierung“
-    &rbrace;,
+    },
     „Entscheidungen“: []
-    &rbrace;
+    }
     
     &quot;
 
@@ -564,15 +564,15 @@ accessEnablerApi.preauthorize(request, callback);
     <td>
 
     &quot;JavaScript
-    &lbrace;
-    „status“: &lbrace;
+    {
+    „status“: {
     „status“: 0,
     „code“: „Requestor_not_configuring“,
     „message“: „Der Anforderer ist noch nicht konfiguriert. Dies ist eine Voraussetzung für die Verwendung einer anderen API als der setRequestor-API.“,
     „action“: „Wiederholen“
-    &rbrace;,
+    },
     „decisions“: []
-    &rbrace;
+    }
     &quot;
 
 </td>

@@ -13,7 +13,7 @@ ht-degree: 0%
 
 
 
-## Anwendungsbeispiele
+## Anwendungsszenarien
 
 Programmierer P hat eine iPhone-Anwendung, eine iPad-Anwendung und eine Website. Es muss mit Adobe Concurrency Monitoring (CM) integriert werden, um die Anzahl der gleichzeitigen Streams zwischen diesen Apps zu beschränken. Der Programmierer erstellt Richtlinien, die die gleichzeitige Verwendung einschränken. Wir werden uns zwei Beispiele ansehen:
 

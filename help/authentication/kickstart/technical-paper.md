@@ -2,9 +2,9 @@
 title: Über die Adobe Pass-Authentifizierung
 description: Über die Adobe Pass-Authentifizierung
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: 7ca9d8996756086a6b963c0b6d5b0bb64608ecbc
+source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
 workflow-type: tm+mt
-source-wordcount: '1828'
+source-wordcount: '1832'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Über TV Everywhere {#about-tv-everywhere}
 
-Die Fernsehzuschauer von heute erwarten einen nahtlosen Zugriff auf Pay-TV-Inhalte zu jeder Zeit und an jedem Ort. Mit dem Aufkommen von Geräten, die mit dem Internet verbunden sind, konsumieren Zielgruppen Inhalte über eine wachsende Anzahl von Plattformen, darunter:
+Fernsehzuschauer erwarten heute einen nahtlosen Zugang zu Pay-TV-Inhalten - jederzeit und überall. Mit dem Aufkommen von Geräten, die mit dem Internet verbunden sind, konsumieren Zielgruppen Inhalte über eine wachsende Anzahl von Plattformen, darunter:
 
 * Notebooks
 * Tablets
@@ -72,7 +72,7 @@ Um diese Hürden zu überwinden, vereinfacht und optimiert die **Adobe® Pass Au
 
 Die Adobe Pass-Authentifizierung vermittelt auf sichere Weise Berechtigungstransaktionen zwischen Programmierern und Pay-TV-Anbietern, um sicherzustellen, dass die richtigen Kunden mühelos auf die richtigen Inhalte zugreifen können.
 
-![](/help/authentication/assets/programmers-connect-authn.png)
+![](../assets/programmers-connect-authn.png)
 
 *Einige der Programmierer und Pay-TV-Anbieter, die eine Verbindung über die Adobe Pass-Authentifizierung herstellen*
 
@@ -132,7 +132,7 @@ Zusätzliche Anleitungen sind verfügbar, sobald die Integration formell eingele
 * Integrieren Sie die Adobe Pass-Authentifizierung [Media Token Verifier](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier).
 * Entwickeln Sie eine Benutzeroberfläche für den Authentifizierungs-, Autorisierungs- und Abmelde-Workflow.
 
-Weitere Informationen zum Programmierer-Integrationsprozess finden Sie in den Dokumenten [Programmierer-Schnellstartanleitung](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md).
+Weitere Informationen zum Programmierer-Integrationsprozess finden Sie im [Programmierer-Schnellstartanleitung](/help/authentication/kickstart/programmer-kickstart-guide.md) und [Programmierer-Integrationshandbuch](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md).
 
 #### Integrationsprozess des Pay-TV-Anbieters {#pay-tv-provider-integration-process}
 
@@ -169,11 +169,11 @@ Für Programmierer stellt die Adobe Pass-Authentifizierung APIs als Teil einer *
    * [REST-API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * Premium Adobe Pass-Authentifizierungs-APIs:
-   * [Temporäre Pass-API zurücksetzen](/help/premium-workflow/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [TempPass-Funktion](/help/premium-workflow/temporary-access/temp-pass-feature.md)
-   * [Abbauungs-API](/help/premium-workflow/degraded-access/degradation-feature.md#degradation-api-access)
-      * [Abbaumerkmal](/help/premium-workflow/degraded-access/degradation-feature.md)
-   * [Berechtigungs-Service-Überwachungs-API](/help/premium-workflow/esm/entitlement-service-monitoring-api.md)
+   * [Temporäre Pass-API zurücksetzen](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [TempPass-Funktion](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+   * [Abbauungs-API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+      * [Abbaumerkmal](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+   * [Berechtigungs-Service-Überwachungs-API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 Weitere Informationen zum Ablauf von Berechtigungen finden Sie in der Dokumentation [Handbuch zur Programmiererintegration](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow).
 
@@ -229,7 +229,7 @@ TV Everywhere ist eine Initiative der Branche, die es Pay-TV-Kunden ermöglicht,
 
 **Was ist die Adobe Pass-Authentifizierung und wie unterstützt sie TV Everywhere?**
 
-Die Adobe Pass-Authentifizierung erweckt TV Everywhere zum Leben, indem sie das Recht eines Benutzers auf Inhalte sicher und effizient verifiziert. Es handelt sich dabei um einen gehosteten Dienst, der eine schnelle Backend-Integration auf der Grundlage von Geschäftsregeln ermöglicht, die sowohl von Programmierern als auch von Pay-TV-Anbietern festgelegt werden. Dies führt zu einer kürzeren Markteinführungszeit für alle Beteiligten, einer sichereren Umgebung, die Betrug minimiert, und einem besseren Benutzererlebnis mit mehr TV-Inhalten, die über mehrere Plattformen zugänglich sind.
+Die Adobe Pass-Authentifizierung erweckt TV Everywhere zum Leben, indem sie das Recht eines Nutzers auf Inhalte sicher und effizient verifiziert. Es handelt sich dabei um einen gehosteten Dienst, der eine schnelle Backend-Integration auf der Grundlage von Geschäftsregeln ermöglicht, die sowohl von Programmierern als auch von Pay-TV-Anbietern festgelegt werden. Dies führt zu einer kürzeren Markteinführungszeit für alle Beteiligten, einer sichereren Umgebung, die Betrug minimiert, und einem besseren Benutzererlebnis mit mehr TV-Inhalten, die über mehrere Plattformen zugänglich sind.
 
 **Wie wird die Adobe Pass-Authentifizierung bereitgestellt?**
 

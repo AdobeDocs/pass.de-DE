@@ -15,9 +15,9 @@ ht-degree: 0%
 >
 >Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-## Übersicht {#mvpd-authz-overview}
+## Überblick {#mvpd-authz-overview}
 
-Die Autorisierung (AuthZ) erfolgt über eine Backchannel-Kommunikation (Server-zu-Server) zwischen einem Adobe-gehosteten Backend-Server und dem MVPD AuthZ-Endpunkt.
+Die Autorisierung (AuthZ) erfolgt über eine Back-Channel-Kommunikation (Server-zu-Server) zwischen einem in Adobe gehosteten Backend-Server und dem MVPD AuthZ-Endpunkt.
 
 Bei AuthZ-Anfragen sollte der Autorisierungsendpunkt mindestens die folgenden Parameter verarbeiten können:
 
@@ -40,7 +40,7 @@ Eine AuthZ-Anfrage muss Folgendes enthalten: ein Subjekt, in dessen Namen die An
 
 
 
-Der SP muss zu diesem Zeitpunkt eine XACML Authorization DecisionQuery vorbereiten und sie (über die HTTP-POST) für den IdP an den (zuvor vereinbarten) Policy Decision Point (PDP) senden. Nachfolgend finden Sie ein Beispiel für eine einfache XACML-Anfrage (siehe XACML-Kernspezifikation):
+Der SP muss zu diesem Zeitpunkt eine XACML Authorization DecisionQuery vorbereiten und sie (über HTTP POST) für den IdP an den (zuvor vereinbarten) Policy Decision Point (PDP) senden. Nachfolgend finden Sie ein Beispiel für eine einfache XACML-Anfrage (siehe XACML-Kernspezifikation):
 
 ```XML
 POST https://authz.site.com/XACML_endpoint

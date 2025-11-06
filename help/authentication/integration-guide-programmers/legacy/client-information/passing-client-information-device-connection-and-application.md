@@ -4,7 +4,7 @@ description: Übergeben von Client-Informationen (Gerät, Verbindung und Anwendu
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1666'
+source-wordcount: '1665'
 ht-degree: 1%
 
 ---
@@ -30,7 +30,7 @@ Die Bereitstellung von Kundeninformationen bietet folgende Vorteile:
 * Die Möglichkeit, Geschäftsmetriken mithilfe der Berechtigungs-Service-Überwachung (ESM) in aufgeschlüsselten Berichten über verschiedene Gerätetypen hinweg ordnungsgemäß zu aggregieren.
 * Entsperrt die Möglichkeit, verschiedene Geschäftsregeln ordnungsgemäß anzuwenden (z. B. Beeinträchtigung) bei bestimmten Gerätetypen.
 
-## Übersicht {#pass-client-info-overview}
+## Überblick {#pass-client-info-overview}
 
 Die Client-Informationen bestehen aus:
 
@@ -116,7 +116,7 @@ Die AccessEnabler iOS/tvOS SDK unterstützt **Überschreiben des gesamten** Clie
 
 Die `AccessEnabler` Android/FireOS-SDK erstellt standardmäßig ein JSON-Objekt mit Client-Informationen, das an die Adobe Pass-Authentifizierungsdienste übergeben wird, sofern es nicht überschrieben wird.
 
-Die `AccessEnabler` Android/FireOS-SDK unterstützt **Überschreiben des gesamten** Client-Informations-JSON-Objekts durch den `device_info`-Parameter [setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)s/[setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption).
+Die `AccessEnabler` Android/FireOS-SDK unterstützt **Überschreiben des gesamten** Client-Informations-JSON-Objekts durch den [-Parameter ](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)setOptions[s/](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)setOptions`device_info`.
 
 >[!NOTE]
 >

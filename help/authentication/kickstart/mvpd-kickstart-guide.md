@@ -2,7 +2,7 @@
 title: Schnellstartanleitung für MVPD
 description: Schnellstartanleitung für MVPD
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
 workflow-type: tm+mt
 source-wordcount: '934'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Adobe bietet eine Reihe von Ressourcen, die Ihnen bei der Integration mit der Ad
 
 Der Einrichtungsprozess umfasst unter anderem die folgenden Schritte:
 
-Integrationsprozess für die ![Adobe®-Pass-Authentifizierung](/help/authentication/assets/mvpd-int-lifecycle.png)
+Integrationsprozess für die ![Adobe®-Pass-Authentifizierung](../assets/mvpd-int-lifecycle.png)
 
 Integrationsprozess für die *Adobe®-Pass-Authentifizierung*
 
@@ -135,9 +135,9 @@ Das Adobe Pass-Authentifizierungsteam steht zur Verfügung, um alle Fragen oder 
 
 ## Zugriff auf die Dokumentation {#access-documentation}
 
-**Adobe bietet** Zugriff auf unsere öffentliche Dokumentation über [Adobe Experience League](https://experienceleague.adobe.com/de/docs/pass/authentication/home).
+**Adobe bietet** Zugriff auf unsere öffentliche Dokumentation über [Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home).
 
-Das Adobe Pass-Authentifizierungsteam bietet unter dem Abschnitt [Integrationshandbuch für MVPDs“ eine umfassende Dokumentation &#x200B;](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md) verfügbaren Funktionen und Workflows. Links zu detaillierten Informationen zu den einzelnen Themen finden Sie im Inhaltsverzeichnis unter diesem Abschnitt .
+Das Adobe Pass-Authentifizierungsteam bietet unter dem Abschnitt [Integrationshandbuch für MVPDs“ eine umfassende Dokumentation ](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md) verfügbaren Funktionen und Workflows. Links zu detaillierten Informationen zu den einzelnen Themen finden Sie im Inhaltsverzeichnis unter diesem Abschnitt .
 
 ## Zugriff auf das Test-Tool {#access-testing-tool}
 

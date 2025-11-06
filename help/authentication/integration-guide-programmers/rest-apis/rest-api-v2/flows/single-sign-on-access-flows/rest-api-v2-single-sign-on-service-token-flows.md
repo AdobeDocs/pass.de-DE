@@ -2,7 +2,7 @@
 title: Single Sign-On - Service-Token - Flüsse
 description: REST API v2 - Single Sign-On - Service-Token - Flüsse
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '1857'
 ht-degree: 0%
@@ -60,7 +60,7 @@ Stellen Sie vor dem Ausführen des Authentifizierungsflusses über Single Sign-o
 
 Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch Single Sign-on mithilfe eines Service-Tokens zu implementieren, wie im folgenden Diagramm dargestellt.
 
-![Authentifizierung über Single Sign-on mithilfe des Service-Tokens durchführen](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-service-token-flow.png)
+![Authentifizierung über Single Sign-on mithilfe des Service-Tokens durchführen](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-service-token-flow.png)
 
 *Authentifizierung über Single Sign-on mithilfe des Service-Tokens durchführen*
 
@@ -74,7 +74,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)Dokumentation zu „Authentifizierungssitzung erstellen“:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)Dokumentation zu „Authentifizierungssitzung erstellen“:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd`, `domainName` und `redirectUrl`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
@@ -92,7 +92,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)Dokumentation zu „Authentifizierungssitzung erstellen“.
+   > Weitere Informationen zu den [ in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)Dokumentation zu „Authentifizierungssitzung erstellen“.
    >
    > <br/>
    > 
@@ -118,7 +118,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)Dokumentation zum Abrufen von Profilen für bestimmten Code:
+   > Weitere Informationen zu folgenden [ finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)Dokumentation zum Abrufen von Profilen für bestimmten Code:
    > 
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `code`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
@@ -134,7 +134,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [&#x200B; in einer Profilantwort bereitgestellten Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)Dokumentation zum Abrufen von Profilen für bestimmten Code.
+   > Weitere Informationen zu [ in einer Profilantwort bereitgestellten Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)Dokumentation zum Abrufen von Profilen für bestimmten Code.
    >
    > <br/>
    > 
@@ -166,7 +166,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)Dokumentation zum Abrufen von Profilen:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)Dokumentation zum Abrufen von Profilen:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
@@ -186,7 +186,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss durch S
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Profilantwort bereitgestellten Informationen finden &#x200B;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) in der API-Dokumentation zum Abrufen von Profilen .
+   > Weitere Informationen zu den [ in einer Profilantwort bereitgestellten Informationen finden ](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) in der API-Dokumentation zum Abrufen von Profilen .
    > 
    > <br/>
    > 
@@ -230,7 +230,7 @@ Stellen Sie vor dem Ausführen des Autorisierungsflusses über Single Sign-on mi
 
 Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss durch Single Sign-on mithilfe eines Service-Tokens zu implementieren, wie im folgenden Diagramm dargestellt.
 
-![Abrufen von Autorisierungsentscheidungen über Single Sign-on mithilfe des Service-Tokens](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-service-token-flow.png)
+![Abrufen von Autorisierungsentscheidungen über Single Sign-on mithilfe des Service-Tokens](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-service-token-flow.png)
 
 *Abrufen von Autorisierungsentscheidungen über Single Sign-on mithilfe des Service-Tokens*
 
@@ -244,7 +244,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss durch Singl
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -266,7 +266,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss durch Singl
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
    > 
    > <br/>
    > 
@@ -285,7 +285,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss durch Singl
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
    > 
    > <br/>
    > 

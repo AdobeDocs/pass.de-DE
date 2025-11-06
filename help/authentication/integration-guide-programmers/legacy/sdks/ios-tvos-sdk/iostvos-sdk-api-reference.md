@@ -4,7 +4,7 @@ description: iOS/tvOS-API-Referenz
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
 source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '6942'
+source-wordcount: '6935'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ Informationen zum Ablauf der Authentifizierungsberechtigungen mithilfe dieser AP
 
 >[!NOTE]
 >
->Adobe empfiehlt, nur die Adobe Pass-Authentifizierungs-APIs *Public* zu verwenden:
+>Adobe empfiehlt, nur die „öffentlichen“ APIs *Adobe Pass-* zu verwenden:
 >
 >* Öffentliche APIs sind für alle unterstützten Clienttypen verfügbar und wurden vollständig getestet. Für jede öffentliche Funktion stellen wir sicher, dass jeder Client-Typ über eine entsprechende Version der zugehörigen Methode(n) verfügt.
 >* Öffentliche APIs müssen so stabil wie möglich sein, um die Abwärtskompatibilität zu unterstützen und sicherzustellen, dass Partnerintegrationen nicht beschädigt werden. Für nicht-öffentliche APIs behalten wir uns jedoch das Recht vor, ihre Signatur in Zukunft zu ändern. Wenn Sie auf einen bestimmten Fluss stoßen, der nicht durch eine Kombination der aktuellen öffentlichen Adobe Pass-Authentifizierungs-API-Aufrufe unterstützt werden kann, sollten Sie uns dies mitteilen. Unter Berücksichtigung Ihrer Anforderungen können wir die öffentlichen APIs ändern und eine stabile Lösung für die Zukunft bereitstellen.
@@ -47,7 +47,7 @@ Informationen zum Ablauf der Authentifizierungsberechtigungen mithilfe dieser AP
 
 * [`setOptions:options:`](#setOptions) - Konfiguriert globale SDK-Optionen wie profile oder visitorID.
 
-* [`setRequestor:`](#setReqV3) [`requestorID`](#setReqV3),[`setRequestor:requestorID:serviceProviders:`](#setReqV3) - Legt die Identität des Programmierers fest.
+* [`setRequestor:`](#setReqV3)[`requestorID`](#setReqV3),[`setRequestor:requestorID:serviceProviders:`](#setReqV3) - Legt die Identität des Programmierers fest.
 
 * **[VERALTET]** [`setRequestor:signedRequestorId:`](#setReq),[`setRequestor:signedRequestorId:serviceProviders:`](#setReq) - Legt die Identität des Programmierers fest.
 
@@ -59,7 +59,7 @@ Informationen zum Ablauf der Authentifizierungsberechtigungen mithilfe dieser AP
 
 * [`getAuthentication`](#getAuthN), [`getAuthentication:withData:`](#getAuthN) - Startet den vollständigen Authentifizierungs-Workflow.
 
-* [`getAuthentication:filter`](#getAuthN_filter),[`getAuthentication:withData:`](#getAuthN) [andFilter](#getAuthN_filter) - Startet den vollständigen Authentifizierungs-Workflow.
+* [`getAuthentication:filter`](#getAuthN_filter),[`getAuthentication:withData:`](#getAuthN)[andFilter](#getAuthN_filter) - Startet den vollständigen Authentifizierungs-Workflow.
 
 * [`displayProviderDialog:`](#dispProvDialog) : Informiert Ihr Programm, die entsprechenden Benutzeroberflächenelemente zu instanziieren, damit die Benutzenden eine MVPD auswählen können.
 
@@ -123,7 +123,7 @@ Informationen zum Ablauf der Authentifizierungsberechtigungen mithilfe dieser AP
 
 **Parameter:**
 
-* **softwareStatement:** Eine Zeichenfolge, die die Anwendung im Adobe-System identifiziert. Sehen Sie sich an, wie Sie eine Software-Erklärung erhalten.
+* **softwareStatement:** Eine Zeichenfolge, die die Anwendung im System von Adobe identifiziert. Sehen Sie sich an, wie Sie eine Software-Erklärung erhalten.
 
 [Nach oben…](#apis)
 
@@ -165,7 +165,7 @@ Informationen zum Ablauf der Authentifizierungsberechtigungen mithilfe dieser AP
 
 * *options*: Ein NSDictionary, das globale SDK-Optionen enthält. Derzeit sind die folgenden Optionen verfügbar:
    * **applicationProfile** - Kann verwendet werden, um Server-Konfigurationen basierend auf diesem Wert vorzunehmen.
-   * **visitorID** - Der Experience Cloud-ID-Service. Dieser Wert kann später für erweiterte Analyseberichte verwendet werden.
+   * **visitorID** - Der Experience Cloud ID-Service. Dieser Wert kann später für erweiterte Analyseberichte verwendet werden.
    * **handleSVC** - Boolescher Wert, der angibt, ob der Programmierer die SFSafariViewControllers verarbeiten wird. Weitere Informationen finden Sie [SFSafariViewController-Unterstützung auf iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md).
       * Bei Festlegung auf **false** stellt die SDK dem Endbenutzer automatisch einen SFSafariViewController bereit. Die SDK navigiert außerdem zur MVPDs-Anmeldeseiten-URL.
       * Wenn dies auf **true“ festgelegt ist** stellt **SDK dem Endbenutzer NOT** automatisch einen SFSafariViewController bereit. Die SDK führt weitere Trigger **navigieren(toUrl:{url}, useSVC:YES)**.
@@ -182,7 +182,7 @@ Informationen zum Ablauf der Authentifizierungsberechtigungen mithilfe dieser AP
 
 Die Antwort des Servers enthält eine Liste der MVPDs zusammen mit Konfigurationsinformationen, die an die Identität des Programmierers angehängt sind. Die Server-Antwort wird intern vom AccessEnabler-Code verwendet. Nur der Status des Vorgangs (d. h. ERFOLG/FEHLSCHLAGEN) wird Ihrer Anwendung über den `setRequestorComplete:`-Callback angezeigt.
 
-Wenn der `urls` nicht verwendet wird, richtet sich der resultierende Netzwerkaufruf an die standardmäßige Service-Provider-URL: die Adobe-RELEASE-/Produktionsumgebung.
+Wenn der `urls` nicht verwendet wird, zielt der resultierende Netzwerkaufruf auf die standardmäßige Service Provider-URL ab: die Adobe RELEASE-/Produktionsumgebung.
 
 
 Wenn ein Wert für den `urls`-Parameter angegeben wird, zielt der resultierende Netzwerkaufruf auf alle im `urls`-Parameter angegebenen URLs ab. Alle Konfigurationsanfragen werden gleichzeitig in separaten Threads ausgelöst. Bei der Kompilierung der Liste der MVPDs hat die erste Antwort Vorrang. Für jede MVPD in der Liste speichert AccessEnabler die URL des zugehörigen Dienstleisters. Alle nachfolgenden Berechtigungsanfragen werden an die URL weitergeleitet, die mit dem Dienstleister verknüpft ist, der während der Konfigurationsphase mit dem Ziel-MVPD gepaart wurde.
@@ -203,8 +203,8 @@ Wenn ein Wert für den `urls`-Parameter angegeben wird, zielt der resultierende 
 
 **Parameter:**
 
-* *RequestorID*: Die eindeutige ID, die dem Programmierer zugeordnet ist. Übergeben Sie bei der ersten Registrierung beim Adobe Pass-Authentifizierungs-Service die eindeutige ID, die Sie per Adobe Ihrer Site zugewiesen haben.
-* *urls*: Optionaler Parameter; standardmäßig wird der Adobe-Dienstleister verwendet (http://sp.auth.adobe.com/). Mit diesem Array können Sie Endpunkte für Authentifizierungs- und Autorisierungsdienste angeben, die von Adobe bereitgestellt werden (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Damit können Sie mehrere Instanzen des Authentifizierungs-Service von Adobe Pass angeben. Dabei besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt.
+* *RequestorID*: Die eindeutige ID, die dem Programmierer zugeordnet ist. Übergeben Sie die eindeutige ID, die Adobe Ihrer Site zugewiesen hat, wenn Sie sich zum ersten Mal beim Adobe Pass-Authentifizierungs-Service registrieren.
+* *urls*: Optionaler Parameter; standardmäßig wird der Adobe-Dienstleister verwendet (http://sp.auth.adobe.com/). Mit diesem Array können Sie Endpunkte für von Adobe bereitgestellte Authentifizierungs- und Autorisierungsdienste angeben (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Damit können Sie mehrere Instanzen des Authentifizierungs-Service von Adobe Pass angeben. Dabei besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt.
 
 >[!NOTE]
 >
@@ -224,7 +224,7 @@ Wenn ein Wert für den `urls`-Parameter angegeben wird, zielt der resultierende 
 
 Die Antwort des Servers enthält eine Liste der MVPDs zusammen mit Konfigurationsinformationen, die an die Identität des Programmierers angehängt sind. Die Server-Antwort wird intern vom AccessEnabler-Code verwendet. Nur der Status des Vorgangs (d. h. ERFOLG/FEHLSCHLAGEN) wird Ihrer Anwendung über den `setRequestorComplete:`-Callback angezeigt.
 
-Wenn der `urls` nicht verwendet wird, richtet sich der resultierende Netzwerkaufruf an die standardmäßige Service-Provider-URL: die Adobe-RELEASE-/Produktionsumgebung.
+Wenn der `urls` nicht verwendet wird, zielt der resultierende Netzwerkaufruf auf die standardmäßige Service Provider-URL ab: die Adobe RELEASE-/Produktionsumgebung.
 
 Wenn ein Wert für den `urls`-Parameter angegeben wird, zielt der resultierende Netzwerkaufruf auf alle im `urls`-Parameter angegebenen URLs ab. Alle Konfigurationsanfragen werden gleichzeitig in separaten Threads ausgelöst. Bei der Kompilierung der Liste der MVPDs hat die erste Antwort Vorrang. Für jede MVPD in der Liste speichert AccessEnabler die URL des zugehörigen Dienstleisters. Alle nachfolgenden Berechtigungsanfragen werden an die URL weitergeleitet, die mit dem Dienstleister verknüpft ist, der während der Konfigurationsphase mit dem Ziel-MVPD gepaart wurde.
 
@@ -242,9 +242,9 @@ Wenn ein Wert für den `urls`-Parameter angegeben wird, zielt der resultierende 
 
 **Parameter:**
 
-* *RequestorID*: Die eindeutige ID, die dem Programmierer zugeordnet ist. Übergeben Sie die eindeutige ID, die von Adobe an Ihre Site zugewiesen wurde, wenn Sie sich zum ersten Mal beim Adobe Pass-Authentifizierungsdienst registriert haben.
+* *RequestorID*: Die eindeutige ID, die dem Programmierer zugeordnet ist. Übergeben Sie die eindeutige ID, die Adobe Ihrer Site zugewiesen hat, wenn Sie sich zum ersten Mal beim Adobe Pass-Authentifizierungs-Service registriert haben.
 * *signedRequestorID*: **Dieser Parameter ist in iOS AccessEnabler der Versionen 1.2 und höher vorhanden.** Eine Kopie der Anforderer-ID , die mit Ihrem privaten Schlüssel digital signiert ist. <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
-* *urls*: Optionaler Parameter; standardmäßig wird der Adobe-Dienstleister verwendet (http://sp.auth.adobe.com/). Mit diesem Array können Sie Endpunkte für Authentifizierungs- und Autorisierungsdienste angeben, die von Adobe bereitgestellt werden (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Damit können Sie mehrere Instanzen des Authentifizierungs-Service von Adobe Pass angeben. Dabei besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt.
+* *urls*: Optionaler Parameter; standardmäßig wird der Adobe-Dienstleister verwendet (http://sp.auth.adobe.com/). Mit diesem Array können Sie Endpunkte für von Adobe bereitgestellte Authentifizierungs- und Autorisierungsdienste angeben (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Damit können Sie mehrere Instanzen des Authentifizierungs-Service von Adobe Pass angeben. Dabei besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt.
 
 **Hinweise:** Wird die Bibliothek ohne den Parameter &quot;`serviceProviders`&quot; aufgerufen, ruft sie die Konfiguration vom standardmäßigen Service Provider ab (d. h. `https://sp.auth.adobe.com` für das Produktionsprofil oder `https://sp.auth-staging.adobe.com` für das Staging-Profil). Wenn der `serviceProviders` angegeben wird, muss es sich um ein Array von URLs handeln. Die Konfigurationsinformationen werden von allen angegebenen Endpunkten abgerufen und zusammengeführt. Wenn doppelte Informationen in verschiedenen Antworten des Dienstleisters vorhanden sind, wird der Konflikt zugunsten des am schnellsten reagierenden Servers gelöst (d. h., der Server mit der kürzesten Antwortzeit hat Vorrang).
 
@@ -261,7 +261,7 @@ Wenn ein Wert für den `urls`-Parameter angegeben wird, zielt der resultierende 
 
 Die Antwort des Servers enthält eine Liste der MVPDs zusammen mit Konfigurationsinformationen, die an die Identität des Programmierers angehängt sind. Die Server-Antwort wird intern vom AccessEnabler-Code verwendet. Nur der Status des Vorgangs (d. h. ERFOLG/FEHLSCHLAGEN) wird Ihrer Anwendung über den `setRequestorComplete:`-Callback angezeigt.
 
-Wenn der `urls` nicht verwendet wird, richtet sich der resultierende Netzwerkaufruf an die standardmäßige Service-Provider-URL: die Adobe-RELEASE-/Produktionsumgebung.
+Wenn der `urls` nicht verwendet wird, zielt der resultierende Netzwerkaufruf auf die standardmäßige Service Provider-URL ab: die Adobe RELEASE-/Produktionsumgebung.
 
 Wenn ein Wert für den `urls`-Parameter angegeben wird, zielt der resultierende Netzwerkaufruf auf alle im `urls`-Parameter angegebenen URLs ab. Alle Konfigurationsanfragen werden gleichzeitig in separaten Threads ausgelöst. Bei der Kompilierung der Liste der MVPDs hat die erste Antwort Vorrang. Für jede MVPD in der Liste speichert AccessEnabler die URL des zugehörigen Dienstleisters. Alle nachfolgenden Berechtigungsanfragen werden an die URL weitergeleitet, die mit dem Dienstleister verknüpft ist, der während der Konfigurationsphase mit dem Ziel-MVPD gepaart wurde.
 
@@ -313,9 +313,9 @@ Wenn ein Wert für den `urls`-Parameter angegeben wird, zielt der resultierende 
 
 **Parameter:**
 
-* *RequestorID*: Die eindeutige ID, die dem Programmierer zugeordnet ist. Übergeben Sie die eindeutige ID, die von Adobe bei der ersten Verwendung Ihrer Site zugewiesen wurde   beim Adobe Pass-Authentifizierungsdienst registriert.
+* *RequestorID*: Die eindeutige ID, die dem Programmierer zugeordnet ist. Übergeben Sie die von Adobe zugewiesene eindeutige ID an Ihre Site, wenn Sie zum ersten Mal   beim Adobe Pass-Authentifizierungsdienst registriert.
 * *signedRequestorID*: **Dieser Parameter ist in iOS AccessEnabler vorhanden   Versionen 1.2 und höher.** Eine Kopie der Anforderer-ID , die mit Ihrem privaten Schlüssel digital signiert ist. <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
-* *urls*: Optionaler Parameter; standardmäßig der Adobe-Dienstleister   wird verwendet (http://sp.auth.adobe.com/). Mit diesem Array können Sie Endpunkte für Authentifizierungs- und Autorisierungsdienste angeben, die von Adobe bereitgestellt werden (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Damit können Sie mehrere Instanzen des Authentifizierungs-Service von Adobe Pass angeben. Dabei besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt.
+* *urls*: Optionaler Parameter; standardmäßig der Adobe-Dienstleister   wird verwendet (http://sp.auth.adobe.com/). Mit diesem Array können Sie Endpunkte für von Adobe bereitgestellte Authentifizierungs- und Autorisierungsdienste angeben (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Damit können Sie mehrere Instanzen des Authentifizierungs-Service von Adobe Pass angeben. Dabei besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt.
 * secret und publicKey: Der geheime und öffentliche Schlüssel, die zum Signieren der zweiten Bildschirmaufrufe verwendet werden. Weitere Informationen finden Sie in der [Client-losen Dokumentation](#create_dev).
 
 Wenn die Bibliothek ohne den `serviceProviders`-Parameter aufgerufen wird, ruft sie die Konfiguration vom standardmäßigen Service-Provider ab (d. h. `https://sp.auth.adobe.com` für das Produktionsprofil oder https://sp.auth-staging.adobe.com für das Staging-Profil). Wenn der `serviceProviders` angegeben wird, muss es sich um ein Array von URLs handeln. Die Konfigurationsinformationen werden von allen angegebenen Endpunkten abgerufen und zusammengeführt. Wenn doppelte Informationen in verschiedenen Antworten des Dienstleisters vorhanden sind, wird der Konflikt zugunsten des am schnellsten reagierenden Servers gelöst (d. h., der Server mit der kürzesten Antwortzeit hat Vorrang).
@@ -712,11 +712,11 @@ Während der UIWebView/WKWebView` `Controller mehrere Weiterleitungen durchläuf
 
 **file:** AccessEnabler/headers/EntitlementDelegate.h
 
-**Beschreibung:** Callback, der durch den AccessEnabler anstelle des `navigateToUrl:`-Callbacks ausgelöst wird, falls Ihre Anwendung zuvor die manuelle Verarbeitung des Safari View Controller (SVC) über den Aufruf [setOptions(\[„handleSVC“:true“\]) aktiviert hat](#setOptions) und nur für MVPDs, für die Safari View Controller (SVC) erforderlich ist. Für alle anderen MVPDs wird der `navigateToUrl:` Callback aufgerufen. Bitte lesen Sie [SFSafariViewController-Unterstützung auf iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md) für Details, wie Safari View Controller (SVC) verwaltet werden sollte.
+**Beschreibung:** Callback, der durch den AccessEnabler anstelle des `navigateToUrl:`-Callbacks ausgelöst wird, falls Ihre Anwendung zuvor die manuelle Verarbeitung des Safari View Controller (SVC) über den [setOptions(\[„handleSVC“:true&quot;\])](#setOptions)-Aufruf aktiviert hat, und nur für MVPDs, für die Safari View Controller (SVC) erforderlich ist. Für alle anderen MVPDs wird der `navigateToUrl:` Callback aufgerufen. Bitte lesen Sie [SFSafariViewController-Unterstützung auf iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md) für Details, wie Safari View Controller (SVC) verwaltet werden sollte.
 
 Ähnlich wie beim `navigateToUrl:`-Callback wird der `navigateToUrl:useSVC:` vom AccessEnabler ausgelöst, um die Anwendung aufzufordern, einen `SFSafariViewController`-Controller zu instanziieren und die im **`url`** des Callbacks angegebene URL zu laden. Der Callback übergibt den **`url`**, der die URL des Authentifizierungsendpunkts oder die URL des Abmeldeendpunkts darstellt, und den **`useSVC`**, der angibt, dass die Anwendung einen `SFSafariViewController` verwenden muss.
 
-Während der `SFSafariViewController` mehrere Weiterleitungen durchläuft, muss die Anwendung die Aktivität des Controllers überwachen und den Zeitpunkt erkennen, zu dem eine bestimmte, von Ihrer `application's custom scheme` definierte URL geladen wird (z. B. **&#x200B; &#x200B;**`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Beachten Sie, dass diese spezifische benutzerdefinierte URL tatsächlich ungültig ist und nicht vom Controller geladen werden soll. Sie darf von Ihrer Anwendung nur als Signal interpretiert werden, dass der Authentifizierungs- oder Abmeldefluss abgeschlossen ist und dass es sicher ist, den Controller zu schließen. Wenn der Controller diese spezifische benutzerdefinierte URL lädt, muss die Anwendung die `SFSafariViewController` schließen und die Methode &quot;`handleExternalURL:url `&quot; von AccessEnabler aufrufen.
+Während der `SFSafariViewController` mehrere Weiterleitungen durchläuft, muss die Anwendung die Aktivität des Controllers überwachen und den Zeitpunkt erkennen, zu dem eine bestimmte, von Ihrer `application's custom scheme` definierte URL geladen wird (z. B. ** **`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Beachten Sie, dass diese spezifische benutzerdefinierte URL tatsächlich ungültig ist und nicht vom Controller geladen werden soll. Sie darf von Ihrer Anwendung nur als Signal interpretiert werden, dass der Authentifizierungs- oder Abmeldefluss abgeschlossen ist und dass es sicher ist, den Controller zu schließen. Wenn der Controller diese spezifische benutzerdefinierte URL lädt, muss die Anwendung die `SFSafariViewController` schließen und die Methode &quot;`handleExternalURL:url `&quot; von AccessEnabler aufrufen.
 
 **Hinweis:** Bitte beachten Sie, dass im Falle des Authentifizierungsflusses dies ein Punkt ist, an dem der Benutzer die Schaltfläche „Zurück“ drücken kann, was dem Abbruch des Authentifizierungsflusses entspricht. In einem solchen Szenario muss die Anwendung die Methode [setSelectedProvider:](#setSelProv) aufrufen, die **`nil`** als Parameter übergibt und dem AccessEnabler die Möglichkeit gibt, seinen Authentifizierungszustandsrechner zurückzusetzen.
 
@@ -732,19 +732,19 @@ Während der `SFSafariViewController` mehrere Weiterleitungen durchläuft, muss 
 <tbody>
 <tr class="odd">
 <td><pre><code>@optional
-&#x200B;- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
+- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
 </tr>
 </tbody>
 </table>
 
-**Verfügbarkeit:**&#x200B;v 3.2+
+**Verfügbarkeit:**v 3.2+
 
 **Parameter**:
 
 * *url:* die URL, die auf die Anmeldeseite von MVPD verweist
 * *useSVC:*, ob die URL in SFSafariViewController geladen werden soll.
 
-**Ausgelöst von:**&#x200B;[&#x200B; setOptions:](#setOptions) vor [setSelectedProvider:](#setSelProv)
+**Ausgelöst von:**[ setOptions:](#setOptions) vor [setSelectedProvider:](#setSelProv)
 
 [Nach oben…](#apis)
 
@@ -1488,7 +1488,7 @@ Format:
 * (BOOL) enablePlatformServices - Wenn „true“, unterstützt der MVPD SSO-Services wie [Apple SSO](#presentTvDialog).
 * (NSString) boardingStatus - Kann 3 Werte haben:
    * null - MVPD unterstützt Apple SSO nicht.
-   * AUSWAHL - Die MVPD kann in der Apple-Auswahl angezeigt werden, der Authentifizierungsfluss wird jedoch per Adobe ausgeführt.
+   * AUSWAHL - Die MVPD kann in der Apple-Auswahl angezeigt werden, der Authentifizierungsfluss wird jedoch von Adobe ausgeführt.
    * UNTERSTÜTZT - MVPD wird von Apple vollständig unterstützt und verwendet das Apple-SSO-Token.
 
 [Nach oben…](#apis)
@@ -1514,7 +1514,7 @@ Der AccessEnabler-Trigger führt einen zusätzlichen Callback aus, der nicht unb
 
 **Verfügbarkeit:** v1.0+
 
-**Hinweis:** Der Gerätetyp und das Betriebssystem werden mithilfe einer öffentlichen Java-Bibliothek (<http://java.net/projects/user-agent-utils>) und der Benutzeragenten-Zeichenfolge abgeleitet. Beachten Sie, dass diese Informationen nur als grobe Methode zur Unterteilung der Betriebsmetriken in Gerätekategorien bereitgestellt werden, aber dass Adobe keine Verantwortung für falsche Ergebnisse übernehmen kann. Bitte verwenden Sie die neue Funktion entsprechend.
+**Hinweis:** Der Gerätetyp und das Betriebssystem werden mithilfe einer öffentlichen Java-Bibliothek (<http://java.net/projects/user-agent-utils>) und der Benutzeragenten-Zeichenfolge abgeleitet. Beachten Sie, dass diese Informationen nur als grobe Möglichkeit bereitgestellt werden, Betriebsmetriken in Gerätekategorien aufzuschlüsseln, aber dass Adobe keine Verantwortung für falsche Ergebnisse übernehmen kann. Bitte verwenden Sie die neue Funktion entsprechend.
 
 * Mögliche Werte für den Gerätetyp:
    * `computer`

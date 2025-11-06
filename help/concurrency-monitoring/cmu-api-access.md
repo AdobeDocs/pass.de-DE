@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig. Bei Fragen zur Verfügbarkeit wenden Sie sich an Ihren Adobe-Support.
+>Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig. Bei Fragen zur Verfügbarkeit wenden Sie sich an den Adobe-Support.
 
 ## Übersicht über das Zugriffsverfahren {#api-access-procedure-overview}
 
@@ -34,7 +34,6 @@ Gehen Sie wie in den folgenden Abschnitten beschrieben vor, um Zugriff zu erhalt
    3. Wechseln Sie zur *Registered Applications* Registerkarte
    4. Anwendung auswählen
    5. Klicken Sie in der registrierten Anwendungszeile, für die Sie eine Software-Anweisung abrufen möchten, auf Download und speichern Sie sie als Datei auf Ihrem lokalen Computer
-
       <figure>
           <img src="assets/programmer-download-software-statement-button.png"
                alt="SOFTWAREANWEISUNG HERUNTERLADEN">
@@ -47,7 +46,6 @@ Gehen Sie wie in den folgenden Abschnitten beschrieben vor, um Zugriff zu erhalt
 
 3. Zugriffstoken abrufen
    1. Rufen Sie die Anmeldeinformationen des Clients mithilfe der oben abgerufenen Software-Anweisung ab und führen Sie den folgenden Aufruf aus. Auf diese Weise wird ein client_id - client_secret-Paar abgerufen, das zum Abrufen des Zugriffstokens verwendet werden kann.
-
       *Dieser Schritt sollte nicht jedes Mal ausgeführt werden. Dies sollte nur dann erneut erfolgen, wenn die Anmeldeinformationen ablaufen.*
       <figure>
           <img src="assets/dcr_request_1_get_client_credentials.png"
@@ -55,7 +53,6 @@ Gehen Sie wie in den folgenden Abschnitten beschrieben vor, um Zugriff zu erhalt
        </figure>
 
    2. Rufen Sie das Zugriffs-Token mithilfe des folgenden Aufrufs ab. Verwenden Sie dieses Zugriffstoken, um eine beliebige CMU-API aufzurufen, bis das Token abläuft.
-
       *Dieser Schritt sollte nur ausgeführt werden, wenn das zuletzt generierte Token abgelaufen ist.*
       <figure>
           <img src="assets/dcr_get_access_token_call.png"
