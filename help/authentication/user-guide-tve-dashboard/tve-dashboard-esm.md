@@ -25,7 +25,7 @@ Das ESM-Dashboard bietet eine einheitliche Ansicht der Berechtigungs- und Ereign
 - MVPD-Leistung vergleichen
 - Verwendung durch den Kunden pro Anwendung
 
-Weitere Informationen zu ESM-Daten und -Ereignissen finden Sie unter [Übersicht über die Überwachung des Berechtigungsdienstes](https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
+Weitere Informationen zu ESM-Daten und -Ereignissen finden Sie unter [Übersicht über die Überwachung des Berechtigungsdienstes](https://experienceleague.adobe.com/de/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
 
 ## Berichte {#reports}
 
