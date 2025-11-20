@@ -2,7 +2,7 @@
 title: Glossar
 description: Glossar der Begriffe bei der Überwachung gleichzeitiger Nutzung
 exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
 source-wordcount: '762'
 ht-degree: 0%
@@ -28,7 +28,7 @@ ht-degree: 0%
 ## Anwendung {#application-defn}
 
 * Entwickelt vom Mandanten für den Zugriff auf Videoinhalte
-* Macht Entscheidungen über den Zugriff auf Inhalte basierend auf den vom Parallelitätsüberwachungs-Service bereitgestellten Informationen und erzwingt sie (dies gilt für den Fall [Policy Information Point](/help/concurrency-monitoring/policy-info-pt-versionone.md))
+* Macht Entscheidungen über den Zugriff auf Inhalte basierend auf den vom Parallelitätsüberwachungs-Service bereitgestellten Informationen und erzwingt sie (dies gilt für den Fall [Policy Information Point](/help/concurrency-monitoring/technical/policy-info-pt-versionone.md))
 * Sie verfügen über eine eindeutige **Anwendungs-ID**, die von Adobe bereitgestellt wird.
 
 ## Parallelitätsüberwachungs-Service {#cm-service-defn}
@@ -94,7 +94,7 @@ ht-degree: 0%
 
 ## Subjekt {#subj-defn}
 
-* Der Verbraucher der (Video-)Inhalte über das Internet. Wir vermeiden bewusst den Begriff _&#x200B;**Benutzer**&#x200B;_, da die gleichzeitige Überwachung normalerweise MVPD-Konto-IDs betrifft (bei denen mehrere tatsächliche Benutzende denselben Vertrag teilen, z. B. Familienmitglieder eines Haushalts).
+* Der Verbraucher der (Video-)Inhalte über das Internet. Wir vermeiden bewusst den Begriff _**Benutzer**_, da die gleichzeitige Überwachung normalerweise MVPD-Konto-IDs betrifft (bei denen mehrere tatsächliche Benutzende denselben Vertrag teilen, z. B. Familienmitglieder eines Haushalts).
 
 * Für jeden Stream kann das Subjekt mit Attributen erweitert werden, die sich auf die tatsächliche Person beziehen, die den Service verwendet, auf ihr netzwerkgebundenes Gerät und so weiter.
 
