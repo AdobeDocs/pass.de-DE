@@ -2,9 +2,9 @@
 title: Kanäle
 description: Erfahren Sie mehr über Kanäle und ihre verschiedenen Konfigurationen im TVE-Dashboard.
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b4276ee12d57bc061d26afc0a192b799fe1681ae
 workflow-type: tm+mt
-source-wordcount: '1556'
+source-wordcount: '1637'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Auf **Registerkarte** Kanäle“ im linken Bereich wird eine Liste verknüpfter 
 
 * **Anzeigename**: Der Markenname des Kanals, der für kommerzielle Zwecke verwendet wird.
 * **Kanal-ID**: Eine eindeutige Kennung, auch als Anforderer-ID bezeichnet.
-* **Integrationen**: Die Anzahl der Verbindungen, die mit (MVPDs[&#x200B; hergestellt &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#mvpd).
+* **Integrationen**: Die Anzahl der Verbindungen, die mit (MVPDs[ hergestellt ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#mvpd).
 
 ![Liste der vorhandenen Kanäle](../assets/tve-dashboard/new-tve-dashboard/channels/channels-list-view.png)
 
@@ -52,7 +52,7 @@ Führen Sie die Schritte aus, um verschiedene Einstellungen eines bestimmten Kan
 
 >[!IMPORTANT]
 >
-> Weitere Informationen [&#x200B; Aktivieren der Konfigurationsänderungen finden Sie unter &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md) und Push-Änderungen .
+> Weitere Informationen [ Aktivieren der Konfigurationsänderungen finden Sie unter ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md) und Push-Änderungen .
 
 ### Allgemeine Einstellungen {#general-settings}
 
@@ -203,7 +203,7 @@ Gehen Sie wie folgt vor, um eine Domain zu löschen.
 
    *Entfernen Sie die ausgewählte Domain*
 
-1. Wählen **&#x200B;**&#x200B;im Dialogfeld **Domain löschen** die Option „Löschen“ aus.
+1. Wählen **** im Dialogfeld **Domain löschen** die Option „Löschen“ aus.
 
 Eine neue Konfigurationsänderung wurde erstellt und ist für die Server-Aktualisierung bereit. Die Domain wird erst nach dem **(Überprüfung und Push**&#x200B;Änderungen) aus dem Abschnitt [Verfügbare Domains](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md) gelöscht.
 
@@ -268,7 +268,8 @@ Führen Sie die folgenden Schritte aus, um eine Software-Erklärung herunterzula
 
 ### Benutzerdefinierte Schemata {#custom-schemes}
 
-Auf dieser Registerkarte wird eine Liste benutzerdefinierter Schemata angezeigt. Weitere Informationen zur Verwendung benutzerdefinierter Schemata finden Sie unter Registrierung der [iOS-/tvOS-Anwendung](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md).
+Auf dieser Registerkarte wird eine Liste benutzerdefinierter Schemata angezeigt.
+Die benutzerdefinierten Schemata können für Android- und iOS-Geräte verwendet werden.
 
 Sie können die folgenden Änderungen an benutzerdefinierten Schemata vornehmen:
 
@@ -286,7 +287,38 @@ Führen Sie die folgenden Schritte aus, um ein neues benutzerdefiniertes Schema 
 
 Eine neue Konfigurationsänderung wurde erstellt und ist für die Server-Aktualisierung bereit. Um das neue benutzerdefinierte Schema zu verwenden, das im Abschnitt **Benutzerdefinierte Schemata** aufgeführt ist, fahren Sie mit dem Fluss [Überprüfung und Push-Änderungen](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md) fort.
 
-#### Vererbte benutzerdefinierte Schemata {#inherited-custom-schemes}
+#### Wenn Sie keinen Zugriff auf das TVE-Dashboard von Adobe haben:
+
+Senden Sie ein Ticket an <tve-support@adobe.com>. Bitte geben Sie die Kanal-ID an. Ein Mitarbeiter unseres Supportteams wird ein benutzerdefiniertes Schema für Sie erstellen.
+
+#### ANDROID {#Android}
+
+1. Benutzerdefiniertes Schema - Das im TVE-Dashboard erstellte benutzerdefinierte Schema kann für Android-Geräteanwendungen verwendet werden.
+
+1. Fügen Sie in der Ressourcendatei Ihres Programms `strings.xml` folgenden Code hinzu:
+
+```XML
+       <string name="software_statement">softwarestatement value</string>
+       <string name="redirect_uri">adbe.TTIFAaWuR-CmxXv1Di8PlQ://</string>
+```
+
+#### iOS {#iOS}
+
+Benutzerdefiniertes Schema kann in der `info.plist` Ihres Programms verwendet werden. Im folgenden Beispiel müssen Sie die im TVE-Dashboard generierte URL hinzufügen:
+
+```plist
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>adbe.u-XFXJeTSDuJiIQs0HVRAg</string> // replace this with your custom scheme
+            </array>
+        </dict>
+    </array>
+```
+
+### Vererbte benutzerdefinierte Schemata {#inherited-custom-schemes}
 
 Medienunternehmen definieren diese benutzerdefinierten Schemata auf ihrer eigenen Ebene. Alle Kanäle, die demselben Medienunternehmen zugeordnet sind, können diese benutzerdefinierten Schemata verwenden.
 
