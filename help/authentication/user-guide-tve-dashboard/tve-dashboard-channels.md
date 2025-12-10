@@ -21,7 +21,7 @@ Auf **Registerkarte** Kanäle“ im linken Bereich wird eine Liste verknüpfter 
 
 * **Anzeigename**: Der Markenname des Kanals, der für kommerzielle Zwecke verwendet wird.
 * **Kanal-ID**: Eine eindeutige Kennung, auch als Anforderer-ID bezeichnet.
-* **Integrationen**: Die Anzahl der Verbindungen, die mit (MVPDs[ hergestellt ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#mvpd).
+* **Integrationen**: Die Anzahl der Verbindungen, die mit (MVPDs[&#x200B; hergestellt &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#mvpd).
 
 ![Liste der vorhandenen Kanäle](../assets/tve-dashboard/new-tve-dashboard/channels/channels-list-view.png)
 
@@ -52,7 +52,7 @@ Führen Sie die Schritte aus, um verschiedene Einstellungen eines bestimmten Kan
 
 >[!IMPORTANT]
 >
-> Weitere Informationen [ Aktivieren der Konfigurationsänderungen finden Sie unter ](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md) und Push-Änderungen .
+> Weitere Informationen [&#x200B; Aktivieren der Konfigurationsänderungen finden Sie unter &#x200B;](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md) und Push-Änderungen .
 
 ### Allgemeine Einstellungen {#general-settings}
 
@@ -203,7 +203,7 @@ Gehen Sie wie folgt vor, um eine Domain zu löschen.
 
    *Entfernen Sie die ausgewählte Domain*
 
-1. Wählen **** im Dialogfeld **Domain löschen** die Option „Löschen“ aus.
+1. Wählen **&#x200B;**&#x200B;im Dialogfeld **Domain löschen** die Option „Löschen“ aus.
 
 Eine neue Konfigurationsänderung wurde erstellt und ist für die Server-Aktualisierung bereit. Die Domain wird erst nach dem **(Überprüfung und Push**&#x200B;Änderungen) aus dem Abschnitt [Verfügbare Domains](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md) gelöscht.
 
