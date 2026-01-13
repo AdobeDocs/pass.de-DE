@@ -2,9 +2,9 @@
 title: Header - AP-Partner-Framework-Status
 description: REST API v2 - Kopfzeile - AP-Partner-Framework-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: 5c912bbbe97fff65d38dbade32cd4554ad8c2fac
+source-git-commit: 22529618db679f7dbfb493906e1aeb4a0443a40c
 workflow-type: tm+mt
-source-wordcount: '404'
+source-wordcount: '415'
 ht-degree: 0%
 
 ---
@@ -70,8 +70,8 @@ Der `Base64-encoded` des JSON-Elements, das die folgenden Attribute enthält:
                   <ul>
                      <li><b>granted</b><br/>Der Benutzer hat der Anwendung erlaubt, auf Abonnementinformationen zuzugreifen.</li>
                      <li><b>verweigert</b><br/> Der Benutzer hat der Anwendung den Zugriff auf Abonnementinformationen verweigert.</li>
-                     <li><b>Ausstehend</b><br/> Der Benutzer hat noch nicht ausgewählt, ob die Anwendung auf Abonnementinformationen zugreifen darf.</li>
-                     <li><b>notDetermined</b><br/>Die Anwendung darf nicht auf Abonnementinformationen zugreifen.</li>
+                     <li><b>Eingeschränkt</b><br/>Die Anwendung darf nicht auf Abonnementinformationen zugreifen.</li>
+                     <li><b>notDetermined</b><br/>Der Benutzer hat nicht ausgewählt, ob der Anwendung der Zugriff auf Abonnementinformationen erlaubt werden soll.</li>
                   </ul>
                </td>
             </tr>
