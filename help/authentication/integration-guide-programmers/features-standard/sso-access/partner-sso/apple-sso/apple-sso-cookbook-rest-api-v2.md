@@ -2,9 +2,9 @@
 title: Apple SSO-Cookbook (REST API v2)
 description: Apple SSO-Cookbook (REST API v2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: 63ffde4a32f003d7232d2c79ed6878ca59748f74
 workflow-type: tm+mt
-source-wordcount: '3609'
+source-wordcount: '3857'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Bevor Sie mit der einmaligen Anmeldung für Apple mithilfe von Partnerflüssen f
 
 * Die Streaming-Anwendung muss Zugriff auf die auf Geräteebene gespeicherten Abonnementinformationen des Benutzers anfordern, für die der Benutzer der Anwendung die Berechtigung zum Fortfahren erteilen muss, ähnlich wie das Gewähren von Zugriff auf die Kamera oder das Mikrofon des Geräts. Diese Berechtigung muss pro Anwendung über das Apple-[Video-Abonnementkonto-Framework](https://developer.apple.com/documentation/videosubscriberaccount) angefordert werden und das Gerät speichert die Benutzerauswahl.
 
-  Wir empfehlen, Benutzern, die sich weigern, Berechtigungen für den Zugriff auf Abonnementinformationen zu erteilen, einen Anreiz zu bieten, indem sie die Vorteile des Apple Single Sign-on-Benutzererlebnisses erläutern. Sie sollten jedoch beachten, dass die Benutzenden ihre Entscheidung ändern können, indem sie zu den Anwendungseinstellungen gehen (Zugriff auf TV-Anbieter) oder auf iOS und iPadOS oder *`Settings -> TV Provider`* auf tvOS *`Settings -> Accounts -> TV Provider`*.
+  Wir empfehlen, Benutzern, die sich weigern, Berechtigungen für den Zugriff auf Abonnementinformationen zu erteilen, einen Anreiz zu bieten, indem sie die Vorteile des Apple Single Sign-on-Benutzererlebnisses erläutern. Sie sollten jedoch beachten, dass die Benutzenden ihre Entscheidung ändern können, indem sie zu den Anwendungseinstellungen gehen (Zugriff auf TV-Anbieter) oder auf iOS und iPadOS oder *`Settings -> Accounts -> TV Provider`* auf tvOS *`Settings -> TV Provider`*.
 
   Die Streaming-Anwendung kann die Berechtigung des Benutzers anfordern, wenn die Anwendung in den Vordergrundzustand wechselt, da die Anwendung die Abonnementinformationen des Benutzers jederzeit auf [Zugriffsberechtigung](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) überprüfen kann, bevor eine Benutzerauthentifizierung erforderlich wird.
 
@@ -55,7 +55,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md#request)Dokumentation zum Abrufen von Client-Anmeldeinformationen:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md#request)Dokumentation zum Abrufen von Client-Anmeldeinformationen:
    >
    > * Alle _erforderlichen_ Parameter wie `software_statement`
    > * Alle _erforderlichen_ Kopfzeilen wie `Content-Type`, `X-Device-Info`
@@ -65,7 +65,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Antwort zum Abrufen von Client](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md#success)Anmeldeinformationen finden Sie in der API-Dokumentation.
+   > Weitere Informationen zu den [ in einer Antwort zum Abrufen von Client](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md#success)Anmeldeinformationen finden Sie in der API-Dokumentation.
    >
    > <br/>
    >
@@ -85,7 +85,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#request)Dokumentation zum Abrufen von Zugriffstoken:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#request)Dokumentation zum Abrufen von Zugriffstoken:
    >
    > * Alle _erforderlichen_ Parameter wie `client_id`, `client_secret` und `grant_type`
    > * Alle _erforderlichen_ Kopfzeilen wie `Content-Type`, `X-Device-Info`
@@ -95,7 +95,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Zugriffstoken-Antwort bereitgestellten Informationen finden &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#success) in der API-Dokumentation zum Abrufen von Zugriffstoken .
+   > Weitere Informationen zu den [ in einer Zugriffstoken-Antwort bereitgestellten Informationen finden ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#success) in der API-Dokumentation zum Abrufen von Zugriffstoken .
    >
    > <br/>
    >
@@ -115,11 +115,11 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
 +++B. Authentifizierungsphase überprüfen
 
-1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [&#x200B; entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
+1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [ entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der Dokumentation &#x200B;](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
+   > Weitere Informationen zu folgenden [ finden Sie in der Dokumentation ](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
    >
    > <br/>
    >
@@ -132,6 +132,62 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
    >
    > Die Streaming-Anwendung muss sicherstellen, dass sie einen booleschen Wert angibt, der `false` für die [`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed)-Eigenschaft im `VSAccountMetadataRequest`-Objekt entspricht, um anzugeben, dass der Benutzer in dieser Phase nicht unterbrochen werden kann.
 
+   >[!TIP]
+   >
+   > **<u>Profi-Tipp</u>** Folgen Sie dem Code-Snippet und achten Sie besonders auf die Kommentare.
+
+   ```swift
+   ...
+   let videoSubscriberAccountManager: VSAccountManager = VSAccountManager();
+   
+   videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.prompt: true]) { (accessStatus, error) -> Void in
+            switch (accessStatus) {
+            // The user allows the application to access subscription information.
+            case VSAccountAccessStatus.granted:
+                    // Construct the request for subscriber account information.
+                    let vsaMetadataRequest: VSAccountMetadataRequest = VSAccountMetadataRequest();
+   
+                    // This is actually the SAML Issuer not the channel ID.
+                    vsaMetadataRequest.channelIdentifier = "https://saml.sp.auth.adobe.com";
+   
+                    // This is the subscription account information needed at this step.
+                    vsaMetadataRequest.includeAccountProviderIdentifier = true;
+   
+                    // This is the subscription account information needed at this step.
+                    vsaMetadataRequest.includeAuthenticationExpirationDate = true;
+   
+                    // This is going to make the Video Subscriber Account Framework to refrain from prompting the user with the providers picker at this step. 
+                    vsaMetadataRequest.isInterruptionAllowed = false;
+   
+                    // Submit the request for subscriber account information - accountProviderIdentifier.
+                    videoSubscriberAccountManager.enqueue(vsaMetadataRequest) { vsaMetadata, vsaError in        
+                        if (vsaMetadata != nil && vsaMetadata!.accountProviderIdentifier != nil) {
+                            // The vsaMetadata!.authenticationExpirationDate will contain the expiration date for current authentication session.
+                            // The vsaMetadata!.authenticationExpirationDate should be compared against current date.
+                            ...
+                            // The vsaMetadata!.accountProviderIdentifier will contain the provider identifier as it is known for the platform configuration.
+                            // The vsaMetadata!.accountProviderIdentifier represents the platformMappingId in terms of Adobe Pass Authentication configuration.
+                            ...
+                            // The application must determine the MVPD id property value based on the platformMappingId property value obtained above.
+                            // The application must use the MVPD id further in its communication with Adobe Pass Authentication services.
+                            ...
+                            // Continue with the "Retrieve profiles" step.
+                            ...
+                        } else {
+                            // The user is not authenticated at platform level, continue with the "Retrieve profiles" step.
+                            ...
+                        }
+                    }
+   
+            // The user has not yet made a choice or does not allow the application to access subscription information.
+            default:
+                // Continue with the "Retrieve profiles" step.
+                ...
+            }
+   }
+   ...
+   ```
+
 1. **Partner-Framework-Statusinformationen zurückgeben:** Die Streaming-Anwendung validiert die Antwortdaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
    * Der Benutzerberechtigungs-Zugriffsstatus wird gewährt.
    * Die Kennung der Benutzeranbieter-Zuordnung ist vorhanden und gültig.
@@ -141,7 +197,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md#Request)Dokumentation zum Abrufen von Profilen:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md#Request)Dokumentation zum Abrufen von Profilen:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier` und `AP-Partner-Framework-Status`
@@ -169,7 +225,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md#Request)Dokumentation zum Abrufen der Konfiguration für einen bestimmten Dienstleister:
+   > Weitere Informationen zu folgenden [ finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md#Request)Dokumentation zum Abrufen der Konfiguration für einen bestimmten Dienstleister:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier` und `X-Device-Info`
@@ -179,7 +235,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Konfigurationsantwort bereitgestellten Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md#Response)Dokumentation zum Abrufen der Konfiguration für einen bestimmten Dienstleister.
+   > Weitere Informationen zu den [ in einer Konfigurationsantwort bereitgestellten Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md#Response)Dokumentation zum Abrufen der Konfiguration für einen bestimmten Dienstleister.
    >
    > <br/>
    >
@@ -199,11 +255,11 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
    > * `displayInPlatformPicker`: Gibt an, ob die MVPD in der Apple-Auswahl angezeigt werden kann.
    > * `boardingStatus`: Gibt an, ob MVPD in Apple Single Sign-on integriert ist.
 
-1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [&#x200B; entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
+1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [ entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der Dokumentation &#x200B;](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
+   > Weitere Informationen zu folgenden [ finden Sie in der Dokumentation ](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
    >
    > <br/>
    >
@@ -216,6 +272,102 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
    >
    > Die Streaming-Anwendung muss sicherstellen, dass sie einen booleschen Wert angibt, der `true` für die [`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed)-Eigenschaft im `VSAccountMetadataRequest`-Objekt entspricht, um anzugeben, dass der Benutzer in dieser Phase unterbrochen werden kann, um einen TV-Anbieter auszuwählen.
 
+   >[!TIP]
+   >
+   > **<u>Profi-Tipp</u>** Folgen Sie dem Code-Snippet und achten Sie besonders auf die Kommentare.
+
+   ```swift
+    ...
+    let videoSubscriberAccountManager: VSAccountManager = VSAccountManager();
+   
+    // This must be a class implementing the VSAccountManagerDelegate protocol.
+    let videoSubscriberAccountManagerDelegate: VideoSubscriberAccountManagerDelegate = VideoSubscriberAccountManagerDelegate();
+   
+    videoSubscriberAccountManager.delegate = videoSubscriberAccountManagerDelegate;
+   
+    videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.prompt: true]) { (accessStatus, error) -> Void in
+                switch (accessStatus) {
+                // The user allows the application to access subscription information.
+                case VSAccountAccessStatus.granted:
+                        // Construct the request for subscriber account information.
+                        let vsaMetadataRequest: VSAccountMetadataRequest = VSAccountMetadataRequest();
+   
+                        // This is actually the SAML Issuer not the channel ID.
+                        vsaMetadataRequest.channelIdentifier = "https://saml.sp.auth.adobe.com";
+   
+                        // This is the subscription account information needed at this step.
+                        vsaMetadataRequest.includeAccountProviderIdentifier = true;
+   
+                        // This is the subscription account information needed at this step.
+                        vsaMetadataRequest.includeAuthenticationExpirationDate = true;
+   
+                        // This is going to make the Video Subscriber Account Framework to prompt the user with the providers picker at this step. 
+                        vsaMetadataRequest.isInterruptionAllowed = true;
+   
+                        // This can be computed from the Configuration service response in order to filter the TV providers from the Apple picker.
+                        vsaMetadataRequest.supportedAccountProviderIdentifiers = supportedAccountProviderIdentifiers;
+   
+                        // This can be computed from the Configuration service response in order to sort the TV providers from the Apple picker.
+                        if #available(iOS 11.0, tvOS 11, *) {
+                            vsaMetadataRequest.featuredAccountProviderIdentifiers = featuredAccountProviderIdentifiers;
+                        }
+   
+                        // Submit the request for subscriber account information - accountProviderIdentifier.
+                        videoSubscriberAccountManager.enqueue(vsaMetadataRequest) { vsaMetadata, vsaError in                        
+                            if (vsaMetadata != nil && vsaMetadata!.accountProviderIdentifier != nil) {
+                                // The vsaMetadata!.authenticationExpirationDate will contain the expiration date for current authentication session.
+                                // The vsaMetadata!.authenticationExpirationDate should be compared against current date.
+                                ...
+                                // The vsaMetadata!.accountProviderIdentifier will contain the provider identifier as it is known for the platform configuration.
+                                // The vsaMetadata!.accountProviderIdentifier represents the platformMappingId in terms of Adobe Pass Authentication configuration.
+                                ...
+                                // The application must determine the MVPD id property value based on the platformMappingId property value obtained above.
+                                // The application must use the MVPD id further in its communication with Adobe Pass Authentication services.
+                                ...
+                                // Continue with the "Retrieve partner authentication request" step.
+                                ...
+                            } else {
+                                // The user is not authenticated at platform level.
+                                if (vsaError != nil) {
+                                    // The application can check to see if the user selected a provider which is present in Apple picker, but the provider is not onboarded in platform SSO.
+                                    if let error: NSError = (vsaError! as NSError), error.code == 1, let appleMsoId = error.userInfo["VSErrorInfoKeyUnsupportedProviderIdentifier"] as! String? {
+                                        var mvpd: Mvpd? = nil;
+   
+                                        // The requestor.mvpds must be computed during the "Return configuration" step. 
+                                        for provider in requestor.mvpds {
+                                            if provider.platformMappingId == appleMsoId {
+                                                mvpd = provider;
+                                                break;
+                                            }
+                                        }
+   
+                                        if mvpd != nil {
+                                            // Continue with the "Proceed with basic authentication flow" step, but you can skip prompting the user with your MVPD picker and use the mvpd selection, therefore creating a better UX.
+                                            ...
+                                        } else {
+                                            // Continue with the "Proceed with basic authentication flow" step.
+                                            ...
+                                        }
+                                    } else {
+                                        // Continue with the "Proceed with basic authentication flow" step.
+                                        ...
+                                    }
+                                } else {
+                                    // Continue with the "Proceed with basic authentication flow" step.
+                                    ...
+                                }
+                            }
+                        }
+   
+                // The user has not yet made a choice or does not allow the application to access subscription information.
+                default:
+                    // Continue with the "Proceed with basic authentication flow" step.
+                    ...
+                }
+    }
+    ...
+   ```
+
 1. **Partner-Framework-Statusinformationen zurückgeben:** Die Streaming-Anwendung validiert die Antwortdaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
    * Der Benutzerberechtigungs-Zugriffsstatus wird gewährt.
    * Die Kennung der Benutzeranbieter-Zuordnung ist vorhanden und gültig.
@@ -225,7 +377,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md#Request)Dokumentation zum Abrufen von Partnerauthentifizierungsanfragen:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md#Request)Dokumentation zum Abrufen von Partnerauthentifizierungsanfragen:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `partner`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` und `AP-Partner-Framework-Status`
@@ -243,7 +395,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md#Response)Dokumentation zum Abrufen der Partnerauthentifizierungsanfrage .
+   > Weitere Informationen zu den [ in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md#Response)Dokumentation zum Abrufen der Partnerauthentifizierungsanfrage .
    >
    > <br/>
    >
@@ -297,7 +449,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der Dokumentation &#x200B;](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
+   > Weitere Informationen zu folgenden [ finden Sie in der Dokumentation ](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
    >
    > <br/>
    >
@@ -310,6 +462,72 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
    >
    > Die Streaming-Anwendung muss sicherstellen, dass sie einen booleschen Wert `true` für die [`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed) Eigenschaft im `VSAccountMetadataRequest` angibt, um anzugeben, dass die Benutzerin bzw. der Benutzer unterbrochen werden kann, um sich in dieser Phase beim ausgewählten TV-Anbieter zu authentifizieren.
 
+   >[!TIP]
+   >
+   > **<u>Profi-Tipp</u>** Folgen Sie dem Code-Snippet und achten Sie besonders auf die Kommentare.
+
+   ```swift
+    ...
+    let videoSubscriberAccountManager: VSAccountManager = VSAccountManager();
+   
+    videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.prompt: true]) { (accessStatus, error) -> Void in
+                switch (accessStatus) {
+                // The user allows the application to access subscription information.
+                case VSAccountAccessStatus.granted:
+                        // Construct the request for subscriber account information.
+                        let vsaMetadataRequest: VSAccountMetadataRequest = VSAccountMetadataRequest();
+   
+                        // This is actually the SAML Issuer not the channel ID.
+                        vsaMetadataRequest.channelIdentifier = "https://saml.sp.auth.adobe.com";
+   
+                        // This is going to include subscription account information which should match the provider determined in a previous step.
+                        vsaMetadataRequest.includeAccountProviderIdentifier = true;
+   
+                        // This is going to include subscription account information which should match the provider determined in a previous step.
+                        vsaMetadataRequest.includeAuthenticationExpirationDate = true;
+   
+                        // This is going to make the Video Subscriber Account Framework to refrain from prompting the user with the providers picker at this step. 
+                        vsaMetadataRequest.isInterruptionAllowed = false;
+   
+                        // This are the user metadata fields expected to be available on a successful login and are determined from the Sessions SSO service. Look for the authenticationRequest > attributesNames associated with the provider determined in a previous step.
+                        vsaMetadataRequest.attributeNames = attributesNames;
+   
+                        // This is the authenticationRequest > request field from Sessions SSO service.
+                        vsaMetadataRequest.verificationToken = authenticationRequestPayload;
+   
+                        // Submit the request for subscriber account information.
+                        videoSubscriberAccountManager.enqueue(vsaMetadataRequest) { vsaMetadata, vsaError in
+                            if (vsaMetadata != nil && vsaMetadata!.samlAttributeQueryResponse != nil) {
+                                var samlResponse: String? = vsaMetadata!.samlAttributeQueryResponse!;
+   
+                                // Remove new lines, new tabs and spaces.
+                                samlResponse = samlResponse?.replacingOccurrences(of: "[ \\t]+", with: " ", options: String.CompareOptions.regularExpression);
+                                samlResponse = samlResponse?.components(separatedBy: CharacterSet.newlines).joined(separator: "");
+                                samlResponse = samlResponse?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines);
+   
+                                // Base64 encode.
+                                samlResponse = samlResponse?.data(using: .utf8)?.base64EncodedString(options: []);
+   
+                                // URL encode. Please be aware not to double URL encode it further.
+                                samlResponse = samlResponse?.addingPercentEncoding(withAllowedCharacters: CharacterSet.init(charactersIn: "!*'();:@&=+$,/?%#[]").inverted);
+   
+                                // Continue with the "Create and retrieve profile using partner authentication response" step.
+                                ...
+                            } else {
+                                // Continue with the "Proceed with basic authentication flow" step.
+                                ...
+                            }
+                        }
+   
+                // The user has not yet made a choice or does not allow the application to access subscription information.
+                default:
+                    // Continue with the "Proceed with basic authentication flow" step.
+                    ...
+                }
+    }
+    ...
+   ```
+
 1. **Antwort zur Partnerauthentifizierung zurückgeben:** Die Streaming-Anwendung validiert die Antwortdaten, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
    * Der Benutzerberechtigungs-Zugriffsstatus wird gewährt.
    * Die Kennung der Benutzeranbieter-Zuordnung ist vorhanden und gültig.
@@ -320,7 +538,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der API-Dokumentation &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort:
+   > Weitere Informationen zu folgenden [ finden Sie in der API-Dokumentation ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `partner` und `SAMLResponse`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` und `AP-Partner-Framework-Status`
@@ -338,7 +556,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [&#x200B; in einer Profilantwort enthaltenen Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Response)Dokumentation Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort .
+   > Weitere Informationen zu [ in einer Profilantwort enthaltenen Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Response)Dokumentation Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort .
    >
    > <br/>
    >
@@ -368,7 +586,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
 +++ D. Entscheidungsphase
 
-1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [&#x200B; entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
+1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [ entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
 
    >[!IMPORTANT]
    > 
@@ -376,7 +594,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der Dokumentation &#x200B;](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
+   > Weitere Informationen zu folgenden [ finden Sie in der Dokumentation ](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
    >
    > <br/>
    >
@@ -406,7 +624,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md#request)Dokumentation zum Abrufen von Vorabautorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md#request)Dokumentation zum Abrufen von Vorabautorisierungsentscheidungen mithilfe bestimmter MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -426,7 +644,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md#response)Dokumentation zum Abrufen von Entscheidungen vor der Autorisierung mit bestimmten mvpd.
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md#response)Dokumentation zum Abrufen von Entscheidungen vor der Autorisierung mit bestimmten mvpd.
    >
    > <br/>
    >
@@ -439,7 +657,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
    >
    > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
 
-1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [&#x200B; entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
+1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [ entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
 
    >[!IMPORTANT]
    >
@@ -447,7 +665,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der Dokumentation &#x200B;](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
+   > Weitere Informationen zu folgenden [ finden Sie in der Dokumentation ](https://developer.apple.com/documentation/videosubscriberaccount)Video Subscriber Account Framework):
    >
    > <br/>
    >
@@ -477,7 +695,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md#request)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md#request)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -497,7 +715,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md#response)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md#response)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
    >
    > <br/>
    >
@@ -518,7 +736,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden Sie in [&#x200B; API-Dokumentation &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#request) Initiieren des Abmeldens für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden Sie in [ API-Dokumentation ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#request) Initiieren des Abmeldens für bestimmte MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `redirectUrl`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
@@ -535,7 +753,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#response)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
+   > Weitere Informationen zu den [ in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#response)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
    >
    > <br/>
    >
