@@ -18,7 +18,7 @@ Letzte Aktualisierung: Di 09 Dez 2025 00:00:00 GMT+0000 (Koordinierte Weltzeit)
 
 >[!IMPORTANT]
 >
-> Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements) auf dem Laufenden zu bleiben.
+> Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](https://experienceleague.adobe.com/de/docs/pass/authentication/product-announcements) auf dem Laufenden zu bleiben.
 
 Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme dieser Version beschrieben:
 
