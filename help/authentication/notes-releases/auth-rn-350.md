@@ -1,13 +1,13 @@
 ---
 title: Versionshinweise zur Adobe Pass-Authentifizierung 3.5.0
 description: Erfahren Sie mehr über die neuen Funktionen, Änderungen und bekannten Probleme in dieser Version.
-source-git-commit: 6ff46a124f5f3c78173028ae3efed68d71ee6e41
+exl-id: b196f636-26a5-4974-903e-40b5f8b93a24
+source-git-commit: 1cbddf081fc7d57a187c9701e4ade8593baf8759
 workflow-type: tm+mt
-source-wordcount: '198'
+source-wordcount: '273'
 ht-degree: 0%
 
 ---
-
 
 # Versionshinweise zur Adobe Pass-Authentifizierung 3.5.0
 
@@ -18,7 +18,7 @@ Letzte Aktualisierung: Di 09 Dez 2025 00:00:00 GMT+0000 (Koordinierte Weltzeit)
 
 >[!IMPORTANT]
 >
-> Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](https://experienceleague.adobe.com/de/docs/pass/authentication/product-announcements) auf dem Laufenden zu bleiben.
+> Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements) auf dem Laufenden zu bleiben.
 
 Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme dieser Version beschrieben:
 
@@ -44,3 +44,15 @@ Veröffentlichungsdatum: **12/09/2025 - 12/11/2025**
 * Es wurde ein Problem in der REST-API V2 behoben, bei dem `authenticated_profile_expired` Fehlercode nicht zurückgegeben wurde, wenn authentifizierte Profile abgelaufen waren.
 * Es wurde ein Problem behoben, bei dem die Berechnungen der Autorisierungslatenz und die TTL-Werte vor dem Flug in der REST-API V2 falsch waren.
 * Es wurde ein Problem behoben, bei dem ein inkonsistentes Antwortformat zurückgegeben wurde, wenn das DCR-Token abläuft.
+
+## Wartungs-Update - Februar 2026 {#maintenance-update-february-2026}
+
+Adobe Pass-Authentifizierung: adobe-pass-**3.5.0.5**\
+Veröffentlichungsdatum: **02/24/2026 - 02/26/2026**
+
+Diese Wartungs-Update-Version enthält wichtige Verbesserungen zur Verbesserung der Systemzuverlässigkeit und -sicherheit:
+
+### Verbesserungen
+
+* Verbesserte Handhabung der Authentifizierungsbeeinträchtigung für MVPD-Proxy-Konfigurationen in der REST-API V2, wodurch ein konsistenteres Verhalten bei Unterbrechungen des MVPD-Service sichergestellt wird.
+* Verbesserte URL-Parametervalidierung und Umleitungsverarbeitung zur Stärkung der Sicherheitskontrollen und Verbesserung der allgemeinen Systemintegrität.
