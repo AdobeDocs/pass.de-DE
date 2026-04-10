@@ -2,9 +2,9 @@
 title: Amazon FireOS Native Client-API-Referenz
 description: Amazon FireOS Native Client-API-Referenz
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '3451'
+source-wordcount: '3498'
 ht-degree: 0%
 
 ---
@@ -68,8 +68,7 @@ Die neueste Amazon FireOS AccessEnabler-SDK finden Sie in der <https://tve.zende
 
 | API-Aufruf: Konstruktor |
 | --- |
-| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br> |
-| ```public static AccessEnabler getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) throws AccessEnablerException``` |
+| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br>  <code> public static AccessEnabler getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) throws AccessEnablerException </code> |
 
 **Verfügbarkeit:** v3.0+
 
@@ -159,7 +158,7 @@ Phase fehlgeschlagen
 
 ### setOptions {#fire_setOption}
 
-**Beschreibung:** Konfiguriert globale SDK-Optionen. Als Argument wird ein **Map\&lt;String, String\>** akzeptiert. Die Werte aus der Zuordnung werden zusammen mit jedem Netzwerkaufruf der SDK an den Server übergeben.
+**Beschreibung:** Konfiguriert globale SDK-Optionen. Sie akzeptiert **Map\&lt;String, String\>** als Argument. Die Werte aus der Zuordnung werden zusammen mit jedem Netzwerkaufruf der SDK an den Server übergeben.
 
 Die Werte werden unabhängig vom aktuellen Fluss (Authentifizierung/Autorisierung) an den Server übergeben. Wenn Sie die Werte ändern möchten, können Sie diese Methode jederzeit aufrufen.
 
@@ -260,7 +259,7 @@ Nachdem der Benutzer die gewünschte MVPD ausgewählt hat, muss die Upper-Layer-
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**Verfügbarkeit:**&#x200B;v 1.0+
+**Verfügbarkeit:**v 1.0+
 
 **Parameter:** none
 
@@ -341,7 +340,7 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 
 **Verfügbarkeit:** v1.0+
 
-**&lt;Parameters:** Der `resources` Parameter ist ein Array von Ressourcen, für die die Autorisierung überprüft werden soll. Jedes Element in der Liste sollte eine Zeichenfolge sein, die die Ressourcen-ID darstellt. Die Ressourcen-ID unterliegt denselben Einschränkungen wie die Ressourcen-ID im `getAuthorization()`-Aufruf, d. h. sie sollte ein vereinbarter Wert sein, der zwischen dem Programmierer und dem MVPD oder einem RSS-Medienfragment festgelegt wird.
+**&lt;parameters:** Der `resources` Parameter ist ein Array von Ressourcen, für die die Autorisierung überprüft werden muss. Jedes Element in der Liste sollte eine Zeichenfolge sein, die die Ressourcen-ID darstellt. Die Ressourcen-ID unterliegt denselben Einschränkungen wie die Ressourcen-ID im `getAuthorization()`-Aufruf, d. h. sie sollte ein vereinbarter Wert sein, der zwischen dem Programmierer und dem MVPD oder einem RSS-Medienfragment festgelegt wird.
 
 **Rückruf ausgelöst:** `preauthorizedResources()`
 
@@ -355,7 +354,7 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**Verfügbarkeit:**&#x200B;v 1.0+
+**Verfügbarkeit:**v 1.0+
 
 **Parameter:** Der `resources` ist ein Array von Ressourcen, für die der Benutzer bereits berechtigt ist, sie anzuzeigen.
 
@@ -427,7 +426,7 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**Verfügbarkeit:**&#x200B;v 1.0+
+**Verfügbarkeit:**v 1.0+
 
 **Parameter:**
 

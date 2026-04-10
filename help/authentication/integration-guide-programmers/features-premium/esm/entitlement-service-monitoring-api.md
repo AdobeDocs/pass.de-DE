@@ -2,9 +2,9 @@
 title: Berechtigungs-Service-Überwachungs-API
 description: Berechtigungs-Service-Überwachungs-API
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '2027'
+source-wordcount: '2098'
 ht-degree: 0%
 
 ---
@@ -20,9 +20,9 @@ ht-degree: 0%
 > Stellen Sie vor der Verwendung der Degradation API sicher, dass die folgenden Voraussetzungen erfüllt sind:
 >
 > * Rufen Sie die Client-Anmeldeinformationen ab, wie in der API[Dokumentation zum Abrufen von Client](../../rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)Anmeldeinformationen beschrieben.
-> * Rufen Sie das Zugriffstoken ab, wie in der API[Dokumentation zum Abrufen des Zugriffstokens &#x200B;](../../rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+> * Rufen Sie das Zugriffstoken ab, wie in der API[Dokumentation zum Abrufen des Zugriffstokens ](../../rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 >
-> Weitere Informationen zum Erstellen einer registrierten [&#x200B; und zum Herunterladen der Software-Anweisung finden &#x200B;](../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) in der Dokumentation Übersicht zur Dynamic Client-Registrierung .
+> Weitere Informationen zum Erstellen einer registrierten [ und zum Herunterladen der Software-Anweisung finden ](../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) in der Dokumentation Übersicht zur Dynamic Client-Registrierung .
 
 ## API-Übersicht {#api-overview}
 
@@ -94,9 +94,9 @@ Die folgenden Filteroptionen sind verfügbar:
 
 * **IN** Filter können angegeben werden, indem derselbe Dimensionsnamensparameter mehrmals mit unterschiedlichen Werten hinzugefügt wird: dimension=value1\&amp;dimension=value2
 
-* **Ungleich** Filter müssen &#39;\!&#39; verwenden. nach dem Namen der Dimension erscheint, was zu &#39;\!=&#39; „Operator“: dimension\!=Wert
+* **Ist nicht gleich** müssen Filter das Symbol &quot;\!“ nach dem Dimensionsnamen verwenden, was zu &quot;\!=&quot; „Operator“: Dimension\!=Wert führt
 
-* **NOT IN** Filter erfordern &#39;\!=&#39; Operator muss mehrmals verwendet werden, und zwar einmal für jeden Wert im Satz: dimension\!=Wert1\&amp;Dimension\!=Wert2&amp; …
+* **NOT IN** Filter erfordern, dass der Operator &quot;\!=&quot; mehrmals verwendet wird, und zwar einmal für jeden Wert im Satz: dimension\!=value1\&amp;dimension\!=value2&amp; …
 
 Es gibt auch eine besondere Verwendung für die Dimensionsnamen in der Abfragezeichenfolge: Wenn der Dimensionsname als Abfragezeichenfolgenparameter ohne Wert verwendet wird, wird die API angewiesen, eine Projektion zurückzugeben, die diese Dimension im Bericht enthält.
 
@@ -106,8 +106,8 @@ Es gibt auch eine besondere Verwendung für die Dimensionsnamen in der Abfrageze
 |---|---|
 | /dimension1/dimension2/dimension3?dimension1=value1 | SELECT * from projection WHERE dimension1 = &#39;value1&#39; </br> GROUP BY dimension1, dimension2, dimension3 |
 | /dimension1/dimension2/dimension3?dimension1=value1&amp;dimension1=value2 | SELECT * from projection WHERE dimension1 IN (&#39;value1&#39;, &#39;value2&#39;) </br> GROUP BY dimension1, dimension2, dimension3 |
-| /dimension1/dimension2/dimension3?dimension1!=Wert1 | SELECT * from projection WHERE dimension1 &lt;> &#39;value1&#39; | </br> GRUPPIEREN NACH Dimension1, Dimension2, Dimension3 |
-| /dimension1/dimension2/dimension3?dimension1!=Wert1&amp;Dimension2!=Wert2 | SELECT * from projection WHERE dimension1 NOT IN (&#39;value1&#39;, &#39;value2&#39;) | </br> GRUPPIEREN NACH Dimension1, Dimension2, Dimension3 |
+| /dimension1/dimension2/dimension3?dimension1!=value1 | SELECT * from projection WHERE dimension1 &lt;> &#39;value1&#39; \| </br> GROUP BY dimension1, dimension2, dimension3 |
+| /dimension1/dimension2/dimension3?dimension1!=value1&amp;dimension2!=value2 | SELECT * from projection WHERE dimension1 NOT IN (&#39;value1&#39;, &#39;value2&#39;) \| </br> GROUP BY dimension1, dimension2, dimension3 |
 | Angenommen, es gibt keinen direkten Pfad: /dimension1/dimension3 </br>, aber es gibt einen Pfad: /dimension1/dimension2/dimension3 </br> </br> /dimension1?dimension3 | SELECT * from projection GROUP BY dimension1, dimension3 |
 
 >[!NOTE]

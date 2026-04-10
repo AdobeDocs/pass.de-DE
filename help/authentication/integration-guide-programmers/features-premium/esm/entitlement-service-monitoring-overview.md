@@ -2,9 +2,9 @@
 title: Übersicht über die Überwachung des Berechtigungsdienstes
 description: Übersicht über die Überwachung des Berechtigungsdienstes
 exl-id: ebd5d650-0a32-4583-9045-5156356494e2
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '1303'
+source-wordcount: '1349'
 ht-degree: 0%
 
 ---
@@ -44,8 +44,8 @@ Die ESM-API ist nicht allgemein verfügbar.  Bei Fragen zur Verfügbarkeit wende
 | Auth-Rejected | Anzahl der Autorisierungsversuche, die vom Adobe-Dienstleister als bösartig eingestuft und infolge der Verhinderung von DoS-Angriffen zurückgewiesen wurden |
 | Auth-Latenz | Gesamtzahl der am Endpunkt von MVPD verbrachten Millisekunden |
 | media-token | Anzahl der generierten Short-Media-Token (die der Anzahl der Wiedergabeanfragen entsprechen) |
-| unique-accounts | Anzahl der eindeutigen Benutzer, die im ausgewählten Zeitintervall Berechtigungsaktionen (AuthN/AuthZ) ausgeführt haben. (Diese Metrik wird nur angezeigt, wenn Tageswerte angefordert werden.) </br> Wird für jedes einzelne Rechenzentrum berechnet. Wenn die Dimension „dc“ nicht angefordert wird, wird diese Metrik nicht angezeigt. |
-| unique-sessions | Anzahl der eindeutigen Sitzungen, die innerhalb des ausgewählten Zeitintervalls Authentifizierungsflussaufrufe an den Adobe Pass-Authentifizierungsdienst durchgeführt haben. (Diese Metrik wird nur angezeigt, wenn Tageswerte angefordert werden.) </br> Wird für jedes einzelne Rechenzentrum berechnet. Wenn die Dimension „dc“ nicht angefordert wird, wird diese Metrik nicht angezeigt. |
+| unique-accounts | Anzahl der eindeutigen Benutzer, die im ausgewählten Zeitintervall Berechtigungsaktionen (AuthN/AuthZ) ausgeführt haben. (Diese Metrik wird nur angezeigt, wenn Tageswerte angefordert werden.) </br> Dieser Wert wird für jedes einzelne Rechenzentrum berechnet. Wenn die Dimension „dc“ nicht angefordert wird, wird diese Metrik nicht angezeigt. |
+| unique-sessions | Anzahl der eindeutigen Sitzungen, die innerhalb des ausgewählten Zeitintervalls Authentifizierungsflussaufrufe an den Adobe Pass-Authentifizierungsdienst durchgeführt haben. (Diese Metrik wird nur angezeigt, wenn Tageswerte angefordert werden.) </br> Dieser Wert wird für jedes einzelne Rechenzentrum berechnet. Wenn die Dimension „dc“ nicht angefordert wird, wird diese Metrik nicht angezeigt. |
 | Zählung | Ein einfacher Zähler, der in den ereignisorientierten Berichten verwendet wird |
 
 </br>
@@ -71,7 +71,7 @@ Die ESM-API ist nicht allgemein verfügbar.  Bei Fragen zur Verfügbarkeit wende
 | EAP | Der externe Authentifizierungsanbieter, wenn der Authentifizierungsfluss über ein externes System ausgeführt wird. </br> Die Werte können sein: </br> - Nicht zutreffend - Die Authentifizierung wurde von Adobe Pass Authentication </br> bereitgestellt - Apple - Das externe System, das die Authentifizierung bereitgestellt hat, ist Apple |
 | Betriebssystemfamilie | Auf dem Gerät ausgeführtes Betriebssystem |
 | Browserfamilie | Benutzeragent, der für den Zugriff auf die Adobe Pass-Authentifizierung verwendet wird |
-| CDT | Die Geräteplattform (alternativ), die derzeit für Clientless verwendet wird. </br> Die Werte können sein: </br> - Nicht zutreffend - Das Ereignis stammt nicht von einem Client-losen SDK-</br> - Nicht bekannt - Da der deviceType-Parameter von einer Client-losen API optional ist, gibt es Aufrufe, die keinen Wert enthalten. </br> : jeder andere Wert, der über die Clientless-API gesendet wurde, z. B. xbox, appleTV, roku usw. </br> |
+| CDT | Die Geräteplattform (alternativ), die derzeit für Clientless verwendet wird. </br>  Die Werte können sein: </br> - Nicht zutreffend - Das Ereignis stammt nicht von einem Client-losen SDK-</br> - Nicht bekannt - Da der deviceType-Parameter von einer Client-losen API optional ist, gibt es Aufrufe, die keinen Wert enthalten. </br> : jeder andere Wert, der über die Clientless-API gesendet wurde, z. B. xbox, appleTV, roku usw. </br> |
 | platform-version | Die Version der Client-losen SDK |
 | Betriebssystemtyp | Betriebssystem, das auf dem Gerät ausgeführt wird, alternativ (derzeit nicht verwendet) |
 | browser-version | Version des Benutzeragenten |
@@ -114,7 +114,7 @@ Die ESM-API ist nicht allgemein verfügbar.  Bei Fragen zur Verfügbarkeit wende
 | mvpd | Die mvpd-ID, die zum Ausführen der Berechtigungsanfrage verwendet wird |
 | Requestor-id | Die Anforderer-ID, die zum Ausführen der Berechtigungsanfrage verwendet wird |
 | EAP | Der externe Authentifizierungsanbieter, wenn der Authentifizierungsfluss über ein externes System ausgeführt wird. </br> Die Werte können sein: </br> - Nicht zutreffend - Die Authentifizierung wurde von Adobe Pass Authentication </br> bereitgestellt - Apple - Das externe System, das die Authentifizierung bereitgestellt hat, ist Apple |
-| CDT | Die Geräteplattform (alternativ), die derzeit für Clientless verwendet wird. </br> Die Werte können sein: </br> - Nicht zutreffend - Das Ereignis stammt nicht von einem Client-losen SDK-</br> - Nicht bekannt - Da der deviceType-Parameter von einer Client-losen API optional ist, gibt es Aufrufe, die keinen Wert enthalten. </br> : jeder andere Wert, der über die Clientless-API gesendet wurde, z. B. xbox, appleTV, roku usw. </br> |
+| CDT | Die Geräteplattform (alternativ), die derzeit für Clientless verwendet wird. </br>  Die Werte können sein: </br> - Nicht zutreffend - Das Ereignis stammt nicht von einem Client-losen SDK-</br> - Nicht bekannt - Da der deviceType-Parameter von einer Client-losen API optional ist, gibt es Aufrufe, die keinen Wert enthalten. </br> : jeder andere Wert, der über die Clientless-API gesendet wurde, z. B. xbox, appleTV, roku usw. </br> |
 | sdk-type | Die verwendete Client-SDK (Flash, HTML5, Android nativ, iOS, clientless usw.) |
 | Plattform | Das Gerät hat die Plattform identifiziert. Mögliche Werte: </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> - etc |
 | NSDK | Der verwendete Client-SDK (Android, FireTV, js, iOS, tvOS, Nicht-SDK) |

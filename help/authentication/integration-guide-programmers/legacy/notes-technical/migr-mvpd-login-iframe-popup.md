@@ -2,9 +2,9 @@
 title: Migrieren der MVPD-Anmeldeseite von iFrame zu Popup
 description: Migrieren der MVPD-Anmeldeseite von iFrame zu Popup
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '708'
+source-wordcount: '712'
 ht-degree: 0%
 
 ---
@@ -22,10 +22,12 @@ ht-degree: 0%
 ## Popup im Vergleich zu iFrame {#popup-vs-iframe}
 
 Einige Benutzende haben Probleme mit Drittanbieter-Cookies bei der iFrame-Implementierung einer MVPD-Anmeldeseite festgestellt.
-<!--These issues are described in the tech notes linked below:
+<!--
+These issues are described in the tech notes linked below:
 
 * [Adobe Pass Authentication and Safari login issues](https://tve.helpdocsonline.com/adobe-pass)
-* [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)-->
+* [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)
+-->
 
 Das Adobe Pass-Authentifizierungsteam **empfiehlt die Implementierung des Popup-/neuen Fensters auf der Anmeldeseite** anstelle der iFrame-Version in Firefox und Safari.  Wenn Sie jedoch eine Anmeldeseite für Internet Explorer implementieren, können Probleme mit der Popup-Implementierung auftreten. Die IE-Probleme werden dadurch verursacht, dass die Adobe Pass-Authentifizierung nach der Authentifizierung der Benutzenden mit ihrer MVPD im Popup-Fenster eine Umleitung der übergeordneten Seite erzwingt, die von Internet Explorer als Popup-Blocker angezeigt wird. Das Adobe Pass-Authentifizierungsteam **empfiehlt die Implementierung der iFrame-Anmeldung für Internet Explorer**.
 

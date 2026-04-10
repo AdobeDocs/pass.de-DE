@@ -2,9 +2,9 @@
 title: JavaScript SDK API-Referenz
 description: JavaScript SDK API-Referenz
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '2883'
+source-wordcount: '2902'
 ht-degree: 0%
 
 ---
@@ -220,7 +220,7 @@ Diese API-Variante ist ab Version 4.0 von JS SDK verfügbar
 
 </br>
 
-[Zurück zum Anfang](#top)
+[Nach oben](#top)
 </br>
 
 ## getMetadata(Key) {#getMetadata}
@@ -309,7 +309,7 @@ Beispiel:
 **Beschreibung:** Rufen Sie diese Funktion auf, wenn Benutzende eine MVPD aus Ihrer Anbieterauswahl-Benutzeroberfläche ausgewählt haben, um die Anbieterauswahl an den Access Enabler zu senden, oder rufen Sie diese Funktion mit einem Null-Parameter auf, falls Benutzende Ihre Anbieterauswahl-Benutzeroberfläche verworfen haben, ohne einen Anbieter auszuwählen.
 
 **Callbacks
-trigger:**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+trigger:**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +415,7 @@ Sie müssen diese Callbacks implementieren, um die Antworten auf Ihre asynchrone
 
 **Beschreibung:** Implementieren Sie diesen Callback, wenn der Benutzer einen MVPD ausgewählt hat, für den ein iFrame erforderlich ist, in dem die Benutzeroberfläche für die Authentifizierungs-Anmeldeseite angezeigt werden soll.
 
-**Ausgelöst durch:**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Ausgelöst durch:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Zurück zum Anfang](#top)
 
@@ -568,7 +568,7 @@ Die Daten sind für jeden Ereignistyp spezifisch:
 
 - *key (Zeichenfolge)*: Der Schlüssel der Metadaten, für die die Anfrage gestellt wurde.
 - *encrypted (Boolescher Wert)*: Ein Flag, das angibt, ob der „Wert“ verschlüsselt ist oder nicht. Wenn dies „true“ ist, ist „value“ tatsächlich eine JSON-Web-verschlüsselte Darstellung des tatsächlichen Werts.
-- *data (JSON-Objekt)*: Ein JSON-Objekt mit der Darstellung der Metadaten. Bei einfachen Anfragen (&#39;`TTL_AUTHN`&#39;, &#39;`TTL_AUTHZ`&#39;, &#39;`DEVICEID`&#39;) ist das Ergebnis eine Zeichenfolge (die die Authentifizierungs-TTL, Autorisierungs-TTL oder Geräte-ID darstellt). Bei einer Benutzermetadaten-Anfrage kann das Ergebnis ein primitives - oder JSON-Objekt sein, das die Metadaten-Payload darstellt. Die tatsächliche Struktur von JSON-Benutzer-Metadatenobjekten ähnelt der folgenden:
+- *data (JSON-Objekt)*: Ein JSON-Objekt mit der Darstellung der Metadaten.Bei einfachen Anfragen (&#39;`TTL_AUTHN`&#39;, &#39;`TTL_AUTHZ`&#39;, &#39;`DEVICEID`&#39;) ist das Ergebnis eine Zeichenfolge (die die Authentifizierungs-TTL, Autorisierungs-TTL oder Geräte-ID darstellt). Bei einer Benutzermetadaten-Anfrage kann das Ergebnis ein primitives - oder JSON-Objekt sein, das die Metadaten-Payload darstellt. Die tatsächliche Struktur von JSON-Benutzer-Metadatenobjekten ähnelt der folgenden:
 
 ```JSON
     {
@@ -627,20 +627,20 @@ Beispiel:
 ### Callback-Fehlercodes {#callback-error-codes}
 
 | Allgemeine Fehler | |
-|:--- | :--- | 
+|:--- | :--- |
 | Interner Fehler | Bei der Verarbeitung der Anfrage ist ein Systemfehler aufgetreten. |
 | Fehler „Anbieter nicht ausgewählt“ | Tritt auf, wenn der Kunde im Dialogfeld zur Anbieterauswahl abbricht |
 | Fehler „Anbieter nicht verfügbar“ | Tritt auf, wenn keine Anbieter verfügbar sind. |
 
 | Authentifizierungsfehler | |
-|:--- | :--- | 
+|:--- | :--- |
 | Allgemeiner Authentifizierungsfehler | Wird zurückgegeben, wenn der Grund unbekannt ist oder nicht veröffentlicht werden kann. |
 | Interner Authentifizierungsfehler | Beim Authentifizierungsversuch ist ein Systemfehler aufgetreten. |
 | Fehler „Benutzer nicht authentifiziert“ | Benutzer ist nicht authentifiziert. |
 | Fehler bei mehreren Authentifizierungsanfragen | Zusätzliche Authentifizierungsanfragen wurden empfangen, bevor die erste abgeschlossen wurde. |
 
 | Autorisierungsfehler | |
-|:--- | :--- | 
+|:--- | :--- |
 | Allgemeiner Autorisierungsfehler | Wird zurückgegeben, wenn der Grund unbekannt ist oder nicht veröffentlicht werden kann. |
 | Interner Autorisierungsfehler | Beim Autorisierungsversuch ist ein Systemfehler aufgetreten. |
 | Fehler „Benutzer nicht autorisiert“ | Der Kunde ist nicht berechtigt, die angeforderten Inhalte anzuzeigen. |

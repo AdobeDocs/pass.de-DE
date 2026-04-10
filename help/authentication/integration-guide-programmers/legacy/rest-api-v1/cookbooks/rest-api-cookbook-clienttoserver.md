@@ -2,9 +2,9 @@
 title: REST-API-Cookbook (Client-zu-Server)
 description: REST-API-Cookbook-Client an Server.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '906'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## Überblick {#overview}
 
-Dieses Dokument enthält Schritt-für-Schritt-Anweisungen für das Entwicklungsteam eines Programmierers zur Integration eines „intelligenten Geräts“ (Spielkonsole, Smart-TV-App, Set-Top-Box usw.) in die Adobe Pass-Authentifizierung mithilfe von REST-API-Services. Dieser Client-zu-Server-Ansatz, bei dem REST-APIs anstelle einer Client-SDK verwendet werden, ermöglicht eine breitere Unterstützung verschiedener Plattformen, für die die Entwicklung einer erheblichen Anzahl eindeutiger SDKs nicht möglich wäre. Einen umfassenden technischen Überblick über die Funktionsweise der Clientless-Lösung finden Sie unter [Clientless-technische Übersicht](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md).
+Dieses Dokument enthält Schritt-für-Schritt-Anweisungen für das Entwicklungsteam eines Programmierers zur Integration eines „intelligenten Geräts“ (Spielkonsole, Smart-TV-App, Set-Top-Box usw.) mit Adobe Pass-Authentifizierung mithilfe von REST-API-Services. Dieser Client-zu-Server-Ansatz, bei dem REST-APIs anstelle einer Client-SDK verwendet werden, ermöglicht eine breitere Unterstützung verschiedener Plattformen, für die die Entwicklung einer erheblichen Anzahl eindeutiger SDKs nicht möglich wäre. Einen umfassenden technischen Überblick über die Funktionsweise der Clientless-Lösung finden Sie unter [Clientless-technische Übersicht](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md).
 
 
 Dieser Ansatz erfordert zwei Komponenten (Streaming-App und AuthN-App), um die erforderlichen Flüsse abzuschließen: Start-, Registrierungs-, Autorisierungs- und View-Media-Flüsse in der Streaming-App und den Authentifizierungsfluss in Ihrer AuthN-App.
@@ -72,11 +72,11 @@ Adobe Pass verwendet DCR, um die Client-Kommunikation zwischen einer Programmier
 
 1. Rufen Sie einen Registrierungs-Code und eine URL für Ihren Benutzer ab, um auf Ihre Anmeldeanwendung für den zweiten Bildschirm zuzugreifen, und präsentieren Sie diese dem Benutzer:
 
-   a. Senden Sie eine POST-Anfrage an den Registrierungs-Code-Service von Adobe und übergeben Sie eine gehashte Geräte-ID und eine „Registrierungs-URL“.  Beispiel: [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
+   a.  Senden Sie eine POST-Anfrage an den Registrierungs-Code-Service von Adobe und übergeben Sie eine gehashte Geräte-ID und eine „Registrierungs-URL“.  Beispiel: [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
 
-   b. Zeigen Sie dem Benutzer den zurückgegebenen Registrierungs-Code und die URL an.
+   B.  Zeigen Sie dem Benutzer den zurückgegebenen Registrierungs-Code und die URL an.
 
-   c. Weisen Sie den Benutzer an, zu einem Web-fähigen Gerät zu wechseln, zur URL zu navigieren und dann den Registrierungs-Code einzugeben.
+   C.  Weisen Sie den Benutzer an, zu einem Web-fähigen Gerät zu wechseln, zur URL zu navigieren und dann den Registrierungs-Code einzugeben.
 
 
 
@@ -96,7 +96,7 @@ Adobe Pass verwendet DCR, um die Client-Kommunikation zwischen einer Programmier
 
    * Wenn es sich um einen AuthZ-Fehler handelte, ist der Benutzer nicht berechtigt, die angeforderten Medien anzusehen, und dem Benutzer sollte eine Fehlermeldung angezeigt werden.
 
-   * Wenn ein anderer Fehler aufgetreten ist (Verbindungsfehler, Netzwerkfehler usw.), zeigen Sie dem Benutzer eine entsprechende Fehlermeldung an.
+   * Wenn ein anderer Fehler aufgetreten ist (Verbindungsfehler, Netzwerkfehler usw.) Zeigen Sie dann dem Benutzer eine entsprechende Fehlermeldung an.
 
 
 
@@ -106,12 +106,12 @@ Adobe Pass verwendet DCR, um die Client-Kommunikation zwischen einer Programmier
 
 2. Sind die Medien geschützt?
 
-   a. Ihre App prüft, ob die Medien geschützt sind.
+   a.  Ihre App prüft, ob die Medien geschützt sind.
 
-   b. Wenn das Medium geschützt ist, startet Ihre App die Autorisierung
+   B.  Wenn das Medium geschützt ist, startet Ihre App die Autorisierung
 (AuthZ) Fluss oben.
 
-   c. Wenn das Medium nicht geschützt ist, geben Sie das Medium für das
+   C.  Wenn das Medium nicht geschützt ist, geben Sie das Medium für das
 Benutzer.
 
 3. Wiedergabe von Medien.

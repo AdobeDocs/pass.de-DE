@@ -2,9 +2,9 @@
 title: Anmeldeseite
 description: Anmeldeseite
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '509'
+source-wordcount: '528'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) &#x200B;](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 &lt;REGGIE_FQDN>:
 
@@ -43,7 +43,7 @@ Gibt den zufällig generierten Registrierungs-Code und den Anmeldeseiten-URI zur
 
 | Endpunkt | Called <br>by | Eingabe   <br>Parameter | HTTP <br>Methode | Antwort | HTTP <br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Beispiel:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Streaming-App<br>oder<br>Programmierer-Service | &#x200B;1. <br>    (Pfadkomponente)<br>2.  deviceId (gehasht)   <br>    (mandatory)<br>3.  device_info/X-device-info (obligatorisch)<br>4.  mvpd (optional)<br>5.  TTL (optional)<br> | POST | XML oder JSON mit einem Registrierungs-Code und Informationen oder Fehlerdetails, falls nicht erfolgreich. Siehe Beispiele unten. | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Beispiel:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Streaming-App<br>oder<br>Programmierer-Service | &#x200B;1.  Antragsteller-<br>    (Pfadkomponente)<br>2.  deviceId (gehasht)   <br>    (mandatory)<br>3.  device_info/X-device-info (obligatorisch)<br>4.  mvpd (optional)<br>5.  TTL (optional)<br> | POST | XML oder JSON mit einem Registrierungs-Code und Informationen oder Fehlerdetails, falls nicht erfolgreich. Siehe Beispiele unten. | 201 |
 
 {style="table-layout:auto"}
 
@@ -53,9 +53,9 @@ Gibt den zufällig generierten Registrierungs-Code und den Anmeldeseiten-URI zur
 | Akzeptieren | Header-<br>: application/json | Geben Sie an, welchen Inhaltstyp der Client verstehen soll |
 | Antragsteller | Abfrageparameter | Die RequestorId des Programmierers, für den dieser Vorgang gültig ist. |
 | deviceId | Abfrageparameter | Die Geräte-ID-Bytes. |
-| device_info/<br>X-device-info | device_info: Hauptteil <br> X-Device-info: Header | Informationen zu Streaming-Geräten.<br>**Hinweis**: Dies kann als URL-Parameter an device_info übergeben werden, sollte jedoch aufgrund der potenziellen Größe dieses Parameters und der Längenbeschränkungen für eine GET-URL als X-Device-Info im HTTP-Header übergeben werden. <br>Vollständige Details finden Sie unter [Übergeben von Geräte- und Verbindungsinformationen](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
+| device_info/<br>X-device-info | device_info: Hauptteil <br> X-Device-info: Header | Streaming-Geräteinformationen.<br>**Hinweis**: Dies kann als URL-Parameter an device_info übergeben werden, sollte jedoch aufgrund der potenziellen Größe dieses Parameters und der Längenbeschränkungen für eine GET-URL als X-Device-Info im HTTP-Header übergeben werden. <br>Vollständige Details finden Sie unter [Übergeben von Geräte- und Verbindungsinformationen](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
 | mvpd | Abfrageparameter | Die MVPD-ID, für die dieser Vorgang gültig ist. |
-| TTL | Abfrageparameter | Wie lange diese Regcode-Zeit in Sekunden dauern soll.<br>**Hinweis**: Der maximal zulässige Wert für ttl beträgt 36000 Sekunden (10 Stunden). Höhere Werte führen zu einer 400-HTTP-Antwort (fehlerhafte Anfrage). Wenn `ttl` leer gelassen wird, legt die Adobe Pass-Authentifizierung den Standardwert von 30 Minuten fest. |
+| TTL | Abfrageparameter | Wie lange dieser Regcode in Sekunden bestehen soll.<br>**Hinweis**: Der maximal zulässige Wert für ttl beträgt 36000 Sekunden (10 Stunden). Höhere Werte führen zu einer 400-HTTP-Antwort (fehlerhafte Anfrage). Wenn `ttl` leer gelassen wird, legt die Adobe Pass-Authentifizierung den Standardwert von 30 Minuten fest. |
 | _deviceType_ | Abfrageparameter | Veraltet, sollte nicht mehr verwendet werden. |
 | _deviceUser_ | Abfrageparameter | Veraltet, sollte nicht mehr verwendet werden. |
 | _appId_ | Abfrageparameter | Veraltet, sollte nicht mehr verwendet werden. |
@@ -65,8 +65,7 @@ Gibt den zufällig generierten Registrierungs-Code und den Anmeldeseiten-URI zur
 >[!CAUTION]
 >
 >**IP-Adresse des Streaming-Geräts**
-><br>
->Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts mit diesem Aufruf implizit gesendet.  Bei Server-zu-Server-Implementierungen, bei denen der **regcode**-Aufruf vom Programmierdienst und nicht vom Streaming-Gerät erfolgt, ist der folgende Header erforderlich, um die IP-Adresse des Streaming-Geräts zu übergeben:
+><br>>Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts mit diesem Aufruf implizit gesendet.  Bei Server-zu-Server-Implementierungen, bei denen der **regcode**-Aufruf vom Programmierdienst und nicht vom Streaming-Gerät erfolgt, ist der folgende Header erforderlich, um die IP-Adresse des Streaming-Geräts zu übergeben:
 >
 >
 >```
@@ -74,14 +73,13 @@ Gibt den zufällig generierten Registrierungs-Code und den Anmeldeseiten-URI zur
 >```
 >
 >wobei `<streaming\_device\_ip>` die öffentliche IP-Adresse des Streaming-Geräts ist.
-><br><br>
->Beispiel : <br>
+><br><br>>Beispiel : <br>
 >
 >```
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20
 >```
 >
-><br>
+<br>
 
 ### Antwort-JSON
 

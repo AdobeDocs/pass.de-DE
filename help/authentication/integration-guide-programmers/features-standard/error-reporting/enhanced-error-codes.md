@@ -2,9 +2,9 @@
 title: Verbesserte Fehler-Codes
 description: Verbesserte Fehler-Codes
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '2696'
+source-wordcount: '2747'
 ht-degree: 3%
 
 ---
@@ -41,13 +41,13 @@ Erweiterte Fehler-Codes stellen eine Adobe Pass-Authentifizierungsfunktion dar, 
 
 ## Darstellung {#enhanced-error-codes-representation}
 
-Erweiterte Fehler-Codes können je nach integrierter Adobe Pass-Authentifizierungs-API und dem verwendeten Kopfzeilenwert „Accept“ (d. h. `JSON` oder `XML`) im `application/json`- oder `application/xml`-Format dargestellt werden:
+Erweiterte Fehler-Codes können je nach integrierter Adobe Pass-Authentifizierungs-API und dem verwendeten Kopfzeilenwert „Accept“ (d. h. `application/json` oder `application/xml`) im `JSON`- oder `XML`-Format dargestellt werden:
 
 | Adobe Pass-Authentifizierungs-API | JSON | XML |
 |-------------------------------|---------|---------|
-| REST API v2 | &check; |         |
-| REST-API v1 | &check; | &check; |
-| SDKs autorisieren die API vorab | &check; |         |
+| REST API v2 | &amp;check; |         |
+| REST-API v1 | &amp;check; | &amp;check; |
+| SDKs autorisieren die API vorab | &amp;check; |         |
 
 >[!IMPORTANT]
 >
@@ -101,7 +101,7 @@ Content-Type: application/json
         "code": "authorization_denied_by_mvpd",
         "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
         "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=de",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
         "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
       }
     }
@@ -120,7 +120,7 @@ Content-Type: application/json
   "status": 400,
   "code": "invalid_parameter_service_provider",
   "message": "The service provider parameter value is missing or invalid.",
-  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=de",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
   "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
 }
 ```
@@ -154,7 +154,7 @@ Content-Type: application/json
         "code": "authorization_denied_by_mvpd",
         "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
         "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=de",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
         "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
       }
     }
@@ -173,7 +173,7 @@ Content-Type: application/json
   "status": 400,
   "code": "invalid_requestor",
   "message": "The requestor parameter is missing or invalid.",
-  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=de",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
   "trace": "8bcb17f9-b172-47d2-86d9-3eb146eba85e"
 }
 ```
@@ -189,7 +189,7 @@ Content-Type: application/xml
   <status>400</status>
   <code>invalid_requestor</code>
   <message>The requestor parameter is missing or invalid.</message>
-  <helpUrl>https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=de</helpUrl>
+  <helpUrl>https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html</helpUrl>
   <trace>8bcb17f9-b172-47d2-86d9-3eb146eba85e</trace>
 </error>
 ```
@@ -202,12 +202,12 @@ Erweiterte Fehler-Codes enthalten die folgenden `JSON` Felder oder `XML` Attribu
 
 | -Name | Typ | Beispiel | eingeschränkt | Beschreibung |
 |-----------|-----------|---------------------------------------------------------------------------------------------------------------------|:----------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *Aktion* | *Zeichenfolge* | *Keine* | &check; | Die von der Adobe Pass-Authentifizierung empfohlene Aktion, die die in diesem Dokument definierte Situation beheben kann. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Aktion](#enhanced-error-codes-action) . |
-| *status* | *Integer* | *403* | &check; | Der HTTP-Antwort-Status-Code wie im Dokument [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6) definiert. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Status](#enhanced-error-codes-status) . |
-| *code* | *Zeichenfolge* | *authorization_denied_by_mvpd* | &check; | Der eindeutige Kennungs-Code der Adobe Pass-Authentifizierung, der mit dem Fehler verknüpft ist, wie in diesem Dokument definiert. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Code](#enhanced-error-codes-code) . |
+| *Aktion* | *Zeichenfolge* | *Keine* | &amp;check; | Die von der Adobe Pass-Authentifizierung empfohlene Aktion, die die in diesem Dokument definierte Situation beheben kann. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Aktion](#enhanced-error-codes-action). |
+| *status* | *Integer* | *403* | &amp;check; | Der HTTP-Antwort-Status-Code wie im Dokument [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6) definiert. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Status](#enhanced-error-codes-status) . |
+| *code* | *Zeichenfolge* | *authorization_denied_by_mvpd* | &amp;check; | Der eindeutige Kennungs-Code der Adobe Pass-Authentifizierung, der mit dem Fehler verknüpft ist, wie in diesem Dokument definiert. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Code](#enhanced-error-codes-code). |
 | *message* | *Zeichenfolge* | *Die MVPD hat bei der Anforderung einer Autorisierung für die angegebene Ressource eine Entscheidung „Ablehnen“ zurückgegeben* |            | Die für Menschen lesbare Nachricht, die dem Endbenutzer in einigen Fällen angezeigt werden kann. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Antwortverarbeitung](#enhanced-error-codes-response-handling) . |
 | *Details* | *Zeichenfolge* | *Ihr Abonnementpaket enthält nicht den Kanal „Live“* |            | Die detaillierte Nachricht, die in einigen Fällen von einem Service-Partner bereitgestellt werden kann. <br/><br/> Dieses Feld ist möglicherweise nicht vorhanden, wenn der Service-Partner keine benutzerdefinierte Nachricht bereitstellt. |
-| *helpUrl* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=de* |            | Die öffentliche Dokumentations-URL zur Adobe Pass-Authentifizierung, die auf weitere Informationen über die Gründe für diesen Fehler und mögliche Lösungen verweist. <br/><br/> Dieses Feld enthält eine absolute URL und sollte nicht aus dem Fehlercode abgeleitet werden. Abhängig vom Fehlerkontext kann eine andere URL angegeben werden. |
+| *helpUrl* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html* |            | Die öffentliche Dokumentations-URL zur Adobe Pass-Authentifizierung, die auf weitere Informationen über die Gründe für diesen Fehler und mögliche Lösungen verweist. <br/><br/> Dieses Feld enthält eine absolute URL und sollte nicht aus dem Fehler-Code abgeleitet werden. Abhängig vom Fehlerkontext kann eine andere URL angegeben werden. |
 | *trace* | *Zeichenfolge* | *12f6fef9-d2e0-422b-a9d7-60d799abe353* |            | Die eindeutige Kennung für die Antwort, die bei der Kontaktaufnahme mit dem Adobe Pass-Authentifizierungsdienst zur Behebung bestimmter Probleme verwendet werden kann. |
 
 >[!IMPORTANT]
@@ -264,7 +264,7 @@ Erweiterte Fehler-Codes mit einem 5xx „Status“ erscheinen normalerweise, wen
 
 Erweiterte Fehler-Codes enthalten ein Feld „Code“, das eine eindeutige Kennung für die Adobe Pass-Authentifizierung bereitstellt, die mit dem Fehler verknüpft ist.
 
-Die möglichen Werte für das Feld „Code“ werden ([&#x200B; unten) &#x200B;](#enhanced-error-codes-list) zwei Listen aggregiert, die auf der integrierten Adobe Pass-Authentifizierungs-API basieren.
+Die möglichen Werte für das Feld „Code“ werden ([ unten) ](#enhanced-error-codes-list) zwei Listen aggregiert, die auf der integrierten Adobe Pass-Authentifizierungs-API basieren.
 
 ## Listen {#enhanced-error-codes-lists}
 
@@ -331,24 +331,24 @@ In der folgenden Tabelle sind mögliche erweiterte Fehler-Codes aufgeführt, auf
 | **Keine** | *invalid_Requestor* | 400 | Der Anforderungsparameter fehlt oder ist ungültig. |
 |                    | *invalid_device_info* | 400 | Die Geräteinformationen fehlen oder sind ungültig. |
 |                    | *invalid_device_id* | 400 | Die Gerätekennung fehlt oder ist ungültig. |
-|                    | *missing_resource* | 400 412 | Der Ressourcenparameter fehlt. |
-|                    | *malformed_authz_request* | 400 412 | Autorisierungsanfrage ist null oder ungültig. |
+|                    | *missing_resource* | 400, 412 | Der Ressourcenparameter fehlt. |
+|                    | *malformed_authz_request* | 400, 412 | Autorisierungsanfrage ist null oder ungültig. |
 |                    | *preauthorization_denied_by_mvpd* | 403 | Die MVPD hat eine Entscheidung „Ablehnen“ zurückgegeben, wenn sie eine Vorabautorisierung für die angegebene Ressource anfordert. |
 |                    | *authorization_denied_by_mvpd* | 403 | Die MVPD hat bei der Anforderung einer Autorisierung für die angegebene Ressource eine Entscheidung „Ablehnen“ zurückgegeben. |
 |                    | *authorization_denied_by_parent_Controls* | 403 | Die MVPD hat eine Entscheidung „Ablehnen“ aufgrund der Einstellungen der Kindersicherung für die angegebene Ressource zurückgegeben. |
 |                    | *internal_error* | 400, 405, 500 | Die Anfrage ist aufgrund eines internen Server-Fehlers fehlgeschlagen. |
-| **Konfiguration** | *UNKNOWN_INTEGRATION* | 400 412 | Die Integration zwischen dem angegebenen Programmierer und dem Identitätsanbieter existiert nicht. Verwenden Sie das TVE-Dashboard, um die erforderliche Integration zu erstellen. |
+| **Konfiguration** | *UNKNOWN_INTEGRATION* | 400, 412 | Die Integration zwischen dem angegebenen Programmierer und dem Identitätsanbieter existiert nicht. Verwenden Sie das TVE-Dashboard, um die erforderliche Integration zu erstellen. |
 |                    | *too_many_resources* | 403 | Die Autorisierungs- oder Vorabautorisierungsanfrage ist fehlgeschlagen, da zu viele Ressourcen abgefragt wurden. Bitte wenden Sie sich an das Support-Team , um die Autorisierungs- und Vorautorisierungsbeschränkungen ordnungsgemäß zu konfigurieren. |
 | **Authentifizierung** | *AUTHENTICATION_SESSION_ISEMITTER_MISMATCH* | 400 | Die Autorisierungsanfrage schlug fehl, da sich der angegebene MVPD für den Autorisierungsfluss von dem unterscheidet, der die Authentifizierungssitzung ausgestellt hat. Die Benutzerin bzw. der Benutzer muss sich erneut bei der gewünschten MVPD authentifizieren, um fortfahren zu können. |
 |                    | *authorization_denied_by_hba_policies* | 403 | Die MVPD hat eine Entscheidung „Ablehnen“ aufgrund von einheimischen Authentifizierungsrichtlinien zurückgegeben. Die aktuelle Authentifizierung wurde mithilfe eines Home-Based Authentication Flow (HBA) abgerufen, aber das Gerät ist nicht mehr zu Hause, wenn es eine Autorisierung für die angegebene Ressource anfordert. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
 |                    | *authorization_denied_by_session_invalidated* | 403 | Die Authentifizierungssitzung wurde vom Identitätsanbieter ungültig gemacht. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
 |                    | *identity_not_Recognized_by_mvpd* | 403 | Die Autorisierungsanfrage schlug fehl, da die Benutzeridentität von MVPD nicht erkannt wurde. |
 |                    | *AUTHENTICATION_SESSION_INVALIDATED* | 403 | Die Authentifizierungssitzung wurde vom Identitätsanbieter ungültig gemacht. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
-|                    | *AUTHENTICATION_SESSION_MISS* | 403 412 | Die mit dieser Anfrage verknüpfte Authentifizierungssitzung konnte nicht abgerufen werden. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
-|                    | *AUTHENTICATION_SESSION_EXPIRED* | 403 412 | Die aktuelle Authentifizierungssitzung ist abgelaufen. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
+|                    | *AUTHENTICATION_SESSION_MISS* | 403, 412 | Die mit dieser Anfrage verknüpfte Authentifizierungssitzung konnte nicht abgerufen werden. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
+|                    | *AUTHENTICATION_SESSION_EXPIRED* | 403, 412 | Die aktuelle Authentifizierungssitzung ist abgelaufen. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
 |                    | *preauthorization_authentication_session_missing* | 412 | Die mit dieser Anfrage verknüpfte Authentifizierungssitzung konnte nicht abgerufen werden. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
 |                    | *PREAUTHORIZATION_AUTHENTICATION_SESSION_EXPIRED* | 412 | Die aktuelle Authentifizierungssitzung ist abgelaufen. Der Benutzer muss sich erneut mit einem unterstützten MVPD authentifizieren, um fortfahren zu können. |
-| **Autorisierung** | *authorization_not_found* | 403 404 | Für die angegebene Ressource wurde keine Autorisierung gefunden. Der Benutzer muss eine neue Autorisierung erhalten, um fortfahren zu können. |
+| **Autorisierung** | *authorization_not_found* | 403, 404 | Für die angegebene Ressource wurde keine Autorisierung gefunden. Der Benutzer muss eine neue Autorisierung erhalten, um fortfahren zu können. |
 |                    | *authorization_expi* | 410 | Die vorherige Authentifizierung für die angegebene Ressource ist abgelaufen. Der Benutzer muss eine neue Autorisierung erhalten, um fortfahren zu können. |
 | **Erneut versuchen** | *NETWORK_RECEIVED_ERROR* | 403 | Beim Abrufen der Antwort vom zugehörigen Partner-Service ist ein Lesefehler aufgetreten. Das Problem kann möglicherweise durch Wiederholen der Anfrage behoben werden. |
 |                    | *network_connection_timeout* | 403 | Es gab ein Verbindungs-Timeout mit dem zugehörigen Partner-Service. Das Problem kann möglicherweise durch Wiederholen der Anfrage behoben werden. |
@@ -356,7 +356,7 @@ In der folgenden Tabelle sind mögliche erweiterte Fehler-Codes aufgeführt, auf
 
 ### (Ältere) SDKs autorisieren die API vorab {#enhanced-error-codes-lists-sdks-preauthorize-api}
 
-Im vorherigen [&#x200B; finden Sie &#x200B;](#enhanced-error-codes-list-rest-api-v1) möglichen erweiterten Fehler-Codes, auf die eine Client-Anwendung stoßen könnte, wenn sie mit Adobe Pass Authentication SDKs integriert wird, die die API vorautorisieren.
+Im vorherigen [ finden Sie ](#enhanced-error-codes-list-rest-api-v1) möglichen erweiterten Fehler-Codes, auf die eine Client-Anwendung stoßen könnte, wenn sie mit Adobe Pass Authentication SDKs integriert wird, die die API vorautorisieren.
 
 ## Umgang mit Antworten {#enhanced-error-codes-response-handling}
 

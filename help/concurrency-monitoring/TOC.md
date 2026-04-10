@@ -4,17 +4,17 @@ feature: Concurrency Monitoring
 audience: end-user
 user-guide-title: Überwachung der Parallelität von Adobe Pass
 user-guide-description: Erfahren Sie, wie Sie Begrenzungen für die gleichzeitige Nutzung mehrerer Anwendungen definieren und durchsetzen.
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '276'
-ht-degree: 5%
+source-wordcount: '252'
+ht-degree: 6%
 
 ---
 
 
 # Hilfe zur Adobe Pass-Parallelitätsüberwachung {#cm}
 
-- [CM-Einführung](cm-home.md) {#cm-intro}
+- [CM-Einführung](cm-home.md)
 - Erste Schritte {#getting-started}
    - [Erste Schritte mit der Parallelitätsüberwachung](getting-started/getting-started-overview.md)
    - [Schlüsselkonzepte](getting-started/key-concepts.md)
@@ -34,7 +34,7 @@ ht-degree: 5%
    - [Implementierungsmodelle](technical/implementation-models.md)
    - [Einzelmandant-Richtlinie für mehrere Apps](technical/single-tenant-policy-mult-app.md)
    - [Beschränken der gleichzeitigen Nutzung mehrerer Apps](technical/restrict-concurr-usage-mult-apps.md)
-- [CM-Nutzungsberichte](reports/cm-usage-reports.md) {#cm-usage-reports}
+- [CM-Nutzungsberichte](reports/cm-usage-reports.md)
 - Technische Hinweise {#tech-notes}
    - [Standard-Metadatenattribute](technical/standard-metadata-attributes.md)
    - [Benutzerdefinierte Metadaten](technical/custom-metadata.md)
@@ -72,4 +72,4 @@ ht-degree: 5%
    - [Parallelitätsüberwachung - Versionshinweise zu 2.5.0](releases/rn-cm-250.md)
    - [Parallelitätsüberwachung - Versionshinweise zu 2.3.2](releases/rn-cm-232.md)
    - [Parallelitätsüberwachung - Versionshinweise zu 2.2.2](releases/rn-cm-222.md)
-- [Support-Verfahren](support/cm-escalation-procedures.md) {#support-procedures}
+- [Support-Verfahren](support/cm-escalation-procedures.md)

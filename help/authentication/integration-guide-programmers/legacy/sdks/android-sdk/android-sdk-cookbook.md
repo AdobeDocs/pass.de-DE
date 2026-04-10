@@ -2,9 +2,9 @@
 title: Android SDK-Cookbook
 description: Android SDK-Cookbook
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '1703'
+source-wordcount: '1690'
 ht-degree: 0%
 
 ---
@@ -71,7 +71,7 @@ Die Netzwerkaktivität von AccessEnabler erfolgt in einem anderen Thread, sodass
      Wird nur von `getAuthentication()` ausgelöst, wenn der Benutzer keinen Provider (MVPD) ausgewählt hat und noch nicht authentifiziert ist.\
      Der `mvpds` Parameter ist ein Array von Anbietern, die den Benutzenden zur Verfügung stehen.
 
-   - [`setAuthenticationStatus(status, errorCode)`](#$setAuthNStatus)
+   - [`setAuthenticationStatus(status, errorcode)`](#$setAuthNStatus)
 
      Wird jedes Mal von `checkAuthentication()` ausgelöst.\
      Wird nur von `getAuthentication()` ausgelöst, wenn der Benutzer bereits authentifiziert ist und einen Anbieter ausgewählt hat.
@@ -121,12 +121,12 @@ Die Netzwerkaktivität von AccessEnabler erfolgt in einem anderen Thread, sodass
 1. Starten Sie die Anwendung auf höherer Ebene.
 1. Adobe Pass-Authentifizierung initiieren
 
-   a. Rufen Sie [`getInstance`](#$getInstance) auf, um eine einzelne Instanz von Adobe Pass Authentication AccessEnabler zu erstellen.
+   a.  Rufen Sie [`getInstance`](#$getInstance) auf, um eine einzelne Instanz von Adobe Pass Authentication AccessEnabler zu erstellen.
 
    - **Abhängigkeit:** Native Adobe Pass-Authentifizierung
 Android Library (AccessEnabler)
 
-   b. Aufruf` setRequestor()` um die Kennung des Programmierers zu ermitteln, die `requestorID` des Programmierers zu übergeben und (optional) ein Array von Adobe Pass-Authentifizierungsendpunkten.
+   B.  Aufruf` setRequestor()`, um die Kennung des Programmierers zu ermitteln; übergeben Sie die `requestorID` des Programmierers und (optional) ein Array von Adobe Pass-Authentifizierungsendpunkten.
 
    - **Abhängigkeit:** gültige Adobe Pass-Authentifizierungs-RequestorID\
      (Wenden Sie sich an Ihren Adobe Pass Authentication Account Manager, um dies zu arrangieren.)
@@ -134,7 +134,7 @@ Android Library (AccessEnabler)
    - **Trigger:** setRequestorComplete()-Rückruf
 
    | HINWEIS |     |
-   | --- | --- |  
+   | --- | --- |
    |  | Berechtigungsanfragen können erst abgeschlossen werden, wenn die Identität des Antragstellers vollständig ermittelt wurde. Dies bedeutet effektiv, dass während der Ausführung von setRequestor() alle nachfolgenden Berechtigungsanfragen (z. B. `checkAuthentication()`) blockiert werden.<br><br>Sie haben zwei Implementierungsoptionen: Sobald die Anfordereridentifizierungsinformationen an den Backend-Server gesendet wurden, kann die Benutzeroberflächen-Anwendungsebene einen der beiden folgenden Ansätze auswählen:<br><br>1.  Warten Sie, bis der `setRequestorComplete()`-Callback ausgelöst wird (Teil des AccessEnabler-Delegaten).  Diese Option bietet die größte Sicherheit, dass abgeschlossen `setRequestor()`. Daher wird sie für die meisten Implementierungen empfohlen.<br>2.  Fahren Sie fort, ohne auf das Auslösen des `setRequestorComplete()`-Callbacks zu warten, und beginnen Sie mit der Ausgabe von Berechtigungsanfragen. Diese Aufrufe (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) werden von der AccessEnabler-Bibliothek in die Warteschlange gestellt, die die eigentlichen Netzwerkaufrufe nach dem `setRequestor(). ` ausführt. Diese Option kann gelegentlich unterbrochen werden, wenn z. B. die Netzwerkverbindung instabil ist. |
 
    <!--Removed bad image link from first note cell above. ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/icons/1313859077_lightbulb.png) -->
@@ -149,7 +149,7 @@ Android Library (AccessEnabler)
 
 1. Rufen Sie [`getAuthentication()`](#$getAuthN) auf, um den Authentifizierungsfluss zu initiieren oder um eine Bestätigung zu erhalten, dass der Benutzer bereits authentifiziert ist.\
    **Trigger:**
-   - Der Rückruf setAuthenticationStatus() , wenn der Benutzer bereits authentifiziert ist.  Fahren Sie in diesem Fall direkt mit dem [Autorisierungsfluss“ &#x200B;](#authz_flow).
+   - Der Rückruf setAuthenticationStatus() , wenn der Benutzer bereits authentifiziert ist.  Fahren Sie in diesem Fall direkt mit dem [Autorisierungsfluss“ ](#authz_flow).
    - Der Rückruf displayProviderDialog() , wenn der Benutzer noch nicht authentifiziert ist.
 
 1. Zeigen Sie dem Benutzer die Liste der an `displayProviderDialog()` gesendeten Anbieter.
@@ -187,7 +187,7 @@ Fluss.
    - Wenn `getAuthorization()` fehlschlägt: Untersuchen Sie die ausgelöste Ausnahme, um ihren Typ (AuthN, AuthZ oder etwas Anderes) zu bestimmen:
       - Wenn es sich um einen Authentifizierungsfehler (AuthN) handelte, starten Sie den Authentifizierungsfluss erneut.
       - Wenn es sich um einen Autorisierungsfehler (AuthZ) handelte, ist der Benutzer nicht berechtigt, die angeforderten Medien anzusehen, und dem Benutzer sollte eine Fehlermeldung angezeigt werden.
-      - Wenn ein anderer Fehlertyp aufgetreten ist (Verbindungsfehler, Netzwerkfehler usw.), zeigen Sie dem Benutzer eine entsprechende Fehlermeldung an.
+      - Wenn ein anderer Fehlertyp (Verbindungsfehler, Netzwerkfehler usw.) Zeigen Sie dann dem Benutzer eine entsprechende Fehlermeldung an.
 
 1. Validieren des Short Media Token.\
    Verwenden Sie die Media Token Verifier-Bibliothek der Adobe Pass-Authentifizierung, um das vom obigen `getAuthorization()`-Aufruf zurückgegebene kurzlebige Medien-Token zu überprüfen:
@@ -211,9 +211,9 @@ Fluss.
 1. Rufen Sie [`logout()`](#$logout) auf, um den Benutzer abzumelden.\
    AccessEnabler löscht alle zwischengespeicherten Werte und Token für den aktuellen MVPD für den aktuellen Anforderer sowie für Anforderer mit Single Sign-On. Nach dem Löschen des Cache führt AccessEnabler einen Server-Aufruf durch, um die Server-seitigen Sitzungen zu bereinigen.  Da der Server-Aufruf zu einer SAML-Umleitung an den IdP führen kann (dies ermöglicht die Sitzungsbereinigung auf der IdP-Seite), muss dieser Aufruf allen Umleitungen folgen. Aus diesem Grund muss dieser Aufruf innerhalb eines WebView-Steuerelements verarbeitet werden.
 
-   a. Nach demselben Muster wie der Authentifizierungs-Workflow fordert die AccessEnabler-Domain die Anwendungsebene der Benutzeroberfläche (über den `navigateToUrl()`-Rückruf) an, ein WebView-Steuerelement zu erstellen, und weist dieses Steuerelement an, die URL des Abmeldeendpunkts auf den Backend-Server zu laden.
+   a.  Nach dem gleichen Muster wie der Authentifizierungs-Workflow führt die AccessEnabler-Domain eine Anfrage an die Benutzeroberflächenanwendungsebene (über den `navigateToUrl()`-Rückruf) durch, um ein WebView-Steuerelement zu erstellen, und weist dieses Steuerelement an, die URL des Abmeldeendpunkts auf den Backend-Server zu laden.
 
-   b. Auch hier muss die Benutzeroberfläche die Aktivität des WebView-Steuerelements überwachen und den Zeitpunkt erkennen, zu dem das Steuerelement bei mehreren Weiterleitungen die benutzerdefinierte URL der Anwendung lädt (d. h.: `http://adobepass.android.app/`). Sobald dieses Ereignis eintritt, schließt die Benutzeroberflächen-Anwendungsebene die WebView und der Abmeldevorgang ist abgeschlossen.
+   B.  Auch hier muss die Benutzeroberfläche die Aktivität des WebView-Steuerelements überwachen und den Zeitpunkt erkennen, zu dem das Steuerelement beim Durchlaufen mehrerer Weiterleitungen die benutzerdefinierte URL der Anwendung lädt (d. h.: `http://adobepass.android.app/`). Sobald dieses Ereignis eintritt, schließt die Benutzeroberflächen-Anwendungsebene die WebView und der Abmeldevorgang ist abgeschlossen.
 
    **Hinweis:** Der Abmeldefluss unterscheidet sich vom Authentifizierungsfluss insofern, als der Benutzer in keiner Weise mit der WebView interagieren muss. Die Anwendungsebene der Benutzeroberfläche verwendet eine WebView, um sicherzustellen, dass alle Weiterleitungen befolgt werden. Daher ist es möglich (und empfohlen), das WebView-Steuerelement während des Abmeldevorgangs unsichtbar (d. h. ausgeblendet) zu machen.
 
@@ -221,6 +221,6 @@ Fluss.
 
 ### Benutzerflüsse für die Anmeldung mit mehreren MVPDs und die Abmeldung {#user_flows}
 
-[Hier &#x200B;](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AndroidSSOUserFlows.pdf) Sie ein Dokument, das das Verhalten bei der Verwendung mehrerer MVPDs beschreibt und beschreibt, was passiert, wenn sich der Benutzer von einer Anwendung abmeldet.
+[Hier ](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AndroidSSOUserFlows.pdf) Sie ein Dokument, das das Verhalten bei der Verwendung mehrerer MVPDs beschreibt und beschreibt, was passiert, wenn sich der Benutzer von einer Anwendung abmeldet.
 
 Das beschriebene Verhalten ist bei Verwendung der Android SDK-Version >= 2.0.0 verfügbar.

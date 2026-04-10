@@ -2,9 +2,9 @@
 title: gleichzeitige Nutzung mehrerer Programme verschiedener Eigentümer einschränken
 description: Beschränken der gleichzeitigen Nutzung mehrerer Anwendungen, die verschiedenen Eigentümern gehören
 exl-id: c358befc-36d6-4f55-92cc-4d02064c65fb
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '286'
 ht-degree: 1%
 
 ---
@@ -55,7 +55,7 @@ Die folgenden Elemente MÜSSEN in den Anwendungen verpackt sein:
 1. Intervall für Heartbeats
 1. Zeitspanne für die Überprüfung der Einhaltung
 
-<!---
+<!--
 ## Workflows
  
 
@@ -427,4 +427,4 @@ Related Information
 Introduction - Adobe Concurrency Monitoring
 API Console - Adobe Concurrency Monitoring
 User Metadata - Adobe Pass Authentication
---->
+-->

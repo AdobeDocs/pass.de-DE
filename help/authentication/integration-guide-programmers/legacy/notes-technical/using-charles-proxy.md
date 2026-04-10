@@ -2,9 +2,9 @@
 title: Charles-Proxy verwenden
 description: Charles-Proxy verwenden
 exl-id: bb38543f-f6bc-4b5a-91b8-41bc51ee4c56
-source-git-commit: 175755aa7463257487b29c5f4da989cf34e91bfd
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '376'
+source-wordcount: '379'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,8 @@ SSL-Proxy-`\[ *Proxy -\> Proxy Settings... -\> SSL* \]` aktivieren
 
 Aktivieren Sie das Kontrollkästchen „SSL-Proxy aktivieren“ und fügen Sie alle HTTPS-Speicherorte hinzu.
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/ProxySettings.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/SSLSettings.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/AddHttpsLocations.PNG)
 -->
 
@@ -68,7 +69,8 @@ Wenn Ihre Ausgabe zu überladen ist, können Sie Speicherorte ignorieren oder au
 
 DNS-Spoofing ist sehr nützlich, wenn Sie versuchen, eine Anfrage an eine andere IP-Adresse umzuleiten, insbesondere bei der Arbeit mit Mobilgeräten:
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/DNSSpoofing.PNG)
 -->
 
@@ -83,7 +85,8 @@ DNS-Spoofing ist sehr nützlich, wenn Sie versuchen, eine Anfrage an eine andere
 
 Mit Remote Map können Sie eine „eingehende“ Anfrage an einen anderen Endpunkt umleiten. Der häufigste Anwendungsfall für diese Funktion ist die „Zuordnung“ von `AccessEnabler.swf` zu `AccessEnablerDebug.swf:`
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/MapRemote.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/MapRemoteAdd.PNG)
 -->
 
@@ -103,7 +106,8 @@ Mit Remote Map können Sie eine „eingehende“ Anfrage an einen anderen Endpun
 
 Navigieren Sie von Ihrem iOS-Gerät aus zu <http://charlesproxy.com/charles.crt> .  Dadurch wird das Dialogfeld für die Zertifikatinstallation gestartet:
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate1\(1\).PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate2\(1\).PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate3.PNG)
 -->
 
@@ -122,7 +126,8 @@ Wählen Sie auf Ihrem iOS-Gerät `\[ *Settings* -\> *Wi-FI* -\> (*YOUR\_WIFI\_NE
 
 </br>
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy1.png)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy2.PNG)
 -->
 
@@ -131,7 +136,8 @@ Hier müssen Sie die IP-Adresse und den Port des Computers angeben, auf dem Sie 
 
 </br>
 
-<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+<!-- 
+NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy3.PNG)
 -->
 
@@ -156,4 +162,4 @@ Anfragen.
 <http://www.charlesproxy.com/documentation/configuration/browser-and-system-configuration>
 
 
-Navigieren Sie von [&#x200B; Android-Gerät &#x200B;](http://charlesproxy.com/charles.crt)Charles proxy“.
+Navigieren Sie von [ Android-Gerät ](http://charlesproxy.com/charles.crt)Charles proxy“.
