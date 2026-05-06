@@ -5,9 +5,9 @@ audience: end-user
 user-guide-title: Überwachung der Parallelität von Adobe Pass
 user-guide-description: Erfahren Sie, wie Sie Begrenzungen für die gleichzeitige Nutzung mehrerer Anwendungen definieren und durchsetzen.
 nudge: true
-source-git-commit: e02007a3ec5bd581f84c887ac50249009a2121fd
+source-git-commit: 80ffef1e8e0cfb3752c01e155854f7d87dfa134c
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '257'
 ht-degree: 6%
 
 ---
@@ -45,6 +45,7 @@ ht-degree: 6%
    - [Vorgehensweise: Unterscheiden zwischen VOD und Live-Inhalten bei der gleichzeitigen Überwachung](technical/vod-live-dist.md)
    - [Richtlinie zur Datenaufbewahrung](technical/data-retention-policy.md)
 - Versionen {#cm-release-notes}
+   - [Parallelitätsüberwachung - Versionshinweise zu 4.0.1](releases/rn-cm-services-401.md)
    - [Parallelitätsüberwachung - Versionshinweise zu 3.6.2](releases/rn-cm-services-362.md)
    - [Parallelitätsüberwachung - Versionshinweise zu 3.6.1](releases/rn-cm-services-361.md)
    - [Parallelitätsüberwachung - Versionshinweise zu 3.6.0](releases/rn-cm-services-360.md)
