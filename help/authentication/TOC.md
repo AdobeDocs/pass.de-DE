@@ -19,7 +19,7 @@ ht-degree: 3%
 - [Produktankündigungen](product-announcements.md)
 - Produktversionen {#product-releases}
    - 2026 {#2026}
-      - Versionshinweise zur {hide-from-toc}[Adobe Pass-Authentifizierung 3.7.0](notes-releases/auth-rn-370.md)
+      - {hide-from-toc}[Versionshinweise zur Adobe Pass-Authentifizierung 3.7.0](notes-releases/auth-rn-370.md)
       - [Versionshinweise zur Adobe Pass-Authentifizierung 3.6.0](notes-releases/auth-rn-360.md)
    - 2025 {#2025}
       - [Versionshinweise zur Adobe Pass-Authentifizierung für Android 3.8.0](notes-releases/authn-rn-android-380.md)
