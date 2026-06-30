@@ -259,7 +259,7 @@ Nachdem der Benutzer die gewünschte MVPD ausgewählt hat, muss die Upper-Layer-
 | `public void setSelectedProvider(String mvpdId)` |
 
 
-**Verfügbarkeit:**v 1.0+
+**Verfügbarkeit:**&#x200B;v 1.0+
 
 **Parameter:** none
 
@@ -354,7 +354,7 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 | --- |
 | `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
-**Verfügbarkeit:**v 1.0+
+**Verfügbarkeit:**&#x200B;v 1.0+
 
 **Parameter:** Der `resources` ist ein Array von Ressourcen, für die der Benutzer bereits berechtigt ist, sie anzuzeigen.
 
@@ -426,7 +426,7 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 | --- |
 | `public void setToken(String token, String resourceId)` |
 
-**Verfügbarkeit:**v 1.0+
+**Verfügbarkeit:**&#x200B;v 1.0+
 
 **Parameter:**
 
