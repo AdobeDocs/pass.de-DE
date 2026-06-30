@@ -2,9 +2,9 @@
 title: iOS/tvOS-API-Referenz
 description: iOS/tvOS-API-Referenz
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '6935'
+source-wordcount: '7035'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,7 @@ Informationen zum Ablauf der Authentifizierungsberechtigungen mithilfe dieser AP
 
 * [`setOptions:options:`](#setOptions) - Konfiguriert globale SDK-Optionen wie profile oder visitorID.
 
-* [`setRequestor:`](#setReqV3) [`requestorID`](#setReqV3),[`setRequestor:requestorID:serviceProviders:`](#setReqV3) - Legt die Identität des Programmierers fest.
+* [`setRequestor:`](#setReqV3)[`requestorID`](#setReqV3),[`setRequestor:requestorID:serviceProviders:`](#setReqV3) - Legt die Identität des Programmierers fest.
 
 * **[VERALTET]** [`setRequestor:signedRequestorId:`](#setReq),[`setRequestor:signedRequestorId:serviceProviders:`](#setReq) - Legt die Identität des Programmierers fest.
 
@@ -59,7 +59,7 @@ Informationen zum Ablauf der Authentifizierungsberechtigungen mithilfe dieser AP
 
 * [`getAuthentication`](#getAuthN), [`getAuthentication:withData:`](#getAuthN) - Startet den vollständigen Authentifizierungs-Workflow.
 
-* [`getAuthentication:filter`](#getAuthN_filter),[`getAuthentication:withData:`](#getAuthN) [andFilter](#getAuthN_filter) - Startet den vollständigen Authentifizierungs-Workflow.
+* [`getAuthentication:filter`](#getAuthN_filter),[`getAuthentication:withData:`](#getAuthN)[andFilter](#getAuthN_filter) - Startet den vollständigen Authentifizierungs-Workflow.
 
 * [`displayProviderDialog:`](#dispProvDialog) : Informiert Ihr Programm, die entsprechenden Benutzeroberflächenelemente zu instanziieren, damit die Benutzenden eine MVPD auswählen können.
 
@@ -137,7 +137,7 @@ Informationen zum Ablauf der Authentifizierungsberechtigungen mithilfe dieser AP
 
 | API-Aufruf: iOS AccessEnabler-Konstruktor |
 | --- |
-| ```- (id) init;``` |
+| `- (id) init;` |
 
 **Verfügbarkeit:** v1.0+ **Bis:** v3.0
 
@@ -157,7 +157,7 @@ Informationen zum Ablauf der Authentifizierungsberechtigungen mithilfe dieser AP
 
 | API-Aufruf: setOptions |
 | --- |
-| ```- (void) setOptions:(NSDictionary *)options;``` |
+| `- (void) setOptions:(NSDictionary *)options;` |
 
 **Verfügbarkeit:** v2.3.0+
 
@@ -189,7 +189,7 @@ Wenn ein Wert für den `urls`-Parameter angegeben wird, zielt der resultierende 
 
 | API-Aufruf: Anfordererkonfiguration |
 | --- |
-| ```- (void) setRequestor:(NSString *)requestorID``` |
+| `- (void) setRequestor:(NSString *)requestorID` |
 
 
 **Verfügbarkeit:** v3.0+
@@ -313,9 +313,9 @@ Wenn ein Wert für den `urls`-Parameter angegeben wird, zielt der resultierende 
 
 **Parameter:**
 
-* *RequestorID*: Die eindeutige ID, die dem Programmierer zugeordnet ist. Übergeben Sie die von Adobe zugewiesene eindeutige ID an Ihre Site, wenn Sie zum ersten Mal   beim Adobe Pass-Authentifizierungsdienst registriert.
-* *signedRequestorID*: **Dieser Parameter ist in iOS AccessEnabler vorhanden   Versionen 1.2 und höher.** Eine Kopie der Anforderer-ID , die mit Ihrem privaten Schlüssel digital signiert ist. <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
-* *urls*: Optionaler Parameter; standardmäßig der Adobe-Dienstleister   wird verwendet (http://sp.auth.adobe.com/). Mit diesem Array können Sie Endpunkte für von Adobe bereitgestellte Authentifizierungs- und Autorisierungsdienste angeben (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Damit können Sie mehrere Instanzen des Authentifizierungs-Service von Adobe Pass angeben. Dabei besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt.
+* *RequestorID*: Die eindeutige ID, die dem Programmierer zugeordnet ist. Übergeben Sie die eindeutige ID, die Adobe Ihrer Site zugewiesen hat, wenn Sie sich zum ersten Mal beim Adobe Pass-Authentifizierungs-Service registriert haben.
+* *signedRequestorID*: **Dieser Parameter ist in iOS AccessEnabler der Versionen 1.2 und höher vorhanden.** Eine Kopie der Anforderer-ID , die mit Ihrem privaten Schlüssel digital signiert ist. <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
+* *urls*: Optionaler Parameter; standardmäßig wird der Adobe-Dienstleister verwendet (http://sp.auth.adobe.com/). Mit diesem Array können Sie Endpunkte für von Adobe bereitgestellte Authentifizierungs- und Autorisierungsdienste angeben (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Damit können Sie mehrere Instanzen des Authentifizierungs-Service von Adobe Pass angeben. Dabei besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt.
 * secret und publicKey: Der geheime und öffentliche Schlüssel, die zum Signieren der zweiten Bildschirmaufrufe verwendet werden. Weitere Informationen finden Sie in der [Client-losen Dokumentation](#create_dev).
 
 Wenn die Bibliothek ohne den `serviceProviders`-Parameter aufgerufen wird, ruft sie die Konfiguration vom standardmäßigen Service-Provider ab (d. h. `https://sp.auth.adobe.com` für das Produktionsprofil oder https://sp.auth-staging.adobe.com für das Staging-Profil). Wenn der `serviceProviders` angegeben wird, muss es sich um ein Array von URLs handeln. Die Konfigurationsinformationen werden von allen angegebenen Endpunkten abgerufen und zusammengeführt. Wenn doppelte Informationen in verschiedenen Antworten des Dienstleisters vorhanden sind, wird der Konflikt zugunsten des am schnellsten reagierenden Servers gelöst (d. h., der Server mit der kürzesten Antwortzeit hat Vorrang).
@@ -369,10 +369,8 @@ Wenn die Bibliothek ohne den `serviceProviders`-Parameter aufgerufen wird, ruft 
 
 **file:** AccessEnabler/headers/AccessEnabler.h
 
-**Beschreibung:** Prüft den Authentifizierungsstatus des aktuellen Benutzers.
-Dies erfolgt, indem im lokalen nach einem gültigen Authentifizierungstoken gesucht wird
-Token-Speicherplatz. Diese Methode führt keine Netzwerkaufrufe aus, und es wird empfohlen, sie im Haupt-Thread aufzurufen.
-Sie wird von der Anwendung verwendet, um den Authentifizierungsstatus des Benutzers abzufragen und
+**Beschreibung:** Prüft den Authentifizierungsstatus des aktuellen Benutzers.Dies erfolgt, indem im lokalen nach einem gültigen Authentifizierungstoken gesucht wird
+Token-Speicherplatz. Diese Methode führt keine Netzwerkaufrufe aus, und es wird empfohlen, sie im Haupt-Thread aufzurufen.Sie wird von der Anwendung verwendet, um den Authentifizierungsstatus des Benutzers abzufragen und
 Aktualisieren Sie die Benutzeroberfläche entsprechend (d. h., aktualisieren Sie die Benutzeroberfläche zum Anmelden/Abmelden). Die
 Der Authentifizierungsstatus wird über an die Anwendung übermittelt.
 Der [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) Callback.
@@ -398,8 +396,8 @@ Der [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) Callback.
 
 **Parameter:** none
 
-**Ausgelöste Callbacks:**
-[`setAuthenticationStatus:errorCode:`](#setAuthNStatus)
+**Ausgelöste Callbacks:
+
 
 [Nach oben…](#apis)
 
@@ -411,8 +409,8 @@ Der [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) Callback.
 
 **Beschreibung:** Startet den vollständigen Authentifizierungs-Workflow. Sie beginnt mit der Prüfung des Authentifizierungsstatus. Wenn er nicht bereits authentifiziert ist, wird der Zustandscomputer des Authentifizierungsflusses gestartet:
 
-* Wenn der letzte Authentifizierungsversuch erfolgreich war, wird die MVPD   Die Auswahlphase wird übersprungen und   Der [`navigateToUrl:`](#nav2url)-Callback wird ausgelöst. Die   Die Anwendung verwendet diesen Rückruf, um das WebView-Steuerelement zu instanziieren, das dem Benutzer die Anmeldeseite der MVPD anzeigt. **[HINWEIS: Ab Access Enabler 1.5 ist diese Funktion aufgrund einer Einschränkung in der SDK nicht mehr verfügbar].**
-* Wenn der letzte Authentifizierungsversuch nicht erfolgreich war oder sich der Benutzer explizit abgemeldet hat, lautet der [`displayProviderDialog:`](#dispProvDialog)-Rückruf   Ausgelöst. Ihre Anwendung verwendet diesen Callback, um die MVPD-Auswahlbenutzeroberfläche anzuzeigen. Außerdem muss die App den Authentifizierungsfluss fortsetzen, indem sie die AccessEnabler-Bibliothek über die MVPD-Auswahl des Benutzers mithilfe der [`setSelectedProvider:`](#setSelProv) informiert.
+* Wenn der letzte Authentifizierungsversuch erfolgreich war, wird die MVPD-Auswahlphase übersprungen und der [`navigateToUrl:`](#nav2url)-Callback ausgelöst. Die Anwendung verwendet diesen Rückruf, um das WebView-Steuerelement zu instanziieren, das dem Benutzer die Anmeldeseite der MVPD anzeigt. **[HINWEIS: Ab Access Enabler 1.5 ist diese Funktion aufgrund einer Einschränkung in der SDK nicht mehr verfügbar].**
+* Wenn der letzte Authentifizierungsversuch nicht erfolgreich war oder sich der Benutzer explizit abgemeldet hat, wird der [`displayProviderDialog:`](#dispProvDialog)-Rückruf ausgelöst. Ihre Anwendung verwendet diesen Callback, um die MVPD-Auswahlbenutzeroberfläche anzuzeigen. Außerdem muss die App den Authentifizierungsfluss fortsetzen, indem sie die AccessEnabler-Bibliothek über die MVPD-Auswahl des Benutzers mithilfe der [`setSelectedProvider:`](#setSelProv) informiert.
 
 Da die Anmeldeinformationen der Benutzenden auf der Anmeldeseite von MVPD überprüft werden, muss die Anwendung die verschiedenen Umleitungsvorgänge überwachen, die stattfinden, während sich die Benutzenden auf der Anmeldeseite von MVPD authentifizieren. Wenn die korrekten Anmeldeinformationen eingegeben werden, wird das WebView-Steuerelement an eine benutzerdefinierte URL umgeleitet, die durch die `ADOBEPASS_REDIRECT_URL`-Konstante definiert wird. Diese URL ist nicht zum Laden durch die WebView vorgesehen. Die Anwendung muss diese URL abfangen und dieses Ereignis als Signal interpretieren, dass die Anmeldephase abgeschlossen ist. Anschließend sollte die Steuerung an AccessEnabler übergeben werden, um den Authentifizierungsfluss abzuschließen (durch Aufruf der Methode [handleExternalURL](#handleExternalURL)).
 
@@ -716,7 +714,7 @@ Während der UIWebView/WKWebView` `Controller mehrere Weiterleitungen durchläuf
 
 Ähnlich wie beim `navigateToUrl:`-Callback wird der `navigateToUrl:useSVC:` vom AccessEnabler ausgelöst, um die Anwendung aufzufordern, einen `SFSafariViewController`-Controller zu instanziieren und die im **`url`** des Callbacks angegebene URL zu laden. Der Callback übergibt den **`url`**, der die URL des Authentifizierungsendpunkts oder die URL des Abmeldeendpunkts darstellt, und den **`useSVC`**, der angibt, dass die Anwendung einen `SFSafariViewController` verwenden muss.
 
-Während der `SFSafariViewController` mehrere Weiterleitungen durchläuft, muss die Anwendung die Aktivität des Controllers überwachen und den Zeitpunkt erkennen, zu dem eine bestimmte, von Ihrer `application's custom scheme` definierte URL geladen wird (z. B. **&#x200B; &#x200B;**`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Beachten Sie, dass diese spezifische benutzerdefinierte URL tatsächlich ungültig ist und nicht vom Controller geladen werden soll. Sie darf von Ihrer Anwendung nur als Signal interpretiert werden, dass der Authentifizierungs- oder Abmeldefluss abgeschlossen ist und dass es sicher ist, den Controller zu schließen. Wenn der Controller diese spezifische benutzerdefinierte URL lädt, muss die Anwendung die `SFSafariViewController` schließen und die Methode &quot;`handleExternalURL:url `&quot; von AccessEnabler aufrufen.
+Während der `SFSafariViewController` mehrere Weiterleitungen durchläuft, muss die Anwendung die Aktivität des Controllers überwachen und den Zeitpunkt erkennen, zu dem eine bestimmte, von Ihrer `application's custom scheme` definierte URL geladen wird (z. B. ** **`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Beachten Sie, dass diese spezifische benutzerdefinierte URL tatsächlich ungültig ist und nicht vom Controller geladen werden soll. Sie darf von Ihrer Anwendung nur als Signal interpretiert werden, dass der Authentifizierungs- oder Abmeldefluss abgeschlossen ist und dass es sicher ist, den Controller zu schließen. Wenn der Controller diese spezifische benutzerdefinierte URL lädt, muss die Anwendung die `SFSafariViewController` schließen und die Methode &quot;`handleExternalURL:url `&quot; von AccessEnabler aufrufen.
 
 **Hinweis:** Bitte beachten Sie, dass im Falle des Authentifizierungsflusses dies ein Punkt ist, an dem der Benutzer die Schaltfläche „Zurück“ drücken kann, was dem Abbruch des Authentifizierungsflusses entspricht. In einem solchen Szenario muss die Anwendung die Methode [setSelectedProvider:](#setSelProv) aufrufen, die **`nil`** als Parameter übergibt und dem AccessEnabler die Möglichkeit gibt, seinen Authentifizierungszustandsrechner zurückzusetzen.
 
@@ -732,19 +730,19 @@ Während der `SFSafariViewController` mehrere Weiterleitungen durchläuft, muss 
 <tbody>
 <tr class="odd">
 <td><pre><code>@optional
-&#x200B;- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
+- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
 </tr>
 </tbody>
 </table>
 
-**Verfügbarkeit:**&#x200B;v 3.2+
+**Verfügbarkeit:**v 3.2+
 
 **Parameter**:
 
 * *url:* die URL, die auf die Anmeldeseite von MVPD verweist
 * *useSVC:*, ob die URL in SFSafariViewController geladen werden soll.
 
-**Ausgelöst von:**&#x200B;[&#x200B; setOptions:](#setOptions) vor [setSelectedProvider:](#setSelProv)
+**Ausgelöst von:**[ setOptions:](#setOptions) vor [setSelectedProvider:](#setSelProv)
 
 [Nach oben…](#apis)
 
@@ -853,7 +851,7 @@ Im Falle des Authentifizierungsflusses vervollständigt AccessEnabler den Fluss,
    * `ACCESS_ENABLER_STATUS_ERROR` - Authentifizierungsfluss fehlgeschlagen
 * *code*: Fehlerursache. Wenn *status* den Wert `ACCESS_ENABLER_STATUS_SUCCESS` hat, ist *code* eine leere Zeichenfolge (d. h. definiert durch die `USER_AUTHENTICATED`). Im Falle eines Fehlers kann dieser Parameter einen der folgenden Werte annehmen:
    * `USER_NOT_AUTHENTICATED_ERROR` - Der Benutzer ist nicht authentifiziert. Als Antwort auf den Aufruf [checkAuthentication:](#checkAuthN)-Methode, wenn im Cache des lokalen Tokens kein gültiges Authentifizierungstoken vorhanden ist.
-   * `PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler hat das       Authentifizierungszustandsmaschine nach der Upper-Layer-Anwendung       hat *null* an [`setSelectedProvider:`](#setSelProv) übergeben, um den Authentifizierungsfluss abzubrechen.  Vermutlich hat der Benutzer den Authentifizierungsfluss abgebrochen (d.h. die Schaltfläche „Zurück“ gedrückt).
+   * `PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler hat den Authentifizierungsstatus-Computer zurückgesetzt, nachdem die Upper-Layer-Anwendung (*)* wurde, um den Authentifizierungsfluss abzubrechen[`setSelectedProvider:`](#setSelProv).  Vermutlich hat der Benutzer den Authentifizierungsfluss abgebrochen (d.h. die Schaltfläche „Zurück“ gedrückt).
    * `GENERIC_AUTHENTICATION_ERROR` - Der Authentifizierungsfluss ist aus Gründen wie der Nichtverfügbarkeit des Netzwerks oder dem expliziten Abbruch des Authentifizierungsflusses fehlgeschlagen.
 
 **Ausgelöst durch:** `checkAuthentication`, `getAuthentication`, [`getAuthentication:withData:`](#getAuthN), `checkAuthorization:`, [`checkAuthorization:withData:`](#checkAuthZ)
@@ -889,7 +887,7 @@ Im Falle des Authentifizierungsflusses vervollständigt AccessEnabler den Fluss,
 
 **Parameter:**
 
-* *resources:* Array von Ressourcen, für die die Autorisierung überprüft werden soll. Jedes Element in der Liste sollte eine Zeichenfolge sein, die die Ressourcen-ID darstellt. Die     Die Ressourcen-ID unterliegt denselben Einschränkungen wie die Ressourcen-ID im Aufruf, d. h. sie sollte ein vereinbarter Wert sein, der zwischen dem Programmierer und dem MVPD oder einem RSS-Medienfragment festgelegt wird.
+* *resources:* Array von Ressourcen, für die die Autorisierung überprüft werden soll. Jedes Element in der Liste sollte eine Zeichenfolge sein, die die Ressourcen-ID darstellt. Die Ressourcen-ID unterliegt denselben Einschränkungen wie die Ressourcen-ID im Aufruf, d. h. sie sollte ein vereinbarter Wert sein, der zwischen dem Programmierer und dem MVPD oder einem RSS-Medienfragment festgelegt wird.
 
 **Rückruf ausgelöst:** [`preauthorizedResources:`](#preauthResources)
 

@@ -2,9 +2,9 @@
 title: Android SDK API-Referenz
 description: Android SDK API-Referenz
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '4560'
+source-wordcount: '4628'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 In diesem Dokument werden die Methoden und Callbacks beschrieben, die von der Android SDK für die Adobe Pass-Authentifizierung bereitgestellt werden, welche von der Adobe Pass-Authentifizierungsversion 1.7 und höher unterstützt wird. Die hier beschriebenen Methoden und Callback-Funktionen sind in den Header-Dateien AccessEnabler.h und EntitlementDelegate.h definiert.
 
-Die neueste Android AccessEnabler-SDK finden Sie [&#x200B; &#x200B;](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library)https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library.
+Die neueste Android AccessEnabler-SDK finden Sie ](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library) [https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library.
 
 
 **Hinweis:** Das Adobe Pass-Authentifizierungsteam empfiehlt die Verwendung nur von (öffentlichen *Adobe Pass-*:
@@ -92,13 +92,13 @@ Wenn ein Wert für den Parameter *urls* angegeben wird, zielt der resultierende 
 
 | API-Aufruf: Anfordererkonfiguration |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 **Verfügbarkeit:** v3.0+
 
 | API-Aufruf: Anfordererkonfiguration |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Verfügbarkeit:** v3.0+
 
@@ -232,9 +232,7 @@ Nachdem der Benutzer die gewünschte MVPD ausgewählt hat, muss die Upper-Layer-
 
 >[!NOTE]
 >
-> Abbrechen des Authentifizierungsflusses
-> </br></br>
-> Bitte beachten Sie, dass dies ein Punkt ist, an dem der Benutzer die Möglichkeit hat, die Schaltfläche „Zurück“ zu drücken, was dem Abbruch des Authentifizierungsflusses entspricht. In einem solchen Szenario muss die Anwendung die `setSelectedProvider()` aufrufen und *null* als Parameter übergeben, um dem Access Enabler die Möglichkeit zu geben, seinen Authentifizierungszustand auf seinem Computer zurückzusetzen.
+> Abbrechen des AuthentifizierungsflussesBitte beachten Sie, dass dies ein Punkt ist, an dem der Benutzer die Möglichkeit hat, die Schaltfläche „Zurück“ zu drücken, was dem Abbruch des Authentifizierungsflusses entspricht. In einem solchen Szenario muss die Anwendung die `setSelectedProvider()` aufrufen und *null* als Parameter übergeben, um dem Access Enabler die Möglichkeit zu geben, seinen Authentifizierungszustand auf seinem Computer zurückzusetzen.
 
 | Callback: Anzeigen der MVPD-Auswahlbenutzeroberfläche |
 | --- |
@@ -493,7 +491,7 @@ Der Parameter `cache` gibt an, ob die zwischengespeicherte Antwort vor der Autor
 
 | Callback: Autorisierungsfluss fehlgeschlagen |
 | --- |
-| public void tokenRequestFailed(String resourceId, <br>        String errorCode, String errorDescription) |
+| public void tokenRequestFailed(String resourceId, <br> String errorCode, String errorDescription) |
 
 **Verfügbarkeit:** v1.0+
 
@@ -624,7 +622,7 @@ Programmierern stehen zwei Arten von Metadaten zur Verfügung:
 
 | Callback: Ergebnis der Anfrage zum Abrufen von Metadaten |
 | --- |
-| ```public void setMetadataStatus(MetadataKey key, MetadataStatus result)``` |
+| `public void setMetadataStatus(MetadataKey key, MetadataStatus result)` |
 
 **Verfügbarkeit:** v1.0+
 
@@ -688,7 +686,7 @@ Dieser Wert ist null, wenn die Anfrage für einfache Metadaten (Authentifizierun
 
 | API-Aufruf: AccessEnabler-Version abrufen |
 | --- |
-| ```public static String getVersion()``` |
+| `public static String getVersion()` |
 
 
 [Zurück zur Android-API…](#api)
@@ -727,7 +725,7 @@ Der Access Enabler-Trigger führt einen zusätzlichen Callback aus, der nicht un
 
 | Callback: Ereignisse verfolgen |
 | --- |
-| ```public void sendTrackingData(Event event, ArrayList<String> data)``` |
+| `public void sendTrackingData(Event event, ArrayList<String> data)` |
 
 **Verfügbarkeit:** v1.0+
 
@@ -739,7 +737,7 @@ Der Access Enabler-Trigger führt einen zusätzlichen Callback aus, der nicht un
    - **mvpdSelection:** Wenn Benutzende eine MVPD im MVPD-Auswahlformular auswählen (Ereignistyp ist `EVENT_MVPD_SELECTION`)
 - *data*: Zusätzliche Daten, die mit dem gemeldeten Ereignis verknüpft sind. Diese Daten werden in Form einer Werteliste angezeigt.
 
-Im Folgenden finden Sie Anweisungen zur Interpretation der Werte in *data*
+Im Folgenden finden Sie Anweisungen zur Interpretation der Werte in den *Daten*
 Array:
 
 - Für Ereignistyp *`EVENT_AUTHN_DETECTION`:*

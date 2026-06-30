@@ -2,10 +2,10 @@
 title: Android SDK mit dynamischer Client-Registrierung
 description: Android SDK mit dynamischer Client-Registrierung
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '1301'
-ht-degree: 0%
+source-wordcount: '1321'
+ht-degree: 1%
 
 ---
 
@@ -53,7 +53,7 @@ Sehen Sie sich [dieses Webinar](https://my.adobeconnect.com/pzkp8ujrigg1/) an, d
 
 | API-Aufruf: Konstruktor |
 | --- |
-| public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException |
+| public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br> throws AccessEnablerException |
 
 
 **Verfügbarkeit:** v3.0+
@@ -64,8 +64,7 @@ Sehen Sie sich [dieses Webinar](https://my.adobeconnect.com/pzkp8ujrigg1/) an, d
 - softwareStatement: Wert, der vom TVE-Dashboard abgerufen wurde oder *null*, wenn „software\_statement“ in strings.xml festgelegt ist
 - redirectUrl : eine eindeutige URL, eine der Domains in umgekehrter Reihenfolge, die explizit im TVE-Dashboard hinzugefügt wurde, oder *null* wenn „redirect\_uri“ in strings.xml festgelegt ist
 
-Hinweis : Ungültige softwareStatement oder redirectUrl führt dazu, dass die Anwendung AccessEnabler nicht initialisiert oder die Anwendung für die Authentifizierung und Autorisierung von Adobe Pass registriert
-</br>
+Hinweis : Ungültige softwareStatement oder redirectUrl führt dazu, dass die Anwendung AccessEnabler nicht initialisiert oder die Anwendung für die Authentifizierung und Autorisierung von Adobe Pass registriert</br>
 Hinweis : Der Parameter „redirectUrl“ oder „redirect\_uri“ in „strings.xml“ sollte der Wert der im TVE-Dashboard hinzugefügten Domain für die Anwendung in umgekehrter Reihenfolge sein ( z. B. : Für die im TVE-Dashboard hinzugefügte Domain „adobe.com“ sollte die redirectUrl „com.adobe“ sein.
 
 
@@ -81,13 +80,13 @@ Wenn ein Wert für den Parameter *urls* angegeben wird, zielt der resultierende 
 
 | API-Aufruf: Anfordererkonfiguration |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 **Verfügbarkeit:** v3.0+
 
 | API-Aufruf: Anfordererkonfiguration |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Verfügbarkeit:** v3.0+
 
@@ -114,8 +113,8 @@ Veraltet:
 
 **Parameter:** none
 
-**Ausgelöste Callbacks:** `setAuthenticationStatus()`
-</br></br>
+**Ausgelöste Callbacks:** 
+
 
 ## Implementierungsfluss für Programmierer {#Progr}
 
@@ -123,7 +122,7 @@ Veraltet:
 
 a. Abrufen von software\_statement und redirect\_uri von Adobe Pass ( TVE Dashboard )
 
-b. Es gibt zwei Optionen, um diese Werte an Adobe Pass SDK zu übergeben:
+B. Es gibt zwei Optionen, um diese Werte an Adobe Pass SDK zu übergeben:
 
 Fügen Sie in strings.xml hinzu:
 
@@ -156,12 +155,12 @@ SDK führt die folgenden Vorgänge aus:
 
 - Wenn eine MVPD eine passive Authentifizierung erfordert, wird eine benutzerdefinierte Chrome-Registerkarte geöffnet, die passiv mit dieser MVPD ausgeführt wird und nach Abschluss geschlossen wird
 
-b. checkAuthentication()
+B. checkAuthentication()
 
 - true : Wechseln zur Autorisierung
 - false : Wechseln Sie zu MVPD auswählen
 
-c. getAuthentication : SDK nimmt **access_token) in** auf
+C. getAuthentication : SDK nimmt **access_token** in die Aufrufparameter auf
 
 - mvpd gespeichert : Gehen Sie zu setSelectedProvider(mvpd_id)
 - mvpd nicht ausgewählt : displayProviderDialog
@@ -174,7 +173,7 @@ d. setSelectedProvider
 - Anmeldung abgebrochen : MVPD-Auswahl zurücksetzen
 - Das URL-Schema wird als &quot;adobepass://redirect_uri&quot; festgelegt, um zu erfassen, wann die Authentifizierung abgeschlossen ist
 
-e. get/checkAuthorization : SDK fügt **access_token) in** Kopfzeile als Autorisierung ein: Bearer **access_token**
+E. get/checkAuthorization : SDK fügt **access_token) in** Kopfzeile als Autorisierung ein: Bearer **access_token**
 
 - Wenn die Autorisierung erfolgreich ist, wird ein Aufruf ausgeführt, um die
 Medien-Token
