@@ -2,9 +2,9 @@
 title: Amazon FireOS Native Client-API-Referenz
 description: Amazon FireOS Native Client-API-Referenz
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '3498'
+source-wordcount: '3519'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,7 @@ Die neueste Amazon FireOS AccessEnabler-SDK finden Sie in der <https://tve.zende
 
 | API-Aufruf: Konstruktor |
 | --- |
-| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br>  <code> public static AccessEnabler getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) throws AccessEnablerException </code> |
+| <code>public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br> throws AccessEnablerException<br><br> public static AccessEnabler getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) throws AccessEnablerException </code> |
 
 **Verfügbarkeit:** v3.0+
 
@@ -100,7 +100,7 @@ Wenn ein Wert für den Parameter *urls* angegeben wird, zielt der resultierende 
 
 | API-Aufruf: Anfordererkonfiguration |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 
 **Verfügbarkeit:** v3.0+
@@ -108,7 +108,7 @@ Wenn ein Wert für den Parameter *urls* angegeben wird, zielt der resultierende 
 
 | API-Aufruf: Anfordererkonfiguration |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Verfügbarkeit:** v3.0+
 
@@ -139,7 +139,7 @@ Wenn ein Wert für den Parameter *urls* angegeben wird, zielt der resultierende 
 
 | Callback: Anfordererkonfiguration abgeschlossen |
 | --- |
-| ```public void setRequestorComplete(int status)``` |
+| `public void setRequestorComplete(int status)` |
 
 **Verfügbarkeit:** v1.0+
 
@@ -158,7 +158,7 @@ Phase fehlgeschlagen
 
 ### setOptions {#fire_setOption}
 
-**Beschreibung:** Konfiguriert globale SDK-Optionen. Sie akzeptiert **Map\&lt;String, String\>** als Argument. Die Werte aus der Zuordnung werden zusammen mit jedem Netzwerkaufruf der SDK an den Server übergeben.
+**Beschreibung:** Konfiguriert globale SDK-Optionen. Als Argument wird ein **Map\&lt;String, String\>** akzeptiert. Die Werte aus der Zuordnung werden zusammen mit jedem Netzwerkaufruf der SDK an den Server übergeben.
 
 Die Werte werden unabhängig vom aktuellen Fluss (Authentifizierung/Autorisierung) an den Server übergeben. Wenn Sie die Werte ändern möchten, können Sie diese Methode jederzeit aufrufen.
 
@@ -166,7 +166,7 @@ Die Werte werden unabhängig vom aktuellen Fluss (Authentifizierung/Autorisierun
 
 | API-Aufruf: setOptions |
 | --- |
-| ```public void setOptions(HashMap<String,String> options)``` |
+| `public void setOptions(HashMap<String,String> options)` |
 
 **Verfügbarkeit:** v3.0+
 
@@ -187,7 +187,7 @@ Wenn eine MVPD die Funktion „Authentifizierung pro Anfordernder“ unterstütz
 
 | API-Aufruf: Authentifizierungsstatus überprüfen |
 | --- |
-| ```public void checkAuthentication()``` |
+| `public void checkAuthentication()` |
 
 **Verfügbarkeit:** v1.0+
 
@@ -210,13 +210,13 @@ Schließlich wird der Authentifizierungsstatus über den Rückruf *setAuthentica
 
 | API-Aufruf: Startet den Authentifizierungsfluss |
 | --- |
-| ```public void getAuthentication()``` |
+| `public void getAuthentication()` |
 
 **Verfügbarkeit:** v1.0+
 
 | API-Aufruf: Startet den Authentifizierungsfluss |
 | --- |
-| ```public void getAuthentication(boolean forceAuthN, Map<String, Object> genericData)``` |
+| `public void getAuthentication(boolean forceAuthN, Map<String, Object> genericData)` |
 
 **Verfügbarkeit:** v1.0+
 
@@ -238,7 +238,7 @@ Nachdem der Benutzer die gewünschte MVPD ausgewählt hat, muss die Upper-Layer-
 
 | **Callback: Zeigt die MVPD-Auswahlbenutzeroberfläche an** |
 | --- |
-| ```public void displayProviderDialog(ArrayList<Mvpd> mvpds)``` |
+| `public void displayProviderDialog(ArrayList<Mvpd> mvpds)` |
 
 **Verfügbarkeit:** v1.0+
 
@@ -256,15 +256,15 @@ Nachdem der Benutzer die gewünschte MVPD ausgewählt hat, muss die Upper-Layer-
 
 | **API-Aufruf: Legen Sie den aktuell ausgewählten Anbieter fest** |
 | --- |
-| ```public void setSelectedProvider(String mvpdId)``` |
+| `public void setSelectedProvider(String mvpdId)` |
 
 
 **Verfügbarkeit:**&#x200B;v 1.0+
 
 **Parameter:** none
 
-**Ausgelöste Callbacks:** `setAuthenticationStatus(), sendTrackingData()`
-</br>
+**Ausgelöste Callbacks:** 
+
 
 ### navigateToUrl {#navigagteToUrl}
 
@@ -272,7 +272,7 @@ Nachdem der Benutzer die gewünschte MVPD ausgewählt hat, muss die Upper-Layer-
 
 | **Callback: MVPD-Anmeldeseite anzeigen** |
 | --- |
-| ```public void navigateToUrl(String url)``` |
+| `public void navigateToUrl(String url)` |
 
 **Verfügbarkeit:** v1.0+
 
@@ -290,7 +290,7 @@ Nachdem der Benutzer die gewünschte MVPD ausgewählt hat, muss die Upper-Layer-
 
 | **API-Aufruf: Abrufen des Authentifizierungstokens** |
 | --- |
-| ```public void getAuthenticationToken(String cookies)``` |
+| `public void getAuthenticationToken(String cookies)` |
 
 **Verfügbarkeit:** v1.0+
 
@@ -310,7 +310,7 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 
 | **Callback: Meldet den Status des Authentifizierungsflusses** |
 | --- |
-| ```public void setAuthenticationStatus(int status, String errorCode)``` |
+| `public void setAuthenticationStatus(int status, String errorCode)` |
 
 **Verfügbarkeit:** v1.0+
 
@@ -336,7 +336,7 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 
 | **API-Aufruf: Legen Sie den aktuell ausgewählten Anbieter fest** |
 | --- |
-| ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
+| `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
 **Verfügbarkeit:** v1.0+
 
@@ -352,7 +352,7 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 
 | **API-Aufruf: Legen Sie den aktuell ausgewählten Anbieter fest** |
 | --- |
-| ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
+| `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
 **Verfügbarkeit:**&#x200B;v 1.0+
 
@@ -368,13 +368,13 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 
 | **API-Aufruf: Autorisierungsstatus überprüfen** |
 | --- |
-| ```public void checkAuthorization(String resourceId)``` |
+| `public void checkAuthorization(String resourceId)` |
 
 **Verfügbarkeit:** v1.0+
 
 | **API-Aufruf: Autorisierungsstatus überprüfen** |
 | --- |
-| ```public void checkAuthorization(String resourceId, Map<String, Object> genericData)``` |
+| `public void checkAuthorization(String resourceId, Map<String, Object> genericData)` |
 
 **Verfügbarkeit:** v1.0+
 
@@ -393,13 +393,13 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 
 | **API-Aufruf: Initiieren des Autorisierungsflusses** |
 | --- |
-| ```public void getAuthorization(String resourceId)``` |
+| `public void getAuthorization(String resourceId)` |
 
 **Verfügbarkeit:** v1.0+
 
 | **API-Aufruf: Initiieren des Autorisierungsflusses** |
 | --- |
-| ```public void getAuthorization(String resourceId, Map<String, Object> genericData)``` |
+| `public void getAuthorization(String resourceId, Map<String, Object> genericData)` |
 
 **Verfügbarkeit:** v1.0+
 
@@ -424,7 +424,7 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 
 | **Callback: Autorisierungsfluss erfolgreich abgeschlossen** |
 | --- |
-| ```public void setToken(String token, String resourceId)``` |
+| `public void setToken(String token, String resourceId)` |
 
 **Verfügbarkeit:**&#x200B;v 1.0+
 
@@ -443,7 +443,7 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 
 | **Callback: Autorisierungsfluss fehlgeschlagen** |
 | --- |
-| ```public void tokenRequestFailed(String resourceId, <br>        String errorCode, String errorDescription)``` |
+| <code>public void tokenRequestFailed(String resourceId, <br> String errorCode, String errorDescription)</code> |
 
 **Verfügbarkeit:** v1.0+
 
@@ -464,7 +464,7 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 
 | **API-Aufruf: Initiieren des Abmeldeflusses** |
 | --- |
-| ```public void logout()``` |
+| `public void logout()` |
 
 **Verfügbarkeit:** v1.0+
 
@@ -480,7 +480,7 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 
 | **API-Aufruf: Bestimmen Sie die aktuell ausgewählte MVPD** |
 | --- |
-| ```public void getSelectedProvider()``` |
+| `public void getSelectedProvider()` |
 
 **Verfügbarkeit:** v1.0+
 
@@ -496,7 +496,7 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 
 | **Callback: Informationen zum aktuell ausgewählten MVPD** |
 | --- |
-| ```public void selectedProvider(Mvpd mvpd)``` |
+| `public void selectedProvider(Mvpd mvpd)` |
 
 **Verfügbarkeit:** v1.0+
 
@@ -514,7 +514,7 @@ Dieser Rückruf signalisiert auch, wenn der Abmeldefluss abgeschlossen ist.
 
 | **API-Aufruf: Abfragen des AccessEnabler nach Metadaten** |
 | --- |
-| ```public void getMetadata(MetadataKey metadataKey)``` |
+| `public void getMetadata(MetadataKey metadataKey)` |
 
 **Verfügbarkeit:** v1.0+
 
@@ -550,7 +550,7 @@ Welche Benutzermetadaten einem Programmierer tatsächlich zur Verfügung stehen,
 
 | **Callback: Ergebnis einer Anfrage zum Abrufen von Metadaten** |
 | --- |
-| ```public void setMetadataStatus(MetadataKey key, MetadataStatus result)``` |
+| `public void setMetadataStatus(MetadataKey key, MetadataStatus result)` |
 
 **Verfügbarkeit:** v1.0+
 
@@ -612,7 +612,7 @@ Dieser Wert ist null, wenn die Anfrage für einfache Metadaten (Authentifizierun
 
 | **API-Aufruf: Version von AccessEnabler abrufen** |
 | --- |
-| ```public static String getVersion()``` |
+| `public static String getVersion()` |
 
 ## Tracking von Ereignissen {#tracking}
 
@@ -643,7 +643,7 @@ Der Access Enabler-Trigger führt einen zusätzlichen Callback aus, der nicht un
 
 | Callback: Ereignisse verfolgen |
 | --- |
-| ```public void sendTrackingData(Event event, ArrayList<String> data)``` |
+| `public void sendTrackingData(Event event, ArrayList<String> data)` |
 
 **Verfügbarkeit:** v1.0+
 

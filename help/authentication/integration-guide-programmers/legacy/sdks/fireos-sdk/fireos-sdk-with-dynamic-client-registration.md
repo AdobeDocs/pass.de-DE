@@ -2,10 +2,10 @@
 title: Amazon FireOS SDK mit dynamischer Client-Registrierung
 description: Amazon FireOS SDK mit dynamischer Client-Registrierung
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '1169'
-ht-degree: 0%
+source-wordcount: '1185'
+ht-degree: 1%
 
 ---
 
@@ -37,7 +37,7 @@ FireOS AccessEnabler SDK for FireTV wurde geändert, um die Authentifizierung oh
 
 | API-Aufruf: Konstruktor |
 | --- |
-| public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException |
+| public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br> throws AccessEnablerException |
 
 **Verfügbarkeit:** v3.0+
 
@@ -70,7 +70,7 @@ Wenn ein Wert für den Parameter *urls* angegeben wird, zielt der resultierende 
 
 | API-Aufruf: Anfordererkonfiguration |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Verfügbarkeit:** v3.0+
 
@@ -119,7 +119,7 @@ Veraltet:
 
 ### **2. Programm konfigurieren**
 
-- a. setRequestor(Requestor\_id)
+- a.  setRequestor(Requestor\_id)
 
   SDK führt die folgenden Vorgänge aus:
 
@@ -134,12 +134,12 @@ Veraltet:
 
 - Wenn eine MVPD eine passive Authentifizierung erfordert, wird eine WebView geöffnet, um sie passiv mit dieser MVPD auszuführen, und nach Abschluss geschlossen
 
-- b. checkAuthentication()
+- B. checkAuthentication()
 
    - *true* : zur Autorisierung wechseln
    - *false* : Wechseln Sie zu MVPD auswählen
 
-- c. getAuthentication : Die SDK nimmt **access_token) in** auf
+- C. getAuthentication : Die SDK enthält **access_token** in den Aufrufparametern
 
    - mvpd gespeichert : Gehen Sie zu setSelectedProvider(mvpd\_id)
    - mvpd nicht ausgewählt : displayProviderDialog
@@ -152,7 +152,7 @@ Veraltet:
    - Anmeldung abgebrochen : MVPD-Auswahl zurücksetzen
    - Das URL-Schema wird als &quot;adobepass://android.app&quot; festgelegt, um zu erfassen, wann die Authentifizierung abgeschlossen ist
 
-- e. get/checkAuthorization : SDK fügt den Header **access\_token** als Autorisierung hinzu: Bearer **access\_token**
+- E. get/checkAuthorization : SDK fügt den Header **access\_token** als Autorisierung hinzu: Bearer **access\_token**
 
 - Wenn die Autorisierung erfolgreich ist, wird ein Aufruf zum Abrufen des Medien-Tokens durchgeführt
 

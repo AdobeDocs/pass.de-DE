@@ -2,9 +2,9 @@
 title: API-Übersicht
 description: API-Übersicht
 exl-id: 3fe6f6d8-5b2f-47e5-a8da-06fb18a5d46b
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '2043'
+source-wordcount: '2102'
 ht-degree: 0%
 
 ---
@@ -64,8 +64,8 @@ Die folgenden Filteroptionen sind verfügbar:
 
 * **Gleich**-Filter werden bereitgestellt, indem der Dimensionsname in der Abfragezeichenfolge auf einen bestimmten Wert festgelegt wird.
 * **IN** Filter können angegeben werden, indem derselbe Dimensionsnamensparameter mehrmals mit unterschiedlichen Werten hinzugefügt wird: dimension=value1&amp;dimension=value2
-* **Ungleich** Filter müssen &quot;!“ verwenden Symbol nach dem Dimensionsnamen, was zu &quot;!=&#39; „Operator“: Dimension!=Wert
-* **NOT IN** Filter erfordern &quot;!=&#39; Operator muss mehrmals verwendet werden, und zwar einmal für jeden Wert im Satz: Dimension!=Wert1&amp;Dimension!=Wert2&amp; …
+* **Nicht gleich** Filter müssen das Symbol &quot;!“ nach dem Dimensionsnamen verwenden, was zu „Operator“ &quot;!=&quot; führt: Dimension!=Wert
+* **NOT IN** Filter erfordern, dass der Operator &quot;!=&quot; mehrmals verwendet wird, und zwar einmal für jeden Wert im Satz: dimension!=value1&amp;dimension!=value2&amp; …
 
 
 Es gibt auch eine besondere Verwendung für die Dimensionsnamen in der Abfragezeichenfolge: Wenn der Dimensionsname als Abfragezeichenfolgenparameter ohne Wert verwendet wird, wird die API angewiesen, eine Projektion zurückzugeben, die diese Dimension im Bericht enthält.
@@ -76,8 +76,8 @@ Beispiele für CMU-Abfragen:
 |:---|:---|
 | /dimension1/dimension2/dimension3?dimension1=value1 | SELECT * from projection WHERE dimension1 = &#39;value1&#39; GROUP BY dimension1, dimension2, dimension3 |
 | /dimension1/dimension2/dimension3?dimension1=value1&amp;dimension1=value2 | SELECT * from projection WHERE dimension1 IN (&#39;value1&#39;, &#39;value2&#39;) GROUP BY dimension1, dimension2, dimension3 |
-| /dimension1/dimension2/dimension3?dimension1!=Wert1 | SELECT * from projection WHERE dimension1 &lt;> &#39;value1&#39; GROUP BY dimension1, dimension2, dimension3 |
-| /dimension1/dimension2/dimension3?dimension1!=Wert1&amp;Dimension2!=Wert2 | SELECT * from projection WHERE dimension1 NOT IN (&#39;value1&#39;, &#39;value2&#39;) GROUP BY dimension1, dimension2, dimension3 |
+| /dimension1/dimension2/dimension3?dimension1!=value1 | SELECT * from projection WHERE dimension1 &lt;> &#39;value1&#39; GROUP BY dimension1, dimension2, dimension3 |
+| /dimension1/dimension2/dimension3?dimension1!=value1&amp;dimension2!=value2 | SELECT * from projection WHERE dimension1 NOT IN (&#39;value1&#39;, &#39;value2&#39;) GROUP BY dimension1, dimension2, dimension3 |
 | Angenommen, es gibt keinen direkten Pfad: /dimension1/dimension3, aber einen Pfad: /dimension1/dimension2/dimension3 </br></br> /dimension1?dimension3 | SELECT * from projection GROUP BY dimension1,dimension3 |
 
 >[!NOTE]
@@ -99,7 +99,7 @@ CMU API Reservierte Abfragezeichenfolgen-Parameter:
 | anfangen | Ja | Startzeit für den Bericht als ISO8601; der Server füllt den verbleibenden Teil aus, wenn nur ein Präfix angegeben wird: z. B. führt start=2012 zu start=2012-01-01:00:00:00 | Wird vom Server im Self-Link gemeldet. Der Server versucht, basierend auf der ausgewählten Zeitgranularität angemessene Standardwerte bereitzustellen | start=2012-07-15 |
 
 
-Die einzige derzeit verfügbare HTTP-Methode ist GET. Unterstützung für OPTIONS-/HEAD-Methoden kann in zukünftigen Versionen bereitgestellt werden.
+Die einzige derzeit verfügbare HTTP-Methode ist GET. Unterstützung für OPTIONS / HEAD-Methoden kann in zukünftigen Versionen bereitgestellt werden.
 
 
 
@@ -112,7 +112,7 @@ Die einzige derzeit verfügbare HTTP-Methode ist GET. Unterstützung für OPTION
 | 401 | Nicht autorisiert | Wird durch eine Anfrage verursacht, die nicht die richtigen OAuth-Header zum Authentifizieren des Benutzers enthält |
 | 403 | Verboten | Gibt an, dass die Anfrage im aktuellen Sicherheitskontext nicht zulässig ist. Dies tritt auf, wenn der Benutzer authentifiziert ist, aber nicht auf die angeforderten Informationen zugreifen darf |
 | 404 | Nicht gefunden | Tritt auf, wenn mit der Anfrage ein ungültiger URL-Pfad angegeben wird. Dies sollte nie vorkommen, wenn der Client den Links für „Drilldown“/„Rollout“ folgt, die mit 200 Antworten bereitgestellt werden |
-| 405 | Methode nicht zulässig | Signalisiert, dass eine nicht unterstützte Methode in der Anfrage verwendet wurde. Obwohl derzeit nur die GET-Methode unterstützt wird, können zukünftige Versionen HEAD oder OPTIONS zulassen |
+| 405 | Methode nicht zulässig | Signalisiert, dass eine nicht unterstützte Methode in der Anfrage verwendet wurde. Obwohl derzeit nur die GET-Methode unterstützt wird, können zukünftige Versionen HEAD oder OPTIONS zulassen. |
 | 406 | Nicht akzeptabel | Signalisiert, dass ein nicht unterstützter Medientyp vom Client angefordert wurde |
 | 500 | Interner Server-Fehler | „Das sollte nie passieren“ |
 | 503 | Service nicht verfügbar | Signalisiert einen Fehler innerhalb der Anwendung oder ihrer Abhängigkeiten |
@@ -232,7 +232,7 @@ Die CSV enthält eine Kopfzeile und die Berichtsdaten als nachfolgende Zeilen. D
 
 Die Reihenfolge der Felder in der Kopfzeile entspricht der Sortierreihenfolge der Tabellendaten.
 
-Beispiel: https://mgmt.auth.adobe.com/cmu/v2/year/month.csv erstellt eine Datei mit dem Namen ```report__2012-07-20_2012-08-20_1000.csv``` mit folgendem Inhalt:
+Beispiel: https://mgmt.auth.adobe.com/cmu/v2/year/month.csv erstellt eine Datei mit dem Namen `report__2012-07-20_2012-08-20_1000.csv` mit folgendem Inhalt:
 
 | Jahr | Monat | Clients |
 |:----:|:-----:|:-------:|
