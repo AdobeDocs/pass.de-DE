@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 > Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-In diesem Dokument werden die obligatorischen Anforderungen und empfohlenen Vorgehensweisen für Programmierer, die Client-Anwendungen implementieren, die die Adobe Pass-Authentifizierung (REST [ V2) verwenden, an einer Stelle ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md).
+In diesem Dokument werden die obligatorischen Anforderungen und empfohlenen Vorgehensweisen für Programmierer, die Client-Anwendungen implementieren, die die Adobe Pass-Authentifizierung (REST [&#x200B; V2) verwenden, an einer Stelle &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md).
 
 Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihrer Akzeptanzkriterien betrachtet und als Checkliste verwendet werden, um sicherzustellen, dass alle erforderlichen Schritte unternommen wurden, um eine erfolgreiche Integration zu erreichen.
 

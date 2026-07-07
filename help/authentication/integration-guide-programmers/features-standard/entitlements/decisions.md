@@ -24,7 +24,7 @@ Je nach aufgerufener API werden zwei Arten von Entscheidungen bereitgestellt:
 
 ## Entscheidungen vor der Zulassung {#preauthorization-decisions}
 
-Die Entscheidung vor der Autorisierung ist eine informative Entscheidung, mit der die Client-Anwendung darüber informiert werden kann, ob die MVPD den Zugriff des Benutzers auf eine [ Ressource zulassen oder ](#protected-resources).
+Die Entscheidung vor der Autorisierung ist eine informative Entscheidung, mit der die Client-Anwendung darüber informiert werden kann, ob die MVPD den Zugriff des Benutzers auf eine [&#x200B; Ressource zulassen oder &#x200B;](#protected-resources).
 
 Der Zweck der Vorabautorisierung (PreFlight-Autorisierung) besteht darin, der Anwendung die Anzeige genauer Informationen über den Inhalt zu ermöglichen, den der Benutzer anzeigen darf. Dies wird durch die Erweiterung der Benutzeroberfläche mit Indikatoren wie gesperrten oder entsperrten Symbolen erreicht, die den Zugriffsstatus widerspiegeln.
 
@@ -52,7 +52,7 @@ Weitere Informationen zu den bestehenden Mechanismen zur Unterstützung der Vora
 
 ## Autorisierungsentscheidungen {#authorization-decisions}
 
-Die Autorisierungsentscheidung ist eine autorisierende Entscheidung, die es der Client-Anwendung ermöglicht, mit der MVPD-Entscheidung konform zu sein, den Zugriff des Benutzers auf eine [geschützte Ressource“ zuzulassen oder ](#protected-resources).
+Die Autorisierungsentscheidung ist eine autorisierende Entscheidung, die es der Client-Anwendung ermöglicht, mit der MVPD-Entscheidung konform zu sein, den Zugriff des Benutzers auf eine [geschützte Ressource“ zuzulassen oder &#x200B;](#protected-resources).
 
 Die Autorisierung dient dazu, der Anwendung zu ermöglichen, die vom Benutzer angeforderten Ressourcen abzuspielen, nachdem die Rechte mit der MVPD validiert und ein Medien-Token von der Adobe Pass-Authentifizierung empfangen wurden.
 
@@ -127,7 +127,7 @@ Bei einer komplexeren Ressourcenkennung kann die RSS-Ressourcenkennung zusätzli
     </rss>
 ```
 
-Die eindeutigen Kennungen sind für die Adobe Pass-Authentifizierung in erster Linie undurchsichtig. Transformatoren können jedoch je nach den Funktionen und Anforderungen der MVPD angewendet werden. Wenn MVPD eine Ressourcenkennung nicht erkennen oder analysieren kann, wird ein Fehler an die Adobe Pass-Authentifizierung zurückgegeben, die den Fehler anschließend mithilfe eines [erweiterten Fehlercodes) an ](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) Client-Anwendung weiterleitet.
+Die eindeutigen Kennungen sind für die Adobe Pass-Authentifizierung in erster Linie undurchsichtig. Transformatoren können jedoch je nach den Funktionen und Anforderungen der MVPD angewendet werden. Wenn MVPD eine Ressourcenkennung nicht erkennen oder analysieren kann, wird ein Fehler an die Adobe Pass-Authentifizierung zurückgegeben, die den Fehler anschließend mithilfe eines [erweiterten Fehlercodes) an &#x200B;](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) Client-Anwendung weiterleitet.
 
 ## REST-API V2 {#rest-api-v2}
 

@@ -53,7 +53,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>primaryHardwareType</td>
         <td>Der primäre Hardwaretyp des Geräts.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -110,7 +110,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td><i>required</i></td>
         <td>osName</td>
         <td>Der Name des Betriebssystems (OS) des Geräts.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -132,7 +132,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>Betriebssystemfamilie</td>
         <td>Der Gruppenname des Betriebssystems (OS) des Geräts.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -155,7 +155,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>Betriebssystemanbieter</td>
         <td>Der Anbieter des Betriebssystems (OS) des Geräts.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -185,7 +185,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>browserName</td>
         <td>Der Name des Browsers.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -205,7 +205,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>browserVendor</td>
         <td>Die Firma/Organisation, die den Browser erstellt.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -290,7 +290,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>connectionSecure</td>
         <td>Der Sicherheitsstatus der Netzwerkverbindung.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -659,7 +659,7 @@ Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 #### Betriebssystem auslösen {#fireos}
 
-Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [ „Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html) ausgeführt wird, finden Sie in den folgenden Dokumenten:
+Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [&#x200B; „Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html) ausgeführt wird, finden Sie in den folgenden Dokumenten:
 
 * Android-Entwicklerdokumentation für [Build](https://developer.android.com/reference/android/os/Build.html)-Klasse.
 * Amazon-Entwicklerdokumentation für [Identifizieren von Fire-TV-](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html))
@@ -692,7 +692,7 @@ Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 #### Roku OS {#rokuos}
 
-Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [ (Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md) ausgeführt wird, finden Sie in den folgenden Dokumenten:
+Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [&#x200B; (Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md) ausgeführt wird, finden Sie in den folgenden Dokumenten:
 
 * Roku-Entwicklerdokumentation für [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md).
 

@@ -114,7 +114,7 @@ Um eine detaillierte Untersuchung des Berechtigungsflusses und seiner Phasen zu 
 
 ### Registrierungsphase {#registration-phase}
 
-In der Registrierungsphase wird die Client-Anwendung über den DCR-Prozess (Dynamic Client Registration[ für die Adobe Pass-Authentifizierung ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+In der Registrierungsphase wird die Client-Anwendung über den DCR-Prozess (Dynamic Client Registration[&#x200B; für die Adobe Pass-Authentifizierung &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 Für den Prozess der dynamischen Client-Registrierung (DCR) muss die Client-Anwendung ein Paar von Client-Anmeldeinformationen abrufen und ein Zugriffstoken als Endziel der Registrierungsphase abrufen.
 
@@ -129,7 +129,7 @@ Für den Prozess der dynamischen Client-Registrierung (DCR) muss die Client-Anwe
 
 **FAQs**
 
-* [Häufig gestellte Fragen zur ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#registration-phase-faqs-general).
+* [Häufig gestellte Fragen zur &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#registration-phase-faqs-general).
 
 ### Konfigurationsphase {#configuration-phase}
 
@@ -143,7 +143,7 @@ Die Konfigurationsphase dient als erforderlicher Schritt für die Authentifizier
 
 **FAQs**
 
-* [Häufig gestellte Fragen zur ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#configuration-phase-faqs-general).
+* [Häufig gestellte Fragen zur &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#configuration-phase-faqs-general).
 
 >[!TIP]
 >
@@ -162,7 +162,7 @@ Bei erfolgreicher Authentifizierung wird ein Profil generiert, das mit der Anwen
 In den folgenden Schritten werden die allgemeinen Schritte für den Fall einer SAML-Integration beschrieben:
 
 1. **Laden der Anwendung (Website) des Programmierers**\
-   Der/die Benutzende navigiert zur Programmieranwendung (Website), die die Adobe Pass-Authentifizierung ([-API V2) ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md).
+   Der/die Benutzende navigiert zur Programmieranwendung (Website), die die Adobe Pass-Authentifizierung ([-API V2) &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md).
 
 1. **Geschützte Inhaltsanfrage**\
    Wenn Benutzende versuchen, auf geschützte Inhalte zuzugreifen, zeigt die Anwendung des Programmierers eine Liste von MVPDs an, aus denen die Benutzenden auswählen können.
