@@ -4,7 +4,7 @@ description: Glossar zur REST-API v2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1742'
+source-wordcount: '1762'
 ht-degree: 0%
 
 ---
@@ -273,7 +273,7 @@ Die Benutzer-ID ist eine eindeutige Kennung, die an den Benutzer gebunden ist un
 
 #### Benutzermetadaten {#user-metadata}
 
-Die Benutzermetadaten beziehen sich auf benutzerspezifische Attribute (z. B. Postleitzahlen, elterliche Bewertungen, Benutzer-IDs usw.), die von der [MVPD](#mvpd) verwaltet und von der Adobe Pass-Authentifizierung als Teil eines [Profils](#profile) bereitgestellt werden.
+Die Benutzermetadaten beziehen sich auf benutzerspezifische Attribute (z. B. Postleitzahlen, elterliche Bewertungen, Benutzer-IDs usw.) die von der [MVPD gepflegt &#x200B;](#mvpd) von der Adobe Pass-Authentifizierung als Teil eines ([) bereitgestellt &#x200B;](#profile).
 
 Weitere Informationen finden Sie in der Dokumentation [Benutzermetadaten](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) .
 

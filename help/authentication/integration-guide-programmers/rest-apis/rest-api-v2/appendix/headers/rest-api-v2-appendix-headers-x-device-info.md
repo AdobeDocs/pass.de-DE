@@ -4,8 +4,8 @@ description: REST API v2 - Kopfzeile - x-device-info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
 source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
 workflow-type: tm+mt
-source-wordcount: '1133'
-ht-degree: 2%
+source-wordcount: '1234'
+ht-degree: 3%
 
 ---
 
@@ -228,7 +228,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td>browserVersion</td>
         <td>Die Browser-Version des Geräts.</td>
         <td></td>
-        <td>z. B. 60.0.3112</td>
+        <td>e.g. 60.0.3112</td>
     </tr>
     <tr>
         <td></td>
@@ -256,28 +256,28 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td>displayPpi</td>
         <td>Die physische Pixeldichte des Bildschirms des Geräts.</td>
         <td></td>
-        <td>Beispiel: 294</td>
+        <td>e.g. 294</td>
     </tr>
     <tr>
         <td></td>
         <td>diagonalScreenSize</td>
         <td>Die Bildschirmdiagonale des Geräts in Zoll.</td>
         <td></td>
-        <td>z. B. 5.5, 10.1</td>
+        <td>e.g. 5.5, 10.1</td>
     </tr>
     <tr>
         <td></td>
         <td>connectionIP</td>
         <td>Die IP des Geräts, die zum Senden von HTTP-Anfragen verwendet wird.</td>
         <td></td>
-        <td>z. B. 8.8.4.4</td>
+        <td>e.g. 8.8.4.4</td>
     </tr>
     <tr>
         <td></td>
         <td>connectionPort</td>
         <td>Der Port des Geräts, der zum Senden von HTTP-Anfragen verwendet wird.</td>
         <td></td>
-        <td>z. B. 53124</td>
+        <td>e.g. 53124</td>
     </tr>
     <tr>
         <td><i>required</i></td>
@@ -434,7 +434,7 @@ Die Geräteinformationen können wie folgt aufgebaut werden:
 | displayWidth | UIScreen.mainScreen | 320 |
 | displayHeight | UIScreen.mainScreen | 568 |
 | osName | UIDevice.systemName | iOS |
-| osVersion | UIDevice.systemVersion | 10,2 |
+| osVersion | UIDevice.systemVersion | 10.2 |
 
 Die Verbindungsinformationen können wie folgt aufgebaut werden:
 
@@ -533,14 +533,14 @@ Die Geräteinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |---------------|-----------------------------|-----------------|
-| Modell | Build.MODEL | GT-I9505 |
+| Modell | build.MODEL | GT-I9505 |
 | Lieferant | Build.BRAND | Samsung |
-| Hersteller | Build.MANUFACTURER | Samsung |
-| Version | Build.DEVICE | Kehllappen |
+| Hersteller | Build.Manufacturer | Samsung |
+| Version | build.DEVICE | Kehllappen |
 | displayWidth | DisplayMetrics.widthPixels | 600 |
 | displayHeight | DisplayMetrics.heightPixels | 800 |
 | osName | hartcodiert | Android |
-| osVersion | Build.VERSION.RELEASE | 5,0,1 |
+| osVersion | build.VERSION.RELEASE | 5.0.1 |
 
 Die Verbindungsinformationen können wie folgt aufgebaut werden:
 
@@ -642,7 +642,7 @@ Die Geräteinformationen können wie folgt aufgebaut werden:
 | displayWidth | UIScreen.mainScreen | 1920 |
 | displayHeight | UIScreen.mainScreen | 1080 |
 | osName | UIDevice.systemName | tvOS |
-| osVersion | UIDevice.systemVersion | 10,2 |
+| osVersion | UIDevice.systemVersion | 10.2 |
 
 Die Verbindungsinformationen können wie folgt aufgebaut werden:
 
@@ -668,14 +668,14 @@ Die Geräteinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |---------------|-----------------------------|-----------------|
-| Modell | Build.MODEL | AFTM |
+| Modell | build.MODEL | AFTM |
 | Lieferant | Build.BRAND | Amazon |
-| Hersteller | Build.MANUFACTURER | Amazon |
-| Version | Build.DEVICE | Montoya |
+| Hersteller | Build.Manufacturer | Amazon |
+| Version | build.DEVICE | Montoya |
 | displayWidth | DisplayMetrics.widthPixels |                 |
 | displayHeight | DisplayMetrics.heightPixels |                 |
 | osName | hartcodiert | Android |
-| osVersion | Build.VERSION.RELEASE | 5.1.1 |
+| osVersion | build.VERSION.RELEASE | 5.1.1 |
 
 Die Verbindungsinformationen können wie folgt aufgebaut werden:
 

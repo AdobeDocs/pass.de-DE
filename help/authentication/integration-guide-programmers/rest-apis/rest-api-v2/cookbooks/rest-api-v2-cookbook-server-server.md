@@ -4,7 +4,7 @@ description: REST API V2-Cookbook (Server-zu-Server)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2497'
+source-wordcount: '2524'
 ht-degree: 0%
 
 ---
@@ -234,7 +234,7 @@ Häufig gestellte Fragen
 
    * Der Programmierdienst sollte Teile der Profilinformationen des Benutzers in einem beständigen Speicher zwischenspeichern, um unnötige Anfragen zu vermeiden und das Benutzererlebnis zu verbessern.
 
-## C. (fakultativ) Phase der Vorabgenehmigung {#preauthorization-phase}
+## C. (Optional) Phase vor der Autorisierung {#preauthorization-phase}
 
 Der Zweck der Vorautorisierungsphase besteht darin, der Streaming-Anwendung die Möglichkeit zu geben, eine Untergruppe von Ressourcen aus ihrem Katalog darzustellen, auf die der Benutzer zugreifen könnte.
 

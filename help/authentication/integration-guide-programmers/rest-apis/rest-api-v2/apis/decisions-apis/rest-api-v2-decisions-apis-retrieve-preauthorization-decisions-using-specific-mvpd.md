@@ -4,7 +4,7 @@ description: REST API V2 - Abrufen von Entscheidungen vor Autorisierung mit eine
 exl-id: 8647e4fb-00b6-45cd-b81b-d00618b2e08b
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '864'
+source-wordcount: '991'
 ht-degree: 1%
 
 ---
@@ -75,10 +75,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">content-type</td>
       <td>
-         Der akzeptierte Medientyp für die gesendeten Ressourcen.
-         <br/><br/>
-         Es muss application/json;charset=utf-8 sein.
-      </td>
+         Der akzeptierte Medientyp für die gesendeten Ressourcen.<br/><br/>
+         Es muss application/json;charset=utf-8 sein.</td>
       <td><i>required</i></td>
    </tr>
    <tr>
@@ -89,50 +87,38 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">x-device-info</td>
       <td>
-         Die Erzeugung der Payload mit Geräteinformationen wird in der Header-Dokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> beschrieben.
-         <br/><br/>
-         Es wird dringend empfohlen, sie immer dann zu verwenden, wenn die Geräteplattform der Anwendung die explizite Bereitstellung gültiger Werte zulässt.
-         <br/><br/>
-         Wenn angegeben, führt das Backend für die Adobe Pass-Authentifizierung explizit eingestellte Werte mit extrahierten Werten implizit zusammen (standardmäßig).
-         <br/><br/>
-         Wenn keine Angabe gemacht wird, verwendet das Backend für die Adobe Pass-Authentifizierung implizit die extrahierten Werte (standardmäßig).
-      </td>
+         Die Erzeugung der Payload mit Geräteinformationen wird in der Header-Dokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> beschrieben.<br/><br/>
+         Es wird dringend empfohlen, sie immer dann zu verwenden, wenn die Geräteplattform der Anwendung die explizite Bereitstellung gültiger Werte zulässt.<br/><br/>
+         Wenn angegeben, führt das Backend für die Adobe Pass-Authentifizierung explizit eingestellte Werte mit extrahierten Werten implizit zusammen (standardmäßig).<br/><br/>
+         Wenn keine Angabe gemacht wird, verwendet das Backend für die Adobe Pass-Authentifizierung implizit die extrahierten Werte (standardmäßig).</td>
       <td><i>required</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         Die IP-Adresse des Streaming-Geräts.
-         <br/><br/>
-         Es wird dringend empfohlen, sie immer für Server-zu-Server-Implementierungen zu verwenden, insbesondere wenn der Aufruf vom Programmierdienst und nicht vom Streaming-Gerät erfolgt.
-         <br/><br/>
-         Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts implizit gesendet.
-      </td>
+         Die IP-Adresse des Streaming-Geräts.<br/><br/>
+         Es wird dringend empfohlen, sie immer für Server-zu-Server-Implementierungen zu verwenden, insbesondere wenn der Aufruf vom Programmierdienst und nicht vom Streaming-Gerät erfolgt.<br/><br/>
+         Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts implizit gesendet.</td>
       <td>fakultativ</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-subject-token<br/>or<br/>x-roku-reserved-roku-connect-token</td>
       <td>
-        Die Erstellung der Single-Sign-On-Payload für die Platform-Identitätsmethode wird in der Kopfzeilendokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a> beschrieben.
-        <br/><br/>
-        Weitere Informationen zu Flüssen, für die Single Sign-on unter Verwendung einer Platform-Identität aktiviert ist, finden Sie in der Dokumentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-on unter Verwendung von Platform-Identitätsflüssen</a> .
-      </td>
+        Die Erstellung der Single-Sign-On-Payload für die Platform-Identitätsmethode wird in der Kopfzeilendokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a> beschrieben.<br/><br/>
+        Weitere Informationen zu Flüssen, für die Single Sign-on unter Verwendung einer Platform-Identität aktiviert ist, finden Sie in der Dokumentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-on unter Verwendung von Platform-Identitätsflüssen</a> .</td>
       <td>fakultativ</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-        Die Erstellung der Single Sign-On-Payload für die Service-Token-Methode wird in der Header-Dokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a> beschrieben.
-        <br/><br/>
-        Weitere Informationen zu Flüssen, die Single Sign-on mit einem Service-Token aktivieren, finden Sie in der Dokumentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Single Sign-on mit Service-Token-Flüssen</a> .
-      </td>
+        Die Erstellung der Single Sign-On-Payload für die Service-Token-Methode wird in der Header-Dokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a> beschrieben.<br/><br/>
+        Weitere Informationen zu Flüssen, die Single Sign-on mit einem Service-Token aktivieren, finden Sie in der Dokumentation <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Single Sign-on mit Service-Token-Flüssen</a> .</td>
       <td>fakultativ</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">ap-partner-framework-status</td>
       <td>
-        Die Erstellung der Single Sign-On-Payload für die Partner-Methode wird in der Header-Dokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> beschrieben.
-        <br/><br/>
+        Die Erstellung der Single Sign-On-Payload für die Partner-Methode wird in der Header-Dokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> beschrieben.<br/><br/>
         Weitere Informationen zu Flüssen, für die Single Sign-on unter Verwendung eines Partners aktiviert ist, finden Sie in der <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Single Sign-on unter Verwendung von Partnerflüssen</a> Dokumentation.</td>
       <td>fakultativ</td>
    </tr>
@@ -145,10 +131,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Akzeptieren</td>
       <td>
-         Der von der Client-Anwendung akzeptierte Medientyp.
-         <br/><br/>
-         Wenn angegeben, muss es application/json;charset=utf-8 sein.
-      </td>
+         Der von der Client-Anwendung akzeptierte Medientyp.<br/><br/>
+         Wenn angegeben, muss es application/json;charset=utf-8 sein.</td>
       <td>fakultativ</td>
    </tr>
    <tr>
@@ -177,29 +161,25 @@ ht-degree: 1%
       <td>400</td>
       <td>Fehlerhafte Anfrage</td>
       <td>
-        Die Anfrage ist ungültig. Der Client muss die Anfrage korrigieren und es erneut versuchen. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.
-      </td>
+        Die Anfrage ist ungültig. Der Client muss die Anfrage korrigieren und es erneut versuchen. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Nicht autorisiert</td>
       <td>
-        Das Zugriffstoken ist ungültig. Der Client muss ein neues Zugriffstoken abrufen und es erneut versuchen. Weitere Informationen finden Sie in der Dokumentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Übersicht über die Dynamic Client-Registrierung</a> .
-      </td>
+        Das Zugriffstoken ist ungültig. Der Client muss ein neues Zugriffstoken abrufen und es erneut versuchen. Weitere Informationen finden Sie in der Dokumentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Übersicht über die Dynamic Client-Registrierung</a> .</td>
    </tr>
    <tr>
       <td>405</td>
       <td>Methode nicht zulässig</td>
       <td>
-        Die HTTP-Methode ist ungültig. Der Client muss eine HTTP-Methode verwenden, die für die angeforderte Ressource zulässig ist, und erneut versuchen. Weitere Informationen finden Sie im Abschnitt <a href="#request">Anfrage</a>.
-      </td>
+        Die HTTP-Methode ist ungültig. Der Client muss eine HTTP-Methode verwenden, die für die angeforderte Ressource zulässig ist, und erneut versuchen. Weitere Informationen finden Sie im Abschnitt <a href="#request">Anfrage</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Interner Server-Fehler</td>
       <td>
-        Auf der Serverseite ist ein Problem aufgetreten. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.
-      </td>
+        Auf der Serverseite ist ein Problem aufgetreten. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.</td>
    </tr>
 </table>
 
@@ -259,10 +239,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">Quelle</td>
                <td>
-                  Informationen zur Entscheidungsquelle:
-                  <br/><br/>
-                  Die möglichen Werte sind:
-                  <ul>
+                  Informationen zur Entscheidungsquelle:<br/><br/>
+                  Die möglichen Werte sind:<ul>
                     <li><b>mvpd</b><br/>decision wird vom Vorautorisierungsendpunkt von MVPD ausgegeben.</li>
                     <li><b>Abbau</b><br/>Entscheidung wird aufgrund eines eingeschränkten Zugriffs erlassen.</li>
                     <li><b>temppass</b><br/>Decision wird als Ergebnis des temporären Zugriffs ausgegeben.</li>
@@ -306,10 +284,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            Der Antworttext kann zusätzliche Fehlerinformationen bereitstellen, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.
-            <br/><br/>
-            Die Client-Anwendung muss einen Mechanismus zur Fehlerbehandlung implementieren, der die Fehlercodes, die am häufigsten von dieser API zurückgegeben werden, ordnungsgemäß verarbeitet:
-            <ul>
+            Der Antworttext kann zusätzliche Fehlerinformationen bereitstellen, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.<br/><br/>
+            Die Client-Anwendung muss einen Mechanismus zur Fehlerbehandlung implementieren, der die Fehlercodes, die am häufigsten von dieser API zurückgegeben werden, ordnungsgemäß verarbeitet:<ul>
                 <li>authorized_profile_missing</li>
                 <li>authorized_profile_expi</li>
                 <li>preauthorization_denied_by_mvpd</li>
@@ -317,8 +293,7 @@ ht-degree: 1%
                 <li>to_many_resources</li>
                 <li>usw.</li>
             </ul>
-            Die obige Liste erhebt keinen Anspruch auf Vollständigkeit. Die Client-Anwendung muss in der Lage sein, alle in der <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">öffentlichen Dokumentation“ definierten erweiterten Fehler-Codes zu </a>.
-      </td>
+            Die obige Liste erhebt keinen Anspruch auf Vollständigkeit. Die Client-Anwendung muss in der Lage sein, alle in der <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">öffentlichen Dokumentation“ definierten erweiterten Fehler-Codes zu </a>.</td>
       <td><i>required</i></td>
    </tr>
 </table>
@@ -391,7 +366,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;2. Abrufen von Entscheidungen vor der Autorisierung mithilfe spezifischer MVPD während der Degradation
+### &#x200B;2. Abrufen von Entscheidungen vor der Autorisierung mit einer bestimmten MVPD, während die Degradierung angewendet wird
 
 >[!BEGINTABS]
 

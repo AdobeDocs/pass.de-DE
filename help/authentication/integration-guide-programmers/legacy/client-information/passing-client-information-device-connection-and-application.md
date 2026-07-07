@@ -4,8 +4,8 @@ description: Übergeben von Client-Informationen (Gerät, Verbindung und Anwendu
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1665'
-ht-degree: 1%
+source-wordcount: '1725'
+ht-degree: 2%
 
 ---
 
@@ -48,27 +48,27 @@ Die Client-Informationen sind ein JSON-Objekt, das mit den in der folgenden Tabe
 
 |   | Schlüssel | eingeschränkt | Beschreibung | Mögliche Werte |
 |---|---|---|---|---|
-|            | primaryHardwareType | # Ja | Der primäre Hardwaretyp des Geräts. | # Die Werte sind eingeschränkt:                                                                     Kamera                                                      DataCollectionTerminal                                                      Desktop                                                      EmbeddedNetworkModule                                                      Lesegerät                                                      Spielekonsole                                                      GeolocationTracker                                                      Brille                                                      MediaPlayer                                                      Mobiltelefon                                                      Zahlungsterminal                                                      Plug-inModem                                                      SetTopBox                                                      TV                                                      Tablet                                                      Wireless-Hotspot                                                      Armbanduhr                                                      Unbekannt |
+|            | primaryHardwareType | # Ja | Der primäre Hardwaretyp des Geräts. | # Die Werte sind eingeschränkt: Kamera DataCollectionTerminal Desktop EmbeddedNetworkModule eReader SpieleKonsole GeolocationTracker Brille MediaPlayer Handy ZahlungTerminal PluginModem SetTopBox TV Tablet WirelessHotspot Armbanduhr Unbekannt |
 | #mandatory | Modell | Nein | Der Modellname des Geräts. | z. B. iPhone, SM-G930V, AppleTV usw. |
 |            | Version | Nein | Die Version des Geräts. | z. B. 2.0.1 usw. |
 |            | Hersteller | Nein | Die Produktionsfirma/-organisation des Geräts. | z. B. Samsung, LG, ZTE, Huawei, Motorola, Apple usw. |
 |            | Lieferant | Nein | Die Firma/Organisation, die das Gerät verkauft. | z. B. Apple, Samsung, LG, Google usw. |
-| #mandatory | osName | # Ja | Der Name des Betriebssystems (OS) des Geräts. | # Die Werte sind eingeschränkt:                                                   Android                   CHROME OS                   Linux                   MAC OS                   OS X                   OpenBSD                   Roku OS                   Windows                   iOS                   tvOS                   webOS |
-|            | Betriebssystemfamilie | Ja | Der Gruppenname des Betriebssystems (OS) des Geräts. | # Die Werte sind eingeschränkt:                                                   Android                   BSD                   Linux                   PlayStation OS                   Roku OS                   Symbian                   Tizen                   Windows                   iOS                   macOS                   tvOS                   webOS |
-|            | Betriebssystemanbieter | Nein | Der Lieferant des Betriebssystems (OS) des Geräts. | Amazon                   Apple                   Google                   LG                   Microsoft                   Mozilla                   Nintendo                   Nokia                   Roku                   Samsung                   Sony                   Tizen-Projekt |
+| #mandatory | osName | # Ja | Der Name des Betriebssystems (OS) des Geräts. | # Die Werte sind eingeschränkt: Android Chrome OS Linux Mac OS X OpenBSD Roku OS Windows iOS tvOS webOS |
+|            | Betriebssystemfamilie | Ja | Der Gruppenname des Betriebssystems (OS) des Geräts. | # Die Werte sind eingeschränkt: Android BSD Linux PlayStation OS Roku OS Symbian Tizen Windows iOS macOS tvOS webOS |
+|            | Betriebssystemanbieter | Nein | Der Lieferant des Betriebssystems (OS) des Geräts. | Amazon Apple Google LG Microsoft Mozilla Nintendo Nokia Roku Samsung Sony Tizen Project |
 |            | osVersion | Nein | Die Betriebssystemversion des Geräts. | z. B. 10.2, 9.0.1 usw. |
-|            | browserName | # Ja | Der Name des Browsers. | # Die Werte sind eingeschränkt:                                                   Android-Browser                   Chrome                   Edge                   Firefox                   Internet Explorer                   Oper                   Safari                   Salinenkrebs                   Symbian Browser |
-|            | browserVendor | # Ja | Die Firma/Organisation, die den Browser erstellt. | # Die Werte sind eingeschränkt:                                                   Amazon                   Apple                   Google                   Microsoft                   Motorola                   Mozilla                   Netscape                   Nintendo                   Nokia                   Samsung                   Sony Ericsson |
-|            | browserVersion | Nein | Die Browser-Version des Geräts. | z. B. 60.0.3112 |
+|            | browserName | # Ja | Der Name des Browsers. | # Die Werte sind eingeschränkt: Android Browser Chrome Edge Firefox Internet Explorer Opera Safari SeaMonkey Symbian Browser |
+|            | browserVendor | # Ja | Die Firma/Organisation, die den Browser erstellt. | # Die Werte sind eingeschränkt: Amazon Apple Google Microsoft Motorola Mozilla Netscape Nintendo Nokia Samsung Sony Ericsson |
+|            | browserVersion | Nein | Die Browser-Version des Geräts. | e.g. 60.0.3112 |
 |            | userAgent | Nein | Der Benutzeragent des Geräts. | z. B. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, wie Gecko) Version/10.0.3 Safari/602.4.8 |
 |            | displayWidth | Nein | Die physische Bildschirmbreite des Geräts. |                                                                                                                                                                                                                                                                                                                                                           |
 |            | displayHeight | Nein | Die physische Bildschirmhöhe des Geräts. |                                                                                                                                                                                                                                                                                                                                                           |
-|            | displayPpi | Nein | Die physische Pixeldichte auf dem Bildschirm des Geräts. | Beispiel: 294 |
-|            | diagonalScreenSize | Nein | Die Bildschirmdiagonale des Geräts in Zoll. | z. B. 5.5, 10.1 |
-|            | connectionIP | Nein | Die IP des Geräts, die zum Senden von HTTP-Anfragen verwendet wird. | z. B. 8.8.4.4 |
-|            | connectionPort | Nein | Der Port des Geräts, der zum Senden von HTTP-Anfragen verwendet wird. | z. B. 53124 |
+|            | displayPpi | Nein | Die physische Pixeldichte auf dem Bildschirm des Geräts. | e.g. 294 |
+|            | diagonalScreenSize | Nein | Die Bildschirmdiagonale des Geräts in Zoll. | e.g. 5.5, 10.1 |
+|            | connectionIP | Nein | Die IP des Geräts, die zum Senden von HTTP-Anfragen verwendet wird. | e.g. 8.8.4.4 |
+|            | connectionPort | Nein | Der Port des Geräts, der zum Senden von HTTP-Anfragen verwendet wird. | e.g. 53124 |
 |            | connectionType | Nein | Der Netzwerkverbindungstyp. | z. B. WiFi, LAN, 3G, 4G, 5G |
-|            | connectionSecure | # Ja | Der Sicherheitsstatus der Netzwerkverbindung. | # Die Werte sind eingeschränkt:                                                   true - bei einem sicheren Netzwerk                   false : Im Fall eines öffentlichen Hotspots |
+|            | connectionSecure | # Ja | Der Sicherheitsstatus der Netzwerkverbindung. | # Die Werte sind eingeschränkt: true - im Fall eines sicheren Netzwerks false - im Fall eines öffentlichen Hotspots |
 |            | applicationId | Nein | Die eindeutige Kennung der Anwendung. | Beispiel: CNN |
 
 ## API-Referenzen {#api-ref}
@@ -97,8 +97,7 @@ AccessEnabler JavaScript SDK unterstützt **nur Überschreiben** des Schlüssels
 
 >[!CAUTION]
 >
->Der `applicationId` Parameterwert muss ein Nur-Text-Zeichenfolgenwert sein.
->Falls sich die Programmieranwendung für die Übergabe der applicationId entscheidet, werden die übrigen Client-Informationsschlüssel weiterhin vom AccessEnabler JavaScript SDK berechnet.
+>Der `applicationId` Parameterwert muss ein Nur-Text-Zeichenfolgenwert sein.Falls sich die Programmieranwendung für die Übergabe der applicationId entscheidet, werden die übrigen Client-Informationsschlüssel weiterhin vom AccessEnabler JavaScript SDK berechnet.
 
 #### iOS/tvOS SDK {#ios-tvos-sdk}
 
@@ -116,7 +115,7 @@ Die AccessEnabler iOS/tvOS SDK unterstützt **Überschreiben des gesamten** Clie
 
 Die `AccessEnabler` Android/FireOS-SDK erstellt standardmäßig ein JSON-Objekt mit Client-Informationen, das an die Adobe Pass-Authentifizierungsdienste übergeben wird, sofern es nicht überschrieben wird.
 
-Die `AccessEnabler` Android/FireOS-SDK unterstützt **Überschreiben des gesamten** Client-Informations-JSON-Objekts durch den [-Parameter &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)setOptions[s/](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)setOptions`device_info`.
+Die `AccessEnabler` Android/FireOS-SDK unterstützt **Überschreiben des gesamten** Client-Informations-JSON-Objekts durch den `device_info`-Parameter [setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)s/[setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption).
 
 >[!NOTE]
 >
@@ -132,7 +131,7 @@ In diesem Abschnitt wird ein Cookbook zum Erstellen des JSON-Objekts mit Client-
 
 >[!IMPORTANT]
 >
->Die mit **markierten Tasten!** müssen gesendet werden.
+>Die Schlüssel, die mit **gekennzeichnet sind!** müssen gesendet werden.
 
 ### Android {#android}
 
@@ -140,14 +139,14 @@ Die Geräteinformationen können wie folgt aufgebaut werden:
 
 |   | Schlüssel | Source | Wert (Beispiel) |
 |---|---------------|-----------------------------|---------------|
-| ! | Modell | Build.MODEL | GT-I9505 |
+| ! | Modell | build.MODEL | GT-I9505 |
 |   | Lieferant | Build.BRAND | Samsung |
-|   | Hersteller | Build.MANUFACTURER | Samsung |
-| ! | Version | Build.DEVICE | Kehllappen |
+|   | Hersteller | Build.Manufacturer | Samsung |
+| ! | Version | build.DEVICE | Kehllappen |
 |   | displayWidth | DisplayMetrics.widthPixels | 600 |
 |   | displayHeight | DisplayMetrics.heightPixels | 800 |
 | ! | osName | hartcodiert | Android |
-| ! | osVersion | Build.VERSION.RELEASE | 5,0,1 |
+| ! | osVersion | build.VERSION.RELEASE | 5.0.1 |
 
 Die Verbindungsinformationen können wie folgt aufgebaut werden:
 
@@ -252,14 +251,14 @@ Die Geräteinformationen können wie folgt aufgebaut werden:
 
 |   | Schlüssel | Source | Wert (z. B. ) |
 |---|---------------|-----------------------------|--------------|
-| ! | Modell | Build.MODEL | AFTM |
+| ! | Modell | build.MODEL | AFTM |
 |   | Lieferant | Build.BRAND | Amazon |
-|   | Hersteller | Build.MANUFACTURER | Amazon |
-| ! | Version | Build.DEVICE | Montoya |
+|   | Hersteller | Build.Manufacturer | Amazon |
+| ! | Version | build.DEVICE | Montoya |
 |   | displayWidth | DisplayMetrics.widthPixels |              |
 |   | displayHeight | DisplayMetrics.heightPixels |              |
 | ! | osName | hartcodiert | Android |
-| ! | osVersion | Build.VERSION.RELEASE | 5.1.1 |
+| ! | osVersion | build.VERSION.RELEASE | 5.1.1 |
 
 Die Verbindungsinformationen können wie folgt aufgebaut werden:
 
@@ -297,7 +296,7 @@ Die Geräteinformationen können wie folgt aufgebaut werden:
 |   | displayWidth | UIScreen.mainScreen | 320 |
 |   | displayHeight | UIScreen.mainScreen | 568 |
 | ! | osName | UIDevice.systemName | iOS |
-| ! | osVersion | UIDevice.systemVersion | 10,2 |
+| ! | osVersion | UIDevice.systemVersion | 10.2 |
 
 Die Verbindungsinformationen können wie folgt aufgebaut werden:
 
@@ -438,8 +437,8 @@ Die Geräteinformationen können wie folgt aufgebaut werden:
 |   | Lieferant | hartcodiert | Microsoft |
 |   | Hersteller | hartcodiert | Microsoft |
 | ! | Version | EasClientDeviceInformation.SystemHardwareVersion |                 |
-|   | displayWidth | DisplayInformation.ScreenWidthInRawPixels | 1920 |
-|   | displayHeight | DisplayInformation.ScreenHeightInRawPixels | 1080 |
+|   | displayWidth | displayInformation.screenWidthInRawPixels | 1920 |
+|   | displayHeight | displayInformation.screenHeightInRawPixels | 1080 |
 | ! | osName | EasClientDeviceInformation.OperatingSystem |                 |
 | ! | osVersion | EasClientDeviceInformation.SystemFirmwareVersion |                 |
 

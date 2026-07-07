@@ -4,8 +4,8 @@ description: REST-API-Cookbook-Server zu Server.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1856'
-ht-degree: 0%
+source-wordcount: '1891'
+ht-degree: 1%
 
 ---
 
@@ -119,8 +119,7 @@ Das folgende Diagramm veranschaulicht den Vorautorisierungsfluss:
 
 ### \[Optional\] Metadaten
 
-Metadaten können verwendet werden, um Benutzerinformationen abzurufen, die von der MVPD freigegeben werden.
-Beispiele hierfür sind Benutzer-ID, Postleitzahl usw.
+Metadaten können verwendet werden, um Benutzerinformationen abzurufen, die von der MVPD freigegeben werden.Beispiele hierfür sind Benutzer-ID, Postleitzahl usw.
 
 1. Sobald der Benutzer authentifiziert ist, kann der Programmierer-Service die Adobe Pass-API **usermetadata** aufrufen, um Informationen über den authentifizierten Benutzer anzufordern.
 
