@@ -4,8 +4,8 @@ description: REST API V2 - Fortsetzen der Authentifizierungssitzung
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '956'
-ht-degree: 1%
+source-wordcount: '985'
+ht-degree: 2%
 
 ---
 
@@ -64,30 +64,23 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">mvpd</td>
       <td>
-        Die interne eindeutige Kennung, die dem Identitätsanbieter während des Onboarding-Prozesses zugeordnet ist.
-        <br/><br/>
-        Wenn die Plattform des Streaming-Geräts Einschränkungen bei der Bereitstellung eines Werts hat, muss eine Anwendung die Authentifizierungssitzung fortsetzen und einen gültigen Wert angeben.
-      </td>
+        Die interne eindeutige Kennung, die dem Identitätsanbieter während des Onboarding-Prozesses zugeordnet ist.<br/><br/>
+        Wenn die Plattform des Streaming-Geräts Einschränkungen bei der Bereitstellung eines Werts hat, muss eine Anwendung die Authentifizierungssitzung fortsetzen und einen gültigen Wert angeben.</td>
       <td><i>required</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">domainName</td>
       <td>
-        Die Ursprungs-Domain der Anwendung, die die MVPD-Anmeldung durchführt.
-        <br/><br/>
-        Wenn die Plattform des Streaming-Geräts Einschränkungen bei der Bereitstellung eines Werts hat, muss eine Anwendung die Authentifizierungssitzung fortsetzen und einen gültigen Wert angeben.
-      </td>
+        Die Ursprungs-Domain der Anwendung, die die MVPD-Anmeldung durchführt.<br/><br/>
+        Wenn die Plattform des Streaming-Geräts Einschränkungen bei der Bereitstellung eines Werts hat, muss eine Anwendung die Authentifizierungssitzung fortsetzen und einen gültigen Wert angeben.</td>
       <td><i>required</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
       <td>
-        Die endgültige Umleitungs-URL, zu der der Benutzeragent navigiert, wenn der Authentifizierungsfluss für die MVPD abgeschlossen ist.
-        <br/><br/>
-        Der Wert muss URL-kodiert sein.
-        <br/><br/>
-        Wenn die Plattform des Streaming-Geräts Einschränkungen bei der Bereitstellung eines Werts hat, muss eine Anwendung die Authentifizierungssitzung fortsetzen und einen gültigen Wert angeben.
-        </td>
+        Die endgültige Umleitungs-URL, zu der der Benutzeragent navigiert, wenn der Authentifizierungsfluss für die MVPD abgeschlossen ist.<br/><br/>
+        Der Wert muss URL-kodiert sein.<br/><br/>
+        Wenn die Plattform des Streaming-Geräts Einschränkungen bei der Bereitstellung eines Werts hat, muss eine Anwendung die Authentifizierungssitzung fortsetzen und einen gültigen Wert angeben.</td>
       <td><i>required</i></td>
    </tr>
    <tr>
@@ -103,21 +96,16 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">content-type</td>
       <td>
-         Der akzeptierte Medientyp für die gesendeten Ressourcen.
-         <br/><br/>
-         Es muss application/x-www-form-urlencoded lauten.
-      </td>
+         Der akzeptierte Medientyp für die gesendeten Ressourcen.<br/><br/>
+         Es muss application/x-www-form-urlencoded lauten.</td>
       <td><i>required</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         Die IP-Adresse des Streaming-Geräts.
-         <br/><br/>
-         Es wird dringend empfohlen, sie immer für Server-zu-Server-Implementierungen zu verwenden, insbesondere wenn der Aufruf vom Programmierdienst und nicht vom Streaming-Gerät erfolgt.
-         <br/><br/>
-         Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts implizit gesendet.
-      </td>
+         Die IP-Adresse des Streaming-Geräts.<br/><br/>
+         Es wird dringend empfohlen, sie immer für Server-zu-Server-Implementierungen zu verwenden, insbesondere wenn der Aufruf vom Programmierdienst und nicht vom Streaming-Gerät erfolgt.<br/><br/>
+         Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts implizit gesendet.</td>
       <td>fakultativ</td>
    </tr>
    <tr>
@@ -129,10 +117,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Akzeptieren</td>
       <td>
-         Der von der Client-Anwendung akzeptierte Medientyp.
-         <br/><br/>
-         Wenn angegeben, muss es application/json;charset=utf-8 sein.
-      </td>
+         Der von der Client-Anwendung akzeptierte Medientyp.<br/><br/>
+         Wenn angegeben, muss es application/json;charset=utf-8 sein.</td>
       <td>fakultativ</td>
    </tr>
    <tr>
@@ -161,29 +147,25 @@ ht-degree: 1%
       <td>400</td>
       <td>Fehlerhafte Anfrage</td>
       <td>
-        Die Anfrage ist ungültig. Der Client muss die Anfrage korrigieren und es erneut versuchen. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.
-      </td>
+        Die Anfrage ist ungültig. Der Client muss die Anfrage korrigieren und es erneut versuchen. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Nicht autorisiert</td>
       <td>
-        Das Zugriffstoken ist ungültig. Der Client muss ein neues Zugriffstoken abrufen und es erneut versuchen. Weitere Informationen finden Sie in der Dokumentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Übersicht über die Dynamic Client-Registrierung</a> .
-      </td>
+        Das Zugriffstoken ist ungültig. Der Client muss ein neues Zugriffstoken abrufen und es erneut versuchen. Weitere Informationen finden Sie in der Dokumentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Übersicht über die Dynamic Client-Registrierung</a> .</td>
    </tr>
    <tr>
       <td>405</td>
       <td>Methode nicht zulässig</td>
       <td>
-        Die HTTP-Methode ist ungültig. Der Client muss eine HTTP-Methode verwenden, die für die angeforderte Ressource zulässig ist, und erneut versuchen. Weitere Informationen finden Sie im Abschnitt <a href="#request">Anfrage</a>.
-      </td>
+        Die HTTP-Methode ist ungültig. Der Client muss eine HTTP-Methode verwenden, die für die angeforderte Ressource zulässig ist, und erneut versuchen. Weitere Informationen finden Sie im Abschnitt <a href="#request">Anfrage</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Interner Server-Fehler</td>
       <td>
-        Auf der Serverseite ist ein Problem aufgetreten. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.
-      </td>
+        Auf der Serverseite ist ein Problem aufgetreten. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.</td>
    </tr>
 </table>
 
@@ -218,10 +200,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
                <td>
-                  Die Aktion, die das Streaming-Gerät ausführen muss, um den Authentifizierungsfluss abzuschließen.
-                  <br/><br/>
-                  Die möglichen Werte sind:
-                  <ul>
+                  Die Aktion, die das Streaming-Gerät ausführen muss, um den Authentifizierungsfluss abzuschließen.<br/><br/>
+                  Die möglichen Werte sind:<ul>
                     <li><b>Authentifizieren</b><br/> Das Streaming-Gerät oder ein anderes Gerät muss die angegebene URL in einem Benutzeragenten öffnen.</li>
                     <li><b>retry</b><br/>Das Streaming-Gerät oder ein anderes Gerät muss die fehlenden Parameter angeben und die Authentifizierungssitzung mithilfe des Codes erneut versuchen.</li>
                     <li><b>authorize</b><br/> Das Streaming-Gerät kann direkt mit Entscheidungsflüssen fortfahren.</li>
@@ -231,10 +211,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionType</td>
                <td>
-                  Der Interaktionstyp, den das Streaming-Gerät ausführen muss, um den Fluss mit der durch das Attribut „actionName“ angegebenen Aktion fortzusetzen.
-                  <br/><br/>
-                  Die möglichen Werte sind:
-                  <ul>
+                  Der Interaktionstyp, den das Streaming-Gerät ausführen muss, um den Fluss mit der durch das Attribut „actionName“ angegebenen Aktion fortzusetzen.<br/><br/>
+                  Die möglichen Werte sind:<ul>
                     <li><b>Interaktiv</b><br/>Der Fluss wird mit einer Navigation zur angegebenen URL mithilfe eines Benutzeragenten fortgesetzt.</li>
                     <li><b>direct</b><br/>Der Fluss wird mit einem direkten Aufruf an die bereitgestellte URL fortgesetzt, wobei ein für die Client-Implementierung verfügbarer HTTP-Client verwendet wird.</li>
                   </ul>
@@ -243,10 +221,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  Der Typ des Grundes, der den „actionName“ erklärt.
-                  <br/><br/>
-                  Die möglichen Werte sind:
-                  <ul>
+                  Der Typ des Grundes, der den „actionName“ erklärt.<br/><br/>
+                  Die möglichen Werte sind:<ul>
                     <li><b>none</b><br/>Die Client-Anwendung ist erforderlich, um weiterhin authentifiziert zu werden.</li>
                     <li><b>authentifiziert</b><br/>Die Client-Anwendung wird bereits über grundlegende Zugriffsflüsse authentifiziert.</li>
                     <li><b>temporär</b><br/> Die Client-Anwendung wird bereits über temporäre Zugriffsflüsse authentifiziert.</li>
@@ -325,23 +301,20 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            Der Antworttext kann zusätzliche Fehlerinformationen bereitstellen, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.
-            <br/><br/>
-            Die Client-Anwendung muss einen Mechanismus zur Fehlerbehandlung implementieren, der die Fehlercodes, die am häufigsten von dieser API zurückgegeben werden, ordnungsgemäß verarbeitet:
-            <ul>
+            Der Antworttext kann zusätzliche Fehlerinformationen bereitstellen, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.<br/><br/>
+            Die Client-Anwendung muss einen Mechanismus zur Fehlerbehandlung implementieren, der die Fehlercodes, die am häufigsten von dieser API zurückgegeben werden, ordnungsgemäß verarbeitet:<ul>
                 <li>invalid_authentication_session</li>
                 <li>invalid_parameter_code</li>
                 <li>usw.</li>
             </ul>
-            Die obige Liste erhebt keinen Anspruch auf Vollständigkeit. Die Client-Anwendung muss in der Lage sein, alle in der <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">öffentlichen Dokumentation“ definierten erweiterten Fehler-Codes zu </a>.
-      </td>
+            Die obige Liste erhebt keinen Anspruch auf Vollständigkeit. Die Client-Anwendung muss in der Lage sein, alle in der <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">öffentlichen Dokumentation“ definierten erweiterten Fehler-Codes zu </a>.</td>
       <td><i>required</i></td>
    </tr>
 </table>
 
 ## Beispiele {#samples}
 
-### &#x200B;1. Fortsetzen der Authentifizierungssitzung ohne fehlende Parameter
+### &#x200B;1. Authentifizierungssitzung ohne fehlende Parameter fortsetzen
 
 >[!BEGINTABS]
 
@@ -383,7 +356,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;2. Fortsetzen der Authentifizierungssitzung mit fehlenden Parametern
+### &#x200B;2. Authentifizierungssitzung mit fehlenden Parametern fortsetzen
 
 >[!BEGINTABS]
 
@@ -426,7 +399,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;3. Setzt die Authentifizierungssitzung fort, während bereits ein gültiges Profil existiert
+### &#x200B;3. Authentifizierungssitzung fortsetzen, während bereits ein gültiges Profil existiert
 
 >[!BEGINTABS]
 
@@ -465,7 +438,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;4. Fortsetzen der Authentifizierungssitzung mit Standard- oder Werbe-TempPass (nicht erforderlich)
+### &#x200B;4. Authentifizierungssitzung mit einfachem oder Promotional TempPass fortsetzen (nicht erforderlich)
 
 >[!BEGINTABS]
 
@@ -504,7 +477,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;5. Die Authentifizierungssitzung bei angewendeter Degradation fortsetzen
+### &#x200B;5. Setzt die Authentifizierungssitzung fort, während die Beeinträchtigung angewendet wird
 
 >[!BEGINTABS]
 

@@ -4,7 +4,7 @@ description: REST API v2-Checkliste
 exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
 source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '2563'
+source-wordcount: '2578'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 > Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-In diesem Dokument werden die obligatorischen Anforderungen und empfohlenen Vorgehensweisen für Programmierer, die Client-Anwendungen implementieren, die die Adobe Pass-Authentifizierung (REST [&#x200B; V2) verwenden, an einer Stelle &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md).
+In diesem Dokument werden die obligatorischen Anforderungen und empfohlenen Vorgehensweisen für Programmierer, die Client-Anwendungen implementieren, die die Adobe Pass-Authentifizierung (REST [ V2) verwenden, an einer Stelle ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md).
 
 Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihrer Akzeptanzkriterien betrachtet und als Checkliste verwendet werden, um sicherzustellen, dass alle erforderlichen Schritte unternommen wurden, um eine erfolgreiche Integration zu erreichen.
 
@@ -25,7 +25,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
 
 ## Obligatorische Anforderungen {#mandatory-requirements}
 
-### &#x200B;1. Phase der Registrierung {#mandatory-requirements-registration-phase}
+### &#x200B;1. Registrierungsphase {#mandatory-requirements-registration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -60,7 +60,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Konfigurationsabruf</i></td>
-      <td>Rufen Sie die Konfigurationsantwort nur ab, wenn Sie vor der Authentifizierungsphase den Benutzer auffordern müssen, seinen MVPD (TV-Anbieter) auszuwählen.<br/><br/>Es ist nicht erforderlich, die Konfigurationsantwort abzurufen, wenn:<ul><li>Der Benutzer ist bereits authentifiziert.</li><li>Dem Benutzer wird temporärer Zugriff angeboten.</li><li>Die Benutzerauthentifizierung ist abgelaufen, aber der Benutzer kann aufgefordert werden, zu bestätigen, dass er weiterhin Abonnent der zuvor ausgewählten MVPD ist.</li></ul></td>
+      <td>Rufen Sie die Konfigurationsantwort nur ab, wenn Sie vor der Authentifizierungsphase den Benutzer auffordern müssen, seine MVPD (TV-Anbieter) auszuwählen.<br/><br/>Es ist nicht erforderlich, die Konfigurationsantwort abzurufen, wenn:<ul><li>Der Benutzer ist bereits authentifiziert.</li><li>Dem Benutzer wird temporärer Zugriff angeboten.</li><li>Die Benutzerauthentifizierung ist abgelaufen, aber der Benutzer kann aufgefordert werden, zu bestätigen, dass er weiterhin Abonnent der zuvor ausgewählten MVPD ist.</li></ul></td>
       <td>Risiken, die Systemressourcen zu überlasten und die Latenz zu erhöhen.</td>
    </tr>
    <tr>
@@ -111,7 +111,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    <tr>
       <td style="background-color: #DEEBFF;"><i>Abrufen von Entscheidungen vor der Autorisierung</i></td>
       <td>Verwenden Sie Entscheidungen zur Vorabautorisierung für die Inhaltsfilterung und niemals für Wiedergabeentscheidungen.</td>
-      <td>Gefahr der Verletzung vertraglicher Vereinbarungen zwischen Programmer, MVPDs und Adobe.<br/><br/>Risiken, unsere Überwachungs- und Warnsysteme zu umgehen.</td>
+      <td>Risiken durch Verletzung vertraglicher Vereinbarungen zwischen Programmer, MVPDs und Adobe.<br/><br/>Risiken durch Umgehung unserer Überwachungs- und Warnsysteme.</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Wiederholung von Entscheidungen vor Autorisierung</i></td>
@@ -125,7 +125,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### &#x200B;5. Genehmigungsphase {#mandatory-requirements-authorization-phase}
+### &#x200B;5. Autorisierungsphase {#mandatory-requirements-authorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -136,7 +136,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    <tr>
       <td style="background-color: #DEEBFF;"><i>Abrufen von Autorisierungsentscheidungen</i></td>
       <td>Erhalten Sie Autorisierungsentscheidungen vor der Wiedergabe - unabhängig davon, ob eine Entscheidung vor der Autorisierung existiert.<br/><br/>Erlauben Sie Streams die unterbrechungsfreie Fortsetzung, selbst wenn das Medien-Token während der Wiedergabe abläuft, und fordern Sie eine neue Autorisierungsentscheidung an, die ein (neues) Medien-Token enthält, wenn der Benutzer seine nächste Wiedergabeanforderung durchführt, unabhängig davon, ob es sich um dieselbe oder eine andere Ressource handelt.<br/><br/>Live-Streams, die über längere Zeiträume laufen, können nach Videovorgängen eine neue Autorisierungsentscheidung anfordern, z. B. nach dem Anhalten von Inhalten, dem Initiieren von Werbeunterbrechungen oder dem Ändern der Konfigurationen auf Asset-Ebene, wenn der MRSS geändert wird.</td>
-      <td>Gefahr der Verletzung vertraglicher Vereinbarungen zwischen Programmer, MVPDs und Adobe.<br/><br/>Risiken, unsere Überwachungs- und Warnsysteme zu umgehen.</td>
+      <td>Risiken durch Verletzung vertraglicher Vereinbarungen zwischen Programmer, MVPDs und Adobe.<br/><br/>Risiken durch Umgehung unserer Überwachungs- und Warnsysteme.</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Wiederholung von Autorisierungsentscheidungen</i></td>
@@ -160,7 +160,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### &#x200B;7. Parameter und Kopfzeilen {#mandatory-requirements-parameters-headers}
+### &#x200B;7. Parameter und Header {#mandatory-requirements-parameters-headers}
 
 <table style="table-layout:auto">
    <tr>
@@ -181,7 +181,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    <tr>
       <td style="background-color: #DEEBFF;"><i>X-DEVICE-INFO-Header senden</i></td>
       <td>Senden Sie die Kopfzeile <a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> für jede REST API v2-Anfrage.<br/><br/>Selbst wenn die Anfrage von einem Server im Namen eines Geräts stammt, muss der Header-Wert für X-Device-Info die tatsächlichen Streaming-Geräteinformationen widerspiegeln.</td>
-      <td>Risiken, die als von einer unbekannten Plattform stammend klassifiziert und als unsicher behandelt werden und restriktiveren Regeln unterliegen, wie beispielsweise kürzere Authentifizierungs-TTLs.<br/><br/>Darüber hinaus sind einige Felder, wie die connectionIp des Streaming-Geräts und connectionPort, für Funktionen wie die Basisauthentifizierung von Spectrum obligatorisch.</td>
+      <td>Risiken, die als von einer unbekannten Plattform stammend klassifiziert und als unsicher behandelt werden und restriktiveren Regeln unterliegen, wie etwa kürzere TTLs für die Authentifizierung.<br/><br/>Darüber hinaus sind einige Felder, wie die connectionIp des Streaming-Geräts und connectionPort, für Funktionen wie die Basisauthentifizierung von Spectrum obligatorisch.</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Kennung eines stabilen Geräts</i></td>
@@ -195,7 +195,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### &#x200B;8. Umgang mit Fehlern {#mandatory-requirements-error-handling}
+### &#x200B;8. Fehlerbehandlung {#mandatory-requirements-error-handling}
 
 <table style="table-layout:auto">
    <tr>
@@ -215,7 +215,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### &#x200B;9. Prüfung {#mandatory-requirements-testing}
+### &#x200B;9. Test läuft {#mandatory-requirements-testing}
 
 <table style="table-layout:auto">
    <tr>
@@ -225,14 +225,14 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Lebenszyklustests</i></td>
-      <td>Entwickeln und testen Sie die Anwendung mit den offiziellen produktionsfremden Umgebungen für die Adobe Pass-Authentifizierung:<ul><li>Vorserienfertigung</li><li>Release-Staging</li></ul><br/>Führen Sie in diesen Umgebungen eine gründliche Qualitätssicherung (QA) durch, bevor Sie mit der Veröffentlichung in der Produktionsumgebung beginnen.<br/><br/>Client-Anwendungen dürfen nicht zur Produktionsfreigabe übergehen, ohne zunächst die End-to-End-Validierung in Nicht-Produktionsumgebungen abzuschließen.</td>
+      <td>Entwickeln und testen Sie die Anwendung mit den offiziellen produktionsfremden Umgebungen für die Adobe Pass-Authentifizierung:<ul><li>Vorserienfertigung</li><li>Release-Staging</li></ul><br/>Führen Sie in diesen Umgebungen eine gründliche Qualitätssicherung (QA) durch, bevor Sie mit der Veröffentlichung in der Produktionsumgebung beginnen.<br/><br/>Client-Anwendungen dürfen nicht in die Produktionsumgebung wechseln, ohne zuvor die End-to-End-Validierung in produktionsfremden Umgebungen abgeschlossen zu haben.</td>
       <td>Risiken, die mit kritischen und schwerwiegenden Mängeln beginnen.<br/><br/>Ein kurzer und effizienter Debugging-Weg kann den Adobe Support und das Engineering daran hindern, schnell einzugreifen.</td>
    </tr>
 </table>
 
 ## Empfohlene Verfahren {#recommended-practices}
 
-### &#x200B;1. Phase der Registrierung {#recommended-practices-registration-phase}
+### &#x200B;1. Registrierungsphase {#recommended-practices-registration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -272,7 +272,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Validierung des Authentifizierungs-Codes (Authentifizierung auf dem 2. Bildschirm)</i></td>
-      <td>Validieren Sie den Authentifizierungscode, der über die Benutzereingabe auf dem Bildschirm der zweiten Anwendung gesendet wurde, bevor Sie die API /api/v2/Authenticate aufrufen, unter den folgenden Bedingungen:<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md#perform-authentication-within-secondary-application-with-preselected-mvpd">Authentifizierung wird innerhalb der sekundären Anwendung (Bildschirm) mit vorab ausgewähltem mvpd durchgeführt</a></b><ul><li>Nutzen Sie <a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md">Authentifizierungssitzung fortsetzen</a> POST /api/v2/{serviceProvider}/sessions/{code}</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md#perform-authentication-within-secondary-application-without-preselected-mvpd">Authentifizierung wird innerhalb der sekundären (Bildschirm-)Anwendung ohne vorab ausgewählte mvpd durchgeführt</a></b><ul><li>Verwenden Sie <a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md">Authentifizierungssitzung abrufen</a> - GET /api/v2/{serviceProvider}/sessions/{code}</li></ul><br/>Die Client-Anwendung erhält einen Fehler, wenn der angegebene Authentifizierungs-Code falsch eingegeben wurde oder die Authentifizierungssitzung abgelaufen ist.</td>
+      <td>Validieren Sie den Authentifizierungscode, der über die Benutzereingabe auf dem Bildschirm der zweiten Anwendung gesendet wurde, bevor Sie die API /api/v2/Authenticate aufrufen, unter den folgenden Bedingungen:<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md#perform-authentication-within-secondary-application-with-preselected-mvpd">Authentifizierung wird innerhalb der sekundären Anwendung (Bildschirm) mit vorab ausgewähltem mvpd durchgeführt</a></b><ul><li>Nutzen Sie die <a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md">Authentifizierungssitzung fortsetzen</a> - POST /api/v2/{serviceProvider}/sessions/{code}</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md#perform-authentication-within-secondary-application-without-preselected-mvpd">Authentifizierung wird innerhalb der sekundären (Bildschirm-)Anwendung ohne vorab ausgewählte mvpd durchgeführt</a></b><ul><li>Nutzen Sie <a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md">Authentifizierungssitzung abrufen</a> - GET /api/v2/{serviceProvider}/sessions/{code}</li></ul><br/>Die Client-Anwendung erhält einen Fehler, wenn der angegebene Authentifizierungs-Code falsch eingegeben wurde oder die Authentifizierungssitzung abgelaufen ist.</td>
       <td>Dadurch werden verschiedene Fehlerreaktionen und Workflow-Probleme bei der Authentifizierung riskiert.</td>
    </tr>
    <tr>
@@ -302,7 +302,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### &#x200B;5. Genehmigungsphase {#recommended-practices-authorization-phase}
+### &#x200B;5. Autorisierungsphase {#recommended-practices-authorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -337,7 +337,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### &#x200B;7. Parameter und Kopfzeilen {#recommended-practices-parameters-headers}
+### &#x200B;7. Parameter und Header {#recommended-practices-parameters-headers}
 
 <table style="table-layout:auto">
    <tr>
@@ -352,7 +352,7 @@ Das folgende Dokument muss bei der Implementierung der REST-API V2 als Teil Ihre
    </tr>
 </table>
 
-### &#x200B;8. Prüfung {#recommended-practices-testing}
+### &#x200B;8. Test läuft {#recommended-practices-testing}
 
 <table style="table-layout:auto">
    <tr>

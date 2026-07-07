@@ -4,8 +4,8 @@ description: REST API v2 - Kopfzeile - x-device-info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
 source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
 workflow-type: tm+mt
-source-wordcount: '1133'
-ht-degree: 2%
+source-wordcount: '1234'
+ht-degree: 3%
 
 ---
 
@@ -53,7 +53,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>primaryHardwareType</td>
         <td>Der primäre Hardwaretyp des Geräts.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -110,7 +110,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td><i>required</i></td>
         <td>osName</td>
         <td>Der Name des Betriebssystems (OS) des Geräts.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -132,7 +132,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>Betriebssystemfamilie</td>
         <td>Der Gruppenname des Betriebssystems (OS) des Geräts.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -155,7 +155,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>Betriebssystemanbieter</td>
         <td>Der Anbieter des Betriebssystems (OS) des Geräts.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -185,7 +185,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>browserName</td>
         <td>Der Name des Browsers.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -205,7 +205,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>browserVendor</td>
         <td>Die Firma/Organisation, die den Browser erstellt.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -228,7 +228,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td>browserVersion</td>
         <td>Die Browser-Version des Geräts.</td>
         <td></td>
-        <td>z. B. 60.0.3112</td>
+        <td>e.g. 60.0.3112</td>
     </tr>
     <tr>
         <td></td>
@@ -256,28 +256,28 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td>displayPpi</td>
         <td>Die physische Pixeldichte des Bildschirms des Geräts.</td>
         <td></td>
-        <td>Beispiel: 294</td>
+        <td>e.g. 294</td>
     </tr>
     <tr>
         <td></td>
         <td>diagonalScreenSize</td>
         <td>Die Bildschirmdiagonale des Geräts in Zoll.</td>
         <td></td>
-        <td>z. B. 5.5, 10.1</td>
+        <td>e.g. 5.5, 10.1</td>
     </tr>
     <tr>
         <td></td>
         <td>connectionIP</td>
         <td>Die IP des Geräts, die zum Senden von HTTP-Anfragen verwendet wird.</td>
         <td></td>
-        <td>z. B. 8.8.4.4</td>
+        <td>e.g. 8.8.4.4</td>
     </tr>
     <tr>
         <td></td>
         <td>connectionPort</td>
         <td>Der Port des Geräts, der zum Senden von HTTP-Anfragen verwendet wird.</td>
         <td></td>
-        <td>z. B. 53124</td>
+        <td>e.g. 53124</td>
     </tr>
     <tr>
         <td><i>required</i></td>
@@ -290,7 +290,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>connectionSecure</td>
         <td>Der Sicherheitsstatus der Netzwerkverbindung.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -434,7 +434,7 @@ Die Geräteinformationen können wie folgt aufgebaut werden:
 | displayWidth | UIScreen.mainScreen | 320 |
 | displayHeight | UIScreen.mainScreen | 568 |
 | osName | UIDevice.systemName | iOS |
-| osVersion | UIDevice.systemVersion | 10,2 |
+| osVersion | UIDevice.systemVersion | 10.2 |
 
 Die Verbindungsinformationen können wie folgt aufgebaut werden:
 
@@ -533,14 +533,14 @@ Die Geräteinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |---------------|-----------------------------|-----------------|
-| Modell | Build.MODEL | GT-I9505 |
+| Modell | build.MODEL | GT-I9505 |
 | Lieferant | Build.BRAND | Samsung |
-| Hersteller | Build.MANUFACTURER | Samsung |
-| Version | Build.DEVICE | Kehllappen |
+| Hersteller | Build.Manufacturer | Samsung |
+| Version | build.DEVICE | Kehllappen |
 | displayWidth | DisplayMetrics.widthPixels | 600 |
 | displayHeight | DisplayMetrics.heightPixels | 800 |
 | osName | hartcodiert | Android |
-| osVersion | Build.VERSION.RELEASE | 5,0,1 |
+| osVersion | build.VERSION.RELEASE | 5.0.1 |
 
 Die Verbindungsinformationen können wie folgt aufgebaut werden:
 
@@ -642,7 +642,7 @@ Die Geräteinformationen können wie folgt aufgebaut werden:
 | displayWidth | UIScreen.mainScreen | 1920 |
 | displayHeight | UIScreen.mainScreen | 1080 |
 | osName | UIDevice.systemName | tvOS |
-| osVersion | UIDevice.systemVersion | 10,2 |
+| osVersion | UIDevice.systemVersion | 10.2 |
 
 Die Verbindungsinformationen können wie folgt aufgebaut werden:
 
@@ -659,7 +659,7 @@ Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 #### Betriebssystem auslösen {#fireos}
 
-Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [&#x200B; „Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html) ausgeführt wird, finden Sie in den folgenden Dokumenten:
+Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [ „Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html) ausgeführt wird, finden Sie in den folgenden Dokumenten:
 
 * Android-Entwicklerdokumentation für [Build](https://developer.android.com/reference/android/os/Build.html)-Klasse.
 * Amazon-Entwicklerdokumentation für [Identifizieren von Fire-TV-](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html))
@@ -668,14 +668,14 @@ Die Geräteinformationen können wie folgt aufgebaut werden:
 
 | Schlüssel | Source | Wert (Beispiel) |
 |---------------|-----------------------------|-----------------|
-| Modell | Build.MODEL | AFTM |
+| Modell | build.MODEL | AFTM |
 | Lieferant | Build.BRAND | Amazon |
-| Hersteller | Build.MANUFACTURER | Amazon |
-| Version | Build.DEVICE | Montoya |
+| Hersteller | Build.Manufacturer | Amazon |
+| Version | build.DEVICE | Montoya |
 | displayWidth | DisplayMetrics.widthPixels |                 |
 | displayHeight | DisplayMetrics.heightPixels |                 |
 | osName | hartcodiert | Android |
-| osVersion | Build.VERSION.RELEASE | 5.1.1 |
+| osVersion | build.VERSION.RELEASE | 5.1.1 |
 
 Die Verbindungsinformationen können wie folgt aufgebaut werden:
 
@@ -692,7 +692,7 @@ Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 #### Roku OS {#rokuos}
 
-Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [&#x200B; (Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md) ausgeführt wird, finden Sie in den folgenden Dokumenten:
+Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [ (Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md) ausgeführt wird, finden Sie in den folgenden Dokumenten:
 
 * Roku-Entwicklerdokumentation für [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md).
 

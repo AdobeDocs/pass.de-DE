@@ -4,8 +4,8 @@ description: REST API V2 - Authentifizierungssitzung mit Code abrufen
 exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '532'
-ht-degree: 1%
+source-wordcount: '549'
+ht-degree: 3%
 
 ---
 
@@ -69,12 +69,9 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         Die IP-Adresse des Streaming-Geräts.
-         <br/><br/>
-         Es wird dringend empfohlen, sie immer für Server-zu-Server-Implementierungen zu verwenden, insbesondere wenn der Aufruf vom Programmierdienst und nicht vom Streaming-Gerät erfolgt.
-         <br/><br/>
-         Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts implizit gesendet.
-      </td> 
+         Die IP-Adresse des Streaming-Geräts.<br/><br/>
+         Es wird dringend empfohlen, sie immer für Server-zu-Server-Implementierungen zu verwenden, insbesondere wenn der Aufruf vom Programmierdienst und nicht vom Streaming-Gerät erfolgt.<br/><br/>
+         Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts implizit gesendet.</td> 
       <td>fakultativ</td>
    </tr>
    <tr>
@@ -86,10 +83,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Akzeptieren</td>
       <td>
-         Der von der Client-Anwendung akzeptierte Medientyp.
-         <br/><br/>
-         Wenn angegeben, muss es application/json;charset=utf-8 sein.
-      </td>
+         Der von der Client-Anwendung akzeptierte Medientyp.<br/><br/>
+         Wenn angegeben, muss es application/json;charset=utf-8 sein.</td>
       <td>fakultativ</td>
    </tr>
    <tr>
@@ -118,29 +113,25 @@ ht-degree: 1%
       <td>400</td>
       <td>Fehlerhafte Anfrage</td>
       <td>
-        Die Anfrage ist ungültig. Der Client muss die Anfrage korrigieren und es erneut versuchen. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.
-      </td>
+        Die Anfrage ist ungültig. Der Client muss die Anfrage korrigieren und es erneut versuchen. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Nicht autorisiert</td>
       <td>
-        Das Zugriffstoken ist ungültig. Der Client muss ein neues Zugriffstoken abrufen und es erneut versuchen. Weitere Informationen finden Sie in der Dokumentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Übersicht über die Dynamic Client-Registrierung</a> .
-      </td>
+        Das Zugriffstoken ist ungültig. Der Client muss ein neues Zugriffstoken abrufen und es erneut versuchen. Weitere Informationen finden Sie in der Dokumentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Übersicht über die Dynamic Client-Registrierung</a> .</td>
    </tr>
    <tr>
       <td>405</td>
       <td>Methode nicht zulässig</td>
       <td>
-        Die HTTP-Methode ist ungültig. Der Client muss eine HTTP-Methode verwenden, die für die angeforderte Ressource zulässig ist, und erneut versuchen. Weitere Informationen finden Sie im Abschnitt <a href="#request">Anfrage</a>.
-      </td>
+        Die HTTP-Methode ist ungültig. Der Client muss eine HTTP-Methode verwenden, die für die angeforderte Ressource zulässig ist, und erneut versuchen. Weitere Informationen finden Sie im Abschnitt <a href="#request">Anfrage</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Interner Server-Fehler</td>
       <td>
-        Auf der Serverseite ist ein Problem aufgetreten. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.
-      </td>
+        Auf der Serverseite ist ein Problem aufgetreten. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.</td>
    </tr>
 </table>
 
@@ -228,16 +219,13 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            Der Antworttext kann zusätzliche Fehlerinformationen bereitstellen, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.
-            <br/><br/>
-            Die Client-Anwendung muss einen Mechanismus zur Fehlerbehandlung implementieren, der die Fehlercodes, die am häufigsten von dieser API zurückgegeben werden, ordnungsgemäß verarbeitet:
-            <ul>
+            Der Antworttext kann zusätzliche Fehlerinformationen bereitstellen, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.<br/><br/>
+            Die Client-Anwendung muss einen Mechanismus zur Fehlerbehandlung implementieren, der die Fehlercodes, die am häufigsten von dieser API zurückgegeben werden, ordnungsgemäß verarbeitet:<ul>
                 <li>invalid_authentication_session</li>
                 <li>invalid_parameter_code</li>
                 <li>usw.</li>
             </ul>
-            Die obige Liste erhebt keinen Anspruch auf Vollständigkeit. Die Client-Anwendung muss in der Lage sein, alle in der <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">öffentlichen Dokumentation“ definierten erweiterten Fehler-Codes zu </a>.
-      </td>
+            Die obige Liste erhebt keinen Anspruch auf Vollständigkeit. Die Client-Anwendung muss in der Lage sein, alle in der <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">öffentlichen Dokumentation“ definierten erweiterten Fehler-Codes zu </a>.</td>
       <td><i>required</i></td>
    </tr>
 </table>

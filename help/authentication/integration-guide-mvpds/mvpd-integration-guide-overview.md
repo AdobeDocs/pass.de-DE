@@ -4,7 +4,7 @@ description: MVPD-Integrationshandbuch
 exl-id: b918550b-96a8-4e80-af28-0a2f63a02396
 source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
 workflow-type: tm+mt
-source-wordcount: '1307'
+source-wordcount: '1326'
 ht-degree: 0%
 
 ---
@@ -71,14 +71,14 @@ Beim ersten Besuch eines Benutzers bei einem Programmierer-Programm (TVE) folgt 
 
 >[!NOTE]
 >
-> Programmer-Anwendung (TVE) wird in diesem Dokument verwendet, um kollektiv auf die Anwendungstypen zu verweisen, die auf verschiedenen Plattformen ausgeführt werden (Browser, Mobilgeräte, an Fernsehgeräte angeschlossene Geräte usw.), die von der Adobe Pass-Authentifizierung unterstützt werden.
+> Programmer (TVE)-Anwendung wird in diesem Dokument verwendet, um gemeinsam auf die Arten von Anwendungen zu verweisen, die auf verschiedenen Plattformen ausgeführt werden (Browser, mobile Geräte, TV-verbundene Geräte usw.) unterstützt von Adobe Pass-Authentifizierung.
 
 ### Authentifizierungsphase {#authentication-phase}
 
 In den folgenden Schritten werden die allgemeinen Schritte für den Fall einer SAML-Integration beschrieben:
 
 1. **Laden der Anwendung (Website) des Programmierers**\
-   Der/die Benutzende navigiert zur Programmieranwendung (Website), die die Adobe Pass-Authentifizierung ([-API V2) &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md).
+   Der/die Benutzende navigiert zur Programmieranwendung (Website), die die Adobe Pass-Authentifizierung ([-API V2) ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md).
 
 1. **Geschützte Inhaltsanfrage**\
    Wenn Benutzende versuchen, auf geschützte Inhalte zuzugreifen, zeigt die Anwendung des Programmierers eine Liste von MVPDs an, aus denen die Benutzenden auswählen können.

@@ -4,8 +4,8 @@ description: REST API V2 - Authentifizierung im Benutzeragenten durchführen
 exl-id: d615dde0-71a8-4b6c-a12e-1e3b5e20728c
 source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '240'
-ht-degree: 3%
+source-wordcount: '242'
+ht-degree: 5%
 
 ---
 
@@ -33,7 +33,7 @@ ht-degree: 3%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Pfad</td>
-      <td>/api/v2/authenticate/{serviceProvider}/{code}</td>
+      <td>/api/v2/authentication/{serviceProvider}/{code}</td>
       <td></td>
    </tr>
    <tr>
@@ -94,8 +94,7 @@ ht-degree: 3%
       <td>405</td>
       <td>Methode nicht zulässig</td>
       <td>
-        Die HTTP-Methode ist ungültig. Der Client muss eine HTTP-Methode verwenden, die für die angeforderte Ressource zulässig ist, und erneut versuchen. Weitere Informationen finden Sie im Abschnitt <a href="#request">Anfrage</a>.
-      </td>
+        Die HTTP-Methode ist ungültig. Der Client muss eine HTTP-Methode verwenden, die für die angeforderte Ressource zulässig ist, und erneut versuchen. Weitere Informationen finden Sie im Abschnitt <a href="#request">Anfrage</a>.</td>
    </tr>
    <tr>
       <td>500</td>

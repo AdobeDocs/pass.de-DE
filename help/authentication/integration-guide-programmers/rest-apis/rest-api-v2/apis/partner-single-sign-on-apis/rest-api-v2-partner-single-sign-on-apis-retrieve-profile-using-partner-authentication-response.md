@@ -4,8 +4,8 @@ description: REST API V2 - Erstellen und Abrufen von Profilen mit der Antwort de
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '850'
-ht-degree: 1%
+source-wordcount: '934'
+ht-degree: 2%
 
 ---
 
@@ -60,10 +60,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">SAMLResponse</td>
       <td>
-        Die Antwort zur Partnerauthentifizierung, die die erforderlichen Benutzermetadaten zum Erstellen und Speichern eines Partnerprofils enthält.
-        <br/><br/>
-        Der Wert muss Base64-kodiert und danach URL-kodiert sein.
-      </td>
+        Die Antwort zur Partnerauthentifizierung, die die erforderlichen Benutzermetadaten zum Erstellen und Speichern eines Partnerprofils enthält.<br/><br/>
+        Der Wert muss Base64-kodiert und danach URL-kodiert sein.</td>
       <td><i>required</i></td>
    </tr>
    <tr>
@@ -79,10 +77,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">content-type</td>
       <td>
-         Der akzeptierte Medientyp für die gesendeten Ressourcen.
-         <br/><br/>
-         Es muss application/x-www-form-urlencoded lauten.
-      </td>
+         Der akzeptierte Medientyp für die gesendeten Ressourcen.<br/><br/>
+         Es muss application/x-www-form-urlencoded lauten.</td>
       <td><i>required</i></td>
    </tr>
    <tr>
@@ -93,33 +89,25 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">x-device-info</td>
       <td>
-         Die Erzeugung der Payload mit Geräteinformationen wird in der Header-Dokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> beschrieben.
-         <br/><br/>
-         Es wird dringend empfohlen, sie immer dann zu verwenden, wenn die Geräteplattform der Anwendung die explizite Bereitstellung gültiger Werte zulässt.
-         <br/><br/>
-         Wenn angegeben, führt das Backend für die Adobe Pass-Authentifizierung explizit eingestellte Werte mit extrahierten Werten implizit zusammen (standardmäßig).
-         <br/><br/>
-         Wenn keine Angabe gemacht wird, verwendet das Backend für die Adobe Pass-Authentifizierung implizit die extrahierten Werte (standardmäßig).
-      </td>
+         Die Erzeugung der Payload mit Geräteinformationen wird in der Header-Dokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> beschrieben.<br/><br/>
+         Es wird dringend empfohlen, sie immer dann zu verwenden, wenn die Geräteplattform der Anwendung die explizite Bereitstellung gültiger Werte zulässt.<br/><br/>
+         Wenn angegeben, führt das Backend für die Adobe Pass-Authentifizierung explizit eingestellte Werte mit extrahierten Werten implizit zusammen (standardmäßig).<br/><br/>
+         Wenn keine Angabe gemacht wird, verwendet das Backend für die Adobe Pass-Authentifizierung implizit die extrahierten Werte (standardmäßig).</td>
       <td><i>required</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">ap-partner-framework-status</td>
       <td>
-        Die Erstellung der Single Sign-On-Payload für die Partner-Methode wird in der Header-Dokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> beschrieben.
-        <br/><br/>
+        Die Erstellung der Single Sign-On-Payload für die Partner-Methode wird in der Header-Dokumentation <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> beschrieben.<br/><br/>
         Weitere Informationen zu Flüssen, für die Single Sign-on unter Verwendung eines Partners aktiviert ist, finden Sie in der <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Single Sign-on unter Verwendung von Partnerflüssen</a> Dokumentation.</td>
       <td>fakultativ</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         Die IP-Adresse des Streaming-Geräts.
-         <br/><br/>
-         Es wird dringend empfohlen, sie immer für Server-zu-Server-Implementierungen zu verwenden, insbesondere wenn der Aufruf vom Programmierdienst und nicht vom Streaming-Gerät erfolgt.
-         <br/><br/>
-         Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts implizit gesendet.
-      </td>
+         Die IP-Adresse des Streaming-Geräts.<br/><br/>
+         Es wird dringend empfohlen, sie immer für Server-zu-Server-Implementierungen zu verwenden, insbesondere wenn der Aufruf vom Programmierdienst und nicht vom Streaming-Gerät erfolgt.<br/><br/>
+         Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts implizit gesendet.</td>
       <td>fakultativ</td>
    </tr>
    <tr>
@@ -131,10 +119,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Akzeptieren</td>
       <td>
-         Der von der Client-Anwendung akzeptierte Medientyp.
-         <br/><br/>
-         Wenn angegeben, muss es application/json;charset=utf-8 sein.
-      </td>
+         Der von der Client-Anwendung akzeptierte Medientyp.<br/><br/>
+         Wenn angegeben, muss es application/json;charset=utf-8 sein.</td>
       <td>fakultativ</td>
    </tr>
    <tr>
@@ -163,29 +149,25 @@ ht-degree: 1%
       <td>400</td>
       <td>Fehlerhafte Anfrage</td>
       <td>
-        Die Anfrage ist ungültig. Der Client muss die Anfrage korrigieren und es erneut versuchen. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.
-      </td>
+        Die Anfrage ist ungültig. Der Client muss die Anfrage korrigieren und es erneut versuchen. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Nicht autorisiert</td>
       <td>
-        Das Zugriffstoken ist ungültig. Der Client muss ein neues Zugriffstoken abrufen und es erneut versuchen. Weitere Informationen finden Sie in der Dokumentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Übersicht über die Dynamic Client-Registrierung</a> .
-      </td>
+        Das Zugriffstoken ist ungültig. Der Client muss ein neues Zugriffstoken abrufen und es erneut versuchen. Weitere Informationen finden Sie in der Dokumentation <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Übersicht über die Dynamic Client-Registrierung</a> .</td>
    </tr>
    <tr>
       <td>405</td>
       <td>Methode nicht zulässig</td>
       <td>
-        Die HTTP-Methode ist ungültig. Der Client muss eine HTTP-Methode verwenden, die für die angeforderte Ressource zulässig ist, und erneut versuchen. Weitere Informationen finden Sie im Abschnitt <a href="#request">Anfrage</a>.
-      </td>
+        Die HTTP-Methode ist ungültig. Der Client muss eine HTTP-Methode verwenden, die für die angeforderte Ressource zulässig ist, und erneut versuchen. Weitere Informationen finden Sie im Abschnitt <a href="#request">Anfrage</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Interner Server-Fehler</td>
       <td>
-        Auf der Serverseite ist ein Problem aufgetreten. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.
-      </td>
+        Auf der Serverseite ist ein Problem aufgetreten. Der Antworttext kann Fehlerinformationen enthalten, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.</td>
    </tr>
 </table>
 
@@ -215,10 +197,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Profile</td>
       <td>
-         JSON mit einer Zuordnung von Schlüssel-/Wert-Paaren.
-         <br/><br/>
-         Das Schlüsselelement wird durch den folgenden Wert definiert:
-         <table style="table-layout:auto">
+         JSON mit einer Zuordnung von Schlüssel-/Wert-Paaren.<br/><br/>
+         Das Schlüsselelement wird durch den folgenden Wert definiert:<table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">Wert</th>
                <th style="background-color: #EFF2F7"></th>
@@ -250,10 +230,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">Aussteller</td>
                <td>
-                  Die Entität, der das Profil gehört.
-                  <br/><br/>
-                  Die möglichen Werte sind:
-                  <ul>
+                  Die Entität, der das Profil gehört.<br/><br/>
+                  Die möglichen Werte sind:<ul>
                     <li><b>Apple</b><br/>Das Profil wurde erstellt aus: Single Sign-on mit Partner-Apple.</li>
                   </ul>
                </td>
@@ -262,10 +240,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">Typ</td>
                <td>
-                  Der Profiltyp.
-                  <br/><br/>
-                  Die möglichen Werte sind:
-                  <ul>
+                  Der Profiltyp.<br/><br/>
+                  Die möglichen Werte sind:<ul>
                     <li><b>appleSSO</b><br/>Das Profil wurde erstellt als Ergebnis von: Single Sign-on mit Partner-Apple.</li>
                   </ul>
                </td>
@@ -274,10 +250,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">Attribute</td>
                <td>
-                    JSON mit einer Zuordnung von Schlüssel-/Wert-Paaren.
-                    <br/><br/>
-                    Das Schlüsselelement wird durch Benutzermetadatenattribute definiert und kann sein:
-                    <ul>
+                    JSON mit einer Zuordnung von Schlüssel-/Wert-Paaren.<br/><br/>
+                    Das Schlüsselelement wird durch Benutzermetadatenattribute definiert und kann sein:<ul>
                         <li>Obligatorisch, wie „userID“</li>
                         <li>Nicht obligatorisch, wie „zip“, „householdID“, „maxRating“ usw.</li>
                     </ul>
@@ -322,10 +296,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            Der Antworttext kann zusätzliche Fehlerinformationen bereitstellen, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.
-            <br/><br/>
-            Die Client-Anwendung muss einen Mechanismus zur Fehlerbehandlung implementieren, der die Fehlercodes, die am häufigsten von dieser API zurückgegeben werden, ordnungsgemäß verarbeitet:
-            <ul>
+            Der Antworttext kann zusätzliche Fehlerinformationen bereitstellen, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entsprechen.<br/><br/>
+            Die Client-Anwendung muss einen Mechanismus zur Fehlerbehandlung implementieren, der die Fehlercodes, die am häufigsten von dieser API zurückgegeben werden, ordnungsgemäß verarbeitet:<ul>
                 <li>invalid_header_pfs_permission_access_not_present</li>
                 <li>invalid_header_pfs_permission_access_not_defined</li>
                 <li>invalid_header_pfs_permission_access_not_granted</li>
@@ -335,15 +307,14 @@ ht-degree: 1%
                 <li>invalid_parameter_saml_response</li>
                 <li>usw.</li>
             </ul>
-            Die obige Liste erhebt keinen Anspruch auf Vollständigkeit. Die Client-Anwendung muss in der Lage sein, alle in der <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">öffentlichen Dokumentation“ definierten erweiterten Fehler-Codes zu </a>.
-      </td>
+            Die obige Liste erhebt keinen Anspruch auf Vollständigkeit. Die Client-Anwendung muss in der Lage sein, alle in der <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">öffentlichen Dokumentation“ definierten erweiterten Fehler-Codes zu </a>.</td>
       <td><i>required</i></td>
    </tr>
 </table>
 
 ## Beispiele {#samples}
 
-### &#x200B;1. Erstellen und Abrufen eines Profils mithilfe der Antwort der Partnerauthentifizierung
+### &#x200B;1. Erstellen und Abrufen eines Profils mithilfe der Antwort zur Partnerauthentifizierung
 
 >[!BEGINTABS]
 
@@ -400,7 +371,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;2. Profil mithilfe der Antwort der Partnerauthentifizierung erstellen und abrufen, es kommt jedoch zu einer Beeinträchtigung
+### &#x200B;2. Profil mit der Antwort der Partnerauthentifizierung erstellen und abrufen, es kommt jedoch zu einer Beeinträchtigung
 
 >[!BEGINTABS]
 
