@@ -2,7 +2,7 @@
 title: Android SDK API-Referenz
 description: Android SDK API-Referenz
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '4628'
 ht-degree: 0%
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 In diesem Dokument werden die Methoden und Callbacks beschrieben, die von der Android SDK für die Adobe Pass-Authentifizierung bereitgestellt werden, welche von der Adobe Pass-Authentifizierungsversion 1.7 und höher unterstützt wird. Die hier beschriebenen Methoden und Callback-Funktionen sind in den Header-Dateien AccessEnabler.h und EntitlementDelegate.h definiert.
 
-Die neueste Android AccessEnabler-SDK finden Sie [&#128279;](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library) https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library.
+Die neueste Android AccessEnabler-SDK finden Sie ](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library) [https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library.
 
 
 **Hinweis:** Das Adobe Pass-Authentifizierungsteam empfiehlt die Verwendung nur von (öffentlichen *Adobe Pass-*:
@@ -778,3 +778,4 @@ Array:
 - [Android Technical Overview](/help/authentication/android-sdk-overview.md)
 
 -->
+
