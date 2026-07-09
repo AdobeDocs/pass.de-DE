@@ -30,7 +30,7 @@ Wenn Sie eine kleinere Aktualisierung beitragen:
 1. Im Abschnitt „War dieser Inhalt hilfreich?“ Ein Banner, das unten in Ihrem Browser-Fenster angezeigt wird, klicken Sie auf **Detaillierte Feedback-Optionen**.
 1. Klicken Sie **Bearbeiten vorschlagen** und senden Sie eine Pull-Anfrage (PR) mit Ihren Änderungen in der GitHub-Benutzeroberfläche.
 
-   Weitere Informationen finden Sie im allgemeinen Leitfaden für Beitragende zu Adobe[&#128279;](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=de)Dokumenten .
+   Weitere Informationen finden Sie im allgemeinen Leitfaden für Beitragende zu Adobe[&#128279;](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html)Dokumenten .
 
 Kleinere Korrekturen oder Erläuterungen, die Sie zur Dokumentation und zu Code-Beispielen in diesem Repository eingeben, werden von den Adobe-Nutzungsbedingungen abgedeckt.
 
@@ -44,11 +44,11 @@ Wenn Sie Teil der Adobe-Community sind und ein neues Thema erstellen oder größ
 
 Community-Mitwirkende können für eine einfache Bearbeitung die GitHub-Benutzeroberfläche oder für wichtige Beiträge das Repository nutzen.
 
-Weitere Informationen finden Sie im Adobe-Handbuch für Mitwirkende [&#128279;](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=de) Dokumenten .
+Weitere Informationen finden Sie im Adobe-Handbuch für Mitwirkende [&#128279;](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) Dokumenten .
 
 ## Interne Mitwirkende
 
-Wenn Sie technischer Redakteur/technische Redakteurin, Programmmanager oder Entwickler(in) des Produktteams für eine Adobe Experience Cloud-Lösung sind und es Ihre Aufgabe ist, technische Artikel zu erstellen oder zu diesen beizutragen, verwenden Sie das [private Repository](https://git.corp.adobe.com/AdobeDocs).
+Wenn Sie technischer Redakteur/technische Redakteurin, Programm-Manager oder Entwickler(in) des Produkt-Teams für eine Adobe Experience Cloud-Lösung sind und es Ihre Aufgabe ist, technische Artikel zu erstellen oder zu diesen beizutragen, verwenden Sie [private Repository](https://git.corp.adobe.com/AdobeDocs).
 
 ## Thema formatieren
 
