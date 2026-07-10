@@ -15,7 +15,7 @@ Weitere Informationen finden Sie in der [Online](https://streams-stage.adobeprim
 
 ## Zweck und Voraussetzungen {#purpose-prerequisites}
 
-Dieses Dokument unterstützt Anwendungsentwickler bei der Verwendung unserer Swagger-API-Spezifikation bei der Implementierung einer Integration mit der gleichzeitigen Überwachung. Es wird dringend empfohlen, dass der Leser ein früheres Verständnis der vom Service definierten Konzepte hat, bevor er diese Richtlinie befolgt. Um dieses Verständnis zu erhalten, ist ein Überblick über die [Produktdokumentation) ](../cm-home.md) die „Swagger [&quot;-](https://streams-stage.adobeprimetime.com/swagger-ui/index.html) erforderlich.
+Dieses Dokument unterstützt Anwendungsentwickler bei der Verwendung unserer Swagger-API-Spezifikation bei der Implementierung einer Integration mit der gleichzeitigen Überwachung. Es wird dringend empfohlen, dass der Leser ein früheres Verständnis der vom Service definierten Konzepte hat, bevor er diese Richtlinie befolgt. Um dieses Verständnis zu erhalten, ist ein Überblick über die [Produktdokumentation) &#x200B;](../cm-home.md) die „Swagger [&quot;-](https://streams-stage.adobeprimetime.com/swagger-ui/index.html) erforderlich.
 
 ## Einführung {#api-overview-intro}
 
