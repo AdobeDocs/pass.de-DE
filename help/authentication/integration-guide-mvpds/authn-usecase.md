@@ -4,7 +4,7 @@ description: MVPD-Authentifizierung
 exl-id: 9ff4a46e-a37b-414c-a163-9e586252a9c3
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
-source-wordcount: '1851'
+source-wordcount: '1908'
 ht-degree: 0%
 
 ---
@@ -185,7 +185,7 @@ Im obigen Beispiel erwartet der Adobe-SP, die Benutzer-ID aus dem Betreff/der Na
 | SAMP:Response | Antwort von Adobe Pass-Authentifizierung empfangen. |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Ziel | Eine URI-Referenz, die die Adresse angibt, an die diese Anfrage gesendet wurde. Dies ist nützlich, um die böswillige Weiterleitung von Anfragen an unbeabsichtigte Empfängerinnen und Empfänger zu verhindern, ein Schutz, der für einige Protokollbindungen erforderlich ist. Wenn sie vorhanden ist, MUSS der tatsächliche Empfänger überprüfen, ob die URI-Referenz den Ort identifiziert, an dem die Nachricht empfangen wurde. Ist dies nicht der Fall, MUSS die Anfrage verworfen werden. Einige Protokollbindungen erfordern möglicherweise die Verwendung dieses Attributs. |
-| ID | Eine Kennung für die Anfrage. Sie ist vom Typ xs:ID und MUSS die in Abschnitt 1.3.4 von [SAML core 2.0-os) festgelegten Anforderungen &#x200B;](http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf){target=_blank} Identifizierungseindeutigkeit erfüllen. Die Werte des ID-Attributs in einer Anfrage und des InResponseTo-Attributs in der entsprechenden Antwort MÜSSEN übereinstimmen. |
+| ID | Eine Kennung für die Anfrage. Sie ist vom Typ xs:ID und MUSS die in Abschnitt 1.3.4 von [SAML core 2.0-os) festgelegten Anforderungen ](http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf){target=_blank} Identifizierungseindeutigkeit erfüllen. Die Werte des ID-Attributs in einer Anfrage und des InResponseTo-Attributs in der entsprechenden Antwort MÜSSEN übereinstimmen. |
 | Antwort an | Die ID einer SAML-Protokollmeldung, als Antwort auf die eine bescheinigende Entität die Bestätigung präsentieren kann. Der Wert muss mit dem Wert im ID-Attribut übereinstimmen, das in der Authentifizierungsanfrage gesendet wurde. Siehe SAML Core 2.0-os |
 | Problem-Instant | Der Zeitpunkt der Anfrage. |
 | Version | Die Version der Anfrage. |

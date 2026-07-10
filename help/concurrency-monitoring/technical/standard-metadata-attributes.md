@@ -4,7 +4,7 @@ description: Standard-Metadatenattribute
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
 source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
-source-wordcount: '1053'
+source-wordcount: '1295'
 ht-degree: 0%
 
 ---
@@ -57,9 +57,9 @@ Wenn bei [API v2.](https://streams-stage.adobeprimetime.com/swagger-ui/index.htm
 |                 | applicationVersion | Zeichenfolge | Dieser Wert kann zu Analysezwecken verwendet werden | Nicht zutreffend | 1.0, 2.0 |                                                                                   |
 | Subjekt | accountId | Zeichenfolge | Die Konto-ID des Betreffs der Parallelitätsüberwachung (im Umfang der MVPD) | Nicht zutreffend | Testkonto |                                                                                   |
 |                 | ContractType | Zeichenfolge | Premium, Basic. Die Kunden können dies als benutzerdefinierte Metadaten hinzufügen und in ihren eigenen Realms verwenden | Nicht zutreffend | Premium, Standard |                                                                                   |
-| Benutzer | name | Zeichenfolge | Einige MVPDs stellen Informationen zu dem spezifischen Benutzer bereit, der Inhalte abspielt. | Nicht zutreffend |                                                                                                                                                         |                                                                                   |
+| Benutzer | -Name | Zeichenfolge | Einige MVPDs stellen Informationen zu dem spezifischen Benutzer bereit, der Inhalte abspielt. | Nicht zutreffend |                                                                                                                                                         |                                                                                   |
 |                 | HBA | Boolesch | Gibt an, ob der Benutzer versucht, den Stream von seinem Startspeicherort aus zu initiieren | Nicht zutreffend | true, false | Wahr oder falsch |
-| Speicherort | Kontinent | Zeichenfolge | Der Kontinent, von dem die Geräte-ID, die die Wiedergabeanfrage sendet, stammt | Nicht zutreffend | Nordamerika | Gültiger Kontinentenname |
+| Standort | Kontinent | Zeichenfolge | Der Kontinent, von dem die Geräte-ID, die die Wiedergabeanfrage sendet, stammt | Nicht zutreffend | Nordamerika | Gültiger Kontinentenname |
 |                 | Land | Zeichenfolge | Das Land, aus dem die Geräte-ID, die die Wiedergabeanfrage sendet, stammt | Nicht zutreffend | USA | Gültiger Ländername |
 |                 | Bundesland | Zeichenfolge | Der Status, aus dem die Geräte-ID, die die Wiedergabeanfrage sendet, stammt | Nicht zutreffend | CA | Gültiger Statusname |
 |                 | Stadt | Zeichenfolge | Die Stadt, aus der die Geräte-ID stammt, die die Wiedergabeanfrage sendet | Nicht zutreffend | Cupertino | Gültiger Stadtname |

@@ -4,7 +4,7 @@ description: Unterscheiden zwischen VOD und Live-Inhalten bei der Überwachung v
 exl-id: 51ba686a-7c1f-4403-9e8e-cd247bf9e345
 source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
-source-wordcount: '221'
+source-wordcount: '226'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 
 
-**A:** Parallelitätsüberwachung kann nicht direkt zwischen Live-Inhalten und Video-on-Demand (VOD) unterscheiden. Der Video-Player muss den Typ des abgespielten Inhalts kennen und diese Informationen während des [Sitzungsinitialisierungsaufrufs) senden &#x200B;](/help/concurrency-monitoring/api/cm-api-overview.md#session-initial)erforderlich für die gleichzeitige Überwachung). Der reguläre Workflow sieht wie folgt aus:
+**A:** Parallelitätsüberwachung kann nicht direkt zwischen Live-Inhalten und Video-on-Demand (VOD) unterscheiden. Der Video-Player muss den Typ des abgespielten Inhalts kennen und diese Informationen während des [Sitzungsinitialisierungsaufrufs) senden ](/help/concurrency-monitoring/api/cm-api-overview.md#session-initial)erforderlich für die gleichzeitige Überwachung). Der reguläre Workflow sieht wie folgt aus:
 
 1. Die Kundinnen und Kunden der Parallelitätsüberwachung definieren einen Satz von Metadaten, für die Regeln implementiert werden sollen (z. B. content-type=live|vod, device-type=mobile|console|desktop).
 1. Das Team für Parallelitätsüberwachung implementiert die gewünschte Richtlinie. Beispiel:
