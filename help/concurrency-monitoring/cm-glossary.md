@@ -4,7 +4,7 @@ description: Glossar der Begriffe bei der Überwachung gleichzeitiger Nutzung
 exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
 source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
-source-wordcount: '762'
+source-wordcount: '766'
 ht-degree: 0%
 
 ---
@@ -104,7 +104,7 @@ ht-degree: 0%
 * Kann durch den Parallelitätsüberwachungs-Service von der Client-Anwendung mithilfe des oben genannten Service daran gehindert werden, Inhalte zu sehen.
 * Im besten Fall bemerkt er nie die Existenz des Parallelitätsüberwachungs-Service
 
-## Zielgruppe {#target-defn}
+## Target {#target-defn}
 
 * Ein Stream-Prädikat, das zurückgibt, ob die Regel für einen bestimmten Stream anwendbar ist. Das implizite Ziel in CM ist jeder Stream, der von einer Anwendung erstellt wird, die auf die betreffende Richtlinie verweist. Darüber hinaus können Bedingungen für Attributwerte hinzugefügt werden, um die Aktivitätsfilterung vor der Anwendung der Regeln zu optimieren.
 

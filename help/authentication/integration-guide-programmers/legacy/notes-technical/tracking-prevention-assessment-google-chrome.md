@@ -4,7 +4,7 @@ description: Tracking Prevention Assessment Google Chrome
 exl-id: f3d552da-2fd7-4ac8-9f82-876625af5d47
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '673'
+source-wordcount: '812'
 ht-degree: 0%
 
 ---
@@ -32,8 +32,8 @@ Unten finden Sie eine Liste der Ressourcen, die auf der Google-Entwicklerwebsite
 * [Der nächste Schritt zur schrittweisen Abschaffung von Drittanbieter-Cookies in Chrome](https://blog.google/products/chrome/privacy-sandbox-tracking-protection/)
 * [Entwicklerdokumentation für Privacy Sandbox](https://developers.google.com/privacy-sandbox)
 * [Vorbereiten auf Beschränkungen für Drittanbieter-Cookies](https://developers.google.com/privacy-sandbox/3pcd)
-* [Vorbereiten der Einstellung des Drittanbieter-Cookies](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout)
-* [Vorbereitung auf das Ende von Drittanbieter-Cookies](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2023oct)
+* [Vorbereiten des Auslaufens des Drittanbieter-Cookies](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout)
+* [Vorbereiten des Endes von Drittanbieter-Cookies](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2023oct)
 * [Third-Party-Cookies, die standardmäßig für 1 % der Chrome-Benutzer eingeschränkt sind](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2024jan)
 
 ## Timeline

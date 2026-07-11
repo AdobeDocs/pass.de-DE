@@ -1,13 +1,13 @@
 ---
 title: Umgang mit 409-Konflikten
 description: Erfahren Sie, wie Sie mit 409-Konflikt-Fehlern umgehen können, wenn gleichzeitige Nutzungsbeschränkungen erreicht werden
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 23a73e48-8ae0-4e0e-85db-dfc09d1386a7
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
 source-wordcount: '283'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
-
 
 # Umgang mit 409-Konflikten {#handling-409-errors}
 
@@ -127,5 +127,3 @@ Ein 409-Konflikt tritt auf, wenn:
 - **Antwort sorgfältig analysieren** - Alle relevanten Informationen extrahieren
 - **Randfälle behandeln** - Was passiert, wenn keine Konflikte zurückgegeben werden?
 - **Konflikte protokollieren** - Richtlinienverletzungen für die Analyse verfolgen
-
-

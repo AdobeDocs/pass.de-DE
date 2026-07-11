@@ -1,13 +1,13 @@
 ---
 title: API-Referenz - Übersicht
 description: Vollständige Referenz für die Parallelitätsüberwachungs-API einschließlich Endpunkten, Authentifizierung und Antwortformaten
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 6a1c6507-03d5-4003-8b88-502eb4019346
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '438'
+source-wordcount: '444'
 ht-degree: 2%
 
 ---
-
 
 # API-Referenz - Übersicht {#api-reference-overview}
 
