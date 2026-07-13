@@ -4,7 +4,7 @@ description: Versionshinweise zur Adobe Pass-Authentifizierung 3.1.0
 exl-id: cf9fc8e2-4b37-4b0a-a6ed-cda1b6738e76
 source-git-commit: 0c6aec04ae9df410228730b5bce6ced1aeecd312
 workflow-type: tm+mt
-source-wordcount: '192'
+source-wordcount: '193'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ Veröffentlichungsdatum: **02/25/2025 - 02/27/2025**
 
 #### REST API v2
 
-* Neuer `partner_logout` Aktionsname und `partner_interactive` Aktionstyp, um in der REST-API v2 (Logout-API)-Antwort zwischen regulärem Abmelden und Single Sign[On-Abmelden &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) Partnern zu unterscheiden.
+* Neuer `partner_logout` Aktionsname und `partner_interactive` Aktionstyp, um in der REST-API v2 (Logout-API)-Antwort zwischen regulärem Abmelden und Single Sign[On-Abmelden ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) Partnern zu unterscheiden.
 * Neues `reason`, das mehr Einblicke in den Aktionsnamen in den Antworten der REST-API v2 [Sessions-](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) und [Sessions SSO-](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md) bietet.
 
 #### Fehlerbehebungen
