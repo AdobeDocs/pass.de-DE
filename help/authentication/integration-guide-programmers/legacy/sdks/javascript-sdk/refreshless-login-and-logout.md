@@ -4,7 +4,7 @@ description: Anmeldung und Abmeldung ohne Aktualisierung
 exl-id: 3ce8dfec-279a-4d10-93b4-1fbb18276543
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1784'
+source-wordcount: '1817'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Bei Web-Anwendungen müssen Sie einige verschiedene mögliche Szenarien für die
 - Bei einigen MVPDs müssen Sie einen iFrame auf Ihrer Site öffnen, um die Anmeldeseite von MVPD anzuzeigen
 - Einige Browser verarbeiten das iFrame-Szenario nicht gut. Daher ist für diese Browser eine bessere Alternative, ein Popup-Fenster anstelle des iFrame zu verwenden
 
-Vor der Adobe Pass-Authentifizierung 2.7 erforderten alle diese Szenarien zur Authentifizierung eines Benutzers eine vollständige Seitenaktualisierung der Programmiererseite. Für die Version 2.7 und die nachfolgenden Versionen verbesserte das Adobe Pass-Authentifizierungsteam diese Abläufe, sodass der Benutzer während der Anmeldung und des Abmeldens keine Seitenaktualisierung in Ihrer App erleben muss.
+Vor Adobe Pass Authentication 2.7 umfassten alle diese Szenarien für die Authentifizierung eines Benutzers eine vollständige Seitenaktualisierung der Programmiererseite.Für Version 2.7 und nachfolgende Versionen hat das Adobe Pass-Authentifizierungs-Team diese Abläufe verbessert, sodass die Benutzerin bzw. der Benutzer während der Anmeldung und des Abmeldens keine Seitenaktualisierung in Ihrer App erleben muss.
 
 
 ## Ausführliche Beschreibung {#detailed_description}
@@ -48,7 +48,7 @@ Beginnen wir mit einer Zusammenfassung der ursprünglichen Authentifizierungs- u
 
 Die Adobe Pass-Authentifizierungs-Webclients haben je nach den Anforderungen der MVPDs zwei Möglichkeiten zur Authentifizierung:
 
-1. **Vollständige Seitenumleitung -** Nachdem der Benutzer einen Anbieter ausgewählt hat    (konfiguriert mit vollständiger Seitenumleitung) über die MVPD-Auswahl auf der    Die Website des Programmierers, `setSelectedProvider(<mvpd>)` auf AccessEnabler aufgerufen wird, und der Benutzer wird zur Anmeldeseite von MVPD weitergeleitet. Nachdem der Benutzer gültige Anmeldeinformationen angegeben hat, wird er zurück zur Website des Programmierers weitergeleitet. AccessEnabler wird initialisiert und das Authentifizierungstoken wird während der `setRequestor` von der Adobe Pass-Authentifizierung abgerufen.
+1. **Vollständige Seitenumleitung -** Nachdem der Benutzer auf der Website des Programmierers einen Provider (konfiguriert mit vollständiger Seitenumleitung) aus der MVPD-Auswahl ausgewählt hat, wird `setSelectedProvider(<mvpd>)` auf AccessEnabler aufgerufen und der Benutzer wird zur Anmeldeseite von MVPD weitergeleitet. Nachdem der Benutzer gültige Anmeldeinformationen angegeben hat, wird er zurück zur Website des Programmierers weitergeleitet. AccessEnabler wird initialisiert und das Authentifizierungstoken wird während der `setRequestor` von der Adobe Pass-Authentifizierung abgerufen.
 1. **iFrame / Popup-Fenster -** Nachdem der Benutzer einen Provider ausgewählt hat (der mit iFrame konfiguriert ist), wird `setSelectedProvider(<mvpd>)` im AccessEnabler aufgerufen. Durch diese Aktion wird der `createIFrame(width, height)`-Callback Trigger und der Programmierer aufgefordert, einen iFrame (oder ein Popup - je nach Browser/Voreinstellungen) mit dem Namen `"mvpdframe"` und den angegebenen Abmessungen zu erstellen. Nachdem der iFrame/das Popup erstellt wurde, lädt AccessEnabler die Anmeldeseite von MVPD in den iFrame/das Popup. Der Benutzer gibt gültige Anmeldeinformationen an und der iFrame/das Popup wird zur Adobe Pass-Authentifizierung weitergeleitet, die ein JS-Fragment zurückgibt, das den iFrame/das Popup schließt und die übergeordnete Seite (Programmierer-Website) neu lädt. Ähnlich wie bei Fluss 1 wird das Authentifizierungstoken während der `setRequestor` abgerufen.
 
 Der `displayProviderDialog` Callback (ausgelöst durch `getAuthentication`/`getAuthorization`) gibt eine Liste der MVPDs und ihrer entsprechenden Einstellungen zurück. Die `iFrameRequired`-Eigenschaft eines MVPD ermöglicht es dem Programmierer zu wissen, ob er Fluss 1 oder Fluss 2 aktivieren soll. Beachten Sie, dass der Programmierer nur für Fluss 2 zusätzliche Aktionen ausführen muss (Erstellen eines iFrames/Popup).

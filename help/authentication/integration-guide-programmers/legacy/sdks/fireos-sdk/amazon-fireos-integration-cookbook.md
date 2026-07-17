@@ -4,7 +4,7 @@ description: Amazon FireOS-Integrations-Cookbook
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1447'
+source-wordcount: '1430'
 ht-degree: 0%
 
 ---
@@ -30,9 +30,9 @@ Die Lösung für die Berechtigung zur Adobe Pass-Authentifizierung für Amazon F
 
 - Die Domain der Benutzeroberfläche : Dies ist die Anwendungsebene der oberen Ebene, die die Benutzeroberfläche implementiert und die von der `AccessEnabler`-Bibliothek bereitgestellten Services verwendet, um Zugriff auf eingeschränkte Inhalte zu gewähren.
 - Die `AccessEnabler` Domain - hier werden die Berechtigungs-Workflows in der Form von implementiert:
-   - Netzwerkaufrufe an die Backend-Server von Adobe
-   - Geschäftslogikregeln in Bezug auf die Authentifizierungs- und Autorisierungs-Workflows
-   - Verwaltung verschiedener Ressourcen und Verarbeitung des Workflow-Status (z. B. des Token-Cache)
+  - Netzwerkaufrufe an die Backend-Server von Adobe
+  - Geschäftslogikregeln in Bezug auf die Authentifizierungs- und Autorisierungs-Workflows
+  - Verwaltung verschiedener Ressourcen und Verarbeitung des Workflow-Status (z. B. des Token-Cache)
 
 Das Ziel der `AccessEnabler`-Domain besteht darin, alle Komplexitäten der Berechtigungs-Workflows zu verbergen und der Anwendung der oberen Ebene (über die `AccessEnabler`-Bibliothek) eine Reihe einfacher Berechtigungsprimitive bereitzustellen. Dieser Prozess ermöglicht die Implementierung der Berechtigungs-Workflows:
 
@@ -60,51 +60,51 @@ Die Netzwerkaktivität des `AccessEnabler` erfolgt in einem anderen Thread, soda
 1. Erstellen Sie Ihre Callback-Funktionen:
    - [`setRequestorComplete()`](#$setRequestorComplete)
 
-      - Wird durch `setRequestor()` ausgelöst und gibt „Erfolg“ oder „Fehler“ zurück.     Der Erfolg zeigt an, dass Sie mit Berechtigungsaufrufen fortfahren können.
+     - Wird durch `setRequestor()` ausgelöst und gibt „Erfolg“ oder „Fehler“ zurück.     Der Erfolg zeigt an, dass Sie mit Berechtigungsaufrufen fortfahren können.
 
    - [displayProviderDialog(mvpds)](#$displayProviderDialog)
 
-      - Wird nur von `getAuthentication()` ausgelöst, wenn der Benutzer keinen Provider (MVPD) ausgewählt hat und noch nicht authentifiziert ist. Der `mvpds` Parameter ist ein Array von Anbietern, die den Benutzenden zur Verfügung stehen.
+     - Wird nur von `getAuthentication()` ausgelöst, wenn der Benutzer keinen Provider (MVPD) ausgewählt hat und noch nicht authentifiziert ist. Der `mvpds` Parameter ist ein Array von Anbietern, die den Benutzenden zur Verfügung stehen.
 
    - [`setAuthenticationStatus(status, reason)`](#$setAuthNStatus)
 
-      - Wird jedes Mal von `checkAuthentication()` ausgelöst. Wird nur von `getAuthentication()` ausgelöst, wenn der Benutzer bereits authentifiziert ist und einen Anbieter ausgewählt hat.
+     - Wird jedes Mal von `checkAuthentication()` ausgelöst. Wird nur von `getAuthentication()` ausgelöst, wenn der Benutzer bereits authentifiziert ist und einen Anbieter ausgewählt hat.
 
-      - Der zurückgegebene Status ist authentifiziert oder nicht authentifiziert. Der Grund dafür ist ein Authentifizierungsfehler oder eine Abmeldeaktion.
+     - Der zurückgegebene Status ist authentifiziert oder nicht authentifiziert. Der Grund dafür ist ein Authentifizierungsfehler oder eine Abmeldeaktion.
 
    - [navigateToUrl(url)](#$navigateToUrl)
 
-      - Wird in AmazonFireOS SDK ignoriert, wird die Methode auf Android-Plattformen verwendet, wo sie durch `getAuthentication()` ausgelöst wird, nachdem der Benutzer eine MVPD ausgewählt hat.  Der `url` gibt den Speicherort der Anmeldeseite von MVPD an.
+     - Wird in AmazonFireOS SDK ignoriert, wird die Methode auf Android-Plattformen verwendet, wo sie durch `getAuthentication()` ausgelöst wird, nachdem der Benutzer eine MVPD ausgewählt hat.  Der `url` gibt den Speicherort der Anmeldeseite von MVPD an.
 
    - [`sendTrackingData(event, data)`](#$sendTrackingData)
 
-      - Ausgelöst durch `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`.
-Der `event` Parameter gibt an, welches Berechtigungsereignis aufgetreten ist. Der `data` Parameter ist eine Liste von Werten, die sich auf das Ereignis beziehen.
+     - Ausgelöst durch `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`.
+       Der `event` Parameter gibt an, welches Berechtigungsereignis aufgetreten ist. Der `data` Parameter ist eine Liste von Werten, die sich auf das Ereignis beziehen.
 
    - [`setToken(token, resource)`](#$setToken)
 
-      - Wird durch `checkAuthorization()` und `getAuthorization()` nach erfolgreicher Autorisierung zum Anzeigen einer Ressource ausgelöst.
-      - Der `token` ist das kurzlebige Medien-Token. Der `resource` ist der Inhalt, den der Benutzer anzeigen darf.
+     - Wird durch `checkAuthorization()` und `getAuthorization()` nach erfolgreicher Autorisierung zum Anzeigen einer Ressource ausgelöst.
+     - Der `token` ist das kurzlebige Medien-Token. Der `resource` ist der Inhalt, den der Benutzer anzeigen darf.
 
    - [`tokenRequestFailed(resource, code, description)`](#$tokenRequestFailed)
 
-      - Wird durch `checkAuthorization()` und `getAuthorization()` nach erfolgloser Autorisierung ausgelöst.
-      - Der `resource` ist der Inhalt, den die Benutzerin oder der Benutzer versucht hat anzuzeigen. Der `code` ist der Fehlercode, der angibt, welche Art von Fehler aufgetreten ist. Der `description` Parameter beschreibt den Fehler, der mit dem Fehlercode verbunden ist.
+     - Wird durch `checkAuthorization()` und `getAuthorization()` nach erfolgloser Autorisierung ausgelöst.
+     - Der `resource` ist der Inhalt, den die Benutzerin oder der Benutzer versucht hat anzuzeigen. Der `code` ist der Fehlercode, der angibt, welche Art von Fehler aufgetreten ist. Der `description` Parameter beschreibt den Fehler, der mit dem Fehlercode verbunden ist.
 
    - [`selectedProvider(mvpd)`](#$selectedProvider)
 
-      - Ausgelöst durch `getSelectedProvider()`.
-      - Der Parameter `mvpd` enthält Informationen zum vom Benutzer ausgewählten Anbieter.
+     - Ausgelöst durch `getSelectedProvider()`.
+     - Der Parameter `mvpd` enthält Informationen zum vom Benutzer ausgewählten Anbieter.
 
    - [`setMetadataStatus(metadata, key, arguments)`](#$setMetadataStatus)
 
-      - Ausgelöst durch `getMetadata().`
-      - Der `metadata`-Parameter liefert die angeforderten spezifischen Daten, der `key`-Parameter ist der in der `getMetadata()`-Anfrage verwendete Schlüssel und der `arguments` ist dasselbe Wörterbuch, das an `getMetadata()` übergeben wurde.
+     - Ausgelöst durch `getMetadata().`
+     - Der `metadata`-Parameter liefert die angeforderten spezifischen Daten, der `key`-Parameter ist der in der `getMetadata()`-Anfrage verwendete Schlüssel und der `arguments` ist dasselbe Wörterbuch, das an `getMetadata()` übergeben wurde.
 
    - [`preauthorizedResources(resources)`](#$preauthResources)
 
-      - Ausgelöst durch `checkPreauthorizedResources()`.
-      - Der `authorizedResources` Parameter stellt die Ressourcen dar, die der Benutzer anzeigen darf.
+     - Ausgelöst durch `checkPreauthorizedResources()`.
+     - Der `authorizedResources` Parameter stellt die Ressourcen dar, die der Benutzer anzeigen darf.
 
 
 ![](../../../../assets/android-entitlement-flows.png)
@@ -144,7 +144,7 @@ Der `event` Parameter gibt an, welches Berechtigungsereignis aufgetreten ist. De
 
    **Trigger:**
 
-   - Der Rückruf setAuthenticationStatus() , wenn der Benutzer bereits authentifiziert ist.  Fahren Sie in diesem Fall direkt mit dem [Autorisierungsfluss“ &#x200B;](#authz_flow).
+   - Der Rückruf setAuthenticationStatus() , wenn der Benutzer bereits authentifiziert ist.  Fahren Sie in diesem Fall direkt mit dem [Autorisierungsfluss“ ](#authz_flow).
    - Der Rückruf displayProviderDialog() , wenn der Benutzer noch nicht authentifiziert ist.
 
 1. Zeigen Sie dem Benutzer die Liste der an `displayProviderDialog()` gesendeten Anbieter.
@@ -176,9 +176,9 @@ Der `event` Parameter gibt an, welches Berechtigungsereignis aufgetreten ist. De
 
    - Wenn der `getAuthorization()`-Aufruf erfolgreich ist: Der Benutzer verfügt über gültige AuthN- und AuthZ-Token (der Benutzer ist authentifiziert und berechtigt, die angeforderten Medien zu sehen).
    - Wenn `getAuthorization()` fehlschlägt: Untersuchen Sie die ausgelöste Ausnahme, um ihren Typ (AuthN, AuthZ oder etwas Anderes) zu bestimmen:
-      - Wenn es sich um einen Authentifizierungsfehler (AuthN) handelte, starten Sie den Authentifizierungsfluss erneut.
-      - Wenn es sich um einen Autorisierungsfehler (AuthZ) handelte, ist der Benutzer nicht berechtigt, die angeforderten Medien anzusehen, und dem Benutzer sollte eine Fehlermeldung angezeigt werden.
-      - Wenn ein anderer Fehlertyp aufgetreten ist (Verbindungsfehler, Netzwerkfehler usw.), zeigen Sie dem Benutzer eine entsprechende Fehlermeldung an.
+     - Wenn es sich um einen Authentifizierungsfehler (AuthN) handelte, starten Sie den Authentifizierungsfluss erneut.
+     - Wenn es sich um einen Autorisierungsfehler (AuthZ) handelte, ist der Benutzer nicht berechtigt, die angeforderten Medien anzusehen, und dem Benutzer sollte eine Fehlermeldung angezeigt werden.
+     - Wenn ein anderer Fehlertyp (Verbindungsfehler, Netzwerkfehler usw.) Zeigen Sie dann dem Benutzer eine entsprechende Fehlermeldung an.
 
 1. Validieren des Short Media Token.
 
