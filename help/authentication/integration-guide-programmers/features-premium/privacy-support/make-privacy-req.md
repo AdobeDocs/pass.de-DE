@@ -4,7 +4,7 @@ description: So stellen Sie eine Datenschutzanfrage
 exl-id: abb21306-98d6-4899-914a-bdfa85cbd204
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '603'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Beim Senden einer Zugriffs- oder Löschanfrage muss die Kundenanwendung die folg
 
 * **mvpdID** - Eindeutige Kennung der MVPD.
 * **userID** - Identifiziert den Benutzer der App eines Programmierers eindeutig, stammt jedoch vom MVPD. Siehe Grundlegendes zu Benutzer-IDs in der Übersicht zu Programmierern .
-* **IMSOrgID** - die Organisations-ID des Adobe Experience Cloud Identity Management-Service, die den Kunden in der Adobe Experience Cloud eindeutig identifiziert
+* **IMSOrgID** - die Organisations-ID des Adobe Experience Cloud Identity Management-Services, die den Kunden in Adobe Experience Cloud eindeutig identifiziert
 
 
 Bitte das folgende Beispiel überprüfen:
@@ -238,7 +238,7 @@ In der **Privacy Service-API** Dokumentation wird ausführlich beschrieben, wie 
 
 **Visualisieren von API-Aufrufen mit Postman (einer kostenlosen Software von Drittanbietern):**
 
-* [Privacy Service-API-Postman-Sammlung auf GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
+* [Privacy Service-API Postman-Sammlung auf GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
 * [Videoanleitung zum Erstellen der Postman-Umgebung](https://video.tv.adobe.com/v/31575?captions=ger)
 * [Schritte zum Importieren von Umgebungen und Sammlungen in Postman](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
