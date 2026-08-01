@@ -2,10 +2,10 @@
 title: Registrierungseintrag löschen
 description: Registrierungseintrag löschen
 exl-id: 42707070-2e1f-4847-93fd-30025aef56c1
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 689e2f86550d9fa59337c15dd38767975a1d6d30
 workflow-type: tm+mt
-source-wordcount: '174'
-ht-degree: 1%
+source-wordcount: '180'
+ht-degree: 2%
 
 ---
 
@@ -42,9 +42,9 @@ ht-degree: 1%
 
 Löscht den Registrierungscode-Datensatz und gibt den Registrierungscode zur Wiederverwendung frei.
 
-| Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
+| Endpunkt | Called </br>by | Input </br>params | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>Beispiel:</br></br>&lt;REGGIE_FQDN>/reggie/v1/regcode/ER45RTY | Streaming-App</br></br>oder</br></br>Programmierer-Service | &#x200B;1. Antragsteller-ID </br>    (Pfadkomponente)</br>2.  Registrierungs-Code </br>    (Pfadkomponente) | DELETE | Keine | 204 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>Beispiel:</br></br>&lt;REGGIE_FQDN>/reggie/v1/regcode/ER45RTY | Streaming-App</br></br>oder</br></br>Programmierer-Service | &#x200B;1.  Anforderer-ID </br> (Pfadkomponente)</br>2.  Registrierungs-Code </br> (Pfadkomponente) | DELETE | Keine | 204 |
 
 {style="table-layout:auto"}
 
@@ -59,4 +59,4 @@ Löscht den Registrierungscode-Datensatz und gibt den Registrierungscode zur Wie
 
 </br>
 
-### [Zurück zur REST-API-Referenz](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
+**[Zurück zur REST-API-Referenz](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)**
