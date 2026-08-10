@@ -4,7 +4,7 @@ description: Amazon SSO-Cookbook (REST API v2)
 exl-id: 63e4fa63-8ca3-40eb-b49a-84dd75c2ca1d
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '587'
 ht-degree: 0%
 
 ---
@@ -87,13 +87,13 @@ Die Streaming-Anwendung kann je nach Architektur eine der beiden Optionen auswä
   ```
 
   Das Bundle SSO Token Success Response enthält:
-   * Ein SSO-Token als `string` mit dem Schlüssel „SSOToken“.
+  * Ein SSO-Token als `string` mit dem Schlüssel „SSOToken“.
 
   <br/>
 
   Das Bundle mit der SSO-Token-Fehlerantwort enthält:
-   * Fehlercode als `int` mit Schlüssel „ErrorCode“.
-   * Eine Fehlerbeschreibung als `string` mit dem Schlüssel „ErrorDescription“.
+  * Fehlercode als `int` mit Schlüssel „ErrorCode“.
+  * Eine Fehlerbeschreibung als `string` mit dem Schlüssel „ErrorDescription“.
 
   <br/>
 
@@ -134,10 +134,10 @@ Die Streaming-Anwendung muss Fallback-Szenarien vom Amazon-SSO-Fluss zum regulä
 Stellen Sie sicher, dass die Streaming-Anwendung Folgendes verarbeitet:
 
 * Das Fehlen der Amazon Companion-Anwendung, die auf dem Amazon-Gerät ausgeführt werden sollte.
-   * Die Streaming-Anwendung kann zur Laufzeit auf eine `ClassNotFoundException` bei der folgenden `com.amazon.ottssotokenlib.SSOEnabler` stoßen.
+  * Die Streaming-Anwendung kann zur Laufzeit auf eine `ClassNotFoundException` bei der folgenden `com.amazon.ottssotokenlib.SSOEnabler` stoßen.
 
 * Die Abwesenheit der Payload des SSO-Tokens (Plattformidentität), das von den oben genannten APIs zurückgegeben werden sollte.
-   * Die Streaming-Anwendung kann sich zur Untersuchung an die Amazon- und Adobe-Support-Mitarbeiter wenden.
+  * Die Streaming-Anwendung kann sich zur Untersuchung an die Amazon- und Adobe-Support-Mitarbeiter wenden.
 
 ### Workflow {#workflow}
 
