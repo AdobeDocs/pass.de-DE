@@ -31,4 +31,4 @@ Veröffentlichungsdatum: 11/16/2023
 
 ## Versionspaket {#release-package-383}
 
-Sie können iOS/tvOS SDK v3.8.3 von ([) ](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-tvOS-Native-AccessEnabler-Library).
+Sie können iOS/tvOS SDK v3.8.3 von ([) &#x200B;](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-tvOS-Native-AccessEnabler-Library).
