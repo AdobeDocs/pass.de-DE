@@ -4,7 +4,7 @@ description: Drosselmechanismus
 exl-id: 15236570-1a75-42fb-9bba-0e2d7a59c9f6
 source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
-source-wordcount: '614'
+source-wordcount: '616'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ Wenn das Limit erreicht wurde, werden die Anfragen mit einem bestimmten Antworts
 ## Mechanism - Übersicht {#mechanism-overview}
 
 Der Mechanismus bestimmt die maximale Anzahl akzeptierter Aufrufe für jeden Gleichzeitigkeitsüberwachungs-Endpunkt innerhalb eines bestimmten Zeitintervalls.
-Sobald diese maximale Anzahl von Anrufen erreicht ist, wird unser Service mit „429 Zu viele Anfragen“ antworten. Die 429-Antwort-Kopfzeile „Expires“ enthält den Zeitstempel, wann der nächste Aufruf als gültig betrachtet würde oder wann die Drosselung abläuft. Derzeit läuft die Drosselung nach einer ab   Minute ab der ersten Antwort von 429.
+Sobald diese maximale Anzahl von Anrufen erreicht ist, wird unser Service mit „429 Zu viele Anfragen“ antworten. Die 429-Antwort-Kopfzeile „Expires“ enthält den Zeitstempel, wann der nächste Aufruf als gültig betrachtet würde oder wann die Drosselung abläuft. Derzeit läuft die Drosselung nach einer Minute ab der ersten 429-Antwort ab.
 
 Die mit Einschränkungen konfigurierten Endpunkte sind:
 1. Neue Sitzung erstellen: POST /sessions/{idp}/{subject}
