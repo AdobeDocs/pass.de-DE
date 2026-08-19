@@ -2,9 +2,9 @@
 title: vorautorisieren
 description: JavaScript vorab autorisieren
 exl-id: b7493ca6-1862-4cea-a11e-a634c935c86e
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 7208b16831e1c6c4cbb37bf925a798d931ab8ea3
 workflow-type: tm+mt
-source-wordcount: '1488'
+source-wordcount: '1149'
 ht-degree: 0%
 
 ---
@@ -143,14 +143,14 @@ public func build() -> PreauthorizeRequest
 #### public action: string; {#public-action-string}
 
 * Die empfohlenen Maßnahmen zur Behebung der Situation.
-   * **none**: Leider gibt es keine vordefinierte Aktion, um dieses Problem zu beheben. Dies kann auf einen fehlerhaften Aufruf der öffentlichen API hinweisen
-   * **Konfiguration**: Eine Konfigurationsänderung ist über das TVE-Dashboard oder durch Kontaktaufnahme mit dem Support erforderlich.
-   * **application-registration**: Die Anwendung muss sich erneut registrieren.
-   * **Authentifizierung**: Der Benutzer muss sich authentifizieren oder erneut authentifizieren.
-   * **authorization**: Der Benutzer muss die Autorisierung für die betreffende Ressource einholen.
-   * **Abbau**: Es sollte irgendeine Form des Abbaus angewendet werden.
-   * **Wiederholen**: Das Problem kann möglicherweise durch Wiederholen der Anfrage behoben werden
-   * **Erneut versuchen**: Wenn Sie die Anfrage nach dem angegebenen Zeitraum wiederholen, kann das Problem möglicherweise behoben sein.
+  * **none**: Leider gibt es keine vordefinierte Aktion, um dieses Problem zu beheben. Dies kann auf einen fehlerhaften Aufruf der öffentlichen API hinweisen
+  * **Konfiguration**: Eine Konfigurationsänderung ist über das TVE-Dashboard oder durch Kontaktaufnahme mit dem Support erforderlich.
+  * **application-registration**: Die Anwendung muss sich erneut registrieren.
+  * **Authentifizierung**: Der Benutzer muss sich authentifizieren oder erneut authentifizieren.
+  * **authorization**: Der Benutzer muss die Autorisierung für die betreffende Ressource einholen.
+  * **Abbau**: Es sollte irgendeine Form des Abbaus angewendet werden.
+  * **Wiederholen**: Das Problem kann möglicherweise durch Wiederholen der Anfrage behoben werden
+  * **Erneut versuchen**: Wenn Sie die Anfrage nach dem angegebenen Zeitraum wiederholen, kann das Problem möglicherweise behoben sein.
 * Kann eine leere Zeichenfolge oder einen `null` enthalten.
 
 ### Entscheidungsklasse {#class-decision}
@@ -253,26 +253,25 @@ accessEnablerApi.preauthorize(request, callback);
     <td>Disabled</td>
     <td>
 
-    &quot;JavaScript
-    
-    &lbrace;
-    „decisions“: &lbrack;
-    &lbrace;
-    „id“: „RES01“,
-    „authorized“: true
-    &rbrace;,
-    &lbrace;
-    „id“: „RES02“,
-    „authorized“: false
-    &rbrace;,
-    &lbrace;
-    „id“: „RES03“,
-    „authorized“: true
-    &rbrace;
-    &rbrack;
-    &rbrace;
-    
-    &quot;
+```JavaScript
+        {
+    "decisions": [
+        {
+        "id": "RES01",
+        "authorized": true
+        },
+        {
+        "id": "RES02",
+        "authorized": false
+        },
+        {
+        "id": "RES03",
+        "authorized": true
+        }
+    ]
+    }
+       
+```
 
 </td>
   </tr>
@@ -281,32 +280,32 @@ accessEnablerApi.preauthorize(request, callback);
     <td>Aktiviert</td>
     <td>
 
-    &quot;JavaScript
-    &lbrace;
-    „decisions“: &lbrack;
-    &lbrace;
-    „id“: „RES01“,
-    „authorized“: true
-    &rbrace;,
-    &lbrace;
-    „id“: „RES02“,
-    „authorized“: false,
-    „error“: &lbrace;
-    „status“: 403,
-    „code“: „preauthorization_denied_by_mvpd“,
-    „message“: „Die MVPD hat eine \„Deny\&quot;-Entscheidung zurückgegeben, wenn eine Vorabautorisierung für die angegebene Ressource angefordert wird.“,
-    „helpUrl“: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
-    „action“: „none“
-    &rbrace;
-    &rbrace;,
-    &lbrace;
-    „id“: „RES03“,
-    „authorized“: true
-    &rbrace;
-    &quot;
-     
+```JavaScript
+    {
+      "decisions": [
+        {
+        "id": "RES01",
+        "authorized": true
+        },
+        {
+        "id": "RES02",
+        "authorized": false,
+        "error": {
+            "status": 403,
+            "code": "preauthorization_denied_by_mvpd",
+            "message": "The MVPD has returned a \"Deny\" decision when requesting pre-authorization for the specified resource.",
+            "helpUrl": "https://experienceleague.adobe.com/docs/primetime/authentication/home.html",
+            "action": "none"
+        }
+        },
+        {
+        "id": "RES03",
+        "authorized": true
+        },
+    ]
+    }
     
-     
+```
 
 </td>
   </tr>
@@ -327,26 +326,25 @@ accessEnablerApi.preauthorize(request, callback);
     <td>Disabled</td>
     <td>
 
-    &quot;JavaScript
-    
-    &lbrace;
-    „decisions“: &lbrack;
-    &lbrace;
-    „id“: „RES01“,
-    „authorized“: false
-    &rbrace;,
-    &lbrace;
-    „id“: „RES02“,
-    „authorized“: false
-    &rbrace;,
-    &lbrace;
-    „id“: „RES03“,
-    „authorized“: false
-    &rbrace;
-    &rbrack;
-    &rbrace;
-    
-    &quot;
+```JavaScript
+        {
+    "decisions": [
+        {
+        "id": "RES01",
+        "authorized": false
+        },
+        {
+        "id": "RES02",
+        "authorized": false
+        },
+        {
+        "id": "RES03",
+        "authorized": false
+        }
+    ]
+    }
+       
+```
 
 </td>
   </tr>
@@ -355,47 +353,46 @@ accessEnablerApi.preauthorize(request, callback);
     <td>Aktiviert</td>
     <td>
 
-    &quot;JavaScript
+```JavaScript
+    {
+    "decisions": [
+        {
+        "id": "RES01",
+        "authorized": false,
+        "error": {
+            "status": 403,
+            "code": "preauthorization_denied_by_mvpd",
+            "message": "The MVPD has returned a \"Deny\" decision when requesting pre-authorization for the specified resource.",
+            "helpUrl": "https://experienceleague.adobe.com/docs/primetime/authentication/home.html",
+            "action": "none"
+            }
+        },
+        {
+            "id": "RES02",
+            "authorized": false,
+            "error": {
+                "status": 403,
+                "code": "preauthorization_denied_by_mvpd",
+                "message": "The MVPD has returned a \"Deny\" decision when requesting pre-authorization for the specified resource.",
+                "helpUrl": "https://experienceleague.adobe.com/docs/primetime/authentication/home.html",
+                "action": "none"
+            }
+        },
+        {
+        "id": "RES03",
+        "authorized": false,
+        "error": {
+            "status": 403,
+            "code": "maximum_execution_time_exceeded",
+            "message": "The request did not complete in the maximum allowed time. Retrying the request might solve the issue.",
+            "helpUrl": "https://experienceleague.adobe.com/docs/primetime/authentication/home.html",
+            "action": "retry"
+                }
+            }
+        ]
+    }
     
-    &lbrace;
-    „decisions“: &lbrack;
-    &lbrace;
-    „id“: „RES01“,
-    „authorized“: false,
-    „error“: &lbrace;
-    „status“: 403,
-    „code“: „preauthorization_denied_by_mvpd“,
-    „message“: „Die MVPD hat eine \„deny\&quot;-Entscheidung zurückgegeben, wenn sie eine Vorabautorisierung für die angegebene Ressource anfordert.“,
-    „helpUrl“: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
-    „action“: „none“
-    &rbrace;
-    &rbrace;,
-    &lbrace;
-    „id“: „RES02“,
-    „authorized“: false,
-    „error“: &lbrace;
-    „status“: 403,
-    „code“: „preauthorization_denied_by_mvpd“,message“: „Die MVPD hat bei der Anforderung einer Vorabautorisierung für die angegebene Ressource eine \„deny\&quot;-Entscheidung zurückgegeben.“,HelpUrl“: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
-    &quot;,Aktion“: „none„id&rbrace;&rbrace;,
-    „code“:RES03,0„authorized“: „false,error“: &lbrace;
-    „status“: &lbrace;403,
-     
-     
-     
-     
-     
-     
-     
-     
-    „code“: „maximum_execution_time“: &quot;.“„überstiegen“ wurde nicht in der maximal zulässigen Zeit abgeschlossen. Das Problem kann möglicherweise durch Wiederholen der Anfrage behoben werden.“,
-    „helpUrl“: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
-    „action“: „retry“
-    &rbrace;
-    &rbrace;
-    &rbrack;
-    &rbrace;
-    
-    &quot;
+```
 
 </td>
   </tr>
@@ -416,19 +413,19 @@ accessEnablerApi.preauthorize(request, callback);
     <td>deaktiviert/aktiviert</td>
     <td>
 
-    &quot;JavaScript
-    &lbrace;
-    „status“: &lbrace;
-    „status“: 400,
-    „code“: „internal_error“,
-    „message“: „Die Anfrage ist aufgrund eines internen Fehlers fehlgeschlagen.“,
-    „details“: „Erforderlicher String[]-Parameter „resource“ ist nicht vorhanden“,
-    „helpUrl“: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
-    „action“: „none“
-    &rbrace;,
-    „decisions“: []
-    &rbrace;
-    &quot;
+```JavaScript
+    {
+    "status": {
+    "status": 400,
+    "code": "internal_error",
+    "message": "The request failed due to an internal error.",
+    "details": "Required String[] parameter 'resource' is not present",
+    "helpUrl": "https://experienceleague.adobe.com/docs/primetime/authentication/home.html",
+    "action": "none"
+    },
+    "decisions": []
+    }
+```
 
 </td>
   </tr>
@@ -449,18 +446,18 @@ accessEnablerApi.preauthorize(request, callback);
     <td>deaktiviert/aktiviert</td>
     <td>
 
-    &quot;JavaScript
-    &lbrace;
-    „status“: &lbrace;
-    „status“: 412,
-    „code“: „missing_resource“,
-    „message“: „Der Ressourcenparameter fehlt“,
-    „helpUrl“: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
-    „action“: „none“
-    &rbrace;,
-    „decisions“: []
-    &rbrace;
-    &quot;
+```JavaScript
+    {
+    "status": {
+    "status": 412,
+    "code": "missing_resource",
+    "message": "The resource parameter is missing",
+    "helpUrl": "https://experienceleague.adobe.com/docs/primetime/authentication/home.html",
+    "action": "none"
+    },
+    "decisions": []
+    }
+```
 
 </td>
   </tr>
@@ -481,34 +478,34 @@ accessEnablerApi.preauthorize(request, callback);
     <td>Aktiviert</td>
     <td>
 
-    &quot;JavaScript
-    &lbrace;
-    „decisions“: &lbrack;
-    &lbrace;
-    „id“: „RES01“,
-    „authorized“: false,
-    „error“: &lbrace;
-    „status“: 403,
-    „code“: „network_received_error“,
-    „message“: „Beim Abrufen der Antwort vom zugehörigen Partnerdienst ist ein Lesefehler aufgetreten. Ein Wiederholen der Anfrage kann das Problem möglicherweise beheben.“,
-    „helpUrl“: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
-    „action“: „retry“
-    &rbrace;
-    &rbrace;,
-    &lbrace;
-    „id“: „RES02“,
-    „authorized“: false,
-    „error“: &lbrace;
-    „status“: 403,
-    „code“: „network_received_error“,
-    „message“: „Beim Abrufen der Antwort vom zugehörigen Partner-Service ist ein Lesefehler aufgetreten. Das Problem kann möglicherweise durch Wiederholen der Anfrage behoben werden.“,
-    „helpUrl“: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
-    „action“: „retry“
-    &rbrace;
-    &rbrace;
-    &rbrack;
-    &rbrace;
-    &quot;
+```JavaScript
+    {
+    "decisions": [
+        {
+        "id": "RES01",
+        "authorized": false,
+        "error": {
+            "status": 403,
+            "code": "network_received_error",
+            "message": "There was a read error while retrieving the response from the associated partner service. Retrying the request might solve the issue.",
+            "helpUrl": "https://experienceleague.adobe.com/docs/primetime/authentication/home.html",
+            "action": "retry"
+            }
+        },
+        {
+            "id": "RES02",
+            "authorized": false,
+            "error": {
+                "status": 403,
+                "code": "network_received_error",
+                "message": "There was a read error while retrieving the response from the associated partner service. Retrying the request might solve the issue.",
+                "helpUrl": "https://experienceleague.adobe.com/docs/primetime/authentication/home.html",
+                "action": "retry"
+                }   
+        }
+    ]
+    }
+```
 
 </td>
   </tr>
@@ -529,18 +526,17 @@ accessEnablerApi.preauthorize(request, callback);
     <td>deaktiviert/aktiviert</td>
     <td>
 
-    &quot;JavaScript
-    &lbrace;
-    „status“: &lbrace;
-    „status“: 0,
-    „code“: „authentication_session_missing“,
-    „message“: „Die mit dieser Anfrage verknüpfte Authentifizierungssitzung konnte nicht abgerufen werden. Die Benutzerin bzw. der Benutzer muss sich erneut mit einer unterstützten MVPD authentifizieren, um fortfahren zu können.“,
-    „Aktion“: „Authentifizierung“
-    &rbrace;,
-    „Entscheidungen“: []
-    &rbrace;
-    
-    &quot;
+```JavaScript
+    {
+    "status": {
+    "status": 0,
+    "code": "authentication_session_missing",
+    "message": "The authentication session associated with this request could not be retrieved. The user must re-authenticate with a supported MVPD in order to continue.",
+    "action": "authentication"
+    },
+    "decisions": []
+    }
+```
 
 </td>
   </tr>
@@ -563,17 +559,17 @@ accessEnablerApi.preauthorize(request, callback);
     <td>deaktiviert/aktiviert</td>
     <td>
 
-    &quot;JavaScript
-    &lbrace;
-    „status“: &lbrace;
-    „status“: 0,
-    „code“: „Requestor_not_configuring“,
-    „message“: „Der Anforderer ist noch nicht konfiguriert. Dies ist eine Voraussetzung für die Verwendung einer anderen API als der setRequestor-API.“,
-    „action“: „Wiederholen“
-    &rbrace;,
-    „decisions“: []
-    &rbrace;
-    &quot;
+```JavaScript
+    {
+    "status": {
+    "status": 0,
+    "code": "requestor_not_configured",
+    "message": "The requestor is not yet configured which is a prerequisite for using any API apart from the setRequestor API.",
+    "action": "retry"
+    },
+    "decisions": []
+    }
+```
 
 </td>
   </tr>
