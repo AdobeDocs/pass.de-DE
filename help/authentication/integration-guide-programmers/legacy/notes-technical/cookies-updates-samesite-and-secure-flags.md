@@ -4,7 +4,7 @@ description: Cookie-Updates - SameSite- und Sicherheits-Flags
 exl-id: cc1f60fd-fa64-48cb-a185-dba562a54c33
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '956'
+source-wordcount: '973'
 ht-degree: 0%
 
 ---
@@ -58,13 +58,13 @@ Beachten Sie beim Durchsuchen dieses Abschnitts, dass für alle Cookies des Adob
 1. Beachten Sie, dass Cookies mit dem *Secure*-Attribut über *HTTPS* gesendet werden müssen, da das Cookie sonst den Adobe Pass-Authentifizierungsdienst nicht erreicht.
 
    - AccessEnabler JavaScript SDK:
-      - Obligatorisch, dass die Kommunikation mit *sp.auth.adobe.com* *HTTPS* für *2.35* und *3.5.0* verwendet, bevor die dynamische Client-Registrierung eingeführt wird.
+     - Obligatorisch, dass die Kommunikation mit *sp.auth.adobe.com* *HTTPS* für *2.35* und *3.5.0* verwendet, bevor die dynamische Client-Registrierung eingeführt wird.
    - AccessEnabler iOS/tvOS SDK:
-      - Obligatorisch, dass die Kommunikation mit *sp.auth.adobe.com* *HTTPS* für Versionen vor *3.0.0* verwendet, bevor die dynamische Client-Registrierung eingeführt wird.
+     - Obligatorisch, dass die Kommunikation mit *sp.auth.adobe.com* *HTTPS* für Versionen vor *3.0.0* verwendet, bevor die dynamische Client-Registrierung eingeführt wird.
    - AccessEnabler Android SDK:
-      - Obligatorisch, dass die Kommunikation mit *sp.auth.adobe.com* *HTTPS* für Versionen vor *3.0.0* verwendet, bevor die dynamische Client-Registrierung eingeführt wird.
+     - Obligatorisch, dass die Kommunikation mit *sp.auth.adobe.com* *HTTPS* für Versionen vor *3.0.0* verwendet, bevor die dynamische Client-Registrierung eingeführt wird.
    - AccessEnabler FireOS SDK:
-      - Obligatorisch, dass die Kommunikation mit *sp.auth.adobe.com* *HTTPS* für Version *2.0.4)*.
+     - Obligatorisch, dass die Kommunikation mit *sp.auth.adobe.com* *HTTPS* für Version *2.0.4)*.
 
 </br>
 
