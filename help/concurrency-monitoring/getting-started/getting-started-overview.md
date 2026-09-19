@@ -1,14 +1,12 @@
 ---
 title: Erste Schritte mit der Parallelitätsüberwachung
 description: Erfahren Sie mehr über die Grundlagen der Parallelitätsüberwachung und die ersten Schritte mit Ihrer Integration
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: d2b8c7c4-b02d-4bea-9310-162064fd7216
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '372'
 ht-degree: 0%
-
 ---
-
-
 # Erste Schritte mit der Parallelitätsüberwachung {#getting-started-overview}
 
 Willkommen bei der Parallelitätsüberwachung! Dieser Leitfaden hilft Ihnen, die Grundlagen zu verstehen und Ihre Integration schnell einzurichten.
@@ -87,5 +85,5 @@ Wenden Sie sich für die ersten Schritte mit der Parallelitätsüberwachung an u
 
 - **API-Explorer** - APIs interaktiv über die [Swagger-Benutzeroberfläche testen](https://streams-stage.adobeprimetime.com/swagger-ui/index.html)
 - **Schlüsselbegriffe und Definitionen** - [Glossar](../cm-glossary.md)
-- **Wie bekomme ich Hilfe?** - [Support-Verfahren](../support/cm-escalation-procedures.md)
+- **Wie bekomme ich Hilfe?** - [Unterstützungsverfahren](../support/cm-escalation-procedures.md)
 - **Support** - Kontakt [tve-support@adobe.com](mailto:tve-support@adobe.com)
