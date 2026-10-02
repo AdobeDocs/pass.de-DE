@@ -4,11 +4,9 @@ description: Versionshinweise zur Adobe Pass-Authentifizierung 3.0
 exl-id: 9284151a-8458-44a3-937b-35f379ca0e4e
 source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '195'
+source-wordcount: '204'
 ht-degree: 0%
-
 ---
-
 # Versionshinweise zur Adobe Pass-Authentifizierung 3.0 {#authn-300-rn}
 
 >[!IMPORTANT]
@@ -39,11 +37,11 @@ Veröffentlichungsdatum: **09/10/2024 - 09/12/2024**
 ##### Dokumentation
 
 * Informationen zum Einstieg in die neue REST-API v2 finden Sie in den folgenden Dokumenten:
-   * [REST API v2 - APIs - Übersicht](../integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
-   * [REST API v2 - Flüsse - Übersicht](../integration-guide-programmers/rest-apis/rest-api-v2/flows/rest-api-v2-flows-overview.md)
+  * [REST API v2 - APIs - Übersicht](../integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [REST API v2 - Flüsse - Übersicht](../integration-guide-programmers/rest-apis/rest-api-v2/flows/rest-api-v2-flows-overview.md)
 * Die URLs für öffentliche Dokumente der REST-API v1 haben sich geändert. Siehe die folgenden Dokumente:
-   * [REST API v1 - APIs - Übersicht](../integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
-   * [REST API v1 - APIs - Referenz](../integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
+  * [REST API v1 - APIs - Übersicht](../integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
+  * [REST API v1 - APIs - Referenz](../integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
 
 ##### Tools
 
