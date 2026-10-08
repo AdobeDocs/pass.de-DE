@@ -2,13 +2,14 @@
 title: iOS/tvOS-Cookbook
 description: iOS/tvOS-Cookbook
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2436'
 ht-degree: 0%
-
 ---
-
 # (Legacy) iOS/tvOS SDK Cookbook {#iostvos-sdk-cookbook}
 
 >[!NOTE]
@@ -29,9 +30,9 @@ Die Adobe Pass-Lösung für die Berechtigung zur Authentifizierung für iOS/tvOS
 
 * Die AccessEnabler-Domain - hier werden die Berechtigungs-Workflows in Form von Folgendem implementiert:
 
-   * Netzwerkaufrufe an die Backend-Server von Adobe
-   * Geschäftslogikregeln in Bezug auf die Authentifizierungs- und Autorisierungs-Workflows
-   * Verwaltung verschiedener Ressourcen und Verarbeitung des Workflow-Status (z. B. des Token-Cache)
+  * Netzwerkaufrufe an die Backend-Server von Adobe
+  * Geschäftslogikregeln in Bezug auf die Authentifizierungs- und Autorisierungs-Workflows
+  * Verwaltung verschiedener Ressourcen und Verarbeitung des Workflow-Status (z. B. des Token-Cache)
 
 Das Ziel der AccessEnabler-Domain besteht darin, alle Komplexitäten der Berechtigungs-Workflows auszublenden und der Upper-Layer-Anwendung (über die AccessEnabler-Bibliothek) eine Reihe einfacher Berechtigungs-Primitive bereitzustellen, mit denen Sie die Berechtigungs-Workflows implementieren:
 
@@ -71,54 +72,54 @@ I.  [Abmeldefluss mit Apple SSO](#logout_flow_with_AppleSSO) </br>
    * Der Erfolg zeigt an, dass Sie mit Berechtigungsaufrufen fortfahren können.
 
    * [`displayProviderDialog(mvpds)`](#$dispProvDialog) </br>
-      * Wird nur von [`getAuthentication()`](#$getAuthN) ausgelöst, wenn der Benutzer keinen Provider (MVPD) ausgewählt hat und noch nicht authentifiziert ist. </br>
-      * Der `mvpds` Parameter ist ein Array von Anbietern, die den Benutzenden zur Verfügung stehen.
+     * Wird nur von [`getAuthentication()`](#$getAuthN) ausgelöst, wenn der Benutzer keinen Provider (MVPD) ausgewählt hat und noch nicht authentifiziert ist. </br>
+     * Der `mvpds` Parameter ist ein Array von Anbietern, die den Benutzenden zur Verfügung stehen.
 
    * `setAuthenticationStatus(status, errorcode)` </br>
-      * Wird jedes Mal von `checkAuthentication()` ausgelöst. </br>
-      * Wird nur von [`getAuthentication()`](#$getAuthN) ausgelöst, wenn der Benutzer bereits authentifiziert ist und einen Anbieter ausgewählt hat. </br>
-      * Als Status wird Erfolg oder Fehler zurückgegeben. Der Fehler-Code beschreibt den Typ des Fehlers.
+     * Wird jedes Mal von `checkAuthentication()` ausgelöst. </br>
+     * Wird nur von [`getAuthentication()`](#$getAuthN) ausgelöst, wenn der Benutzer bereits authentifiziert ist und einen Anbieter ausgewählt hat. </br>
+     * Als Status wird Erfolg oder Fehler zurückgegeben. Der Fehler-Code beschreibt den Typ des Fehlers.
 
    * [`navigateToUrl(url)`](#$nav2url) </br>
-      * Wird durch [`getAuthentication()`](#$getAuthN) ausgelöst, nachdem der Benutzer eine MVPD ausgewählt hat. Der `url` gibt den Speicherort der Anmeldeseite von MVPD an.
+     * Wird durch [`getAuthentication()`](#$getAuthN) ausgelöst, nachdem der Benutzer eine MVPD ausgewählt hat. Der `url` gibt den Speicherort der Anmeldeseite von MVPD an.
 
    * `sendTrackingData(event, data)` </br>
-      * Ausgelöst durch `checkAuthentication()`, [`getAuthentication()`](#$getAuthN), `checkAuthorization()`, [`getAuthorization()`](#$getAuthZ), `setSelectedProvider()`.
-      * Der `event` Parameter gibt an, welches Berechtigungsereignis aufgetreten ist. Der `data` Parameter ist eine Liste von Werten, die sich auf das Ereignis beziehen.
+     * Ausgelöst durch `checkAuthentication()`, [`getAuthentication()`](#$getAuthN), `checkAuthorization()`, [`getAuthorization()`](#$getAuthZ), `setSelectedProvider()`.
+     * Der `event` Parameter gibt an, welches Berechtigungsereignis aufgetreten ist. Der `data` Parameter ist eine Liste von Werten, die sich auf das Ereignis beziehen.
 
    * `setToken(token, resource)`
 
-      * Wird durch [checkAuthorization()](#checkAuthZ) und [getAuthorization()](#$getAuthZ) nach erfolgreicher Autorisierung zum Anzeigen einer Ressource ausgelöst.
-      * Der `token` ist das kurzlebige Medien-Token. Der `resource` ist der Inhalt, den die Benutzerin oder der Benutzer anzeigen darf.
+     * Wird durch [checkAuthorization()](#checkAuthZ) und [getAuthorization()](#$getAuthZ) nach erfolgreicher Autorisierung zum Anzeigen einer Ressource ausgelöst.
+     * Der `token` ist das kurzlebige Medien-Token. Der `resource` ist der Inhalt, den die Benutzerin oder der Benutzer anzeigen darf.
 
    * `tokenRequestFailed(resource, code, description)` </br>
-      * Wird von [checkAuthorization()](#checkAuthZ) und [getAuthorization()](#$getAuthZ) nach einer nicht erfolgreichen Autorisierung ausgelöst.
-      * Der `resource` ist der Inhalt, den die Benutzerin oder der Benutzer versucht hat anzuzeigen. Der `code` ist der Fehlercode, der angibt, welche Art von Fehler aufgetreten ist. Der `description` Parameter beschreibt den Fehler, der mit dem Fehlercode verbunden ist.
+     * Wird von [checkAuthorization()](#checkAuthZ) und [getAuthorization()](#$getAuthZ) nach einer nicht erfolgreichen Autorisierung ausgelöst.
+     * Der `resource` ist der Inhalt, den die Benutzerin oder der Benutzer versucht hat anzuzeigen. Der `code` ist der Fehlercode, der angibt, welche Art von Fehler aufgetreten ist. Der `description` Parameter beschreibt den Fehler, der mit dem Fehlercode verbunden ist.
 
    * `selectedProvider(mvpd)` </br>
-      * Ausgelöst durch [`getSelectedProvider()`](#getSelProv).
-      * Der Parameter `mvpd` enthält Informationen zum vom Benutzer ausgewählten Anbieter.
+     * Ausgelöst durch [`getSelectedProvider()`](#getSelProv).
+     * Der Parameter `mvpd` enthält Informationen zum vom Benutzer ausgewählten Anbieter.
 
    * `setMetadataStatus(metadata, key, arguments)`
-      * Ausgelöst durch `getMetadata().`
-      * Der `metadata` Parameter liefert die angeforderten spezifischen Daten. Der `key` Parameter ist der Schlüssel, der in der Anfrage [getMetadata()](#getMeta) verwendet wird. Der `arguments` Parameter ist dasselbe Wörterbuch, das an [getMetadata()](#getMeta) übergeben wurde.
+     * Ausgelöst durch `getMetadata().`
+     * Der `metadata` Parameter liefert die angeforderten spezifischen Daten. Der `key` Parameter ist der Schlüssel, der in der Anfrage [getMetadata()](#getMeta) verwendet wird. Der `arguments` Parameter ist dasselbe Wörterbuch, das an [getMetadata()](#getMeta) übergeben wurde.
 
    * [`preauthorizedResources(authorizedResources)`](#preauthResources)
 
-      * Ausgelöst durch [`checkPreauthorizedResources()`](#checkPreauth).
+     * Ausgelöst durch [`checkPreauthorizedResources()`](#checkPreauth).
 
-      * Der `authorizedResources` Parameter stellt die Ressourcen dar, die der Benutzer verwendet
-ist berechtigt, Folgendes anzuzeigen.
+     * Der `authorizedResources` Parameter stellt die Ressourcen dar, die der Benutzer verwendet
+       ist berechtigt, Folgendes anzuzeigen.
 
    * [`presentTvProviderDialog(viewController)`](#presentTvDialog)
 
-      * Wird durch [getAuthentication()](#getAuthN) ausgelöst, wenn der aktuelle Anforderer mindestens MVPD mit SSO-Unterstützung unterstützt.
-      * Der viewController-Parameter ist das Apple SSO-Dialogfeld und muss auf dem Hauptansichtscontroller angezeigt werden.
+     * Wird durch [getAuthentication()](#getAuthN) ausgelöst, wenn der aktuelle Anforderer mindestens MVPD mit SSO-Unterstützung unterstützt.
+     * Der viewController-Parameter ist das Apple SSO-Dialogfeld und muss auf dem Hauptansichtscontroller angezeigt werden.
 
    * [`dismissTvProviderDialog(viewController)`](#dismissTvDialog)
 
-      * Wird durch eine Benutzeraktion ausgelöst (durch Auswahl von „Abbrechen“ oder „Andere TV-Anbieter“ im Apple-SSO-Dialogfeld).
-      * Der viewController-Parameter ist das Apple SSO-Dialogfeld und muss vom Hauptansichtscontroller entfernt werden.
+     * Wird durch eine Benutzeraktion ausgelöst (durch Auswahl von „Abbrechen“ oder „Andere TV-Anbieter“ im Apple-SSO-Dialogfeld).
+     * Der viewController-Parameter ist das Apple SSO-Dialogfeld und muss vom Hauptansichtscontroller entfernt werden.
 
 ![](../../../../assets/iOS-flows.png)
 
@@ -133,9 +134,9 @@ ist berechtigt, Folgendes anzuzeigen.
    B.  Rufen Sie `setRequestor()` auf, um die Identität des Programmierers festzulegen, übergeben Sie die `requestorID` des Programmierers und (optional) ein Array von Adobe Pass-Authentifizierungsendpunkten. Bei tvOS müssen Sie auch den öffentlichen Schlüssel und das Geheimnis angeben. Weitere Informationen finden [&#x200B; in der &#x200B;](#create_dev)-Dokumentation .
 
    * **Abhängigkeit:** gültige Adobe Pass-Authentifizierungsanforderungs-ID (mit Ihrem Adobe Pass-Authentifizierungskonto arbeiten)
-Manager (um dies zu arrangieren).
+     Manager (um dies zu arrangieren).
 
-   * **Trigger:
+   * **Trigger:**
      [setRequestorComplete()](#$setReqComplete) Rückruf.
 
    >[!NOTE]
@@ -210,7 +211,8 @@ authentifiziert.
 
 1. [`getAuthentication()`](#$getAuthN) aufrufen, um den
 Authentifizierungsfluss oder , um die Bestätigung zu erhalten, dass der Benutzer bereits
-authentifiziert.   **Trigger:**
+authentifiziert.
+   **Trigger:**
    * Der [`presentTvProviderDialog()`](#presentTvDialog) Callback, wenn der Benutzer nicht authentifiziert ist und der aktuelle Anforderer mindestens über MVPD verfügt, das SSO unterstützt. Wenn keine MVPDs SSO unterstützen, wird der klassische Authentifizierungsfluss verwendet.
 
 1. Nachdem der Benutzer einen Anbieter ausgewählt hat, wird der [`status()`](#status_callback_implementation) Callback aufgerufen. Es wird ein Registrierungs-Code bereitgestellt und die AccessEnabler-Bibliothek beginnt damit, den Server für eine erfolgreiche Authentifizierung auf dem zweiten Bildschirm abzufragen.
@@ -235,9 +237,9 @@ authentifiziert.   **Trigger:**
    * Wenn der Aufruf [getAuthorization()](#$getAuthZ) erfolgreich ist: Der Benutzer verfügt über gültige AuthN- und AuthZ-Token (der Benutzer ist authentifiziert und berechtigt, die angeforderten Medien zu sehen).
 
    * Wenn [getAuthorization()](#$getAuthZ) fehlschlägt: Untersuchen Sie die ausgelöste Ausnahme, um ihren Typ (AuthN, AuthZ oder etwas Anderes) zu ermitteln:
-      * Wenn es sich um einen Authentifizierungsfehler (AuthN) handelte, starten Sie den Authentifizierungsfluss erneut.
-      * Wenn es sich um einen Autorisierungsfehler (AuthZ) handelte, ist der Benutzer nicht berechtigt, die angeforderten Medien anzusehen, und dem Benutzer sollte eine Fehlermeldung angezeigt werden.
-      * Wenn ein anderer Fehlertyp (Verbindungsfehler, Netzwerkfehler usw.) Zeigen Sie dann dem Benutzer eine entsprechende Fehlermeldung an.
+     * Wenn es sich um einen Authentifizierungsfehler (AuthN) handelte, starten Sie den Authentifizierungsfluss erneut.
+     * Wenn es sich um einen Autorisierungsfehler (AuthZ) handelte, ist der Benutzer nicht berechtigt, die angeforderten Medien anzusehen, und dem Benutzer sollte eine Fehlermeldung angezeigt werden.
+     * Wenn ein anderer Fehlertyp (Verbindungsfehler, Netzwerkfehler usw.) Zeigen Sie dann dem Benutzer eine entsprechende Fehlermeldung an.
 
 1. Validieren des Short Media Token.\
    Verwenden Sie die Media Token Verifier-Bibliothek der Adobe Pass-Authentifizierung, um das kurzlebige Medien-Token zu überprüfen, das vom obigen Aufruf [getAuthorization()](#$getAuthZ) zurückgegeben wurde:
@@ -256,7 +258,7 @@ authentifiziert.   **Trigger:**
    * Wenn das ausgewählte Medium geschützt ist, startet Ihre Anwendung den [Autorisierungsfluss](#authz_flow) oben.
 
    * Wenn das ausgewählte Medium nicht geschützt ist, können Sie es für wiedergeben
-Der Benutzer.
+     Der Benutzer.
 
 ### H. Abmeldefluss ohne Apple SSO {#logout_flow_wo_AppleSSO}
 

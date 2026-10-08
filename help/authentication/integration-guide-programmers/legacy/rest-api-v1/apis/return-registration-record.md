@@ -2,13 +2,14 @@
 title: Registrierungseintrag zurückgeben
 description: Registrierungseintrag zurückgeben
 exl-id: 7b9e63a2-59b6-4123-a19b-ee1f021219ea
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '285'
 ht-degree: 2%
-
 ---
-
 # (Legacy) Registrierungseintrag zurückgeben {#return-registration-record}
 
 >[!NOTE]
@@ -47,9 +48,9 @@ Gibt einen Registrierungs-Code-Eintrag mit Registrierungs-Code-UUID, Registrieru
 
 
 
-| Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
+| Endpunkt | Called </br>by | Input </br>params | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Beispiel:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestId/regcode/TJJCFK?format=xml | Streaming-App</br></br>oder</br></br>Programmierer-Service | &#x200B;1. </br>    (Pfadkomponente)</br>2.  Registrierungs-Code </br>    (Pfadkomponente) | GET | XML oder JSON mit Registrierungs-Code und Informationen. Siehe Schema und Beispiel unten. | 200 |
+| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Beispiel:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestId/regcode/TJJCFK?format=xml | Streaming-App</br></br>oder</br></br>Programmierer-Service | &#x200B;1.  Requestor </br> (Pfadkomponente)</br>2.  Registrierungs-Code </br> (Pfadkomponente) | GET | XML oder JSON mit Registrierungs-Code und Informationen. Siehe Schema und Beispiel unten. | 200 |
 
 {style="table-layout:auto"}
 

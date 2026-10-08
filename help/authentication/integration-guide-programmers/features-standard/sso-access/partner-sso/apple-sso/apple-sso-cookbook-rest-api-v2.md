@@ -2,13 +2,14 @@
 title: Apple SSO-Cookbook (REST API v2)
 description: Apple SSO-Cookbook (REST API v2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: 0be4216ba816ddace095e557f9f61a8a42e1a1ff
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '3908'
 ht-degree: 0%
-
 ---
-
 # Apple SSO-Cookbook (REST API v2) {#apple-sso-cookbook-rest-api-v2}
 
 >[!IMPORTANT]
@@ -115,7 +116,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
 +++B. Authentifizierungsphase überprüfen
 
-1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [&#x200B; entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
+1. **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [&#x200B; entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
 
    >[!IMPORTANT]
    >
@@ -267,7 +268,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
    > * `displayInPlatformPicker`: Gibt an, ob die MVPD in der Apple-Auswahl angezeigt werden kann.
    > * `boardingStatus`: Gibt an, ob MVPD in Apple Single Sign-on integriert ist.
 
-1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [&#x200B; entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
+1. **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [&#x200B; entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
 
    >[!IMPORTANT]
    >
@@ -598,7 +599,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
 
 +++ D. Entscheidungsphase
 
-1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [&#x200B; entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
+1. **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [&#x200B; entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
 
    >[!IMPORTANT]
    > 
@@ -669,7 +670,7 @@ Führen Sie die angegebenen Schritte aus, um das Apple-Single Sign-on mithilfe v
    >
    > Wenn die Validierung fehlschlägt, wird eine Fehlerantwort generiert, die zusätzliche Informationen entsprechend der Dokumentation [Erweiterte Fehlercodes](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) bereitstellt.
 
-1. Apple **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [&#x200B; entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
+1. **Partner-Framework-Status abrufen:** Die Streaming-Anwendung ruft das von [&#x200B; entwickelte Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) auf, um Benutzerberechtigungen und Anbieterinformationen abzurufen.
 
    >[!IMPORTANT]
    >

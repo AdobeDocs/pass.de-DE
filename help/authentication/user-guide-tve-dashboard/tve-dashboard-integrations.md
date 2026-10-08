@@ -2,13 +2,14 @@
 title: TVE Dashboard Integrationen
 description: Erfahren Sie mehr über die Integrationen zwischen Ihren Kanälen und MVPDs und wie Sie Integrationen verwalten können.
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2093'
+source-wordcount: '2105'
 ht-degree: 0%
-
 ---
-
 # Integrationen
 
 >[!NOTE]
@@ -175,7 +176,7 @@ Führen Sie diese Schritte aus, um die Home-basierte Authentifizierung für OAut
 
    *Aktivieren der Home-basierten Authentifizierung für eine bestimmte Plattform*
 
-   **a.** HBA-Eigenschaft versuchen **b.** HBA AuthN TTL-Eigenschaft
+   **a.** HBA-Eigenschaft des Versuchs **b.** HBA AuthN TTL-Eigenschaft
 
 1. Wählen Sie **Ja** aus, um zu aktivieren, und **Nein**, um sie im Dropdown-Menü **HBA versuchen** zu deaktivieren.
 

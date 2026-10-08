@@ -2,13 +2,14 @@
 title: Berechtigungs-Service-Überwachungs-API
 description: Berechtigungs-Service-Überwachungs-API
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2098'
 ht-degree: 0%
-
 ---
-
 # Berechtigungs-Service-Überwachungs-API {#entitlement-service-monitoring-api}
 
 >[!IMPORTANT]
@@ -63,13 +64,13 @@ Die folgenden Drill-down-Bäume veranschaulichen die in ESM 3.0 verfügbaren Dim
 
 ![](../../../assets/esm-mvpd-dimensions.png)
 
-Eine GET an den `https://mgmt.auth.adobe.com/esm/v3`-API-Endpunkt gibt eine Darstellung zurück, die Folgendes enthält:
+Eine GET-Anfrage an den `https://mgmt.auth.adobe.com/esm/v3`-API-Endpunkt gibt eine Darstellung zurück, die Folgendes enthält:
 
 * Links zu den verfügbaren Stamm-Drilldown-Pfaden:
 
-   * `<link rel="drill-down" href="/v3/dimensionA"/>`
+  * `<link rel="drill-down" href="/v3/dimensionA"/>`
 
-   * `<link rel="drill-down" href="/v3/dimensionB"/>`
+  * `<link rel="drill-down" href="/v3/dimensionB"/>`
 
 * Eine Zusammenfassung (aggregierte Werte) für alle Metriken (standardmäßig )
 Intervall, da keine Abfragezeichenfolgen-Parameter angegeben werden (siehe unten).
@@ -139,7 +140,7 @@ Die einzige derzeit verfügbare HTTP-Methode ist GET.
 | 401 | Nicht autorisiert | Wird durch eine Anfrage verursacht, die nicht die richtigen OAuth-Header zum Authentifizieren des Benutzers enthält |
 | 403 | Verboten | Gibt an, dass die Anfrage im aktuellen Sicherheitskontext nicht zulässig ist. Dies tritt auf, wenn der Benutzer authentifiziert ist, aber nicht auf die angeforderten Informationen zugreifen darf |
 | 404 | Nicht gefunden | Tritt auf, wenn mit der Anfrage ein ungültiger URL-Pfad angegeben wird. Dies sollte nie vorkommen, wenn der Client den Links für „Drilldown“/„Rollout“ folgt, die mit 200 Antworten bereitgestellt werden |
-| 405 | Methode nicht zulässig | Signalisiert, dass eine nicht unterstützte Methode in der Anfrage verwendet wurde. Obwohl derzeit nur die GET-Methode unterstützt wird, können zukünftige Versionen HEAD oder OPTIONS zulassen |
+| 405 | Methode nicht zulässig | Signalisiert, dass eine nicht unterstützte Methode in der Anfrage verwendet wurde. Obwohl derzeit nur die GET-Methode unterstützt wird, können zukünftige Versionen HEAD oder OPTIONS zulassen. |
 | 406 | Nicht akzeptabel | Signalisiert, dass ein nicht unterstützter Medientyp vom Client angefordert wurde |
 | 500 | Interner Server-Fehler | „Das sollte nie passieren“ |
 | 503 | Service nicht verfügbar | Signalisiert einen Fehler innerhalb der Anwendung oder ihrer Abhängigkeiten |

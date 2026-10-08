@@ -2,13 +2,14 @@
 title: Android SDK API-Referenz
 description: Android SDK API-Referenz
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '4628'
 ht-degree: 0%
-
 ---
-
 # (Veraltete) Android SDK API-Referenz {#android-sdk-api-reference}
 
 >[!NOTE]
@@ -134,12 +135,12 @@ Veraltet:
 **Parameter:**
 
 - *status*: Kann einen der folgenden Werte annehmen:
-   - SDK \>= 3.4.0
-      - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_SUCCESS` - Konfigurationsphase wurde erfolgreich abgeschlossen
-      - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_ERROR` - Konfigurationsphase ist fehlgeschlagen
-   - SDK \&lt; 3.4
-      - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` - Konfigurationsphase wurde erfolgreich abgeschlossen
-      - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` - Konfigurationsphase ist fehlgeschlagen
+  - SDK \>= 3.4.0
+    - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_SUCCESS` - Konfigurationsphase wurde erfolgreich abgeschlossen
+    - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_ERROR` - Konfigurationsphase ist fehlgeschlagen
+  - SDK \&lt; 3.4
+    - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` - Konfigurationsphase wurde erfolgreich abgeschlossen
+    - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` - Konfigurationsphase ist fehlgeschlagen
 
 **Ausgelöst von:** `setRequestor()`
 
@@ -160,10 +161,10 @@ Die Werte werden unabhängig vom aktuellen Fluss (Authentifizierung/Autorisierun
 **Parameter:**
 
 - *options*: Eine Zuordnung&lt;String, String> mit globalen SDK-Optionen. Derzeit sind die folgenden Optionen verfügbar:
-   - **applicationProfile** - Kann verwendet werden, um Server-Konfigurationen basierend auf diesem Wert vorzunehmen.
-   - **ap_vi** - Die Experience Cloud-ID (visitorID). Dieser Wert kann später für erweiterte Analyseberichte verwendet werden.
-   - **ap_ai** - Die Advertising-ID
-   - **device_info** - Client-Informationen wie hier beschrieben: [Übergeben von Client-Informationen, Geräteverbindung und Anwendung](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md).
+  - **applicationProfile** - Kann verwendet werden, um Server-Konfigurationen basierend auf diesem Wert vorzunehmen.
+  - **ap_vi** - Die Experience Cloud-ID (visitorID). Dieser Wert kann später für erweiterte Analyseberichte verwendet werden.
+  - **ap_ai** - Die Advertising-ID
+  - **device_info** - Client-Informationen wie hier beschrieben: [Übergeben von Client-Informationen, Geräteverbindung und Anwendung](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md).
 
 [Nach oben…](#apis)
 
@@ -232,7 +233,9 @@ Nachdem der Benutzer die gewünschte MVPD ausgewählt hat, muss die Upper-Layer-
 
 >[!NOTE]
 >
-> Abbrechen des AuthentifizierungsflussesBitte beachten Sie, dass dies ein Punkt ist, an dem der Benutzer die Möglichkeit hat, die Schaltfläche „Zurück“ zu drücken, was dem Abbruch des Authentifizierungsflusses entspricht. In einem solchen Szenario muss die Anwendung die `setSelectedProvider()` aufrufen und *null* als Parameter übergeben, um dem Access Enabler die Möglichkeit zu geben, seinen Authentifizierungszustand auf seinem Computer zurückzusetzen.
+> Abbrechen des Authentifizierungsflusses
+> </br></br>
+> Bitte beachten Sie, dass dies ein Punkt ist, an dem der Benutzer die Möglichkeit hat, die Schaltfläche „Zurück“ zu drücken, was dem Abbruch des Authentifizierungsflusses entspricht. In einem solchen Szenario muss die Anwendung die `setSelectedProvider()` aufrufen und *null* als Parameter übergeben, um dem Access Enabler die Möglichkeit zu geben, seinen Authentifizierungszustand auf seinem Computer zurückzusetzen.
 
 | Callback: Anzeigen der MVPD-Auswahlbenutzeroberfläche |
 | --- |
@@ -337,12 +340,12 @@ bei Bedarf zusätzliche Informationen zur Fehlerursache angeben.
 **Parameter:**
 
 - *status*: Kann einen der folgenden Werte annehmen:
-   - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_SUCCESS` - Authentifizierungsfluss wurde erfolgreich abgeschlossen
-   - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_ERROR` - Authentifizierungsfluss fehlgeschlagen
+  - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_SUCCESS` - Authentifizierungsfluss wurde erfolgreich abgeschlossen
+  - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_ERROR` - Authentifizierungsfluss fehlgeschlagen
 - *code*: Fehlerursache. Wenn *status* den Wert `AccessEnablerConstants.ACCESS_ENABLER_STATUS_SUCCESS` hat, ist *code* eine leere Zeichenfolge (d. h. definiert durch die `AccessEnablerConstants.USER_AUTHENTICATED`). Im Falle eines Fehlers kann dieser Parameter einen der folgenden Werte annehmen:
-   - `AccessEnablerConstants.USER_NOT_AUTHENTICATED_ERROR` - Der Benutzer ist nicht authentifiziert. Als Antwort auf den Aufruf der *checkAuthentication()*-Methode, wenn im Cache des lokalen Tokens kein gültiges Authentifizierungstoken vorhanden ist.
-   - `AccessEnablerConstants.PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler hat den Authentifizierungsstatus-Computer zurückgesetzt, nachdem die Upper-Layer-Anwendung (*)* wurde, um den Authentifizierungsfluss abzubrechen`setSelectedProvider()`.  Vermutlich hat der Benutzer den Authentifizierungsfluss abgebrochen (d.h. die Schaltfläche „Zurück“ gedrückt).
-   - `AccessEnablerConstants.GENERIC_AUTHENTICATION_ERROR` - Der Authentifizierungsfluss ist aus Gründen wie der Nichtverfügbarkeit des Netzwerks oder dem expliziten Abbruch des Authentifizierungsflusses fehlgeschlagen.
+  - `AccessEnablerConstants.USER_NOT_AUTHENTICATED_ERROR` - Der Benutzer ist nicht authentifiziert. Als Antwort auf den Aufruf der *checkAuthentication()*-Methode, wenn im Cache des lokalen Tokens kein gültiges Authentifizierungstoken vorhanden ist.
+  - `AccessEnablerConstants.PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler hat den Authentifizierungsstatus-Computer zurückgesetzt, nachdem die Upper-Layer-Anwendung (*)* wurde, um den Authentifizierungsfluss abzubrechen`setSelectedProvider()`.  Vermutlich hat der Benutzer den Authentifizierungsfluss abgebrochen (d.h. die Schaltfläche „Zurück“ gedrückt).
+  - `AccessEnablerConstants.GENERIC_AUTHENTICATION_ERROR` - Der Authentifizierungsfluss ist aus Gründen wie der Nichtverfügbarkeit des Netzwerks oder dem expliziten Abbruch des Authentifizierungsflusses fehlgeschlagen.
 
 **Ausgelöst von:** `checkAuthentication(), getAuthentication(), checkAuthorization()`
 
@@ -499,7 +502,7 @@ Der Parameter `cache` gibt an, ob die zwischengespeicherte Antwort vor der Autor
 
 - *resourceId*: Die Ressource, für die die Autorisierung abgerufen wurde
 - *errorCode*: Fehlercode, der mit dem Fehlerszenario verknüpft ist. Mögliche Werte:
-   - `AccessEnablerConstants.USER_NOT_AUTHORIZED_ERROR` - Der Benutzer konnte für die angegebene Ressource keine Autorisierung vornehmen.
+  - `AccessEnablerConstants.USER_NOT_AUTHORIZED_ERROR` - Der Benutzer konnte für die angegebene Ressource keine Autorisierung vornehmen.
 - *errorDescription*: Zusätzliche Details zum Fehlerszenario. Wenn diese beschreibende Zeichenfolge aus irgendeinem Grund nicht verfügbar ist, sendet die Adobe Pass-Authentifizierung eine leere Zeichenfolge **(“„)**.
 
   Diese Zeichenfolge kann von einem MVPD verwendet werden, um benutzerdefinierte Fehlermeldungen oder verkaufsbezogene Meldungen zu übergeben. Wenn beispielsweise einem Abonnenten die Autorisierung für eine Ressource verweigert wird, kann der MVPD eine Nachricht senden, die wie folgt lautet: „Sie haben derzeit keinen Zugriff auf diesen Kanal in Ihrem Paket. Wenn Sie Ihr Paket aktualisieren möchten, klicken Sie hier.“ Die Nachricht wird von der Adobe Pass-Authentifizierung über diesen Callback an den Programmierer weitergeleitet, der die Möglichkeit hat, sie anzuzeigen oder zu ignorieren. Die Adobe Pass-Authentifizierung kann diesen Parameter auch verwenden, um eine Benachrichtigung über die Bedingung bereitzustellen, die zu einem Fehler geführt haben könnte. Beispiel: „Bei der Kommunikation mit dem Autorisierungsdienst des Anbieters ist ein Netzwerkfehler aufgetreten.“
@@ -584,19 +587,19 @@ Programmierern stehen zwei Arten von Metadaten zur Verfügung:
 **Parameter:**
 
 - *metadataKey*: Eine Datenstruktur, die eine Schlüssel- und eine args-Variable mit der folgenden Bedeutung einkapselt:
-   - Wenn key `METADATA_KEY_USER_META` ist und args ein SerializableNameValuePair-Objekt mit name = `METADATA_ARG_USER_META` und value = `[metadata_name]` enthält, wird die Abfrage für Benutzermetadaten durchgeführt. Die aktuelle Liste der verfügbaren Benutzer-Metadatentypen:
-      - `zip` - Postleitzahl
+  - Wenn key `METADATA_KEY_USER_META` ist und args ein SerializableNameValuePair-Objekt mit name = `METADATA_ARG_USER_META` und value = `[metadata_name]` enthält, wird die Abfrage für Benutzermetadaten durchgeführt. Die aktuelle Liste der verfügbaren Benutzer-Metadatentypen:
+    - `zip` - Postleitzahl
 
-      - `householdID` - Haushaltskennung. Wenn eine MVPD keine Unterkonten unterstützt, ist dies mit `userID` identisch.
+    - `householdID` - Haushaltskennung. Wenn eine MVPD keine Unterkonten unterstützt, ist dies mit `userID` identisch.
 
-      - `maxRating` - Maximale Bewertung der Eltern für den Benutzer
+    - `maxRating` - Maximale Bewertung der Eltern für den Benutzer
 
-      - `userID` - Die Benutzerkennung. Wenn eine MVPD Unterkonten unterstützt und der/die Benutzende nicht das Hauptkonto ist, unterscheidet sich `userID` von `householdID`.
+    - `userID` - Die Benutzerkennung. Wenn eine MVPD Unterkonten unterstützt und der/die Benutzende nicht das Hauptkonto ist, unterscheidet sich `userID` von `householdID`.
 
-      - `channelID` : Eine Liste der Kanäle, die der Benutzer anzeigen darf
-   - Wenn der Schlüssel `METADATA_KEY_DEVICE_ID` ist, wird die Abfrage durchgeführt, um die aktuelle Geräte-ID abzurufen. Beachten Sie, dass diese Funktion standardmäßig deaktiviert ist und Programmierer sich an Adobe wenden sollten, um Informationen zu Aktivierung und Gebühren zu erhalten.
-   - Wenn key `METADATA_KEY_TTL_AUTHZ` ist und args ein SerializableNameValuePair-Objekt mit name = `METADATA_ARG_RESOURCE_ID` und value = `[resource_id]` enthält, wird die Abfrage ausgeführt, um die Ablaufzeit des Autorisierungstokens abzurufen, das der angegebenen Ressource zugeordnet ist.
-   - Wenn der Schlüssel `METADATA_KEY_TTL_AUTHN` ist, wird die Abfrage durchgeführt, um die Ablaufzeit des Authentifizierungstokens abzurufen.
+    - `channelID` : Eine Liste der Kanäle, die der Benutzer anzeigen darf
+  - Wenn der Schlüssel `METADATA_KEY_DEVICE_ID` ist, wird die Abfrage durchgeführt, um die aktuelle Geräte-ID abzurufen. Beachten Sie, dass diese Funktion standardmäßig deaktiviert ist und Programmierer sich an Adobe wenden sollten, um Informationen zu Aktivierung und Gebühren zu erhalten.
+  - Wenn key `METADATA_KEY_TTL_AUTHZ` ist und args ein SerializableNameValuePair-Objekt mit name = `METADATA_ARG_RESOURCE_ID` und value = `[resource_id]` enthält, wird die Abfrage ausgeführt, um die Ablaufzeit des Autorisierungstokens abzurufen, das der angegebenen Ressource zugeordnet ist.
+  - Wenn der Schlüssel `METADATA_KEY_TTL_AUTHN` ist, wird die Abfrage durchgeführt, um die Ablaufzeit des Authentifizierungstokens abzurufen.
 
 
 
@@ -630,10 +633,10 @@ Programmierern stehen zwei Arten von Metadaten zur Verfügung:
 
 - *key*: Das MetadataKey-Objekt, das den Schlüssel, für den der Metadatenwert angefordert wird, und die zugehörigen Parameter enthält (eine Referenzimplementierung finden Sie unter Demoanwendung ).
 - *result*: Ein zusammengesetztes Objekt, das die angeforderten Metadaten enthält. Das -Objekt hat die folgenden Felder:
-   - *simpleResult*: eine Zeichenfolge, die den Metadatenwert darstellt, als die Anfrage für die Authentifizierungs-TTL, Autorisierungs-TTL oder Geräte-ID gestellt wurde. Dieser Wert ist null, wenn die Anfrage für Benutzermetadaten durchgeführt wurde.
+  - *simpleResult*: eine Zeichenfolge, die den Metadatenwert darstellt, als die Anfrage für die Authentifizierungs-TTL, Autorisierungs-TTL oder Geräte-ID gestellt wurde. Dieser Wert ist null, wenn die Anfrage für Benutzermetadaten durchgeführt wurde.
 
-   - *userMetadataResult*: Ein Objekt, das die Java-Darstellung einer JSON-Benutzermetadaten-Payload enthält.\
-     Beispiel:
+  - *userMetadataResult*: Ein Objekt, das die Java-Darstellung einer JSON-Benutzermetadaten-Payload enthält.\
+    Beispiel:
 
 ```json
           '{
@@ -708,18 +711,18 @@ Der Access Enabler-Trigger führt einen zusätzlichen Callback aus, der nicht un
 
 
 - Mögliche Werte für den Gerätetyp:
-   - `computer`
-   - `tablet`
-   - `mobile`
-   - `gameconsole`
-   - `unknown`
+  - `computer`
+  - `tablet`
+  - `mobile`
+  - `gameconsole`
+  - `unknown`
 
 
 - Mögliche Werte für den Client-Typ von Access Enabler:
-   - `flash`
-   - `html5`
-   - `ios`
-   - `android`
+  - `flash`
+  - `html5`
+  - `ios`
+  - `android`
 
 </br>
 
@@ -732,39 +735,39 @@ Der Access Enabler-Trigger führt einen zusätzlichen Callback aus, der nicht un
 **Parameter:**
 
 - *event*: das verfolgte Ereignis. Es gibt drei mögliche Typen von Tracking-Ereignissen:
-   - **authorizationDetection:** jedes Mal, wenn eine Autorisierungs-Token-Anfrage zurückgibt (Ereignistyp `EVENT_AUTHZ_DETECTION`)
-   - **authenticationDetection:** jedes Mal, wenn eine Authentifizierungsprüfung erfolgt (Ereignistyp ist `EVENT_AUTHN_DETECTION`)
-   - **mvpdSelection:** Wenn Benutzende eine MVPD im MVPD-Auswahlformular auswählen (Ereignistyp ist `EVENT_MVPD_SELECTION`)
+  - **authorizationDetection:** jedes Mal, wenn eine Autorisierungs-Token-Anfrage zurückgibt (Ereignistyp `EVENT_AUTHZ_DETECTION`)
+  - **authenticationDetection:** jedes Mal, wenn eine Authentifizierungsprüfung erfolgt (Ereignistyp ist `EVENT_AUTHN_DETECTION`)
+  - **mvpdSelection:** Wenn Benutzende eine MVPD im MVPD-Auswahlformular auswählen (Ereignistyp ist `EVENT_MVPD_SELECTION`)
 - *data*: Zusätzliche Daten, die mit dem gemeldeten Ereignis verknüpft sind. Diese Daten werden in Form einer Werteliste angezeigt.
 
 Im Folgenden finden Sie Anweisungen zur Interpretation der Werte in den *Daten*
 Array:
 
 - Für Ereignistyp *`EVENT_AUTHN_DETECTION`:*
-   - **0** - Ob die Token-Anfrage erfolgreich war (true/false) und ob das oben Genannte wahr ist:
-   - **1** - MVPD-ID-Zeichenfolge
-   - **2** - GUID (MD5-Hash)
-   - **3** - Token bereits im Cache (true/false)
-   - **4** - Gerätetyp
-   - **5** - Access Enabler-Client-Typ
-   - **6** - Betriebssystemtyp
+  - **0** - Ob die Token-Anfrage erfolgreich war (true/false) und ob das oben Genannte wahr ist:
+  - **1** - MVPD-ID-Zeichenfolge
+  - **2** - GUID (MD5-Hash)
+  - **3** - Token bereits im Cache (true/false)
+  - **4** - Gerätetyp
+  - **5** - Access Enabler-Client-Typ
+  - **6** - Betriebssystemtyp
 
 - Für Ereignistyp `EVENT_AUTHZ_DETECTION`
-   - **0** - Ob die Token-Anfrage erfolgreich war (true/false) und ob sie erfolgreich war:
-   - **1** - MVPD ID
-   - **2** - GUID (MD5-Hash)
-   - **3** - Token bereits im Cache (true/false)
-   - **4** - Fehler
-   - **5** - Details
-   - **6** - Gerätetyp
-   - **7** - Zugriffs-Enabler-Client-Typ
-   - **8** - Betriebssystemtyp
+  - **0** - Ob die Token-Anfrage erfolgreich war (true/false) und ob sie erfolgreich war:
+  - **1** - MVPD ID
+  - **2** - GUID (MD5-Hash)
+  - **3** - Token bereits im Cache (true/false)
+  - **4** - Fehler
+  - **5** - Details
+  - **6** - Gerätetyp
+  - **7** - Zugriffs-Enabler-Client-Typ
+  - **8** - Betriebssystemtyp
 
 - Für Ereignistyp `EVENT_MVPD_SELECTION`
-   - **0** - ID der aktuell ausgewählten MVPD
-   - **1** - Gerätetyp
-   - **2** - Zugriffs-Enabler-Client-Typ
-   - **3** - Betriebssystemtyp
+  - **0** - ID der aktuell ausgewählten MVPD
+  - **1** - Gerätetyp
+  - **2** - Zugriffs-Enabler-Client-Typ
+  - **3** - Betriebssystemtyp
 
 **Ausgelöst durch:** `checkAuthentication()`, `getAuthentication()`, `checkAuthorization()`, `getAuthorization()`, `setSelectedProvider()`
 

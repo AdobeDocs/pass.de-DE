@@ -2,13 +2,14 @@
 title: Verbesserte Fehler-Codes
 description: Verbesserte Fehler-Codes
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2747'
 ht-degree: 3%
-
 ---
-
 # Verbesserte Fehler-Codes {#enhanced-error-codes}
 
 >[!IMPORTANT]
@@ -18,12 +19,12 @@ ht-degree: 3%
 Erweiterte Fehler-Codes stellen eine Adobe Pass-Authentifizierungsfunktion dar, die zusätzliche Fehlerinformationen für in integrierte Client-Anwendungen bereitstellt:
 
 * Adobe Pass Authentication REST-APIs:
-   * [REST API v2](../../rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
-   * [(Legacy) REST-API v1](../../legacy/rest-api-v1/rest-api-overview.md)
+  * [REST API v2](../../rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [(Legacy) REST-API v1](../../legacy/rest-api-v1/rest-api-overview.md)
 * Adobe Pass-Authentifizierungs-SDKs autorisieren die API vorab:
-   * [(Legacy) JavaScript SDK (API vorautorisieren)](../../legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
-   * [(Legacy) iOS/tvOS SDK (API vorautorisieren)](../../legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
-   * [(Legacy) Android SDK (API vorautorisieren)](../../legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
+  * [(Legacy) JavaScript SDK (API vorautorisieren)](../../legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
+  * [(Legacy) iOS/tvOS SDK (API vorautorisieren)](../../legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
+  * [(Legacy) Android SDK (API vorautorisieren)](../../legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
 
   _(*) Preauthorize API ist die einzige SDK-API zur Adobe Pass-Authentifizierung, die Unterstützung für erweiterte Fehler-Codes bietet._
 
@@ -200,7 +201,7 @@ Content-Type: application/xml
 
 Erweiterte Fehler-Codes enthalten die folgenden `JSON` Felder oder `XML` Attribute mit Beispielen:
 
-| -Name | Typ | Beispiel | eingeschränkt | Beschreibung |
+| Name | Typ | Beispiel | eingeschränkt | Beschreibung |
 |-----------|-----------|---------------------------------------------------------------------------------------------------------------------|:----------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *Aktion* | *Zeichenfolge* | *Keine* | &check; | Die von der Adobe Pass-Authentifizierung empfohlene Aktion, die die in diesem Dokument definierte Situation beheben kann. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Aktion](#enhanced-error-codes-action). |
 | *status* | *Integer* | *403* | &check; | Der HTTP-Antwort-Status-Code wie im Dokument [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6) definiert. <br/><br/> Weitere Informationen finden Sie im Abschnitt [Status](#enhanced-error-codes-status) . |

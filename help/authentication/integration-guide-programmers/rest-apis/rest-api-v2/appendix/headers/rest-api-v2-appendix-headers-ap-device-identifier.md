@@ -2,13 +2,14 @@
 title: Header - AP-Device-Identifier
 description: REST API v2 - Kopfzeile - AP-Device-Identifier
 exl-id: 90a5882b-2e6d-4e67-994a-050465cac6c6
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '561'
 ht-degree: 0%
-
 ---
-
 # Header - AP-Device-Identifier {#header-ap-device-identifier}
 
 >[!NOTE]
@@ -51,8 +52,10 @@ Es gibt nur einen unterstützten Typ, wie unten dargestellt.
    <tr>
       <td>Fingerabdruck</td>
       <td>
-            Die Gerätekennung besteht aus einer stabilen und eindeutigen Kennung, die von der Client-Anwendung für jedes Gerät erstellt und verwaltet wird.<br/>
-            Die Client-Anwendung sollte die Geräte-ID im persistenten Speicher zwischenspeichern, da ein Verlust oder eine Änderung die Authentifizierung ungültig macht. Die Client-Anwendung sollte Wertänderungen verhindern, die durch Benutzeraktionen wie Deinstallation, Neuinstallation oder Upgrades der Anwendung verursacht werden.</td>
+            Die Gerätekennung besteht aus einer stabilen und eindeutigen Kennung, die von der Client-Anwendung für jedes Gerät erstellt und verwaltet wird.
+            <br/>
+            Die Client-Anwendung sollte die Geräte-ID im persistenten Speicher zwischenspeichern, da ein Verlust oder eine Änderung die Authentifizierung ungültig macht. Die Client-Anwendung sollte Wertänderungen verhindern, die durch Benutzeraktionen wie Deinstallation, Neuinstallation oder Upgrades der Anwendung verursacht werden.
+      </td>
    </tr>
 </table>
 

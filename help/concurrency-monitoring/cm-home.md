@@ -2,13 +2,14 @@
 title: Einführung in die Überwachung von Parallelität
 description: Einführung in die Überwachung von Parallelität
 exl-id: 725cc64b-6b03-46e3-a038-41e9b1341c6b
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '225'
 ht-degree: 0%
-
 ---
-
 # Einführung in die Überwachung von Parallelität {#intro}
 
 Die gleichzeitige Überwachung ist ein Service, der es Inhaltsanbietern und Identitätsanbietern (MVPDs und Programmierern) ermöglicht, Einschränkungen für das gleichzeitige Video-Streaming über mehrere Anwendungen, Geräte und Plattformen hinweg zu definieren und durchzusetzen. Unabhängig davon, ob Sie als Programmierer steuern möchten, wie viele Streams ein Abonnent gleichzeitig sehen kann, oder ob Sie als MVPD Nutzungsrichtlinien für Ihre Inhaltspartner durchsetzen möchten, bietet die gleichzeitige Überwachung die Tools, die Sie benötigen.

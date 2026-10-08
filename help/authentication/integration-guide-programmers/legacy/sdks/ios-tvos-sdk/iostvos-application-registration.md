@@ -2,13 +2,14 @@
 title: Registrierung von iOS/tvOS-Anwendungen
 description: Registrierung von iOS/tvOS-Anwendungen
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '632'
+source-wordcount: '634'
 ht-degree: 0%
-
 ---
-
 
 # (Veraltete) Registrierung von iOS/tvOS-Anwendungen {#iostvos-application-registration}
 
@@ -40,9 +41,9 @@ Ein Software-Statement ist ein JWT-Token, das Informationen über Ihr Programm e
 - Navigieren Sie zu `Channels` Abschnitt und wählen Sie Ihren Kanal aus.
 - Navigieren Sie zur Registerkarte `Registered Applications` .
 - Klicken Sie auf `Add new application`.
-- Geben Sie einen Namen und eine Version für Ihr Programm ein und wählen Sie   Plattformen, auf denen es verfügbar sein wird. iOS/tvOS in unserem Fall.
+- Geben Sie einen Namen und eine Version für Ihr Programm an und wählen Sie die Plattformen aus, auf denen es verfügbar sein soll. iOS/tvOS in unserem Fall.
 - Übertragen Sie Ihre Änderungen auf den Server und navigieren Sie dann zurück zur Registerkarte Registrierte Anwendungen Ihres Kanals.
-- Es sollte eine Liste mit allen registrierten Anwendungen angezeigt werden. Klicken Sie auf die Schaltfläche   `Download` Schaltfläche in der soeben erstellten Anwendung. Möglicherweise müssen Sie einige Minuten warten, bevor Ihre Software-Erklärung zum Download bereit ist.
+- Es sollte eine Liste mit allen registrierten Anwendungen angezeigt werden. Klicken Sie in der soeben erstellten Anwendung auf die Schaltfläche `Download` . Möglicherweise müssen Sie einige Minuten warten, bevor Ihre Software-Erklärung zum Download bereit ist.
 - Eine Textdatei wird heruntergeladen. Verwenden Sie den Inhalt als Software-Erklärung.
 
 Weitere Informationen finden Sie unter [Verwaltung der dynamischen Client-Registrierung](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).

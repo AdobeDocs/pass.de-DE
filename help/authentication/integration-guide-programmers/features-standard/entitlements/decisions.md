@@ -2,13 +2,14 @@
 title: Entscheidungen
 description: Entscheidungen
 exl-id: 1efd70af-8c1d-43c4-87fc-14488d42b23d
-source-git-commit: a19f4fd40c9cd851a00f05f82adbabb85edd8422
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1014'
 ht-degree: 0%
-
 ---
-
 # Entscheidungen {#decisions}
 
 >[!IMPORTANT]
@@ -88,10 +89,10 @@ Geschützte Ressourcen beziehen sich auf streambare Inhalte, die durch eindeutig
 Geschützte Ressourcen folgen einer hierarchischen Baumstruktur, wobei jede Ebene eine höhere Granularität für die Inhaltsautorisierung bietet:
 
 * Netzwerk
-   * Kanal
-      * Anzeigen
-         * Episode
-            * Asset
+  * Kanal
+    * Anzeigen
+      * Episode
+        * Asset
 
 >[!IMPORTANT]
 >
@@ -148,4 +149,5 @@ Weitere Informationen zur Integration der oben genannten APIs finden Sie in den 
 
 >[!MORELIKETHIS]
 >
-> [Häufig gestellte Fragen zur VorautorisierungsphaseHäufig gestellte Fragen zur Genehmigungsphase](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)
+> [Häufig gestellte Fragen zur Vorautorisierungsphase](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general)
+> [Häufig gestellte Fragen zur Genehmigungsphase](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)

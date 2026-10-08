@@ -2,13 +2,14 @@
 title: Android SDK-Cookbook
 description: Android SDK-Cookbook
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1690'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Android SDK-Cookbook {#android-sdk-cookbook}
 
 >[!NOTE]
@@ -30,9 +31,9 @@ Die Lösung für die Berechtigung zur Adobe Pass-Authentifizierung für Android 
 
 - Die Domain der Benutzeroberfläche : Dies ist die Anwendungsebene der oberen Ebene, die die Benutzeroberfläche implementiert und die von der AccessEnabler-Bibliothek bereitgestellten Services verwendet, um Zugriff auf eingeschränkte Inhalte zu gewähren.
 - Die AccessEnabler-Domain - hier werden die Berechtigungs-Workflows in Form von Folgendem implementiert:
-   - Netzwerkaufrufe an die Backend-Server von Adobe
-   - Geschäftslogikregeln in Bezug auf die Authentifizierungs- und Autorisierungs-Workflows
-   - Verwaltung verschiedener Ressourcen und Verarbeitung des Workflow-Status (z. B. des Token-Cache)
+  - Netzwerkaufrufe an die Backend-Server von Adobe
+  - Geschäftslogikregeln in Bezug auf die Authentifizierungs- und Autorisierungs-Workflows
+  - Verwaltung verschiedener Ressourcen und Verarbeitung des Workflow-Status (z. B. des Token-Cache)
 
 Das Ziel der AccessEnabler-Domain besteht darin, alle Komplexitäten der Berechtigungs-Workflows auszublenden und der Upper-Layer-Anwendung (über die AccessEnabler-Bibliothek) eine Reihe einfacher Berechtigungs-Primitive bereitzustellen, mit denen Sie die Berechtigungs-Workflows implementieren:
 
@@ -124,7 +125,7 @@ Die Netzwerkaktivität von AccessEnabler erfolgt in einem anderen Thread, sodass
    a.  Rufen Sie [`getInstance`](#$getInstance) auf, um eine einzelne Instanz von Adobe Pass Authentication AccessEnabler zu erstellen.
 
    - **Abhängigkeit:** Native Adobe Pass-Authentifizierung
-Android Library (AccessEnabler)
+     Android Library (AccessEnabler)
 
    B.  Aufruf` setRequestor()`, um die Kennung des Programmierers zu ermitteln; übergeben Sie die `requestorID` des Programmierers und (optional) ein Array von Adobe Pass-Authentifizierungsendpunkten.
 
@@ -185,9 +186,9 @@ Fluss.
 
    - Wenn der `getAuthorization()`-Aufruf erfolgreich ist: Der Benutzer verfügt über gültige AuthN- und AuthZ-Token (der Benutzer ist authentifiziert und berechtigt, die angeforderten Medien zu sehen).
    - Wenn `getAuthorization()` fehlschlägt: Untersuchen Sie die ausgelöste Ausnahme, um ihren Typ (AuthN, AuthZ oder etwas Anderes) zu bestimmen:
-      - Wenn es sich um einen Authentifizierungsfehler (AuthN) handelte, starten Sie den Authentifizierungsfluss erneut.
-      - Wenn es sich um einen Autorisierungsfehler (AuthZ) handelte, ist der Benutzer nicht berechtigt, die angeforderten Medien anzusehen, und dem Benutzer sollte eine Fehlermeldung angezeigt werden.
-      - Wenn ein anderer Fehlertyp (Verbindungsfehler, Netzwerkfehler usw.) Zeigen Sie dann dem Benutzer eine entsprechende Fehlermeldung an.
+     - Wenn es sich um einen Authentifizierungsfehler (AuthN) handelte, starten Sie den Authentifizierungsfluss erneut.
+     - Wenn es sich um einen Autorisierungsfehler (AuthZ) handelte, ist der Benutzer nicht berechtigt, die angeforderten Medien anzusehen, und dem Benutzer sollte eine Fehlermeldung angezeigt werden.
+     - Wenn ein anderer Fehlertyp (Verbindungsfehler, Netzwerkfehler usw.) Zeigen Sie dann dem Benutzer eine entsprechende Fehlermeldung an.
 
 1. Validieren des Short Media Token.\
    Verwenden Sie die Media Token Verifier-Bibliothek der Adobe Pass-Authentifizierung, um das vom obigen `getAuthorization()`-Aufruf zurückgegebene kurzlebige Medien-Token zu überprüfen:

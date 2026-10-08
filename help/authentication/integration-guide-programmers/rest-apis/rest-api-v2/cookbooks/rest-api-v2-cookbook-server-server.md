@@ -2,13 +2,14 @@
 title: REST API V2-Cookbook (Server-zu-Server)
 description: REST API V2-Cookbook (Server-zu-Server)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2524'
 ht-degree: 0%
-
 ---
-
 # REST API V2-Cookbook (Server-zu-Server) {#rest-api-v2-cookbook-server-to-server}
 
 >[!IMPORTANT]
@@ -75,11 +76,11 @@ Die Produktionsumgebung muss hoch verfügbar sein und entsprechend skaliert werd
 
 * Der Adobe Pass-Service wird in mehreren geografisch verteilten Rechenzentren in den USA eingesetzt, um die Leistung zu optimieren und die Latenz zu minimieren.
 
-   * Der Programmierer-Service sollte eine ähnliche Infrastrukturstrategie anwenden, um Antwortzeiten mit geringer Latenz von Adobe Pass sicherzustellen.
+  * Der Programmierer-Service sollte eine ähnliche Infrastrukturstrategie anwenden, um Antwortzeiten mit geringer Latenz von Adobe Pass sicherzustellen.
 
 * Der Programmierer muss den öffentlichen IP-Bereich seiner Produktionsumgebung bereitstellen.
 
-   * Diese IPs werden einer Zulassungsliste in der Adobe Pass-Infrastruktur hinzugefügt.
+  * Diese IPs werden einer Zulassungsliste in der Adobe Pass-Infrastruktur hinzugefügt.
 
 * Der Programmierdienst muss die DNS-Zwischenspeicherung auf maximal 30 Sekunden beschränken, um ein dynamisches Rerouting zu ermöglichen, falls Adobe Traffic umleiten muss, weil ein Rechenzentrum nicht verfügbar ist.
 
@@ -93,9 +94,9 @@ Die Staging-Umgebung kann minimal sein, sollte jedoch die Produktion widerspiege
 
 * Idealerweise sollte die Staging-Umgebung mit Adobe Pass-Testumgebungen verbunden sein, um:
 
-   * Ermöglichen Sie Programmierern, mit der Adobe-Infrastruktur zu testen.
+  * Ermöglichen Sie Programmierern, mit der Adobe-Infrastruktur zu testen.
 
-   * Aktivieren Sie Adobe, um bei Bedarf Tests und Fehlerbehebung zu unterstützen.
+  * Aktivieren Sie Adobe, um bei Bedarf Tests und Fehlerbehebung zu unterstützen.
 
 ## Workflow {#workflow}
 
@@ -134,12 +135,12 @@ Häufig gestellte Fragen:
 
 * Client-Anmeldeinformationen abrufen: Der Programmierer-Service ruft Client-Anmeldeinformationen ab, indem er den Endpunkt [**/o/client/register**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) aufruft.
 
-   * Der Programmierdienst oder die Programmieranwendung müssen die Client-Anmeldeinformationen speichern und sie unbegrenzt verwenden, wenn ein Zugriffstoken abgerufen werden muss.
+  * Der Programmierdienst oder die Programmieranwendung müssen die Client-Anmeldeinformationen speichern und sie unbegrenzt verwenden, wenn ein Zugriffstoken abgerufen werden muss.
 
 
 * Zugriffs-Token abrufen: Der Programmierer-Service ruft das Zugriffs-Token ab, indem er den Endpunkt [**/o/client/token**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) aufruft.
 
-   * Der Programmierdienst oder die Programmieranwendung müssen das Zugriffstoken speichern und verwenden, bis es abläuft. Dann müssen Sie es verwerfen und ein neues abrufen.
+  * Der Programmierdienst oder die Programmieranwendung müssen das Zugriffstoken speichern und verwenden, bis es abläuft. Dann müssen Sie es verwerfen und ein neues abrufen.
 
 ## B. Authentifizierungsphase {#authentication-phase}
 
@@ -185,54 +186,54 @@ Häufig gestellte Fragen
 
 * **Szenario 3:** Es sind keine vorhandenen Profile vorhanden. Der Programmierer-Service kann dem Benutzer über die Funktion [TempPass“ temporären Zugriff &#x200B;](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md).
 
-   * Dieses Szenario würde den Rahmen dieses Dokuments sprengen. Weitere Informationen finden Sie in der Dokumentation [Temporärer &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)&quot;.
+  * Dieses Szenario würde den Rahmen dieses Dokuments sprengen. Weitere Informationen finden Sie in der Dokumentation [Temporärer &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)&quot;.
 
 ### Schritt 3: Benutzer authentifizieren {#step-3-authenticate-the-user}
 
 * **Konfiguration abrufen:** Der Programmierdienst ruft die Liste der verfügbaren MVPDs ab, indem er den Endpunkt [**/api/v2/{serviceProvider}/configuration**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md) aufruft.
 
-   * Der Programmierer-Service kann einen benutzerdefinierten Filtermechanismus implementieren, um die Liste der MVPDs aus der Konfigurationsantwort so zu verfeinern, dass die Streaming-App nur die vorgesehenen Anbieter anzeigt, während andere ausgeblendet werden (z. B. MVPDs in Entwicklung, MVPDs testen, TempPass). Dadurch wird sichergestellt, dass Benutzenden bei der Auswahl ihres TV-Anbieters eine kuratierte Auswahl angezeigt wird.
+  * Der Programmierer-Service kann einen benutzerdefinierten Filtermechanismus implementieren, um die Liste der MVPDs aus der Konfigurationsantwort so zu verfeinern, dass die Streaming-App nur die vorgesehenen Anbieter anzeigt, während andere ausgeblendet werden (z. B. MVPDs in Entwicklung, MVPDs testen, TempPass). Dadurch wird sichergestellt, dass Benutzenden bei der Auswahl ihres TV-Anbieters eine kuratierte Auswahl angezeigt wird.
 
 
 * **Authentifizierungssitzung erstellen:** Der Programmierdienst initiiert eine Authentifizierungssitzung, indem er den Endpunkt [**/api/v2/{serviceProvider}/sessions aufruft**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
 
-   * Der Programmierdienst muss die `code` und die `url` an die Streaming-App zurückgeben.
+  * Der Programmierdienst muss die `code` und die `url` an die Streaming-App zurückgeben.
 
 
 * **Szenario 1:** Die Streaming-App kann einen Browser oder eine Webansicht öffnen, daher muss die `url` geladen werden.
 
-   * Der Benutzer gibt seinen Benutzernamen und sein Kennwort auf der Anmeldeseite von MVPD ein. Nach erfolgreicher Authentifizierung zeigt die endgültige Umleitung eine Erfolgsseite an.
+  * Der Benutzer gibt seinen Benutzernamen und sein Kennwort auf der Anmeldeseite von MVPD ein. Nach erfolgreicher Authentifizierung zeigt die endgültige Umleitung eine Erfolgsseite an.
 
 
 * **Szenario 2:** Die Streaming-App kann keinen Browser öffnen, daher muss die `code` angezeigt werden. Eine separate Web-Anwendung ist erforderlich, um den Benutzer zur Eingabe der `code` aufzufordern, die `url` zu erstellen und zu öffnen: [**/api/v2/Authenticate/{serviceProvider}/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md).
 
-   * Der Benutzer gibt seinen Benutzernamen und sein Kennwort auf der Anmeldeseite von MVPD ein. Nach erfolgreicher Authentifizierung zeigt die endgültige Umleitung eine Erfolgsseite an.
+  * Der Benutzer gibt seinen Benutzernamen und sein Kennwort auf der Anmeldeseite von MVPD ein. Nach erfolgreicher Authentifizierung zeigt die endgültige Umleitung eine Erfolgsseite an.
 
 ### Schritt 4: Prüfen auf authentifizierte Profile {#step-4-check-for-authenticated-profiles}
 
 * **Profil für bestimmten Code abrufen:** Der Programmierer-Service muss einen Abrufmechanismus mithilfe des `code` implementieren, um zu überprüfen, ob das Profil erfolgreich generiert und gespeichert wurde, indem der [**/api/v2/{serviceProvider}/profiles/code/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)-Endpunkt aufgerufen wird.
 
-   * Der Programmierdienst muss **Abrufmechanismus** folgenden Bedingungen starten:
+  * Der Programmierdienst muss **Abrufmechanismus** folgenden Bedingungen starten:
 
-      * **Authentifizierung in der primären (Bildschirm-)Anwendung:** Der Programmierdienst sollte die Abfrage starten, wenn der Benutzer die endgültige Zielseite erreicht, nachdem die Browser-Komponente die für den `redirectUrl` Parameter in der Endpunktanforderung [Sitzungen](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) angegebene URL geladen hat.
+    * **Authentifizierung in der primären (Bildschirm-)Anwendung:** Der Programmierdienst sollte die Abfrage starten, wenn der Benutzer die endgültige Zielseite erreicht, nachdem die Browser-Komponente die für den `redirectUrl` Parameter in der Endpunktanforderung [Sitzungen](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) angegebene URL geladen hat.
 
-      * **Authentifizierung in einer sekundären (Bildschirm-)Anwendung:** Die Programmierer-Service-Anwendung sollte den Abruf starten, sobald der Benutzer den Authentifizierungsprozess einleitet - direkt nach Erhalt der [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)-Endpunktantwort und Anzeige des Authentifizierungs-Codes für den Benutzer.
+    * **Authentifizierung in einer sekundären (Bildschirm-)Anwendung:** Die Programmierer-Service-Anwendung sollte den Abruf starten, sobald der Benutzer den Authentifizierungsprozess einleitet - direkt nach Erhalt der [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)-Endpunktantwort und Anzeige des Authentifizierungs-Codes für den Benutzer.
 
-   * Der Programmierdienst muss **Abfrage-** unter folgenden Bedingungen stoppen:
+  * Der Programmierdienst muss **Abfrage-** unter folgenden Bedingungen stoppen:
 
-      * **Erfolgreiche Authentifizierung:** Die Profilinformationen des Benutzers wurden erfolgreich abgerufen und bestätigen seinen Authentifizierungsstatus. Zu diesem Zeitpunkt ist keine Abfrage mehr erforderlich.
+    * **Erfolgreiche Authentifizierung:** Die Profilinformationen des Benutzers wurden erfolgreich abgerufen und bestätigen seinen Authentifizierungsstatus. Zu diesem Zeitpunkt ist keine Abfrage mehr erforderlich.
 
-      * **Authentifizierungssitzung und Code-Ablauf:** Die Authentifizierungssitzung und der Code laufen ab, wie durch den `notAfter` Zeitstempel (z. B. 30 Minuten) in der Endpunktantwort [Sitzungen](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) angegeben. In diesem Fall muss der Benutzer den Authentifizierungsprozess neu starten, und das Abrufen mit dem vorherigen Authentifizierungs-Code sollte sofort gestoppt werden.
+    * **Authentifizierungssitzung und Code-Ablauf:** Die Authentifizierungssitzung und der Code laufen ab, wie durch den `notAfter` Zeitstempel (z. B. 30 Minuten) in der Endpunktantwort [Sitzungen](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) angegeben. In diesem Fall muss der Benutzer den Authentifizierungsprozess neu starten, und das Abrufen mit dem vorherigen Authentifizierungs-Code sollte sofort gestoppt werden.
 
-      * **Generierter neuer Authentifizierungs-Code:** Wenn der Benutzer einen neuen Authentifizierungs-Code auf dem Primärgerät (Bildschirm) anfordert, ist die vorhandene Sitzung nicht mehr gültig und das Abrufen mit dem vorherigen Authentifizierungs-Code sollte sofort gestoppt werden.
+    * **Generierter neuer Authentifizierungs-Code:** Wenn der Benutzer einen neuen Authentifizierungs-Code auf dem Primärgerät (Bildschirm) anfordert, ist die vorhandene Sitzung nicht mehr gültig und das Abrufen mit dem vorherigen Authentifizierungs-Code sollte sofort gestoppt werden.
 
-   * Der Programmierdienst muss **Abrufintervall konfigurieren** unter folgenden Bedingungen:
+  * Der Programmierdienst muss **Abrufintervall konfigurieren** unter folgenden Bedingungen:
 
-      * **Authentifizierung innerhalb der primären (Bildschirm-)Anwendung:** Der Programmierer-Service sollte alle 3-5 Sekunden oder länger abfragen.
+    * **Authentifizierung innerhalb der primären (Bildschirm-)Anwendung:** Der Programmierer-Service sollte alle 3-5 Sekunden oder länger abfragen.
 
-      * **Authentifizierung in einer sekundären (Bildschirm-)Anwendung:** Der Programmierer-Service sollte alle 3-5 Sekunden oder länger abfragen.
+    * **Authentifizierung in einer sekundären (Bildschirm-)Anwendung:** Der Programmierer-Service sollte alle 3-5 Sekunden oder länger abfragen.
 
-   * Der Programmierdienst sollte Teile der Profilinformationen des Benutzers in einem beständigen Speicher zwischenspeichern, um unnötige Anfragen zu vermeiden und das Benutzererlebnis zu verbessern.
+  * Der Programmierdienst sollte Teile der Profilinformationen des Benutzers in einem beständigen Speicher zwischenspeichern, um unnötige Anfragen zu vermeiden und das Benutzererlebnis zu verbessern.
 
 ## C. (Optional) Phase vor der Autorisierung {#preauthorization-phase}
 
@@ -262,13 +263,13 @@ Häufig gestellte Fragen
 
 * **Vorabautorisierungsentscheidungen abrufen:** Der Programmierer-Service ruft Vorabautorisierungsentscheidungen für eine Liste von Ressourcen ab, indem er den Endpunkt [**/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) aufruft.
 
-   * Der Programmierer-Service muss der Streaming-App die Liste der Genehmigungsentscheidungen übergeben und Vorabautorisierungsentscheidungen ablehnen.
+  * Der Programmierer-Service muss der Streaming-App die Liste der Genehmigungsentscheidungen übergeben und Vorabautorisierungsentscheidungen ablehnen.
 
-   * Der Programmierdienst ist nicht erforderlich, um Entscheidungen vor Autorisierung in einem persistenten Speicher zu speichern. Es wird jedoch empfohlen, Zulassungsentscheidungen im Speicher zwischenzuspeichern, um das Benutzererlebnis zu verbessern. Dadurch werden unnötige Aufrufe von Ressourcen vermieden, die bereits vorab autorisiert wurden, die Latenz verringert und die Leistung verbessert.
+  * Der Programmierdienst ist nicht erforderlich, um Entscheidungen vor Autorisierung in einem persistenten Speicher zu speichern. Es wird jedoch empfohlen, Zulassungsentscheidungen im Speicher zwischenzuspeichern, um das Benutzererlebnis zu verbessern. Dadurch werden unnötige Aufrufe von Ressourcen vermieden, die bereits vorab autorisiert wurden, die Latenz verringert und die Leistung verbessert.
 
-   * Der Programmierer-Service kann den Grund für eine abgelehnte Vorautorisierungsentscheidung ermitteln, indem er den [Fehlercode und die Nachricht) überprüft](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) die in der Antwort vom Endpunkt Decisions Preauthorize enthalten sind. Diese Details geben insight den spezifischen Grund an, aus dem die Vorabautorisierungsanfrage abgelehnt wurde. So kann das Benutzererlebnis oder der Trigger über die erforderliche Verarbeitung in der Anwendung informiert werden. Stellen Sie sicher, dass ein Wiederholungsmechanismus, der zum Abrufen von Entscheidungen vor der Autorisierung implementiert ist, nicht zu einer Endlosschleife führt, wenn die Entscheidung vor der Autorisierung abgelehnt wird. Erwägen Sie, weitere Zustellversuche auf eine angemessene Anzahl zu beschränken und Ablehnungen elegant zu handhaben, indem Sie dem Benutzer klares Feedback senden.
+  * Der Programmierer-Service kann den Grund für eine abgelehnte Vorautorisierungsentscheidung ermitteln, indem er den [Fehlercode und die Nachricht) überprüft](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) die in der Antwort vom Endpunkt Decisions Preauthorize enthalten sind. Diese Details geben insight den spezifischen Grund an, aus dem die Vorabautorisierungsanfrage abgelehnt wurde. So kann das Benutzererlebnis oder der Trigger über die erforderliche Verarbeitung in der Anwendung informiert werden. Stellen Sie sicher, dass ein Wiederholungsmechanismus, der zum Abrufen von Entscheidungen vor der Autorisierung implementiert ist, nicht zu einer Endlosschleife führt, wenn die Entscheidung vor der Autorisierung abgelehnt wird. Erwägen Sie, weitere Zustellversuche auf eine angemessene Anzahl zu beschränken und Ablehnungen elegant zu handhaben, indem Sie dem Benutzer klares Feedback senden.
 
-   * Der Programmierer-Service kann in einer einzigen API-Anfrage eine Vorabautorisierungsentscheidung für eine begrenzte Anzahl von Ressourcen erhalten, in der Regel bis zu 5, aufgrund von Bedingungen, die von MVPDs auferlegt werden. Diese maximale Anzahl von Ressourcen kann angezeigt und geändert werden, nachdem eine Vereinbarung mit MVPDs über das Adobe Pass [TVE-Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) von einem Ihrer Organisationsadministratoren oder einem in Ihrem Namen handelnden Adobe Pass-Authentifizierungsmitarbeiter getroffen wurde.
+  * Der Programmierer-Service kann in einer einzigen API-Anfrage eine Vorabautorisierungsentscheidung für eine begrenzte Anzahl von Ressourcen erhalten, in der Regel bis zu 5, aufgrund von Bedingungen, die von MVPDs auferlegt werden. Diese maximale Anzahl von Ressourcen kann angezeigt und geändert werden, nachdem eine Vereinbarung mit MVPDs über das Adobe Pass [TVE-Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) von einem Ihrer Organisationsadministratoren oder einem in Ihrem Namen handelnden Adobe Pass-Authentifizierungsmitarbeiter getroffen wurde.
 
 ## D. Genehmigungsphase {#authorization-phase}
 
@@ -296,15 +297,15 @@ Häufig gestellte Fragen
 
 * **Autorisierungsentscheidung abrufen:** Der Programmierer-Service ruft die Autorisierungsentscheidung für eine bestimmte Ressource ab, die von der Streaming-App übergeben wird, indem er den Endpunkt [**/api/v2/{serviceProvider}/decision/authorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) aufruft.
 
-   * Der Programmierdienst ist nicht erforderlich, um Autorisierungsentscheidungen in einem persistenten Speicher zu speichern.
+  * Der Programmierdienst ist nicht erforderlich, um Autorisierungsentscheidungen in einem persistenten Speicher zu speichern.
 
-   * Der Programmierer-Service kann den Grund für eine Entscheidung bezüglich der verweigerten Autorisierung ermitteln, indem er den [Fehlercode und die Meldung) prüft](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) die in der Antwort vom Endpunkt Decisions Authorize enthalten sind. Diese Details geben insight den spezifischen Grund an, aus dem die Autorisierungsanfrage abgelehnt wurde. So kann das Benutzererlebnis oder der Trigger über die erforderliche Verarbeitung in der Streaming-App informiert werden. Stellen Sie sicher, dass ein zum Abrufen von Autorisierungsentscheidungen implementierter Wiederholungsmechanismus nicht zu einer Endlosschleife führt, wenn die Autorisierungsentscheidung abgelehnt wird. Erwägen Sie, weitere Zustellversuche auf eine angemessene Anzahl zu beschränken und Ablehnungen elegant zu handhaben, indem Sie dem Benutzer klares Feedback senden.
+  * Der Programmierer-Service kann den Grund für eine Entscheidung bezüglich der verweigerten Autorisierung ermitteln, indem er den [Fehlercode und die Meldung) prüft](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) die in der Antwort vom Endpunkt Decisions Authorize enthalten sind. Diese Details geben insight den spezifischen Grund an, aus dem die Autorisierungsanfrage abgelehnt wurde. So kann das Benutzererlebnis oder der Trigger über die erforderliche Verarbeitung in der Streaming-App informiert werden. Stellen Sie sicher, dass ein zum Abrufen von Autorisierungsentscheidungen implementierter Wiederholungsmechanismus nicht zu einer Endlosschleife führt, wenn die Autorisierungsentscheidung abgelehnt wird. Erwägen Sie, weitere Zustellversuche auf eine angemessene Anzahl zu beschränken und Ablehnungen elegant zu handhaben, indem Sie dem Benutzer klares Feedback senden.
 
-   * Der Programmierer-Service kann andere Geschäftsregeln bewerten und eine geeignete Autorisierungsentscheidung an die Streaming-App zurückgeben.
+  * Der Programmierer-Service kann andere Geschäftsregeln bewerten und eine geeignete Autorisierungsentscheidung an die Streaming-App zurückgeben.
 
-   * Der Programmierer-Service ist nicht erforderlich, um ein abgelaufenes Medien-Token zu aktualisieren, während der Stream aktiv wiedergegeben wird. Wenn das Medien-Token während der Wiedergabe abläuft, sollte der Stream ununterbrochen fortgesetzt werden können. Der Client muss jedoch beim nächsten Versuch, eine Ressource abzuspielen, eine neue Autorisierungsentscheidung anfordern und ein neues Medien-Token abrufen.
+  * Der Programmierer-Service ist nicht erforderlich, um ein abgelaufenes Medien-Token zu aktualisieren, während der Stream aktiv wiedergegeben wird. Wenn das Medien-Token während der Wiedergabe abläuft, sollte der Stream ununterbrochen fortgesetzt werden können. Der Client muss jedoch beim nächsten Versuch, eine Ressource abzuspielen, eine neue Autorisierungsentscheidung anfordern und ein neues Medien-Token abrufen.
 
-   * Der Programmierer-Service kann in einer einzelnen API-Anfrage, in der Regel bis zu 1, eine Autorisierungsentscheidung für eine begrenzte Anzahl von Ressourcen erhalten, da die MVPDs Bedingungen festlegen.
+  * Der Programmierer-Service kann in einer einzelnen API-Anfrage, in der Regel bis zu 1, eine Autorisierungsentscheidung für eine begrenzte Anzahl von Ressourcen erhalten, da die MVPDs Bedingungen festlegen.
 
 ## E. Abmeldephase {#logout-phase}
 
@@ -332,12 +333,12 @@ Häufig gestellte Fragen
 
 * Adobe Pass-Abmeldung initiieren: Der Programmierer-Service initiiert den Abmeldefluss wie von der Streaming-App angefordert, indem er den Endpunkt [/api/v2/{serviceProvider}/logout/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) aufruft.
 
-   * Der Programmierdienst kann alle gespeicherten Informationen über den authentifizierten Benutzer bereinigen.
+  * Der Programmierdienst kann alle gespeicherten Informationen über den authentifizierten Benutzer bereinigen.
 
-   * Der Programmierdienst muss den Anweisungen in den `actionName`- und `actionType`-Attributen der Antwort des Abmeldeendpunkts folgen, um sicherzustellen, dass der Abmeldevorgang korrekt abgeschlossen wird.
+  * Der Programmierdienst muss den Anweisungen in den `actionName`- und `actionType`-Attributen der Antwort des Abmeldeendpunkts folgen, um sicherzustellen, dass der Abmeldevorgang korrekt abgeschlossen wird.
 
-      * Wenn das `actionType` Attribut in der Antwort auf „interaktiv“ festgelegt ist, muss der Programmierer-Service den Wert des `url` Attributs an die Streaming-App zurückgeben.
+    * Wenn das `actionType` Attribut in der Antwort auf „interaktiv“ festgelegt ist, muss der Programmierer-Service den Wert des `url` Attributs an die Streaming-App zurückgeben.
 
-         * **Szenario 1:** Die Streaming-App kann einen Browser oder eine Webansicht öffnen, daher muss die Abmelde-`url` geladen werden.
+      * **Szenario 1:** Die Streaming-App kann einen Browser oder eine Webansicht öffnen, daher muss die Abmelde-`url` geladen werden.
 
-         * **Szenario 2:** Die Streaming-App kann keinen Browser öffnen. Daher kann der Abmeldevorgang angehalten werden, da die MVPD-Sitzung nicht in einem Browser-Cache für Streaming-Geräte gespeichert wurde.
+      * **Szenario 2:** Die Streaming-App kann keinen Browser öffnen. Daher kann der Abmeldevorgang angehalten werden, da die MVPD-Sitzung nicht in einem Browser-Cache für Streaming-Geräte gespeichert wurde.

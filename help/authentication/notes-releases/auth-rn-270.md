@@ -2,13 +2,14 @@
 title: Versionshinweise zur Adobe Pass-Authentifizierung 2.70
 description: Versionshinweise zur Adobe Pass-Authentifizierung 2.70
 exl-id: 81713f8e-bc51-4057-9b00-6a2d6c83cd02
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '136'
+source-wordcount: '141'
 ht-degree: 0%
-
 ---
-
 # Versionshinweise zur Adobe Pass-Authentifizierung 2.70 {#authn-270-rn}
 
 >[!IMPORTANT]
@@ -34,11 +35,11 @@ Veröffentlichungsdatum: **04/23/2024 - 04/25/2024**
 
 * Behobene Sicherheitslücken.
 * Verbesserungen am Degradation API-Service.
-   * Verwenden Sie DCR als Sicherheitsmechanismus für die Degradation-API.
-   * Weitere Informationen finden Sie hier: [Abbaufunktion](../integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+  * Verwenden Sie DCR als Sicherheitsmechanismus für die Degradation-API.
+  * Weitere Informationen finden Sie hier: [Abbaufunktion](../integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
 
 #### REST-APIs
 
 * Laufende Entwicklung zu neuen REST-APIs.
-   * In einer kommenden dedizierten Version werden neue Endpunkte und Flüsse eingeführt, die in einer separaten Benachrichtigung angekündigt werden.
-   * Die Dokumentation für die Verwendung dieser neuen APIs wird derzeit aktualisiert.
+  * In einer kommenden dedizierten Version werden neue Endpunkte und Flüsse eingeführt, die in einer separaten Benachrichtigung angekündigt werden.
+  * Die Dokumentation für die Verwendung dieser neuen APIs wird derzeit aktualisiert.

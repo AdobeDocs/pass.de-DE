@@ -2,13 +2,14 @@
 title: Integrieren von Server-seitigen Daten der Adobe Pass-Authentifizierung in Adobe Analytics
 description: Integrieren von Server-seitigen Daten der Adobe Pass-Authentifizierung in Adobe Analytics
 exl-id: c1f1f2a3-c98c-4aed-92ad-1f9bfd80b82b
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1140'
 ht-degree: 0%
-
 ---
-
 # Integrieren von Server-seitigen Daten der Adobe Pass-Authentifizierung in Adobe Analytics
 
 >[!NOTE]
@@ -19,7 +20,7 @@ Kunden mit Adobe Pass-Authentifizierung möchten die Server-seitigen Daten der A
 
 Die Daten dienen dazu, wichtige TVE-Metriken wie Authentifizierungs-Konversionsraten pro MVPD, Unique Users basierend auf der MVPD User ID und mehr zu verfolgen.
 
-Sie soll keine Client-seitige Implementierung ersetzen, sofern bereits eine vorhanden ist, da die Benutzeraktivität ohne Besucher-ID über die unten stehenden spezifischen Ereignisse hinaus nicht verfolgt werden kann. Wenn Kunden bei Pass-Aufrufen eine Besucher-ID angeben, können wir einen anderen Typ der Analytics-Integration entsperren - Echtzeit -, der alle Pass-Ereignisse mit den vorhandenen Kundendaten verbinden kann. Weitere Details zu diesem neuen Typ der möglichen Integration finden Sie hier: &quot;[Verwenden der Experience Cloud-ID in der Adobe Pass-Authentifizierung](/help/authentication/integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)&quot;
+Sie soll keine Client-seitige Implementierung ersetzen, sofern bereits eine vorhanden ist, da die Benutzeraktivität ohne Besucher-ID über die unten stehenden spezifischen Ereignisse hinaus nicht verfolgt werden kann. Wenn Kunden bei Pass-Aufrufen eine Besucher-ID angeben, können wir einen anderen Typ der Analytics-Integration entsperren - Echtzeit -, der alle Pass-Ereignisse mit den vorhandenen Kundendaten verbinden kann. Weitere Details zu diesem neuen Typ der möglichen Integration finden Sie hier: &quot;[Verwenden der Experience Cloud ID in der Adobe Pass-Authentifizierung](/help/authentication/integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)&quot;
 
 ## Enthaltene Metriken {#metrics-included-int-authn-analyt}
 
@@ -49,8 +50,8 @@ Sie soll keine Client-seitige Implementierung ersetzen, sofern bereits eine vorh
 | SDK-Version | Die Version des Adobe Pass-Authentifizierungs-Clients SDK |
 | Ressourcen-ID | Der tatsächlich an der Autorisierungsanfrage beteiligte Ressourcentitel (extrahiert aus der MRSS-Payload als Element/Titel, falls angegeben) |
 | AuthZ-Fehlertyp | Der Grund für die Fehler, wie von Adobe Pass Authentication <br/> gemeldet. Hier finden Sie die häufigsten Werte <br/> **noAuthZ** = Der MVPD antwortete, dass der Benutzer den Kanal nicht in seinem Paket habe<br/> **Netzwerk** = Wir konnten die MVPD nicht erreichen (MVPD hat zum Zeitpunkt des Anrufs ein Problem und hat nicht geantwortet)<br/> **norefreshToken** = Dies ist ausschließlich für OAuth-Implementierungen. Dies kann vorkommen, wenn Benutzende ihr Kennwort ändern oder MVPD es aus irgendeinem Grund verweigert. Dies führt normalerweise zu einer neuen Authentifizierung<br/> **nicht übereinstimmen** = wenn die Anfrage von einem Gerät stammt, das sich von dem Gerät mit dem Authentifizierungs-Token unterscheidet. Dies kann vorkommen, wenn Benutzende versuchen, das System auszutricksen, aber die meisten davon ereigneten sich im Kontext unserer alten JavaScript SDK, wo die Geräte-ID die IP-Adresse als Teil der Berechnung verwendet hat. Wenn ein(e) Benutzende(r) TVE zu Hause und dann bei der Arbeit angeschaut hat, wird dieser Fehler ausgelöst und er/sie muss sich erneut authentifizieren<br/> **ungültig** = ungültige Anfrage, fehlende oder ungültige Parameter<br/>  **authzNone** = Programmierer können die Autorisierung für eine bestimmte channelxMVPD-Kombination verweigern. Dies wird durch eine Backend-API ausgelöst, auf die Programmierer Zugriff haben<br/> **Betrug** = das ist ein Schutzmechanismus auf unserer Seite. Wenn die Autorisierung fehlschlägt und der Benutzer sie dann mehrmals in einem kurzen Intervall (Sekunden) erneut anfordert, verweigern wir den Aufruf direkt. Dies geschieht in der Regel, wenn ein Programmierer einen Fehler in seiner Implementierung hat, der ständig um Autorisierung bittet, wenn er fehlschlägt. |
-| Token-Typ | Wenn Token aufgrund von AuthZ All und AuthN All erstellt werden, müssen wir wissen, was durch eine Abbaumaßnahme verursacht wird.<br/> Sie sind:<br/> „normal“ = der Normalfall<br/> „authnall“ = Wenn AuthN Alle aktiviert ist<br/> „authzall“ = Wenn AuthZ Alle aktiviert ist<br/> „hba“ = Wenn HBA aktiviert ist |
-| Clientloser Gerätetyp | Die Geräteplattform (alternativ), die derzeit für Clientless verwendet wird.<br/> Die Werte können sein: <br/> Nicht zutreffend - das Ereignis stammt nicht von einer Client-losen SDK<br/> Unbekannt - Da der deviceType-Parameter von einer **Client-API** optional ist, gibt es Aufrufe, die keinen Wert enthalten.<br/> Alle anderen Werte, die über die **Clientless-API“ gesendet**. Beispiel: xbox, appletTV und roku. |
+| Token-Typ | Wenn Token aufgrund von AuthZ All und AuthN All erstellt werden, müssen wir wissen, was durch eine Abbaumaßnahme verursacht wird.<br/> Sie sind: <br/> „normal“ = der Normalfall<br/> „authNall“ = Wenn AuthN Alle aktiviert ist<br/> „authZall“ = Wenn AuthZ Alle aktiviert ist<br/> „hba“ = Wenn HBA aktiviert ist |
+| Clientloser Gerätetyp | Die Geräteplattform (alternativ), die derzeit für Clientless verwendet wird.<br/> Die Werte können wie folgt lauten: <br/> Entfällt - das Ereignis stammt nicht aus einer Client-losen SDK<br/> Unbekannt - Da der deviceType-Parameter von einer **Client-API** optional ist, gibt es Aufrufe, die keinen Wert enthalten.<br/> Alle anderen Werte, die über die „Clientless **API“ gesendet**. Beispiel: xbox, appletTV und roku. |
 | MVPD-Benutzer-ID | Ersetzt die Cookie-basierte Besucher-ID |
 
 
@@ -72,7 +73,7 @@ Da es sich nicht um eine kritische Komponente handelt, gibt es keine SLA-Garanti
 
 Der Bericht muss mit einem Zeitstempel versehen sein, da die Ereignisse in Stapeln gesendet werden.
 
-### -Events {#report-suite-config-events}
+### Ereignisse {#report-suite-config-events}
 
 
 >[!NOTE]

@@ -2,13 +2,14 @@
 title: Ersetzen eines Platform SSO-Tokens durch ein Adobe-Token
 description: Ersetzen eines Platform SSO-Tokens durch ein Adobe-Token
 exl-id: 5ab60268-8f97-4755-8281-be45e812ed7f
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '251'
-ht-degree: 0%
-
+source-wordcount: '258'
+ht-degree: 3%
 ---
-
 # (Legacy) Ersetzen eines Platform SSO-Tokens durch ein Adobe-Token {#exchange-a-platform-sso-token-for-an-adobe-token}
 
 >[!NOTE]
@@ -41,9 +42,9 @@ ht-degree: 0%
 
 Ermöglicht den „Austausch“ eines Platform SSO-Profils gegen ein Adobe-Token.
 
-| Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
+| Endpunkt | Called </br>by | Input </br>params | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/tokens/authn | Streaming-App</br></br>oder</br></br>Programmierer-Service | &#x200B;1. Antragsteller (obligatorisch)</br>    </br>2.  deviceId (obligatorisch)</br>    </br>3.  MVPD (obligatorisch)</br>    </br>4.  deviceType (Obligatorisch)</br>    </br>5.  SAMLReantwort (obligatorisch)</br>    </br>6.  deviceUser (veraltet)</br>    </br>7.  appId (veraltet) | POST | Die erfolgreiche Antwort lautet 204 Kein Inhalt. Dies bedeutet, dass das Token erfolgreich erstellt wurde und für die Autorisierungsflüsse verwendet werden kann. | 204 - Kein Inhalt   </br>400 - Fehlerhafte Anfrage |
+| &lt;SP_FQDN>/api/v1/tokens/authn | Streaming-App</br></br>oder</br></br>Programmierer-Service | &#x200B;1.  Antragsteller (obligatorisch)</br>    </br>2.  deviceId (obligatorisch)</br>    </br>3.  MVPD (obligatorisch)</br>    </br>4.  deviceType (Obligatorisch)</br>    </br>5.  SAMLReantwort (obligatorisch)</br>    </br>6.  deviceUser (veraltet)</br>    </br>7.  appId (veraltet) | POST | Die erfolgreiche Antwort lautet 204 Kein Inhalt. Dies bedeutet, dass das Token erfolgreich erstellt wurde und für die Autorisierungsflüsse verwendet werden kann. | 204 - Kein Inhalt </br>400 - Fehlerhafte Anfrage |
 
 
 | Eingabeparameter | Beschreibung |

@@ -2,13 +2,14 @@
 title: Versionshinweise zur gleichzeitigen Überwachung von Adobe Pass 2.5.0
 description: Versionshinweise zur gleichzeitigen Überwachung von Adobe Pass 2.5.0
 exl-id: da392b18-a2aa-4f51-a75f-2c5b65b2b073
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '286'
+source-wordcount: '288'
 ht-degree: 0%
-
 ---
-
 # Versionshinweise zur gleichzeitigen Überwachung von Adobe Pass 2.5.0 {#cm-250}
 
 Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme dieser Version beschrieben:
@@ -35,9 +36,9 @@ Die V2-Version vereinheitlicht Heartbeat- und Abfrageaufrufe und vereinfacht die
 
 * Wenn es sinnvoll ist, beinhaltet die Antwort:
 
-   * Zugehörige Ratschläge - detaillierte Erklärung(en) des Fehlers, die dem Benutzer mitzuteilen ist.
+  * Zugehörige Ratschläge - detaillierte Erklärung(en) des Fehlers, die dem Benutzer mitzuteilen ist.
 
-   * Pflichten - Obligatorische Aktionen, die die Anwendung ausführen muss (z. B.: Metadaten aktualisieren, sich von Adobe Pass abmelden).
+  * Pflichten - Obligatorische Aktionen, die die Anwendung ausführen muss (z. B.: Metadaten aktualisieren, sich von Adobe Pass abmelden).
 
 ### Metadaten {#metadata}
 

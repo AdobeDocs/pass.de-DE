@@ -2,13 +2,14 @@
 title: Einzelne Abmeldung - Fluss
 description: REST API v2 - Einzelne Abmeldung - Fluss
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '599'
 ht-degree: 0%
-
 ---
-
 # Fluss für einmaliges Abmelden {#single-logout-flow}
 
 >[!IMPORTANT]
@@ -30,8 +31,8 @@ ht-degree: 0%
 Stellen Sie vor dem Initiieren des einmaligen Abmeldens für eine bestimmte MVPD sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
 * Die zweite Streaming-Anwendung muss über ein gültiges Single-Sign-On-Profil verfügen, das für den MVPD mit einem der Single-Sign-On-Authentifizierungsflüsse erfolgreich erstellt wurde:
-   * [Durchführen der Authentifizierung über Single Sign-on unter Verwendung der Platform-Identität](rest-api-v2-single-sign-on-platform-identity-flows.md)
-   * [Durchführen der Authentifizierung über Single Sign-on mit dem Service-Token](rest-api-v2-single-sign-on-service-token-flows.md)
+  * [Durchführen der Authentifizierung über Single Sign-on unter Verwendung der Platform-Identität](rest-api-v2-single-sign-on-platform-identity-flows.md)
+  * [Durchführen der Authentifizierung über Single Sign-on mit dem Service-Token](rest-api-v2-single-sign-on-service-token-flows.md)
 * Die zweite Streaming-Anwendung muss den Ablauf der einmaligen Abmeldung initiieren, wenn sie sich von der MVPD abmelden muss.
 
 >[!IMPORTANT]

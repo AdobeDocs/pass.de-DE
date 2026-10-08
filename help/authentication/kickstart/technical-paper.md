@@ -2,13 +2,14 @@
 title: Über die Adobe Pass-Authentifizierung
 description: Über die Adobe Pass-Authentifizierung
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1863'
 ht-degree: 0%
-
 ---
-
 # Über die Authentifizierung mit Adobe® Pass {#about-adobe-pass-authentication}
 
 >[!IMPORTANT]
@@ -165,15 +166,15 @@ Die Adobe Pass-Authentifizierung dient als Proxy und erleichtert den Berechtigun
 Für Programmierer stellt die Adobe Pass-Authentifizierung APIs als Teil einer **Standard**- oder **Premium**-Ebene bereit:
 
 * Standard-APIs zur Adobe Pass-Authentifizierung:
-   * [REST-API-DCR](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
-   * [REST-API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [REST-API-DCR](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+  * [REST-API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * Premium Adobe Pass-Authentifizierungs-APIs:
-   * [Temporäre Pass-API zurücksetzen](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [TempPass-Funktion](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
-   * [Abbauungs-API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
-      * [Abbaumerkmal](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
-   * [Berechtigungs-Service-Überwachungs-API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
+  * [Temporäre Pass-API zurücksetzen](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+    * [TempPass-Funktion](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+  * [Abbauungs-API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+    * [Abbaumerkmal](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+  * [Berechtigungs-Service-Überwachungs-API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 Weitere Informationen zum Ablauf von Berechtigungen finden Sie in der Dokumentation [Handbuch zur Programmiererintegration](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow).
 
@@ -208,18 +209,18 @@ Programmierer sind für die Gestaltung und Implementierung der Benutzeroberfläc
 Programmierer müssen mindestens:
 
 * **Implementieren einer Schnittstelle zur Anbieterauswahl**
-   * Ermöglichen Sie es neuen Nutzern, ihren Pay-TV-Anbieter zu identifizieren und sich zum ersten Mal anzumelden.
-   * Einige Pay-TV-Anbieter leiten Benutzer zu einer externen Anmeldeseite weiter, während andere die Anmeldung innerhalb eines iFrames erfordern. Programmierer müssen eine Callback-Funktion implementieren, um bei Bedarf den iframe zu generieren.
+  * Ermöglichen Sie es neuen Nutzern, ihren Pay-TV-Anbieter zu identifizieren und sich zum ersten Mal anzumelden.
+  * Einige Pay-TV-Anbieter leiten Benutzer zu einer externen Anmeldeseite weiter, während andere die Anmeldung innerhalb eines iFrames erfordern. Programmierer müssen eine Callback-Funktion implementieren, um bei Bedarf den iframe zu generieren.
 
 * **Verwalten einer Liste unterstützter Pay-TV-Anbieter**
-   * Stellen Sie sicher, dass Benutzer nur über genehmigte Anbieter auf Inhalte zugreifen können.
+  * Stellen Sie sicher, dass Benutzer nur über genehmigte Anbieter auf Inhalte zugreifen können.
 
 * **Authentifizierungsstatus angeben**
-   * Anzeigen, wenn ein Benutzer in der App oder auf der Website authentifiziert wird.
+  * Anzeigen, wenn ein Benutzer in der App oder auf der Website authentifiziert wird.
 
 * **Identifizieren geschützter Ressourcen**
-   * Geben Sie klar an, welche Inhalte autorisiert werden müssen, bevor sie angezeigt werden.
-   * Aktualisieren Sie die Benutzeroberfläche, um die erfolgreiche Autorisierung widerzuspiegeln, sobald der Zugriff gewährt wurde.
+  * Geben Sie klar an, welche Inhalte autorisiert werden müssen, bevor sie angezeigt werden.
+  * Aktualisieren Sie die Benutzeroberfläche, um die erfolgreiche Autorisierung widerzuspiegeln, sobald der Zugriff gewährt wurde.
 
 ## FAQs {#faqs}
 

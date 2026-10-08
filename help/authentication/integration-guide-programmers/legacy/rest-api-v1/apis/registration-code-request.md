@@ -2,13 +2,14 @@
 title: Anmeldeseite
 description: Anmeldeseite
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '528'
+source-wordcount: '529'
 ht-degree: 0%
-
 ---
-
 # (Veraltete) Registrierungsseite {#registration-page}
 
 ## REST-API-Endpunkte {#clientless-endpoints}
@@ -41,9 +42,9 @@ ht-degree: 0%
 
 Gibt den zufällig generierten Registrierungs-Code und den Anmeldeseiten-URI zurück.
 
-| Endpunkt | Called <br>by | Eingabe   <br>Parameter | HTTP <br>Methode | Antwort | HTTP <br>Antwort |
+| Endpunkt | Called <br>by | Input <br>Parameter | HTTP <br>Methode | Antwort | HTTP <br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Beispiel:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Streaming-App<br>oder<br>Programmierer-Service | &#x200B;1.  Antragsteller-<br>    (Pfadkomponente)<br>2.  deviceId (gehasht)   <br>    (mandatory)<br>3.  device_info/X-device-info (obligatorisch)<br>4.  mvpd (optional)<br>5.  TTL (optional)<br> | POST | XML oder JSON mit einem Registrierungs-Code und Informationen oder Fehlerdetails, falls nicht erfolgreich. Siehe Beispiele unten. | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Beispiel:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Streaming-App<br>oder<br>Programmierer-Service | &#x200B;1.  Requestor <br> (Pfadkomponente)<br>2.  deviceId (Hash) <br> (obligatorisch)<br>3.  device_info/X-device-info (obligatorisch)<br>4.  mvpd (optional)<br>5.  TTL (optional)<br> | POST | XML oder JSON mit einem Registrierungs-Code und Informationen oder Fehlerdetails, falls nicht erfolgreich. Siehe Beispiele unten. | 201 |
 
 {style="table-layout:auto"}
 
@@ -65,7 +66,8 @@ Gibt den zufällig generierten Registrierungs-Code und den Anmeldeseiten-URI zur
 >[!CAUTION]
 >
 >**IP-Adresse des Streaming-Geräts**
-><br>>Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts mit diesem Aufruf implizit gesendet.  Bei Server-zu-Server-Implementierungen, bei denen der **regcode**-Aufruf vom Programmierdienst und nicht vom Streaming-Gerät erfolgt, ist der folgende Header erforderlich, um die IP-Adresse des Streaming-Geräts zu übergeben:
+><br>
+>Bei Client-zu-Server-Implementierungen wird die IP-Adresse des Streaming-Geräts mit diesem Aufruf implizit gesendet.  Bei Server-zu-Server-Implementierungen, bei denen der **regcode**-Aufruf vom Programmierdienst und nicht vom Streaming-Gerät erfolgt, ist der folgende Header erforderlich, um die IP-Adresse des Streaming-Geräts zu übergeben:
 >
 >
 >```
@@ -73,7 +75,8 @@ Gibt den zufällig generierten Registrierungs-Code und den Anmeldeseiten-URI zur
 >```
 >
 >wobei `<streaming\_device\_ip>` die öffentliche IP-Adresse des Streaming-Geräts ist.
-><br><br>>Beispiel : <br>
+><br><br>
+>Beispiel : <br>
 >
 >```
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20

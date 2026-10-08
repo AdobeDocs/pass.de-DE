@@ -2,13 +2,14 @@
 title: Amazon FireOS SDK mit dynamischer Client-Registrierung
 description: Amazon FireOS SDK mit dynamischer Client-Registrierung
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1185'
 ht-degree: 1%
-
 ---
-
 
 # (Legacy) Amazon FireOS SDK mit dynamischer Client-Registrierung {#amazon-fireos-sdk-with-dynamic-client-registration}
 
@@ -123,8 +124,8 @@ Veraltet:
 
   SDK führt die folgenden Vorgänge aus:
 
-   - Registrierungsanwendung: Mit **Software\_Statement** erhält die SDK eine **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Diese Informationen werden im internen Speicher der Anwendung gespeichert.
-   - Rufen Sie ein **access\_token** mithilfe von client\_id, client\_secret und grant\_type=„client\_credentials“ ab. Dieses Zugriffs-Token wird bei jedem Aufruf von SDK an Adobe Pass-Server verwendet.
+  - Registrierungsanwendung: Mit **Software\_Statement** erhält die SDK eine **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Diese Informationen werden im internen Speicher der Anwendung gespeichert.
+  - Rufen Sie ein **access\_token** mithilfe von client\_id, client\_secret und grant\_type=„client\_credentials“ ab. Dieses Zugriffs-Token wird bei jedem Aufruf von SDK an Adobe Pass-Server verwendet.
 
 | Token-Fehlerantworten : |  |  |
 |--- | --- | --- |
@@ -136,21 +137,21 @@ Veraltet:
 
 - B. checkAuthentication()
 
-   - *true* : zur Autorisierung wechseln
-   - *false* : Wechseln Sie zu MVPD auswählen
+  - *true* : zur Autorisierung wechseln
+  - *false* : Wechseln Sie zu MVPD auswählen
 
 - C. getAuthentication : Die SDK enthält **access_token** in den Aufrufparametern
 
-   - mvpd gespeichert : Gehen Sie zu setSelectedProvider(mvpd\_id)
-   - mvpd nicht ausgewählt : displayProviderDialog
-   - mvpd ausgewählt : Gehen Sie zu setSelectedProvider(mvpd\_id)
+  - mvpd gespeichert : Gehen Sie zu setSelectedProvider(mvpd\_id)
+  - mvpd nicht ausgewählt : displayProviderDialog
+  - mvpd ausgewählt : Gehen Sie zu setSelectedProvider(mvpd\_id)
 
 - d. setSelectedProvider
 
-   - Die Authentifizierungs-URL mvpd\_id wird in ChromeCustomTabs geladen
-   - Anmeldung erfolgreich: delegate.setAuthenticationStatus ( SUCCESS )
-   - Anmeldung abgebrochen : MVPD-Auswahl zurücksetzen
-   - Das URL-Schema wird als &quot;adobepass://android.app&quot; festgelegt, um zu erfassen, wann die Authentifizierung abgeschlossen ist
+  - Die Authentifizierungs-URL mvpd\_id wird in ChromeCustomTabs geladen
+  - Anmeldung erfolgreich: delegate.setAuthenticationStatus ( SUCCESS )
+  - Anmeldung abgebrochen : MVPD-Auswahl zurücksetzen
+  - Das URL-Schema wird als &quot;adobepass://android.app&quot; festgelegt, um zu erfassen, wann die Authentifizierung abgeschlossen ist
 
 - E. get/checkAuthorization : SDK fügt den Header **access\_token** als Autorisierung hinzu: Bearer **access\_token**
 
@@ -158,10 +159,10 @@ Veraltet:
 
 - F. Abmelden :
 
-   - SDK löscht ein gültiges Token für den aktuellen Anforderer (Authentifizierungen, die von anderen Programmen und nicht über SSO erhalten wurden, bleiben gültig)
-   - SDK öffnet benutzerdefinierte Chrome-Registerkarten, um den Abmeldeendpunkt mvpd\_id zu erreichen. Nach Abschluss des Vorgangs werden die benutzerdefinierten Registerkarten von Chrome geschlossen
-   - Das URL-Schema wird als &quot;adobepass://logout&quot; festgelegt, um den Zeitpunkt des Abmeldevorgangs zu erfassen
-   - Bei der Abmeldung werden SendTrackingData(new Event(EVENT\_LOGOUT,USER\_NOT\_AUTHENTICATED\_ERROR) und ein Callback : setAuthenticationStatus(0,„Logout„) Trigger
+  - SDK löscht ein gültiges Token für den aktuellen Anforderer (Authentifizierungen, die von anderen Programmen und nicht über SSO erhalten wurden, bleiben gültig)
+  - SDK öffnet benutzerdefinierte Chrome-Registerkarten, um den Abmeldeendpunkt mvpd\_id zu erreichen. Nach Abschluss des Vorgangs werden die benutzerdefinierten Registerkarten von Chrome geschlossen
+  - Das URL-Schema wird als &quot;adobepass://logout&quot; festgelegt, um den Zeitpunkt des Abmeldevorgangs zu erfassen
+  - Bei der Abmeldung werden SendTrackingData(new Event(EVENT\_LOGOUT,USER\_NOT\_AUTHENTICATED\_ERROR) und ein Callback : setAuthenticationStatus(0,„Logout„) Trigger
 
 
 

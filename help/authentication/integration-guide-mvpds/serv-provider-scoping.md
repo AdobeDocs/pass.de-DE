@@ -2,13 +2,14 @@
 title: Service Provider-Umfang
 description: Service Provider-Umfang
 exl-id: 730c43e1-46c0-4eec-b562-b1ad93cce6d3
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '314'
 ht-degree: 0%
-
 ---
-
 # Service Provider-Umfang {#service-provoider-scoping}
 
 >[!NOTE]
@@ -25,9 +26,9 @@ Da die Adobe Pass-Authentifizierung für den Programmierer die Rolle des SP übe
 
 Die Adobe Pass-Authentifizierung unterstützt die folgenden beiden Möglichkeiten, um die SP-Begrenzung von Authentifizierungsanfragen zu aktivieren:
 
-* **Der SAML-Ausstelleransatz.** Bei diesem Ansatz wird die „Anforderer-ID“ an die SAML-Ausstellerzeichenfolge in der SAML-Authentifizierungsanfrage angehängt.
+* **Der SAML-Ausstelleransatz.**  Bei diesem Ansatz wird die „Anforderer-ID“ an die SAML-Ausstellerzeichenfolge in der SAML-Authentifizierungsanfrage angehängt.
 
-* **Der Ansatz der benutzerdefinierten Scoping-Eigenschaft.** Bei diesem Ansatz wird die „Anforderer-ID“ explizit als benutzerdefinierte Eigenschaft „Scoping“ in die SAML-Authentifizierungsanfrage aufgenommen.
+* **Der Ansatz der benutzerdefinierten Scoping-Eigenschaft.**  Bei diesem Ansatz wird die „Anforderer-ID“ explizit als benutzerdefinierte Eigenschaft „Scoping“ in die SAML-Authentifizierungsanfrage aufgenommen.
 
 >[!NOTE]
 >

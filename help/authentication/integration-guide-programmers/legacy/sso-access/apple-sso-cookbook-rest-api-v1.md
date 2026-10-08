@@ -2,13 +2,14 @@
 title: Apple SSO-Cookbook (REST API v1)
 description: Apple SSO-Cookbook (REST API v1)
 exl-id: 072a011f-e1bb-4d3e-bcb5-697f2d1739cc
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1496'
+source-wordcount: '1596'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Apple SSO Cookbook (REST API v1) {#apple-sso-cookbook-rest-api-v1}
 
 >[!IMPORTANT]
@@ -35,7 +36,7 @@ Um von dem Apple SSO-Benutzererlebnis zu profitieren, muss die Anwendung das von
 
 >[!TIP]
 >
-> **<u>Profi-Tipp:</u>** Wir empfehlen, Benutzern, die sich weigern, Berechtigungen für den Zugriff auf Abonnementinformationen zu erteilen, Anreize zu bieten, indem sie die Vorteile des Apple-Single-Sign-On-Benutzererlebnisses erklären. Beachten Sie jedoch, dass die Benutzenden ihre Entscheidung ändern können, indem sie zu den Anwendungseinstellungen gehen (Zugriff auf TV-Anbieter) oder auf iOS und iPadOS oder *`Settings -> TV Provider`* auf tvOS *`Settings -> Accounts -> TV Provider`*.
+> **<u>Profi-Tipp:</u>** Wir empfehlen, Benutzern, die sich weigern, Berechtigungen für den Zugriff auf Abonnementinformationen zu erteilen, Anreize zu bieten, indem sie die Vorteile des Apple-Single-Sign-On-Benutzererlebnisses erklären. Beachten Sie jedoch, dass die Benutzenden ihre Entscheidung ändern können, indem sie zu den Anwendungseinstellungen gehen (Zugriff auf TV-Anbieter) oder auf iOS und iPadOS oder *`Settings -> Accounts -> TV Provider`* auf tvOS *`Settings -> TV Provider`*.
 
 >[!TIP]
 >
@@ -402,7 +403,7 @@ Das [Video Subscriber Account Framework](https://developer.apple.com/documentati
 >
 > **<u>Profi-Tipp</u>** Führen Sie die folgenden Schritte für die tvOS-Implementierung(en) aus.
 
-* Die Anwendung muss mithilfe von &quot;*tokenSource“ (Benutzermetadaten) aus dem Adobe Pass-Authentifizierungsdienst feststellen, ob die Authentifizierung als Ergebnis einer Anmeldung über* Partner-SSO erfolgt [&#x200B; &#x200B;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md).
+* Die Anwendung muss mithilfe von &quot;*tokenSource“ (Benutzermetadaten) aus dem Adobe Pass-Authentifizierungsdienst feststellen, ob die Authentifizierung als Ergebnis einer Anmeldung über [&#128279;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) Partner-SSO erfolgt* .
 * Die Anwendung muss den Benutzer anweisen/auffordern, sich explizit von *`Settings -> Accounts -> TV Provider`* unter tvOS abzumelden **nur**, wenn der *„tokenSource“* Wert &quot;*Apple&quot; entspricht.*
 * Die Anwendung müsste [Abmelden) vom Adobe Pass-Authentifizierungs](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)Service über einen direkten HTTP-Aufruf starten. Dies würde die Sitzungsbereinigung auf MVPD-Seite nicht erleichtern.
 
@@ -410,6 +411,6 @@ Das [Video Subscriber Account Framework](https://developer.apple.com/documentati
 >
 > **<u>Profi-Tipp</u>** Führen Sie die folgenden Schritte für die Implementierung(en) von iOS/iPadOS aus.
 
-* Die Anwendung muss mithilfe von &quot;*tokenSource“ (Benutzermetadaten) aus dem Adobe Pass-Authentifizierungsdienst feststellen, ob die Authentifizierung als Ergebnis einer Anmeldung über* Partner-SSO erfolgt [&#x200B; &#x200B;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md).
+* Die Anwendung muss mithilfe von &quot;*tokenSource“ (Benutzermetadaten) aus dem Adobe Pass-Authentifizierungsdienst feststellen, ob die Authentifizierung als Ergebnis einer Anmeldung über [&#128279;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) Partner-SSO erfolgt* .
 * Die Anwendung müsste den Benutzer anweisen/auffordern, sich explizit von *`Settings -> TV Provider`* auf iOS/iPadOS abzumelden **nur** wenn der *„tokenSource“* Wert *&quot;Apple&quot;*.
 * Die Anwendung müsste [Abmelden) vom Adobe Pass-Authentifizierungsdienst &#x200B;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md) einer [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)- oder [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)-Komponente initiieren. Dies würde die Sitzungsbereinigung auf MVPD-Seite erleichtern.

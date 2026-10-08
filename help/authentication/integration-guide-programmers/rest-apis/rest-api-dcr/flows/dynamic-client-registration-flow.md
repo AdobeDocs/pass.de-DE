@@ -2,13 +2,14 @@
 title: Dynamischer Client-Registrierungsfluss
 description: Dynamischer Client-Registrierungsfluss
 exl-id: d881cf0a-de09-4b1d-a094-d5490f944796
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '564'
+source-wordcount: '567'
 ht-degree: 0%
-
 ---
-
 # Dynamischer Client-Registrierungsfluss {#dynamic-client-registration-flow}
 
 >[!IMPORTANT]
@@ -102,15 +103,15 @@ Führen Sie die angegebenen Schritte aus, um auf Adobe Pass Protected APIs zuzug
    >
    > Das Zugriffstoken muss im Cache gespeichert und nur innerhalb der angegebenen Dauer verwendet werden (z. B. 24-Stunden-Time-to-Live). Nach Ablauf muss die Client-Anwendung ein neues Zugriffstoken anfordern.
 
-1. **Zugriff auf geschützte APIs:** Die Client-Anwendung verwendet das Zugriffstoken, um auf andere durch Adobe Pass geschützte APIs zuzugreifen. Die Client-Anwendung muss das Zugriffstoken unter Verwendung des `Authorization` Authentifizierungsschemas (d. h. `Bearer`) in die `Authorization: Bearer <access_token>`-Anfragekopfzeile aufnehmen.
+1. **Zugriff auf geschützte APIs:** Die Client-Anwendung verwendet das Zugriffstoken, um auf andere durch Adobe Pass geschützte APIs zuzugreifen. Die Client-Anwendung muss das Zugriffstoken unter Verwendung des `Bearer` Authentifizierungsschemas (d. h. `Authorization: Bearer <access_token>`) in die `Authorization`-Anfragekopfzeile aufnehmen.
 
    >[!IMPORTANT]
    >
    > Die Adobe Pass-geschützten APIs überprüfen das Zugriffstoken, um sicherzustellen, dass die grundlegenden Bedingungen erfüllt sind:
    >
    > * Das _access__&quot; muss gültig sein.
-   > * Das _access_token_ muss mit einer gültigen _client_id_ und _client_secret_ verknüpft sein.
-   > * Das _access_token_ muss mit einer gültigen _software_statement_ verknüpft sein.
+   > * Das _access_ token _muss mit einer gültigen_ client _id_ und _client_secret_ verknüpft sein.
+   > * Das _access_ token _muss mit einer gültigen_ software_statement_ verknüpft sein.
    >
    > <br/>
    >

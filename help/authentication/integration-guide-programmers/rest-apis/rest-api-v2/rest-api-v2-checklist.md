@@ -2,13 +2,14 @@
 title: REST API v2-Checkliste
 description: REST API v2-Checkliste
 exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
-source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2578'
 ht-degree: 0%
-
 ---
-
 # REST API v2-Checkliste {#rest-api-v2-checklist}
 
 >[!IMPORTANT]

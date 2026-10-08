@@ -2,13 +2,14 @@
 title: Android vorautorisieren
 description: Android vorautorisieren
 exl-id: b5337595-135f-4981-a578-2da432f125d6
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '218'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Autorisieren vorab {#preuthorize-android}
 
 >[!NOTE]
@@ -26,7 +27,7 @@ Die Methode der Vorabautorisierungs-API muss von Anwendungen verwendet werden, u
 
 
 
-Im Falle eines unerwarteten Fehlers (z. B. Netzwerkproblem, nicht verfügbarer MVPD-Autorisierungsendpunkt usw.), der auftritt, wenn eine Vorabautorisierungs-API-Anfrage von den Adobe Pass-Authentifizierungs-Services verarbeitet wird, werden eine oder mehrere separate Fehlerinformationen für die betroffenen Ressourcen als Teil des Ergebnisses der Vorabautorisierungs-APIs eingefügt.
+Im Falle eines unerwarteten Fehlers (z. B. Netzwerkproblem, MVPD-Autorisierungsendpunkt nicht verfügbar usw.) Wird eine Vorabautorisierungs-API-Anfrage von den Adobe Pass-Authentifizierungs-Services verarbeitet, werden im Rahmen des Ergebnisses der Vorabautorisierungs-API eine oder mehrere separate Fehlerinformationen für die betroffenen Ressourcen eingeschlossen.
 
 
 ## `public void preauthorize(PreauthorizeRequest request, AccessEnablerCallback<PreauthorizeResponse> callback);`

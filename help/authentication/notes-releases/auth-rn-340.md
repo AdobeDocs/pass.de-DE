@@ -2,13 +2,14 @@
 title: Versionshinweise zur Adobe Pass-Authentifizierung 3.4.0
 description: Versionshinweise zur Adobe Pass-Authentifizierung 3.4.0
 exl-id: ad572617-f607-419d-a085-70c025465080
-source-git-commit: c9958a17ad9dfb518bab1d24087c85fdcb6fd057
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '185'
+source-wordcount: '190'
 ht-degree: 0%
-
 ---
-
 # Versionshinweise zur Adobe Pass-Authentifizierung 3.4.0 {#authn-340-rn}
 
 >[!IMPORTANT]
@@ -31,7 +32,7 @@ Veröffentlichungsdatum: **09/16/2025 - 09/18/2025**
 
 #### REST API v2
 
-* Unterstützung für [Experience Cloud ID (ECID) wurde hinzugefügt](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md) um die Benutzeridentifizierungs- und Tracking-Funktionen zu verbessern.
+* Es wurde Unterstützung für [Experience Cloud ID (ECID)) hinzugefügt](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md) um die Benutzeridentifizierungs- und Tracking-Funktionen zu verbessern.
 * Die Kopfzeilen „AP-Device-Identifier“ und „X-Device-Info“ wurden in „optional“ für die REST-API V2 ([-API) &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md).
 
 #### Fehlerbehebungen

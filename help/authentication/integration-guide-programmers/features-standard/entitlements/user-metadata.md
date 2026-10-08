@@ -2,20 +2,21 @@
 title: Benutzermetadaten
 description: Benutzermetadaten
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1902'
+source-wordcount: '1936'
 ht-degree: 0%
-
 ---
-
 # Benutzermetadaten {#user-metadata}
 
 >[!IMPORTANT]
 >
 > Der Inhalt dieser Seite dient nur zu Informationszwecken. Die Verwendung dieser API erfordert eine aktuelle Lizenz von Adobe. Eine unbefugte Nutzung ist nicht zulässig.
 
-Benutzermetadaten beziehen sich auf benutzerspezifische [Attribute](#attributes) (z. B. Postleitzahlen, elterliche Bewertungen, Benutzer-IDs usw.), die von MVPDs verwaltet und Programmierern über die Adobe Pass-Authentifizierung (REST [&#x200B; V2) bereitgestellt &#x200B;](#apis).
+Benutzermetadaten beziehen sich auf benutzerspezifische [Attribute](#attributes) (z. B. Postleitzahlen, elterliche Bewertungen, Benutzer-IDs usw.) die von MVPDs verwaltet und Programmierern über die Adobe Pass-Authentifizierung ([-API V2) bereitgestellt &#x200B;](#apis).
 
 Benutzermetadaten werden nach Abschluss des Authentifizierungsflusses verfügbar, aber bestimmte Metadatenattribute können während des Autorisierungsflusses aktualisiert werden, je nach MVPD und dem betreffenden spezifischen Metadatenattribut.
 
@@ -36,10 +37,10 @@ In der folgenden Tabelle sind einige der Benutzermetadatenattribute aufgeführt,
 | `householdID` | Zeichenfolge | „1O7241P“ | Nein | Kontokennung für die elterliche Kontrolle. | Der Attributwert kann verwendet werden, um zwischen der Nutzung von Haushalten und Unterkonten zu unterscheiden. Manchmal kann sie als Ersatz für die elterliche Kontrolle verwendet werden, wenn keine echten Bewertungen verfügbar sind, wenn der Benutzer mit dem Haushaltskonto angemeldet war, kann er ansehen, andernfalls würden bewertete Inhalte nicht angezeigt. Die Darstellung in MVPDs variiert stark (z. B. Haushaltsbenutzer-ID, Haushaltsleiter-ID, Haushaltsleiter-ID usw.). Wenn der MVPD keine Unterkonten unterstützt, ist die Darstellung mit der von `userID` identisch. |
 | `primaryOID` | Zeichenfolge | „UUIDd1e19ec9-012c-124f-b520-acaf118d16a0“ | Nein | Kontokennung | Das Attribut ist spezifisch für AT&amp;T. Der `primaryOID` ist derselbe wie der `userID`, wenn der `typeID` auf &quot;Primär&quot; gesetzt ist. |
 | `typeID` | Zeichenfolge | &quot;Primär&quot; | Nein | Attribut, das angibt, ob der aktuelle Benutzer Inhaber eines primären oder sekundären Kontos ist. | Das Attribut ist spezifisch für AT&amp;T. Der `primaryOID` ist derselbe wie der `userID`, wenn der `typeID` auf &quot;Primär&quot; gesetzt ist. |
-| `is_hoh` | Zeichenfolge | „1“ | Nein | Attribut, das angibt, ob der aktuelle Benutzer Haushaltsvorstand ist oder nicht. | Das Attribut ist spezifisch für Synacor. |
+| `is_hoh` | Zeichenfolge | &quot;1&quot; | Nein | Attribut, das angibt, ob der aktuelle Benutzer Haushaltsvorstand ist oder nicht. | Das Attribut ist spezifisch für Synacor. |
 | `hba_status` | Boolesch | „TRUE“ | Nein | Attribut, das angibt, ob der aktuelle Benutzer über HBA authentifiziert wurde oder nicht. |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `allowMirroring` | Boolesch | „TRUE“ | Nein | Attribut, das angibt, ob das aktuelle Gerät den Bildschirm spiegeln kann oder nicht. | Das Attribut ist spezifisch für Spektrum. |
-| `zip` | Array | \[„77754“, „12345“\] | Ja | Postleitzahl des Benutzers. | Der Attributwert kann verwendet werden, um lokalisierte Nachrichten, Wetteraktualisierungen oder Sportereignisse bereitzustellen. Der `zip` Wert stellt sensible Daten dar, für die rechtliche Vereinbarungen mit der MVPD getroffen werden müssen. Bei der Verschlüsselung wird die Darstellung des `zip` Schlüssels als `String` statt als `Array` dargestellt. |
+| `zip` | Array | \[&quot;77754&quot;, &quot;12345&quot;\] | Ja | Postleitzahl des Benutzers. | Der Attributwert kann verwendet werden, um lokalisierte Nachrichten, Wetteraktualisierungen oder Sportereignisse bereitzustellen. Der `zip` Wert stellt sensible Daten dar, für die rechtliche Vereinbarungen mit der MVPD getroffen werden müssen. Bei der Verschlüsselung wird die Darstellung des `zip` Schlüssels als `String` statt als `Array` dargestellt. |
 | `encryptedZip` | Zeichenfolge | &quot;&quot; | Ja | Verschlüsselte Postleitzahl des Benutzers. | Das Attribut ist spezifisch für Comcast. |
 | `channelID` | Array | \[„channel-1“, „channel-2“\] | Nein | Liste der Kanäle, die der Benutzer anzeigen darf. | Der Attributwert kann verwendet werden, um verschiedene Kanäle aus Portalen zu filtern, die mehrere Netzwerke aggregieren. Wir empfehlen, die [Preauthorize-API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) anstelle dieses Benutzer-Metadatenattributs zu verwenden, um Kanäle auszufiltern, die dem Benutzer nicht zur Verfügung stehen. |
 | `maxRating` | Objekt | { MPAA: „NR“, VCHIP: „X“, URL: &quot;http://manage.my/parental&quot; } | Nein | Maximale Kindersicherungsstufe für den aktuellen Benutzer. | Der Attributwert kann zum Filtern von Inhalten verwendet werden, die für aktuelle Benutzende auf der Grundlage von „MPAA“- oder „VCHIP“-Bewertungen nicht geeignet sind. |
@@ -80,7 +81,7 @@ Welche Benutzermetadatenattribute einem Programmierer zur Verfügung gestellt we
 
 ## Verschlüsselung von Benutzermetadaten {#encryption}
 
-Zum Ver- und Entschlüsseln von Benutzermetadatenattributen muss der Programmierer ein Zertifikat (Paar aus öffentlichem/privatem Schlüssel) generieren und [&#x200B; Zertifikat über das &#x200B;](#management)Adobe Pass TVE Dashboard[&#x200B; selbst konfigurieren](https://experience.adobe.com/#/pass/authentication) oder den öffentlichen Schlüssel mit Adobe Pass-Authentifizierungsbeauftragten teilen.
+Zum Ver- und Entschlüsseln von Benutzermetadatenattributen muss der Programmierer ein Zertifikat (Paar aus öffentlichem/privatem Schlüssel) generieren und [&#128279;](https://experience.adobe.com/#/pass/authentication)&#x200B; Zertifikat über das [Adobe Pass TVE Dashboard](#management) selbst konfigurieren oder den öffentlichen Schlüssel mit Adobe Pass-Authentifizierungsbeauftragten teilen.
 
 Gehen Sie wie folgt vor, um sicherzustellen, dass das Zertifikat korrekt generiert und konfiguriert ist:
 

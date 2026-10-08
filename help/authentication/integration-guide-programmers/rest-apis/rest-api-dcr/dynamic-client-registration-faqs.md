@@ -2,13 +2,14 @@
 title: Häufig gestellte Fragen zur dynamischen Client-Registrierung (DCR)
 description: Häufig gestellte Fragen zur dynamischen Client-Registrierung (DCR)
 exl-id: 12268163-632e-4884-b35d-a29cc8ef45bf
-source-git-commit: 747c3d9b6de537be5e7e0a0244b2b301603d9b18
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1135'
-ht-degree: 0%
-
+source-wordcount: '1147'
+ht-degree: 1%
 ---
-
 # Häufig gestellte Fragen zur dynamischen Client-Registrierung (DCR) {#rest-api-dcr-faqs}
 
 >[!IMPORTANT]
@@ -47,7 +48,7 @@ Die Registrierungsphase ist obligatorisch, aber die Client-Anwendung kann diese 
 
 Die Software-Anweisung ist ein Begriff, der in der Dokumentation [Glossar](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#software-statement) definiert ist.
 
-Die Software-Anweisung besteht aus einem JSON Web Token (JWT), das von einem Ihrer Organisationsadministratoren oder einem in Ihrem Namen handelnden Adobe Pass-Authentifizierungsmitarbeiter [&#x200B; Adobe Pass &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)TVE Dashboard) generiert und heruntergeladen werden kann.
+Die Software-Anweisung besteht aus einem JSON Web Token (JWT), das von einem Ihrer Organisationsadministratoren oder einem in Ihrem Namen handelnden Adobe Pass-Authentifizierungsmitarbeiter [&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) Adobe Pass TVE Dashboard) generiert und heruntergeladen werden kann.
 
 Die Software-Erklärung ist für einen unbegrenzten Zeitraum gültig, Sie können jedoch einen Adobe Pass-Authentifizierungsbeauftragten bitten, sie jederzeit zu widerrufen.
 
@@ -55,13 +56,13 @@ Die Client-Anwendung muss die Software-Anweisung speichern und sie verwenden, we
 
 Weitere Informationen finden Sie in der Dokumentation [Übersicht über die Dynamic Client-Registrierung](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) .
 
-#### &#x200B;4. Wie kann ich ein Software-Statement erstellen und herunterladen? {#rest-api-v2-access-faq4}
+#### &#x200B;4. Wie kann ich ein Software-Statement erzeugen und herunterladen? {#rest-api-v2-access-faq4}
 
 Dieser Vorgang kann über das Adobe Pass [TVE-Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) von einem Ihrer Organisationsadministratoren oder einem in Ihrem Namen handelnden Adobe Pass-Authentifizierungsmitarbeiter ausgeführt werden.
 
 Weitere Informationen finden Sie in der Dokumentation [TVE Dashboard Channels User Guide](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#registered-applications) oder [TVE Dashboard Programmers User Guide](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#registered-applications).
 
-#### &#x200B;5. Was passiert, wenn eine Software-Erklärung widerrufen wird? {#rest-api-v2-access-faq5}
+#### &#x200B;5. Was passiert, wenn eine Software-Anweisung widerrufen wird? {#rest-api-v2-access-faq5}
 
 Wenn die Software-Anweisung widerrufen wird, gibt es eine wichtige Konsequenz zu beachten:
 
@@ -135,7 +136,7 @@ Fahren Sie mit diesem Abschnitt fort, wenn Sie an einem Programm arbeiten, das e
 
 +++Häufig gestellte Fragen zur Migration zur REST API v2
 
-#### &#x200B;1. Kann die Client-Anwendung die vorhandenen registrierten Anwendungen (Software-Anweisungen) wiederverwenden? {#rest-api-v2-migration-faq1}
+#### &#x200B;1. Kann die Client-Anwendung die vorhandenen registrierten Anwendungen wiederverwenden (Software-Anweisungen)? {#rest-api-v2-migration-faq1}
 
 Die Client-Anwendung kann die vorhandenen registrierten Anwendungen nicht wiederverwenden (Software-Anweisungen). Daher muss sie neue registrierte Anwendungen (Software-Anweisungen) generieren und herunterladen, die speziell für die Nutzung der REST-API V2 vorgesehen sind.
 

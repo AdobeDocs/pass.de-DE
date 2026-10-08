@@ -2,13 +2,14 @@
 title: Einfache Abmeldung - Primäre Anwendung - Fluss
 description: REST API v2 - Einfache Abmeldung - Primäre Anwendung - Fluss
 exl-id: 21dbff4a-0d69-4f81-b04f-e99d743c35b3
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
-
 ---
-
 # Grundlegender Abmeldefluss innerhalb der primären Anwendung {#basic-logout-flow-performed-within-primary-application}
 
 >[!IMPORTANT]
@@ -36,9 +37,9 @@ Mit dem einfachen Abmeldefluss können Sie Abfragen für die folgenden Szenarien
 Bevor Sie mit dem Abmelden für eine bestimmte MVPD mit einem Abmeldeendpunkt beginnen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
 * Die Streaming-Anwendung muss über ein gültiges reguläres Profil verfügen, das mithilfe eines der grundlegenden Authentifizierungsflüsse erfolgreich für die MVPD erstellt wurde:
-   * [Authentifizierung innerhalb der primären Anwendung durchführen](rest-api-v2-basic-authentication-primary-application-flow.md)
-   * [Authentifizierung innerhalb der sekundären Anwendung mit vorab ausgewähltem mvpd durchführen](rest-api-v2-basic-authentication-secondary-application-flow.md)
-   * [Authentifizierung innerhalb der sekundären Anwendung ohne vorab ausgewählte mvpd durchführen](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Authentifizierung innerhalb der primären Anwendung durchführen](rest-api-v2-basic-authentication-primary-application-flow.md)
+  * [Authentifizierung innerhalb der sekundären Anwendung mit vorab ausgewähltem mvpd durchführen](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Authentifizierung innerhalb der sekundären Anwendung ohne vorab ausgewählte mvpd durchführen](rest-api-v2-basic-authentication-secondary-application-flow.md)
 * Die Streaming-Anwendung muss den Abmeldefluss initiieren, wenn sie sich von der MVPD abmelden muss.
 
 >[!IMPORTANT]
@@ -102,9 +103,9 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Abmeldefluss für
 Bevor Sie mit dem Abmelden für eine bestimmte MVPD ohne Abmeldeendpunkt beginnen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
 * Die Streaming-Anwendung muss über ein gültiges reguläres Profil verfügen, das mithilfe eines der grundlegenden Authentifizierungsflüsse erfolgreich für die MVPD erstellt wurde:
-   * [Authentifizierung innerhalb der primären Anwendung durchführen](rest-api-v2-basic-authentication-primary-application-flow.md)
-   * [Authentifizierung innerhalb der sekundären Anwendung mit vorab ausgewähltem mvpd durchführen](rest-api-v2-basic-authentication-secondary-application-flow.md)
-   * [Authentifizierung innerhalb der sekundären Anwendung ohne vorab ausgewählte mvpd durchführen](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Authentifizierung innerhalb der primären Anwendung durchführen](rest-api-v2-basic-authentication-primary-application-flow.md)
+  * [Authentifizierung innerhalb der sekundären Anwendung mit vorab ausgewähltem mvpd durchführen](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Authentifizierung innerhalb der sekundären Anwendung ohne vorab ausgewählte mvpd durchführen](rest-api-v2-basic-authentication-secondary-application-flow.md)
 * Die Streaming-Anwendung muss den Abmeldefluss initiieren, wenn sie sich von der MVPD abmelden muss.
 
 >[!IMPORTANT]

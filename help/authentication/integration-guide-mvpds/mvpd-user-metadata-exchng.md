@@ -2,13 +2,14 @@
 title: Austausch von Benutzermetadaten in MVPD
 description: Austausch von Benutzermetadaten in MVPD
 exl-id: 8bce6acc-cd33-476c-af5e-27eb2239cad1
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '940'
+source-wordcount: '947'
 ht-degree: 0%
-
 ---
-
 # Austausch von Benutzermetadaten in MVPD
 
 >[!NOTE]
@@ -105,13 +106,13 @@ Bei der Adobe Pass-Authentifizierung wird von folgenden Annahmen ausgegangen:
 
 ### Notizen {#notes-mvpd-progr-metadata-exch-flow}
 
-**Ressourcennormalisierung und -validierung.** Ressourcen-IDs können als Nur-String oder MRSS-String übergeben werden. Ein Programmierer kann entweder das Nur-String-Format oder das MRSS verwenden, benötigt jedoch eine vorherige Vereinbarung mit der MVPD, damit die MVPD weiß, wie diese Ressource zu behandeln ist.
+**Ressourcennormalisierung und -validierung.** Ressourcen-IDs können als Nur-String oder als MRSS-String übergeben werden. Ein Programmierer kann entweder das Nur-String-Format oder das MRSS verwenden, benötigt jedoch eine vorherige Vereinbarung mit der MVPD, damit die MVPD weiß, wie diese Ressource zu behandeln ist.
 
-**Ressourcen-ID und Metadatenspezifikation.** Adobe Pass-Authentifizierung verwendet den RSS-Standard mit der RSS-Erweiterung für Medien, um eine Ressource und ihre Metadaten anzugeben. In Verbindung mit der Media RSS-Erweiterung unterstützt die Adobe Pass-Authentifizierung eine Vielzahl von Metadaten, z. B. Kindersicherung (über `<media:rating>`) oder Geolokalisierung (`<media:location>`).
+**Ressourcen-ID und Metadatenspezifikation.** Die Adobe Pass-Authentifizierung verwendet den RSS-Standard mit der RSS-Erweiterung für Medien, um eine Ressource und ihre Metadaten anzugeben. In Verbindung mit der Media RSS-Erweiterung unterstützt die Adobe Pass-Authentifizierung eine Vielzahl von Metadaten, z. B. Kindersicherung (über `<media:rating>`) oder Geolokalisierung (`<media:location>`).
 
 Die Adobe Pass-Authentifizierung kann auch eine transparente Konvertierung der alten Kanalzeichenfolge in die entsprechende RSS-Ressource für MVPDs unterstützen, für die RSS erforderlich ist. Umgekehrt unterstützt die Adobe Pass-Authentifizierung die Konvertierung von RSS+MRSS in einen Nur-Kanal-Titel für Nur-Kanal-MVPDs.
 
-Die **Adobe Pass-Authentifizierung stellt die vollständige Abwärtskompatibilität mit bestehenden Integrationen sicher.** das heißt, für Programmierer, die Authentifizierung auf Kanalebene verwenden, wird bei der Adobe Pass-Authentifizierung darauf geachtet, die Kanal-ID im erforderlichen Format zu verpacken, bevor sie an eine MVPD gesendet wird, die dieses Format versteht. Umgekehrt gilt auch Folgendes: Wenn ein Programmierer alle seine Ressourcen in einem neuen Format angibt, übersetzt die Adobe Pass-Authentifizierung das neue Format in eine einfache Kanalzeichenfolge, wenn die Autorisierung für eine MVPD erfolgt, die nur eine Autorisierung auf Kanalebene ausführt.
+Die **Adobe Pass-Authentifizierung gewährleistet vollständige Abwärtskompatibilität mit vorhandenen Integrationen.** Das heißt, bei der Adobe Pass-Authentifizierung für Programmierer, die eine Authentifizierung auf Kanalebene verwenden, wird die Kanal-ID in das erforderliche Format gepackt, bevor sie an eine MVPD gesendet wird, die dieses Format versteht. Umgekehrt gilt auch Folgendes: Wenn ein Programmierer alle seine Ressourcen in einem neuen Format angibt, übersetzt die Adobe Pass-Authentifizierung das neue Format in eine einfache Kanalzeichenfolge, wenn die Autorisierung für eine MVPD erfolgt, die nur eine Autorisierung auf Kanalebene ausführt.
 
 ## Anwendungsfälle für Benutzermetadaten {#user-metadata-use-cases}
 

@@ -2,13 +2,14 @@
 title: Platform-SSO-Profilanfrage abrufen
 description: Platform-SSO-Profilanfrage abrufen
 exl-id: 44fd4e26-4d9a-4607-ac2c-b85d848f5fc6
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '210'
-ht-degree: 0%
-
+source-wordcount: '222'
+ht-degree: 1%
 ---
-
 # (Legacy) Platform-SSO-Profilanfrage abrufen {#retrieve-platform-sso-profile-request}
 
 >[!NOTE]
@@ -42,9 +43,9 @@ ht-degree: 0%
 Diese Ressource erzeugt Profilanfragen für eine Anforderer-ID und ein MVPD-Tupel.
 
 
-| Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
+| Endpunkt | Called </br>by | Input </br>params | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/{requestor}/profile-requests/{mvpd} | Streaming-App</br></br>oder</br></br>Programmierer-Service | &#x200B;1. Anforderer (Pfadparameter)</br>2. mvpd (Pfadparameter)</br>3. deviceType (Obligatorisch) | GET | Der Content-Typ der Antwort lautet application/octet-stream, da die tatsächliche Payload für die Client-Anwendung undurchsichtig ist.</br></br>Die Antwort sollte von der Anwendung zum Abrufen eines Profil-SSO an </br></br> Platform-SSO-Engine weitergeleitet werden. | 200 - Erfolg   </br>400 - Fehlerhafte Anfrage |
+| &lt;SP_FQDN>/api/v1/{requestor}/profile-requests/{mvpd} | Streaming-App</br></br>oder</br></br>Programmierer-Service | &#x200B;1. Requestor (path param)</br>2. mvpd (Pfadparameter)</br>3. deviceType (Obligatorisch) | GET | Der Content-Typ der Antwort lautet application/octet-stream, da die tatsächliche Payload für die Client-Anwendung undurchsichtig ist.</br></br>Die Antwort sollte von der Anwendung zum Abrufen eines Profil-SSO an </br></br> Platform-SSO-Engine weitergeleitet werden. | 200 - Erfolgreich </br>400 - Fehlerhafte Anfrage |
 
 
 | Eingabeparameter | Beschreibung |

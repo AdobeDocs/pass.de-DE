@@ -2,13 +2,14 @@
 title: Häufig gestellte Fragen zu Support-Verfahren
 description: Häufig gestellte Fragen zu Support-Verfahren
 exl-id: 1d754e5a-d5fa-4411-8932-2a36294da6eb
-source-git-commit: 0ab1fc212752dd4a4d6e12a4ab1287ef74e4a282
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '777'
+source-wordcount: '790'
 ht-degree: 0%
-
 ---
-
 # Häufig gestellte Fragen zu Support-Verfahren {#support-procedures-faqs}
 
 >[!IMPORTANT]
@@ -94,5 +95,5 @@ Bestimmte Situationen mit Standardaktionen, die bei Eintreten des Szenarios ausg
 |    | Szenario | Beschreibung | Aktionen |
 |----|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | S1 | Adobe identifiziert ein Problem mit der MVPD-Integration während des normalen Produktionsbetriebs. | Während des normalen Produktionsbetriebs erkennt Adobe ein Problem mit einem der MVPDs, das die Durchführung der Authentifizierungs-/Autorisierungsflüsse unmöglich macht (z. B. abgelaufene Zertifikate, abgelaufene SAML-Antworten, geschlossene Ports, geänderte Parameter usw.) | Adobe benachrichtigt die betroffenen MVPD und Programmierer.  </br></br> Adobe deaktiviert diese MVPD für alle betroffenen Programmierer. </br></br> Adobe eröffnet ein Ticket mit der MVPD nach dem vereinbarten Support-Verfahren mit dieser MVPD |
-| S2 | Adobe aktiviert eine neue MVPD für einen Programmierer, und der Programmierer lässt die MVPD vor dem Launch-Datum zu. | Adobe aktiviert eine neue MVPD für die Site eines Programmierers, und die Site zeigt die neue MVPD bereits in der Auswahl an, selbst wenn sie nicht vorgesehen war. | Adobe benachrichtigt den Programmierer, dass die neue MVPD vor dem geplanten Datum in der Auswahl angezeigt wird. </br></br> Programmierer wird bei Bedarf Maßnahmen ergreifen, um sie aus der Auswahl zu entfernen. |
+| S2 | Adobe aktiviert eine neue MVPD für einen Programmierer, und der Programmierer lässt die MVPD vor dem Launch-Datum zu. | Adobe aktiviert eine neue MVPD für die Site eines Programmierers, und die Site zeigt die neue MVPD bereits in der Auswahl an, selbst wenn sie nicht vorgesehen war. | Adobe benachrichtigt den Programmierer, dass die neue MVPD vor dem geplanten Datum in der Auswahl angezeigt wird. </br></br>  Der Programmierer wird bei Bedarf Maßnahmen ergreifen, um sie aus der Auswahl zu entfernen. |
 | S3 | Adobe aktiviert eine neue MVPD für einen Programmierer, selbst wenn die MVPD nicht produktionsbereit ist | Adobe aktiviert eine neue MVPD für einen Programmierer, aber die MVPD hat die Unterstützung für die Integration noch nicht bereitgestellt, sodass die Authentifizierungs-/Autorisierungsflüsse nicht ausgeführt werden können | Adobe führt die Bereitstellung nur durch, wenn vom Programmierer angefordert </br></br> Der Programmierer ist dafür verantwortlich, die Genehmigung der MVPD sicherzustellen, sobald alle Tests durchgeführt wurden. |
