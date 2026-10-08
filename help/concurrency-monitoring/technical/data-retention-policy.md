@@ -2,13 +2,14 @@
 title: Richtlinie zur Datenaufbewahrung
 description: Richtlinie zur Datenaufbewahrung
 exl-id: aa7d2d5e-9a8b-404b-874c-9e5923417784
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '298'
 ht-degree: 1%
-
 ---
-
 # Richtlinie zur Datenaufbewahrung {#data-retention-policy}
 
 >[!WARNING]
@@ -30,7 +31,7 @@ Eine Richtlinie zur Datenaufbewahrung bestimmt, wie lange Adobe die Kundendaten 
 
 ## Datenerfassung {#data-collection}
 
-*Clickstream-Daten* stellen Daten dar, die von Kundinnen und Kunden in den Sitzungs-Heartbeats freigegeben werden (z. B. subjectID, mvpdName und Metadaten). Alle benutzerdefinierten Metadatenfelder werden in den [Standard-Metadatenattributen“ &#x200B;](/help/concurrency-monitoring/technical/standard-metadata-attributes.md).
+*Clickstream-Daten* stellen Daten dar, die von Kundinnen und Kunden in den Sitzungs-Heartbeats freigegeben werden (z. B. subjectID, mvpdName und Metadaten). Alle benutzerdefinierten Metadatenfelder werden in den [Standard-Metadatenattributen“ ](/help/concurrency-monitoring/technical/standard-metadata-attributes.md).
 
 ## Kundentypen {#customer-types}
 

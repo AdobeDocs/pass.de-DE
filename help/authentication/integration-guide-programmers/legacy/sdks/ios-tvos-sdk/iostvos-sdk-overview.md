@@ -2,13 +2,14 @@
 title: Übersicht über iOS/tvOS SDK
 description: Übersicht über iOS/tvOS SDK
 exl-id: b02a6234-d763-46c0-bc69-9cfd65917a19
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '3801'
 ht-degree: 0%
-
 ---
-
 # (Veraltete) Übersicht über iOS/tvOS SDK {#iostvos-sdk-overview}
 
 >[!NOTE]
@@ -187,7 +188,8 @@ Da unter tvOS die Zwischenablage nicht verfügbar ist, verwendet die tvOS Access
 
 **Änderungen an iOS 7-Zwischenablage -** Aufgrund von Änderungen in der Funktionsweise von Zwischenablagen in iOS 7 ist die Cross-SSO zwischen Anwendungen, die auf iOS 7 ausgeführt werden, begrenzt. Anwendungen mit demselben `<Bundle Seed ID>` (auch als `<Team ID>` bezeichnet) teilen Token, d. h. Apps A1 und A2 vom selben Programmierer X teilen Token, während App A1 (Programmierer X) und App A3 (Programmierer Y) Token nicht teilen.
 
-- Die Paket-Seed-ID/Team-ID ist in zwei Apps identisch, wenn sie von demselben Bereitstellungsprofil generiert werden. Weitere Informationen finden Sie unter diesem Link:  [http://developer.apple.com/library/ios/\#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html](http://developer.apple.com/library/ios/#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html)
+- Die Paket-Seed-ID/Team-ID ist in zwei Apps identisch, wenn sie von demselben Bereitstellungsprofil generiert werden. Weitere Informationen finden Sie unter diesem Link:
+  [http://developer.apple.com/library/ios/\#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html](http://developer.apple.com/library/ios/#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html)
 - Diese „Cross-SSO“-Beschränkung ist in iOS 7 vorhanden, unabhängig von der verwendeten Adobe Pass-Authentifizierungs-SDK.
 
 Weitere Informationen zur SSO-Konfiguration für iOS 7 und höher finden Sie in dieser technischen Anmerkung (die technische Anmerkung gilt für Access Enabler v1.8 und höher): <https://tve.zendesk.com/entries/58233434-Configuring-Pay-TV-pass-SSO-on-iOS>

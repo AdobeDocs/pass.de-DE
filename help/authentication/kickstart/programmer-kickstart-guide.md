@@ -2,13 +2,14 @@
 title: Anleitung für Programmierer
 description: Anleitung für Programmierer
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '777'
 ht-degree: 0%
-
 ---
-
 # Anleitung für Programmierer {#programmer-kickstart-guide}
 
 >[!IMPORTANT]
@@ -75,7 +76,7 @@ Das Adobe Pass-Authentifizierungsteam steht Ihnen bei allen Fragen oder technisc
 
 ## Zugriff auf die Dokumentation {#access-documentation}
 
-**Adobe bietet** Zugriff auf unsere öffentliche Dokumentation über [Adobe Experience League](https://experienceleague.adobe.com/de/docs/pass/authentication/home).
+**Adobe bietet** Zugriff auf unsere öffentliche Dokumentation über [Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home).
 
 Das Adobe Pass-Authentifizierungs-Team bietet eine umfassende Dokumentation zu den verfügbaren Funktionen und APIs im Abschnitt [Integrationshandbuch für Programmierer](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md). Links zu detaillierten Informationen zu den einzelnen Themen finden Sie im Inhaltsverzeichnis unter diesem Abschnitt .
 

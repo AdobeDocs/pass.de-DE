@@ -2,13 +2,14 @@
 title: Heruntergestufte Zugriffsströme
 description: REST API v2 - Gestörter Zugriffsfluss
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1615'
 ht-degree: 0%
-
 ---
-
 # Eingeschränkte Zugriffsflüsse {#degraded-access-flows}
 
 >[!IMPORTANT]
@@ -63,7 +64,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss zu impl
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)Dokumentation zu „Authentifizierungssitzung erstellen“:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)Dokumentation zu „Authentifizierungssitzung erstellen“:
    > 
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd`, `domainName` und `redirectUrl`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -77,7 +78,7 @@ Führen Sie die angegebenen Schritte aus, um den Authentifizierungsfluss zu impl
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)Dokumentation zu „Authentifizierungssitzung erstellen“.
+   > Weitere Informationen zu den [ in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)Dokumentation zu „Authentifizierungssitzung erstellen“.
    > 
    > <br/>
    > 
@@ -131,7 +132,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss zu implemen
 
    >[!IMPORTANT]
    > 
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -143,7 +144,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss zu implemen
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
    >
    > <br/>
    > 
@@ -197,7 +198,7 @@ Führen Sie die angegebenen Schritte aus, um den Vorautorisierungsfluss zu imple
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Vorabautorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Vorabautorisierungsentscheidungen mithilfe bestimmter MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -209,7 +210,7 @@ Führen Sie die angegebenen Schritte aus, um den Vorautorisierungsfluss zu imple
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Entscheidungen vor der Autorisierung mit bestimmten mvpd.
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Entscheidungen vor der Autorisierung mit bestimmten mvpd.
    >
    > <br/>
    >
@@ -271,7 +272,7 @@ Führen Sie die angegebenen Schritte aus, um den Profilabruffluss für einen bes
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `mvpd`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -283,7 +284,7 @@ Führen Sie die angegebenen Schritte aus, um den Profilabruffluss für einen bes
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [&#x200B; in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
+   > Weitere Informationen zu [ in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
    >
    > <br/>
    >

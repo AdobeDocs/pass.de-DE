@@ -2,13 +2,14 @@
 title: Entscheidungspunkt der Richtlinie
 description: Entscheidungspunkt der Richtlinie
 exl-id: 94bc638c-bef8-45ea-b20a-9b7038adecdd
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '731'
 ht-degree: 0%
-
 ---
-
 # Entscheidungspunkt der Richtlinie {#policy-desc-pt}
 
 ## Domain-Modell {#domain-model}
@@ -33,7 +34,7 @@ Für jede der anwendbaren Richtlinien müssen wir dann alle **relevanten Aktivit
 
 In der folgenden exemplarischen Vorgehensweise wird das Modell für einige Anwendungsfälle validiert. Wir machen das schrittweise, indem wir mit einer grundlegenden Einrichtung beginnen und Komplexität auf verschiedene Arten hinzufügen.
 
-### &#x200B;1. Einen Mandanten. Eine Anwendung. Eine Richtlinie. Ein Stream {#onetenant-oneapp-onepolicy-onestream}
+### &#x200B;1. Ein Mandant. Eine Anwendung. Eine Richtlinie. Ein Stream {#onetenant-oneapp-onepolicy-onestream}
 
 Wir beginnen mit einem einzelnen Mandanten, wobei ein einzelnes Programm und eine einzige Richtlinie verknüpft sind. Nehmen wir an, die Richtlinie besagt, dass es für jeden Benutzer maximal einen aktiven Stream geben kann (der neueste Stream darf wiedergegeben werden).
 
@@ -42,7 +43,7 @@ Sobald ein Stream gestartet wurde, besteht die Aktivität nur aus diesem Stream 
 ![Ein Mandant. Eine Anwendung. Eine Richtlinie. Ein Stream](../assets/onetenant-app-policy-stream.png)
 
 
-### &#x200B;2. Einen Mandanten. Eine Anwendung. Eine Richtlinie. Zwei Streams. {#onetenant-oneapp-onepolicy-twostreams}
+### &#x200B;2. Ein Mandant. Eine Anwendung. Eine Richtlinie. Zwei Streams. {#onetenant-oneapp-onepolicy-twostreams}
 
 Sobald ein zweiter Stream gestartet wurde (vom selben Subjekt mit derselben Anwendung), besteht die für die Validierung verwendete Aktivität aus **s1** und **s2**.
 
@@ -54,7 +55,7 @@ Das Limit wird überschritten, da die Richtlinie angibt, dass nur ein Stream wie
 >
 >Die Diagramme stellen die Systemansicht der Benutzeraktivität dar. Bei Stream-Initialisierungsversuchen wird die Zugriffsentscheidung in die Antwort aufgenommen. Bei aktiven Streams wird die Entscheidung bei der Heartbeat-Antwort zurückgegeben.
 
-### &#x200B;3. Zwei Mieter. Zwei Anwendungen. Eine Richtlinie. Zwei Streams. {#twotenant-twoapp-onepolicy-twostreams}
+### &#x200B;3. Zwei Mandanten. Zwei Anwendungen. Eine Richtlinie. Zwei Streams. {#twotenant-twoapp-onepolicy-twostreams}
 
 Nehmen wir nun an, dass ein neuer Mandant dieselbe Richtlinie in seinen Anwendungen durchsetzen möchte:
 
@@ -62,7 +63,7 @@ Nehmen wir nun an, dass ein neuer Mandant dieselbe Richtlinie in seinen Anwendun
 
 Da die beiden Mandanten durch dieselbe Richtlinie verknüpft sind, gilt die in Anwendungsfall 2 beschriebene Situation hier, und **s3** darf wiedergegeben werden, da es sich um den neuesten Stream handelt.
 
-### &#x200B;4. Zwei Mieter. Drei Anwendungen. Zwei Richtlinien. Zwei Streams. {#twotenants-threeapps-twopolicies-twostreams}
+### &#x200B;4. Zwei Mandanten. Drei Anwendungen. Zwei Richtlinien. Zwei Streams. {#twotenants-threeapps-twopolicies-twostreams}
 
 Nehmen wir nun an, dass der zweite Mandant ein neues Programm bereitstellt und eine neue Richtlinie definieren möchte, die von **app2** und **app3** gemeinsam verwendet wird.
 
@@ -72,9 +73,9 @@ In diesem Moment sind die aktiven Streams **s3** und **s4** beide zulässig. Bei
 
 Die Richtlinie **P2** wird auf beide Streams angewendet und umfasst sowohl **s3** als auch **s4** als relevante Aktivität. Da sich diese Aktivität innerhalb der Grenzen von zwei Streams befindet, sind beide Streams zulässig.
 
-### &#x200B;5. Zwei Mieter. Drei Anwendungen. Zwei Richtlinien. Drei Streams. {#twotenants-threeapps-twopolicies-threestreams}
+### &#x200B;5. Zwei Mandanten. Drei Anwendungen. Zwei Richtlinien. Drei Streams. {#twotenants-threeapps-twopolicies-threestreams}
 
-Nehmen wir nun an, dass ein neuer Stream-Initialisierungsversuch mit &lbrace;app2 **durchgeführt**:
+Nehmen wir nun an, dass ein neuer Stream-Initialisierungsversuch mit {app2 **durchgeführt**:
 
 ![Zwei Mandanten. Drei Anwendungen. Zwei Richtlinien. Drei Streams.](../assets/twotenants-policies-threeapps-streams.png)
 

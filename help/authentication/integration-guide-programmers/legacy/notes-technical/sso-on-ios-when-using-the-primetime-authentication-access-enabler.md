@@ -2,13 +2,14 @@
 title: SSO auf iOS bei Verwendung von Adobe Pass Authentication Access Enabler
 description: SSO auf iOS bei Verwendung von Adobe Pass Authentication Access Enabler
 exl-id: 882f0abb-2e6e-461d-a375-3ab410991935
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1144'
+source-wordcount: '1216'
 ht-degree: 0%
-
 ---
-
 # (Legacy) SSO auf iOS bei Verwendung von Adobe Pass Authentication Access Enabler {#sso-on-ios-when-using-the-primetime-authentication-access-enabler}
 
 >[!NOTE]
@@ -27,7 +28,7 @@ Single Sign-On (SSO) zwischen Apps mit Adobe Pass-Authentifizierung funktioniert
 
 In diesem Dokument wird **SSO auf iOS** bei Verwendung des Adobe Pass Authentication **Access Enabler** behandelt.
 
-**Access Enabler** **1.10** ist die neueste Version der nativen Adobe Pass Authentication iOS SDK. Adobe empfiehlt dringend, zu dieser Version zu wechseln, anstatt bei einer älteren Version zu bleiben. Wenn Sie eine ältere Version von Access Enabler verwenden, können Sie die neueste Version ([) &#x200B;](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library).
+**Access Enabler** **1.10** ist die neueste Version der nativen Adobe Pass Authentication iOS SDK. Adobe empfiehlt dringend, zu dieser Version zu wechseln, anstatt bei einer älteren Version zu bleiben. Wenn Sie eine ältere Version von Access Enabler verwenden, können Sie die neueste Version ([) ](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library).
 
 SSO auf iOS wird durch die folgenden Bedingungen bestimmt:
 
@@ -39,7 +40,7 @@ SSO auf iOS wird durch die folgenden Bedingungen bestimmt:
 Das SSO-Verhalten sieht wie folgt aus:
 
 - **iOS 6 und niedriger**: SSO funktioniert automatisch zwischen Apps, die von demselben Team oder verschiedenen Teams entwickelt wurden. Die Geräte-ID wird anhand der MAC-Adresse berechnet (in allen Apps wird derselbe Wert erzeugt), und der Speicherbereich ist in allen Apps gleich (benutzerdefinierte Pinnwand ist in allen Apps ab iOS 6 verfügbar).
-   - **Wichtig:** Beachten Sie, dass mit der iOS SDK-Version 1.9.4 [das Mindestziel für die iOS-Bereitstellung auf iOS 7.](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library) erhöht wurde
+  - **Wichtig:** Beachten Sie, dass mit der iOS SDK-Version 1.9.4 [das Mindestziel für die iOS-Bereitstellung auf iOS 7.](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library) erhöht wurde
 - **iOS 7 und höher**: SSO funktioniert unter folgenden Bedingungen:
 
 1. Apps werden mit demselben Apple-Verteilungsprofil veröffentlicht oder mit Profilen, die zum selben Team gehören. Dies ist die einzige Möglichkeit für Apps, benutzerdefinierte Zwischenablagen in iOS 7 und höher freizugeben. In allen anderen Szenarien wird die Pinnwand pro Anwendung in Sandboxes eingefügt. Von [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html): \+\[`UIPasteboard pasteboardWithName:create:\`] und +\[`UIPasteboard pasteboardWithUniqueName`\] ist der angegebene Name jetzt eindeutig, damit nur die Apps in derselben Programmgruppe auf die Zwischenablage zugreifen können. Wenn Entwicklerinnen und Entwickler versuchen, eine Zwischenablage mit einem bereits vorhandenen Namen zu erstellen, und sie nicht Teil derselben App-Suite sind, erhalten sie eine eigene eindeutige und private Zwischenablage. Beachten Sie, dass dies keine Auswirkungen auf das vom System bereitgestellte Zwischenablage, Allgemein und Suchen hat.

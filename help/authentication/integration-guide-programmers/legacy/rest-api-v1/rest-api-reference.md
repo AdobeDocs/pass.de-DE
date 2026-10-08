@@ -2,13 +2,14 @@
 title: REST-API-Referenz
 description: REST-API-Referenz
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '661'
-ht-degree: 2%
-
+source-wordcount: '669'
+ht-degree: 5%
 ---
-
 # (Legacy) REST-API-Referenz {#rest-api-reference}
 
 >[!NOTE]
@@ -63,7 +64,7 @@ In der folgenden Tabelle sind die verfügbaren Web-Services für den Client-lose
 | 3. | [&lt;SP_FQDN>/api/v1/config/ </br>{requestorId}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md) | Gibt die Liste der konfigurierten MVPDs für den Anforderer aus | 5 | Adobe </br>Adobe Pass </br>Authentication </br>Service | Anmeldung </br>Web </br>App |
 | 4. | [&lt;SP_FQDN>/api/v1/Authenticate](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) | Startet den Authentifizierungsprozess durch Benachrichtigung des MVPD-Auswahlereignisses. Erstellt einen Datensatz in der Authentifizierungsdatenbank, der abgeglichen wird, wenn eine erfolgreiche Antwort von MVPD empfangen wird (Schritt 13) | 7 | Adobe </br>Adobe Pass </br>Authentication </br>Service | Anmeldung </br>Web </br>App |
 | 5. | SAML-Assertion-Verbraucher | Vorhandener SAML-Workflow zwischen Adobe Pass-Authentifizierung und MVPD | 13 | Adobe Pass </br>Authentication </br>Service | Adobe Pass-Authentifizierung |
-| 6. | [&lt;SP_FQDN>/api/v1/checkauthn/ </br>{registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md) | Die Web-Anmeldeanwendung kann überprüfen, ob der Anmeldeversuch erfolgreich war |                                                                                             | Adobe Pass </br>Authentifizierung   </br>Service | Login   </br>Web   </br>App |
+| 6. | [&lt;SP_FQDN>/api/v1/checkauthn/ </br>{registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md) | Die Web-Anmeldeanwendung kann überprüfen, ob der Anmeldeversuch erfolgreich war |                                                                                             | Adobe Pass </br>Authentication </br>Service | Anmeldung </br>Web </br>App |
 | 7. | [&lt;SP_FQDN>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) | Ruft Authentifizierungs-Token-bezogene Metadaten ab | 15 | Adobe Pass </br>Authentication </br>Service | Intelligentes Gerät |
 | 8. | [&lt;REGGIE_FQDN>/reggie/v1/ </br>  {requestorId}/regcode/ </br>{registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/delete-registration-record.md) | Löscht den Registrierungscode-Datensatz und gibt den Registrierungscode zur Wiederverwendung frei. | 16 | Adobe </br>Reg Code Service | Adobe Pass-Authentifizierung |
 | 9. | [&lt;SP_FQDN>/api/v1/authorize](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authorization.md) | Erhält die Autorisierungsantwort. | 17 | Adobe Pass </br>Authentication </br>Service | Intelligentes Gerät |
@@ -74,7 +75,7 @@ In der folgenden Tabelle sind die verfügbaren Web-Services für den Client-lose
 | 14. | [&lt;SP_FQDN>/api/v1/mediatoken](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md) | Abrufen eines Short Media-Tokens |                                                                                             | Adobe Pass </br>Authentication </br>Service | Intelligentes Gerät |
 | 15. | [&lt;SP_FQDN>/api/v1/preauthorize](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources.md) | Ruft die Liste der vorab autorisierten Ressourcen ab |                                                                                             | Adobe Pass </br>Authentication </br>Service | Intelligentes Gerät |
 | 16. | [&lt;SP_FQDN>/api/v1/preauthorize/{code}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md) | Ruft die Liste der vorab autorisierten Ressourcen ab |                                                                                             | Adobe Pass </br>Authentication </br>Service | Web-App anmelden |
-| 17. | [&lt;SP_FQDN>/api/v1/logout](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md) | Entfernen von AuthN- und AuthZ-Token aus dem Speicher |                                                                                             | Adobe Pass </br>Authentifizierung   </br>Service | Intelligentes Gerät |
+| 17. | [&lt;SP_FQDN>/api/v1/logout](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md) | Entfernen von AuthN- und AuthZ-Token aus dem Speicher |                                                                                             | Adobe Pass </br>Authentication </br>Service | Intelligentes Gerät |
 | 18. | [&lt;SP_FQDN>/api/v1/tokens/usermetadata](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) | Ruft Benutzermetadaten nach Abschluss des Authentifizierungsflusses ab | Nicht zutreffend | Nicht zutreffend | Intelligentes Gerät |
 | 19. | [&lt;SP_FQDN>/api/v1/authenticate/freepreview](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/free-preview-for-temp-pass-and-promotional-temp-pass.md) | Erstellen eines Authentifizierungstokens für temporären Pass oder promotionellen temporären Pass | Nicht zutreffend | Adobe Pass </br>Authentication </br>Service | Intelligentes Gerät |
 

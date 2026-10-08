@@ -2,13 +2,14 @@
 title: Standard-Metadatenattribute
 description: Standard-Metadatenattribute
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1295'
 ht-degree: 0%
-
 ---
-
 # Standard-Metadatenattribute {#std-metadata-attributes}
 
 Auf dieser Seite erhalten Sie eine umfassende Liste von Metadatenattributen, die der Concurrency Monitoring-Service verarbeiten kann und die als Grundlage für Richtlinien verwendet werden können, die implementiert werden können. Die Standard-Metadatenattribute können wie folgt kategorisiert werden:
@@ -73,11 +74,11 @@ Die Standard-Metadatenfelder können für die Definition von Server-seitigen Ric
 
 * Sie können eine Richtlinie konfigurieren, die nur auf bestimmte Feldwerte angewendet wird (z. B. eine dedizierte iOS-Richtlinie: , bei der `osType` `iOS` ist)
 * Sie können die Anzahl der unterschiedlichen Werte für ein bestimmtes Feld begrenzen. Einige Beispiele:
-   * nicht mehr als X verschiedene Geräte: `HAVING DISTINCT COUNT(deviceId) <= 2`
-   * höchstens X verschiedene Postleitzahlen: `HAVING DISTINCT COUNT(zipcode) <= 3`
+  * nicht mehr als X verschiedene Geräte: `HAVING DISTINCT COUNT(deviceId) <= 2`
+  * höchstens X verschiedene Postleitzahlen: `HAVING DISTINCT COUNT(zipcode) <= 3`
 * Sie können die Anzahl der aktiven Streams pro Feldwert begrenzen. Einige Beispiele:
-   * nicht mehr als X aktive Streams für einen einzelnen Gerätetyp: `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
-   * nicht mehr als X aktive Streams für Streams von Live-Inhalten: `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
+  * nicht mehr als X aktive Streams für einen einzelnen Gerätetyp: `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
+  * nicht mehr als X aktive Streams für Streams von Live-Inhalten: `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
 
 Wenden Sie sich an das Team zur Überwachung von [, indem Sie ein Ticket in Zendesk erstellen](mailto:tve-support@adobe.com) und geben Sie an, welche Richtlinien Sie implementieren möchten.
 

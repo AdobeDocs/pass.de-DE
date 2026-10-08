@@ -2,13 +2,14 @@
 title: Fehlerberichterstattung
 description: Fehlerberichterstattung
 exl-id: a52bd2cf-c712-40a2-a25e-7d9560b46ba6
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '3034'
 ht-degree: 1%
-
 ---
-
 # (Veraltete) Fehlerberichte {#error-reporting}
 
 >[!NOTE]
@@ -23,7 +24,7 @@ ht-degree: 1%
 
 Die Fehlerberichterstattung in der Adobe Pass-Authentifizierung wird derzeit auf zwei verschiedene Arten implementiert:
 
-* **Erweiterte**: Das Implementierungsprogramm registriert einen Fehler-Callback im Fall des [AccessEnabler JavaScript SDK](#accessenabler-javascript-sdk) oder implementiert eine Schnittstellenmethode namens &quot;`status`&quot; im Fall des [AccessEnabler iOS/tvOS SDK](#accessenabler-ios-tvos-sdk) und [AccessEnabler Android SDK](#accessenabler-android-sdk), um erweiterte Fehlerberichte zu erhalten. Fehler werden in die Typen **Information**, **Warnung** und **Fehler** kategorisiert. Dieses Berichtssystem ist **asynchron** da **es keine Garantie für die Reihenfolge gibt, in der mehrere Fehler ausgelöst werden**.  Weitere Informationen zum erweiterten Fehlerberichterstattungssystem finden Sie im Abschnitt [Erweiterte &#x200B;](#advanced-error-reporting)).
+* **Erweiterte**: Das Implementierungsprogramm registriert einen Fehler-Callback im Fall des [AccessEnabler JavaScript SDK](#accessenabler-javascript-sdk) oder implementiert eine Schnittstellenmethode namens &quot;`status`&quot; im Fall des [AccessEnabler iOS/tvOS SDK](#accessenabler-ios-tvos-sdk) und [AccessEnabler Android SDK](#accessenabler-android-sdk), um erweiterte Fehlerberichte zu erhalten. Fehler werden in die Typen **Information**, **Warnung** und **Fehler** kategorisiert. Dieses Berichtssystem ist **asynchron** da **es keine Garantie für die Reihenfolge gibt, in der mehrere Fehler ausgelöst werden**.  Weitere Informationen zum erweiterten Fehlerberichterstattungssystem finden Sie im Abschnitt [Erweiterte ](#advanced-error-reporting)).
 
 * **Original Error Reporting -** Ein statisches Berichtssystem, in dem Fehlermeldungen an bestimmte Callback-Funktionen übergeben werden, wenn bestimmte Anfragen fehlschlagen. Fehler werden in generische, Authentifizierungs- und Autorisierungstypen unterteilt. Eine Liste der im Originalsystem gemeldeten Fehler finden Sie im Abschnitt [Original-](#original-error-reporting)).
 
@@ -285,7 +286,7 @@ In der folgenden Tabelle sind die Fehler-Codes der neueren Fehler-API aufgeführ
 
 In diesem Abschnitt werden das ursprüngliche Fehlermeldesystem sowie die ursprünglichen Fehlercodes beschrieben. Im ursprünglichen Fehlermeldesystem übergibt AccessEnabler Fehler an diese beiden Callback-Funktionen: `setAuthenticationStatus()` nach einem Aufruf an `checkAuthentication()`; `tokenRequestFailed()` nach dem Ausfall eines Aufrufs an `checkAuthorization()` oder `getAuthorization()`.
 
-Die ursprünglichen Fehler-Reporting- und Status-APIs funktionieren weiterhin genau wie zuvor. Künftig werden die ursprünglichen Fehler-Reporting-APIs jedoch nicht mehr aktualisiert. Alle neuen Fehlermeldungen und Aktualisierungen zu den alten Fehlern werden NUR im neuen [Advanced Error Reporting System“ &#x200B;](#advanced-error-reporting).
+Die ursprünglichen Fehler-Reporting- und Status-APIs funktionieren weiterhin genau wie zuvor. Künftig werden die ursprünglichen Fehler-Reporting-APIs jedoch nicht mehr aktualisiert. Alle neuen Fehlermeldungen und Aktualisierungen zu den alten Fehlern werden NUR im neuen [Advanced Error Reporting System“ ](#advanced-error-reporting).
 
 
 Beispiele für die Verwendung des ursprünglichen Fehlerberichtssystems finden Sie in den Funktionen [JavaScript-API-Referenz](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md):[setAuthenticationStatus()](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#set-authn-status-isauthn-error) und [tokenRequestFailed()](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#token-request-failed-error-msg), [iOS/tvOS-API-Referenz](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md): [setAuthenticationStatus()](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#setAuthNStatus)and [tokentRequestFailed()](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#tokenReqFailed), [Android-API-Referenz](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md): [setAuthenticationStatus()](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setAuthNStatus) und [tokenRequestFailed()](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setAuthNStatus#tokenRequestFailed).

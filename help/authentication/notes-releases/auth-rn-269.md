@@ -2,13 +2,14 @@
 title: Versionshinweise zur Adobe Pass-Authentifizierung 2.69
 description: Versionshinweise zur Adobe Pass-Authentifizierung 2.69
 exl-id: d031c4c5-dbd5-4a77-b298-a53b992cc4c5
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '210'
+source-wordcount: '212'
 ht-degree: 0%
-
 ---
-
 # Versionshinweise zur Adobe Pass-Authentifizierung 2.69 {#authn-269-rn}
 
 >[!IMPORTANT]
@@ -34,22 +35,22 @@ Veröffentlichungsdatum: **02/27/2024 - 02/29/2024**
 
 * Behobene Sicherheitslücken.
 * Verbesserungen beim Zurücksetzen der Sicherheitsebene „Temp Pass“ mit der dynamischen Client-Registrierung (DCR).
-   * Weitere Informationen finden Sie hier: [TempPass-Funktion](../integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+  * Weitere Informationen finden Sie hier: [TempPass-Funktion](../integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
 * Verbesserungen beim Reporting zur Plattformidentifizierung.
 
 #### REST-APIs
 
 * Laufende Entwicklung zu neuen REST-APIs.
-   * In einer kommenden dedizierten Version werden neue Endpunkte und Flüsse eingeführt, die in einer separaten Benachrichtigung angekündigt werden.
-   * Die Dokumentation für die Verwendung dieser neuen APIs wird derzeit aktualisiert.
+  * In einer kommenden dedizierten Version werden neue Endpunkte und Flüsse eingeführt, die in einer separaten Benachrichtigung angekündigt werden.
+  * Die Dokumentation für die Verwendung dieser neuen APIs wird derzeit aktualisiert.
 
 #### TVE-Dashboard
 
 * Laufende Entwicklung zum neuen TVE-Dashboard.
-   * In einer kommenden dedizierten Version wird das neue TVE-Dashboard eingeführt, das in einer separaten Benachrichtigung angekündigt wird.
-   * Die Dokumentation zur Verwendung dieses neuen TVE-Dashboards wird gerade aktualisiert.
+  * In einer kommenden dedizierten Version wird das neue TVE-Dashboard eingeführt, das in einer separaten Benachrichtigung angekündigt wird.
+  * Die Dokumentation zur Verwendung dieses neuen TVE-Dashboards wird gerade aktualisiert.
 
 #### JavaScript SDK 4.7.0
 
 * Die veraltete Version 2.0.1 von Access Enabler JavaScript SDK wurde aufgrund von Sicherheitslücken entfernt.
-   * Weitere Informationen finden Sie unter: [Versionshinweise zur Adobe Pass-Authentifizierung für JavaScript 4.7.0](authn-rn-javascript-470.md)
+  * Weitere Informationen finden Sie unter: [Versionshinweise zur Adobe Pass-Authentifizierung für JavaScript 4.7.0](authn-rn-javascript-470.md)

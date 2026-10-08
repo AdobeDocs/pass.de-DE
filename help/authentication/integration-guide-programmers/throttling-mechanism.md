@@ -2,13 +2,14 @@
 title: Drosselmechanismus
 description: Erfahren Sie mehr über den Drosselungsmechanismus, der bei der Adobe Pass-Authentifizierung verwendet wird. Einen Überblick über diesen Mechanismus finden Sie auf dieser Seite .
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1141'
+source-wordcount: '1162'
 ht-degree: 0%
-
 ---
-
 # Drosselmechanismus {#throttling-mechanism}
 
 Kunden mit der Passauthentifizierung müssen für jeden ihrer Benutzer gemäß den Anweisungen und ihrem Business Case auf die Passauthentifizierungs-API zugreifen können.
@@ -40,7 +41,7 @@ Der vorgeschlagene Drosselungsmechanismus verwendet die identifizierten Geräte 
 
 Server-zu-Server-Implementierungen müssen die IP-Adressen ihrer Clients unter Verwendung des Header-Mechanismus „X-Forwarded-For“ weiterleiten.
 
-Weitere Informationen zum Übergeben der Kopfzeile „X-Forwarded-For“ finden [&#x200B; hier](legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md).
+Weitere Informationen zum Übergeben der Kopfzeile „X-Forwarded-For“ finden [ hier](legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md).
 
 ### Tatsächliche Grenzwerte und Endpunkte {#throttling-mechanism-limits}
 
@@ -136,7 +137,7 @@ p3p: CP="NOI DSP COR CURa ADMa DEVa OUR BUS IND UNI COM NAV STA"
 
 Kunden, die eine benutzerdefinierte Implementierung verwenden (einschließlich Server-zu-Server-Implementierungen), um mit der Pass Authentication API zu interagieren, sollten sicherstellen, dass sie ihre Benutzer-IP-Adresse erfassen und korrekt weiterleiten können, indem sie den X-Forwarded-For-Header verwenden, um die Authentifizierungs-API weiter zu übergeben.
 
-Weitere Informationen [&#x200B; Sie &#x200B;](legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md)hier).
+Weitere Informationen [ Sie ](legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md)hier).
 
 ### Reaktion auf neuen Antwort-Code
 

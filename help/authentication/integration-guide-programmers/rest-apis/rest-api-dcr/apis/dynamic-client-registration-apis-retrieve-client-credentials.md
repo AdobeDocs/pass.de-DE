@@ -2,13 +2,14 @@
 title: Abrufen von Client-Anmeldeinformationen
 description: Dynamische Client-Registrierungs-API - Abrufen von Client-Anmeldeinformationen
 exl-id: 0b39768b-25b8-47b9-8080-59c56fb829fb
-source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '437'
-ht-degree: 0%
-
+source-wordcount: '472'
+ht-degree: 1%
 ---
-
 # Abrufen von Client-Anmeldeinformationen {#retrieve-client-credentials}
 
 >[!IMPORTANT]

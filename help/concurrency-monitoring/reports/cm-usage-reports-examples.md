@@ -2,13 +2,14 @@
 title: Beispiele für Nutzungsberichte zur gleichzeitigen Überwachung
 description: Beispiele für Nutzungsberichte zur gleichzeitigen Überwachung
 exl-id: e612ea40-c59c-440e-9c80-754b81b37a72
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2360'
+source-wordcount: '2896'
 ht-degree: 0%
-
 ---
-
 # Beispiele für Nutzungsberichte zur gleichzeitigen Überwachung{#cm-usage-reports-examples}
 
 >[!NOTE]
@@ -17,7 +18,7 @@ ht-degree: 0%
 
 ## Beispiele für monatliche Berichte {#monthly-reports-examples}
 
-| -Name | Dimensionen | URL | Metriken |
+| Name | Dimensionen | URL | Metriken |
 |--------------------------------------------------------------------------------|----------------------------------------------------------------------------------|----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Monatsstatistiken für MVPD-übergreifende Transaktionen | „Jahr“, „Monat“, „MVPD“ | CMU/V2/Jahr/Monat/MVPD | „active-users“, „active-sessions“, „started-sessions“, „completed-sessions“, „failed-attempts“, „dismissed-sessions“, „kill-sessions“ |
 | Monatsstatistiken für MVPD-übergreifende Mandanten | „Jahr“, „Monat“, „MVPD“, „Mandant“ | CMU/V2/Jahr/Monat/MVPD/Mandant | „active-users“, „active-sessions“, „started-sessions“, „completed-sessions“, „failed-attempts“, „dismissed-sessions“, „kill-sessions“ |
@@ -41,7 +42,7 @@ ht-degree: 0%
 
 ## Beispiele für tägliche Berichte {#daily-reports-examples}
 
-| -Name | Dimensionen | URL | Metriken |
+| Name | Dimensionen | URL | Metriken |
 |------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Täglicher MVPD/Plattform-Status | „Jahr“, „Monat“, „Tag“, „Mandant“, „MVPD“, „Plattform“, „Anwendungs-ID“ | CMU/v2/year/month/day/tenant/mvpd/platform/application-id | „active-users“, „active-sessions“, „started-sessions“, „completed-sessions“, „failed-attempts“, „dismissed-sessions“, „kill-sessions“ |
 | Täglicher MVPD/Plattform-Status mit Anwendungsname | „Jahr“, „Monat“, „Tag“, „Mandant“, „MVPD“, „Plattform“, „Anwendungs-ID“, „Anwendung“ | CMU/v2/year/month/day/tenant/mvpd/platform/application-id/application | „active-users“, „active-sessions“, „started-sessions“, „completed-sessions“, „failed-attempts“, „dismissed-sessions“, „kill-sessions“ |
@@ -71,7 +72,7 @@ ht-degree: 0%
 
 ## Beispiele für stündliche Berichte {#hourly-reports-examples}
 
-| -Name | Dimensionen | URL | Metriken |
+| Name | Dimensionen | URL | Metriken |
 |-------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Stündlicher Anwendungsstatus | „Jahr“, „Monat“, „Tag“, „Stunde“, „Mandant“, „Anwendungs-ID“ | CMU/V2/Jahr/Monat/Tag/Stunde/Mandant/Anwendungs-ID | „active-users“, „active-sessions“, „started-sessions“, „completed-sessions“, „failed-attempts“, „dismissed-sessions“, „kill-sessions“ |
 | Stündlicher Anwendungsstatus mit Anwendungsnamen und Plattform | „Jahr“, „Monat“, „Tag“, „Stunde“, „Mandant“, „Anwendungs-ID“, „Anwendung“, „Plattform“ | CMU/v2/year/month/day/hour/tenant/application-id/application/platform | „active-users“, „active-sessions“, „started-sessions“, „completed-sessions“, „failed-attempts“, „dismissed-sessions“, „kill-sessions“ |

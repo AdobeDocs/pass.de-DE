@@ -2,13 +2,14 @@
 title: Zugriff auf Enabler Android SDK Single Sign-On (SSO) für Android 10-Apps
 description: Zugriff auf Enabler Android SDK Single Sign-On (SSO) für Android 10-Apps
 exl-id: dedade15-c451-4757-b684-d3728e11dd87
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '401'
+source-wordcount: '428'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Access Enabler Android SDK Single Sign-on (SSO) für Android 10-Apps {#access-enabler-android-sdk-single-sign-on-sso-on-android-10-apps}
 
 >[!NOTE]
@@ -32,8 +33,8 @@ Infolge dieser Änderungen können das Single Sign-On (SSO), das von Access Enab
 Je nach **[!UICONTROL target SDK level]** Ihrer App oder der Verwendung des Manifestattributs **android:requestLegacyExternalStorage** verhält sich das Single Sign-On (SSO), das von Access Enabler Android Version 3.2.1 SDK (neueste Version) und früheren Versionen angeboten wird, derzeit wie folgt:
 
 - Ihre App für **Android 9 (API-Ebene 28)** oder niedriger **-\>** Single Sign-On (SSO) **funktioniert**
-- Ihre App ist für **Android 10** **(API-Ebene 29)** vorgesehen und **&#x200B;**&#x200B;den Wert von **requestLegacyExternalStorage in der Manifestdatei**-\>**&#x200B;** SSO (Single Sign-On) Ihrer App auf **gesetzt**
-- Ihre App ist für **Android 10** **(API-Ebene 29)** vorgesehen und **&#x200B;**&#x200B;den Wert von **requestLegacyExternalStorage in der Manifestdatei**-\>**SSO (Single Sign-On) Ihrer App auf** nicht **festgelegt**
+- Ihre App ist für **Android 10** **(API-Ebene 29)** vorgesehen und **** den Wert von **requestLegacyExternalStorage in der Manifestdatei**-\>**** SSO (Single Sign-On) Ihrer App auf **gesetzt**
+- Ihre App ist für **Android 10** **(API-Ebene 29)** vorgesehen und **** den Wert von **requestLegacyExternalStorage in der Manifestdatei**-\>**SSO (Single Sign-On) Ihrer App auf** nicht **festgelegt**
 
 >[!TIP]
 >

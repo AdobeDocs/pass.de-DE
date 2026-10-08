@@ -2,13 +2,14 @@
 title: Versionshinweise zur Adobe Pass-Authentifizierung 3.5.0
 description: Erfahren Sie mehr über die neuen Funktionen, Änderungen und bekannten Probleme in dieser Version.
 exl-id: b196f636-26a5-4974-903e-40b5f8b93a24
-source-git-commit: 1cbddf081fc7d57a187c9701e4ade8593baf8759
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '273'
 ht-degree: 0%
-
 ---
-
 # Versionshinweise zur Adobe Pass-Authentifizierung 3.5.0
 
 Letzte Aktualisierung: Di 09 Dez 2025 00:00:00 GMT+0000 (Koordinierte Weltzeit)
@@ -18,7 +19,7 @@ Letzte Aktualisierung: Di 09 Dez 2025 00:00:00 GMT+0000 (Koordinierte Weltzeit)
 
 >[!IMPORTANT]
 >
-> Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](https://experienceleague.adobe.com/de/docs/pass/authentication/product-announcements) auf dem Laufenden zu bleiben.
+> Achten Sie darauf, über die neuesten Ankündigungen zu Produkten der Adobe Pass-Authentifizierung und Stilllegungszeitpläne auf der Seite [Produktankündigungen](https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements) auf dem Laufenden zu bleiben.
 
 Auf dieser Seite werden neue Funktionen, Änderungen und bekannte Probleme dieser Version beschrieben:
 

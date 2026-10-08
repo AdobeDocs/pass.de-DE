@@ -2,13 +2,14 @@
 title: MVPD-Liste bereitstellen
 description: MVPD-Liste bereitstellen
 exl-id: db2d8f19-d0b9-4195-bf0b-f9de0d96062b
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '254'
+source-wordcount: '262'
 ht-degree: 2%
-
 ---
-
 # (Legacy) MVPD-Liste bereitstellen {#provide-mvpd-list}
 
 >[!NOTE]
@@ -21,7 +22,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) &#x200B;](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -41,9 +42,9 @@ ht-degree: 2%
 
 Gibt die Liste der konfigurierten MVPDs für den Anforderer aus.
 
-| Endpunkt | Called </br>by | Eingabe   </br>Parameter | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
+| Endpunkt | Called </br>by | Input </br>params | HTTP </br>Methode | Antwort | HTTP </br>Antwort |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Beispiel:</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Adobe Pass-Authentifizierung | &#x200B;1. Antragsteller</br>    (Pfadkomponente)</br>_2.  deviceType (veraltet)_ | GET | XML oder JSON mit einer Liste von MVPDs. | 200 |
+| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Beispiel:</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Adobe Pass-Authentifizierung | &#x200B;1.  Requestor</br> (path component)</br>_2.  deviceType (veraltet)_ | GET | XML oder JSON mit einer Liste von MVPDs. | 200 |
 
 {style="table-layout:auto"}
 

@@ -1,14 +1,15 @@
 ---
-title: Willkommen bei Adobe&reg; Pass Authentication
-description: Willkommen bei Adobe&reg; Pass Authentication
+title: Willkommen bei Adobe&reg; Authentifizierung übergeben
+description: Willkommen bei Adobe&reg; Authentifizierung übergeben
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '414'
+source-wordcount: '433'
 ht-degree: 0%
-
 ---
-
 # Willkommen bei der Authentifizierung mit Adobe® Pass {#welcome}
 
 >[!IMPORTANT]
@@ -33,7 +34,7 @@ Als SaaS-Lösung (Software as a Service) beschleunigt die Adobe Pass-Authentifiz
 * [Zendesk-Support-Portal](https://tve.zendesk.com/home)\
   Melden Sie sich an, um auf Tickets zuzugreifen, Abfragen zu senden oder die Wissensdatenbank aufzurufen.
 
-* [Häufig gestellte Fragen zu Support-](/help/authentication/kickstart/support-procedures-faqs.md)
+* [Häufig gestellte Fragen zu Support-Verfahren](/help/authentication/kickstart/support-procedures-faqs.md)
 Häufig gestellte Fragen zu den Verfahren zur Unterstützung der Adobe Pass-Authentifizierung.
 
 * [Häufig gestellte Fragen zur Dynamic Client Registration (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)\

@@ -2,13 +2,14 @@
 title: REST API V2-Cookbook (Client-zu-Server)
 description: REST API V2-Cookbook (Client-zu-Server)
 exl-id: 6a5a89d2-ea54-4f9c-9505-e575ced4301c
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1842'
 ht-degree: 0%
-
 ---
-
 # REST API V2-Cookbook (Client-zu-Server) {#rest-api-v2-cookbook-client-to-server}
 
 >[!IMPORTANT]
@@ -104,12 +105,12 @@ Die Authentifizierungsphase dient als erforderlicher Schritt für die Vorautoris
 * **Szenario 1:** Profile vorhanden sind, kann die Streaming-Anwendung in die Phase [Vorabautorisierung](#preauthorization-phase) oder [Autorisierung](#authorization-phase).
 
 
-* **Szenario 2:** Es sind keine vorhandenen Profile vorhanden. Die Streaming-Anwendung kann mit dem nächsten Schritt fortfahren, um den [&#x200B; zu authentifizieren](#step-3-authenticate-the-user).
+* **Szenario 2:** Es sind keine vorhandenen Profile vorhanden. Die Streaming-Anwendung kann mit dem nächsten Schritt fortfahren, um den [ zu authentifizieren](#step-3-authenticate-the-user).
 
 
 * **Szenario 3:** Es sind keine vorhandenen Profile vorhanden. Die Streaming-Anwendung kann fortfahren, dem Benutzer über die Funktion [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) temporären Zugriff bereitzustellen.
 
-  * Dieses Szenario würde den Rahmen dieses Dokuments sprengen. Weitere Informationen finden Sie in der Dokumentation [Temporärer &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)&quot;.
+  * Dieses Szenario würde den Rahmen dieses Dokuments sprengen. Weitere Informationen finden Sie in der Dokumentation [Temporärer ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)&quot;.
 
 ### Schritt 3: Benutzer authentifizieren {#step-3-authenticate-the-user}
 

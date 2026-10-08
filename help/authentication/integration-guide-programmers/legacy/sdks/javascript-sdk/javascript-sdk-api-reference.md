@@ -2,13 +2,14 @@
 title: JavaScript SDK API-Referenz
 description: JavaScript SDK API-Referenz
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2902'
+source-wordcount: '2904'
 ht-degree: 0%
-
 ---
-
 # (Veraltete) JavaScript SDK API-Referenz {#javascript-sdk-api-reference}
 
 >[!NOTE]
@@ -44,14 +45,14 @@ Diese Funktionen initiieren Anfragen zur Interaktion mit einer MVPD. Alle Aufruf
 
 - *Endpunkte* - Dieser Parameter ist optional. Dies kann einer der folgenden Werte sein:
 
-   - Ein Array, mit dem Sie Endpunkte für von Adobe bereitgestellte Authentifizierungs- und Autorisierungsdienste angeben können (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Wenn mehrere URLs bereitgestellt werden, besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt. Standardmäßig wird der Adobe-Dienstleister verwendet (<http://sp.auth.adobe.com/>), wenn kein Wert angegeben ist.
+  - Ein Array, mit dem Sie Endpunkte für von Adobe bereitgestellte Authentifizierungs- und Autorisierungsdienste angeben können (verschiedene Instanzen können zu Debugging-Zwecken verwendet werden). Wenn mehrere URLs bereitgestellt werden, besteht die MVPD-Liste aus den Endpunkten aller Dienstleister. Jede MVPD ist mit dem schnellsten Dienstleister verknüpft, d. h. dem Anbieter, der zuerst geantwortet hat und diese MVPD unterstützt. Standardmäßig wird der Adobe-Dienstleister verwendet (<http://sp.auth.adobe.com/>), wenn kein Wert angegeben ist.
 
   Beispiel:
-   - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
+  - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
 
 - *options* - Ein JSON-Objekt, das den Wert der Anwendungs-ID, den Wert der Besucher-ID, die Einstellungen ohne Aktualisierung (Anmeldung im Hintergrund) und die Einstellungen für MVPD (iFrame) enthält. Alle Werte sind optional.
-   1. Wenn angegeben, wird die Besucher-ID von Experience Cloud für alle Netzwerkaufrufe gemeldet, die von der Bibliothek ausgeführt werden. Der Wert kann später für erweiterte Analyseberichte verwendet werden.
-   2. Wenn die eindeutige Kennung der Anwendung -`applicationId` angegeben ist, wird der Wert allen nachfolgenden Aufrufen hinzugefügt, die von der Anwendung als Teil der HTTP-Kopfzeile „X-Device-Info“ durchgeführt werden. Dieser Wert kann später mithilfe der richtigen Abfrage aus [ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)-Berichten abgerufen werden.
+  1. Wenn angegeben, wird die Besucher-ID von Experience Cloud für alle von der Bibliothek ausgeführten Netzwerkaufrufe gemeldet. Der Wert kann später für erweiterte Analyseberichte verwendet werden.
+  2. Wenn die eindeutige Kennung der Anwendung -`applicationId` angegeben ist, wird der Wert allen nachfolgenden Aufrufen hinzugefügt, die von der Anwendung als Teil der HTTP-Kopfzeile „X-Device-Info“ durchgeführt werden. Dieser Wert kann später mithilfe der richtigen Abfrage aus [ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)-Berichten abgerufen werden.
 
   **Hinweis:** Bei allen JSON-Schlüsseln wird zwischen Groß- und Kleinschreibung unterschieden.
 
@@ -237,39 +238,39 @@ Es gibt zwei Arten von Metadaten:
 **Parameter:**
 
 - *key*: Eine ID, die die angeforderten Metadaten angibt:
-   - Wenn der Schlüssel `"TTL_AUTHN",` ist, wird die Abfrage durchgeführt, um die Ablaufzeit des Authentifizierungstokens abzurufen.
+  - Wenn der Schlüssel `"TTL_AUTHN",` ist, wird die Abfrage durchgeführt, um die Ablaufzeit des Authentifizierungstokens abzurufen.
 
-   - Wenn key `"TTL_AUTHZ"` und params ein Array ist, das die Ressourcen-ID als Zeichenfolge enthält, wird die Abfrage durchgeführt, um die Ablaufzeit des Autorisierungs-Tokens abzurufen, das mit der angegebenen Ressource verknüpft ist.
+  - Wenn key `"TTL_AUTHZ"` und params ein Array ist, das die Ressourcen-ID als Zeichenfolge enthält, wird die Abfrage durchgeführt, um die Ablaufzeit des Autorisierungs-Tokens abzurufen, das mit der angegebenen Ressource verknüpft ist.
 
-   - Wenn der Schlüssel `"DEVICEID"` ist, wird die Abfrage durchgeführt, um die aktuelle Geräte-ID abzurufen. Beachten Sie, dass diese Funktion standardmäßig deaktiviert ist und Programmierer sich an Adobe wenden sollten, um Informationen zu Aktivierung und Gebühren zu erhalten.
+  - Wenn der Schlüssel `"DEVICEID"` ist, wird die Abfrage durchgeführt, um die aktuelle Geräte-ID abzurufen. Beachten Sie, dass diese Funktion standardmäßig deaktiviert ist und Programmierer sich an Adobe wenden sollten, um Informationen zu Aktivierung und Gebühren zu erhalten.
 
-   - Wenn der Schlüssel aus der folgenden Liste von Benutzer-Metadatentypen stammt, wird ein JSON-Objekt, das die entsprechenden Benutzer-Metadaten enthält, an die [`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata)-Rückruffunktion gesendet:
+  - Wenn der Schlüssel aus der folgenden Liste von Benutzer-Metadatentypen stammt, wird ein JSON-Objekt, das die entsprechenden Benutzer-Metadaten enthält, an die [`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata)-Rückruffunktion gesendet:
 
-   - `"zip"` - Postleitzahl
+  - `"zip"` - Postleitzahl
 
-   - `"encryptedZip"` - Verschlüsselte Postleitzahl
+  - `"encryptedZip"` - Verschlüsselte Postleitzahl
 
-   - `"householdID"` - Haushaltskennung. Falls eine MVPD keine Unterkonten unterstützt, ist dies identisch mit der Benutzer-ID.
+  - `"householdID"` - Haushaltskennung. Falls eine MVPD keine Unterkonten unterstützt, ist dies identisch mit der Benutzer-ID.
 
-   - `"maxRating"` - Maximale Bewertung der Eltern für den Benutzer
+  - `"maxRating"` - Maximale Bewertung der Eltern für den Benutzer
 
-   - `"userID"` - Die Benutzerkennung. Falls eine MVPD Unterkonten unterstützt und der Benutzer nicht das Hauptkonto ist, unterscheidet sich die userID von der householdID.
+  - `"userID"` - Die Benutzerkennung. Falls eine MVPD Unterkonten unterstützt und der Benutzer nicht das Hauptkonto ist, unterscheidet sich die userID von der householdID.
 
-   - `"channelID"` - Die Liste der Kanäle, die der Benutzer anzeigen darf
+  - `"channelID"` - Die Liste der Kanäle, die der Benutzer anzeigen darf
 
-   - `"is_hoh"` - Markierung, die angibt, ob ein Benutzer Haushaltsleiter ist
+  - `"is_hoh"` - Markierung, die angibt, ob ein Benutzer Haushaltsleiter ist
 
-   - `"encryptedZip"` - Verschlüsselte Postleitzahl
+  - `"encryptedZip"` - Verschlüsselte Postleitzahl
 
-   - `"typeID"` - Markierung, die angibt, ob das Benutzerkonto ein primäres/sekundäres Konto ist.
+  - `"typeID"` - Markierung, die angibt, ob das Benutzerkonto ein primäres/sekundäres Konto ist.
 
-   - `"primaryOID"` - Haushaltskennung
+  - `"primaryOID"` - Haushaltskennung
 
-   - `"postalCode"` - Ähnlich wie Postleitzahl
+  - `"postalCode"` - Ähnlich wie Postleitzahl
 
-   - `"acctID"` - Konto-ID
+  - `"acctID"` - Konto-ID
 
-   - `"acctParentID"` - ID des übergeordneten Kontos
+  - `"acctParentID"` - ID des übergeordneten Kontos
 
   **Hinweis**: Welche Benutzermetadaten einem Programmierer tatsächlich zur Verfügung stehen, hängt davon ab, was MVPD zur Verfügung stellt.  Siehe [Benutzermetadaten](#UserMetadata) für die aktuelle Liste der verfügbaren Benutzermetadaten.
 
@@ -309,7 +310,7 @@ Beispiel:
 **Beschreibung:** Rufen Sie diese Funktion auf, wenn Benutzende eine MVPD aus Ihrer Anbieterauswahl-Benutzeroberfläche ausgewählt haben, um die Anbieterauswahl an den Access Enabler zu senden, oder rufen Sie diese Funktion mit einem Null-Parameter auf, falls Benutzende Ihre Anbieterauswahl-Benutzeroberfläche verworfen haben, ohne einen Anbieter auszuwählen.
 
 **Callbacks
-trigger:**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+trigger:**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +416,7 @@ Sie müssen diese Callbacks implementieren, um die Antworten auf Ihre asynchrone
 
 **Beschreibung:** Implementieren Sie diesen Callback, wenn der Benutzer einen MVPD ausgewählt hat, für den ein iFrame erforderlich ist, in dem die Benutzeroberfläche für die Authentifizierungs-Anmeldeseite angezeigt werden soll.
 
-**Ausgelöst durch:**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Ausgelöst durch:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Zurück zum Anfang](#top)
 
@@ -453,16 +454,16 @@ Sie müssen diese Callbacks implementieren, um die Antworten auf Ihre asynchrone
 **Beschreibung:** Implementieren Sie diesen Callback, um Tracking-Daten zu erhalten, wenn bestimmte Ereignisse eintreten. Sie können dies beispielsweise verwenden, um zu verfolgen, wie viele Benutzer sich mit denselben Anmeldeinformationen angemeldet haben. Das Tracking ist derzeit nicht konfigurierbar. Bei der Adobe Pass-Authentifizierung 1.6 meldet `sendTrackingData()` auch Informationen zum Gerät, zum Access Enabler-Client und zum Betriebssystemtyp. Der `sendTrackingData()` Callback bleibt abwärtskompatibel.
 
 - Mögliche Werte für den Gerätetyp:
-   - Rechner
-   - Tablet
-   - Mobiltelefon
-   - Gameconsole
-   - Unbekannt
+  - Rechner
+  - Tablet
+  - Mobiltelefon
+  - Gameconsole
+  - Unbekannt
 
 - Mögliche Werte für den Client-Typ von Access Enabler:
-   - HTML5
-   - iOS
-   - Android
+  - HTML5
+  - iOS
+  - Android
 
 
 Übergibt den Ereignistyp und ein Array der zugehörigen Informationen. Ereignistypen sind:

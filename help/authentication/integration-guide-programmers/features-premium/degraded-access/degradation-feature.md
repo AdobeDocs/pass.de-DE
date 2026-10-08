@@ -2,13 +2,14 @@
 title: Abbaumerkmal
 description: Abbaumerkmal
 exl-id: c7d6685b-a235-42eb-9c9c-0ffa1747f614
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '493'
 ht-degree: 0%
-
 ---
-
 # Abbaumerkmal {#degradation-feature}
 
 >[!IMPORTANT]
@@ -43,10 +44,10 @@ Umfassende Anweisungen finden Sie in der Dokumentation [Übersicht über die Dyn
 
 Die Degradation API ist eine RESTful-API, mit der Programmierer Abbauregeln für bestimmte MVPDs verwalten können. Die API bietet die Möglichkeit, den Status für die aktiven Abbauregeln zu aktivieren, zu entfernen und abzurufen.
 
-Weitere Informationen zur Degradation-API finden Sie im folgenden Zendesk-Dokument [Adobe Pass-Authentifizierung | Beeinträchtigungs-API v3](https://tve.zendesk.com/hc/en-us/articles/33912526308372-Adobe-Pass-Authentication-Degradation-API-v3) und suchen Sie nach der herunterzuladenden PDF-Datei.
+Weitere Informationen zur Degradation-API finden Sie im folgenden Zendesk-Dokument [Adobe Pass-Authentifizierung | Degradation-API v3](https://tve.zendesk.com/hc/en-us/articles/33912526308372-Adobe-Pass-Authentication-Degradation-API-v3) und suchen Sie nach der herunterzuladenden PDF-Datei.
 
 ## REST-API V2 {#rest-api-v2}
 
-Für die Nutzung der Abbaufunktion ist die Implementierung von Code-Aktualisierungen erforderlich, um die Interaktion der TV Everywhere-Anwendung (TVE) mit der Adobe Pass-Authentifizierung ([-API V2) &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) ändern.
+Für die Nutzung der Abbaufunktion ist die Implementierung von Code-Aktualisierungen erforderlich, um die Interaktion der TV Everywhere-Anwendung (TVE) mit der Adobe Pass-Authentifizierung ([-API V2) ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) ändern.
 
-Eine umfassende Anleitung zu diesen Aktualisierungen und den zugehörigen Workflows finden Sie in der Dokumentation [Gestörte &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)&quot;.
+Eine umfassende Anleitung zu diesen Aktualisierungen und den zugehörigen Workflows finden Sie in der Dokumentation [Gestörte ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)&quot;.

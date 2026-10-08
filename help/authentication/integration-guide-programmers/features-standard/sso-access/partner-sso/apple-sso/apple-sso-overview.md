@@ -2,13 +2,14 @@
 title: Apple SSO - Übersicht
 description: Apple SSO - Übersicht
 exl-id: 7cf47d01-a35a-4c85-b562-e5ebb6945693
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1260'
+source-wordcount: '1311'
 ht-degree: 0%
-
 ---
-
 # Apple SSO - Übersicht {#apple-sso-overview}
 
 >[!IMPORTANT]
@@ -36,28 +37,28 @@ Um von dem Single Sign-On (SSO)-Benutzererlebnis zu profitieren, muss ein Progra
 
 * Wenden Sie sich an Apple, um das [Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount) als Teil Ihrer Apple Team ID zu aktivieren, und konfigurieren Sie die [Berechtigung für Videoabonnenten-Single-Sign-On](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_video-subscriber-single-sign-on) als Teil Ihres Apple-Entwicklerkontos.
 
-   * Verwenden Sie Xcode ab Version 8 und iOS/tvOS ab Version 10.
+  * Verwenden Sie Xcode ab Version 8 und iOS/tvOS ab Version 10.
 
 * Aktivieren Sie Single Sign-On (SSO) für jede gewünschte Integration und Plattform (iOS/tvOS) über das [Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication) indem Sie die `Enable Single Sign On` Eigenschaft auf `Yes` setzen.
 
 | Adobe - Single Sign-On aktivieren | Apple **Onboarded (Supported)** MVPDs | Apple **Picker** MVPDs | Apple **Nicht integriert (nicht unterstützt)** MVPDs |
 |-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| Ja (aktiviert) | Die Authentifizierungs- und Abmeldevorgänge umfassen sowohl Apple- als auch Adobe Pass-Authentifizierungslösungen, während alle anderen Vorgänge (Autorisierung, Vorautorisierung, Metadaten usw.) ausschließlich von der Adobe Pass-Authentifizierung abgewickelt werden. | Die Authentifizierungs- und Abmeldeflüsse werden auf die regulären Flüsse zurückgesetzt, die ausschließlich von der Adobe Pass-Authentifizierung bedient werden. | Die Authentifizierungs- und Abmeldeflüsse werden auf die regulären Flüsse zurückgesetzt, die ausschließlich von der Adobe Pass-Authentifizierung bedient werden. |
+| Ja (aktiviert) | Die Authentifizierungs- und Abmeldevorgänge umfassen sowohl Apple- als auch Adobe Pass-Authentifizierungslösungen, während alle anderen Vorgänge (Autorisierung, Vorautorisierung, Metadaten usw.) wird ausschließlich von Adobe Pass-Authentifizierung gewartet. | Die Authentifizierungs- und Abmeldeflüsse werden auf die regulären Flüsse zurückgesetzt, die ausschließlich von der Adobe Pass-Authentifizierung bedient werden. | Die Authentifizierungs- und Abmeldeflüsse werden auf die regulären Flüsse zurückgesetzt, die ausschließlich von der Adobe Pass-Authentifizierung bedient werden. |
 | Nein (deaktiviert) | Die Authentifizierungs- und Abmeldeflüsse werden auf die regulären Flüsse zurückgesetzt, die ausschließlich von der Adobe Pass-Authentifizierung bedient werden. | Die Authentifizierungs- und Abmeldeflüsse werden auf die regulären Flüsse zurückgesetzt, die ausschließlich von der Adobe Pass-Authentifizierung bedient werden. | Die Authentifizierungs- und Abmeldeflüsse werden auf die regulären Flüsse zurückgesetzt, die ausschließlich von der Adobe Pass-Authentifizierung bedient werden. |
 
 * Integrieren Sie die Single Sign-On (SSO)-Benutzerflüsse mit einer der folgenden Lösungen, die die Adobe Pass-Authentifizierung für Endbenutzer von Client-Anwendungen bietet, die auf iOS, iPadOS oder tvOS ausgeführt werden.
 
-   * Die Adobe Pass-Authentifizierungs-REST-API v2 unterstützt das Partner Single Sign-On (SSO).
+  * Die Adobe Pass-Authentifizierungs-REST-API v2 unterstützt das Partner Single Sign-On (SSO).
 
-     Weitere Informationen finden Sie in der Dokumentation zum [Apple SSO Cookbook (REST API V2](apple-sso-cookbook-rest-api-v2.md).
+    Weitere Informationen finden Sie in der Dokumentation zum [Apple SSO Cookbook (REST API V2](apple-sso-cookbook-rest-api-v2.md).
 
-   * Die alte Adobe Pass-Authentifizierungs-REST-API v1 unterstützt das Partner Single Sign-On (SSO).
+  * Die alte Adobe Pass-Authentifizierungs-REST-API v1 unterstützt das Partner Single Sign-On (SSO).
 
-     Weitere Informationen finden Sie in der Dokumentation zum [&#x200B; (Legacy) Apple SSO Cookbook (REST API V1](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md).
+    Weitere Informationen finden Sie in der Dokumentation zum [ (Legacy) Apple SSO Cookbook (REST API V1](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md).
 
-   * Die alte Adobe Pass Authentication Access Enabler iOS/tvOS SDK unterstützt das Partner Single Sign-On (SSO).
+  * Die alte Adobe Pass Authentication Access Enabler iOS/tvOS SDK unterstützt das Partner Single Sign-On (SSO).
 
-     Weitere Informationen finden Sie in der Dokumentation [(Legacy) Apple SSO Cookbook (iOS/tvOS SDK](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md) .
+    Weitere Informationen finden Sie in der Dokumentation [(Legacy) Apple SSO Cookbook (iOS/tvOS SDK](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md) .
 
 ### MVPD {#apple-sso-prerequisites-mvpd}
 
@@ -65,11 +66,11 @@ Um von dem Single Sign-On (SSO)-Benutzererlebnis zu profitieren, muss eine MVPD 
 
 * Wenden Sie sich an Apple, um den Onboarding-Prozess für Apple einzuleiten.
 
-   * Fragen Sie die technische Dokumentation an, wie eine JavaScript-TVML-Anwendung integriert und entwickelt werden kann, die mit dem Benutzeranmeldeformular umgehen kann.
+  * Fragen Sie die technische Dokumentation an, wie eine JavaScript-TVML-Anwendung integriert und entwickelt werden kann, die mit dem Benutzeranmeldeformular umgehen kann.
 
 * Wenden Sie sich an die Adobe Pass-Authentifizierung, um den Onboarding-Prozess für Adobe einzuleiten.
 
-   * Geben Sie den Zeichenfolgenwert an, der die Kennung des TV-Anbieters darstellt, die von Apple während des Onboarding-Prozesses zugewiesen wurde.
+  * Geben Sie den Zeichenfolgenwert an, der die Kennung des TV-Anbieters darstellt, die von Apple während des Onboarding-Prozesses zugewiesen wurde.
 
 ## FAQs {#FAQ}
 

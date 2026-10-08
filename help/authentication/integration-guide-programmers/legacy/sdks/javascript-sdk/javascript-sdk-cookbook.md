@@ -2,13 +2,14 @@
 title: JavaScript SDK-Cookbook
 description: JavaScript SDK-Cookbook
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '957'
+source-wordcount: '972'
 ht-degree: 0%
-
 ---
-
 # (Legacy) JavaScript SDK-Cookbook {#javascript-sdk-cookbook}
 
 >[!NOTE]
@@ -23,7 +24,7 @@ ht-degree: 0%
 
 In diesem Dokument werden die Berechtigungs-Workflows beschrieben, die die Anwendung eines Programmierers auf höherer Ebene für eine JavaScript-Integration mit dem Adobe Pass-Authentifizierungs-Service implementiert. Links zur JavaScript-API-Referenz sind überall zu finden.
 
-Beachten Sie außerdem, dass [&#x200B; Abschnitt „Verwandte &#x200B;](#related)&quot; einen
+Beachten Sie außerdem, dass [ Abschnitt „Verwandte ](#related)&quot; einen
 Link zu einem Satz von JavaScript-Code-Beispielen.
 
 ## Berechtigungsflüsse {#entitlement}
@@ -56,13 +57,13 @@ Erstellen Sie Ihre Callback-Funktionen:
 - `displayProviderDialog(mvpds)`
 
   **Trigger:** `getAuthentication(),` nur, wenn der/die Benutzende keinen Anbieter (eine MVPD) ausgewählt hat und noch nicht authentifiziert ist
-Der mvpds-Parameter ist ein Array von Anbietern, die dem Benutzer zur Verfügung stehen.
+  Der mvpds-Parameter ist ein Array von Anbietern, die dem Benutzer zur Verfügung stehen.
 
 - `setAuthenticationStatus(status, errorcode)`
 
   **Trigger:**
-   - `checkAuthentication()`jedes Mal.
-   - Nur `getAuthentication()`, wenn der Benutzer bereits authentifiziert ist und einen Anbieter ausgewählt hat.
+  - `checkAuthentication()`jedes Mal.
+  - Nur `getAuthentication()`, wenn der Benutzer bereits authentifiziert ist und einen Anbieter ausgewählt hat.
 
   Zurückgegebener Status ist Erfolg oder Fehler. Der Fehler-Code beschreibt den Typ des Fehlers.
 
@@ -87,7 +88,7 @@ Der mvpds-Parameter ist ein Array von Anbietern, die dem Benutzer zur Verfügung
 - `selectedProvider(mvpd)`
 
   **Trigger:** [`getSelectedProvider()`]&#x200B;(#$getSelProv Der Parameter &quot;`mvpd`&quot; enthält Informationen über den von ausgewählten Anbieter.
-Der Benutzer.
+  Der Benutzer.
 
 - `setMetadataStatus(metadata, key, arguments)`
 
@@ -97,7 +98,7 @@ Der Benutzer.
 
 ## &#x200B;2. Anlauffluss
 
-**I. Laden Sie die AccessEnabler-JavaScript:**
+**I.  Laden Sie die AccessEnabler-JavaScript:**
 
 **Für Staging-Profil**
 
@@ -121,14 +122,14 @@ src="https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js">
 Die Authentifizierung ruft Ihre `entitlementLoaded()`-Rückruffunktion auf. Dies ist der Einstiegspunkt für die Kommunikation Ihres Programms mit dem AccessEnabler.
 
 
-**II.**-Aufruf `setRequestor()`zur Einrichtung der
+**II.** Aufruf `setRequestor()`zur Einrichtung der
 Identität des Programmierers; übergeben Sie die `requestorID` des Programmierers und
 (Optional) Ein Array von Adobe Pass-Authentifizierungsendpunkten.
 
 **Trigger:** Keine, ermöglicht jedoch bei Bedarf den Aufruf von `displayProviderDialog()`.
 
 
-**III.** Aufruf `checkAuthentication()`, um nach einer vorhandenen Authentifizierung zu suchen, ohne den vollständigen [Authentifizierungsfluss) ].  Wenn dieser Aufruf erfolgreich ist, können Sie direkt zur `authorization flow` wechseln.  Andernfalls fahren Sie mit dem `authentication flow` fort.
+**III.** Rufen Sie `checkAuthentication()` auf, um nach einer vorhandenen Authentifizierung zu suchen, ohne den vollständigen [Authentifizierungsfluss) ].  Wenn dieser Aufruf erfolgreich ist, können Sie direkt zur `authorization flow` wechseln.  Andernfalls fahren Sie mit dem `authentication flow` fort.
 
 **Abhängigkeit:** Erfolgreicher Aufruf an `setRequestor()` (diese Abhängigkeit gilt auch für alle nachfolgenden Aufrufe).
 
@@ -149,7 +150,7 @@ Rufen Sie `getAuthentication()` auf, um den Authentifizierungsstatus ODER den Tr
 - `displayProviderDialog()`Wenn der Benutzer noch nicht authentifiziert wurde
 - `setAuthenticationStatus()`, ob die Authentifizierung bereits stattgefunden hat
 
-Der Abschluss des Authentifizierungsflusses wird erreicht, wenn AccessEnabler (mit `setAuthenticationStatus()` `isAuthenticated == 1` aufruft.
+Der Abschluss des Authentifizierungsflusses wird erreicht, wenn AccessEnabler (mit `isAuthenticated == 1``setAuthenticationStatus()` aufruft.
 
 ## &#x200B;4. Autorisierungsfluss {#authz}
 
@@ -164,7 +165,7 @@ Rufen Sie `getAuthorization()` auf und übergeben Sie die ResourceID für die an
 - Wenn der Aufruf fehlschlägt: Untersuchen Sie die ausgelöste Ausnahme, um ihren Typ (AuthN, AuthZ oder etwas Anderes) zu bestimmen:
 - Wenn der Aufruf ein AuthN-Fehler war, starten Sie den AuthN-Fluss erneut.
 - Wenn der Aufruf ein AuthZ-Fehler war, ist der Benutzer nicht berechtigt, die angeforderten Medien anzusehen, und dem Benutzer sollte eine Fehlermeldung angezeigt werden.
-- Wenn ein anderer Fehler aufgetreten ist (Verbindungsfehler, Netzwerkfehler usw.), zeigen Sie dem Benutzer eine entsprechende Fehlermeldung an.
+- Wenn ein anderer Fehler aufgetreten ist (Verbindungsfehler, Netzwerkfehler usw.) Zeigen Sie dann dem Benutzer eine entsprechende Fehlermeldung an.
 
 Verwenden Sie den Media Token Verifier, um das von einem erfolgreichen `getAuthorization()`-Aufruf zurückgegebene shortMediaToken zu validieren.
 
@@ -175,18 +176,18 @@ AccessEnabler-Bibliothek)
 - Wenn die Validierung erfolgreich war: Anzeigen/Wiedergabe der angeforderten Medien für den Benutzer.
 - Wenn er fehlschlägt: Das AuthZ-Token war ungültig, die Medienanfrage sollte abgelehnt werden und dem Benutzer sollte eine Fehlermeldung angezeigt werden.
 
-## &#x200B;5. Anzeigen des Medienflusses {#logout}
+## &#x200B;5. Medienfluss anzeigen {#logout}
 
 - Der Benutzer wählt die anzuzeigenden Medien aus.
-   - Sind Medien geschützt?
-      - Ihre App prüft, ob die Medien geschützt sind:
-         - Wenn das Medium geschützt ist, startet Ihre App den oben genannten Autorisierungsfluss (AuthZ).
-         - Wenn das Medium nicht geschützt ist, fahren Sie mit dem Fluss Medien anzeigen fort.
-         - Medienwiedergabe
+  - Sind Medien geschützt?
+    - Ihre App prüft, ob die Medien geschützt sind:
+      - Wenn das Medium geschützt ist, startet Ihre App den oben genannten Autorisierungsfluss (AuthZ).
+      - Wenn das Medium nicht geschützt ist, fahren Sie mit dem Fluss Medien anzeigen fort.
+      - Medienwiedergabe
 
 ## Konfigurieren der Besucher-ID {#visitorID}
 
-Die Konfiguration eines [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=de)-Werts ist aus analytischer Sicht sehr wichtig. Sobald ein EC VisitorID-Wert festgelegt ist, sendet die SDK diese Informationen zusammen mit jedem Netzwerkaufruf, und der Adobe Pass-Authentifizierungsdienst erfasst diese Informationen. Auf diese Weise können Sie die Analysedaten aus dem Adobe Pass-Authentifizierungs-Service mit allen anderen Analyseberichten korrelieren, die Sie möglicherweise von anderen Programmen oder Websites haben. Informationen zum Einrichten von EC visitorID finden Sie [hier](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=de).
+Die Konfiguration eines [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html)-Werts ist aus analytischer Sicht sehr wichtig. Sobald ein EC VisitorID-Wert festgelegt ist, sendet die SDK diese Informationen zusammen mit jedem Netzwerkaufruf, und der Adobe Pass-Authentifizierungsdienst erfasst diese Informationen. Auf diese Weise können Sie die Analysedaten aus dem Adobe Pass-Authentifizierungs-Service mit allen anderen Analyseberichten korrelieren, die Sie möglicherweise von anderen Programmen oder Websites haben. Informationen zum Einrichten von EC visitorID finden Sie [hier](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
 
 
 >[!NOTE]

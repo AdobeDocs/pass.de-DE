@@ -2,13 +2,14 @@
 title: Migrationshandbuch für iOS/tvOS v3.x
 description: Migrationshandbuch für iOS/tvOS v3.x
 exl-id: 4c43013c-40af-48b7-af26-0bd7f8df2bdb
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '584'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Migrationshandbuch für iOS/tvOS v3.x {#iostvos-v3x-migration-guide}
 
 >[!NOTE]
@@ -72,7 +73,7 @@ Nachdem Sie das benutzerdefinierte URL-Schema abgerufen haben, müssen Sie es de
 
 ## Abfangen von Aufrufen im benutzerdefinierten URL-Schema {#intercept}
 
-Dies gilt nur, wenn Ihre Anwendung zuvor die manuelle Verarbeitung des Safari View Controllers (SVC) über den [setOptions(\[„handleSVC“:true &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)&quot;\]) aktiviert hat, und für bestimmte MVPDs, für die Safari View Controller (SVC) erforderlich ist. Daher müssen die URLs der Authentifizierungs- und Abmelde-Endpunkte durch einen SFSafariViewController anstelle eines UIWebView/WKWebView Controllers geladen werden.
+Dies gilt nur, wenn Ihre Anwendung zuvor die manuelle Verarbeitung des Safari View Controllers (SVC) über den [setOptions(\[„handleSVC“:true ](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)&quot;\]) aktiviert hat, und für bestimmte MVPDs, für die Safari View Controller (SVC) erforderlich ist. Daher müssen die URLs der Authentifizierungs- und Abmelde-Endpunkte durch einen SFSafariViewController anstelle eines UIWebView/WKWebView Controllers geladen werden.
 
 Während der Authentifizierungs- und Abmeldevorgänge muss die Anwendung die Aktivität des `SFSafariViewController `Controllers überwachen, während mehrere Weiterleitungen durchlaufen werden. Ihre Anwendung muss den Zeitpunkt erkennen, zu dem sie eine bestimmte benutzerdefinierte URL lädt, die von Ihrer `application's custom URL scheme` definiert wird (z. B.`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com)`. Wenn der Controller diese spezifische benutzerdefinierte URL lädt, muss die Anwendung die `SFSafariViewController` schließen und die Methode &quot;`handleExternalURL:url `&quot; von AccessEnabler aufrufen.
 

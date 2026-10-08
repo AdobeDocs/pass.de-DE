@@ -2,13 +2,14 @@
 title: Authentifizierung mit dem OAuth 2.0-Protokoll
 description: Authentifizierung mit dem OAuth 2.0-Protokoll
 exl-id: 0c1f04fe-51dc-4b4d-88e7-66e8f4609e02
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1088'
+source-wordcount: '1111'
 ht-degree: 0%
-
 ---
-
 # Authentifizierung mit dem OAuth 2.0-Protokoll
 
 >[!NOTE]
@@ -44,21 +45,21 @@ Zuallererst muss die MVPD sicherstellen, dass sie den [Authorization Code Grant]
 Nachdem der MVPD bestätigt hat, dass er den Fluss unterstützt, muss er uns die folgenden Informationen zur Verfügung stellen:
 
 * Der Authentifizierungsendpunkt
-   * Der Endpunkt gibt den Autorisierungs-Code an, der später im Austausch für das Aktualisierungs- und Zugriffstoken verwendet wird
+  * Der Endpunkt gibt den Autorisierungs-Code an, der später im Austausch für das Aktualisierungs- und Zugriffstoken verwendet wird
 * Der Endpunkt /token
-   * Dadurch werden das Aktualisierungstoken und das Zugriffstoken bereitgestellt
-   * Das Aktualisierungstoken muss stabil sein (es darf sich nicht jedes Mal ändern, wenn wir ein neues Zugriffstoken anfordern)
-   * Der MVPD muss für jedes Aktualisierungstoken mehrere aktive Zugriffstoken zulassen
-   * Dieser Endpunkt tauscht auch ein Aktualisierungs-Token gegen ein Zugriffs-Token aus
+  * Dadurch werden das Aktualisierungstoken und das Zugriffstoken bereitgestellt
+  * Das Aktualisierungstoken muss stabil sein (es darf sich nicht jedes Mal ändern, wenn wir ein neues Zugriffstoken anfordern)
+  * Der MVPD muss für jedes Aktualisierungstoken mehrere aktive Zugriffstoken zulassen
+  * Dieser Endpunkt tauscht auch ein Aktualisierungs-Token gegen ein Zugriffs-Token aus
 * Wir benötigen einen **Endpunkt für „user-profile“**
-   * Dieser Endpunkt gibt die Benutzer-ID an, die für ein Konto eindeutig sein muss und keine persönlich identifizierbaren Informationen enthalten sollte
+  * Dieser Endpunkt gibt die Benutzer-ID an, die für ein Konto eindeutig sein muss und keine persönlich identifizierbaren Informationen enthalten sollte
 * Der Endpunkt **/Logout** (optional)
-   * Die Adobe Pass-Authentifizierung leitet zu diesem Endpunkt um und stellt dem MVPD einen Redirect-Back-URI bereit. An diesem Endpunkt kann der MVPD die Cookies auf dem Client-Computer löschen oder eine beliebige Logik zum Abmelden anwenden
+  * Die Adobe Pass-Authentifizierung leitet zu diesem Endpunkt um und stellt dem MVPD einen Redirect-Back-URI bereit. An diesem Endpunkt kann der MVPD die Cookies auf dem Client-Computer löschen oder eine beliebige Logik zum Abmelden anwenden
 * Es wird dringend empfohlen, Unterstützung für autorisierte Clients zu haben (Client-Apps, die keine Benutzerautorisierungsseite Trigger haben)
 * Wir benötigen außerdem:
-   * **clientID** und **client secret** für die Integrationskonfigurationen aus
-   * **Time to Live** (TTL)-Werte für das Aktualisierungs-Token und Zugriffs-Token
-   * Wir können der MVPD einen Autorisierungs-Callback und einen Abmelde-Callback-URI bereitstellen. Bei Bedarf können wir auch MVPDs mit einer Liste von IPs zur Verfügung stellen, die in Ihren Firewall-Einstellungen auf die Whitelist gesetzt werden.
+  * **clientID** und **client secret** für die Integrationskonfigurationen aus
+  * **Time to Live** (TTL)-Werte für das Aktualisierungs-Token und Zugriffs-Token
+  * Wir können der MVPD einen Autorisierungs-Callback und einen Abmelde-Callback-URI bereitstellen. Bei Bedarf können wir auch MVPDs mit einer Liste von IPs zur Verfügung stellen, die in Ihren Firewall-Einstellungen auf die Whitelist gesetzt werden.
 
 
 ## Authentifizierungsfluss {#authn-flow}

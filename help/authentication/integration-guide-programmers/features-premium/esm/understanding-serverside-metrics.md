@@ -2,13 +2,14 @@
 title: Verstehen von Server-seitigen Metriken
 description: Verstehen von Server-seitigen Metriken
 exl-id: 516884e9-6b0b-451a-b84a-6514f571aa44
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2232'
+source-wordcount: '2262'
 ht-degree: 0%
-
 ---
-
 # Verstehen von Server-seitigen Metriken {#understanding-server-side-metrics}
 
 >[!NOTE]
@@ -26,18 +27,18 @@ Aus der Server-seitigen Sicht der Adobe Pass-Authentifizierung werden die folgen
 
 * **Im Authentifizierungsfluss generierte Ereignisse**(tatsächliche Anmeldung bei MVPD)
 
-   * Benachrichtigung über Authentifizierungsversuch - Diese wird generiert, wenn Benutzende an die MVPD-Anmeldeseite gesendet werden.
-   * Benachrichtigung über ausstehende Authentifizierung : Wenn sich der Benutzer erfolgreich mit seiner MVPD anmeldet, wird dies generiert, wenn der Benutzer        Zurück zur Adobe Pass-Authentifizierung.
-   * Benachrichtigung über AuthN-Genehmigung erteilt : Diese Benachrichtigung wird generiert, wenn sich der/die Benutzende wieder auf der Programmierer-Site befindet und das Authentifizierungstoken erfolgreich von der Adobe Pass-Authentifizierung abgerufen hat.
+  * Benachrichtigung über Authentifizierungsversuch - Diese wird generiert, wenn Benutzende an die MVPD-Anmeldeseite gesendet werden.
+  * Benachrichtigung über ausstehende Authentifizierung : Wenn sich der Benutzer erfolgreich mit seiner MVPD anmeldet, wird dies generiert, wenn der Benutzer zurück zur Adobe Pass-Authentifizierung geleitet wird.
+  * Benachrichtigung über AuthN-Genehmigung erteilt : Diese Benachrichtigung wird generiert, wenn sich der/die Benutzende wieder auf der Programmierer-Site befindet und das Authentifizierungstoken erfolgreich von der Adobe Pass-Authentifizierung abgerufen hat.
 * **Autorisierungsfluss** (Nur eine Prüfung auf Autorisierung mit einem
 MVPD)\
   *Voraussetzung:* Ein gültiges Authentifizierungs-Token
-   * Benachrichtigung über AuthZ-Versuch
-   * Benachrichtigung über erteilte AuthZ
+  * Benachrichtigung über AuthZ-Versuch
+  * Benachrichtigung über erteilte AuthZ
 * **Erfolgreiche Play-Anfrage**\
   *Voraussetzung:* Authentifizierungs- und AuthZ-Token
-   * Benachrichtigung über eine Prüfung mit Adobe Pass-Authentifizierung
-   * Eine Play-Anfrage erfordert sowohl eine erteilte Authentifizierung als auch eine erteilte Autorisierung
+  * Benachrichtigung über eine Prüfung mit Adobe Pass-Authentifizierung
+  * Eine Play-Anfrage erfordert sowohl eine erteilte Authentifizierung als auch eine erteilte Autorisierung
 
 
 Die Anzahl der eindeutigen Benutzer wird im Abschnitt [Eindeutige Benutzer](#unique-users) unten detailliert behandelt. Da die Antworten auf die Authentifizierung und Autorisierung normalerweise zwischengespeichert werden, gelten für gewöhnlich die folgenden Formeln:
@@ -187,7 +188,7 @@ Benutzer müssen nicht nur ein Authentifizierungs-Token erhalten, sondern auch e
 
 Eine „Autorisierung erteilt“ signalisiert, dass das Abonnement des authentifizierten Benutzers die angeforderte Programmierung enthält.
 
-Beachten Sie, dass nicht alle MVPDs einen separaten Autorisierungsschritt unterstützen. Für einige Authentifizierungen wird dies mit einer Autorisierung gleichgesetzt. Die MVPD Adobe Pass-Authentifizierung sendet eine erfolgreiche Antwort auf die Backchannel AuthZ-Anfrage und die Adobe Pass-Authentifizierung erstellt ein AuthZ-Token.
+Beachten Sie, dass nicht alle MVPDs einen separaten Autorisierungsschritt unterstützen. Für einige Authentifizierungen wird dies mit einer Autorisierung gleichgesetzt. Die MVPD-Authentifizierung sendet eine erfolgreiche Antwort auf die Backchannel AuthZ-Anfrage und die Adobe Pass-Authentifizierung erstellt ein AuthZ-Token.
 
 * Das AuthZ-Token wird für einen bestimmten Zeitraum zwischengespeichert, in der Regel nach 24 Stunden. Während dieses Zeitraums werden keine AuthZ-Ereignisse ausgelöst.
 * Einige MVPDs arbeiten mit Berechtigungen auf Asset-Ebene, andere mit Berechtigungen auf Kanalebene. Je nachdem, welche verwendet werden, werden mehr oder weniger AuthZ-Ereignisse ausgelöst. Selbst für die Autorisierung auf Kanalebene ist ein Caching vorhanden - wenn dasselbe Asset in weniger als 24 Stunden angefordert wird, werden keine Ereignisse ausgelöst.
@@ -238,10 +239,10 @@ Ausgelöste Ereignisse:
 
 * Authentifizierungsversuch (noch kein eindeutiger Benutzer)
 * Auth. erteilt
-   * An dieser Stelle identifizieren wir den Benutzer eindeutig anhand dessen, was MVPD zurückgibt - sodass die tägliche Anzahl eindeutiger Benutzer um 1 erhöht wird
-   * Das AuthN-Token wird 30 Tage lang zwischengespeichert
+  * An dieser Stelle identifizieren wir den Benutzer eindeutig anhand dessen, was MVPD zurückgibt - sodass die tägliche Anzahl eindeutiger Benutzer um 1 erhöht wird
+  * Das AuthN-Token wird 30 Tage lang zwischengespeichert
 * AuthZ-Versuch/erteiltes Ereignis
-   * AuthZ-Token für 1 Tag zwischengespeichert
+  * AuthZ-Token für 1 Tag zwischengespeichert
 * Erfolgreiches Wiedergabeanfrageereignis
 
 #### Tag 1 (später) {#day1-later-on}
@@ -260,7 +261,7 @@ Benutzer XYZ sieht sich ein anderes Video an.
 Ausgelöste Ereignisse:
 
 * AuthZ-Versuch/erteiltes Ereignis
-   * Seit 1 Tag, an dem das Caching ab Tag 1 abgelaufen ist
+  * Seit 1 Tag, an dem das Caching ab Tag 1 abgelaufen ist
 * Erfolgreiches Wiedergabeanforderungsereignis (die restlichen Daten werden zwischengespeichert)
 * Täglich Unique Users um 1 erhöht - Unique-Werte pro Monat sind immer noch 1
 

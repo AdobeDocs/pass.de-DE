@@ -2,13 +2,14 @@
 title: Einfache Vorabautorisierung - Primäre Anwendung - Fluss
 description: REST API v2 - Einfache Vorautorisierung - Primäre Anwendung - Fluss
 exl-id: f557f6c3-d5b2-4ec8-be51-91a90fbd31c0
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 0%
-
 ---
-
 # Grundlegender Vorautorisierungsfluss innerhalb der primären Anwendung {#basic-preauthorization-flow-performed-within-primary-application}
 
 >[!IMPORTANT]
@@ -28,9 +29,9 @@ Mit dem **Vorautorisierungsfluss** innerhalb der Berechtigung für die Adobe Pas
 Bevor Sie Entscheidungen vor der Autorisierung mit einer bestimmten MVPD abrufen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
 * Die Streaming-Anwendung muss über ein gültiges reguläres Profil verfügen, das mithilfe eines der grundlegenden Authentifizierungsflüsse erfolgreich für die MVPD erstellt wurde:
-   * [Authentifizierung innerhalb der primären Anwendung durchführen](rest-api-v2-basic-authentication-primary-application-flow.md)
-   * [Authentifizierung innerhalb der sekundären Anwendung mit vorab ausgewähltem mvpd durchführen](rest-api-v2-basic-authentication-secondary-application-flow.md)
-   * [Authentifizierung innerhalb der sekundären Anwendung ohne vorab ausgewählte mvpd durchführen](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Authentifizierung innerhalb der primären Anwendung durchführen](rest-api-v2-basic-authentication-primary-application-flow.md)
+  * [Authentifizierung innerhalb der sekundären Anwendung mit vorab ausgewähltem mvpd durchführen](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Authentifizierung innerhalb der sekundären Anwendung ohne vorab ausgewählte mvpd durchführen](rest-api-v2-basic-authentication-secondary-application-flow.md)
 * Die Streaming-Anwendung möchte Entscheidungen zur Vorabautorisierung abrufen, um eine Liste der Ressourcen zusammen mit ihren zugehörigen Status anzuzeigen.
 
 ### Workflow {#workflow-retrieve-preauthorization-decisions-using-specific-mvpd}
@@ -45,7 +46,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Vorautorisierungs
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Vorabautorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Vorabautorisierungsentscheidungen mithilfe bestimmter MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -61,7 +62,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Vorautorisierungs
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Entscheidungen vor der Autorisierung mit bestimmten mvpd.
+   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Entscheidungen vor der Autorisierung mit bestimmten mvpd.
    > 
    > <br/>
    > 

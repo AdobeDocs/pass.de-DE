@@ -2,13 +2,14 @@
 title: Dashboard
 description: Erfahren Sie mehr über die Startseite des TVE-Dashboards.
 exl-id: 3073cd86-89f8-4c65-996b-24edda24f25b
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '276'
+source-wordcount: '278'
 ht-degree: 0%
-
 ---
-
 # Dashboard {#dashboard}
 
 >[!NOTE]
@@ -28,7 +29,7 @@ In diesem Abschnitt können Sie direkt über die Begrüßungsnachricht auf die �
 
 * **Aktive**: Die Anzahl der aktiven Integrationen in der aktuellen Umgebung. Wählen Sie **Weitere Informationen im Abschnitt Integration anzeigen**, um auf detaillierte Informationen im Abschnitt [Integrationen](tve-dashboard-integrations.md) zuzugreifen.
 * **Aktive**: Die Anzahl der aktiven Kanäle in der aktuellen Umgebung. Wählen Sie **Weitere Informationen im Abschnitt Kanäle anzeigen** aus, um auf detaillierte Informationen im Abschnitt [Kanäle](tve-dashboard-channels.md) zuzugreifen.
-* **Datenbankaktualisierungen**: Die Anzahl der Konfigurationsänderungen, die an der aktuellen Umgebung vorgenommen wurden. Wählen Sie **Weitere Informationen im Abschnitt Änderungsprotokoll anzeigen**, um auf detaillierte Informationen im Abschnitt [Änderungsprotokoll“ &#x200B;](tve-dashboard-changes-log.md).
+* **Datenbankaktualisierungen**: Die Anzahl der Konfigurationsänderungen, die an der aktuellen Umgebung vorgenommen wurden. Wählen Sie **Weitere Informationen im Abschnitt Änderungsprotokoll anzeigen**, um auf detaillierte Informationen im Abschnitt [Änderungsprotokoll“ ](tve-dashboard-changes-log.md).
 * **ESM-Dashboard**: Sehen Sie im Auge nach dem kommenden ESM-Dashboard, das detaillierte Metriken zur Eigenschaftsnutzung in der aktuellen Umgebung bietet. Diese Funktion wird in zukünftigen Updates verfügbar sein.
 
 ![Begrüßungsbildschirm](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-welcome-panel-view.png)
@@ -47,4 +48,4 @@ In diesem Abschnitt werden die 10 jüngsten Konfigurationsänderungen vorgestell
 
 *Konfigurationsstatus eines Änderungsprotokolls*
 
-Um die vollständige Liste der Änderungen anzuzeigen, wählen Sie **Weitere Informationen im Änderungsprotokoll anzeigen** unten rechts aus, um den Abschnitt [Änderungsprotokoll“ &#x200B;](tve-dashboard-changes-log.md).
+Um die vollständige Liste der Änderungen anzuzeigen, wählen Sie **Weitere Informationen im Änderungsprotokoll anzeigen** unten rechts aus, um den Abschnitt [Änderungsprotokoll“ ](tve-dashboard-changes-log.md).

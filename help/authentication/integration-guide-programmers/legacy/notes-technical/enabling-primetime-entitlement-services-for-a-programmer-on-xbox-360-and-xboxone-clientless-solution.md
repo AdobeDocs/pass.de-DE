@@ -2,13 +2,14 @@
 title: Aktivieren von Adobe Pass-Berechtigungsdiensten für einen Programmierer auf Xbox 360 und XboxOne Clientless
 description: Aktivieren von Adobe Pass-Berechtigungsdiensten für einen Programmierer auf Xbox 360 und XboxOne Clientless
 exl-id: ff7254de-9ea4-4c27-a186-d1c2eea12222
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '484'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Aktivieren von Adobe Pass-Berechtigungsdiensten für einen Programmierer auf Xbox 360 und XboxOne ClientLess {#enabling-primetime-entitlement-services-for-a-programer-on-xbox-360-and-xboxone-clientless}
 
 >[!NOTE]
@@ -49,4 +50,4 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Aufgrund der großen Länge des XSTS-Tokens weist die XBox-Konsole eine technische Einschränkung auf: Das Token kann nicht als HTTP-GET-Parameter an die Adobe Pass-Authentifizierungs-APIs für Pay-TV gesendet werden. Um diesem Problem zu begegnen, ermöglicht die Pay-TV-Authentifizierung von Adobe Pass das Senden des XSTS-Tokens als Teil des HTTP-Headers „Authorization“ beim Aufruf der APIs. Das XSTS-Token muss mit dem öffentlichen Schlüssel aus dem X.509-Zertifikat verschlüsselt werden, das dem Programmierer von der Adobe Pass-Pay-TV-Authentifizierung ausgestellt wurde. Die Adobe Pass-Pay-TV-Authentifizierung speichert den zugehörigen privaten Schlüssel und verwendet ihn, um das XSTS-Token zu entschlüsseln und die deviceId daraus zu extrahieren.
+>Aufgrund der großen Länge des XSTS-Tokens weist die XBox-Konsole eine technische Einschränkung auf: Das Token kann nicht als HTTP-GET-Parameter an die Authentifizierungs-APIs für Pay-TV von Adobe Pass gesendet werden. Um diesem Problem zu begegnen, ermöglicht die Pay-TV-Authentifizierung von Adobe Pass das Senden des XSTS-Tokens als Teil des HTTP-Headers „Authorization“ beim Aufruf der APIs. Das XSTS-Token muss mit dem öffentlichen Schlüssel aus dem X.509-Zertifikat verschlüsselt werden, das dem Programmierer von der Adobe Pass-Pay-TV-Authentifizierung ausgestellt wurde. Die Adobe Pass-Pay-TV-Authentifizierung speichert den zugehörigen privaten Schlüssel und verwendet ihn, um das XSTS-Token zu entschlüsseln und die deviceId daraus zu extrahieren.

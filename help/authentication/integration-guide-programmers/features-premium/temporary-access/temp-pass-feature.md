@@ -2,13 +2,14 @@
 title: TempPass-Funktion
 description: TempPass-Funktion
 exl-id: 1df14090-8e71-4e3e-82d8-f441d07c6f64
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2203'
+source-wordcount: '2245'
 ht-degree: 0%
-
 ---
-
 # TempPass-Funktion {#temp-pass-feature}
 
 >[!IMPORTANT]
@@ -62,7 +63,7 @@ Um beispielsweise eine erste kostenlose 4-stündige Sitzung gefolgt von täglich
 * **TempPass1**: Wird mit einer TTL (Time-to-Live) von 4 Stunden konfiguriert, um den anfänglichen Zeitraum für den freien Zugriff abzudecken.
 * **TempPass2**: Konfiguriert mit einer Time-to-Live (TTL) von 10 Minuten für die nachfolgenden täglichen freien Zugriffsintervalle.
 
-Um eine ordnungsgemäße Funktionalität für den täglichen Zugriff sicherzustellen, muss TempPass2 für alle Geräte jeden Tag um 00:00 Stunden zurückgesetzt werden.
+Um eine ordnungsgemäße Funktionalität für den täglichen Zugriff sicherzustellen, muss TempPass2 für alle Geräte jeden Tag um 00:00 Uhr zurückgesetzt werden.
 
 ### Funktionsdetails {#basic-temp-pass-feature-details}
 
@@ -424,6 +425,6 @@ $ curl -H "Authorization: Bearer <access_token_here>" -X DELETE -v "https://mgmt
 
 ## REST-API V2 {#rest-api-v2}
 
-Für die Nutzung der TempPass-Funktion ist die Implementierung von Code-Aktualisierungen erforderlich, um die Interaktion der TV Everywhere-Anwendung (TVE) mit der Adobe Pass-Authentifizierung ([-API V2) &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) ändern.
+Für die Nutzung der TempPass-Funktion ist die Implementierung von Code-Aktualisierungen erforderlich, um die Interaktion der TV Everywhere-Anwendung (TVE) mit der Adobe Pass-Authentifizierung ([-API V2) ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) ändern.
 
-Eine umfassende Anleitung zu diesen Aktualisierungen und den zugehörigen Workflows finden Sie in der Dokumentation [Temporäre &#x200B;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)&quot;.
+Eine umfassende Anleitung zu diesen Aktualisierungen und den zugehörigen Workflows finden Sie in der Dokumentation [Temporäre ](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)&quot;.

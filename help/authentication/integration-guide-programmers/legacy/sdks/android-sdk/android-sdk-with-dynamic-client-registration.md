@@ -2,13 +2,14 @@
 title: Android SDK mit dynamischer Client-Registrierung
 description: Android SDK mit dynamischer Client-Registrierung
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1321'
 ht-degree: 1%
-
 ---
-
 # (Legacy) Android SDK mit dynamischer Client-Registrierung {#android-sdk-with-dynamic-client-registration}
 
 >[!NOTE]
@@ -64,7 +65,8 @@ Sehen Sie sich [dieses Webinar](https://my.adobeconnect.com/pzkp8ujrigg1/) an, d
 - softwareStatement: Wert, der vom TVE-Dashboard abgerufen wurde oder *null*, wenn „software\_statement“ in strings.xml festgelegt ist
 - redirectUrl : eine eindeutige URL, eine der Domains in umgekehrter Reihenfolge, die explizit im TVE-Dashboard hinzugefügt wurde, oder *null* wenn „redirect\_uri“ in strings.xml festgelegt ist
 
-Hinweis : Ungültige softwareStatement oder redirectUrl führt dazu, dass die Anwendung AccessEnabler nicht initialisiert oder die Anwendung für die Authentifizierung und Autorisierung von Adobe Pass registriert</br>
+Hinweis : Ungültige softwareStatement oder redirectUrl führt dazu, dass die Anwendung AccessEnabler nicht initialisiert oder die Anwendung für die Authentifizierung und Autorisierung von Adobe Pass registriert
+</br>
 Hinweis : Der Parameter „redirectUrl“ oder „redirect\_uri“ in „strings.xml“ sollte der Wert der im TVE-Dashboard hinzugefügten Domain für die Anwendung in umgekehrter Reihenfolge sein ( z. B. : Für die im TVE-Dashboard hinzugefügte Domain „adobe.com“ sollte die redirectUrl „com.adobe“ sein.
 
 
@@ -113,8 +115,8 @@ Veraltet:
 
 **Parameter:** none
 
-**Ausgelöste Callbacks:** 
-
+**Ausgelöste Callbacks:** `setAuthenticationStatus()`
+</br></br>
 
 ## Implementierungsfluss für Programmierer {#Progr}
 

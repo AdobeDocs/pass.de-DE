@@ -2,13 +2,14 @@
 title: Single Sign-On - Partner - Flüsse
 description: REST API v2 - Single Sign-On - Partner - Flüsse
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1468'
+source-wordcount: '1504'
 ht-degree: 0%
-
 ---
-
 # Single Sign-on mit Partnerflüssen {#single-sign-on-partner-flows}
 
 >[!IMPORTANT]
@@ -74,7 +75,7 @@ Führen Sie die angegebenen Schritte aus, um die Partnerauthentifizierungsanfrag
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)Dokumentation zum Abrufen von Partnerauthentifizierungsanfragen:
+   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)Dokumentation zum Abrufen von Partnerauthentifizierungsanfragen:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `partner`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` und `AP-Partner-Framework-Status`
@@ -92,7 +93,7 @@ Führen Sie die angegebenen Schritte aus, um die Partnerauthentifizierungsanfrag
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [&#x200B; in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)Dokumentation zum Abrufen der Partnerauthentifizierungsanfrage .
+   > Weitere Informationen zu den [ in einer Sitzungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)Dokumentation zum Abrufen der Partnerauthentifizierungsanfrage .
    > 
    > <br/>
    > 
@@ -188,7 +189,7 @@ Führen Sie die angegebenen Schritte aus, um den Profilabruffluss mithilfe einer
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden [&#x200B; finden Sie in der API-Dokumentation &#x200B;](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort:
+   > Weitere Informationen zu folgenden [ finden Sie in der API-Dokumentation ](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `partner` und `SAMLResponse`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` und `AP-Partner-Framework-Status`
@@ -208,7 +209,7 @@ Führen Sie die angegebenen Schritte aus, um den Profilabruffluss mithilfe einer
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [&#x200B; in einer Profilantwort enthaltenen Informationen finden Sie in der API](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)Dokumentation Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort .
+   > Weitere Informationen zu [ in einer Profilantwort enthaltenen Informationen finden Sie in der API](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)Dokumentation Erstellen und Abrufen von Profilen mit Partnerauthentifizierungsantwort .
    > 
    > <br/>
    > 

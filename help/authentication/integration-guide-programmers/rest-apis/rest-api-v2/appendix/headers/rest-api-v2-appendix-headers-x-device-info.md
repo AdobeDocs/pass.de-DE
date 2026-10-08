@@ -2,13 +2,14 @@
 title: Kopfzeile - x-device-info
 description: REST API v2 - Kopfzeile - x-device-info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
-source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1234'
 ht-degree: 3%
-
 ---
-
 # Kopfzeile - x-device-info {#header-x-device-info}
 
 >[!NOTE]
@@ -53,7 +54,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>primaryHardwareType</td>
         <td>Der primäre Hardwaretyp des Geräts.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -110,7 +111,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td><i>required</i></td>
         <td>osName</td>
         <td>Der Name des Betriebssystems (OS) des Geräts.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -132,7 +133,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>Betriebssystemfamilie</td>
         <td>Der Gruppenname des Betriebssystems (OS) des Geräts.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -155,7 +156,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>Betriebssystemanbieter</td>
         <td>Der Anbieter des Betriebssystems (OS) des Geräts.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -185,7 +186,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>browserName</td>
         <td>Der Name des Browsers.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -205,7 +206,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>browserVendor</td>
         <td>Die Firma/Organisation, die den Browser erstellt.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -290,7 +291,7 @@ Der `Base64-encoded` des JSON-Elements, das mindestens die Attribute enthält, d
         <td></td>
         <td>connectionSecure</td>
         <td>Der Sicherheitsstatus der Netzwerkverbindung.</td>
-        <td>&check;</td>
+        <td>&amp;check;</td>
         <td>
             Die Werte sind eingeschränkt:
             <ul>
@@ -659,7 +660,7 @@ Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 #### Betriebssystem auslösen {#fireos}
 
-Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [&#x200B; „Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html) ausgeführt wird, finden Sie in den folgenden Dokumenten:
+Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [ „Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html) ausgeführt wird, finden Sie in den folgenden Dokumenten:
 
 * Android-Entwicklerdokumentation für [Build](https://developer.android.com/reference/android/os/Build.html)-Klasse.
 * Amazon-Entwicklerdokumentation für [Identifizieren von Fire-TV-](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html))
@@ -692,7 +693,7 @@ Die Anwendungsinformationen können wie folgt aufgebaut werden:
 
 #### Roku OS {#rokuos}
 
-Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [&#x200B; (Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md) ausgeführt wird, finden Sie in den folgenden Dokumenten:
+Informationen zum Erstellen des `X-Device-Info`-Headers für Geräte, auf [ (Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md) ausgeführt wird, finden Sie in den folgenden Dokumenten:
 
 * Roku-Entwicklerdokumentation für [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md).
 

@@ -2,13 +2,14 @@
 title: Übersicht über die dynamische Client-Registrierung
 description: Übersicht über die dynamische Client-Registrierung
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '809'
+source-wordcount: '835'
 ht-degree: 0%
-
 ---
-
 # Übersicht über die dynamische Client-Registrierung {#dynamic-client-registration-overview}
 
 >[!IMPORTANT]
@@ -20,18 +21,18 @@ Die dynamische Client-Registrierung stellt einen Autorisierungsmechanismus dar, 
 Adobe Pass bietet einen dynamischen Client-Registrierungs-Service, der den Zugriff auf die folgenden geschützten APIs ermöglicht:
 
 * Adobe Pass Authentication Management-APIs:
-   * [Temporäre Pass-API zurücksetzen](../../features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-   * [Abbauungs-API](../../features-premium/degraded-access/degradation-feature.md#degradation-api-access)
-   * [Proxy MVPD API](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
-   * [Berechtigungs-Service-Überwachungs-API](../../features-premium/esm/entitlement-service-monitoring-api.md)
+  * [Temporäre Pass-API zurücksetzen](../../features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+  * [Abbauungs-API](../../features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+  * [Proxy MVPD API](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
+  * [Berechtigungs-Service-Überwachungs-API](../../features-premium/esm/entitlement-service-monitoring-api.md)
 * Adobe Pass Authentication REST-APIs:
-   * [REST-API V2](../rest-api-v2/apis/rest-api-v2-apis-overview.md)
-   * [(Legacy) REST-API v1](../../legacy/rest-api-v1/rest-api-reference.md)
+  * [REST-API V2](../rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [(Legacy) REST-API v1](../../legacy/rest-api-v1/rest-api-reference.md)
 * Adobe Pass-Authentifizierungs-SDKs:
-   * [(Legacy) JavaScript SDK](../../legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
-   * [(Legacy) iOS/tvOS SDK](../../legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
-   * [(Legacy) Android SDK](../../legacy/sdks/android-sdk/android-sdk-api-reference.md)
-   * [(Legacy) FireOS SDK](../../legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
+  * [(Legacy) JavaScript SDK](../../legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
+  * [(Legacy) iOS/tvOS SDK](../../legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
+  * [(Legacy) Android SDK](../../legacy/sdks/android-sdk/android-sdk-api-reference.md)
+  * [(Legacy) FireOS SDK](../../legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
 
 >[!IMPORTANT]
 >
@@ -116,4 +117,4 @@ Zusammenfassend lässt sich sagen, dass der dynamische Client-Registrierungs-Aut
 * Die Client-Anwendung muss die Client-Anmeldeinformationen abrufen, wie in der API[Dokumentation zum Abrufen von Client](apis/dynamic-client-registration-apis-retrieve-client-credentials.md)Anmeldeinformationen beschrieben.
 * Die Client-Anwendung muss das Zugriffstoken abrufen, wie in der API-Dokumentation [Zugriffstoken abrufen](apis/dynamic-client-registration-apis-retrieve-access-token.md) beschrieben.
 
-Weitere Informationen zum [&#x200B; auf Adobe Pass-geschützte APIs finden &#x200B;](flows/dynamic-client-registration-flow.md) in der Dokumentation zum Dynamic Client Registration Flow . Außerdem können Sie sich diese Aufzeichnung des [Webinars](https://my.adobeconnect.com/pzkp8ujrigg1/) ansehen, die mehr Kontext bietet und eine Demo enthält.
+Weitere Informationen zum [ auf Adobe Pass-geschützte APIs finden ](flows/dynamic-client-registration-flow.md) in der Dokumentation zum Dynamic Client Registration Flow . Außerdem können Sie sich diese Aufzeichnung des [Webinars](https://my.adobeconnect.com/pzkp8ujrigg1/) ansehen, die mehr Kontext bietet und eine Demo enthält.
