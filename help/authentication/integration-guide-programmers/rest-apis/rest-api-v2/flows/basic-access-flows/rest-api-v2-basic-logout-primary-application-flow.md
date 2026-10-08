@@ -62,7 +62,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Abmeldefluss für
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden Sie in [ API-Dokumentation ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) Initiieren des Abmeldens für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden Sie in [&#x200B; API-Dokumentation &#x200B;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) Initiieren des Abmeldens für bestimmte MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `redirectUrl`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
@@ -79,7 +79,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Abmeldefluss für
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [ in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
+   > Weitere Informationen zu den [&#x200B; in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
    > 
    > <br/>
    > 
@@ -128,7 +128,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Abmeldefluss für
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden Sie in [ API-Dokumentation ](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) Initiieren des Abmeldens für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden Sie in [&#x200B; API-Dokumentation &#x200B;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) Initiieren des Abmeldens für bestimmte MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `redirectUrl`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization`, `AP-Device-Identifier`
@@ -145,7 +145,7 @@ Führen Sie die angegebenen Schritte aus, um den grundlegenden Abmeldefluss für
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [ in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
+   > Weitere Informationen zu den [&#x200B; in einer Abmeldeantwort enthaltenen Informationen finden Sie in der API](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Dokumentation zum Initiieren des Abmeldens für bestimmte mvpd.
    > 
    > <br/>
    > 

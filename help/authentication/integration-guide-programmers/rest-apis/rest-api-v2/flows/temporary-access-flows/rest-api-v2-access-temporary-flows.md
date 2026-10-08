@@ -67,7 +67,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss mit einfach
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    > 
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -79,7 +79,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss mit einfach
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
    >
    > <br/>
    > 
@@ -136,7 +136,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss mithilfe vo
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -156,7 +156,7 @@ Führen Sie die angegebenen Schritte aus, um den Autorisierungsfluss mithilfe vo
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
    > 
    > <br/>
    > 
@@ -214,7 +214,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `mvpd`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -230,7 +230,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [ in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
+   > Weitere Informationen zu [&#x200B; in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
    > 
    > <br/>
    > 
@@ -260,7 +260,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!IMPORTANT]
    > 
-   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -280,7 +280,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
    > 
    > <br/>
    > 
@@ -308,7 +308,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    >
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -328,7 +328,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
    > 
    > <br/>
    > 
@@ -388,7 +388,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
+   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD:
    > 
    > * Alle _erforderlichen_ Parameter wie `serviceProvider`, `mvpd` und `resources`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -408,7 +408,7 @@ Befolgen Sie die angegebenen Schritte, um den Autorisierungsfluss zu implementie
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu den [ in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
+   > Weitere Informationen zu den [&#x200B; in einer Entscheidungsantwort bereitgestellten Informationen finden Sie in der API](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)Dokumentation zum Abrufen von Autorisierungsentscheidungen mithilfe einer bestimmten mvpd.
    > 
    > <br/>
    > 
@@ -471,7 +471,7 @@ Führen Sie die angegebenen Schritte aus, um den Fluss zum Abrufen von Profilen 
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
    > 
    > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `mvpd`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -483,7 +483,7 @@ Führen Sie die angegebenen Schritte aus, um den Fluss zum Abrufen von Profilen 
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [ in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
+   > Weitere Informationen zu [&#x200B; in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
    > 
    > <br/>
    > 
@@ -542,7 +542,7 @@ Führen Sie die angegebenen Schritte aus, um den Fluss zum Abrufen von Profilen 
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu folgenden Themen finden [ in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
+   > Weitere Informationen zu folgenden Themen finden [&#x200B; in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte MVPD:
    > 
    > * Alle _erforderlichen_ Parameter wie `serviceProvider` und `mvpd`
    > * Alle _erforderlichen_ Kopfzeilen wie `Authorization` und `AP-Device-Identifier`
@@ -554,7 +554,7 @@ Führen Sie die angegebenen Schritte aus, um den Fluss zum Abrufen von Profilen 
 
    >[!IMPORTANT]
    >
-   > Weitere Informationen zu [ in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
+   > Weitere Informationen zu [&#x200B; in einer Profilantwort angegebenen Informationen finden Sie in der API](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)Dokumentation zum Abrufen von Profilen für bestimmte mvpd.
    > 
    > <br/>
    > 

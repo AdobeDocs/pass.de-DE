@@ -22,7 +22,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) ](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
+> Die REST-API-Implementierung wird durch [Drosselungsmechanismus) &#x200B;](/help/authentication/integration-guide-programmers/throttling-mechanism.md)
 
 ## REST-API-Endpunkte {#clientless-endpoints}
 
@@ -62,7 +62,7 @@ Ruft das kurze Medien-Token ab.
 | deviceId | Die Geräte-ID-Bytes. |
 | Ressource | Eine Zeichenfolge, die eine resourceId (oder ein MRSS-Fragment) enthält, den von einem Benutzer angeforderten Inhalt identifiziert und von MVPD-Autorisierungsendpunkten erkannt wird. |
 | device_info/</br></br>X-device-info | Streaming-Geräteinformationen.</br></br>**Hinweis**: Dies kann als URL-Parameter an device_info übergeben werden, sollte jedoch aufgrund der potenziellen Größe dieses Parameters und der Längenbeschränkungen für eine GET-URL als X-Device-Info im HTTP-Header übergeben werden. </br></br>Vollständige Details finden Sie unter [Übergeben von Geräte- und Verbindungsinformationen](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
-| _deviceType_ | Der Gerätetyp (z. B. Roku, PC).</br></br>Wenn dieser Parameter richtig festgelegt ist, bietet ESM Metriken an, die bei Verwendung von Clientless [nach Gerätetyp aufgeschlüsselt]/(help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) sind, sodass verschiedene Arten der Analyse für ausgeführt werden können. Beispielsweise Roku, AppleTV und Xbox.</br></br>Siehe [Vorteile der Verwendung von clientless-Gerätetypparametern ](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Hinweis**: Der Parameter wird durch „device_info“ ersetzt. |
+| _deviceType_ | Der Gerätetyp (z. B. Roku, PC).</br></br>Wenn dieser Parameter richtig festgelegt ist, bietet ESM Metriken an, die bei Verwendung von Clientless [nach Gerätetyp aufgeschlüsselt]/(help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) sind, sodass verschiedene Arten der Analyse für ausgeführt werden können. Beispielsweise Roku, AppleTV und Xbox.</br></br>Siehe [Vorteile der Verwendung von clientless-Gerätetypparametern &#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Hinweis**: Der Parameter wird durch „device_info“ ersetzt. |
 | _deviceUser_ | Die Geräte-Benutzerkennung.</br></br>**Hinweis**: Wenn verwendet, sollte deviceUser dieselben Werte haben wie in der Anfrage [Registrierungs-Code erstellen](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
 | _appId_ | Die Anwendungs-ID/-name. </br></br>**Hinweis**: device_info ersetzt diesen Parameter. Wenn verwendet, sollten `appId` dieselben Werte wie in der Anfrage [Registrierungs-Code erstellen](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) haben. |
 
