@@ -5,9 +5,9 @@ exl-id: e8889395-4434-4bec-a212-a8341bb9c310
 product_v2:
   - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
     internal-label: Pass
-source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
+source-git-commit: af03be1d866ad60b601f0fbe8799bd1b87e5c9b6
 workflow-type: tm+mt
-source-wordcount: '1137'
+source-wordcount: '1170'
 ht-degree: 1%
 ---
 # Abrufen von Autorisierungsentscheidungen mithilfe bestimmter MVPD {#retrieve-authorization-decisions-using-specific-mvpd}
@@ -300,6 +300,13 @@ ht-degree: 1%
                <td>fakultativ</td>
             </tr>
             <tr>
+               <td style="background-color: #DEEBFF;">userMetadata</td>
+               <td>
+                  Optionale userMetadata, die von der MVPD freigegeben wurden. Die verfügbaren Schlüssel hängen von der MVPD-Konfiguration ab. Jeder Metadatenschlüssel wird als ein Objekt zurückgegeben, das <b>value</b> und <b>state</b> enthält. Zum Beispiel kann Spectrum <code>packageType</code> zurückgeben.
+               </td>
+               <td>fakultativ</td>
+            </tr>
+            <tr>
                <td style="background-color: #DEEBFF;">Fehler</td>
                <td>Der Fehler liefert zusätzliche Informationen zur Entscheidung „Ablehnen“, die der Dokumentation <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Erweiterte Fehlercodes</a> entspricht.</td>
                <td>fakultativ</td>
@@ -397,7 +404,13 @@ Content-Type: application/json;charset=UTF-8
                 "serializedToken": "PHNpZ25hdHVyZUluZm8..."
             },
             "notBefore": 1697094207324,
-            "notAfter": 1697098802367
+            "notAfter": 1697098802367,
+            "userMetadata": {
+                "packageType": {
+                    "value": "INCLUSION",
+                    "state": "plain"
+                }
+            }
         }
     ]
 }
