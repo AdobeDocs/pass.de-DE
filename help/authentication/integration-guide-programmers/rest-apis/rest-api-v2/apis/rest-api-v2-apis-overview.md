@@ -27,7 +27,7 @@ Einige API-Antworten geben interaktive URLs zurück, die das Streaming-Gerät ö
 in einem Browser oder Benutzeragenten. Beispiele hierfür sind das von zurückgegebene `url`-Attribut
 [Initiieren der Abmeldung für eine bestimmte mvpd](logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
 und die von zurückgegebene `Location`-Umleitung
-[Authentifizierung im Benutzeragenten ](sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md).
+[Authentifizierung im Benutzeragenten &#x200B;](sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md).
 
 Diese interaktiven URLs verwenden denselben Host des Adobe Pass Service Providers (SP).
 Öffnen Sie eine absolute interaktive URL genau wie zurückgegeben. Wenn Adobe Pass eine
